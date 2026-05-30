@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hunicornia</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+    }
+
+    body {
+      background: #0a0a0a;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ── Secciones de imagen ── */
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      display: block;
+    }
+
+    /* ── Última página ── */
+    .slide-final {
+      width: 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      background: #0a0a0a;
+      padding: 40px 20px;
+    }
+
+    .slide-final h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      color: #e8e0d5;
+      letter-spacing: 0.12em;
+      text-align: center;
+    }
+
+    /* YouTube embed */
+    .youtube-wrap {
+      width: min(560px, 90vw);
+      aspect-ratio: 16/9;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    }
+
+    .youtube-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Botones de enlace */
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 2px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-patreon {
+      background: #FF424D;
+      color: #fff;
+    }
+    .btn-patreon:hover {
+      background: #e03040;
+      transform: translateY(-2px);
+    }
+
+    .btn-youtube {
+      background: #fff;
+      color: #0a0a0a;
+    }
+    .btn-youtube:hover {
+      background: #e8e0d5;
+      transform: translateY(-2px);
+    }
+
+    .btn-ig {
+      background: transparent;
+      color: #e8e0d5;
+      border: 1px solid rgba(232,224,213,0.4);
+    }
+    .btn-ig:hover {
+      border-color: #e8e0d5;
+      transform: translateY(-2px);
+    }
+
+    .btn-tiktok {
+      background: transparent;
+      color: #e8e0d5;
+      border: 1px solid rgba(232,224,213,0.4);
+    }
+    .btn-tiktok:hover {
+      border-color: #e8e0d5;
+      transform: translateY(-2px);
+    }
+
+    /* Indicador de scroll (solo visible en primer slide) */
+    .scroll-hint {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 1;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .scroll-hint span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(232,224,213,0.5);
+    }
+
+    .scroll-arrow {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, rgba(232,224,213,0.5), transparent);
+      animation: pulse-down 1.6s ease-in-out infinite;
+    }
+
+    @keyframes pulse-down {
+      0%, 100% { opacity: 0.3; transform: scaleY(0.8); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    .scroll-hint.hidden {
+      opacity: 0;
+    }
+
+    /* Contador de páginas */
+    .counter {
+      position: fixed;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 10;
+    }
+
+    .counter-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(232,224,213,0.25);
+      transition: background 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .counter-dot.active {
+      background: rgba(232,224,213,0.85);
+      transform: scale(1.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Slides de imagen (1–10) ── -->
+  <section class="slide" id="slide-1">
+    <img src="hunicornia1.jpg" alt="Hunicornia - portada">
+  </section>
+
+  <section class="slide" id="slide-2">
+    <img src="hunicornia2.jpg" alt="">
+  </section>
+
+  <section class="slide" id="slide-3">
+    <img src="hunicornia3.jpg" alt="">
+  </section>
+
+  <section class="slide" id="slide-4">
+    <img src="hunicornia4.jpg" alt="">
+  </section>
+
+  <section class="slide" id="slide-5">
+    <img src="hunicornia5.jpg" alt="">
+  </section>
+
+  <section class="slide" id="slide-6">
+    <img src="hunicornia6.jpg" alt="">
+  </section>
+
+  <section class="slide" id="slide-7">
+    <img src="hunicornia7.jpg" alt="">
+  </section>
+
+  <section class="slide" id="slide-8">
+    <img src="hunicornia8.jpg" alt="">
+  </section>
+
+  <section class="slide" id="slide-9">
+    <img src="hunicornia9.jpg" alt="">
+  </section>
+
+  <section class="slide" id="slide-10">
+    <img src="hunicornia10.jpg" alt="">
+  </section>
+
+  <!-- ── Página final ── -->
+  <section class="slide-final" id="slide-11">
+
+    <h2>Escúchame · Sígueme · Apóyame</h2>
+
+    <!-- YouTube embed: canal @tinddaya -->
+    <div class="youtube-wrap">
+      <iframe
+        src="https://www.youtube.com/embed?listType=user_uploads&list=tinddaya"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Botones -->
+    <div class="links">
+
+      <!-- Patreon — reemplaza # por tu URL cuando lo tengas -->
+      <a href="#" class="btn btn-patreon">
+        ♥ Apóyame en Patreon
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@tinddaya" target="_blank" class="btn btn-youtube">
+        ▶ YouTube
+      </a>
+
+      <!-- Instagram — reemplaza # por tu URL -->
+      <a href="#" class="btn btn-ig">
+        Instagram
+      </a>
+
+      <!-- TikTok — reemplaza # por tu URL -->
+      <a href="#" class="btn btn-tiktok">
+        TikTok
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- Indicador scroll -->
+  <div class="scroll-hint" id="scrollHint">
+    <span>scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+
+  <!-- Puntos de navegación -->
+  <nav class="counter" id="counter" aria-label="Navegación por secciones"></nav>
+
+  <script>
+    const totalSlides = 11;
+    const counter = document.getElementById('counter');
+    const scrollHint = document.getElementById('scrollHint');
+
+    // Construir puntos
+    for (let i = 1; i <= totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'counter-dot' + (i === 1 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Ir a sección ' + i);
+      dot.addEventListener('click', () => {
+        const id = i <= 10 ? 'slide-' + i : 'slide-11';
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      });
+      counter.appendChild(dot);
+    }
+
+    const dots = counter.querySelectorAll('.counter-dot');
+
+    // Intersection Observer para detectar slide activo
+    const slides = document.querySelectorAll('.slide, .slide-final');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = Array.from(slides).indexOf(entry.target);
+          dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+          // Ocultar hint tras el primer slide
+          scrollHint.classList.toggle('hidden', idx > 0);
+        }
+      });
+    }, { threshold: 0.6 });
+
+    slides.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>

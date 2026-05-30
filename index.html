@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hunicornia</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@300;400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #0a0a0a;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* ── Contenedor de slides ── */
+    .slider {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    /* ── Cada slide ── */
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+      pointer-events: none;
+    }
+
+    .slide.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* ── Slides de imagen ── */
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ── Slide final ── */
+    .slide-final {
+      background: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px 20px;
+    }
+
+    .slide-final h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      color: #e8e0d5;
+      letter-spacing: 0.12em;
+      text-align: center;
+    }
+
+    .youtube-wrap {
+      width: min(560px, 90vw);
+      aspect-ratio: 16/9;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+    }
+
+    .youtube-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 2px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .btn-patreon { background: #FF424D; color: #fff; }
+    .btn-patreon:hover { background: #e03040; transform: translateY(-2px); }
+    .btn-youtube { background: #fff; color: #0a0a0a; }
+    .btn-youtube:hover { background: #e8e0d5; transform: translateY(-2px); }
+    .btn-ig, .btn-tiktok {
+      background: transparent;
+      color: #e8e0d5;
+      border: 1px solid rgba(232,224,213,0.4);
+    }
+    .btn-ig:hover, .btn-tiktok:hover {
+      border-color: #e8e0d5;
+      transform: translateY(-2px);
+    }
+
+    /* ── Flechas de navegación ── */
+    .arrow {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100;
+      transition: background 0.2s ease, transform 0.2s ease;
+      user-select: none;
+    }
+
+    .arrow:hover {
+      background: rgba(255,255,255,0.32);
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .arrow-left  { left: 20px; }
+    .arrow-right { right: 20px; }
+
+    .arrow svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .arrow.hidden { opacity: 0; pointer-events: none; }
+
+    /* ── Puntos ── */
+    .dots {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    .dot.active {
+      background: rgba(255,255,255,0.9);
+      transform: scale(1.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider" id="slider">
+
+    <div class="slide active" id="slide-0">
+      <img src="hunicornia1.jpg" alt="Hunicornia - portada">
+    </div>
+    <div class="slide" id="slide-1">
+      <img src="hunicornia2.jpg" alt="">
+    </div>
+    <div class="slide" id="slide-2">
+      <img src="hunicornia3.jpg" alt="">
+    </div>
+    <div class="slide" id="slide-3">
+      <img src="hunicornia4.jpg" alt="">
+    </div>
+    <div class="slide" id="slide-4">
+      <img src="hunicornia5.jpg" alt="">
+    </div>
+    <div class="slide" id="slide-5">
+      <img src="hunicornia6.jpg" alt="">
+    </div>
+    <div class="slide" id="slide-6">
+      <img src="hunicornia7.jpg" alt="">
+    </div>
+    <div class="slide" id="slide-7">
+      <img src="hunicornia8.jpg" alt="">
+    </div>
+    <div class="slide" id="slide-8">
+      <img src="hunicornia9.jpg" alt="">
+    </div>
+    <div class="slide" id="slide-9">
+      <img src="hunicornia10.jpg" alt="">
+    </div>
+
+    <!-- Página final -->
+    <div class="slide slide-final" id="slide-10">
+      <h2>Escúchame · Sígueme · Apóyame</h2>
+      <div class="youtube-wrap">
+        <iframe
+          src="https://www.youtube.com/embed?listType=user_uploads&list=tinddaya"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="links">
+        <a href="#" class="btn btn-patreon">♥ Apóyame en Patreon</a>
+        <a href="https://www.youtube.com/@tinddaya" target="_blank" class="btn btn-youtube">▶ YouTube</a>
+        <a href="#" class="btn btn-ig">Instagram</a>
+        <a href="#" class="btn btn-tiktok">TikTok</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Flechas -->
+  <div class="arrow arrow-left hidden" id="arrowLeft" onclick="navigate(-1)">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+  </div>
+  <div class="arrow arrow-right" id="arrowRight" onclick="navigate(1)">
+    <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+  </div>
+
+  <!-- Puntos -->
+  <div class="dots" id="dots"></div>
+
+  <script>
+    const total = 11;
+    let current = 0;
+
+    const slides = document.querySelectorAll('.slide');
+    const dotsEl = document.getElementById('dots');
+    const arrowLeft = document.getElementById('arrowLeft');
+    const arrowRight = document.getElementById('arrowRight');
+
+    // Crear puntos
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+    }
+    const dots = dotsEl.querySelectorAll('.dot');
+
+    function goTo(n) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = n;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+      arrowLeft.classList.toggle('hidden', current === 0);
+      arrowRight.classList.toggle('hidden', current === total - 1);
+    }
+
+    function navigate(dir) {
+      const next = current + dir;
+      if (next >= 0 && next < total) goTo(next);
+    }
+
+    // Teclado
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight') navigate(1);
+      if (e.key === 'ArrowLeft') navigate(-1);
+    });
+
+    // Swipe táctil
+    let touchStartX = 0;
+    document.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX);
+    document.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
+    });
+  </script>
+
+</body>
+</html>

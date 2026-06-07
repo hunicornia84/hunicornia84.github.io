@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hunicornia</title>
+  <style>
+    @font-face{font-family:'DIN';src:url('DIN.woff2') format('woff2'),url('DIN.ttf') format('truetype');}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{width:100vw;height:100vh;overflow:hidden;background:#fff;}
+
+    .slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .6s ease;}
+    .slide.active{opacity:1;pointer-events:all;}
+
+    /* ══ P1: CABALLO + POMPAS PLANAS ══ */
+    #p1{background:#fff;overflow:hidden;}
+    #bubblesBg{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;}
+      10% {opacity:.70;}
+      45% {transform:translateY(-45vh) translateX(10px);}
+      75% {transform:translateY(-75vh) translateX(-22px);}
+      100%{transform:translateY(-110vh) translateX(14px);opacity:0;}
+    }
+    #horseCanvas{position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:transparent;z-index:2;}
+    .text-layer{position:absolute;inset:0;pointer-events:none;z-index:3;}
+    .title-group{position:absolute;display:flex;flex-direction:column;align-items:flex-end;}
+    .t-main{font-family:'DIN',monospace;text-transform:uppercase;line-height:1;letter-spacing:.04em;color:#643587;}
+    .t-main-img{display:block;height:clamp(28px,5.2vw,100px);width:auto;margin-bottom:0;}
+    @media(max-width:600px){.t-main-img{height:clamp(22px,10vw,70px);}}
+    .t-sub{font-family:'DIN',monospace;text-transform:uppercase;line-height:1;letter-spacing:.08em;color:#8b3689;margin-top:.08em;}
+    @media(orientation:landscape){
+      .title-group{left:7.6%;top:16.8%;}
+      .t-main{font-size:clamp(28px,5.2vw,100px);}
+      .t-sub{font-size:clamp(11px,2.1vw,40px);}
+    }
+    @media(orientation:portrait){
+      .title-group{left:20.4%;top:2.2%;}
+      .t-main{font-size:clamp(22px,10vw,70px);}
+      .t-sub{font-size:clamp(8px,4vw,28px);margin-top:.08em;}
+    }
+
+    /* ══ P2 NOSOTRXS ══ */
+    #p2{background:#fff;display:flex;flex-direction:column;padding:2cm 1cm 1cm 1cm;overflow:hidden;}
+    .p2-title{font-family:'DIN',monospace;text-transform:uppercase;line-height:1;letter-spacing:.04em;color:#643587;font-size:clamp(24px,3.65vw,70px);}
+    .p2-subtitle{font-family:'DIN',monospace;text-transform:uppercase;line-height:1;letter-spacing:.08em;color:#8b3689;font-size:clamp(9px,1.3vw,25px);margin-top:.2em;}
+    .p2-body{margin-top:2cm;font-family:Arial,sans-serif;font-size:clamp(10px,1.3vw,25px);color:#643587;line-height:1.55;}
+    .p2-body p+p{margin-top:.9em;}
+
+    /* ══ P3 PORTADAS ══ */
+    #p3{background:#fff;}
+    .p3-h{display:flex;width:100%;height:100%;align-items:center;background:#fff;}
+    .p3-h .cw{flex:1;height:88vh;overflow:hidden;}
+    .p3-h .cw img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+    .p3-v{display:none;flex-direction:column;width:100%;height:100%;background:#fff;justify-content:center;}
+    .p3-v .cr{display:flex;align-items:center;height:33.33vh;padding:1vh 3vw;gap:4vw;}
+    .p3-v .cr img{height:calc(33.33vh - 2vh);width:auto;object-fit:contain;flex-shrink:0;}
+    .p3-v .ct{font-family:Arial,sans-serif;font-size:clamp(14px,2.1vw,25px);color:#643587;line-height:1.3;}
+    @media(orientation:portrait){.p3-h{display:none;}.p3-v{display:flex;}}
+
+    /* ══ P4 SINOPSIS ══ */
+    #p4{background:#fff;display:flex;flex-direction:column;padding:1.5cm 1cm 1cm 1cm;overflow:hidden;}
+    .p4-hdr{text-align:center;margin-bottom:0.8cm;flex-shrink:0;}
+    .p4-htitle{font-family:'DIN',monospace;text-transform:uppercase;line-height:1;letter-spacing:.04em;color:#643587;font-size:clamp(22px,3.65vw,70px);}
+    .p4-hsub{font-family:'DIN',monospace;text-transform:uppercase;line-height:1;letter-spacing:.08em;color:#8b3689;font-size:clamp(8px,1.3vw,25px);margin-top:.15em;}
+    .p4-cols{display:flex;flex:1;align-items:flex-start;gap:2vw;padding-top:0.5cm;}
+    .p4-col{flex:1;text-align:center;font-family:Arial,sans-serif;font-size:clamp(11px,1.82vw,35px);color:#643587;line-height:1.5;}
+    .p4-lang{display:block;margin-top:.8em;color:#8b3689;}
+    .p4-thanks{margin-top:3cm;font-family:Arial,sans-serif;font-size:clamp(10px,1.46vw,28px);color:#8b3689;text-align:center;}
+    @media(orientation:portrait){
+      .p4-cols{flex-direction:column;gap:2vw;overflow-y:auto;}
+      .p4-col{font-size:clamp(12px,3.5vw,22px);text-align:left;}
+    }
+
+    /* ══ GALERÍA ══ */
+    .gal-h{display:flex;width:100%;height:100%;align-items:center;background:#fff;}
+    .gal-h .cw{flex:1;height:88vh;overflow:hidden;}
+    .gal-h .cw img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+    .gal-v{display:none;flex-direction:column;width:100%;height:100%;background:#fff;}
+    .gal-v .cw{flex:1;width:100%;overflow:hidden;}
+    .gal-v .cw img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+    @media(orientation:portrait){.gal-h{display:none;}.gal-v{display:flex;}}
+
+    /* ══ P10: AUDIOLIBRO ══ */
+    #p10{background:#fff;display:flex;align-items:center;justify-content:center;}
+    .p10-inner{
+      display:flex;flex-direction:column;align-items:center;gap:1.4em;
+      width:min(85vw,960px);
+    }
+    .p10-label{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:clamp(28px,3.65vw,70px);
+      color:#643587;font-weight:400;
+      text-align:center;
+    }
+    .yt-big{
+      width:100%;aspect-ratio:16/9;
+      border-radius:6px;overflow:hidden;
+      box-shadow:0 6px 32px rgba(0,0,0,.14);
+    }
+    .yt-big iframe{width:100%;height:100%;border:none;}
+    .yt-credito{
+      font-family:Arial,Helvetica,sans-serif;
+      font-size:clamp(11px,1.2vw,22px);
+      color:#8b3689;
+      text-align:center;
+      letter-spacing:.02em;
+      margin-top:.2em;
+    }
+
+
+    /* ══ P11: CONTACTO ══ */
+    /* P11 wrapper */
+    #p11{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;background:#fff;padding:5cm 2cm 0 2cm;position:relative;overflow:hidden;}
+    .p11-inner{
+      display:flex;gap:5vw;
+      width:90vw;max-width:1200px;
+      align-items:flex-start;   /* ambas columnas arrancan a la misma altura */
+      flex:1;
+    }
+    .p11-left{
+      flex:1;
+      display:flex;flex-direction:column;
+    }
+    .p11-block{
+      font-family:Arial,sans-serif;
+      font-size:clamp(11px,1.3vw,25px);
+      color:#643587;
+      line-height:1.6;
+    }
+    .p11-block+.p11-block{margin-top:3.2em;}
+    .p11-left a{color:#643587;text-decoration:underline;text-underline-offset:3px;}
+    .p11-left a:hover{opacity:.6;}
+    .p11-right{
+      flex:1;
+      font-family:Arial,sans-serif;
+      font-size:clamp(11px,1.3vw,25px);
+      color:#643587;
+      line-height:1.6;
+    }
+    /* Email + gracias centrados bajo columnas */
+    .p11-footer{
+      width:90vw;max-width:1200px;
+      text-align:center;
+      margin-top:3cm;
+      margin-bottom:2.5cm;
+      font-family:Arial,sans-serif;
+      font-size:clamp(11px,1.3vw,25px);
+      color:#643587;
+      line-height:1.8;
+    }
+    .p11-footer a{color:#643587;text-decoration:underline;text-underline-offset:3px;}
+    .p11-footer a:hover{opacity:.6;}
+    .p11-thanks{
+      font-family:Arial,sans-serif;
+      font-size:clamp(10px,1.2vw,24px);
+      color:#8b3689;
+      margin-top:.4em;
+    }
+    /* p11 portrait: movido al bloque principal */
+
+/* ══ NAV ══ */
+    .top-nav{position:fixed;top:16px;right:22px;display:flex;gap:18px;z-index:300;align-items:center;}
+    .top-nav a{font-family:Arial,sans-serif;font-size:15px;font-weight:400;text-decoration:none;color:#643587;
+      text-shadow:0 0 6px rgba(255,255,255,.95),0 0 12px rgba(255,255,255,.7),1px 1px 3px rgba(0,0,0,.15);transition:opacity .2s;}
+    .top-nav a:hover{opacity:.55;}
+
+    /* ══ FLECHAS ══ */
+    .arrow-btn{position:fixed;top:50%;transform:translateY(-50%);width:46px;height:46px;cursor:pointer;z-index:200;transition:opacity .2s,transform .2s;}
+    .arrow-btn:hover{transform:translateY(-50%) scale(1.08);}
+    .arrow-btn.hidden{opacity:0;pointer-events:none;}
+    #arrowLeft{left:18px;}#arrowRight{right:18px;}
+
+    /* ══ PUNTOS ══ */
+    .dots-row{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;z-index:200;}
+    .dot{width:8px;height:8px;border-radius:50%;border:1.5px solid rgba(255,255,255,.65);box-shadow:0 0 0 1.5px rgba(80,80,80,.45);background:transparent;cursor:pointer;transition:background .3s,transform .3s;}
+    .dot.active{background:rgba(80,80,80,.5);transform:scale(1.25);}
+  
+    /* ══ FICHAS TÉCNICAS ══ */
+    .ficha-slide{
+      background:#fff;
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
+      padding:2cm 1.5cm;
+      overflow-y:auto;
+    }
+    .ficha-inner{
+      max-width:min(85vw,820px);
+      width:100%;
+      color:#643587;
+      font-family:Arial,sans-serif;
+    }
+    .ficha-titulo{
+      font-family:'DIN',monospace;
+      font-size:clamp(22px,3.5vw,64px);
+      color:#643587;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      margin-bottom:.5em;
+      border-bottom:2px solid #8b3689;
+      padding-bottom:.3em;
+    }
+    .ficha-tabla{
+      width:100%;
+      border-collapse:collapse;
+      font-size:clamp(11px,1.7vw,28px);
+      line-height:1.7;
+    }
+    .ficha-tabla td{
+      padding:.35em .6em;
+      vertical-align:top;
+      border-bottom:1px solid rgba(100,53,135,.15);
+    }
+    .ficha-tabla td:first-child{
+      font-weight:700;
+      white-space:nowrap;
+      color:#8b3689;
+      width:35%;
+    }
+    .obra-link{
+      text-decoration:underline;
+      cursor:pointer;
+      color:inherit;
+    }
+    .obra-link:hover{
+      color:#8b3689;
+    }
+    /* flecha retorno ficha – fixed: flota siempre visible durante el scroll */
+    .back-arrow{
+      position:fixed;
+      left:1.2vw;
+      top:50%;
+      transform:translateY(-50%);
+      width:clamp(36px,4vw,60px);
+      height:clamp(36px,4vw,60px);
+      cursor:pointer;
+      z-index:9999;
+      opacity:.75;
+      transition:opacity .2s;
+      display:none;           /* oculta por defecto; JS la muestra al abrir ficha */
+    }
+    .back-arrow:hover{opacity:1;}
+    .ficha-slide.active .back-arrow{ display:block; }
+
+
+    /* ══ ANÁLISIS en fichas ══ */
+    .ficha-slide{
+      justify-content:flex-start;   /* contenido desde arriba, scroll si hace falta */
+      padding:1.8cm 1.5cm 1.5cm;
+    }
+    .analisis-sep{
+      width:100%;
+      border:none;
+      border-top:2px solid rgba(139,54,137,.25);
+      margin:1.4em 0 1.2em;
+    }
+    .analisis-titulo{
+      font-family:'DIN',monospace;
+      font-size:clamp(10px,1.2vw,22px);
+      color:#8b3689;          /* color "Desde 1984" */
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin:0 0 .9em;
+    }
+    .analisis-h2{
+      font-family:Arial,sans-serif;
+      font-size:clamp(12px,1.4vw,26px);
+      color:#643587;
+      font-weight:700;
+      margin:1.1em 0 .35em;
+    }
+    .analisis-p{
+      font-family:Arial,sans-serif;
+      font-size:clamp(11px,1.15vw,21px);
+      color:#643587;
+      line-height:1.7;
+      margin:0 0 .85em;
+    }
+    /* tabla ficha: labels en color "Desde 1984" */
+    .ficha-tabla td:first-child{ color:#8b3689; }
+
+
+    /* ── Flecha derecha y dots para carrusel de fichas ── */
+    #fichaArrowRight{
+      position:fixed;
+      right:1.2vw;
+      top:50%;
+      transform:translateY(-50%);
+      width:clamp(36px,4vw,60px);
+      height:clamp(36px,4vw,60px);
+      cursor:pointer;
+      z-index:9999;
+      opacity:.75;
+      transition:opacity .2s;
+      display:none;
+    }
+    #fichaArrowRight:hover{opacity:1;}
+    #fichaDots{
+      position:fixed;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      display:none;
+      gap:10px;
+      align-items:center;
+      z-index:9999;
+    }
+    .ficha-dot{
+      width:10px;height:10px;border-radius:50%;
+      background:rgba(100,53,135,.3);
+      cursor:pointer;transition:background .2s;
+    }
+    .ficha-dot.active{background:#643587;}
+
+
+    /* Ocultar back-arrow cuando la ficha se abre por carrusel/nav */
+    body.ficha-from-carousel .back-arrow { display:none !important; }
+
+
+    /* ══════════════════════════════════════
+       PORTRAIT / MÓVIL VERTICAL
+    ══════════════════════════════════════ */
+
+    /* Hamburguesa */
+    .hamburger{display:none;position:fixed;top:12px;right:14px;z-index:500;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:rgba(255,255,255,.55);border-radius:6px;backdrop-filter:blur(4px);}
+    .hamburger span{display:block;width:22px;height:2px;background:#643587;border-radius:2px;}
+    .ham-menu{display:none;position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.97);z-index:490;flex-direction:column;padding:54px 24px 24px;gap:0;box-shadow:0 4px 20px rgba(0,0,0,.12);}
+    .ham-menu a{font-family:'DIN',monospace;font-size:18px;color:#643587;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;padding:12px 0;border-bottom:1px solid rgba(100,53,135,.12);}
+    .ham-menu a:last-child{border-bottom:none;}
+    .ham-menu.open{display:flex;}
+
+    @media(orientation:portrait){
+      /* Ocultar nav horizontal, mostrar hamburguesa */
+      .top-nav{display:none !important;}
+      .hamburger{display:flex;}
+
+      /* ── P1 portrait ── */
+      /* Caballo: desplazar centro a 70% X */
+      #horseCanvas{object-fit:cover;object-position:70% center;}
+
+      .title-group{
+        left:1cm !important;
+        right:46px !important;
+        top:54px !important;
+        bottom:auto !important;
+        align-items:flex-start !important;
+        width:calc(100% - 1cm - 46px) !important;
+      }
+      .t-main-img{
+        height:auto !important;
+        width:100% !important;
+      }
+      .t-sub{
+        font-size:clamp(8px,3.5vw,18px) !important;
+        width:100% !important;
+      }
+
+      /* ── P2 nosotrxs: scroll ── */
+      #p2{overflow-y:auto !important;padding-top:54px;}
+
+      /* ── P3 portadas: solo imagenes, sin texto ── */
+      .p3-v .cr{padding:0 !important;gap:0 !important;}
+      .p3-v .cr img{width:100% !important;height:100% !important;object-fit:cover !important;}
+      .p3-v .ct{display:none !important;}
+      /* object-position por imagen */
+      .p3-v .cr:nth-child(1) img{object-position:center 46.2% !important;}
+      .p3-v .cr:nth-child(2) img{object-position:center 76.4% !important;}
+      .p3-v .cr:nth-child(3) img{object-position:center 100% !important;}
+
+      /* ── P4 sinopsis: scroll + espaciado + centrar idioma ── */
+      #p4{overflow-y:auto !important;padding-top:54px;}
+      .p4-cols{overflow-y:visible !important;}
+      .p4-col{margin-bottom:1.6em !important;}
+      .p4-lang{text-align:center !important;display:block;}
+
+      /* ── Galerías: object-position corregido ── */
+      #p5 .gal-v .cw:nth-child(1) img{object-position:center 0.0% !important;}
+      #p5 .gal-v .cw:nth-child(2) img{object-position:center 62.7% !important;}
+      #p5 .gal-v .cw:nth-child(3) img{object-position:center 22.1% !important;}
+      #p6 .gal-v .cw:nth-child(1) img{object-position:center 35.3% !important;}
+      #p6 .gal-v .cw:nth-child(2) img{object-position:center 17.2% !important;}
+      #p6 .gal-v .cw:nth-child(3) img{object-position:center 6.4% !important;}
+      #p7 .gal-v .cw:nth-child(1) img{object-position:center 78.9% !important;}
+      #p7 .gal-v .cw:nth-child(2) img{object-position:center 54.5% !important;}
+      #p7 .gal-v .cw:nth-child(3) img{object-position:center 18.7% !important;}
+      #p8 .gal-v .cw:nth-child(1) img{object-position:center 64.5% !important;}
+      #p8 .gal-v .cw:nth-child(2) img{object-position:center 85.7% !important;}
+      #p8 .gal-v .cw:nth-child(3) img{object-position:center 19.8% !important;}
+      #p9 .gal-v .cw:nth-child(1) img{object-position:center 17.6% !important;}
+      #p9 .gal-v .cw:nth-child(2) img{object-position:center 3.9% !important;}
+      #p9 .gal-v .cw:nth-child(3) img{object-position:center 19.3% !important;}
+
+      /* ── Fichas: padding-top para no solapar hamburguesa ── */
+      .ficha-slide{padding-top:54px !important;}
+
+      /* ── P11 contacto: scroll + fuente + espaciado ── */
+      html body #p11{overflow-y:scroll !important;overflow-x:hidden !important;padding:54px 1cm 60px !important;display:flex !important;flex-direction:column !important;height:100% !important;max-height:100vh !important;-webkit-overflow-scrolling:touch !important;}
+      html body #p11 *{font-family:Arial,sans-serif !important;font-size:clamp(12px,3.5vw,20px) !important;}
+      html body #p11 .p11-inner{flex-direction:column !important;gap:0 !important;width:100% !important;max-width:100% !important;}
+      html body #p11 .p11-block{margin-bottom:1.6em !important;font-size:clamp(12px,3.5vw,20px) !important;}
+      html body #p11 .p11-right{margin-top:1.6em !important;font-size:clamp(12px,3.5vw,20px) !important;}
+      html body #p11 .p11-footer{margin-top:2em !important;font-size:clamp(12px,3.5vw,20px) !important;}
+      html body #p11 .p11-thanks{font-size:clamp(11px,3vw,18px) !important;}
+    }
+
+    /* ══════════════════════════════════════
+       LANDSCAPE MÓVIL (max-width:900px)
+       NO afecta desktop (1920px)
+    ══════════════════════════════════════ */
+    @media(orientation:landscape) and (max-width:900px){
+      /* Barra nav blanca fija arriba — autooculta */
+      .top-nav{
+        display:flex !important;
+        position:fixed !important;
+        top:0 !important; left:0 !important; right:0 !important;
+        width:100% !important;
+        background:rgba(255,255,255,.95) !important;
+        box-shadow:0 2px 8px rgba(0,0,0,.10) !important;
+        padding:0 16px !important;
+        height:38px !important;
+        align-items:center !important;
+        justify-content:center !important;
+        gap:14px !important;
+        z-index:400 !important;
+        box-sizing:border-box !important;
+        transition:opacity .4s ease, visibility .4s ease !important;
+      }
+      .top-nav a{font-size:11px !important;}
+      .top-nav.hidden-bar{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
+
+      /* Barra dots blanca fija abajo — autooculta */
+      #dotsRow{
+        position:fixed !important;
+        bottom:0 !important;
+        left:50% !important;
+        transform:translateX(-50%) !important;
+        width:100% !important;
+        background:rgba(255,255,255,.95) !important;
+        box-shadow:0 -2px 8px rgba(0,0,0,.10) !important;
+        height:32px !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        gap:7px !important;
+        z-index:400 !important;
+        transition:opacity .4s ease, visibility .4s ease !important;
+      }
+      #dotsRow.hidden-bar{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
+
+      /* Flechas también autoocultas */
+      #arrowLeft,#arrowRight{
+        transition:opacity .4s ease, visibility .4s ease !important;
+      }
+      #arrowLeft.hidden-bar,#arrowRight.hidden-bar{opacity:0 !important;visibility:hidden !important;pointer-events:none !important;}
+
+      /* Ocultar hamburguesa en landscape móvil */
+      .hamburger{display:none !important;}
+
+      /* Slides ocupan pantalla completa — sin recorte */
+      .slide{top:0 !important;bottom:0 !important;height:100vh !important;}
+
+      /* Slides ocupan pantalla completa */
+      /* Slides con scroll */
+      #p2{overflow-y:auto !important;-webkit-overflow-scrolling:touch !important;}
+      #p4{overflow-y:auto !important;-webkit-overflow-scrolling:touch !important;}
+      #p11{overflow-y:auto !important;-webkit-overflow-scrolling:touch !important;}
+      .ficha-slide{overflow-y:auto !important;-webkit-overflow-scrolling:touch !important;}
+
+      /* P10 YouTube */
+      #p10 .yt-wrap{width:65vw !important;}
+      #p10 .p10-label{font-size:clamp(9px,2vw,15px) !important;}
+      #p10 .yt-credito{font-size:clamp(7px,1.5vw,11px) !important;}
+    }
+    </style>
+</head>
+<body>
+
+  <!-- P1 CABALLO -->
+  <div class="slide active" id="p1">
+    <div id="bubblesBg"></div>
+    <canvas id="horseCanvas"></canvas>
+    <div class="text-layer">
+      <div class="title-group">
+        <img src="Cabecera_H.png" alt="HUNICORNIA" class="t-main-img">
+        <p  class="t-sub">HUMAN-MADE DESDE 1984</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- P2 NOSOTRXS (texto actualizado) -->
+  <div class="slide" id="p2">
+    <p class="p2-title">HUNICORNIA</p>
+    <p class="p2-subtitle">DESDE 1984</p>
+    <div class="p2-body">
+      <p>Bienvenidx a Hunicornia! :)</p>
+      <p>Tras eones divagando, nos hemos dado cuenta de que hay centauros, minotauros, pegasos y cientomil criaturas mazo guapas que son hijos chuecos de señoros del Olimpo, así que hemos decidido embarazar a una yegüa mediante gestación telepática y el disparo ha salido mejor de lo esperado, una Hunicornia que lanza fuego por la boca, es tan irreverente que lleva H al principio y por supuesto, solo la pueden usar las mujeres en apuros que desean escapar de sus perseguidores.</p>
+      <p>Esto no es una editorial ni tampoco una autoedición al uso, es una propuesta diferente, divergente y surgida de repente. En este momento contamos con 3 obras, todas ellas con el 1er volumen de acceso gratuito en la red, si te mola, siempre se puede hacer una donación voluntaria en patreon y tener acceso al resto de contenido.</p>
+      <p>Y asta aquí (la H que falta se la hemos puesto delante a Hunicornia). Si te animas a echarnos una manita, somos todo cuernos. Todo lo que hacemos es human-made, con muchas ganas y apostando por una cultura de acceso a todo el mundo y munda.</p>
+      <p>Currículum. El alma mater de Hunicornia es licenciada en Bellas Artes, máster en educación, máster en políticas feministas y doctorada en narrativas diversas en educación. Colaboran para perfilar los escenarios, la historia y l@s personajes una licenciada en arquitectura y una licenciada en psicología.</p>
+    </div>
+  </div>
+
+  <!-- P3 PORTADAS -->
+  <div class="slide" id="p3">
+    <div class="p3-h">
+      <div class="cw"><img src="P1.jpg" alt="paRàboLas taCitürnAs"></div>
+      <div class="cw"><img src="P2.jpg" alt="7 Máscaras"></div>
+      <div class="cw"><img src="P3.jpg" alt="Tinddaya"></div>
+    </div>
+    <div class="p3-v">
+      <div class="cr"><img src="P1.jpg" alt=""><span class="ct">paRàboLas<br>taCitürnAs</span></div>
+      <div class="cr"><img src="P2.jpg" alt=""><span class="ct">7 Máscaras</span></div>
+      <div class="cr"><img src="P3.jpg" alt=""><span class="ct">Tinddaya</span></div>
+    </div>
+  </div>
+
+  <!-- P4 SINOPSIS (con idiomas) -->
+  <div class="slide" id="p4">
+    <div class="p4-hdr">
+      <p class="p4-htitle">HUNICORNIA</p>
+      <p class="p4-hsub">DESDE 1984</p>
+    </div>
+    <div class="p4-cols">
+      <div class="p4-col">
+        Parábolas taciturnas es un conjunto de relatos breves con un estilo que recuerda a los cuentos de los Grimm, Perrault y Andersen. Una visión contemporánea de los clásicos que deja entrever ideales y situaciones que buscan aportar novedades y giros de guion propias al nuevo siglo.
+        <span class="p4-lang">castellano</span>
+      </div>
+      <div class="p4-col">
+        7 Máscaras tiene la intención de ocupar muchas páginas visitando la imaginería pop de su cread@r. Nos zambulle en una historia que recuerda a El señor de los anillos y a La historia interminable, un espacio vivido desde la diversidad y el deseo de redención de quienes todavía pueden cambiar un pasado de errores.
+        <span class="p4-lang">castellano</span>
+      </div>
+      <div class="p4-col">
+        Tinddaya es rápida, atrevida, un plano fotográfico, un Booom! de cómic, y una obra coral teatralizada. Una ruptura con la fórmula narrativa de la fantasía convencional, una lucha más que de fuerzas, de ilusiones y desencantos. Una obra solar-punk y vapor-wave al más puro estilo Ghibli y U.K.Leguin.
+        <span class="p4-lang">castellano / català</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P5-P9 GALERÍA -->
+  
+  <div class="slide" id="p5">
+    <div class="gal-h">
+      <div class="cw"><img src="G1.jpg" alt=""></div>
+      <div class="cw"><img src="G2.jpg" alt=""></div>
+      <div class="cw"><img src="G3.jpg" alt=""></div>
+    </div>
+    <div class="gal-v">
+      <div class="cw"><img src="G1.jpg" alt=""></div>
+      <div class="cw"><img src="G2.jpg" alt=""></div>
+      <div class="cw"><img src="G3.jpg" alt=""></div>
+    </div>
+  </div>
+  
+  <div class="slide" id="p6">
+    <div class="gal-h">
+      <div class="cw"><img src="G4.jpg" alt=""></div>
+      <div class="cw"><img src="G5.jpg" alt=""></div>
+      <div class="cw"><img src="G6.jpg" alt=""></div>
+    </div>
+    <div class="gal-v">
+      <div class="cw"><img src="G4.jpg" alt=""></div>
+      <div class="cw"><img src="G5.jpg" alt=""></div>
+      <div class="cw"><img src="G6.jpg" alt=""></div>
+    </div>
+  </div>
+  
+  <div class="slide" id="p7">
+    <div class="gal-h">
+      <div class="cw"><img src="G7.jpg" alt=""></div>
+      <div class="cw"><img src="G8.jpg" alt=""></div>
+      <div class="cw"><img src="G9.jpg" alt=""></div>
+    </div>
+    <div class="gal-v">
+      <div class="cw"><img src="G7.jpg" alt=""></div>
+      <div class="cw"><img src="G8.jpg" alt=""></div>
+      <div class="cw"><img src="G9.jpg" alt=""></div>
+    </div>
+  </div>
+  
+  <div class="slide" id="p8">
+    <div class="gal-h">
+      <div class="cw"><img src="G10.jpg" alt=""></div>
+      <div class="cw"><img src="G11.jpg" alt=""></div>
+      <div class="cw"><img src="G12.jpg" alt=""></div>
+    </div>
+    <div class="gal-v">
+      <div class="cw"><img src="G10.jpg" alt=""></div>
+      <div class="cw"><img src="G11.jpg" alt=""></div>
+      <div class="cw"><img src="G12.jpg" alt=""></div>
+    </div>
+  </div>
+  
+  <div class="slide" id="p9">
+    <div class="gal-h">
+      <div class="cw"><img src="G13.jpg" alt=""></div>
+      <div class="cw"><img src="G14.jpg" alt=""></div>
+      <div class="cw"><img src="G15.jpg" alt=""></div>
+    </div>
+    <div class="gal-v">
+      <div class="cw"><img src="G13.jpg" alt=""></div>
+      <div class="cw"><img src="G14.jpg" alt=""></div>
+      <div class="cw"><img src="G15.jpg" alt=""></div>
+    </div>
+  </div>
+
+  <!-- P10 AUDIOLIBRO -->
+  <div class="slide" id="p10">
+    <div class="p10-inner">
+      <p class="p10-label">ESCUCHA TINDDAYA</p>
+      <div class="yt-big">
+        <iframe src="https://www.youtube.com/embed/uvwSGlGXtDk"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <p class="yt-credito">Voces de M. Paz Valdés y Pablo Ibáñez Durán. Música de Antonio Pujol.</p>
+    </div>
+  </div>
+
+  <!-- P11 CONTACTO -->
+  <div class="slide" id="p11">
+    <div class="p11-inner">
+
+      <!-- Columna izquierda: 3 bloques -->
+      <div class="p11-left">
+        <div class="p11-block">
+          Síguenos en <a href="https://www.instagram.com/tinddaya/" target="_blank">IG</a> y <a href="https://www.tiktok.com/@tinddaya_" target="_blank">TikTok</a><br>
+          Descubre la galería completa en nuestras redes sociales.
+        </div>
+        <div class="p11-block">
+          Puedes comprar nuestra obra completa en digital x 6€ en <a href="#" target="_blank">patreon</a><br>
+          Puedes encontrar nuestra obra en librerías colaboradoras y comprar nuestros sobres sorpresa.
+        </div>
+      </div>
+
+      <!-- Columna derecha: texto próxima obra -->
+      <div class="p11-right">
+        Ey!! No lo cuentes a tus colegas, pero estamos preparando nuestra siguiente obra, en breve te diremos cómo seguir día a día las páginas que vamos escribiendo... no sabemos su nombre todavía, pero qué te parece si la llamamos por ahora "La istoria hinterminable"? Nos apetece compartirla contigo y que día a día dejes tus comentarios para orientar la escritura que llevaremos a término cada día. Apúntate!!
+      </div>
+
+    </div>
+    <!-- Email + gracias centrados -->
+    <div class="p11-footer">
+      Contáctanos en: <a href="mailto:hunicornia84@gmail.com">hunicornia84@gmail.com</a>
+      <p class="p11-thanks">Muchas gracias! xxx</p>
+    </div>
+
+  </div>
+
+  <!-- NAV -->
+  <nav class="top-nav" id="topNav">
+    <a href="#" onclick="goTo(0);return false;">Inicio</a>
+    <a href="#" onclick="goTo(1);return false;">Nosotrxs</a>
+    <a href="#" onclick="goTo(2);return false;">Obra</a>
+    <a href="#" onclick="goTo(4);return false;">Galería</a>
+    <a href="#" onclick="goTo(9);return false;">Ficha t&#233;cnica</a>
+    <a href="#" onclick="goTo(13);return false;">Audiolibro</a>
+    <a href="#" onclick="goTo(14);return false;">Contacto</a>
+  </nav>
+  <!-- HAMBURGUESA (solo portrait) -->
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="ham-menu" id="hamMenu">
+    <a href="#" onclick="goTo(0);toggleMenu();return false;">Inicio</a>
+    <a href="#" onclick="goTo(1);toggleMenu();return false;">Nosotrxs</a>
+    <a href="#" onclick="goTo(2);toggleMenu();return false;">Obra</a>
+    <a href="#" onclick="goTo(4);toggleMenu();return false;">Galería</a>
+    <a href="#" onclick="goTo(9);toggleMenu();return false;">Ficha técnica</a>
+    <a href="#" onclick="goTo(13);toggleMenu();return false;">Audiolibro</a>
+    <a href="#" onclick="goTo(14);toggleMenu();return false;">Contacto</a>
+  </div>
+
+
+  <!-- FICHA: Parábolas taciturnas -->
+  <div class="slide ficha-slide" id="ficha-parabolas">
+    <div class="back-arrow" onclick="closeFicha(3)" title="Volver"><svg viewBox="0 0 46 46" fill="none">
+      <circle cx="23" cy="23" r="21"   stroke="rgba(90,90,90,.45)"   stroke-width="1.8"/>
+      <circle cx="23" cy="23" r="18.5" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(90,90,90,.55)"   stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg></div>
+    <div class="ficha-inner">
+      <p class="ficha-titulo">Parábolas taciturnas</p>
+      <table class="ficha-tabla">
+        <tr><td>Género</td><td>Fantasía clásica/medieval · Urban fantasy</td></tr><tr><td>Estilo</td><td>Narrativa de tradición clásica renovada (Grimm, Perrault, Andersen)</td></tr><tr><td>Idioma</td><td>Castellano</td></tr><tr><td>Volumen</td><td>11 relatos</td></tr><tr><td>Contenido</td><td>Visión contemporánea de arquetipos clásicos con giros de guion propios al nuevo siglo</td></tr><tr><td>Temas</td><td>Ideología social/queer/feminista, situaciones cotidianas, magia, intimismo, relaciones afectivas, enfermedad y muerte</td></tr>
+      </table>
+<hr class="analisis-sep"><p class="analisis-titulo">Análisis evolutivo · Obra II · Colección de cuentos · 2012</p>
+      <p class="analisis-h2">La escritura y el giro formal</p>
+      <p class="analisis-p">Seis años separan las dos obras y la distancia es tectónica. La prosa ya no aspira a la épica: se adelgaza, se vuelve introspectiva, nerviosa, llena de digresiones y de silencios tipografiados con puntos suspensivos. El texto de apertura —"El viajante de las estrellas"— arranca con verso libre, con la fragmentación del pensamiento en crisis, antes de colapsar en narrativa pura. Es una escritura que ha aprendido a dudar de sí misma, y esa duda la hace más precisa. El argot cotidiano ya está. La obra segunda es radicalmente contemporánea y radicalmente interior.</p>
+      <p class="analisis-p">La fórmula es ahora la del cuento psicológico con deriva onírica. El sueño no es ornamento: es el dispositivo narrativo central. Esta estructura —la crisis emocional como portal a otro orden de percepción— es la más sofisticada de cuanto había escrito hasta entonces.</p>
+      <p class="analisis-h2">El argumento y las enfermedades invisibles</p>
+      <p class="analisis-p">La colección pivota sobre lo que la sociedad no sabe nombrar ni ver: la depresión, la separación, la soledad urbana, el duelo no reconocido. La escritura no estetiza el dolor: lo registra con la frialdad de quien lo conoce desde dentro y sabe que la única forma de sobrevivir a él es contarlo. Hay en estos cuentos una función terapéutica y también política: visibilizar el colapso de personas que desde fuera funcionan —trabajan, llaman a su madre, comen manzanas y galletas.</p>
+      <p class="analisis-p">La cosmovisión se ha vuelto filosófica sin perder el pulso narrativo. El texto tamil "todo es uno", la teoría de Gaia, el ojo de Dios en la enciclopedia: se acumulan marcos espirituales de forma ecléctica, sin adscripción a ninguno, como quien busca una bóveda lo suficientemente grande para caber.</p>
+      <p class="analisis-h2">Diversidad, género y presencia cultural</p>
+      <p class="analisis-p">Aquí aparece por primera vez la ambigüedad de género como elemento deliberado: la figura liminal del arlequín, descrita explícitamente como alguien cuya "tez se redibuja constantemente, sin saber decir si es hombre o mujer, niño o anciano", introduce la no-binaridad en el corazón del relato como condición de la sabiduría, no como anomalía. Es un gesto pequeño pero precursor de todo lo que vendrá en las obras siguientes. La diversidad ya no es decorado de un cosmos inventado sino textura de un mundo real observado con curiosidad y sin exotismo.</p>
+      <p class="analisis-h2">La bisagra</p>
+      <p class="analisis-p">Esta colección es la obra de alguien que ha aprendido que la literatura no está obligada a contar lo que se espera de ella. El viaje del héroe se ha interiorizado: ya no hay un villano cósmico, solo el propio yo desorientado intentando encontrar el interruptor de la luz. Y lo más importante: por primera vez aparece la mujer como sujeto pleno, con sus fracturas y su humor. La escritura ha encontrado su temperatura.</p>
+</div>
+  </div>
+
+  <!-- FICHA: 7 Máscaras -->
+  <div class="slide ficha-slide" id="ficha-7mascaras">
+    <div class="back-arrow" onclick="closeFicha(3)" title="Volver"><svg viewBox="0 0 46 46" fill="none">
+      <circle cx="23" cy="23" r="21"   stroke="rgba(90,90,90,.45)"   stroke-width="1.8"/>
+      <circle cx="23" cy="23" r="18.5" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(90,90,90,.55)"   stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg></div>
+    <div class="ficha-inner">
+      <p class="ficha-titulo">7 Máscaras</p>
+      <table class="ficha-tabla">
+        <tr><td>Género</td><td>Urban Fantasy · Fantasía onírica/épica/lírica</td></tr><tr><td>Estilo</td><td>Narrativa descriptiva en 3ª persona (influencias tribales y pop en la estética, influencias Victorianas, Ghibli, Tolkien, cine fantasía años 80)</td></tr><tr><td>Idioma</td><td>Castellano</td></tr><tr><td>Volumen</td><td>Obra completa</td></tr><tr><td>Contenido</td><td>Revisión contemporánea del viaje del héroe a través de una mitología ancestral vs contemporánea que muestra diversidades y nuevos matices en cada personaje estructural, villanx incluidx</td></tr><tr><td>Temas</td><td>Diversidad, olvido, amor, redención, superación, frustración, fracaso, soluciones heterodoxas, sueño y realidad</td></tr>
+      </table>
+<hr class="analisis-sep"><p class="analisis-titulo">Análisis evolutivo · Obra I · 7 máscaras · 2007</p>
+      <p class="analisis-h2">La escritura y la fórmula narrativa</p>
+      <p class="analisis-p">La prosa de esta primera novela lleva impresa con orgullo la marca de la novedad absoluta: frases largas, envolventes, de aliento épico, construidas sobre la oralidad del cuento popular. El texto se anuncia desde el primer párrafo como leyenda transmitida de voz en voz —del padre al hijo—, lo que genera una estructura narrativa en abismo que da cobijo al exceso, a la grandilocuencia. La dislexia confesada en los agradecimientos no es anécdota: es clave de lectura. Hay en la prosa un empuje visceral que prevalece sobre la corrección, y eso le da una energía bruta, singular.</p>
+      <p class="analisis-p">La fórmula de escritura es monofocal y ascendente: un héroe, una misión, un enemigo cósmico. Los capítulos se titulan como actos —"La partida", "El abismo", "La redención", "Un nuevo amanecer"— y dibujan con total transparencia el arco del viaje del héroe canónico en su versión más arquetípica, casi jungiana. No hay ambigüedad moral ni protagonismo coral: hay elegidos, hay oscuridad, hay sacrificio, hay luz.</p>
+      <p class="analisis-h2">El argumento y la cosmovisión</p>
+      <p class="analisis-p">El universo narrativo arranca en la cosmogonía: siete dioses primigenios, una estrella perdida, el origen del mal como accidente ontológico —no como maldad elegida—. Este gesto es el más interesante de la novela desde el punto de vista ideológico: la oscuridad no nace del odio sino del abandono y la ignorancia. Es una cosmología empática que ya apunta, en embrión, a una sensibilidad ética que se desarrollará con los años. La fábula funciona como espejo amplificado de valores humanistas básicos: convivencia, respeto, equilibrio. El prólogo los explicita sin rubor, en el tono de quien escribe para ser leído en voz alta.</p>
+      <p class="analisis-p">El mundo construido es un sincretismo imaginativo: nombres de raíz africana o japonesa, una mitología inventada de textura universal, un cosmos pre-geográfico donde la diversidad cultural existe como intuición más que como arquitectura. No hay todavía una política de la representación, pero sí un impulso hacia lo múltiple, hacia lo que no cabe en un solo molde.</p>
+      <p class="analisis-h2">Diversidad, héroe y presencia cultural</p>
+      <p class="analisis-p">La diversidad en esta obra es decorativa pero sincera: aparece en los nombres, en la pluralidad de los dioses-hermanos, en la textura multicultural del mundo inventado. Aún no hay cuerpos queer, ni voces subalternas que disputen el centro, ni idiomas minoritarios que irrumpan para reclamar territorio. Lo que sí hay es una estructura familiar no convencional que prefigura formas de cuidado y transmisión que el autor irá complejizando.</p>
+      <p class="analisis-p">El héroe es uno, claro, masculino en su rol aunque no necesariamente en su género explícito. El viaje es lineal, la recompensa moral. Hay un villano que en realidad es una víctima del olvido de los suyos, y esa grieta en la lógica del mal absoluto es el germen de todo lo que vendrá.</p>
+      <p class="analisis-h2">Lo que esta obra anuncia</p>
+      <p class="analisis-p">7 Máscaras es el big bang de un universo narrativo propio. Imperfecta, generosa, desbordante, lleva dentro —comprimida— toda la energía que las obras siguientes irán desplegando. Aquí está ya la pregunta central: ¿qué hace que alguien se convierta en monstruo? Y la respuesta —el abandono, la soledad, la falta de nombre— es la más compasiva posible.</p>
+</div>
+  </div>
+
+  <!-- FICHA: Tinddaya -->
+  <div class="slide ficha-slide" id="ficha-tinddaya">
+    <div class="back-arrow" onclick="closeFicha(3)" title="Volver"><svg viewBox="0 0 46 46" fill="none">
+      <circle cx="23" cy="23" r="21"   stroke="rgba(90,90,90,.45)"   stroke-width="1.8"/>
+      <circle cx="23" cy="23" r="18.5" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(90,90,90,.55)"   stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg></div>
+    <div class="ficha-inner">
+      <p class="ficha-titulo">Tinddaya</p>
+      <table class="ficha-tabla">
+        <tr><td>Género</td><td>Urban fantasy · SciFi · Obra coral teatralizada con soluciones de novela gráfica</td></tr><tr><td>Estilo</td><td>Fusión de texto teatralizado barroco, cómic, novela, script y fotografía. Ghibli y U.K. Le Guin (magia clásica, ciencia ficción, mitología ancestral, nuevo lore)</td></tr><tr><td>Idioma</td><td>Castellano / Català</td></tr><tr><td>Volumen</td><td>Obra completa con posible continuidad</td></tr><tr><td>Contenido</td><td>Rebeldía narrativa que funde diferentes formas de representar la imagen mental del lectxr, utilizando todos los recursos del medio creativo. Revisión del viaje del héroe clásico, contemporáneo, marginal, coral y sin binarismos absolutos</td></tr><tr><td>Temas</td><td>Pobreza, marginalidad, redención, amor, amistad, nuevas sociedades, democracia, autocracia, crítica social</td></tr>
+      </table>
+<hr class="analisis-sep"><p class="analisis-titulo">Análisis evolutivo · Obra III · Tinddaya. La Emperatriz / El Caos / Los hijos del Alquimista · 2025</p>
+      <p class="analisis-h2">La escritura: madurez y pluralidad de registros</p>
+      <p class="analisis-p">Tinddaya representa la síntesis de todo lo aprendido anteriormente, y la ruptura con ello. La prosa abandona tanto la grandilocuencia épica de la primera obra como la introspección desnuda de la segunda para construir algo más complejo: una escritura de ensamblaje, que corta entre diálogos teatrales, narración atmosférica, mensajes de móvil, transmisiones de radio, noticias de televisión y jerga callejera. El primer párrafo es ya un acto político: el Mercado Central de Valencia, el baklavá junto a la chufa, los fonemas en valenciano, castellano, inglés, japonés y francés conviviendo en el mismo espacio sin jerarquía. La diversidad lingüística no se explica ni se traduce del todo: se vive.</p>
+      <p class="analisis-p">La fórmula ha mutado radicalmente. Tinddaya es narrativa coral: no hay un héroe sino una constelación de focos narrativos que se alternan con precisión cinematográfica. La complejidad coral no es exhibicionismo técnico: es una declaración de principios sobre cómo funciona el mundo.</p>
+      <p class="analisis-h2">El argumento y la cosmovisión alquimista</p>
+      <p class="analisis-p">El universo de Tinddaya es un realismo mágico mediterráneo y contemporáneo, y en ese tejido costumbrista y reconocible, la magia irrumpe como tecnología alternativa: la turmalina como prisión dimensional, el simplex casero para comunicarse desde la sombra, el reloj Cronos como artefacto cosmológico. La alquimia es ingeniería. La ingeniería es política.</p>
+      <p class="analisis-p">La cosmovisión ha alcanzado su máxima complejidad: ya no hay una lucha entre la luz y la oscuridad (obra uno) ni un yo en crisis que busca el interruptor (obra dos). Hay estructuras de poder —Mérida como villana que también sufre y también está vacía—, hay linajes que se extinguen por la opresión de quien acumula el monopolio del tiempo, hay solidaridades que se tejen desde el margen: dos niños sin hogar, tres adultos desfigurados y cicatrizados, una mujer atrapada treinta años en la oscuridad. El mal en Tinddaya es sistémico y tiene nombre compuesto.</p>
+      <p class="analisis-h2">Diversidad, idiomas y presencia de culturas minoritarias</p>
+      <p class="analisis-p">Tinddaya es la obra donde la diversidad deja de ser decorado para convertirse en argumento. Nikoleta y Lázaro son dos menores en situación de vulnerabilidad extrema y su relación afectiva es de cuidado mutuo, no romántica, sin que el texto lo señale como excepcional. Abdel, el tratante halal del Carmen, mezcla el árabe dialectal con el español y el inglés sin que ninguna lengua se presente como la norma de la que las otras se desvían.</p>
+      <p class="analisis-p">El valenciano aparece como lengua viva, irreductible, lo cual es una decisión política: esta novela está ambientada en Valencia y Valencia tiene su lengua. El nombre mismo, Tinddaya, remite a la montaña sagrada majorera en Fuerteventura, toponimia guanche, cultura prehispánica canaria. La villana se llama Boudicca —reina celta britana—. La génesis del universo narrativo está construida sobre nombres y referencias que el canon literario español suele ignorar.</p>
+      <p class="analisis-h2">El viaje del héroe disuelto y la reutilización de patrones</p>
+      <p class="analisis-p">Si en la obra primera el viaje del héroe era explícito y monofocal, en Tinddaya ese arco se ha fragmentado y distribuido entre la constelación de personajes. Todos viajan, todos tienen su umbral que cruzar, pero ninguno lo hace solo ni en línea recta. La heroicidad aquí es resistencia cotidiana, no hazaña singular.</p>
+      <p class="analisis-p">El reloj Cronos —objeto que aparece sin querer en la riñonera de Lázaro— es el MacGuffin que conecta todas las tramas, y su función recuerda a las siete máscaras del título de la primera obra: un artefacto mítico que organiza el mundo y cuya posesión determina quién tiene poder sobre el tiempo. La rueda ha girado: en 2006 los dioses poseían el tiempo desde el origen; en 2025 hay que robárselo al poder para devolverlo a quienes lo merecen.</p>
+      <p class="analisis-h2">Diecinueve años en una línea</p>
+      <p class="analisis-p">De la cosmogonía al barrio. Del héroe solitario a la constelación de supervivientes. Del castellano monolingüe al mosaico plurilingüe. De la diversidad intuida a la diversidad política. De la oscuridad como accidente a la opresión como sistema. Tinddaya no niega sus predecesoras: las contiene, las ha digerido, y las supera sin nostalgia. Es la obra de quien ha aprendido que la literatura más honesta no cuenta el mundo como debería ser, sino como es para quienes el mundo decide ignorar.</p>
+</div>
+  </div>
+
+  <!-- FICHA: La istoria hinterminable -->
+  <div class="slide ficha-slide" id="ficha-istoria">
+    <div class="back-arrow" onclick="closeFicha(10)" title="Volver"><svg viewBox="0 0 46 46" fill="none">
+      <circle cx="23" cy="23" r="21"   stroke="rgba(90,90,90,.45)"   stroke-width="1.8"/>
+      <circle cx="23" cy="23" r="18.5" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(90,90,90,.55)"   stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg></div>
+    <div class="ficha-inner">
+      <p class="ficha-titulo">La istoria hinterminable</p>
+      <table class="ficha-tabla">
+        <tr><td>Estado</td><td>En desarrollo — próximamente</td></tr><tr><td>Género</td><td>Fantasía Non-sense · Fantasía fauvista folklórica</td></tr><tr><td>Estilo</td><td>Fusión de cómic, script, teatro narrado en 1ª persona. Disidencia normativa en la escritura. Ramificación del pensamiento de los personajes en una teatralización con narrativas descriptivas fotográficas</td></tr><tr><td>Idioma</td><td>Castellano / Català</td></tr><tr><td>Volumen</td><td>Texto en proceso, obra autoconclusiva</td></tr><tr><td>Contenido</td><td>Viaje sin sentido, divergente, atrevido, dinámico, introspectivo, hacia el reconocimiento de la persona protagonista a través de una fórmula que recrea la efervescencia de la conversación interna</td></tr><tr><td>Temas</td><td>Queer, feminismo, diversidad, neurodivergencia, crítica social, inconformismo, amor propio, amistad, intergeneracional, mitología pop</td></tr>
+      </table>
+<hr class="analisis-sep"><p class="analisis-titulo">Análisis evolutivo · Obra IV (en curso) · La istoria Hinterminable · 2026</p>
+      <p class="analisis-h2">Nota de lectura</p>
+      <p class="analisis-p">Este análisis trabaja sobre el fragmento disponible —el arranque de la obra— y sobre su propuesta estructural y política tal como se enuncia en la presentación del texto. Es, por tanto, una lectura de lo que la novela ya es y de lo que declara querer ser. Lo inacabado no es aquí una limitación sino parte del argumento.</p>
+      <p class="analisis-h2">La forma como contenido: el fin del arco</p>
+      <p class="analisis-p">Las tres obras anteriores, por distintos que sean sus registros, comparten una arquitectura narrativa heredada: hay un inicio, una perturbación, un viaje —interior o exterior—, y una resolución que devuelve al mundo algo que se había roto. La istoria Hinterminable destruye ese contrato desde el título. Lo interminable no es hipérbole: es programa. Ro no busca el grial, no cruza el umbral del héroe, no vuelve transformada con el elixir. Ro busca simplemente encontrarse, y la novela tiene la honestidad de no garantizarle que lo consiga, porque en una sociedad heteropatriarcal que avanza un paso y retrocede dos, el final feliz no es una promesa disponible para todo el mundo por igual.</p>
+      <p class="analisis-p">Esta es la ruptura más radical de las cuatro obras: el abandono explícito de la teleología narrativa. La historia no tiene final previsto porque la historia que cuenta —la de una persona no binaria tratando de existir con dignidad en el mundo actual— tampoco lo tiene. La forma imita la vida, y eso es lo más político que puede hacer una novela.</p>
+      <p class="analisis-h2">Ro y Fufur: la pareja como dispositivo crítico</p>
+      <p class="analisis-p">Ro es el personaje más radicalmente construido de toda la producción. Sin género determinado, sin historia previa, sin apellidos estables —Rodríguez Roto es casi un haiku sobre la identidad fracturada—, Ro existe solo en el presente del relato y en la relación con Fufur. La gata con hipoplasia cerebelosa —"síndrome de down felino"— es la compañera de viaje más alejada posible del mentor sabio de las obras anteriores: no es un guía, no tiene el mapa, no sabe la salida. Pero puede hablar, y cuando habla dice cosas que la teoría queer lleva décadas intentando articular con mucho más esfuerzo: que la mirada normativa duele igual independientemente de quién la sufra, que la sororidad puede ser situacional y seguir siendo preciosa, que pensar en volar dieciséis horas al día es una forma válida de habitar el mundo.</p>
+      <p class="analisis-p">La elección de una gata con diversidad funcional como voz de lucidez es un gesto literario y político de primer orden. Fufur está hasta el papo de que la fotografíen para las redes como si fuera un mono de feria: ha interiorizado perfectamente cómo funciona la cosificación de lo diferente. Su discurso sobre la cámara de eco, sobre el dolor que no necesita repetirse para ser válido, sobre la sororidad sin adornos, tiene la misma rotundidad que el manifiesto académico. Y sin embargo está entregado en formato de comedia de situación, entre oscuridades, golpes y mojitos bien ricos. Esa tensión —lo más grave dicho de la forma más ligera— es la firma estilística de la madurez literaria.</p>
+      <p class="analisis-h2">El espacio onírico como campo de batalla ideológica</p>
+      <p class="analisis-p">Si en los cuentos el sueño era un espacio de autoconocimiento individual, en La istoria Hinterminable el espacio onírico es un campo de batalla colectivo y explícitamente político. La fiesta LGTBIQ+ con sus kaijus no es un capricho surrealista: es una disertación dramatizada sobre los límites de la representación mainstream, sobre cómo el espectáculo devora a quienes eleva, sobre la diferencia entre el icono marica nacido desde la pobreza, la prostitución y el miedo, y el icono pop nacido desde la plataforma turbocapitalista. Sor Estiércol, monja con vino peleón y teología liberacionista, es la voz más lúcida del fragmento, y su aparición —una figura conservadora en la forma que resulta ser radicalmente subversiva en el contenido— es exactamente el tipo de giro que se espera de la madurez de una disidencia personal cercana ya al medio siglo de vida.</p>
+      <p class="analisis-p">En comparación con las obras anteriores: la cosmogonía mítica de 7 Máscaras usaba el espacio pre-físico para fundar un orden moral. Los sueños de Parábolas taciturnas usaban el espacio onírico para reparar un yo dañado. El espacio liminal de La istoria Hinterminable no funda ni repara: interpela, contradice, hace preguntas que no tienen respuesta cómoda, y al final deja que Ro pida una ventana, no una puerta. La salida no es la meta: la salida es solo poder mirar afuera.</p>
+      <p class="analisis-h2">El argot, la lengua y la pluralidad de voces</p>
+      <p class="analisis-p">Lingüísticamente, La historia Hinterminable es la obra más arriesgada de las cuatro. El castellano aquí no es el castellano neutro de la narrativa original ni el valenciano tangible de Tinddaya: es el español de alguien que escribe como piensa, con sus TDAH y sus lorazepam y sus criptobros y sus referencias al Drum and Bass de los 90 y a Eckhart Tolle mal citado a propósito. La escritura reproduce el registro de la conciencia no filtrada —con sus ramificaciones "aparentemente aleatorias", como Ro misma las describe— y eso produce un texto que es al mismo tiempo muy específico y muy reconocible para cualquier persona que haya navegado la neurodivergencia o la no normatividad de género en el mundo contemporáneo.</p>
+      <p class="analisis-p">El uso de la "x" y la "e" como marcas de lenguaje inclusivo no se justifica ni se explica: simplemente es. La novela no hace pedagogía de género; la novela habla desde dentro.</p>
+      <p class="analisis-h2">Reutilización y evolución de patrones</p>
+      <p class="analisis-p">Hay una continuidad subterránea entre las cuatro obras que va más allá de la autoría: la pregunta de qué hace que alguien sea monstruo (obra uno), la pregunta de cómo se sobrevive a la oscuridad cuando nadie sabe que estás en ella (obra dos), la pregunta de cómo se resiste cuando el sistema te ha declarado prescindible (obra tres), desembocan en La historia Hinterminable en la pregunta más simple y más difícil: ¿cómo se existe, simplemente, cuando el mundo ha decidido que tu forma de existir es un problema?</p>
+      <p class="analisis-p">El arlequín sin género de los cuentos ha crecido y se ha convertido en Ro. La oscuridad primordial de la cosmogonía ha encogido hasta caber en una habitación sin paredes. El reloj Cronos de Tinddaya que controla el tiempo se ha disuelto en la percepción de Ro de que el tiempo simplemente pasa de largo. La obra cuarta no rompe con las anteriores: las absorbe y les da nombre.</p>
+      <p class="analisis-h2">Lo que esta obra es ya</p>
+      <p class="analisis-p">La istoria Hinterminable no necesita estar terminada para ser la obra más ambiciosa de las cuatro. Porque ha decidido que la ambición ya no consiste en construir universos o en llegar al fondo del yo o en salvar a los últimos ingenieros de un linaje extinto. La ambición ahora es quedarse en la oscuridad con una gata que habla y esperar que la luz aparezca sin pedirla. Es texto de humor, ternura y rabia precisa.</p>
+</div>
+  </div>
+
+  <div class="arrow-btn hidden" id="arrowLeft" onclick="navigate(-1)">
+    <svg viewBox="0 0 46 46" fill="none">
+      <circle cx="23" cy="23" r="21"   stroke="rgba(90,90,90,.45)"   stroke-width="1.8"/>
+      <circle cx="23" cy="23" r="18.5" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(90,90,90,.55)"   stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="27,10 16,23 27,36" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="arrow-btn" id="arrowRight" onclick="navigate(1)">
+    <svg viewBox="0 0 46 46" fill="none">
+      <circle cx="23" cy="23" r="21"   stroke="rgba(90,90,90,.45)"   stroke-width="1.8"/>
+      <circle cx="23" cy="23" r="18.5" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+      <polyline points="19,10 30,23 19,36" stroke="rgba(90,90,90,.55)"   stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="19,10 30,23 19,36" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+
+  <div class="dots-row" id="dotsRow"></div>
+
+  <script>
+    const TOTAL=15; let current=0;
+    const IDS=['p1','p2','p3','p4','p5','p6','p7','p8','p9','ficha-7mascaras','ficha-parabolas','ficha-tinddaya','ficha-istoria','p10','p11'];
+    const slideEls=IDS.map(id=>document.getElementById(id));
+    const dotsRow=document.getElementById('dotsRow');
+    for(let i=0;i<TOTAL;i++){
+      const d=document.createElement('div');
+      d.className='dot'+(i===0?' active':'');
+      d.addEventListener('click',()=>goTo(i));
+      dotsRow.appendChild(d);
+    }
+    const dots=dotsRow.querySelectorAll('.dot');
+    function goTo(n){
+      if(n<0||n>=TOTAL)return;
+      if(slideEls[current])slideEls[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current=n;
+      if(slideEls[current])slideEls[current].classList.add('active');
+      dots[current].classList.add('active');
+      document.getElementById('arrowLeft').classList.toggle('hidden',current===0);
+      document.getElementById('arrowRight').classList.toggle('hidden',current===TOTAL-1);
+      current===0 ? startBubbles() : stopBubbles();
+      // Forzar scroll en p11 (contacto) en portrait
+      if(window.innerHeight>window.innerWidth){
+        const p11=document.getElementById('p11');
+        if(p11){p11.style.overflowY='auto';p11.style.overflowX='hidden';}
+      }
+      updateNav();
+      // Si entramos en una ficha por carrusel, fichaOrigin=null
+      if(n>=9 && n<=12){ fichaOrigin=null; document.body.classList.add('ficha-from-carousel'); }
+      else { document.body.classList.remove('ficha-from-carousel'); }
+    }
+    function navigate(dir){goTo(current+dir);}
+    document.addEventListener('keydown',e=>{
+      if(e.key==='ArrowRight')navigate(1);
+      if(e.key==='ArrowLeft')navigate(-1);
+    });
+    let tx=0;
+    document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;});
+    document.addEventListener('touchend',e=>{
+      const diff=tx-e.changedTouches[0].clientX;
+      if(Math.abs(diff)>50)navigate(diff>0?1:-1);
+    });
+
+
+    /* ── Fichas técnicas ── */
+    let fichaOrigin = null;
+    function openFicha(fichaId, originIndex){
+      // Ocultar slide actual
+      if(slideEls[current])slideEls[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      fichaOrigin = originIndex;
+      // Mostrar ficha
+      const ficha = document.getElementById(fichaId);
+      if(ficha) ficha.classList.add('active');
+      // Ocultar flechas y dots mientras se muestra ficha
+      document.getElementById('arrowLeft').classList.add('hidden');
+      document.getElementById('arrowRight').classList.add('hidden');
+      document.getElementById('dotsRow').style.display='none';
+    }
+    function closeFicha(originIndex){
+      // Ocultar todas las fichas
+      document.querySelectorAll('.ficha-slide').forEach(f=>f.classList.remove('active'));
+      // Restaurar dots
+      document.getElementById('dotsRow').style.display='';
+      // Ir al slide de origen
+      goTo(originIndex);
+    }
+
+
+    /* ── Carrusel de fichas técnicas ── */
+    const FICHA_ORDER = ['ficha-7mascaras','ficha-parabolas','ficha-tinddaya','ficha-istoria'];
+    let fichaCurrentIdx = 0;
+    let fichaFromNav = false;  // true si se abrió desde el nav "Ficha técnica"
+
+    function _showFichaUI(idx){
+      // dots
+      document.querySelectorAll('.ficha-dot').forEach((d,i)=>
+        d.classList.toggle('active', i===idx));
+      // flecha derecha: ocultar en última
+      document.getElementById('fichaArrowRight').style.display =
+        idx < FICHA_ORDER.length-1 ? 'block' : 'none';
+      // back-arrow (izq) ya es fixed y visible cuando la ficha está .active
+    }
+
+    function fichaGoTo(idx){
+      // Ocultar ficha actual
+      const cur = document.getElementById(FICHA_ORDER[fichaCurrentIdx]);
+      if(cur) cur.classList.remove('active');
+      fichaCurrentIdx = idx;
+      // Mostrar nueva
+      const nxt = document.getElementById(FICHA_ORDER[fichaCurrentIdx]);
+      if(nxt) nxt.classList.add('active');
+      _showFichaUI(fichaCurrentIdx);
+    }
+
+    function fichaNext(){ if(fichaCurrentIdx < FICHA_ORDER.length-1) fichaGoTo(fichaCurrentIdx+1); }
+    function fichaPrev(){ if(fichaCurrentIdx > 0) fichaGoTo(fichaCurrentIdx-1); }
+
+    // Abrir desde nav: siempre empieza en 7 máscaras
+    function openFichaNav(){
+      fichaFromNav = true;
+      fichaCurrentIdx = 0;
+      // Ocultar slide actual
+      if(slideEls[current]) slideEls[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      fichaOrigin = current;
+      // Ocultar flechas principales y dots
+      document.getElementById('arrowLeft').classList.add('hidden');
+      document.getElementById('arrowRight').classList.add('hidden');
+      document.getElementById('dotsRow').style.display='none';
+      // Mostrar ficha
+      const ficha = document.getElementById(FICHA_ORDER[0]);
+      if(ficha) ficha.classList.add('active');
+      // Mostrar UI de carrusel
+      document.getElementById('fichaDots').style.display='flex';
+      _showFichaUI(0);
+    }
+
+    // Sobreescribir openFicha para que también active la UI de carrusel
+    const _origOpenFicha = openFicha;
+    openFicha = function(fichaId, originIndex){
+      document.body.classList.remove('ficha-from-carousel');
+      fichaFromNav = false;
+      fichaCurrentIdx = FICHA_ORDER.indexOf(fichaId);
+      if(fichaCurrentIdx < 0) fichaCurrentIdx = 0;
+      _origOpenFicha(fichaId, originIndex);
+      // Mostrar navegación lateral
+      document.getElementById('fichaDots').style.display='flex';
+      _showFichaUI(fichaCurrentIdx);
+    };
+
+    // Sobreescribir closeFicha para ocultar UI de carrusel
+    const _origCloseFicha = closeFicha;
+    closeFicha = function(originIndex){
+      fichaFromNav = false;
+      document.getElementById('fichaArrowRight').style.display='none';
+      document.getElementById('fichaDots').style.display='none';
+      _origCloseFicha(originIndex);
+    };
+
+    // El back-arrow de cada ficha llama a closeFicha(n); como ya está
+    // sobreescrito, funciona. Pero desde el nav queremos volver al slide previo:
+    // Como fichaOrigin se guarda en openFichaNav, closeFicha lo usará bien.
+
+    /* ── Purpurina flotante ── */
+    const bubblesBg=document.getElementById('bubblesBg');
+    const glitterColors=[
+      '#FF6B8A','#FFB347','#FFE566','#66D98E',
+      '#66C2FF','#B388FF','#FF80D5','#80FFEA',
+      '#FFD700','#C8A2FF'
+    ];
+    const particles=[];
+    let glitterTimer=null;
+    let frame=0;
+
+    function spawnParticle(){
+      const el=document.createElement('div');
+      const size=Math.random()*3.5+1.2;
+      // posición base fija
+      const bx=Math.random()*96+2;
+      const by=Math.random()*96+2;
+      const color=glitterColors[Math.floor(Math.random()*glitterColors.length)];
+      const opacity=Math.random()*0.5+0.2;
+      // oleaje: cada partícula tiene dos ondas independientes
+      const ax=Math.random()*1.8+0.4;   // amplitud x (%)
+      const ay=Math.random()*1.4+0.3;   // amplitud y (%)
+      const fx=Math.random()*0.022+0.012;   // frecuencia x
+      const fy=Math.random()*0.018+0.010;   // frecuencia y
+      const px=Math.random()*Math.PI*2; // fase inicial x
+      const py=Math.random()*Math.PI*2; // fase inicial y
+      // parpadeo
+      const fp=Math.random()*0.025+0.010;
+      const pp=Math.random()*Math.PI*2;
+
+      el.style.cssText=`position:absolute;width:${size}px;height:${size}px;border-radius:50%;background:${color};pointer-events:none;`;
+      bubblesBg.appendChild(el);
+      particles.push({el,bx,by,ax,ay,fx,fy,px,py,fp,pp,opacity});
+    }
+
+    function animateGlitter(){
+      frame++;
+      for(let i=0;i<particles.length;i++){
+        const p=particles[i];
+        // posición = base + onda suave
+        const cx = p.bx + p.ax * Math.sin(frame*p.fx + p.px);
+        const cy = p.by + p.ay * Math.sin(frame*p.fy + p.py);
+        p.el.style.left=cx+'%';
+        p.el.style.top=cy+'%';
+        // parpadeo muy suave
+        const flicker=0.7+0.3*Math.sin(frame*p.fp+p.pp);
+        p.el.style.opacity=p.opacity*flicker;
+      }
+      if(glitterTimer) requestAnimationFrame(animateGlitter);
+    }
+
+    function startBubbles(){
+      if(glitterTimer)return;
+      for(let i=0;i<130;i++) spawnParticle();
+      glitterTimer=true;
+      requestAnimationFrame(animateGlitter);
+    }
+    function stopBubbles(){
+      glitterTimer=null;
+      particles.forEach(p=>p.el.remove());
+      particles.length=0;
+    }
+    startBubbles();
+
+
+    /* ── Canvas p1 ── */
+    const canvas=document.getElementById('horseCanvas');
+    const ctx=canvas.getContext('2d');
+    const eyeSrcs=['hunicornia1.png','hunicornia2.png','hunicornia3.png'];
+    const eyeImgs=eyeSrcs.map(s=>{const i=new Image();i.src=s;return i;});
+    let eyeIdx=0,eyeLoaded=0;
+    eyeImgs.forEach(i=>i.onload=()=>{eyeLoaded++;if(eyeLoaded===eyeImgs.length)dibujar();});
+    function dibujar(){
+      const W=canvas.width=window.innerWidth;
+      const H=canvas.height=window.innerHeight;
+      const im=eyeImgs[eyeIdx];
+      if(!im.complete||!im.naturalWidth)return;
+      const iW=im.naturalWidth,iH=im.naturalHeight;
+      ctx.clearRect(0,0,W,H);
+      const portrait=H>W;
+      if(!portrait){
+        const s=Math.max(W/iW,H/iH);
+        ctx.drawImage(im,(W-iW*s)/2,(H-iH*s)/2,iW*s,iH*s);
+      } else {
+        const s=(H/iH)*0.8;
+        const sw=iW*s,sh=iH*s;
+        // Centro de interés al 70.2% del ancho de la imagen → desplazar X
+        const focusX=iW*0.702;
+        const dx=W/2 - focusX*s;
+        ctx.drawImage(im,dx,(H-sh)/2,sw,sh);
+      }
+    }
+    function eyeStep(){
+      let next;
+      do{next=Math.floor(Math.random()*eyeImgs.length);}while(next===eyeIdx&&eyeImgs.length>1);
+      eyeIdx=next;dibujar();
+      setTimeout(eyeStep,1200+Math.random()*2400);
+    }
+    setTimeout(eyeStep,1200+Math.random()*2400);
+    window.addEventListener('resize',dibujar);
+    window.addEventListener('orientationchange',()=>setTimeout(dibujar,120));
+
+    /* ── Nav vs Hamburguesa según slide y orientación ── */
+    function updateNav(){
+      const nav=document.getElementById('topNav');
+      const ham=document.getElementById('hamburger');
+      const landscape=window.innerWidth>window.innerHeight;
+      const mobileLandscape=landscape && window.innerWidth<=900;
+      const portrait=!landscape;
+      // P1 landscape móvil: nav visible, sin hamburguesa
+      // Resto landscape móvil: hamburguesa
+      // Portrait: siempre hamburguesa
+      // Desktop: siempre nav
+      if(portrait){
+        nav.style.display='none';
+        ham.style.display='flex';
+      } else {
+        // landscape: desktop y móvil — siempre nav, nunca hamburguesa
+        nav.style.display='flex';
+        ham.style.display='none';
+      }
+    }
+    window.addEventListener('resize', updateNav);
+    window.addEventListener('orientationchange', ()=>setTimeout(updateNav,150));
+    updateNav();
+
+    /* ── Autoocultar barras en landscape móvil ── */
+    let barTimer=null;
+    function showBars(){
+      if(window.innerWidth<=900 && window.innerWidth>window.innerHeight){
+        const nav=document.getElementById('topNav');
+        const dots=document.getElementById('dotsRow');
+        const arL=document.getElementById('arrowLeft');
+        const arR=document.getElementById('arrowRight');
+        [nav,dots,arL,arR].forEach(el=>{if(el)el.classList.remove('hidden-bar');});
+        clearTimeout(barTimer);
+        barTimer=setTimeout(hideBars,2000);
+      }
+    }
+    function hideBars(){
+      const nav=document.getElementById('topNav');
+      const dots=document.getElementById('dotsRow');
+      const arL=document.getElementById('arrowLeft');
+      const arR=document.getElementById('arrowRight');
+      [nav,dots,arL,arR].forEach(el=>{if(el)el.classList.add('hidden-bar');});
+    }
+    document.addEventListener('touchstart',showBars,{passive:true});
+    document.addEventListener('click',showBars);
+    window.addEventListener('orientationchange',()=>{
+      setTimeout(()=>{
+        if(window.innerWidth>window.innerHeight && window.innerWidth<=900){
+          showBars();
+        } else {
+          // Quitar hidden-bar al salir de landscape móvil
+          ['topNav','dotsRow','arrowLeft','arrowRight'].forEach(id=>{
+            const el=document.getElementById(id);
+            if(el)el.classList.remove('hidden-bar');
+          });
+          clearTimeout(barTimer);
+        }
+      },150);
+    });
+
+    /* ── Hamburguesa ── */
+    function toggleMenu(){
+      const m=document.getElementById('hamMenu');
+      m.classList.toggle('open');
+    }
+    // Cerrar menú al navegar
+    const _origGoTo=goTo;
+    // Ya está sobreescrito más arriba, lo extendemos via patch
+    document.getElementById('hamMenu').querySelectorAll('a').forEach(a=>{
+      a.addEventListener('click',()=>document.getElementById('hamMenu').classList.remove('open'));
+    });
+  </script>
+
+  <!-- Navegación entre fichas -->
+  <div id="fichaArrowRight" onclick="fichaNext()"><svg viewBox="0 0 46 46" fill="none">
+      <circle cx="23" cy="23" r="21" stroke="rgba(90,90,90,.45)" stroke-width="1.8"/>
+      <circle cx="23" cy="23" r="18.5" stroke="rgba(255,255,255,.6)" stroke-width="1.5"/>
+      <polyline points="19,10 30,23 19,36" stroke="rgba(90,90,90,.55)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <polyline points="19,10 30,23 19,36" stroke="rgba(255,255,255,.75)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg></div>
+  <div id="fichaDots" style="display:none">
+    <div class="ficha-dot active" onclick="fichaGoTo(0)" title="7 Máscaras"></div>
+    <div class="ficha-dot" onclick="fichaGoTo(1)" title="Parábolas taciturnas"></div>
+    <div class="ficha-dot" onclick="fichaGoTo(2)" title="Tinddaya"></div>
+    <div class="ficha-dot" onclick="fichaGoTo(3)" title="La istoria hinterminable"></div>
+  </div>
+
+</body>
+</html>

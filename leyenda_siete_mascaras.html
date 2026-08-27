@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="7 máscaras — Hunicornia">
+  <meta name="author" content="Hunicornia">
+  <title>7 máscaras — Hunicornia</title>
+
+  <style>
+    @font-face {
+      font-family: 'DIN';
+      src: url('DIN.woff2') format('woff2'), url('DIN.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Chopin';
+      src: url('ChopinLight.woff') format('woff');
+      font-weight: 300;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: auto;
+      background: #ffffff;
+      color: #643587;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #643587;
+      --secondary: #8b3689;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 1.2em 2em;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid rgba(100, 53, 135, 0.15);
+      z-index: 200;
+      backdrop-filter: blur(8px);
+    }
+
+    .top-nav a {
+      font-family: 'DIN', monospace;
+      font-size: clamp(11px, 1vw, 16px);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s;
+      padding: 0.5em 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .top-nav a:hover {
+      color: var(--secondary);
+      border-bottom-color: var(--secondary);
+    }
+
+    body {
+      padding-top: 70px;
+    }
+
+    .slide {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3cm 1.5cm;
+      background: #ffffff;
+    }
+
+    .titulo {
+      font-family: 'Chopin', serif;
+      font-size: clamp(32px, 5vw, 70px);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-bottom: 2em;
+      text-align: center;
+      width: 100%;
+    }
+
+    .contenido {
+      max-width: 920px;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      font-size: clamp(13px, 1.5vw, 18px);
+      line-height: 1.8;
+      color: var(--primary);
+      text-align: justify;
+    }
+
+    .contenido p {
+      margin-bottom: 0.4em;
+    }
+
+    .separador {
+      text-align: center;
+      margin: 0.5em 0;
+      color: #ccc;
+      font-size: 16px;
+    }
+
+    .cta-section {
+      max-width: 920px;
+      width: 100%;
+      margin-top: 3em;
+      text-align: center;
+      color: var(--primary);
+    }
+
+    .cta-section p {
+      font-size: clamp(13px, 1.5vw, 18px);
+      margin-bottom: 1.5em;
+      font-weight: 600;
+    }
+
+    .cta-section p:first-of-type {
+      font-family: 'Chopin', serif;
+      font-size: clamp(26px, 3vw, 36px);
+      font-weight: 300;
+    }
+
+    .cta-section a {
+      display: inline-block;
+      margin: 0.5em;
+      font-family: Arial, sans-serif;
+      font-size: clamp(12px, 1.3vw, 16px);
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .cta-section a:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+
+    .cta-buttons-row {
+      display: flex;
+      gap: 1.5em;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1.5em 0;
+    }
+
+    .cta-buttons-row a {
+      flex: 1;
+      min-width: 200px;
+      max-width: 350px;
+    }
+
+    .cta-wattpad {
+      display: inline-block;
+      padding: 0.8em 1.5em;
+      background: rgba(139, 54, 137, 0.15);
+      color: var(--primary);
+      border-radius: 4px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: clamp(12px, 1.3vw, 16px);
+    }
+
+    .cta-wattpad:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 900px) {
+      .top-nav {
+        gap: 1em;
+        padding: 1em 1em;
+        flex-wrap: wrap;
+      }
+
+      .slide {
+        padding: 2cm 1.2cm;
+      }
+
+      body {
+        padding-top: 80px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .top-nav {
+        flex-direction: column;
+        gap: 0.5em;
+        align-items: center;
+      }
+
+      .top-nav a {
+        width: 100%;
+        text-align: center;
+        font-size: 10px;
+      }
+
+      .slide {
+        padding: 1.5cm 0.8cm;
+      }
+
+      .contenido {
+        font-size: 14px;
+      }
+
+      body {
+        padding-top: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="/">← Volver</a>
+  </nav>
+
+  <section class="slide">
+
+    <h1 class="titulo">7 máscaras</h1>
+
+    <article class="contenido">
+
+<p>Hace mucho tiempo, miles de años atrás, antes de la existencia de los ríos y las montañas, de los animales y las plantas, del caminar del hombre. En una era en la que los inmensos mares anegaban el orbe franqueando la olvidada Madre, aún cuando no existían los continentes y el vacío más desolador dominaba el planeta. Más allá del cielo, del día y la noche, de la luna y las estrellas, lejos, mucho más lejos de lo que cualquier hombre ha alcanzado a ver jamás, perdido en la distancia y la memoria, oculto tras las vastas penumbras, latía el principio del universo, el mismo en el cual hoy nos encontramos tú y yo, hijo mío.</p>
+<p>Según cuenta la leyenda, en los albores del cosmos habitaron los siete grandes dioses de la creación. Siete seres primigenios, concebidos para fundar todo cuanto habita el vasto infinito. Nacidos antes que el sol y que las cientos de estrellas que nos alumbran cada noche, criaturas de poderes inconmensurables y de virtudes únicas, nacidos a la par que el universo con el deber de dar y quitar la vida de manera justa y equilibrada, manteniendo la paz y la armonía en cada rincón por apartado que fuese.</p>
+<p>Pero el más importante de sus cometidos, consistía en evitar que la oscuridad jamás llegase a reinar sobre el universo, ni sobre ninguno de sus habitantes. Tanto era así, que si alguno de los hermanos sucumbía bajo influjo de las tinieblas, su muerte sería necesaria, aún revelándose semejante acto atroz contra las leyes de la creación.</p>
+<p>Quebrantando esta verdad absoluta, se alzaba una sombra inquietante en lo más profundo del universo, los siete dioses desconocían por completo dónde, cuándo y cómo, había surgido aquel ser terrible que todo destruía y desolaba a su paso, cuyo único fin era sembrar el miedo y la maldad. ¿Cómo habiendo nacido ellos en el mismo instante que el propio universo, podían desconocer la existencia de un ser tan malévolo como la propia oscuridad?</p>
+<div class="separador">…</div>
+<p>— ¿Papá?</p>
+<p>— ¿Sí, Daikuku?</p>
+<p>— ¿Cómo es posible que los dioses habiendo nacido al mismo tiempo que el universo, y sabiendo todo cuanto ocurría en él, no se dieran cuenta de que algo malvado crecía oculto bajo las tinieblas del rincón más lejano? –preguntó el pequeño.</p>
+<p>— Sí, es algo realmente curioso y extraño, Daikuku –respondió el padre–, ¿cómo los dioses sabiéndolo todo, absolutamente todo lo que ocurre en el pasado, presente y futuro, obviaron por completo el nacimiento entre las sombras de un ser tan perverso?</p>
+<p>Pero como bien sabes hijo mío, la leyenda que ahora comienza, narra con detalle los hechos que conformaron el universo hace ya miles de años.</p>
+<div class="separador">…</div>
+<p>En la más aciaga y profunda oscuridad, cuando tan sólo existía la nada, en un punto elegido al azar, se concentró toda la energía que ocupa ahora el universo en un espacio tan pequeño como un grano de arena. A medida que la energía crecía en su interior, el espacio que la contenía menguaba cada vez más, tanto, que cuando toda la esencia del inmenso infinito quedó encerrada en la décima parte del grano de arena más pequeño, incapaz de contraerse un sólo átomo más, una gigantesca explosión liberó toda la fuerza colapsada en tan poco lugar, dando origen al enorme universo.</p>
+<p>La materia, libre y vigorosa, llena de vida, se transformó en ese mismo instante en ocho enormes y brillantes estrellas que podían verse desde cualquier rincón del recién nacido firmamento. Nada, absolutamente nada, excepto aquellos astros resplandecientes, habitaba el desconocido vacío. Eran los primeros moradores.</p>
+<p>Un día entero tardaron en tomar forma los astros, cada uno de ellos redondo y brillante, de forma y colores diferentes. La más grande de las ocho estrellas brillaba con luz blanca, a su lado otras dos estrellas gemelas, de igual forma, pero de luz muy diferente, una azul como el mar y la otra rojo escarlata. Tras ellas seguía otra estrella más pequeña que las anteriores de luz verde esmeralda, continuada de otra de luz naranja cobrizo. No muy lejos, una luz violeta aterciopelada, acompañada de una luz ocre pardo, y por último, de la más pequeña de las estrellas manaba un halo de color gris tormenta.</p>
+<div class="separador">…</div>
+<p>— ¿Papá, entonces por qué en vez de tanto buscar, no destruyeron a los hombres?, con semejante poder habrían acabado con el planeta y todo cuanto en él existe con un sólo soplido, y así empezar de nuevo para enmendar su error.</p>
+<p>— Bueno, Daikuku…, para serte sincero, a pesar de todo, no me hubiese gustado que los dioses destruyeran la tierra, si hubiese sido así, ahora ni tú ni yo estaríamos aquí. La verdadera razón que impedía a los dioses destruir a los hombres, no era la falta de poder o de voluntad, sino la finalidad que rige su ser. Los dioses no fueron creados para destruir, sino para equilibrar el universo y la vida en su interior. La vida es sagrada incluso para un dios.</p>
+<p>— Y papá, ¿qué podemos hacer para salvar el mundo y a la raza humana de la destrucción?</p>
+<p>— Pues eso mismo se andaba preguntando Crápatos, Daikuku.</p>
+
+    </article>
+
+    <article class="cta-section">
+      <p>Te ha enganchado?</p>
+
+      <div class="cta-buttons-row">
+        <a href="https://www.wattpad.com/Hunicornia84" target="_blank" class="cta-wattpad">Leer obra completa en Wattpad</a>
+        <a href="tinddaya.html" class="cta-wattpad">Leer + Hunicornia</a>
+      </div>
+
+      <p><a href="https://ko-fi.com/hunicornia" target="_blank">Ko-fi · dibujos firmados limitados</a></p>
+    </article>
+
+  </section>
+
+</body>
+</html>

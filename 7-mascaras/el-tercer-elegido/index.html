@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El tercer elegido, capítulo 7 de 7 máscaras. Fantasía épica para leer gratis en Hunicornia.">
+  <meta name="author" content="Hunicornia">
+  <link rel="canonical" href="https://hunicornia.es/7-mascaras/el-tercer-elegido/">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>7. El tercer elegido · 7 máscaras — Hunicornia</title>
+  <style>
+    @font-face { font-family: "Chopin"; src: url("/ChopinLight.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #643587; --secondary: #8b3689; --nav-h: 58px; }
+    html, body { width: 100%; background: #fff; color: var(--primary); font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { padding-top: var(--nav-h); }
+    .lector-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(100,53,135,0.15); z-index: 200; backdrop-filter: blur(8px); }
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: var(--nav-h); }
+    .nav-volver { font-family: system-ui, Arial, sans-serif; font-size: 12px; color: var(--secondary); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-volver:hover { opacity: 0.7; }
+    .nav-titulo { font-family: "Chopin", serif; font-size: 20px; font-weight: 300; letter-spacing: 0.05em; color: var(--primary); }
+    .nav-indice-btn { font-family: system-ui, Arial, sans-serif; font-size: 11px; color: var(--secondary); background: none; border: 1px solid rgba(100,53,135,0.3); border-radius: 4px; padding: 6px 14px; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; }
+    .nav-indice-btn:hover { background: rgba(100,53,135,0.06); }
+    .progreso-barra { height: 2px; background: rgba(100,53,135,0.1); }
+    .progreso-fill { height: 100%; width: 0%; background: var(--primary); transition: width 0.1s linear; }
+    .indice-panel { display: none; border-top: 1px solid rgba(100,53,135,0.1); padding: 24px 24px 28px; background: rgba(255,255,255,0.99); max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .indice-panel.abierto { display: block; }
+    .indice-lista { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 2em; }
+    .indice-lista li { padding: 3px 0; break-inside: avoid; }
+    .indice-lista a { font-family: "Chopin", serif; font-size: 15px; font-weight: 300; color: var(--primary); text-decoration: none; opacity: 0.8; }
+    .indice-lista a:hover { opacity: 1; }
+    .lector-contenido { max-width: 680px; margin: 0 auto; padding: 56px 24px 120px; }
+    .obra-titulo-h { font-family: "Chopin", serif; font-size: clamp(34px, 5vw, 64px); font-weight: 300; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--primary); line-height: 1.1; }
+    .obra-subtitulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--secondary); margin: 0 0 60px; opacity: 0.75; }
+    .cap-bloque { margin-bottom: 72px; }
+    .cap-h2 { font-family: "Chopin", serif; font-size: clamp(22px, 3vw, 32px); font-weight: 300; letter-spacing: 0.04em; margin: 64px 0 36px; color: var(--primary); text-align: center; padding-top: 48px; border-top: 1px solid rgba(100,53,135,0.12); line-height: 1.25; scroll-margin-top: var(--nav-h); }
+    .cap-num { display: block; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(10px, 1.1vw, 12px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--secondary); opacity: 0.75; margin-bottom: 16px; }
+    .lector-p { font-size: clamp(15px, 1.7vw, 17px); line-height: 1.95; margin: 0 0 0.9em; color: var(--primary); text-align: justify; hyphens: auto; }
+    .lector-p.dialogo { }
+    .sep-omega { text-align: center; color: var(--secondary); opacity: 0.3; font-size: 13px; margin: 36px 0; letter-spacing: 0.4em; }
+    .cta-final { text-align: center; margin-top: 64px; display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+    .cta-final a { display: inline-block; padding: 0.8em 1.5em; background: rgba(139,54,137,0.12); color: var(--primary); border-radius: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .cta-final a:hover { opacity: 0.7; }
+    .nota-final { font-size: 11px; color: var(--secondary); text-align: center; margin-top: 32px; opacity: 0.6; }
+    @media (max-width: 600px) { :root { --nav-h: 52px; } .lector-contenido { padding: 36px 16px 80px; } .nav-bar { padding: 0 16px; } .indice-lista { columns: 1; } }
+    @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; } }
+
+    .parte-h2 { font-family: "Chopin", serif; font-size: clamp(26px, 3.6vw, 42px); font-weight: 300; letter-spacing: 0.04em; margin: 120px 0 0; color: var(--primary); text-align: center; line-height: 1.2; scroll-margin-top: var(--nav-h); }
+    .parte-h2.primera { margin-top: 0; }
+    .parte-h2 + .cap-h2 { margin-top: 34px; padding-top: 34px; }
+    .indice-lista a[aria-current], .indice-sub a[aria-current], .indice-cap-nombre[aria-current] { opacity: 1; box-shadow: inset 3px 0 0 var(--primary); padding-left: 9px; }
+    .indice-sub li:has(a[aria-current]) { border-left-color: var(--primary); border-left-width: 3px; padding-left: 12px; }
+    .indice-parte { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--secondary); opacity: 0.7; margin: 16px 0 4px; break-inside: avoid; list-style: none; }
+    .indice-parte:first-child { margin-top: 0; }
+    .cap-paso { display: flex; justify-content: space-between; gap: 1.5em; margin-top: 72px; padding-top: 28px; border-top: 1px solid rgba(100,53,135,0.12); }
+    .cap-paso a { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary); text-decoration: none; max-width: 45%; line-height: 1.5; }
+    .cap-paso a:hover { color: var(--primary); }
+    .cap-paso .der { text-align: right; margin-left: auto; }
+  </style>
+</head>
+<body data-obra="7 máscaras" data-capitulo="El tercer elegido">
+<nav class="lector-nav" aria-label="Navegación">
+  <div class="nav-bar">
+    <a class="nav-volver" href="/">← Volver</a>
+    <span class="nav-titulo">7 máscaras</span>
+    <button class="nav-indice-btn" id="btnIndice" aria-expanded="false" aria-controls="indicePanel">Índice</button>
+  </div>
+  <div class="indice-panel" id="indicePanel" role="navigation" aria-label="Índice de capítulos">
+    <ul class="indice-lista">
+      <li class="indice-parte">La leyenda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/">1. El nacimiento de las estrellas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-partida/">2. La partida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-cima/">3. La cima</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-conjuncion/">4. La conjunción</a></li>
+      <li class="indice-parte">La búsqueda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-reencuentro-de-los-elegidos/">5. El reencuentro de los elegidos</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-abismo/">6. El abismo</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-tercer-elegido/" aria-current="true">7. El tercer elegido</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-despertar/">8. El despertar</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-opera/">9. La Ópera</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-huida/">10. La huída</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-eco/">11. El eco</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-silencio/">12. El silencio</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/las-atalayas/">13. Las atalayas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-ira/">14. La ira</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-impotencia/">15. La impotencia</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-bosque/">16. El bosque</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-despedida/">17. La despedida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-juicio-final-de-los-dioses/">18. El juicio final de los dioses</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-batalla/">19. La batalla</a></li>
+      <li class="indice-parte">La redención</li>
+      <li><a href="https://hunicornia.es/7-mascaras/un-nuevo-amanecer/">20. Un nuevo amanecer</a></li>
+    </ul>
+  </div>
+  <div class="progreso-barra"><div class="progreso-fill" id="progFill"></div></div>
+</nav>
+<main class="lector-contenido" data-lectura>
+  <h1 class="obra-titulo-h">7 máscaras</h1>
+  <p class="obra-subtitulo">La búsqueda · Capítulo 7 de 20 · Castellano</p>
+  <div class="cap-bloque">
+    <h2 class="cap-h2">El tercer elegido</h2>
+    <p class="lector-p dialogo">— Mira, Geneviève, se puede ver el valle que cruzamos antes de pasar por la puerta.</p>
+    <p class="lector-p dialogo">— ¡Qué raro! Son dominios incompatibles. Debe haber ocurrido algo para que ambos territorios hayan quedado unidos.</p>
+    <p class="lector-p dialogo">— No veo bien desde aquí, pero no parece el lugar que dejamos hace un rato. La hierba está muerta, los árboles quemados, las casas destruidas, y tampoco hay gente.</p>
+    <p class="lector-p dialogo">— Creo que algo malo ha sucedido, Daikuku. Esto no es normal.</p>
+    <p class="lector-p">Los elegidos avanzaban siguiendo el camino. Todo lo que antes parecía próspero y alegre, ahora no era más que un vacío desolado. Todo había sido quemado ennegreciendo el pueblo. Un fuerte olor a ceniza flotaba en el ambiente. No quedaba rastro de las personas que habitaban el prado. Los animales yacían muertos.</p>
+    <p class="lector-p dialogo">— Mira, Geneviève, ahí dentro –Daikuku había visto a alguien en el interior de una casa.</p>
+    <p class="lector-p dialogo">— ¡Aahh! –contuvo el grito suspirando–, es terrible.</p>
+    <p class="lector-p dialogo">— ¿Qué ocurre? –preguntó el pequeño muy nervioso.</p>
+    <p class="lector-p dialogo">— Ese hombre está muriendo. Está completamente quemado.</p>
+    <p class="lector-p dialogo">— ¿Vamos a ayudarlo?</p>
+    <p class="lector-p dialogo">— ¡No!, espera, Daikuku. Observa sus ojos, no conocí a esta gente como vosotros, pero estoy seguro de que eso de ahí delante ya no es una persona –añadió Dimitri.</p>
+    <p class="lector-p dialogo">— ¿Qué intentas decir? –preguntó asustada Geneviève.</p>
+    <p class="lector-p dialogo">— No lo sé con seguridad, pero será mejor que continuemos. Este lugar ya no es seguro para nadie.</p>
+    <p class="lector-p dialogo">— ¿Qué crees que ha pasado? ¿Nos puede pasar a nosotros también?</p>
+    <p class="lector-p dialogo">— No, Daikuku, no nos pasará nada, hagamos como dice Dimitri, salgamos de aquí y reunámonos con Tanuk ik, ya no podemos ayudar.</p>
+    <p class="lector-p">Los tres muchachos recorrieron el valle tan rápido como marchaban sus pies. Habían cruzado el dominio llegando a la linde con el desierto de las rosas. El camino se convertía en una inmensidad de dunas de arena blanca.</p>
+    <p class="lector-p dialogo">— Para salir de aquí lo antes posible, hay que desear llegar a los dominios de Tanuk ik. ¿De acuerdo?</p>
+    <p class="lector-p dialogo">— Me queda claro –respondió Dimitri.</p>
+    <p class="lector-p dialogo">— ¡Mira, Geneviève! Algo se dirige hacia nosotros volando.</p>
+    <p class="lector-p dialogo">— ¡Agachaos!, puede que sea un esbirro de Moor –susurró la chica.</p>
+    <p class="lector-p dialogo">— Ahora da igual, se dirige hacia nosotros, ¿piensas que no nos verá sobre la arena blanca? –el pequeño esperaba de pie, los otros de cuclillas no sabían qué hacer–. ¡Vaya! No es uno de los monstruos de Moor, es Caruba. Pero… vuela muy raro. Parece… ¡está herido!</p>
+    <p class="lector-p">Daikuku echó a correr hacia el pájaro. Apenas podía sostener el vuelo, desplomándose en tierra.</p>
+    <p class="lector-p dialogo">— ¿Quién es Caruba?</p>
+    <p class="lector-p dialogo">— Es el pájaro del vendedor. Gracias a él, conseguimos el espejo con el que traerte a este mundo.</p>
+    <p class="lector-p dialogo">— ¿Qué te ha pasado Caruba? –exclamó Daikuku sosteniendo la cabeza del buitre entre sus manos. Los otros dos llegaban junto a él.</p>
+    <p class="lector-p dialogo">— No lo sé, mi joven amigo, no pude ver nada. Ocurrió poco después de que vosotros os fuerais. Yo seguía comiendo y Zul Mekán estaba dentro de la tienda emocionado con los chismes que le cambiasteis. De repente todo se llenó de sombras. En el interior de la tienda pude oír voces. Alguien hablaba con mi amo, no pude distinguir la conversación. Sin más, Zul Mekán comenzó a gritar, porfiaba con los visitantes para que se fuesen. Entré en la tienda para averiguar qué ocurría, sólo pude ver unas figuras que sujetaban al amo por el cuello. Al verme se abalanzaron sobre mí golpeándome hasta darme por muerto. Al cabo de un rato recuperé el sentido. Mi amo, sin vida, tirado entre sus trastos, la tienda destrozada, el camello que le servía de montura, devorado. Y yo, tal como me veis. Cuando pude volver a moverme, levanté el vuelo en vuestra búsqueda –el pájaro cesaba de hablar, no podía continuar. Estaba muy mal herido.</p>
+    <p class="lector-p dialogo">— Tranquilo, Caruba, te llevaremos junto a Tanuk ik, él sabrá cómo curarte. Haz un último esfuerzo por no caerte de mi espalda.</p>
+    <p class="lector-p">Daikuku cargó a lomos al buitre, y corrió por las arenas deseando llegar al dominio de Tanuk ik. Ahora más que nunca deseaban llegar junto al Hombre Elefante, para que curase a su amigo y le diese explicación a tan inesperado suceso. Las arenas corrían bajo sus pies. El desierto de las rosas quedaba atrás.</p>
+    <p class="lector-p dialogo">— Mira, Daikuku, ya casi hemos llegado.</p>
+    <p class="lector-p">Cada vez más árboles, pronto se adentraron en el bosque. Una fea luz gris iluminaba el dominio. Los jóvenes pensaban que allí también había sucedido como en las tierras anteriores.</p>
+    <p class="lector-p dialogo">— Geneviève, ¿dónde está Tanuk ik?</p>
+    <p class="lector-p dialogo">— No lo sé.</p>
+    <p class="lector-p dialogo">— Bajad la voz, puede que las sombras que han hecho esto no anden muy lejos. ¿No sabéis cómo encontrar a vuestro amigo sin hacer ruido? –aconsejó Dimitri.</p>
+    <p class="lector-p">Geneviève y Daikuku caminaban despacio entre los árboles. “Tanuk ik”, susurraban intentando no llamar la atención. Dimitri buscaba con la mirada, pero no sabía a quien.</p>
+    <p class="lector-p dialogo">— Calmaos, mis muchachos –murmuró la voz grave–. No habléis muy alto, no deben saber que estáis aquí -Tanuk ik estaba sentado entre los árboles, pasando inadvertido.</p>
+    <p class="lector-p dialogo">— Tanuk ik, traemos a Caruba con nosotros, es el buitre del vendedor, está herido. ¿Puedes ayudarlo?</p>
+    <p class="lector-p dialogo">— Sí, mi pequeño amigo. Tráelo acá.</p>
+    <p class="lector-p">Daikuku se acercó dándole el pájaro. Tanuk ik lo tomó entre sus manos.</p>
+    <p class="lector-p dialogo">— Está muy herido, Daikuku, pero sanará, te lo prometo –un suave candor manaba de sus manos.</p>
+    <p class="lector-p dialogo">— Gracias, Tanuk ik.</p>
+    <p class="lector-p dialogo">— Tanuk ik, la primera búsqueda ha sido cumplida, traemos con nosotros al tercer elegido. Él es Dimitri –susurraba Geneviève presentando a su nuevo compañero–, el elegido de Alaris, Señor de las Estrellas.</p>
+    <p class="lector-p">Dimitri se acercó a la criatura, no parecía sorprendido ante sus grotescas formas. Con cordial reverencia saludó.</p>
+    <p class="lector-p dialogo">— Ya veo. Habéis sido muy valientes, jovencitos. No esperaba menos de vosotros. Pero algo muy grave ha sucedido mientras realizabais vuestra difícil empresa. Hasta hace poco, las criaturas de Moor no se atrevían a entrar en estos dominios. Seres poderosos guardan estas latitudes, criaturas como el Lobo Ciego y Zul Mekán, cuyas fuerzas y secretos mantienen a raya a los esbirros de Moor. Este ataque ha sido desesperado. Sabe que estáis aquí, pero no sabe cuántos sois. Debe haber sentido vuestras presencias, seguramente cuando Dimitri despertó. Eso es más probable a que alguna de sus criaturas os haya visto, ni siquiera sabrá cómo sois. Contamos con esa ventaja todavía. Uno de sus lugartenientes vino en vuestra búsqueda acompañado de sus soldados. Kennin Ji, Señor del Tifón, os buscó en el valle de los molinos, destruyéndolo todo a su paso, incapaz de encontrar una pista vuestra, después continuó en el desierto. Zul Mekán, negándose a decir nada, murió para salvaros. También entró en mis dominios, caminó entre los árboles en vuestra búsqueda. Clavó los ojos sobre mí, “Pronto nos veremos las caras criatura despreciable”, dijo. Desapareció convertido en tinieblas junto a sus soldados. Afortunadamente, él no puede sentir vuestra presencia, recibió órdenes de Moor. Sabía que estabais por aquí, pero no dónde. Temía adentrarse en el abismo del Lobo Ciego, si no hubiese sido así, ahora estaríais muertos. Kennin Ji anda ya lejos, puedo sentirlo, pero eso no significa que haya alguno de sus espías muy cerca de mis dominios.</p>
+    <p class="lector-p">Tanuk ik se levantó estirándo todo su largo. Dimitri lo miraba asombrado.</p>
+    <p class="lector-p dialogo">— ¿Y ahora cómo podemos continuar nuestro viaje? Moor sabe que estamos aquí. Todo será mucho más peligroso.</p>
+    <p class="lector-p dialogo">— Así es pequeña. No hay nada que podáis hacer para evitarlo. Sólo os queda ser rápidos y extremadamente cautelosos. Intentad no llamar la atención, pasad inadvertidos tanto como podáis. No confiéis en nadie. Caminad entre las sombras, donde menos ojos os vean. Es más que posible que muchos territorios de este mundo estén vigilados por las criaturas de Moor.</p>
+    <p class="lector-p dialogo">— ¿Crees que Moor ha descubierto a los otros elegidos?</p>
+    <p class="lector-p dialogo">— No, Daikuku. Si hubiese sido así, antes de daros caza habría ido a por ellos. Si los aniquila no habrá guerra posible. No importa si sois dos, tres o seis. Si uno de vosotros falta, no podréis detener su ira. Por suerte no puede saberlo, ni lo sabrá. Su única manera de evitar que más elegidos despierten es acabar con los ya despertados, vosotros. Os seguirá la pista allá adonde vayáis con tal de daros muerte.</p>
+    <p class="lector-p dialogo">— Si sabe que la búsqueda ya ha empezado, debemos apresurarnos entonces.</p>
+    <p class="lector-p dialogo">— Sí, Dimitri. Vuestro viaje continúa y apremia. Posiblemente antes de que encontréis al próximo elegido despertéis en el mundo real. Aseguraos de tener algo con lo que sujetaros a este mundo. Quedaos juntos hasta que volváis a ser tres de nuevo. Ocultad bien vuestro rastro, si las cuerdas fuesen descubiertas, os separarán y tendréis que encontraros de nuevo. Lo cual supone un retraso y un riesgo. Para llegar al abismo del Lobo Ciego no hubo ningún problema. Todo discurrió justo como debía suceder. Sin embargo, esta vez las cosas no serán tan fáciles. No temáis a las huestes de Moor, es más que posible que no hagan nada contra vosotros, si una de sus criaturas os encuentra, antes que entablar combate huirá en busca de su general. Pero si os ataca no dudéis en huir. Ahora os diré dónde habita el cuarto elegido. Una vez lo hayáis encontrado, no deberéis volver aquí. Es peligroso que regreséis a mis dominios, ya no es un lugar seguro. Yo me ocultaré entre estas tierras, debo mantenerme vivo hasta que consigáis ser siete elegidos. Si no os encuentro yo, os mandaré un mensajero de mi confianza.</p>
+    <p class="lector-p">Es momento de que partáis. Mirad allá –señalaba con el dedo hacia un punto del horizonte–, cerca de aquella montaña azul, al otro lado, a muy poco de sus faldas, se encuentra la Gran Ópera. En el dominio del cuarto elegido no hay criaturas terribles ni sanguinarias, pero sí un guardián que custodia la entrada. Sed acertados en vuestras palabras y todo saldrá bien. ¿Comprendes Daikuku? –el pequeño asintió–. El resto ya lo sabéis. No perdáis el espejo ni consintáis que se rompa, es la llave a este mundo para los restantes elegidos. ¡Vamos, corred! Fuera de mis dominios el tiempo corre en vuestra contra. No hay tiempo para más preguntas ni para más respuestas. Yo velaré por vosotros.</p>
+    <p class="lector-p">La Gran Ópera quedaba tras la montaña celeste. Los tres elegidos partieron emprendiendo de nuevo la búsqueda. Restaba mucho que recorrer y peligros que salvar. Afligidos por las graves y aciagas palabras del Hombre Elefante.</p>
+    <p class="lector-p dialogo">— Geneviève. Hace muchas horas que estamos aquí, ¿cuándo crees que despertaremos?</p>
+    <p class="lector-p dialogo">— No lo sé, Daikuku, pero todavía nos queda tiempo, tranquilo.</p>
+    <p class="lector-p dialogo">— ¿Conseguiremos unas cuerdas o algo con qué atarnos para entonces?</p>
+    <p class="lector-p dialogo">— Claro que sí, no te preocupes.</p>
+    <p class="lector-p">Los tres corrían sin aliento, intentando ganar el máximo tiempo. La desazón era visible en sus rostros.</p>
+    <p class="lector-p dialogo">— ¿Cuánto puede quedar hasta que salgamos de aquí? –preguntó Dimitri.</p>
+    <p class="lector-p dialogo">— No mucho.</p>
+    <p class="lector-p dialogo">— ¿Suficiente para que me contéis un poco cómo funciona todo esto?</p>
+    <p class="lector-p dialogo">— Suficiente para el principio –respondió Geneviève–. ¿Por dónde quieres empezar?</p>
+    <p class="lector-p dialogo">— Decidid vosotros.</p>
+    <p class="lector-p dialogo">— ¿Quieres escuchar la leyenda?</p>
+    <p class="lector-p dialogo">— Me encantaría, Daikuku, pero teniendo en cuenta nuestra situación, prefiero que me la resumas brevemente.</p>
+    <p class="lector-p dialogo">— De acuerdo.</p>
+    <p class="lector-p">Daikuku comenzó la historia. Dimitri escuchaba atentamente cada una de sus palabras. El pequeño resumió tanto como pudo la historia. El nacimiento de los dioses, el encuentro y desaparición de Moor, las máscaras. La batalla. La derrota del Señor del Odio.</p>
+    <p class="lector-p dialogo">— ¡Qué historia tan increíble! Así, resumida, impresiona. Pero estoy seguro de que con todo detalle debe ser fascinante. ¿Sabéis?, mientras te escuchaba, he recordado una historia que me contaron siendo pequeño. Un anciano que vivía en nuestro pueblo, que pasaba las tardes sentado en un banco. Un día que andaba yo cerca de él sin nadie con quien jugar, me preguntó que si quería escuchar un cuento, el mejor cuento de todos. Le dije que sí. La historia comenzó, prolongándose tres días. No lo pudo acabar. Murió. Yo lo sentí mucho. Describió cómo se creó el universo, cómo aparecieron los dioses, y cuándo nacieron los hombres. Dijo que no dijese nada a nadie, pues todos lo tenían por un viejo loco. Y ahora entiendo por qué me cambió el nombre. Nunca me preguntó cómo me llamaba, desde un principio se refería a mí como Alaris. Yo soy el elegido de Alaris, la cicatriz en mi espalda es la señal. ¿Vosotros…?</p>
+    <p class="lector-p dialogo">— Yo tengo la marca de Crápatos en el tobillo.</p>
+    <p class="lector-p dialogo">— La mía –respondió Daikuku señalándose la mejilla.</p>
+    <p class="lector-p dialogo">— ¡Esto es realmente increíble, no salgo de mi asombro! De repente muchas cosas cobran sentido en mi vida. Necesito que sigáis contándome todo cuanto sabéis.</p>
+    <p class="lector-p dialogo">— Eso será más adelante, Dimitri. Mira allí. Comienza el siguiente dominio. Debemos ir con cuidado, dejemos la conversación para más tarde.</p>
+    <p class="lector-p dialogo">— De acuerdo, Geneviève.</p>
+    <p class="lector-p">La tierra adoptaba un color ocre oscuro. A unos pasos se levantaban grandes ruinas. Asemejaba a una vieja civilización olvidada.</p>
+    <p class="lector-p dialogo">— Jamás había visto algo así –murmuró Daikuku–. Es espectacular, debió ser una ciudad gigantesca y preciosa en otro tiempo. ¿Qué ha podido pasar?</p>
+    <p class="lector-p dialogo">— No lo sé, desconozco este dominio. Pero no parece que haya sido obra de Moor. No hay nada quemado ni ennegrecido por las tinieblas. Posiblemente este lugar haya sido siempre así. Vamos debemos darnos prisa –respondió la elegida.</p>
+    <p class="lector-p dialogo">— No corras, Geneviève, espera. Caminaremos ligeros, pero no podemos llamar la atención. Este lugar parece muy sereno. Haremos el menor ruido posible e intentaremos evitar cualquier encuentro. ¿De acuerdo?</p>
+    <p class="lector-p">Ambos asintieron. Los tres avanzaban por el nuevo territorio, iluminado por una luz de atardecer, cálida a la par que melancólica. No parecía haber vida, ni plantas, ni animales, ni personas, sino ruinas y un gran silencio.</p>
+    <p class="lector-p">Caminaban cerca de los muros, evitando los espacios abiertos, sin hacer ruido, la tierra amortiguaba sus pasos. Observaban vigilantes. Había muchos rincones oscuros, recovecos en sombra ideales para una emboscada enemiga. Caminaron durante largo rato sin apreciar nada, solamente ruinas.</p>
+    <p class="lector-p dialogo">— Mira, Geneviève –dijo Daikuku muy bajito–, allí hay una tela sucia y vieja. Es suficiente para los tres. Podemos hacernos unas capas. Pasaremos inadvertidos si ocultamos quienes somos. ¿Qué dices, Dimitri?</p>
+    <p class="lector-p">Ambos compañeros aceptaron la propuesta. Se acercaron hacia lo que parecía una cortina sucia y destrozada por el tiempo. Daikuku adelantándose la cogió estirando de ella.</p>
+    <p class="lector-p dialogo">— ¡¡Ehh!! ¿Qué estás haciendo? –refunfuñó una voz bajo la tela–. ¡Ésta es mi manta, ya sé que está sucia y vieja, pero eso no os da derecho a quitármela! ¡Caracoles!… ¿qué tenemos aquí?</p>
+    <p class="lector-p">Bajo la tela apareció un anciano decrépito, delgado, de aspecto famélico. Una espesa barba blanca que llegaba hasta el vientre. Vestido con una toga piojosa y sucia. Daikuku sujetaba la cortina con celo. El anciano calmado, continuaba hablando.</p>
+    <p class="lector-p dialogo">— Éste no es lugar para semejantes mocedades. La llaman la Ciudad de los Olvidados, aquí sólo hay gente como yo. Ancianos hediondos sin un lugar al que marchar, olvidados por nuestro pasado, desdeñados por el futuro. Aquí venimos todos los que deseamos estar solos, la mayoría obligados por quienes nos rodean. Aunque como podéis ver, somos demasiados como para decir que lo estamos.</p>
+    <p class="lector-p">El viejo señalaba a las espaldas de los muchachos. Los tres elegidos giraron buscando el significado de las palabras. Las ruinas estaban pobladas, no había rincón sin ocupar. Ancianos, hombres y mujeres moribundos, sentados o tumbados entre las piedras. Todos inmóviles. No los habían visto, y en cambio, estaban allí, como una ruina más.</p>
+    <p class="lector-p dialogo">— A pesar de tanta compañía, me sigo sintiendo solo, desprotegido y triste. Nuestra vida no vale nada. ¿Qué somos?, ¿qué hemos sido? Únicamente despojos sin valor para los que nos suceden. Podríamos hablar entre nosotros, hacer más llevadera la marcha, pero ¿qué nos queda por contar?, nada. Nos hemos vuelto aburridos, tediosos y monótonos. Somos un hastío incluso para nosotros mismos. No queda más que esperar el momento de la despedida, ya es lo único que nos queda. Pero imagino que todo esto a vosotros no os importa mucho ahora, pero importará, creedme –Daikuku abrumado soltó la cortina–. Si queréis la tela, lleváosla, siento que ya no la necesitaré más. Es un regalo por vuestra atención, podría decir que hace más de cien años que nadie me escuchaba. Aquí todo da igual, por favor, continuad, no deseo interrumpiros más.</p>
+    <p class="lector-p">Los chicos estaban turbados, el choque con tan triste futuro los había dejado mohínos. No sabían qué contestar.</p>
+    <p class="lector-p dialogo">— Muchas gracias –tartamudeó Geneviève.</p>
+    <p class="lector-p dialogo">— Ha sido un placer conoceros, jovencitos. Seguid vuestro camino, ahora yo debo continuar el mío. No es algo agradable de ver.</p>
+    <p class="lector-p">El viejo concluyó sus palabras. Se retiraba hacia un rincón de tierra, sentándose lentamente. Los tres observaban. El cuerpo del anciano parecía estar cambiando, el tono de su piel se tornaba ocre. Se arrugaba sobre sí mismo, enjuto, transformándose en una roca. Daikuku, Geneviève y Dimitri, atónitos, no daban crédito a sus ojos. Durante un momento quedaron inmóviles, imaginando su propia vejez.</p>
+    <p class="lector-p dialogo">— ¿Habéis visto eso? –preguntó Daikuku nervioso.</p>
+    <p class="lector-p dialogo">— Sí –respondió Dimitri.</p>
+    <p class="lector-p dialogo">— Ahora que he visto el final, siento que toda esta ciudad en ruinas, está construida roca a roca por ancianos como él.</p>
+    <p class="lector-p">Sin mediar más palabras, Daikuku rasgó la cortina en tres trozos. Cubiertos con la tela continuaron su trayecto. Vestidos así, semejaban al resto de ancianos del lugar, salvo que ellos eran los únicos que se movían en todo el dominio. Caminaban con paso ligero agazapándose entre las rocas. Pasó largo rato en calma, nada les molestaba, nada presagiaba una amenaza, entre las ruinas sólo existía el silencio y el olvido de los ancianos que allí perecían. Una portentosa construcción les cerraba el paso, buscaron una entrada y cruzaron al interior de lo que parecía la cúpula de una catedral. Una luz señalaba la salida. Saltaron al exterior por un vano en la pared. Recorrieron unos pasos cuando un agudo grito rasgó la quietud. Los tres alzaron la mirada. Una criatura negra cruzaba el cielo describiendo círculos. Podían verse sus ojos rojos inquiriendo las ruinas. Los elegidos quedaron inmóviles, esperaban que no los hubiese visto. Aquella bestia alada no parecía nada amigable, sin duda se trataba de un espía de Moor.</p>
+    <p class="lector-p dialogo">— No nos ha visto –susurró Daikuku–. Caminemos despacio hacia atrás.</p>
+    <p class="lector-p dialogo">— ¿Crees que es lo correcto? Puede que piense que somos viejos.</p>
+    <p class="lector-p dialogo">— Esperad un momento. Sigue dando vueltas. No sabe quienes somos –apuntó Geneviève.</p>
+    <p class="lector-p">Permanecían quietos. La bestia continuaba su vuelo. Descendía lentamente. Escrutaba a cada uno de los allí presentes desde el aire.</p>
+    <p class="lector-p dialogo">— ¡Mierda! Nos va a descubrir si se acerca –murmuró Dimitri.</p>
+    <p class="lector-p dialogo">— Tranquilo, puede que no sea tan astuta –contestó Daikuku sin apenas mover los labios.</p>
+    <p class="lector-p">La criatura planeaba rasante entre los viejos, uno tras otro. Apenas a unos pasos de los elegidos, sus ojos se dilataron, brillaban arrolladores. Picando las alas, caía sobre los muchachos. Sin pensarlo, corrieron hacia el interior de la catedral. El agujero era lo suficientemente pequeño para que el monstruo no pudiese pasar volando. Su garganta chirriaba. Se lanzó como una saeta tras ellos. A punto estuvo de rasgar sus capas.</p>
+    <p class="lector-p">De repente un silbido cruzó el cielo, el grito de la bestia cesaba. Se escuchó un fuerte golpe contra el suelo. Los tres se volvieron, la rapaz yacía muerta en el suelo cruzada de lado a lado por una lanza de madera y pedernal. Daikuku se acercó, miraba el arma con interés. Levantó la vista en busca de su dueño mientras sus compañeros miraban absortos la repugnante cara del bicho muerto. Entre las ruinas, una sombra desaparecía imperceptiblemente.</p>
+    <p class="lector-p dialogo">— ¿Habéis visto eso?</p>
+    <p class="lector-p dialogo">— No, ¿qué viste?</p>
+    <p class="lector-p dialogo">— Una sombra. Había alguien allí entre las rocas, él ha acabado con este bicho, estoy seguro. Alguien nos está siguiendo –aseguró nervioso Daikuku.</p>
+    <p class="lector-p dialogo">— Sea como sea, nos ha ayudado mucho acabando con este engendro de Moor. Debemos estar agradecidos, sin la ayuda del desconocido ahora podríamos estar muertos –añadió Geneviève.</p>
+    <p class="lector-p">La criatura se volatilizaba en una pestilente humareda que envenenaba el aire. La lanza cayó al suelo. Daikuku la tomó entre sus manos examinándola.</p>
+    <p class="lector-p dialogo">— ¿Y si es una trampa?, nos hace sentir confiados para atacarnos después. Una trama de Moor para dejarnos paso libre sin que sospechemos, para llevarle ante el cuarto elegido –advirtió Dimitri.</p>
+    <p class="lector-p dialogo">— Bueno o malo no importa. No sabemos quién es. No podemos hacer nada, únicamente seguir nuestro camino –respondió Geneviève.</p>
+    <p class="lector-p dialogo">— Nos ha seguido y no lo hemos intuido. Por muy alerta que andemos, no consentirá que lo descubramos. Es un cazador. Puede que tengas razón, Dimitri, pero no tenemos otra opción. Sigamos adelante –replicó Daikuku sin levantar los ojos del arma.</p>
+    <p class="lector-p">Geneviève y Dimitri dieron unos pasos dejando atrás al pequeño.</p>
+    <p class="lector-p dialogo">— Vamos, Daikuku. Deja eso ahí.</p>
+    <p class="lector-p">Daikuku estudiándola por última vez, clavó la alabarda en el suelo y corrió junto a sus compañeros.</p>
+    <p class="lector-p dialogo">— ¿Sabéis? Esa lanza me resulta inexplicablemente familiar. Se parece muchísimo a las armas de guerra que tiene el chamán de mi tribu colgadas en la pared. Hace cientos de años que no se usan. Son un recuerdo de antaño, un tesoro de nuestra gente. No puedo evitar pensar en lo extraño que resulta ver algo así aquí.</p>
+    <p class="lector-p dialogo">— No sé bien qué decirte. Ya sabes que aquí nada es imposible –contestó Geneviève.</p>
+    <p class="lector-p">La última ruina se alzaba ante ellos. Una entrada deformada contra el suelo indicaba el camino a seguir.</p>
+    <p class="lector-p dialogo">— Mirad, ya hemos llegado al final de este dominio. ¿Tenemos que cruzar esa puerta? –preguntó Dimitri.</p>
+    <p class="lector-p dialogo">— Sí, son dominios incompatibles, esa puerta es el nexo. Veamos qué nos espera al otro lado.</p>
+    <p class="lector-p dialogo">— Hace muchas horas que estamos en este mundo, es posible que pronto despertemos, necesitamos encontrar un lugar donde detenernos –recordó Daikuku.</p>
+    <p class="lector-p dialogo">— Lo sabemos, pero este emplazamiento no es nada seguro, debemos continuar, conseguir unas cuerdas o cualquier cosa con la que asirnos y encontrar un buen rincón ajeno a todo peligro –contestó Geneviève.</p>
+    <p class="lector-p dialogo">— Aquí el tiempo pasa de una manera muy distinta a como lo hace en el mundo real. No sé cuánto tiempo puedo llevar aquí. Es una extraña sensación –apuntó Dimitri.</p>
+    <p class="lector-p dialogo">— Sois de lo que no hay. He dicho que estéis tranquilos. Cuando vas a despertar sientes un ligero mareo. Uno o dos minutos hasta que desapareces de este mundo. Siempre sucede así. Todavía queda tiempo. ¡Vamos! No os entretengáis –porfió Geneviève.</p>
+    <p class="lector-p">Dimitri empujaba con fuerza una tapa de metal que les obstaculizaba el paso. Los muchachos salían por la boca de un cubo de basura que servía de entrada al nuevo dominio. Montañas y montañas de desechos se alzaban interminablemente hasta no se sabe dónde. Estrechas sendas separaban cada uno de los montículos. Toneladas de inmundicias y un intenso hedor se acumulaban. Los muchachos saltaban al camino siguiendo su marcha. Plástico, papel, metal, vidrio, todo aquello que el hombre puede engendrar y desechar, estaba en aquel lugar.</p>
+    <p class="lector-p dialogo">— Desde aquí no se ve nada, subiré a uno de estos montones para encontrar de nuevo la trayectoria. La montaña celeste se encuentra en aquella dirección. Vamos por el camino indicado, recto hasta el final –el pequeño observó y quedó inmóvil.</p>
+    <p class="lector-p dialogo">— ¿Qué sucede, Daikuku?, ¿por qué no bajas?</p>
+    <p class="lector-p dialogo">— Esto es inmenso, Dimitri, no veo el horizonte por el que pueda acabar.</p>
+    <p class="lector-p dialogo">— No importa, correremos. ¡Vamos, baja!</p>
+    <p class="lector-p dialogo">— ¡Hey! Daikuku, vamos, no tenemos todo el día.</p>
+    <p class="lector-p dialogo">— Está lleno de gente, hay gente buscando entre todo esto, debe de haber miles. Parecen hormigas.</p>
+    <p class="lector-p">Los otros dos muchachos escalaron los escombros hasta llegar junto al pequeño. Observaban anonadados.</p>
+    <p class="lector-p dialogo">— Esto es imposible –exclamó Dimitri.</p>
+    <p class="lector-p dialogo">— No, es muy posible. Esto lo he visto en televisión.</p>
+    <p class="lector-p dialogo">— ¿Qué es una televisión, eh, Geneviève?</p>
+    <p class="lector-p dialogo">— Algo como eso que hay bajo tus pies. Transmite imagen y sonido a cualquier parte del mundo. Es como una ventana desde donde se puede observar hasta el universo.</p>
+    <p class="lector-p dialogo">— ¿Y por qué se tira algo tan valioso?</p>
+    <p class="lector-p dialogo">— Supongo que es cuestión de avaricia y desdén.</p>
+    <p class="lector-p dialogo">— Amm. Entonces todo lo que hay aquí son cosas que ya no usa la gente que las tenía.</p>
+    <p class="lector-p dialogo">— Botellas, neveras, sillas, computadores, comida, ropa. Hay de todo, y muchas cosas todavía sirven –observó Dimitri.</p>
+    <p class="lector-p dialogo">— Sí. Todo esto es basura civilizada –añadió Geneviève.</p>
+    <p class="lector-p dialogo">— Pero imagino que es un sueño, que no existe algo así en la realidad, y que esa gente no vive así.</p>
+    <p class="lector-p dialogo">— No, Daikuku. Todo esto existe, y estoy segura de que es muy pequeño comparado con los vertederos del mundo real. Muchas familias viven de la basura. Nadie se preocupa de ellos.</p>
+    <p class="lector-p dialogo">— Esto es muy grave, Geneviève, el hombre está mucho peor de lo que pensaba, si permite cosas tan espeluznantes como ésta.</p>
+    <p class="lector-p dialogo">— Hay cosas peores que éstas, Daikuku.</p>
+    <p class="lector-p dialogo">— Será mejor que no me digas más. Pero, ¿por qué en un sueño existe algo tan atroz?</p>
+    <p class="lector-p dialogo">— Este territorio es un reflejo del mundo real. Esta gente vive así cada uno de sus días. No conoce nada más. Por ello sus sueños son exactamente igual que su realidad. Una pesadilla incluso mientras duermen. Continuemos.</p>
+    <p class="lector-p dialogo">— Es realmente triste que no se pueda ser feliz, siquiera mientras se duerme.</p>
+    <p class="lector-p">Los tres continuaron su ruta. Las gentes rebuscaban comida y enseres aún útiles que guardaban en fardos cargados a la espalda. El olor era fuerte y pesado. Niños y niñas con un aspecto terrible, hombres y mujeres de todas las edades. Durmiendo, comiendo, viviendo entre la basura. Cadáveres entre los vivos. Un panorama verdaderamente desolador.</p>
+    <p class="lector-p dialogo">— Será mejor que sigamos el camino sin levantar la vista –dijo Dimitri.</p>
+    <p class="lector-p">Los tres estiraron sus capas ocultándose bajo ellas. Así caminaron inadvertidos entre la inmundicia durante largo rato. No había nada que perturbase su andadura. Un montón de deshechos rodaron colina abajo. Un grito. A unos pasos una niña caía rodando desde media altura. De bruces contra el suelo. Daikuku corrió junto a ella.</p>
+    <p class="lector-p dialogo">— ¿Estás bien, te has hecho daño? –preguntaba levantándola del suelo con suavidad.</p>
+    <p class="lector-p dialogo">— Buenos días tenga usted señor, muchas gracias. Es muy amable.</p>
+    <p class="lector-p dialogo">— De nada, pero ¿estás bien?</p>
+    <p class="lector-p dialogo">— Sí, señor. Sólo me lastimé el brazo pero nada más.</p>
+    <p class="lector-p">Geneviève y Dimitri miraban a la pequeña desconsolados. Debía de tener la misma edad de Daikuku, estaba desnutrida y sucia. No podían hacer nada por ella. La niña recogía todo lo que se le había caído del saco.</p>
+    <p class="lector-p dialogo">— ¿Quieres que te ayude?</p>
+    <p class="lector-p dialogo">— No, señor, muchas gracias. Pero sí agradecería si usted tuviese algo de comer para darme.</p>
+    <p class="lector-p dialogo">— ¡Ah! –suspiró Daikuku impotente–. No tengo nada.</p>
+    <p class="lector-p dialogo">— No importa, señor, no se moleste, ya estoy acostumbrada a esta hambre. Por favor, continúe su camino, no quisiera hacerle perder su tiempo conmigo.</p>
+    <p class="lector-p dialogo">— ¡Espera, pequeña! Toma –Dimitri se acercó sacando algo de su bolsillo–. No te quitará el hambre, pero puede que te gusten.</p>
+    <p class="lector-p dialogo">— Muchas gracias, señor –la niña cogió la cajita de metal, su interior estaba lleno de caramelos, cogió unos cuantos y se los metió en la boca–. Están deliciosos. Gracias otra vez.</p>
+    <p class="lector-p dialogo">— No hay de qué.</p>
+    <p class="lector-p dialogo">— Si yo pudiese ofrecerles algo, me alegrarían mucho. Pero es poca cosa la que tengo –dijo mostrándoles el fardo.</p>
+    <p class="lector-p dialogo">— Vaya, seguro que sí. Eso nos vendrá muy bien. ¿Nos puedes dar esa cuerda de ahí?</p>
+    <p class="lector-p dialogo">— Por supuesto, tómenla. Este lugar está lleno de cuerdas como ésa, no tardaré mucho en encontrar otra igual.</p>
+    <p class="lector-p">La niña desenredó la cuerda y se la ofreció a Daikuku. El elegido la tomó entre sus manos y la enrollaba para comprobar que era suficiente.</p>
+    <p class="lector-p dialogo">— ¿Es de su gusto, señor?, ¿acaso no le agrada?</p>
+    <p class="lector-p dialogo">— Sí, claro. Es perfecta, justo lo que buscaba.</p>
+    <p class="lector-p dialogo">— Gracias –dijeron los tres al unísono.</p>
+    <p class="lector-p dialogo">— Gracias a ustedes. Vayan con dios.</p>
+    <p class="lector-p">La niña escaló la montaña y siguió con sus quehaceres. Los tres avanzaban con el corazón arrugado. Durante largo tiempo, ninguno dijo nada. El dominio llegaba a su fin.</p>
+    <p class="lector-p dialogo">— Ya hemos llegado al límite de este lugar, esa nevera en medio del camino es el nexo con el siguiente dominio –señaló Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Hay cuerda suficiente para todos, Daikuku?</p>
+    <p class="lector-p dialogo">— Sí, para los siete si es necesario.</p>
+    <p class="lector-p">Geneviève abrió la puerta del aparato, un pasillo a otro lugar. Cruzaron cerrando a su paso, saliendo por el agujero del tronco de un gran árbol. Se encontraban en un bosque inmenso y radiante. La floresta copaba el cielo, los arbustos florecían por todas partes. El susurro de un río llegaba en la distancia.</p>
+    <p class="lector-p dialogo">— Vamos, tenemos que encontrar algún claro o alguna elevación desde la que divisar la montaña celeste –animó Geneviève.</p>
+    <p class="lector-p dialogo">— Este lugar parece más agradable que los anteriores. Por su aspecto no parece que Moor haya llegado hasta aquí.</p>
+    <p class="lector-p dialogo">— Yo ya no me fío, Dimitri. Será mejor andar con cien ojos, incluso en lugares como éste. Y más, sabiendo que alguien nos sigue.</p>
+    <p class="lector-p">Los tres avanzaban precavidos. No podían confiar en nada, en cualquier lugar podía ocultarse un centinela de Moor.</p>
+    <p class="lector-p">Todo era realmente bello, cerezos, almendros, naranjos en flor, rosales, dalias, jacintos. Animales paciendo tranquilos por cada rincón. Era un lugar ideal para olvidar cualquier sospecha. Tras unos minutos de camino, la tensión se disipaba, ahora más calmados. Era de día y una luz veraniega iluminaba la arboleda. Sus rostros parecían sosegados, las flores y el agradable aroma dejaban atrás los tristes sentimientos vividos.</p>
+    <p class="lector-p dialogo">— Jamás había visto lugar así, es realmente precioso. En París no hay más que parques pelones y algún que otro intento de bosque artificial entre tanto hormigón.</p>
+    <p class="lector-p dialogo">— No es tan raro, en mi pueblo no es nada difícil encontrar lugares así. En Schkara hay valles, prados y bosques como estos sin tener que ir muy lejos.</p>
+    <p class="lector-p dialogo">— ¡Caray!, pues yo no había visto un bosque así nunca, ni siquiera he oído hablar a los pastores de lugares como éste. Podría cruzar el bosque entero sin poner un pie sobre el suelo. Es una verdadera lástima no poder disfrutar de este sitio tranquilamente.</p>
+    <p class="lector-p dialogo">— Sí, sería estupendo quedarse aquí un par de horas todos los días. Por cierto, ya que mencionas tu pueblo. Todavía no nos has dicho de dónde eres, Dimitri.</p>
+    <p class="lector-p dialogo">— Tienes razón. Vivo en un pueblo cerca de Schkara, una ciudad de Georgia, no muy lejos de Osetia.</p>
+    <p class="lector-p dialogo">— Eso está muy lejos de África ¿verdad?</p>
+    <p class="lector-p dialogo">— Dependiendo de en qué parte del continente vivas.</p>
+    <p class="lector-p dialogo">— ¡Ay! ¡Cuánta pregunta! Vivo en un poblado muy lejos de Kampala, es la ciudad más cercana, de la cual llegan los voluntarios. Pertenece a Uganda.</p>
+    <p class="lector-p">Mientras los dos muchachos hablaban, Geneviève quedaba atrasada unos pasos.</p>
+    <p class="lector-p dialogo">— ¿Geneviève, has visto algo? –preguntó Dimitri volviéndose–. ¡Geneviève! –el muchacho se acercó a ella preocupado al ver que la joven se balanceaba atontada.</p>
+    <p class="lector-p dialogo">— Estoy bien, claro. Sólo estoy algo mareada. Creo que voy a despertar.</p>
+    <p class="lector-p dialogo">— Vamos, Dimitri, cógela y tráela junto a aquellas grandes piedras. Están apartadas y ocultas por los arbustos, será un buen lugar para escondernos.</p>
+    <p class="lector-p">Dimitri cogió en brazos a la chica, recostándola en el suelo junto a las piedras. Daikuku ató un cabo a la roca y el otro lo anudó a la cintura de la muchacha.</p>
+    <p class="lector-p dialogo">— No te despiertes todavía, un momento –decía Dimitri mientras Geneviève murmuraba algo.</p>
+    <p class="lector-p dialogo">— ¡Ya está! Listo.</p>
+    <p class="lector-p">La elegida se desvanecía poco a poco, mientras sus ojos se cerraban.</p>
+    <p class="lector-p dialogo">— Espero volver a verte aquí cuando nos durmamos de nuevo. Te echaré de menos amiga –la joven acabó desapareciendo.</p>
+    <p class="lector-p dialogo">— Hasta pronto, compañera. Daikuku, ¿crees que todo saldrá bien?</p>
+    <p class="lector-p dialogo">— Claro que sí. Volveremos a este lugar cuando soñemos de nuevo. No debes preocuparte, si un espejo viejo y roto es la llave para despertar elegidos, estas cuerdas seguro que son un método infalible para amarrarse a este mundo. Ahora cubriré toda la cuerda con tierra para que no la puedan encontrar fácilmente. Seguro que si son tan estúpidos como aquella bestia alada que nos atacó, no habrá mucho problema. Incluso si las encontraran, no creo que supiesen cuál es su utilidad. Echaré unas hojas por encima, así quedará más disimulado. Es importante que nadie las vea. Recuerda la sombra que nos ayudó, todavía no sabemos nada de ella. Es posible que nos siga el rastro, o quizás nos esté vigilando, sea de un modo o de otro, mejor evitar cualquier sorpresa.</p>
+    <p class="lector-p dialogo">— En verdad parece que llevamos horas en este mundo. ¿Cuándo crees que despertarás, Daikuku?</p>
+    <p class="lector-p dialogo">— No lo sé. Con lo que llevo metido en el cuerpo puede que mucho aún. Seguro que seré el último en despertar. Pero también el último en volver. ¿Sabes? En la aldea controlo el momento del día a través de la posición del sol. Aquí no hay nada que indique el tiempo transcurrido.</p>
+    <p class="lector-p dialogo">— Tendré que traerme un reloj en el bolsillo a la próxima. No me gusta esto de andar caprichosamente sin saber en qué momento vamos a despertar. Ahora que digo reloj, teniendo en cuenta la franja horaria, yo debería haber despertado antes que Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Por?</p>
+    <p class="lector-p dialogo">— Cuestiones de astronomía. El sol sale por el este y se pone por el oeste. Supongo que me habré pasado con las pastillas. A veces pierdo la cuenta, y tomo dos creyendo no haber tomado la primera. Dejando esto a un lado, hay cosas que me intrigan todavía. Me has contado la leyenda, la primera parte de la historia, ahora cuéntame la segunda, en la que estamos nosotros. Te han drogado para encontrarnos, en cambio Geneviève y yo no sabíamos tanto como pareces saber tú. ¿Por qué tanto tiempo aquí?</p>
+    <p class="lector-p dialogo">— Bueno, en mi tribu todavía creemos en la leyenda de las siete máscaras. Tenemos un chamán, Manamá. Él es quien habla con los espíritus, el que interpreta los mensajes. Yo tuve un sueño y él descubrió su significado. Mi padre me ha contado todo cuanto sabe de la leyenda, y el brujo me desvela los misterios. Es mi guía en el mundo real.</p>
+    <p class="lector-p dialogo">— ¡Eso es genial! Me encantaría que alguien hubiese obrado así conmigo.</p>
+    <p class="lector-p dialogo">— No te creas. El viejo tuvo un fallo. No contaba con que vosotros despertaríais, y que yo me quedaría solo aquí.</p>
+    <p class="lector-p dialogo">— No pienses mal de él, lo hizo creyendo que todos nosotros llegaríamos aquí como tú. En realidad hizo muy bien, no hay tiempo que perder.</p>
+    <p class="lector-p dialogo">— Lo sé, no era su intención. Pero no volverá a pasar, mi madre no le dejará darme ni un trozo más de adormidera. Ja, ja, ja. Oye, Dimitri… espero que no te importe la pregunta, pero… ¿cómo se siente teniendo una enfermedad como la tuya? Yo pensaba que no poder aprender era duro, pero al conoceros a vosotros dos me he dado cuenta de que hay cosas peores. Geneviève está en silla de ruedas, y tú no puedes vivir sin pastillas por miedo a acabar con alguien o contigo durante un ataque.</p>
+    <p class="lector-p dialogo">— ¡Caramba!, no sabía que Geneviève era minusválida, ni que tú sufrías dislexia. Yo lo llevo mejor que hace unos años, estoy operado. Si tomo mis pastillas va bien, pero necesito de ellas del mismo modo que necesito comer. Ahora no lo noto, pero mi esquizofrenia es degenerativa. Con el tiempo puede que pierda habilidad psicomotora. Las pastillas me ayudan a detener los ataques y a estirar en el tiempo la degeneración. He aprendido a vivir con ello. Pero no hablemos de cosas malas. Con todo esto, he recordado algo más que me sucedió de pequeño. Antes de contártelo me ataré a la roca, no vaya a ser que despierte mientras hablo, así estaremos prevenidos.</p>
+    <p class="lector-p">Siendo pequeño, estando en casa, hubo un apagón. Se fue la luz durante todo el día y la noche. Yo era muy miedoso, y cuando llegó la hora de dormir le pedí a mi madre una vela para ver en la oscuridad por si me levantaba en la noche. Mi madre la dejó en la mesita para que iluminase mi cuarto. Me dormí con la tenue luz a mi lado. Esa noche, como algunas otras, me desperté para ir al baño. La vela se había consumido. Me acerqué al interruptor para encender la lámpara, no funcionaba. Tenía miedo y me orinaba. Me tumbé en la cama mirando la lámpara, le clavaba los ojos acusándola de que no funcionase. Un rato estuve así, hasta que por arte de magia se encendió. Tan tranquilo me levanté para ir al baño, hice pis y volví a la cama. Movía el interruptor pero la luz no se apagaba. La había encendido yo, mi deseo había hecho que funcionase y ahora que quería oscuridad, era incapaz de apagarla. Aquella noche dormí con la luz encendida. A la mañana siguiente la corriente volvió, funcionaba bien. No pude volver a hacerla funcionar de nuevo con mi voluntad. Creí que había sido un sueño. Pero ahora me doy cuenta de que era el poder intrínseco en mí el que permitió aquello. El poder de Alaris, legado a través de Nurud dum –una pausa–. Todo esto es increíble.</p>
+    <p class="lector-p dialogo">— Yo hace unos días me encontré a Golonku portando la máscara de Rádamus en sueños. A mí también me pasan cosas como a ti –dijo Daikuku no queriendo ser menos–. ¿Sabes?, ahora te vas y me quedo solo. Que aburrimiento.</p>
+    <p class="lector-p dialogo">— Mira el lado bueno. Mientras estés despierto cuidarás de que nadie se acerque. Si se aproxima un esbirro de Moor lo despistas lanzando una piedra muy lejos, así confundirás su camino. No es muy divertido, pero es una tarea importante. Además, cuando nosotros durmamos y tú todavía estés despierto, tendremos que quedarnos aquí hasta que aparezcas. Ahora uno, luego otro.</p>
+    <p class="lector-p dialogo">— Lo mismo es estar solo que acompañado. Cuando vosotros volváis seguro que lo hacéis con muy poca diferencia.</p>
+    <p class="lector-p dialogo">— No seas tan trágico amigo mío. Piensa por un momento en todo lo que puede suceder en este bosque, puede que esté encantado, que aparezcan criaturas fantásticas al caer la noche.</p>
+    <p class="lector-p dialogo">— ¡Uuuhh! Ya lo estoy viendo, lo veo, lo veo. Esta noche la pasaré cantando y bailando con seres mágicos. De este mundo ya me sorprende poco, y muchos menos unos duendes. Lo primero será tapar tu cuerda, después estaré aquí sentado un rato, después seguiré sentado, y luego, a esperar más hasta que despierte.</p>
+    <p class="lector-p dialogo">— Disculpa que te interrumpa, pero creo que estoy empezando a sentir un ligero vahído, voy a despertar. Si te aburres mucho, habla con las piedras. Nos vemos más tarde, Daiku… –dijo susurrando sin acabar la frase.</p>
+    <p class="lector-p dialogo">— Hasta luego, tunante. ¡Pufff! Antes lo digo, antes desaparece. Hala, a esperar.</p>
+    <p class="lector-p">Dimitri se había desvanecido. Daikuku estaba solo. “Habla con las piedras si te aburres… ¡Habla tú con las piedras!” Tomó un poco de tierra y ocultó toda la cuerda, colocando unas hojas secas para disimular mejor. Daikuku pensaba en sus compañeros, sus amigos, recordaba con detalle todo lo que había sucedido desde que había quedado dormido. Pensaba que el bosque sería aún más bonito estando con ellos. Incluso discutir con Dimitri era más divertido que estar solo. Ató la cuerda y la disimuló tan bien como pudo, dejando el lazo abierto bajo sus pies. Si algo ocurría sería mejor ocultarse en otro lugar para no desvelar los cabos.</p>
+    <p class="lector-p">Empezaba a hacerse de noche. Continuaba sentado sobre las rocas. El aburrimiento cada vez pesaba más sobre los párpados del elegido. Sin quererlo, se durmió. Durante buen rato estuvo traspuesto. ¿Quién no ha soñado que duerme? La luz se había desvanecido por completo, estaba oscuro, un tenue resplandor iluminaba la arboleda procedente de alguna estrella.</p>
+    <p class="lector-p dialogo">— ¡Eh! Tú, ¡¡Eh!! ¿Me estás escuchando? –una voz de mujer exclamaba exigentemente–. ¡No te hagas el dormido, sé que me estás escuchando! –bramaba enfurecida–. No me hagas repetírtelo de nuevo, cuando me enfado soy muy peligrosa. ¡Vamos!, levanta ese culo gordo de mi cabeza. Contaré hasta tres. Uno… dos… tres… ¡¡¡Deeessspieeerrrttaaaa!!! –gritó enloquecida.</p>
+    <p class="lector-p">Daikuku despertó sobresaltado tropezando con la cuerda, cayó al suelo de bruces, todavía atontado no sabía cómo había acabado en el suelo.</p>
+    <p class="lector-p dialogo">— ¡Por fin! Que maravilla. Ya creí que jamás te levantarías. Sentía un gran pesar imaginando que ese culo se quedaría pegado a mí para siempre. Mmmm, que gusto oye. No creo que a ti te agradase que se sentaran sobre ti.</p>
+    <p class="lector-p">El elegido se incorporó rápidamente, limpiándose la tierra de la cara. Buscaba a su alrededor a la mujer que le hablaba y a la cual era incapaz de ver.</p>
+    <p class="lector-p dialogo">— ¿Quién es? ¿Quién habla? –preguntó nervioso.</p>
+    <p class="lector-p dialogo">— ¿Cómo que quién es?, ¡pues soy yo, niño! Te sientas sobre mí y ahora intentas hacerme creer que no me ves. Debes estar realmente trastornado para no ver una roca de mi tamaño. Debería limpiarte los oídos y los ojos con agüita fresca.</p>
+    <p class="lector-p">Daikuku se acercó a la roca sobre la que estaba sentado. Con ojos curiosos intentaba comprender cómo aquella piedra podía estar hablando. Pero no sólo escuchaba su voz, el bosque entero era un murmullo inquietante. Se acercó tanto a la roca, absorto por lo que estaba sucediendo, que tocó con su nariz la fría superficie.</p>
+    <p class="lector-p dialogo">— ¡¡AAAAhhh!! Aléjate malandrín. ¿Qué pretendes hacer? Te advierto que detesto los besos de amor en la primera cita.</p>
+    <p class="lector-p">Alelado todavía por la modorra, no sabía muy bien en qué mundo estaba. Observaba el pedrusco parlanchín. Una enorme boca llena de dientes y dos grandes orejotas.</p>
+    <p class="lector-p dialogo">— Escúchame, jovencito. Lo primero que debes saber, es que yo no soy una piedra, sino una roca. Y lo segundo, es que se puede hablar si tienes boca, y yo de eso tengo una. Es más, no únicamente tengo yo, también las tienen el resto de rocas de este bosque. ¿Acaso no las oyes?</p>
+    <p class="lector-p">Daikuku recuperaba la noción del espacio, recordaba dónde estaba. Se sentó en el suelo.</p>
+    <p class="lector-p dialogo">— ¿Todas las rocas podéis hablar?</p>
+    <p class="lector-p dialogo">— Claro que sí, cuando cae la noche las rocas hablamos y oímos, el río ve y oye, pero no puede hablar, y los árboles ven y huelen. Se comunican con los ojos, yo no los he visto nunca, pero seguro que es muy gracioso.</p>
+    <p class="lector-p">Daikuku buscaba entre los árboles, ojos enormes y prominentes narices. Sonreía al ver a los árboles comunicarse parpadeando, parecían realmente tontos.</p>
+    <p class="lector-p dialogo">— Por cierto, ahora que digo que las rocas hablan. Mis compañeras también tienen la boca muy grande y todavía no las he escuchado. A estas horas ya nos hemos dado las buenas noches. Es muy raro… –dijo pensativa la roca–. ¿Sabes tú algo?</p>
+    <p class="lector-p dialogo">— Heee…</p>
+    <p class="lector-p dialogo">— ¡¡Ooh!! ¿Qué es esto que me rodea?, me has atado con una cuerda. ¡Carámbanos! No sólo te sientas sobre mí, sino que además me amarras con tan rudo cordón. ¡Libérame, bribón! ¿Acaso piensas que me voy a ir andando a otro sitio? ¡Qué idea tan absurda chico! ¿No será que también has atado a mis amigas y por eso no pueden hablar? ¡Vamos, contesta, dime la verdad! –preguntó la roca sulfurada.</p>
+    <p class="lector-p dialogo">— Pues… pues sí –contestó Daikuku sentidamente–. Anudé una cuerda a cada una de vosotras, pero tiene su explicación, es una cuestión de vida o muerte…</p>
+    <p class="lector-p dialogo">— ¿Cómo que de vida o muerte? –interrumpió la señora al pequeño–. Aquí no hay peligro alguno de que nadie muera. Anda, baja las cuerdas hasta el suelo y libera sus bocas. Después decidiremos si dejamos las sogas en su sitio o te vas con ellas a otra parte. ¡Vamos! ¿A qué esperas?, ¡haz lo que te digo!</p>
+    <p class="lector-p">Daikuku se acercó a las otras dos rocas y bajó cuidadosamente el lazo.</p>
+    <p class="lector-p dialogo">— ¡¡¡Puaaajj!!! –espetó la segunda de ellas–. ¡Qué horror! Pensé que nunca más podría volver a hablar. ¿A quién se le ha ocurrido la fantástica idea de taparme la boca? No me gusta despertarme de este modo.</p>
+    <p class="lector-p dialogo">— Tranquila –exclamó la roca primera–. Ha sido un pequeño accidente que pronto tendrá solución.</p>
+    <p class="lector-p dialogo">— Ummm… ¿un accidente? –dijo la tercera roca–. Eso suena interesante, hacía muchos años que no ocurría nada por aquí.</p>
+    <p class="lector-p dialogo">— ¿Cómo que interesante? –porfió la segunda–. Nos amordazan con una cuerda y a esto lo llamáis accidente interesante. ¡Válgame el cielo, pero hasta dónde hemos llegado!</p>
+    <p class="lector-p dialogo">— No deberías acalorarte tanto –dijo la tercera–. A mí esta cuerda me hace cosquillas en el trasero. Deberíais aprender a divertiros.</p>
+    <p class="lector-p dialogo">— Perdón, señoras… –interrumpió Daikuku con cara de situación.</p>
+    <p class="lector-p dialogo">— ¡¡Pero ¿cómo?!! –chilló la segunda roca–. ¡Es que hay alguien aquí y no me lo habías dicho, traidora!</p>
+    <p class="lector-p dialogo">— ¡Oh! ¡Qué ilusión! –irrumpió la tercera–. Hace mucho tiempo que nadie venía a visitarnos.</p>
+    <p class="lector-p dialogo">— Es lo que estoy intentándoos decir desde el principio –berreó la primera–. Pero como siempre, no se puede hablar con vosotras sin gritar.</p>
+    <p class="lector-p dialogo">— Bueno, déjate de cháchara –dijo la segunda–. Siempre estás igual, vamos, dinos qué ocurre y déjate de tanto circunloquio.</p>
+    <p class="lector-p dialogo">— Maldito el día que aparecí a vuestro lado –masculló la primera.</p>
+    <p class="lector-p dialogo">— ¿Qué has dicho? ¿Te crees que estoy sorda vieja chocha? –voceó crispada la segunda–. Aquí la única que molesta eres tú, ¿sabes?</p>
+    <p class="lector-p dialogo">— ¡Escucha bien, vieja senil, debería caerte un rayo y partirte en piedrecitas! –gritó la primera.</p>
+    <p class="lector-p dialogo">— ¡¡Oooh!! –se ofendió la segunda–. Ten por seguro, que si estuvieses más cerca de mí, te daría un mordisco en ese cogote tan duro que tienes.</p>
+    <p class="lector-p dialogo">— ¡Eeeeh!, un momento –dijo calmada la tercera–. Creo que deberíamos escuchar a alguien, todavía no sabemos por qué estamos atadas y cuál es la razón de esta visita. ¿No creéis que deberíamos callar y dejar hablar al chico?</p>
+    <p class="lector-p dialogo">— Estoy hasta la coronilla de ti –murmuró la segunda.</p>
+    <p class="lector-p dialogo">— Y yo de ti, estoy de aquí al río –susurró la primera.</p>
+    <p class="lector-p dialogo">— ¡Callad! –exclamó la tercera, las otras dos señoras callaron–. A ver, ¿cuál es tu nombre, y por qué estás aquí?, quien quiera que seas.</p>
+    <p class="lector-p dialogo">— Emm… bueno… –comenzó entrecortado–. No sé muy bien por dónde empezar. Mi nombre es Daikuku, esas cuerdas que os rodean sujetan a mis amigos y esa tercera debe sujetarme a mí. Están ocultas para que nadie las descubra. Las usamos para sujetarnos a este mundo, así, cuando durmamos de nuevo apareceremos en este lugar. Yo todavía no he despertado, por eso estoy aquí, pronto lo haré desapareciendo. Los nudos quedarán vacíos y ocultos, siendo el único enlace entre nuestro mundo y éste –concluyó el pequeño temeroso de las rocas.</p>
+    <p class="lector-p dialogo">— ¡Vaya! Es la historia más rara e increíble que he escuchado nunca –apuntó la tercera roca–. No sé si estás loco o no, pero es realmente fascinante lo que cuentas.</p>
+    <p class="lector-p dialogo">— ¿Cómo que increíble? ¡Eso es una tontería, jamás había oído tantas sandeces juntas! Dos compañeros invisibles, cuerdas que les atan a no sé qué mundo, apariciones y desapariciones. Maldita sea chico, desátame este nudo ahora mismo –porfió la segunda roca.</p>
+    <p class="lector-p dialogo">— ¡Ehh! Tranquila, eres muy maleducada con las visitas. Puede que el muchacho esté loco, pero no deberías hablarle así. Eres la roca más grosera que he conocido, eres una vergüenza para todas –dijo la primera.</p>
+    <p class="lector-p dialogo">— ¡Aaaiii! ¡Qué piedra tan...! ¿Cómo te atreves a llamarme grosera? Precisamente tú, te recuerdo lo impertinente que has sido con el chico hace un momento cuando estaba sentado sobre tu cabeza –respondió la segunda.</p>
+    <p class="lector-p dialogo">— Nooo, querida, no te equivoques, eso tenía justificación. Además, no creo que mis modales se asemejen lo más mínimo a los tuyos, si es que los tienes.</p>
+    <p class="lector-p dialogo">— ¡¡Aaaa!! ¡Eres detestable! Deberían haberte atado de arriba abajo con una cuerda de esparto para que no pudieses hablar nunca más. Estarías más guapa con la bocota cerrada. Si es que se te puede llamar guapa.</p>
+    <p class="lector-p dialogo">— ¡Basta! –interrumpió la tercera–. Sois unas necias cotorras arrabaleras, siempre estáis igual, discutiendo todo el día. No deberías montar espectáculos así delante de nadie. Sed más amables y corteses con el chico. Ya sabemos que está loco, pero es la única visita que hemos recibido en mucho tiempo. Ni siquiera recuerdo la última vez. Si dejamos que las cuerdas sigan atadas a nosotras, el muchacho se quedará a nuestro lado. Estoy segura de que conoce numerosas historias peregrinas como las que nos acaba de contar. Dudo mucho que cualquiera de las cosas que tengáis que decir, sean más interesantes que los relatos del joven. ¿Estáis de acuerdo?</p>
+    <p class="lector-p dialogo">— Sí, puede que tengas razón. Aunque si no me gusta lo que cuenta, quiero que me desate –dijo la segunda.</p>
+    <p class="lector-p dialogo">— Sí, estoy de acuerdo. Odio tener que darte la razón, pero si lo que cuentas no nos gusta, tendrás que desatarnos –añadió la primera.</p>
+    <p class="lector-p dialogo">— En fin, son dos contra una –suspiró la tercera–. Creo que no es tan mal trato viendo lo visto. Tú nos entretienes y nosotras dejamos que las cuerdas se queden donde están. ¿Te parece bien? En caso contrario tendrás que hacer lo que ellas quieran.</p>
+    <p class="lector-p dialogo">— Me parece un buen trato. Pero debo pediros algo antes de empezar.</p>
+    <p class="lector-p dialogo">— ¿De qué se trata? –preguntaron las tres al unísono.</p>
+    <p class="lector-p dialogo">— Mientras os relato mi historia, debéis manteneros en silencio, tan sólo al final os dejaré hacer preguntas.</p>
+    <p class="lector-p dialogo">— Nos parece bien, sí, aceptamos.</p>
+    <p class="lector-p">Daikuku comenzó a relatar la leyenda de las siete máscaras a sus tres oyentes. La noche era silenciosa. Incluso el resto de rocas, habiendo escuchado la acalorada discusión, cesaron sus palabras para atender a la historia del niño. A grandes rasgos contó la creación del universo, la primera batalla. El encuentro de los elegidos. Habían pasado algo más de dos horas entretenidos por el relato. Daikuku perdía la noción del tiempo.</p>
+    <p class="lector-p dialogo">— ¡OOoohh! –suspiraron emocionadas todas las rocas del bosque.</p>
+    <p class="lector-p dialogo">— Bien cierto es, que tras escuchar tu historia, más nos convencemos de tu poca cordura chico –dijo la tercera–. Este bosque no es un sueño, esto es tan real como tú y yo. Pero lo prometido es deuda. Sin duda creo que por tu relato, mereces que dejemos las cuerdas donde están, si así es tu voluntad. ¿Vosotras que decís?</p>
+    <p class="lector-p dialogo">— Sí, es una historia realmente absurda, pero me gustó mucho. Tienes mi consentimiento.</p>
+    <p class="lector-p dialogo">— Sí, yo estoy de acuerdo. Ha sido muy entretenido. Que los lazos se queden donde están.</p>
+    <p class="lector-p dialogo">— Muchas gracias, señoras.</p>
+    <p class="lector-p dialogo">— Puedes estar tranquilo. Nosotras cuidaremos de que nada pase mientras desaparezcas. Anúdate a ella cuando quieras. Mañana será un nuevo día y verás con más claridad.</p>
+    <p class="lector-p dialogo">— Gracias. Son muy amables. Si no les importa, dejaré bien ocultas las cuerdas, y ataré la mía a mis pies. Empiezo a estar cansado, no creo que aguante mucho más tiempo dormido.</p>
+    <p class="lector-p dialogo">— Muy bien, muchacho, descansa. Nosotras cuidaremos de ti –dijo amablemente la segunda.</p>
+    <p class="lector-p">Al cabo de un rato una suave brisa soplaba, el bosque se balánceaba al compás. Daikuku tenía los ojos entreabiertos, esperando que llegase el momento. Era una incómoda sensación. La brisa sopló fría y arrítmica, corría entre los árboles como un sonido lastimero.</p>
+    <p class="lector-p dialogo">— Creo que voy a despertar señoras. Me siento algo mareado. Incluso parece que oigo cosas raras. Como un lamento. Seguro que me están llamando en casa.</p>
+    <p class="lector-p dialogo">— ¿Qué lamento? ¿Cómo que un ruido raro? –exclamaron las tres a la vez.</p>
+    <p class="lector-p dialogo">— Eso no es tu imaginación, muchacho, esa es la alarma. Nos habíamos quedado traspuestas y no nos percatamos de él. Algún peligro ha penetrado en el bosque. Vamos, Daikuku, escóndete entre los arbusto –dijo la tercera.</p>
+    <p class="lector-p dialogo">— No, puede ser peligroso, debes huir. Sal de aquí –achuchó la primera.</p>
+    <p class="lector-p dialogo">— ¡Pero, jovencito!, ¿no te das cuenta de que si ese peligro pasa por aquí puede hacerte daño? –añadió la segunda.</p>
+    <p class="lector-p dialogo">— No, no puedo huir, estoy despiert… –Daikuku no acabó la frase, había desaparecido, las rocas que no habían apreciado su marcha seguían hablando.</p>
+    <p class="lector-p dialogo">— ¡El bosque dice que es una criatura con un aspecto terrible! ¡Qué jamás se había visto en este lugar! ¡Debe ser muy peligrosa! –dijo la primera.</p>
+    <p class="lector-p dialogo">— ¡Eh, chico! ¡Debes esconder la cuerda si no quieres que os encuentren! –decía la tercera–. ¿Daikuku? ¿Daikuku, dónde estás?</p>
+    <p class="lector-p dialogo">— ¡Aaahh! El muchacho no está, es verdad que ha desaparecido –observó la segunda.</p>
+    <p class="lector-p dialogo">— Es cierto, el niño tenía razón. ¿Y las cuerdas?, ¿están bien ocultas? Si esa criatura llega hasta aquí no puede descubrirlos –advirtió la primera.</p>
+    <p class="lector-p dialogo">— ¡No!, no diremos nada, aunque nos amenacen con reducirnos a grava –las tres al unísono.</p>
+    <p class="lector-p dialogo">— ¡OOh! –exclamó la primera.</p>
+    <p class="lector-p dialogo">— ¿Qué pasa? –preguntaron las otras dos.</p>
+    <p class="lector-p dialogo">— El muchacho se ha ido sin ocultar el lazo que ata sus pies. Él disimuló los otros, pero no ha podido hacerlo con el suyo. Si ese monstruo lo viera, por poco que se aprecie, no quiero imaginar qué podría pasar.</p>
+    <p class="lector-p dialogo">— ¡Es terrible! –las tres a la vez.</p>
+    <p class="lector-p dialogo">— Callemos, ahí se acerca quién quiera que sea –murmuró la primera.</p>
+    <p class="lector-p">Desde la oscuridad de los árboles, una sombra se deslizó entre los arbustos hasta las rocas que sujetaban las sogas. Las señoras se mantenían calladas. La figura ocultó el lazo de Daikuku y las otras dos cuerdas con tanto esmero, que parecía no haber nada junto a las rocas. La figura se desvaneció tal como vino, sin ruido alguno, sin mover una sola hoja del bosque.</p>
+    <p class="lector-p dialogo">— Creo que alguien se ha acercado –susurró la primera.</p>
+    <p class="lector-p dialogo">— Calla -cuchicheó la segunda.</p>
+    <p class="lector-p">A muy poca distancia se escuchaban los fuertes pasos del intruso. Una respiración ronca se acercaba. Su presencia resonaba en todo el bosque. Una criatura negra como el carbón, de forma vaporosa, ojos rasgados y amarillos. Caminaba sobre sus cuatro patas congelando las hojas a su paso. Avanzaba lentamente, olfateando el aire, buscando con su penetrante mirada. Llegaba junto a las rocas, olía con celo, miraba en rededor. Parecía que algo llamaba su atención. Escudriñaba los árboles uno a uno, los arbustos, las rocas, el suelo. Suspiró profundamente. Levantaba la vista reanudando su camino en busca de los elegidos. Desapareció en la oscuridad del bosque. Tras largo rato, la criatura abandonaba el dominio. La tensión se disipaba. El silencio se rompió. Todo volvía a la normalidad. El bosque entero se preguntaba cómo podía haber llegado tan terrible criatura.</p>
+    <p class="lector-p dialogo">— ¡Uff! Ha sido horripilante, creí que me moría, y eso que las rocas no se mueren. Nunca había sentido tanto miedo. Ese frío recorría todo mi cuerpo de oreja a oreja –dijo la segunda.</p>
+    <p class="lector-p dialogo">— Ni que lo digas. Que sonido tan estremecedor –añadió la primera–. Alguien se acercó, pude oír su leve respiración. Fue quien ocultó las cuerdas, por eso el monstruo no las ha descubierto.</p>
+    <p class="lector-p dialogo">— Sí. De lo contrario ese bicho lo habría estropeado todo. Debemos dar gracias al bienhechor que ha ayudado al muchacho.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+  </div>
+  <div class="cap-paso">
+    <a href="https://hunicornia.es/7-mascaras/el-abismo/">← 6. El abismo</a>
+    <a class="der" href="https://hunicornia.es/7-mascaras/el-despertar/">8. El despertar →</a>
+  </div>
+</main>
+<script src="/lector-progreso.js" defer></script>
+<script>
+(function() {
+  var btn   = document.getElementById("btnIndice");
+  var panel = document.getElementById("indicePanel");
+  var fill  = document.getElementById("progFill");
+
+  if (btn && panel) {
+    // Enlaces internos: el capitulo activo se calcula por scroll.
+    // Enlaces a otra pagina (7 mascaras): ya viene marcado desde el archivo.
+    var anclas = Array.prototype.slice.call(panel.querySelectorAll("a[href^='#']"));
+
+    function marcar() {
+      var activo = null;
+      if (anclas.length) {
+        var limite = window.innerHeight * 0.4;
+        anclas.forEach(function(a) {
+          var destino = document.getElementById(a.getAttribute("href").slice(1));
+          if (destino && destino.getBoundingClientRect().top <= limite) activo = a;
+        });
+        if (!activo) activo = anclas[0];
+        anclas.forEach(function(a) { a.removeAttribute("aria-current"); });
+        activo.setAttribute("aria-current", "true");
+      } else {
+        activo = panel.querySelector("[aria-current]");
+      }
+      // Si la lista no cabe, se acerca el capitulo activo a la vista.
+      if (activo && panel.scrollHeight > panel.clientHeight) {
+        activo.scrollIntoView({ block: "nearest" });
+      }
+    }
+
+    btn.addEventListener("click", function() {
+      var abierto = panel.classList.toggle("abierto");
+      btn.setAttribute("aria-expanded", abierto ? "true" : "false");
+      btn.textContent = abierto ? "Cerrar" : "Índice";
+      if (abierto) marcar();
+    });
+
+    panel.querySelectorAll("a").forEach(function(a) {
+      a.addEventListener("click", function() {
+        panel.classList.remove("abierto");
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Índice";
+      });
+    });
+  }
+
+  if (fill) {
+    window.addEventListener("scroll", function() {
+      var d = document.documentElement;
+      var pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+      fill.style.width = Math.min(pct || 0, 100) + "%";
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

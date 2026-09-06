@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El juicio final de los dioses, capítulo 18 de 7 máscaras. Fantasía épica para leer gratis en Hunicornia.">
+  <meta name="author" content="Hunicornia">
+  <link rel="canonical" href="https://hunicornia.es/7-mascaras/el-juicio-final-de-los-dioses/">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>18. El juicio final de los dioses · 7 máscaras — Hunicornia</title>
+  <style>
+    @font-face { font-family: "Chopin"; src: url("/ChopinLight.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #643587; --secondary: #8b3689; --nav-h: 58px; }
+    html, body { width: 100%; background: #fff; color: var(--primary); font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { padding-top: var(--nav-h); }
+    .lector-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(100,53,135,0.15); z-index: 200; backdrop-filter: blur(8px); }
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: var(--nav-h); }
+    .nav-volver { font-family: system-ui, Arial, sans-serif; font-size: 12px; color: var(--secondary); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-volver:hover { opacity: 0.7; }
+    .nav-titulo { font-family: "Chopin", serif; font-size: 20px; font-weight: 300; letter-spacing: 0.05em; color: var(--primary); }
+    .nav-indice-btn { font-family: system-ui, Arial, sans-serif; font-size: 11px; color: var(--secondary); background: none; border: 1px solid rgba(100,53,135,0.3); border-radius: 4px; padding: 6px 14px; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; }
+    .nav-indice-btn:hover { background: rgba(100,53,135,0.06); }
+    .progreso-barra { height: 2px; background: rgba(100,53,135,0.1); }
+    .progreso-fill { height: 100%; width: 0%; background: var(--primary); transition: width 0.1s linear; }
+    .indice-panel { display: none; border-top: 1px solid rgba(100,53,135,0.1); padding: 24px 24px 28px; background: rgba(255,255,255,0.99); max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .indice-panel.abierto { display: block; }
+    .indice-lista { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 2em; }
+    .indice-lista li { padding: 3px 0; break-inside: avoid; }
+    .indice-lista a { font-family: "Chopin", serif; font-size: 15px; font-weight: 300; color: var(--primary); text-decoration: none; opacity: 0.8; }
+    .indice-lista a:hover { opacity: 1; }
+    .lector-contenido { max-width: 680px; margin: 0 auto; padding: 56px 24px 120px; }
+    .obra-titulo-h { font-family: "Chopin", serif; font-size: clamp(34px, 5vw, 64px); font-weight: 300; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--primary); line-height: 1.1; }
+    .obra-subtitulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--secondary); margin: 0 0 60px; opacity: 0.75; }
+    .cap-bloque { margin-bottom: 72px; }
+    .cap-h2 { font-family: "Chopin", serif; font-size: clamp(22px, 3vw, 32px); font-weight: 300; letter-spacing: 0.04em; margin: 64px 0 36px; color: var(--primary); text-align: center; padding-top: 48px; border-top: 1px solid rgba(100,53,135,0.12); line-height: 1.25; scroll-margin-top: var(--nav-h); }
+    .cap-num { display: block; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(10px, 1.1vw, 12px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--secondary); opacity: 0.75; margin-bottom: 16px; }
+    .lector-p { font-size: clamp(15px, 1.7vw, 17px); line-height: 1.95; margin: 0 0 0.9em; color: var(--primary); text-align: justify; hyphens: auto; }
+    .lector-p.dialogo { }
+    .sep-omega { text-align: center; color: var(--secondary); opacity: 0.3; font-size: 13px; margin: 36px 0; letter-spacing: 0.4em; }
+    .cta-final { text-align: center; margin-top: 64px; display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+    .cta-final a { display: inline-block; padding: 0.8em 1.5em; background: rgba(139,54,137,0.12); color: var(--primary); border-radius: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .cta-final a:hover { opacity: 0.7; }
+    .nota-final { font-size: 11px; color: var(--secondary); text-align: center; margin-top: 32px; opacity: 0.6; }
+    @media (max-width: 600px) { :root { --nav-h: 52px; } .lector-contenido { padding: 36px 16px 80px; } .nav-bar { padding: 0 16px; } .indice-lista { columns: 1; } }
+    @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; } }
+
+    .parte-h2 { font-family: "Chopin", serif; font-size: clamp(26px, 3.6vw, 42px); font-weight: 300; letter-spacing: 0.04em; margin: 120px 0 0; color: var(--primary); text-align: center; line-height: 1.2; scroll-margin-top: var(--nav-h); }
+    .parte-h2.primera { margin-top: 0; }
+    .parte-h2 + .cap-h2 { margin-top: 34px; padding-top: 34px; }
+    .indice-lista a[aria-current], .indice-sub a[aria-current], .indice-cap-nombre[aria-current] { opacity: 1; box-shadow: inset 3px 0 0 var(--primary); padding-left: 9px; }
+    .indice-sub li:has(a[aria-current]) { border-left-color: var(--primary); border-left-width: 3px; padding-left: 12px; }
+    .indice-parte { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--secondary); opacity: 0.7; margin: 16px 0 4px; break-inside: avoid; list-style: none; }
+    .indice-parte:first-child { margin-top: 0; }
+    .cap-paso { display: flex; justify-content: space-between; gap: 1.5em; margin-top: 72px; padding-top: 28px; border-top: 1px solid rgba(100,53,135,0.12); }
+    .cap-paso a { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary); text-decoration: none; max-width: 45%; line-height: 1.5; }
+    .cap-paso a:hover { color: var(--primary); }
+    .cap-paso .der { text-align: right; margin-left: auto; }
+  </style>
+</head>
+<body data-obra="7 máscaras" data-capitulo="El juicio final de los dioses">
+<nav class="lector-nav" aria-label="Navegación">
+  <div class="nav-bar">
+    <a class="nav-volver" href="/">← Volver</a>
+    <span class="nav-titulo">7 máscaras</span>
+    <button class="nav-indice-btn" id="btnIndice" aria-expanded="false" aria-controls="indicePanel">Índice</button>
+  </div>
+  <div class="indice-panel" id="indicePanel" role="navigation" aria-label="Índice de capítulos">
+    <ul class="indice-lista">
+      <li class="indice-parte">La leyenda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/">1. El nacimiento de las estrellas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-partida/">2. La partida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-cima/">3. La cima</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-conjuncion/">4. La conjunción</a></li>
+      <li class="indice-parte">La búsqueda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-reencuentro-de-los-elegidos/">5. El reencuentro de los elegidos</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-abismo/">6. El abismo</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-tercer-elegido/">7. El tercer elegido</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-despertar/">8. El despertar</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-opera/">9. La Ópera</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-huida/">10. La huída</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-eco/">11. El eco</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-silencio/">12. El silencio</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/las-atalayas/">13. Las atalayas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-ira/">14. La ira</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-impotencia/">15. La impotencia</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-bosque/">16. El bosque</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-despedida/">17. La despedida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-juicio-final-de-los-dioses/" aria-current="true">18. El juicio final de los dioses</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-batalla/">19. La batalla</a></li>
+      <li class="indice-parte">La redención</li>
+      <li><a href="https://hunicornia.es/7-mascaras/un-nuevo-amanecer/">20. Un nuevo amanecer</a></li>
+    </ul>
+  </div>
+  <div class="progreso-barra"><div class="progreso-fill" id="progFill"></div></div>
+</nav>
+<main class="lector-contenido" data-lectura>
+  <h1 class="obra-titulo-h">7 máscaras</h1>
+  <p class="obra-subtitulo">La búsqueda · Capítulo 18 de 20 · Castellano</p>
+  <div class="cap-bloque">
+    <h2 class="cap-h2">El juicio final de los dioses</h2>
+    <p class="lector-p">Tanuk ik había hecho llamar a los siete elegidos. Todos despertaban de la vigilia. Mientras descordaban los nudos y se levantaban, el Hombre Elefante se dirigía a ellos desde la penumbra del rincón en el que se ocultaba.</p>
+    <p class="lector-p dialogo">— Levantaos, amigos míos, despertad de vuestro sueño, es tiempo de partir hacia el encuentro final. La luna ya brilla en nuestro mundo, pronto se tornará roja. Llegado ese momento deberéis estar ante Moor. Es mucha la distancia desde aquí hasta el dominio del Señor del Odio. Habéis de ser prestos en vuestros pasos, no habrá nada que entorpezca el trayecto. Moor os espera para plantaros batalla, ninguno de sus esbirros se cruzará en vuestro camino, pero cientos de ojos os acecharán para hacer saber a su señor cuál es vuestra situación. No debéis temer, todo está escrito así. Cuando alcancéis vuestra meta yo estaré con vosotros. Recordad las palabras que os dije, nombraréis el nombre del dios que encarnáis seguido de las palabras “sé conmigo”, yo os indicaré cuando. No dudéis, ni desfallezcáis, puede que ahora penséis que sois endebles e inútiles, incapaces de defender el mundo, pero cuando la sangre de los dioses hierva en vuestro interior y la esencia renazca, vuestro poder será inconmensurable, inimaginable, seréis siete dioses creadores frente a un sólo dios destructor. Ahora partid, ascended el túnel y pedidle a Biro que os lleve a la salida de los subterráneos, cuando os halléis en la superficie habrá alguien esperándoos para guiaros en vuestro camino. Vamos, daos prisa y salid de aquí, no hay un sólo minuto que perder. Si no destruís a Moor antes de que la luna roja viaje de este mundo al vuestro, ésta será nuestra última noche y la del resto del cosmos –los siete escuchaban perplejos, inmovilizados por el miedo–. ¡Vamos! –gritó el Hombre Elefante alzándose en toda su altura–. ¡Marchaos ya! –sobresaltados los siete salieron apresurados, subían sin mirar atrás. Geneviève quedaba en la linde del portón.</p>
+    <p class="lector-p dialogo">— Te necesito, Tanuk ik, necesito que estés a mi lado, recupérate de las heridas y lucha junto a mí, no puedo hacerlo sola.</p>
+    <p class="lector-p dialogo">— No temas, mi niña –dijo el Hombre Elefante acariciando a la muchacha–. Estaré junto a ti, todos estaremos juntos, recorred este último tramo, y al final del camino nos encontraremos nuevamente. Vamos, ve con ellos –la muchacha corrió para alcanzar a sus compañeros–. ¡¡Biro!! –gritó el Hombre Elefante–. Llévalos a la salida, no te retrases –el Cuco Rojo quedaba acurrucado entre las manos de Tanuk ik, tras cumplir su cometido.</p>
+    <p class="lector-p dialogo">— Sí, señor, en seguida –contestó Biro desde la otra boca del túnel. Los siete elegidos aparecían presurosos en la sala central. Todos los espantapájaros estaban en pie, mirándolos fijamente–. Vamos, chicos, no perdáis tiempo, os debo llevar hasta la salida. ¡Seguidme! –Biro corría torpemente escaleras arriba, seguido del grupo.</p>
+    <p class="lector-p dialogo">— ¡¡No dejéis que Moor acabe con este mundo, luchad por nosotros!! –exclamó Faraday, mientras decía adiós con la mano.</p>
+    <p class="lector-p dialogo">— ¡Así lo haremos! –contestó Charles Vincent que iba el último.</p>
+    <p class="lector-p">Biro corría girando a izquierda y derecha, subiendo rampas y escaleras en un interminable laberinto, iluminando los pasillos con su linterna.</p>
+    <p class="lector-p dialogo">— ¿Cuánto queda, Biro? –preguntó Lucero.</p>
+    <p class="lector-p dialogo">— Queda poco, pronto saldremos a la superficie.</p>
+    <p class="lector-p dialogo">— A medida que subimos empiezo a sentir un frío que me encoge los huesos –dijo Aurora.</p>
+    <p class="lector-p dialogo">— Sí, es un frío extraño, jamás había sentido algo igual, más que helar los huesos, es el alma lo que siento estremecer –añadió Cheng Su.</p>
+    <p class="lector-p dialogo">— ¿Adónde nos llevas, Biro?, cada vez hace más frío –preguntó Daikuku.</p>
+    <p class="lector-p dialogo">— Os llevo a la salida, al lugar más cercano al dominio de Moor al que llegan los pasillos del metro. Este frío proviene de sus dominios, donde no hay sol, ni luz, ni plantas, ni animales, sólo roca muerta y odio llenando cada grieta. A medida que os acerquéis, el frío será mayor, tened cuidado, no solamente se siente el frío en la carne, sino que también se hiela la valentía, el amor, la bondad, todo. Yo no siento la temperatura, pero mi esencia se estremece a medida que ascendemos.</p>
+    <p class="lector-p dialogo">— ¿Cómo puedes saber tanto si esta es la primera vez que pasa? –preguntó Dimitri.</p>
+    <p class="lector-p dialogo">— Mientras estabais en el mundo real, Tanuk ik me contó vuestra historia, además de darme algunos detalles como éste que os acabo de desvelar.</p>
+    <p class="lector-p dialogo">— ¿Te ha dicho algo más que debamos saber?</p>
+    <p class="lector-p dialogo">— No, que yo recuerde.</p>
+    <p class="lector-p">Los ocho continuaban subiendo y subiendo, hasta dar fin a su carrera ante una boca de alcantarilla. La frontera entre la paz de los subterráneos y el terror del exterior. Biro se sacó un ojo y de su interior extrajo una llave, abrió el candado que guardaba el paso entre ambos dominios.</p>
+    <p class="lector-p dialogo">— Ésta es la salida. Aquí deberéis seguir vosotros solos.</p>
+    <p class="lector-p">Los siete asomaban la cabeza empujando la tapadera. El cielo gris ceniza, el horizonte negro, el suelo cubierto de hielo y rocas, de grandes berruecos que llenaban el paisaje. Nada más hacia ningún lugar.</p>
+    <p class="lector-p dialogo">— Aquí no hay nadie, Biro, ¿no te dijo Tanuk ik quién nos esperaría? –preguntó Charles Vincent.</p>
+    <p class="lector-p dialogo">— Sí, me dijo que habría alguien.</p>
+    <p class="lector-p dialogo">— Pero aquí no hay nadie, ¿hacia dónde nos dirigimos ahora?, si no sabemos dónde estamos ni dónde está Moor –dijo Lucero. El espantapájaros quedó pensativo.</p>
+    <p class="lector-p dialogo">— … ¡Sí! Se me había olvidado, me dijo que aquel que debía esperaros estaría oculto, y que solamente cuando lo llamaseis aparecería.</p>
+    <p class="lector-p dialogo">— Bueno, ¿y cómo hay que llamarlo? –preguntó Geneviève.</p>
+    <p class="lector-p dialogo">— Eso no lo sé, únicamente lo sabe Dimitri –respondió Biro.</p>
+    <p class="lector-p dialogo">— Vamos, Dimitri, llámalo, llama a quien tenga que venir a por nosotros –dijo Lucero. El mozo estaba algo confuso, no sabía muy bien qué debía decir.</p>
+    <p class="lector-p dialogo">— ¿Y no te dijo nada más Tanuk ik? –preguntó Dimitri.</p>
+    <p class="lector-p dialogo">— No, dijo que tú guardabas la clave que haría surgir a la bestia de la tierra –al escuchar sus palabras el muchacho comprendió, salió del túnel con cautela y susurrando dijo–. Ashram… Ashram…</p>
+    <p class="lector-p dialogo">— ¿Qué significa eso? –preguntó Lucero.</p>
+    <p class="lector-p dialogo">— No lo sé –respondió Aurora–. Pero suena muy mal.</p>
+    <p class="lector-p dialogo">— Ha llamado a un ser maléfico –añadió Cheng Su seriamente.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir? –preguntó Charles Vincent confuso.</p>
+    <p class="lector-p dialogo">— Ha llamado al Lobo Ciego –respondió Daikuku–. Es un ser terrible, pero Dimitri domina su voluntad.</p>
+    <p class="lector-p dialogo">— Al igual que cada uno de nosotros, Dimitri posee un custodio que le protege, pero éste es malvado y sólo responde a la voluntad de su amo. No estoy segura, pero creo que Dimitri y el Lobo Ciego son la misma persona, el guardián es su enfermedad –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Estoy algo perdida –agregó Lucero.</p>
+    <p class="lector-p dialogo">— Ashram…</p>
+    <p class="lector-p dialogo">— Mirad hacia allá –exclamó en voz baja el pequeño.</p>
+    <p class="lector-p">A unos treinta metros, lo que parecía una enorme roca, se movía lentamente, los seis miraban asombrados desde el interior del túnel. Tomaba forma, un descomunal lobo gris de grandes garras y colmillos afilados aparecía de la nada. Su cabeza se giraba paulatinamente, clavando sus ojos blancos sobre su amo.</p>
+    <p class="lector-p dialogo">— ¡Repámpanos, qué bicho! –exclamó Lucero asustada.</p>
+    <p class="lector-p dialogo">— Es temible, no pensé que fuese tan grotesco cuando lo nombrasteis en la historia –dijo Aurora.</p>
+    <p class="lector-p dialogo">— Debería habernos acompañado todo el camino, nadie se habría atrevido a atacarnos con él a nuestro lado –dijo Charles Vincent.</p>
+    <p class="lector-p dialogo">— Espero que Tanuk ik no tarde tanto en recuperarse como lo ha hecho el Lobo Ciego –suspiró Geneviève.</p>
+    <p class="lector-p">La criatura caminaba hacia Dimitri, estaba completamente recuperado de sus heridas, parecía aún más grande y vigoroso. Biro, ante la expectación, se asomó al exterior, escondiéndose al momento.</p>
+    <p class="lector-p dialogo">— Bueno, creo que ahí está vuestro guía, mejor vuelvo con el resto, debemos procurar que Tanuk ik se recupere –dijo tembloroso–. Adiós, amigos, mucha suerte.</p>
+    <p class="lector-p dialogo">— Adiós, Biro, nos veremos pronto –contestó Daikuku.</p>
+    <p class="lector-p dialogo">— Hasta pronto –se despidió Cheng Su.</p>
+    <p class="lector-p dialogo">— Cuidad bien de Tanuk ik, por favor –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Así lo haremos –los seis salieron al exterior. La escotilla se cerraba, el candado estaba echado. El espantapájaros desapareció en la oscuridad de los túneles.</p>
+    <p class="lector-p dialogo">— Es enorme, jamás había imaginado algo tan horrible –exclamó Cheng Su.</p>
+    <p class="lector-p dialogo">— Los hay más horribles, créeme –añadió Charles–. Las criaturas de Moor dan más miedo todavía -el Lobo Ciego se había detenido ante Dimitri, bajando la cabeza, mostrándole sumisión.</p>
+    <p class="lector-p dialogo">— Gracias por venir, hacía mucho tiempo que no nos veíamos… Si conoces el camino guíanos hasta Moor –el lobo dio unos pasos sobrepasando a su amo, levantando la cabeza para observar a los otros seis que esperaban junto a la alcantarilla. La criatura respiraba profundamente identificando a aquellos que desconocía–. Son amigos –apuntó Dimitri–. Venid y dejad que os huela, no os hará nada mientras yo no lo ordene.</p>
+    <p class="lector-p dialogo">— ¡Estás loco si pretendes que me acerque a ese bicho! –exclamó Lucero. El lobo gruñó ante el estridente quejido de la mujer. Lucero saltaba asustada.</p>
+    <p class="lector-p dialogo">— No hay tiempo para memeces. Dejad que os huela, es necesario para que no confunda nuestro olor con el de los enemigos. ¡Vamos! –uno a uno se acercaban al animal, que los aspiraba de arriba abajo–. Ya está, ya nos conoce a todos. Ahora, Ashram, muéstranos el camino –el lobo aspiró profundamente el aire en una y otra dirección, averiguando el camino correcto. Comenzó a correr entre las rocas–. Vamos, debemos seguirle –los siete corrían tan raudos como podían.</p>
+    <p class="lector-p dialogo">— Dimitri, no podemos seguir así todo el camino, haz que vaya más despacio –exclamó Aurora sin aliento. Apenas llevaban diez minutos corriendo, pero el ritmo era insostenible para el grupo.</p>
+    <p class="lector-p dialogo">— ¡Ashram! Debes aminorar la marcha para que podamos seguirte –el lobo disminuyó el ritmo de sus zancadas a la orden de su amo. Ahora al menos podían seguir el trote con algo de aire.</p>
+    <p class="lector-p dialogo">— Gracias, Dimitri, ahora mucho mejor –añadió Charles Vincent que corría como un muchacho.</p>
+    <p class="lector-p dialogo">— ¿Cuánto tiempo crees que podemos aguantar corriendo? –preguntó Lucero.</p>
+    <p class="lector-p dialogo">— No lo sé –respondió Aurora–, pero no creo que mucho más.</p>
+    <p class="lector-p dialogo">— Aguantaremos tanto como sea necesario, este cuerpo no es físico, aquí vosotras estáis separadas y yo puedo caminar, no estamos ligadas a las mismas leyes que en el mundo real –sentenció Geneviève. El Lobo Ciego interrumpió repentinamente su galope, los siete pararon en seco tras él.</p>
+    <p class="lector-p dialogo">— Ashram, ¿qué ocurre? –preguntó Dimitri. La bestia aspiraba rápidamente el aire, su cuerpo se agitaba nervioso, levantaba las orejas buscando algo que no podía ver.</p>
+    <p class="lector-p dialogo">— ¿Qué está pasando, Dimitri? –preguntó el músico.</p>
+    <p class="lector-p dialogo">— Creo que ha descubierto algo, y no parece que sea nada bueno.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir? Tanuk ik dijo que llegaríamos sin ser atacados por ningún esbirro de Moor –recordó Aurora.</p>
+    <p class="lector-p dialogo">— También dijo que Moor es el más débil de los siete dioses. No seas inocente, sólo trataba de animarnos –respondió Cheng Su. Un grito agudo cruzó el horizonte, bajo tierra, agitando las pesadas rocas, avanzaba estrepitosamente un vástago demoledor.</p>
+    <p class="lector-p dialogo">— ¡Es una criatura de Moor! –gritó Daikuku. El Lobo Ciego rugía furioso.</p>
+    <p class="lector-p dialogo">— ¡A ése no lo habíamos visto antes! –gritó Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Qué hacemos? Si nos quedamos aquí, seremos blanco fácil –dijo Lucero.</p>
+    <p class="lector-p dialogo">— Tienes razón, será mejor que nos ocultemos tras las rocas, le será más difícil encontrarnos –dijo Cheng Su.</p>
+    <p class="lector-p">La sombra se acercaba como una saeta hacia el grupo, la bestia surgía de la tierra, un titán de ojos ámbar y cuerpo armado, corría sobre sus cuatro extremidades como una araña. El Lobo Ciego echó a correr hacia la aberración, que se acercaba clavando los ojos sobre los elegidos.</p>
+    <p class="lector-p dialogo">— ¡¡Corred!! –exclamó Dimitri.</p>
+    <p class="lector-p">Corrían asustados entre las rocas en dirección opuesta al gigante, para ocultarse de su ataque. No tenían poderes, solamente podían confiar en la fuerza del lobo para continuar su camino. Ashram, con fuerte impulso, se lanzó sobre el monstruo impactando de bruces con él, clavando sus garras sobre la coraza negra. Alaridos de dolor brotaban de la garganta de la aberración, que caía desequilibrado aplastando al Lobo sobre los afilados cantos. “¡¡AAARRG!!”, aullaba la bestia. El esbirro se liberó de la presa corriendo hacia el lugar donde se escondían los elegidos. Se movía a una velocidad endiablada, agitando de lado a lado la cabeza mientras abría las fauces dejando ver el fuego negro que habitaba en sus entrañas.</p>
+    <p class="lector-p dialogo">— ¡Viene hacia acá! –gritó Geneviève abrazándose a Dimitri. Cheng Su salió corriendo hacia la bestia, intentando distraer su atención.</p>
+    <p class="lector-p dialogo">— ¡¡Cheng Su, nooo!! ¡Vuelve! No puedes hacer nada -gritaba Lucero. Charles Vincent echó a correr en la dirección opuesta.</p>
+    <p class="lector-p dialogo">— ¡Corred en todas direcciones, será la única manera de conseguir algo de tiempo! –exclamó el músico.</p>
+    <p class="lector-p">Los siete corrían. Tan fulgurante avanzaba que podría haber dado presa a los siete a la vez, pero su primera víctima era Cheng Su.</p>
+    <p class="lector-p dialogo">— ¡¡Corre, Cheng Su, va a por ti!! –gritó Aurora que miraba aterrorizada como el monstruo se acercaba sin tregua a su compañera.</p>
+    <p class="lector-p">A unos escasos metros de su víctima, el gigante se abalanzó sobre ella, preparado para devorarla, en ese oportuno instante el Lobo Ciego aparecía ante el monstruo conteniendo la terrible embestida. El gigante debía ser más de seis veces el tamaño del animal. Las garras se clavaban en la boca del monstruo, empujando su mandíbula en contra dirección, tratando de chascar sus huesos. Con un mandoble el coloso se deshizo de Ashram. El lobo corría de un lado a otro esquivando y atacando al enemigo. Las dos criaturas enredadas, continuaban el combate sin tregua ni mengua. El esbirro conseguía liberarse, levantando el vuelo, haciendo aparecer extensas membranas de su espalda, desde las alturas el Lobo Ciego era inofensivo. Los siete elegidos se habían detenido para observar la cruenta lucha, ahora la aberración seleccionaba a su próxima víctima. Lanzándose en picado sobre Daikuku.</p>
+    <p class="lector-p dialogo">— ¡¡Corre, corre!! –gritaba Charles Vincent.</p>
+    <p class="lector-p dialogo">— ¡¡Viene a por mí, viene a por mí!! –gritaba aterrado el niño.</p>
+    <p class="lector-p">El Lobo corría tan rápido como podía. Pero la carrera estaba perdida, el animal no llegaría a tiempo, el gigante surcaba el cielo como un relámpago.</p>
+    <p class="lector-p dialogo">— ¡¡¡Daikuku, noooo!!! –gritó Dimitri desesperado.</p>
+    <p class="lector-p dialogo">— ¡¡¡Noooo!!! –gritaba Geneviève.</p>
+    <p class="lector-p dialogo">— ¡¡Ayudadme!! –exclamaba el niño, sintiendo el aliento pútrido de la aberración a sus espaldas.</p>
+    <p class="lector-p">“¡¡BUUUMMM!!”, un fortísimo choque y el monstruo rodaba por los suelos aferrado a otro cuerpo. Ambas criaturas se apresaban la una a la otra, tras la enorme nube de polvo aparecía la figura de Oren. Separadas, se observaban atentamente, mientras el Lobo Ciego se acercaba acechante por la espalda del monstruo, que gruñía enfurecido al verse entre dos enemigos. Daikuku, en el suelo, desmayado por la impresión. Dimitri estaba a su lado, el resto separados unos de los otros, aguardaban el siguiente movimiento. Tan rápido se movía el gigante, que alejándose de los tótems, se dirigió a por uno de los elegidos. Su objetivo no era luchar, sino destruir a las siete futuras encarnaciones divinas. Los custodios corrían apresuradamente tras el monstruo, debían proteger con su vida a los elegidos. La criatura se dirigía hacia Geneviève.</p>
+    <p class="lector-p dialogo">— ¡¡Sálvala, Oren, sálvala!! –gritaba Charles.</p>
+    <p class="lector-p">Un fuerte grito de furia silenció el árido paisaje, una voz que rugía como mil tormentas. El gigante se detuvo a unos pasos de la chica.</p>
+    <p class="lector-p dialogo">— ¡¡Ion!! –dijo una voz enardecida y profunda–. Has osado desafiarme, y pagarás con la muerte tu insolencia. Mi voluntad es que los siete lleguen hasta mí, para acabar con ellos en mi presencia, con mis propias manos. ¡Vuelve inmediatamente!</p>
+    <p class="lector-p">Aquellas órdenes provenían del Señor del Odio. Ión se introdujo bajo tierra y desapareció. El grupo se reunía junto a los muchachos. La joven recuperaba el color y el aliento. Los tótems se acercaban a sus protegidos.</p>
+    <p class="lector-p dialogo">— ¡Dios, qué mal lo he pasado! –dijo Aurora sin aliento–. Creí que me moría.</p>
+    <p class="lector-p dialogo">— Ha sido una experiencia horrible, pero estamos a salvo. Debemos continuar –dijo Cheng Su.</p>
+    <p class="lector-p dialogo">— ¿Cómo está Daikuku? –preguntó Geneviève con lágrimas en sus mejillas.</p>
+    <p class="lector-p dialogo">— Bien, está bien. Sólo se ha desmayado, recuperará el sentido en seguida –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— ¿Estáis heridos? –preguntó el grifo con el aliento entrecortado.</p>
+    <p class="lector-p dialogo">— Estamos bien, sólo ha sido el susto.</p>
+    <p class="lector-p dialogo">— Y vaya susto –respondió Charles Vincent–. ¡Pero tú estás herido, Oren!, tienes el cuerpo magullado y esa pata sangra vivamente.</p>
+    <p class="lector-p dialogo">— No es nada, una insignificante herida no justifica vuestra perdida, ni nuestro fracaso. Ion casi acaba con vosotros a pesar de nuestra presencia. Si no hubiese sido por el mismísimo Moor, no sé qué habría sido de nosotros –el Lobo Ciego tenía todo el pelaje ensangrentado.</p>
+    <p class="lector-p dialogo">— Ashram, ¡estás herido! –exclamó Dimitri.</p>
+    <p class="lector-p dialogo">— Tranquilo, no sufras por él. Que tenga el cuerpo ensangrentado no significa que esté herido, tu custodio es capaz de regenerar todo su cuerpo en cuestión de segundos –explicó Oren–. Ahora es momento de continuar.</p>
+    <p class="lector-p dialogo">— Despierta, Daikuku –Geneviève azotaba suavemente la cara del pequeño. El niño despertaba aturdido, miró de lado a lado y se incorporó de un salto.</p>
+    <p class="lector-p dialogo">— ¡¡Estoy vivo, estoy vivo!! Ufff –suspiró sofocado–. ¿Quién me ha salvado, quién? ¿Has sido tú, Oren?, ¡has sido tú! ¡Gracias, muchas gracias! –exclamaba Daikuku abrazando al grifo–. Ayy… –respiró relajado.</p>
+    <p class="lector-p dialogo">— De nada, pero no debes darnos las gracias, solamente cumplimos con nuestro cometido. Ahora continuemos nuestro camino.</p>
+    <p class="lector-p dialogo">— ¿Por qué creéis que Moor ha ordenado a su general que nos dejase vivir? –preguntó Aurora.</p>
+    <p class="lector-p dialogo">— Me atrevería a decir que pretende dejarnos continuar, juega con nosotros. No le importa cuántos seamos ya, ni tampoco si llegamos a tiempo, se divierte viendo nuestro sufrimiento mientras espera que llegue su momento –decía Oren–. El Señor del Odio ha intentado evitar que os llegaseis a reunir. Ahora que estáis juntos no le importa dejaros continuar. El tiempo corre de su lado, si llegáis luchará con vosotros, si no llegáis a tiempo, habrá vencido. Por eso ordenó que Ion se detuviese, quiere saber hasta dónde podéis llegar, medir su fuerza con la vuestra.</p>
+    <p class="lector-p dialogo">— Entonces no hay tiempo que perder, debemos continuar nuestro viaje cuanto antes. Ahora que Moor se ha hecho oír, ninguna de sus criaturas nos atacará, tenemos vía libre hasta él –exclamó Geneviève.</p>
+    <p class="lector-p dialogo">— Después de lo visto yo no estaría tan seguro, pero espero que así sea –apuntó Charles.</p>
+    <p class="lector-p">Los siete compañeros avanzaban guardados por los dos tótems. Ashram indicaba el camino y Oren guardaba las espaldas del grupo. El silencio reinaba en aquel árido paisaje de gigantescos guijarros, que poco a poco desaparecían dando paso a un cenizo desierto que se abría en la distancia.</p>
+    <p class="lector-p dialogo">— Tengo algo que deciros –dijo Daikuku. La tensión y el miedo se respiraba en el grupo–. No sé si es buen momento o no, pero creo que es necesario que todos lo sepáis.</p>
+    <p class="lector-p dialogo">— Pues será mejor que no lo digas si es malo, prefiero seguir como estoy a sentirme peor aun –interrumpió Lucero.</p>
+    <p class="lector-p dialogo">— Entonces no sé si…</p>
+    <p class="lector-p dialogo">— No hagas caso, dinos lo que tengas que decir, Daikuku –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Sí, dilo. Bueno o malo seguro que es mejor que este tedioso silencio –añadió Charles.</p>
+    <p class="lector-p dialogo">— Mientras estaba despierto, visité a Manamá. Este último día antes de la batalla me obsequió con la última de sus dádivas. No es nada con lo que podamos defendernos, ahora ya no es necesario puesto que pronto seremos dioses. Lo que me ofreció es más valioso e inquietante que cualquier objeto mágico, me brindó la ocasión de comunicarme con los espíritus del fuego.</p>
+    <p class="lector-p dialogo">— ¡Vaya!, ¿y qué hacen esos espíritus que sea tan importante? –exclamó Lucero irritada.</p>
+    <p class="lector-p dialogo">— No vuelvas a interrumpir, es mejor que continúes callada –sentenció Dimitri.</p>
+    <p class="lector-p dialogo">— Sigue, Daikuku, por favor. Dinos qué te dijeron los espíritus –añadió Cheng Su.</p>
+    <p class="lector-p dialogo">— Los espíritus del fuego conocen la respuesta a todas las preguntas, pasado, presente y futuro. Les pregunté quién vencería esta cruzada, y contestaron que nadie saldría victorioso.</p>
+    <p class="lector-p dialogo">— ¿Qué quiere decir eso, algo más te dirían? –preguntó Aurora.</p>
+    <p class="lector-p dialogo">— No, ésa fue su única respuesta.</p>
+    <p class="lector-p dialogo">— Pero eso es absurdo, alguien tiene que ganar, nosotros o Moor –exclamó Charles.</p>
+    <p class="lector-p dialogo">— No lo es. Puede que el lance no se dispute, que ocurra algo extraordinario y que no haya vencedores ni vencidos –sentenció Cheng Su.</p>
+    <p class="lector-p dialogo">— Eso mismo dijo Manamá. Él cree en la posibilidad de que el Señor del Odio se arrepienta y la paz vuelva al mundo. Yo quise creer lo mismo, pero, ¿y si no es así, y si ocurre de otro modo?</p>
+    <p class="lector-p dialogo">— El futuro no está escrito, Daikuku, no se puede predecir lo que todavía no ha pasado –agregó Dimitri.</p>
+    <p class="lector-p dialogo">— Lo sé. Manamá dijo que los espíritus conocen el porvenir, pero que hay momentos en el tiempo desconocidos incluso para ellos, momentos que son incapaces de predecir. Es posible que nosotros nos enfrentemos a uno de esos momentos de incertidumbre, y lo que ocurra en la batalla sea un interrogante para todos.</p>
+    <p class="lector-p">– El destino dependerá de lo que nosotros hagamos esta noche, nosotros decidiremos el camino, no un par de llamas parlantes –dijo Lucero sulfurada.</p>
+    <p class="lector-p dialogo">— Has hecho bien diciendo lo que sabías, es prudente conocer las videncias de los arcanos para enfrentarse al peligro, pero creo que Lucero tiene toda la razón. Pase lo que pase, el futuro está en nuestras manos –dijo Cheng Su.</p>
+    <p class="lector-p dialogo">— Por supuesto. Si no tuviésemos posibilidad alguna, Tanuk ik no nos habría embarcado en semejante empresa. Él lo sabe todo de este paralelo, si él cree que tenemos posibilidades, entonces yo también lo creo –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— No debéis darle más relevancia de la que tiene –dijo Oren–. Debemos ser precavidos con los designios, pero no acatarlos con firmeza.</p>
+    <p class="lector-p dialogo">— Gracias por darme la razón –masculló Lucero orgullosa.</p>
+    <p class="lector-p">De nuevo callaba el grupo. El paisaje cambiaba de forma, el desierto los rodeaba por completo. La ceniza cubría más allá de donde alcanzaba la vista. Reinaba la quietud.</p>
+    <p class="lector-p dialogo">— Este lugar es terrible, me llena de tristeza –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— A medida que avanzamos el camino se hace más arduo. Puede que Moor esté conteniendo a sus huestes, pero no deja de hostigar nuestros corazones –añadió Cheng Su.</p>
+    <p class="lector-p dialogo">— Tenemos que ser fuertes, pronto llegaremos al final. Cuando hayamos tomado la forma de los dioses, Moor ya no podrá nada contra nosotros –dijo Charles.</p>
+    <p class="lector-p dialogo">— Además, ahora contamos con Oren y Ashram, qué mal nos puede acontecer del que ellos no nos puedan salvar –añadió Aurora.</p>
+    <p class="lector-p dialogo">— Me loan tus palabras, pero no somos indestructibles, ni tan poderosos como crees, recuerda lo ocurrido ahí atrás –respondió el grifo.</p>
+    <p class="lector-p dialogo">— No pienses en eso. Estamos bien y contamos con vosotros –dijo Lucero.</p>
+    <p class="lector-p dialogo">— ¡Oooh! Mirad el suelo –exclamó Daikuku.</p>
+    <p class="lector-p dialogo">— ¡Vamos, no os detengáis, caminad! –rugió Oren.</p>
+    <p class="lector-p dialogo">— Rayos, ¿qué está pasando ahora? –preguntó Dimitri.</p>
+    <p class="lector-p">La ceniza se teñía de una espesa bruma negra, aparecía retorciéndose hasta adquirir pequeñas formas humanoides de grandes ojos rojos.</p>
+    <p class="lector-p dialogo">— Se suponía que había detenido a su ejército. ¿Qué hacen estos aquí? –exclamó Geneviève.</p>
+    <p class="lector-p dialogo">— ¡Caminad tan juntos como podáis y no os separéis! –exclamó Oren.</p>
+    <p class="lector-p">Las diminutas sombras se levantaban sobre el suelo infestando el horizonte. El desierto de cenizas ya no era visible bajo los pies del manto tenebroso.</p>
+    <p class="lector-p dialogo">— ¡Son cientos! No podemos huir de ellos –clamó Aurora.</p>
+    <p class="lector-p dialogo">— ¿Qué vamos a hacer? –preguntó Daikuku al grifo.</p>
+    <p class="lector-p dialogo">— No temáis, sólo son rapsodias, son las criaturas más débiles del ejército de Moor. Son hombres que han vendido su alma convirtiéndose en esto. A los únicos que debemos temer es a los siete generales. Estas criaturas no pueden nada contra nosotros, incluso siendo miles –respondió Oren poco convencido.</p>
+    <p class="lector-p dialogo">— Quisiera creerte, pero se están acercando demasiado. ¡Ay! –gritó Lucero–. ¡Recluécanos! ¡Qué daño! ¡Su tacto quema!</p>
+    <p class="lector-p dialogo">— ¡Au! –gritó Geneviève al otro lado–. ¡Esta bruma negra quema como el fuego!</p>
+    <p class="lector-p">Las rapsodias cerraban el paso distando de los elegidos apenas un par de centímetros. El grupo caminaba tan enjuto como podía para evitar que los engendros se introdujesen entre ellos. Un murmullo los acorralaba, aquellas siniestras criaturas reían ante su incapacidad para defenderse. Ashram y Oren lanzaban mordiscos a todos lados, intentando detener a las sombras.</p>
+    <p class="lector-p dialogo">— Llévanos volando –exclamó Lucero.</p>
+    <p class="lector-p dialogo">— No seas insensata, es buena idea, pero no podemos subir todos encima de él –respondió Charles.</p>
+    <p class="lector-p dialogo">— ¡Au! No importa eso, seguro que si fuésemos volando estaríamos en la misma situación –añadió Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Qué hacemos, Oren? No podemos seguir así. ¡Aahh! –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— No lo sé, muchacho. Si nos movemos Ashram o yo las rapsodias se nos echarán encima. Pretenden separarnos para menguar nuestras fuerzas. ¡No podemos hacer nada más! –una suave brisa se levantaba.</p>
+    <p class="lector-p dialogo">— ¿Oís ese susurro? Alguien se acerca –dijo emocionado Daikuku.</p>
+    <p class="lector-p dialogo">— ¿Qué pretendes que oiga? Esto es una desdicha, estos enanos no nos dejan avanzar. Sólo faltaba otro monstruo de Moor –bramaba exasperada Lucero.</p>
+    <p class="lector-p dialogo">— El viento está húmedo, puedo sentir la frescura de las gotas de agua. Esto no es obra de Moor –dijo Aurora.</p>
+    <p class="lector-p dialogo">— ¡Es el Caminante Nocturno! –exclamó Geneviève.</p>
+    <p class="lector-p dialogo">— Por fin ha venido a ayudarnos, temí que le hubiese pasado algo –dijo Cheng Su sonriente.</p>
+    <p class="lector-p">El viento soplaba cada vez más fuerte. Las rapsodias se agitaban molestas por el intruso.</p>
+    <p class="lector-p dialogo">— Ahora podremos continuar –exclamó Oren.</p>
+    <p class="lector-p">La cabeza del Caminante Nocturno se dibujaba sobre ellos protegiéndolos en su interior. El custodio soplaba abriendo camino.</p>
+    <p class="lector-p dialogo">— ¡Esto es estupendo! –dijo Daikuku–. A vuestro lado ya no habrá nada que temer.</p>
+    <p class="lector-p">Los siete caminaban decididos. Las sombras no cesaban en su empeño por entorpecer la marcha del grupo. No se sabe cuánto tiempo anduvieron sobre el desierto cenizo, pero lo cierto es que las dudas se habían disipado, avanzaban con semblante gallardo, decididos a cumplir su destino.</p>
+    <p class="lector-p">En el horizonte se perfilaban las nubes negras quebrantadas por los rayos de tormenta. Bajo los pies de los elegidos el desierto llegaba a su fin. La ceniza desaparecía tajante convertida en un abrupto acantilado. Una gran rampa unía el altiplano con el dominio de Moor, un valle asolado que discurría más allá de lo que alcanzaba la vista cubierto por los ejércitos de Moor. En su centro, el impetuoso zigurat se levantaba sobre el valle. Una construcción de ocho grandes terrazas unidas por una larga escalinata, en cada una de ellas aguardaban los siete generales, y en el último, colmando la cima, sentado en su borde con gesto aburrido, estaba Moor. Al verlos aparecer junto a las escaleras el Señor del Odio se levantó ansioso.</p>
+    <p class="lector-p dialogo">— ¡¡Basta!! ¡Dejadlos pasar! Ya han tenido suficiente –las rapsodias cesaron en su ataque–. Siento mucho la distraída educación de mis pequeños, ordené que no os molestasen, pero son niños y ya se sabe. Han intentado disuadiros en este último tramo, pero sois decididos y no cesáis en vuestro empeño, eso me alegra, pues augura un final entretenido antes de que destruya el universo. ¡¡Abrid paso a mis invitados!! –los ejércitos se deslizaban como el humo, reestructurando su formación para dejar un estrecho pasillo que unía la bajada del acantilado con la escalera del zigurat–. Adelante, sed bienvenidos, podéis estar tranquilos, ya nada os molestará hasta llegar a mí.</p>
+    <p class="lector-p">Los elegidos descendían con los tótems tras ellos guardándoles las espaldas. Avanzaban con cautela, vigilados de cerca por la infinita legión de criaturas. Las sombras bramaban a su paso, se mostraban amenazantes y burlescas, amagando ataques con intención de asustar a los visitantes, pero las órdenes de Moor habían sido claras y nadie se atrevía a desobedecerlo. Los siete continuaban caminando, ya no había nada que decir, nada en que dudar, todo estaba dicho y sabido, el momento había llegado. Los elegidos se detenían a unos pies del primer escalón del zigurat, observados atentamente por los generales, Moor bajaba con calma cada uno de los peldaños, con una larga capa dibujando su estela.</p>
+    <p class="lector-p dialogo">— Parece inverosímil pero es cierto. No os podéis imaginar cuantos han sido mis esfuerzos por eliminaros, y sin embargo, heos aquí. Los siete reunidos, ni uno más, ni uno menos, e incluso venís acompañados de tres de vuestras mascotas. Siento tener que aguaros la fiesta, pero no sería un dios sincero y honorable si no os previniera de vuestra derrota. Debéis ser conscientes de vuestra gran debilidad, los dioses duermen en no sé dónde, las máscaras fueron destruidas, y por vuestra sangre no corre más que un esputo de unos tales primeros elegidos. Lograron encerrarme, es cierto, pero como podréis observar, he vuelto. He escapado de la cárcel de mis hermanos, resurjo de nuevo, soy aun más poderoso que antaño –decía mientras continuaba descendiendo–. Puede que éste no sea el mundo físico, desde luego no tiene la misma gracia, pero no deja de ser el mundo de los humanos, y aquí me tenéis, cuando os haya destruido, vuestra nimia amenaza desaparecerá con vosotros. Destruiré el mundo de los sueños, para continuar con el mundo real, exterminaré toda criatura viviente de la faz de la tierra. La esencia de casi toda la humanidad es mía. Tengo todo el poder necesario para acabar con vosotros y resurgir sobre la tierra. Cuando haya absorbido la esencia de todos los seres del planeta seré tan poderoso, que con uno sólo de mis gestos reduciré a polvo este maldito orbe malcriado, y cuando haya acabado con él, continuaré una tras otra aniquilando y destruyendo las creaciones de mis hermanos hasta que nada quede. Incluso es posible que me plantee acabar con ellos mientras duermen, si es que sigo estando insatisfecho cuando finiquite el universo. ¿Qué os parece, a qué es un buen plan? Ja, ja, ja, ja, ja –reía llegando al último escalón, quedando frente a sus rivales.</p>
+    <p class="lector-p dialogo">— ¡Eres detestable, jamás deberías haber nacido, ser inmundo! ¡Deberías estar muerto! –exclamó Geneviève.</p>
+    <p class="lector-p dialogo">— ¡¡¡Cállate!!! –una pausa. La chica retrocedió asustada–. Lo sé, querida, y me encanta ser como soy. Déjame pensar un momento… una lengua tan larga… mmm… tú eres… eres… eres el continente de Crápatos, Dios de los Hombres. Cualquier otro no habría sido tan atrevido como tú. Fijaos, es tan débil la sangre que corre por vuestras venas, que hasta a mí, vuestro hermano pequeño, me cuesta reconoceros. ¡Qué barbaridad! No debían estar muy finos el día que os eligieron a vosotros como sus representantes, y dad gracias a que estamos en el mundo de los sueños, imaginad si esto llega a ser en el mundo real. Yo, luchando contra una pandilla de tullidos, una minusválida, un loco, un analfabeto, una ciega, una aberración y un vegetal. ¿Qué diría la gente? Me tacharían de monstruo. ¡Qué dios tan malvado! Pero afortunadamente no será así, al menos si acabo con vosotros en este mundo, nadie podrá reprocharme que jugué con ventaja. Ja, ja, ja –reía burlón. Con sus palabras intentaba hundir el valor y la entereza de los elegidos. Los siete se mantenían fuertes y templados, conocedores de las intenciones del Señor del Odio. Esperaban a cada momento más ansiosos, las palabras de Moor no hacían más que acrecentar el deseo de entrar en batalla para acabar con él–. Como ya los conoceréis, no creo que sea necesario que os presente a los chicos de ahí atrás, son mis niños predilectos, mis lugartenientes, los generales de mis hordas, mis propios elegidos para acabar con vosotros. Había pensado en dejarles calentar sus músculos aniquilando a vuestros custodios y después permitir que acaben con vosotros, puesto que no sois rivales para mí. ¡Eso sí!, me gustan las sorpresas, si conseguís vencerles, estaré encantado de luchar contra los siete. Como os iba diciendo, me encantará ver cómo cada uno de mis preferidos destroza a vuestros tótems, de hecho, ya he pensado en cada una de las parejas, soy previsor, ¿verdad? Pero desgraciadamente, sólo estos tres bichitos que os acompañan han tenido el valor suficiente para llegar hasta aquí, aunque si bien es cierto, no esperaba encontrar a ninguno más después de que mi maravilloso ejército acabase con ellos.</p>
+    <p class="lector-p">¿Qué os parece si esperamos un rato? Más que nada por daros algo de ventaja, puede que así, alguno de vuestros amigos aparezca. Y ya de paso, la tensión y el terror del momento crecen haciendo estremecer vuestra valentía y arrojo. ¿Es buena idea, verdad? ¡Qué fantástico soy! Veamos, ¿cuánto tiempo podríamos aguardar? –decía Moor golpeándose con los dedos la barbilla, mirando a ningún lugar–. No sé, no acabo de decidirme. A ver ¡tú! –dijo dirigiéndose a uno de aquellos seres que atestaba el valle–. ¿Cuánto tiempo les damos?</p>
+    <p class="lector-p dialogo">— Cinco minutos, mi señor –dijo el soldado.</p>
+    <p class="lector-p dialogo">— ¡¡¡Nooo!!! –gritó Moor enfurecido, lanzando un rayo negro que desintegraba a la sombra y a cuantas había a su alrededor–. A ver ¡tú! ¿Cuánto tiempo les damos?, y se algo más sensato.</p>
+    <p class="lector-p dialogo">— Una hora, mi señor.</p>
+    <p class="lector-p dialogo">— ¡¡¡Nooo!!! –gritó Moor rabioso haciendo desaparecer otro numeroso grupo de soldados–. ¡Estoy rodeado de una pandilla de ineptos! ¿Cómo pretendéis que estos señores que vienen a visitarme me respeten, si no demostráis lo bien que os he educado, ¡malditos!? –una pausa–. Veamos… –continuaba con los nervios encrespados–. Kennin ji, por favor, ¿cuánto tiempo dirías tú que podemos esperar para destruir tan grata visita?</p>
+    <p class="lector-p dialogo">— Yo no esperaría, mi señor. Si de mí dependiesen sus vidas, ya habría acabado con ellos, pero sé que vuestra intención es torturarles hasta verlos agonizar, quizás un minuto sea suficiente –contestó el general.</p>
+    <p class="lector-p dialogo">— ¡Me encantas, querido!, eres casi tan maquiavélico y detestable como yo, pero tu propuesta no es la que yo estoy buscando. A ver, Diersej, ¿cuánto tiempo les darías para eternizar la espera?</p>
+    <p class="lector-p dialogo">— Mi señor, perdóneme la osadía, pero yo que usted, no les daba ni un sólo segundo más de aliento. Si de mí dependiera la lucha comenzaría en este mismo momento.</p>
+    <p class="lector-p dialogo">— ¡¡¡Bingo!!! –gritó Moor exaltado–. ¡Eso es justo lo que quería oír! ¡Nada, cero, ni un sólo segundo! Caeréis todos, con o sin vuestras mascotas. Ja, ja, ja, ja. Es lo menos que puedo hacer por vosotros, ¿no creéis, chicos? ¿Qué opináis vosotros, mis queridos generales? –exclamó divertido.</p>
+    <p class="lector-p">Al otro lado del valle, más allá de la gran escalinata, sobre el altiplano, por el mismo lugar por donde habían llegado los elegidos, el cielo gris se iluminaba de carmín y ultramar. El dominio temblaba como si la tierra descargase su furia.</p>
+    <p class="lector-p dialogo">— ¡¡Maldita sea!! –clamaba el Señor del Odio–. ¿Quién osa interrumpir mi soberbio monólogo con estos chicos?</p>
+    <p class="lector-p">Aquellas luces se acercaban relampagueantes, una gran nube de ceniza se levantaba ocultando el horizonte. Un fuerte zumbido ensordecía el valle, algo de dimensiones gigantescas se acercaba raudo, estrepitoso. La luz se intensificaba cada vez más. Lucero y Aurora intercambiaron miradas cómplices, dibujando una sonrisa en sus rostros, conocían aquella luz, aquella esencia. Un sentimiento renovado surgía en ellos, si luchaban todos juntos, la victoria estaba asegurada. Sobre el acantilado aparecía la figura del águila de fuego, al otro lado, la figura de la serpiente marina.</p>
+    <p class="lector-p dialogo">— ¡Oooh! ¡Qué gran error! –gritaba enfurecido Moor–. Detesto que me interrumpan cuando hablo. ¡Sabed que pagaréis vuestra ofensa con la muerte, repugnantes bichos! –se dio la vuelta y respiró profundamente, girándose de nuevo para dirigirse a los elegidos con calma–. Disculpad mi mala educación, estoy algo exaltado, la emoción me embarga, he esperado tanto este momento, que estoy algo nervioso. Sed bienvenidos, guardianes de la tierra. La fiesta estaba a punto de comenzar sin vosotros, pero me alegro de que hayáis llegado a tiempo para uniros. Si nadie más tiene nada que decir, me gustaría empezar esto de una vez, no creo que a estas alturas quede…</p>
+    <p class="lector-p dialogo">— …¿Alguien por venir? –interrumpió una voz desde la nada. Moor de soslayo buscaba la voz en rededor–. Te anticipas demasiado a los acontecimientos. Deberías ser algo más paciente y comedido, pero esas son virtudes de las que careces, y ésa será tu perdición.</p>
+    <p class="lector-p dialogo">— Si pensabas que desconocía tu presencia, ¡¡te equivocas!! Puede que hayas pasado inadvertido para mi ejército, incluso ninguno de mis favoritos ha dado contigo, pero tu esencia es demasiado poderosa para que yo la pase por alto por muy bien que te ocultes. Muéstrate ya, no es necesario que alargues más este momento, estoy ansioso por comenzar, déjate de misterios ¡¡y aparece!! –exclamó impaciente.</p>
+    <p class="lector-p">Tras Kennin ji se transfiguraba una sombra tomando cuerpo, el Hombre Elefante aparecía bajo la sorprendida mirada del lugarteniente, que ignoraba por completo cómo había llegado hasta allí, sin sentir su presencia. Tanuk ik descendía el zigurat dirigiéndose hacia Moor.</p>
+    <p class="lector-p dialogo">— Parece mentira, pero seres tan excelsos como tus preferidos, son incapaces de comprender el más tonto truco de magia –decía el Hombre Elefante provocando el enojo de Moor–. Estoy aquí mucho más tiempo del que tú crees saber, y si me has detectado, es porque así lo he querido. No iba a dejar que alguien como tú quedase por inepto ante todo su ejército.</p>
+    <p class="lector-p">Tanuk ik pasaba junto a Moor con aires templados y serenos. Su aspecto era robusto y brioso, ya no tenía ninguna herida sobre su cuerpo. El Hombre Elefante se colocaba tras ellos. Geneviève sonreía feliz.</p>
+    <p class="lector-p dialogo">— ¿Tanuk ik, estás bien? –preguntó susurrante la muchacha.</p>
+    <p class="lector-p dialogo">—Sí, mi pequeña, mejor que nunca gracias a vosotros.</p>
+    <p class="lector-p dialogo">— ¡¡Detesto tanta palabrería!! De muy poco sirven tus trucos de prestidigitador de tercera y tanta fanfarronería cuando se está a punto de desaparecer. Ahora que estáis todos, creo que ya no hay motivo para demorar esto ni un segundo más. ¡Preparaos porque vuestro destino ha llegado a su fin! ¡La luna roja brillará…!</p>
+    <p class="lector-p dialogo">— ¡¡¡GRRUUUAAARRR!!!</p>
+    <p class="lector-p">Un atronador rugido enmudecía las palabras del Señor del Odio. Moor se giraba iracundo buscando al impertinente. Una figura negra se alzaba en el cenit de la construcción, sus ojos verdes brillaban en la penumbra.</p>
+    <p class="lector-p dialogo">— ¡¡Odio que me interrumpan!!</p>
+    <p class="lector-p dialogo">— Mira bien, Daikuku –susurró Tanuk ik al oído del pequeño.</p>
+    <p class="lector-p">Las nubes en el cielo se agitaban. Columnas de luz caían sobre el valle. La figura se dibuja a contraluz, una imponente pantera negra clavaba su mirada sobre el Dios del Odio.</p>
+    <p class="lector-p dialogo">— ¡Vaya, Moor! Parece que no sólo has pasado por alto mi presencia en tu morada, por lo visto, el custodio del Señor de las Bestias ha campado a sus anchas por tu casa, descansando ante tus narices y ni siquiera lo has presentido –decía Tanuk ik–. Creo que ambos estaremos de acuerdo, si afirmo que estás perdiendo facultades.</p>
+    <p class="lector-p dialogo">— ¡¡No me desafíes, Hombre Elefante!! –clamó volviendo su terrible mirada hacia Tanuk ik–. Podría aniquilarte con sólo desearlo. Alégrate de seguir vivo, por tu ofensa habría acabado contigo en el acto, pero te he prometido a uno de mis pequeños, y yo no falto a mi palabra, morirás bajo las manos de Kennin ji, él será el encargado de ajustarte las cuentas.</p>
+    <p class="lector-p dialogo">— ¡¡¡GRRUUUAAARRR!!! –rugió de nuevo la pantera.</p>
+    <p class="lector-p dialogo">— ¡¡Baja inmediatamente de mi trono, el suelo es tu lugar!! Ahora ya estáis todos, nadie más osará interrumpirme, ¡baja te digo antes de que me desquicie!</p>
+    <p class="lector-p">El felino, con un gran salto, descendió desde las alturas hasta el suelo, cayendo ante Moor sin mover una sola mota de polvo. Giró sobre sí mismo, irguiendo su cuerpo desprendido de la piel, tomando forma humana. Daikuku miraba sorprendido. Un fornido guerrero de piel de ébano. El recién llegado inclinó la cabeza saludando al Dios del Odio.</p>
+    <p class="lector-p dialogo">— Mi nombre es Bamurku, soy el custodio del Señor de las Bestias. Mi más cordial saludo –Daikuku no salía de su asombro, aquella voz era sin duda…</p>
+    <p class="lector-p dialogo">— No, Daikuku, no digas nada –susurró Tanuk ik–. No sabe quien es en el mundo real, aquí es Bamurku, el guardián del Señor de las Bestias.</p>
+    <p class="lector-p dialogo">— ¿Ya has acabado con tu numerito? –preguntó con sarcasmo el dios–. ¿Ya estáis todos, verdad? –dijo dirigiéndose hacia el grupo–. ¿No espero ninguna sorpresa más entonces? ¡Pues bien, empecemos de una vez por todas! –gritó girando sobre sí, dando la espalda a sus rivales, subiendo la escalinata del zigurat.</p>
+    <p class="lector-p">Daikuku se colocó junto al guerrero, observando su rostro con júbilo, no podía decir nada, pues Bamurku no conocía su verdadera persona, pero tenerlo junto a él llenaba su corazón de alegría. Aquel que los había ayudado desde el principio oculto en las sombras, ahora estaba junto al pequeño. Aquellas pistas que tan familiares le resultaban, adquirían significado ante el guerrero. Moor había tratado de destruirle haciendo que una de sus criaturas abrazase su sueño, sumiéndolo en una oscura pesadilla. Gracias a Manamá y a su amuleto, Bamurku había podido continuar ayudando a los elegidos. Junto a Daikuku se erguía la figura portentosa de su padre. Los siete estaban unidos a sus custodios, ninguno sentía miedo.</p>
+    <p class="lector-p">Moor subía las escaleras del zigurat. Todo era silencio. Un traspié, algo le había hecho estremecerse perdiendo el equilibrio, cayendo sobre sus manos. Durante unos segundos se mantuvo inmóvil, con la cabeza gacha.</p>
+    <p class="lector-p dialogo">— Mi señor, ¿estar bien? -dijo Buri Buri acercándose a él.</p>
+    <p class="lector-p dialogo">— Vuelve a tu lugar –masculló Moor incorporándose, se giró y levantó su mirada al cielo–. ¿Quién? –gritaba–. ¿Quién de vosotros posee tanto odio en su corazón que me ha hecho caer? ¿Cuál de los dioses tiene el corazón tan negro que podría confundirse con el mío propio? ¿Quién es de vosotros el que detesta tanto a la humanidad como yo? –preguntaba bajando de nuevo junto a los elegidos–. ¿Quién de vosotros desearía olvidar cuanto sabe, volver a ser quien fue, y morir en la inopia como el resto de la humanidad, en el día del juicio final? –Moor estaba frente a los elegidos, los escrutaba uno a uno–. ¡Vamos! ¿Quién de vosotros quiere abandonar antes de empezar? –se acercó a Geneviève–. ¿Quizás seas tú? –preguntó clavándole los ojos–. No, demasiado inteligente –se acercó a Daikuku–. ¿Quizá tú? Tampoco, demasiado tonto –caminó hacia las gemelas–. ¿Quizás vosotras? No, claro que no, ni siquiera pensáis –miró a Dimitri–. ¡Tú! –sentenció convencido dirigiéndose al muchacho–. Tú eres aquel que en el corazón guarda el odio que alimenta mi ser. Dime, jovencito, ¿cuál es tu nombre? –preguntó Moor mientras los otros elegidos miraban sorprendidos a su compañero.</p>
+    <p class="lector-p dialogo">— Mi nombre es Dimitri, pero no creo que sea relevante para que comience la batalla en este mismo instante –contestó con gesto serio.</p>
+    <p class="lector-p dialogo">— No he preguntado tu opinión, únicamente deseaba saber tu nombre, y no, no es relevante. Tú no eres relevante, sin embargo la sangre que corre por tus venas si me supone un problema. Si Alaris no lucha, vuestras posibilidades se reducirán a cero. Pero eso ahora no tiene importancia, lo realmente importante es saber qué ocurre dentro de ti. Dime todo lo que piensas, todo cuanto sientes, ¡vamos!, no seas tímido, déjame ver en tus ojos aquello que anega tu corazón de un odio tan profundo –los dos mantenían la mirada. Silencio. Todos permanecían expectantes–. ¿Con qué es eso?, mi joven amigo. Detestas a la humanidad, eso es bueno, los hombres son el mayor error de la creación, pero aun odias más tu destino, desearías no haber sido elegido nunca, te gustaría volver a casa y olvidar todo esto, volver a ser un niño, ¿cierto? Lamento no poder hacer que vuelvas al pasado, pero sí puedo hacer algo por ti. Ésta es mi oferta, escucha atentamente, Dimitri. Te haré olvidar todo esto, despertarás y no recordarás nada. Pero no sólo eso, abrirás lo ojos sobre tu cama, junto a ti estará tu padre, y mucho mejor, también estará tu madre vivita y coleando, y no sobre la cama del hospital más muerta que viva. A cambio de tu esencia divina, yo te devuelvo todo cuanto deseas. Jamás habrás sido un dios, y tu madre estará junto a ti. ¿Es un buen trato, no te parece? ¡Vamos, decídete! No es cuestión de hacer esperar a tus compañeros todo el día –dijo sonriente tendiéndole la mano al chico.</p>
+    <p class="lector-p">Dimitri tragó saliva, miró la mano y miró a los ojos del Señor del Odio. Geneviève no podía creer lo que estaba sucediendo. Ninguno de ellos pensaba en la posibilidad de que Dimitri abandonase, era imposible. El tiempo se detuvo. Dimitri estrechó la mano de Moor.</p>
+    <p class="lector-p dialogo">— ¡¡Nooo!! –gritaron Daikuku y la muchacha. Los otros enmudecían conmocionados.</p>
+    <p class="lector-p dialogo">— Muy bien, chico, has obrado como te ha dictado el corazón y eso te honra. El trato está sellado. A ti te mataré y contigo morirá la esencia de Alaris, a tu padre también lo mataré, y a tu madre la remataré. Así, los tres muertos, podréis reuniros en vuestra casa y vivir felices para toda la eternidad. Ja, ja, ja, ja –dijo Moor riendo a carcajadas.</p>
+    <p class="lector-p dialogo">— ¡Eres un mentiroso, le has engañado! –exclamó Geneviève. Dimitri pasmado se abalanzó sobre el dios oscuro, pero no podía moverse, una espesa bruma negra lo envolvía empezando por los pies.</p>
+    <p class="lector-p dialogo">— ¡Ése no era el trato, Moor! ¡¡Dijiste que me devolverías a mi madre y que me harías olvidar todo esto!! –gritaba Dimitri furioso intentando liberarse inútilmente.</p>
+    <p class="lector-p dialogo">— Escucha, muchacho, sé muy bien lo que he dicho y así lo he hecho, salvo que en el trato, yo no especifiqué cómo llevaría a cabo mi promesa. ¿Tengo razón, verdad?</p>
+    <p class="lector-p dialogo">— ¡¡¡Eres más sucio que una rata!!! ¡¡¡Mereces morir!!! –clamó Daikuku lanzándose sobre Moor, pero Charles Vincent lo atrapó a tiempo.</p>
+    <p class="lector-p dialogo">— Escucha, pequeño, no me culpes a mí de lo sucedido. Tu amigo ha elegido su destino, y con él, ha sentenciado el vuestro.</p>
+    <p class="lector-p dialogo">— Pagarás por esto, Moor –dijo Cheng Su clavándole la mirada.</p>
+    <p class="lector-p dialogo">— Sí, es posible, Niorái, pero ahora disfrutemos del espectáculo, pronto vuestro amigo no será más que cenizas –contestó Moor volviéndose, subiendo las escaleras de nuevo.</p>
+    <p class="lector-p">La bruma crecía apoderándose de Dimitri, que con los ojos desorbitados intentaba arrancarse aquella niebla helada que se llevaba su vida. Geneviève se lanzó sobre su amigo para ayudarlo.</p>
+    <p class="lector-p dialogo">— ¡¡¿Por qué, Dimitri, por qué?!! –gritaba arrancando las brumas–. ¡¡¿Por qué has hecho esto?!! ¡Yo confiaba en ti! –clamó descorazonada. Dimitri la miraba asustado, arrepentido, mientras las lágrimas recorrían las mejillas de la joven–. ¡Vamos, ayudadme a quitarle esto a Dimitri! ¿A qué estáis esperando?</p>
+    <p class="lector-p dialogo">— ¡¡No!! –sentenció Tanuk ik antes de que ninguno se moviese–. ¡No os acerquéis a Dimitri! Ha elegido su destino, nosotros no podemos hacer ya nada por él. Un trato con un dios no se puede romper –los cinco elegidos no sabían qué hacer, si ayudar a su compañera u obedecer al Hombre Elefante.</p>
+    <p class="lector-p dialogo">— ¿Cómo puedes ser así, Tanuk ik? Es nuestro amigo, debemos salvarlo –alzó la voz furioso Daikuku. El guardián acercó su rostro hasta el niño, mirándolo fijamente.</p>
+    <p class="lector-p dialogo">— No deberías preocuparte por aquel que ha vendido a sus amigos, sino por aquella que puede perecer intentando salvar a un traidor –dijo señalando a su protegida, que en su intento por salvar a Dimitri estaba siendo absorbida por la bruma. Tan sólo quedaba parte de la cabeza del mozo por desaparecer y los brazos de Geneviève ya se habían sumido en la oscuridad.</p>
+    <p class="lector-p dialogo">— ¡¡Geneviève!! –gritó Daikuku corriendo hacia ella. Charles Vincent siguió al niño, ambos estiraban de la joven intentando separarla.</p>
+    <p class="lector-p dialogo">— ¡Dejadme, dejadme! –clamaba llorando–. ¡Tengo que sacarlo de ahí!</p>
+    <p class="lector-p dialogo">— ¡Vamos, Geneviève! –exclamaba Daikuku.</p>
+    <p class="lector-p dialogo">— ¡No puedes hacer nada, suéltalo! –decía Charles Vincent.</p>
+    <p class="lector-p dialogo">— ¡¡No, no, no!! ¡Dimitri! –Cheng Su agarró a la muchacha, las gemelas también.</p>
+    <p class="lector-p">Los cinco estiraban de Geneviève que tenía medio cuerpo rodeado por las sombras. Estiraron con todas sus fuerzas hasta conseguir separar a la chica de las brumas que habían engullido a Dimitri. La niebla desaparecía de su torso dejando un feo color ceniza sobre su piel. Geneviève lloraba, mirando a su amigo, los demás atendían a la desaparición del muchacho. Ya no quedaba nada de Dimitri, sólo un embrollo de aciagas tinieblas.</p>
+    <p class="lector-p dialogo">— ¿Qué haremos ahora, Tanuk ik? –exclamó Charles Vincent.</p>
+    <p class="lector-p dialogo">— Ya no podemos hacer nada, únicamente luchar y esperar que el viento sople a nuestro favor, ahora que el más poderoso de los dioses ya no está junto a nosotros –contestó el guardián–. Vamos, preparaos, pronto habréis de invocar a los dioses, la batalla final está a punto de comenzar –Moor llegaba al cenit del zigurat.</p>
+    <p class="lector-p dialogo">— Tranquilos, no os pongáis así, os dejaré algo más de tiempo. Todavía sigue vivo bajo las brumas, ahora sólo falta que su cuerpo sea reducido a cenizas, tardará un par de minutos, poco más. Disfrutad del espectáculo, y tan pronto Alaris sea historia, podremos continuar con lo nuestro. Creo que es lo mínimo que puedo hacer. Ha sido un buen trato, ¿no os parece? Desde luego, hoy estoy increíblemente generoso, si no me veo no me lo creo –decía cargado de sarcasmo.</p>
+    <p class="lector-p dialogo">— ¡Eres despreciable! –porfió Lucero–. Espero que hoy sea el día de tu fin. Suplicarás perdón por todo el mal que has hecho desde el momento de tu nacimiento –Moor miró pasmado a la mujer, pasando a reír divertido.</p>
+    <p class="lector-p dialogo">— ¡Puedes reírte cuanto quieras de nosotros, bestia inmunda! Pero cuando los dioses se reencarnen en nuestros cuerpos, no nos encontrarás tan divertidos –gritó Aurora furiosa.</p>
+    <p class="lector-p dialogo">— Eso será en caso de que os permita la unión con los dioses. Podría acabar con vosotros en este mismo momento con sólo proponérmelo –las palabras de Moor cortaban la respiración de los elegidos. Geneviève interrumpía su llanto acongojada. La cruda realidad se mostraba ante ellos, si llegaban a luchar como dioses sería por el expreso deseo del Señor del Odio–. Sabed, que si permito vuestra conjunción, no es más que para mostrarme a mí mismo lo poderoso que soy. Además, llevo casi dos mil años sin divertimento, sería una lástima acabar con vosotros ahora, simples mortales. Pero no os preocupéis por ello, dejaré que seáis uno con los dioses, tranquilos, ahora disfrutad de la muerte de vuestro amigo, ya queda poco para su extinción.</p>
+    <p class="lector-p">Geneviève atendía impotente, arrodillada junto a lo que fuera su amigo. La bruma se retorcía, el muchacho aún peleaba por su vida, Charles y Daikuku observaban atónitos. El Lobo Ciego permanecía inmóvil, su cuerpo se oscurecía, como si un fuego le quemase desde el interior, calcinando su ser. No hacía nada, solamente esperaba, Dimitri había tomado la decisión y él aceptaba impasible la voluntad de su misma persona.</p>
+    <p class="lector-p dialogo">— Ashram también morirá con Dimitri, la bruma está devorando su cuerpo –observó Cheng Su. Geneviève colapsada por la situación, ante la pasividad de sus compañeros y la tirana mirada de Tanuk ik, se zafó de Daikuku y se abalanzó de nuevo sobre su amigo.</p>
+    <p class="lector-p dialogo">— ¡Vamos, lucha, cobarde, lucha! ¡Vuelve con nosotros! ¡Tu deber es luchar a nuestro lado! ¡Vamos, Dimitri! –gritaba despechada mientras la bruma se apoderaba de ella, tragando su cuerpo.</p>
+    <p class="lector-p dialogo">— ¡Tanuk ik, Geneviève morirá si no hacemos nada! ¡Tenemos que ayudarla! –exclamaba Daikuku.</p>
+    <p class="lector-p dialogo">— No, mi joven amigo –dijo sereno el Hombre Elefante–. Ya la ayudamos una vez, ha desobedecido mis palabras al igual que Dimitri. Ha obrado conforme a su voluntad, se rebela contra su destino. Debemos dejar que muera si es su deseo.</p>
+    <p class="lector-p dialogo">— ¡No, Tanuk ik, no es así! –exclamó Charles Vincent corriendo a socorrer a la muchacha. Cheng Su corrió a ayudar. Ambos estiraban de la joven que se aferraba vigorosamente a Dimitri.</p>
+    <p class="lector-p dialogo">— ¡Vamos, Geneviève, suéltalo si no quieres morir tú también!</p>
+    <p class="lector-p dialogo">— No seas idiota, chiquilla, ¿no te das cuenta de que no puedes hacer nada por él? –exclamaba Cheng Su. La tiniebla casi había cubierto el cuerpo de la muchacha y avanzaba por los brazos del músico y Cheng Su.</p>
+    <p class="lector-p dialogo">— ¡¡¡Geneviève!!! –gritó Daikuku.</p>
+    <p class="lector-p dialogo">— ¡Tanuk ik, haz algo! –clamó Lucero. El Hombre Elefante se adelantó y tomó en sus manos a Charles Vincent y a Cheng Su, arrancándolos de la bruma.</p>
+    <p class="lector-p dialogo">— ¡Dejadlos, ya nada se puede hacer por ellos!</p>
+    <p class="lector-p dialogo">— ¡Eres un monstruo, Tanuk ik! ¡¡Ayúdala, sácala de ahí! –gritó Charles lleno de ira. Moor disfrutaba del espectáculo, la semilla del odio crecía entre ellos.</p>
+    <p class="lector-p dialogo">— ¡¡Noo!! –bramó el tótem–. ¡Ella ha decidido! ¡Ha decidido abandonarnos como lo ha hecho Dimitri! –Daikuku corría hacia el Hombre Elefante golpeándolo con toda su rabia.</p>
+    <p class="lector-p dialogo">— ¡Eres tonto! ¿Cómo puedes decir eso? –balbuceaba con los ojos repletos de lágrimas–. Ella no quiere abandonarnos, ¡estúpido! Únicamente quiere traer de vuelta a Dimitri. ¡Sácala de ahí! –Tanuk ik miraba fijamente al pequeño, sus palabras lo habían dejado inmóvil.</p>
+    <p class="lector-p dialogo">— ¡¡Vamos, ¿a qué esperas?!! ¡¡Sálvala!! –gritó Aurora. Cheng Su empujaba al guardián.</p>
+    <p class="lector-p dialogo">— ¡Sácala, sácala! –gritaba la mujer. Tanuk ik volvió en sí.</p>
+    <p class="lector-p dialogo">— ¡¡Geneviève!! –rugió metiendo su enorme mano en las tinieblas, tratando de sacar a su protegida, de la cual ya sólo quedaba la cabeza al aire. Tanuk ik tiraba con todas sus fuerzas.</p>
+    <p class="lector-p dialogo">— ¡Venga! –gritaban los elegidos horripilados ante la situación. Bamurku tiraba–. ¡¡Vamos, sacadla de ahí!! ¡¡No dejéis que muera!! –vociferaban mientras Moor y sus criaturas observaban divertidos.</p>
+    <p class="lector-p dialogo">— ¡No puedo, no puedo! –bramaba Tanuk ik. Las tinieblas avanzaban por sus brazos ennegreciendo su piel. El rostro de la elegida desaparecía bajo la oscuridad. Bamurku tiraba del Hombre Elefante arrancándolo de las brumas–. ¡¡¡Geneviève!!! –clamaba impotente.</p>
+    <p class="lector-p dialogo">— ¡Tanuk ik! –gritó Daikuku derrumbándose.</p>
+    <p class="lector-p dialogo">— ¡¡¿Qué has hecho, Tanuk ik?!! –exclamaba Charles.</p>
+    <p class="lector-p dialogo">— Lo siento, lo siento… –balbuceaba el Hombre Elefante con el rostro repleto de lágrimas. Los elegidos contemplaban abatidos, tristes, desmoralizados.</p>
+    <p class="lector-p">El resto de tótems observaban impasibles, no podían interponerse ante la voluntad de los elegidos. El Lobo Ciego tenía todo su cuerpo calcinado, la suave brisa deshacía su piel en cenizas, pronto ambos quedarían reducidos a polvo.</p>
+    <p class="lector-p">Silencio. Mientras los elegidos luchaban por salvar a sus compañeros, el vacío colmaba la mente de Dimitri. Su esencia se desvanecía, la muerte se acercaba. Una voz llenaba su corazón.</p>
+    <p class="lector-p dialogo">— Hijo mío… hijo mío… Dimitri… despierta… –susurraba una voz femenina desde la distancia.</p>
+    <p class="lector-p dialogo">— ¿Mamá?... Mamá, ¿estás viva?... has vuelto… ¿y papá?, ¿está contigo? ¿Dónde estáis?, no puedo ver, todo está oscuro.</p>
+    <p class="lector-p dialogo">— No, hijo mío, papá no está aquí…</p>
+    <p class="lector-p dialogo">— ¿Dónde está papá entonces?</p>
+    <p class="lector-p dialogo">— Está junto a ti, sentado en una silla, dormido.</p>
+    <p class="lector-p dialogo">— No entiendo, ¿qué quieres decir, mamá? ¿Te oigo muy lejos?</p>
+    <p class="lector-p dialogo">— Claro que lo entiendes, mi pequeño, mira bien a tu lado, ¿lo ves?, está junto a ti.</p>
+    <p class="lector-p dialogo">— No veo nada, mamá… todo es oscuridad… tengo miedo. Ven con papá y sácame de aquí…</p>
+    <p class="lector-p dialogo">— Dimitri… escúchame bien. Estás junto a tu padre, y yo junto a vosotros, estamos juntos los tres. Abre los ojos y mira a tu alrededor… tan sólo has de querer ver para comprender.</p>
+    <p class="lector-p dialogo">— No, mamá… no quiero… tengo miedo… ven, sácame de aquí… no puedo más…</p>
+    <p class="lector-p dialogo">— Claro que puedes, hijo… has de ser valiente… debes aceptar tu destino igual que yo acepto el mío. Estás vivo… y tu padre está contigo… no debes sufrir por mí, sólo estoy dormida… piensa que algún día despertaré y los tres estaremos juntos de nuevo.</p>
+    <p class="lector-p dialogo">— No, mamá… –sollozaba entre lágrimas–. No… no quiero que estés dormida… quiero que te quedes aquí conmigo… quédate a mi lado.</p>
+    <p class="lector-p dialogo">— No, Dimitri… no puedo….</p>
+    <p class="lector-p dialogo">— No quiero que te vayas, mamá… no quiero que te mueras… ven, por favor…</p>
+    <p class="lector-p dialogo">— Escúchame, mi pequeño… no pienses en mí… ahora tu destino es salvar al universo junto a tus compañeros… si los abandonas… no habrá futuro para mí, ni para papá, ni para nadie… debes volver junto a ellos… y luchar si deseas que volvamos a vernos algún día… Dimitri… has de ser valiente, has de luchar por lo que amas.</p>
+    <p class="lector-p dialogo">— No, mamá… yo te quiero a ti… quiero a papá… quiero que todo vuelva a ser como antes… no me hables más de lo que no quiero escuchar.</p>
+    <p class="lector-p dialogo">— Escucha, Dimitri –dijo tajante la voz.</p>
+    <p class="lector-p dialogo">— Sí, mamá…</p>
+    <p class="lector-p dialogo">— Si no luchas, moriré… si no luchas, tu padre morirá… si no luchas, tú también morirás… tus amigos morirán… la mujer que anhela tu corazón, morirá… todos morirán… si no luchas… será tanta la vergüenza que recorrerá mi ser, que acabará pudriéndome el corazón hasta matarme… Dimitri…</p>
+    <p class="lector-p dialogo">— Sí…</p>
+    <p class="lector-p dialogo">— Haz que me sienta orgullosa de ti… despierta y colma tu destino… para que al amanecer pueda sentirte de nuevo a mi lado… vamos… despierta… despierta… despierta…</p>
+    <p class="lector-p">Dimitri abrió los ojos en aquella inmensa oscuridad. La espesa bruma se agitaba fuertemente devorando su ser. El Lobo Ciego tiritaba cayendo al suelo. Todos miraban perplejos. Una intensa luz manaba desde las profundidades de las tinieblas. La luz blanca crecía desvaneciendo el conjuro del Señor del Odio, crecía y crecía cegadora. “BUUUUMMM”, una fuerte explosión de luz y todo desapareció bajo el potente destello durante unos instantes. Un brillante halo. Geneviève yacía inconsciente en el suelo, Daikuku corriendo la cogió para comprobar su salud, estaba viva. El resplandor menguaba poco a poco dejando ver una silueta. Moor observaba paralizado. El resto de elegidos atendían estupefactos. El Lobo Ciego brillaba con el candor de aquella vigorosa luz. Dimitri estaba vivo, esa energía era la misma con la que derribó a Titán. Todos miraban alegrados, orgullosos, a pesar de todo seguía junto a ellos. El halo perdía intensidad, convirtiéndose en un translucido espectro que enmarcaba el cuerpo de…</p>
+    <p class="lector-p dialogo">— ¡¡¡Alaris!!! –gritó Moor enloquecido.</p>
+    <p class="lector-p">El grupo contemplaba atónito. Geneviève, que volvía en sí, admiraba aturdida. Un hombre de cuerpo vigoroso, cubierto por un traje azul como la noche. Los cabellos blancos flotantes y el rostro cubierto por una máscara dorada, que al contrario que las efigies primigenias, dejaba ver los ojos del hombre que encarnaba al dios. Aquellos ojos verdes eran los de Dimitri.</p>
+    <p class="lector-p dialogo">— ¡¡Esto es imposible!! ¡¿Cómo lo has hecho?! –rugía Moor–. ¡Vamos, mis generales! Si Alaris está junto a ellos, puede que exista la posibilidad de que entorpezcan mis planes, y no quiero volver a los infiernos. ¡¡Atacad!! No dejéis que se produzca la conjunción. ¡¡Acabad con ellos!! –espetó enloquecido por la ira arrancándose la capa.</p>
+    <p class="lector-p dialogo">— ¡¡Eres un vil embustero, Moor!! Tienes miedo y acabaremos contigo –gritó Aurora.</p>
+    <p class="lector-p">Los lugartenientes se abalanzaban fugazmente sobre los seis elegidos. El Lobo Ciego, el Caminante Nocturno, Tanuk ik, Bamurku y Oren corrían a defender a sus protegidos. La Garuda y el Saetón se arrojaron sobre el precipicio cayendo sobre las huestes, devastando a su paso a las criaturas de Moor.</p>
+    <p class="lector-p dialogo">— ¡¡Ahora, elegidos!! –exclamó Tanuk ik–. ¡Invocad a los dioses!</p>
+    <p class="lector-p dialogo">— ¡¡¡Noooooo!!! –Moor ensordeció el valle–. ¡¡Arrancadles la lengua!! –se arañaba la piel asaltado por el miedo.</p>
+    <p class="lector-p">Los tótems arremetían contra los generales interrumpiendo el ataque. Los segundos se hacían eternos. Alaris permanecía inmóvil, aturdido por la transmutación.</p>
+    <p class="lector-p dialogo">— ¡¡Dimitri!! –gritó Cheng Su asustada ante el inminente choque.</p>
+    <p class="lector-p">El Dios de las Estrellas volvió en sí, sus ojos abandonaban la nada. Raudo como un rayo se colocó ante los elegidos alzando las manos, un inmenso resplandor cegó los dominios de Moor. Nada se podía ver. Alaris había ganado unos instantes para que la conjunción se llevase a término.</p>
+    <p class="lector-p dialogo">— ¡¡Daos prisa, invocad a los dioses!! –exclamó Oren impactando contra Fausto.</p>
+    <p class="lector-p">Los seis elegidos reaccionaron. La velocidad de los acontecimientos les había hecho perder la noción del tiempo.</p>
+  </div>
+  <div class="cap-paso">
+    <a href="https://hunicornia.es/7-mascaras/la-despedida/">← 17. La despedida</a>
+    <a class="der" href="https://hunicornia.es/7-mascaras/la-batalla/">19. La batalla →</a>
+  </div>
+</main>
+<script src="/lector-progreso.js" defer></script>
+<script>
+(function() {
+  var btn   = document.getElementById("btnIndice");
+  var panel = document.getElementById("indicePanel");
+  var fill  = document.getElementById("progFill");
+
+  if (btn && panel) {
+    // Enlaces internos: el capitulo activo se calcula por scroll.
+    // Enlaces a otra pagina (7 mascaras): ya viene marcado desde el archivo.
+    var anclas = Array.prototype.slice.call(panel.querySelectorAll("a[href^='#']"));
+
+    function marcar() {
+      var activo = null;
+      if (anclas.length) {
+        var limite = window.innerHeight * 0.4;
+        anclas.forEach(function(a) {
+          var destino = document.getElementById(a.getAttribute("href").slice(1));
+          if (destino && destino.getBoundingClientRect().top <= limite) activo = a;
+        });
+        if (!activo) activo = anclas[0];
+        anclas.forEach(function(a) { a.removeAttribute("aria-current"); });
+        activo.setAttribute("aria-current", "true");
+      } else {
+        activo = panel.querySelector("[aria-current]");
+      }
+      // Si la lista no cabe, se acerca el capitulo activo a la vista.
+      if (activo && panel.scrollHeight > panel.clientHeight) {
+        activo.scrollIntoView({ block: "nearest" });
+      }
+    }
+
+    btn.addEventListener("click", function() {
+      var abierto = panel.classList.toggle("abierto");
+      btn.setAttribute("aria-expanded", abierto ? "true" : "false");
+      btn.textContent = abierto ? "Cerrar" : "Índice";
+      if (abierto) marcar();
+    });
+
+    panel.querySelectorAll("a").forEach(function(a) {
+      a.addEventListener("click", function() {
+        panel.classList.remove("abierto");
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Índice";
+      });
+    });
+  }
+
+  if (fill) {
+    window.addEventListener("scroll", function() {
+      var d = document.documentElement;
+      var pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+      fill.style.width = Math.min(pct || 0, 100) + "%";
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

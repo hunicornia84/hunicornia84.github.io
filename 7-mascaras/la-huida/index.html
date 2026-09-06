@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La huída, capítulo 10 de 7 máscaras. Fantasía épica para leer gratis en Hunicornia.">
+  <meta name="author" content="Hunicornia">
+  <link rel="canonical" href="https://hunicornia.es/7-mascaras/la-huida/">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>10. La huída · 7 máscaras — Hunicornia</title>
+  <style>
+    @font-face { font-family: "Chopin"; src: url("/ChopinLight.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #643587; --secondary: #8b3689; --nav-h: 58px; }
+    html, body { width: 100%; background: #fff; color: var(--primary); font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { padding-top: var(--nav-h); }
+    .lector-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(100,53,135,0.15); z-index: 200; backdrop-filter: blur(8px); }
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: var(--nav-h); }
+    .nav-volver { font-family: system-ui, Arial, sans-serif; font-size: 12px; color: var(--secondary); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-volver:hover { opacity: 0.7; }
+    .nav-titulo { font-family: "Chopin", serif; font-size: 20px; font-weight: 300; letter-spacing: 0.05em; color: var(--primary); }
+    .nav-indice-btn { font-family: system-ui, Arial, sans-serif; font-size: 11px; color: var(--secondary); background: none; border: 1px solid rgba(100,53,135,0.3); border-radius: 4px; padding: 6px 14px; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; }
+    .nav-indice-btn:hover { background: rgba(100,53,135,0.06); }
+    .progreso-barra { height: 2px; background: rgba(100,53,135,0.1); }
+    .progreso-fill { height: 100%; width: 0%; background: var(--primary); transition: width 0.1s linear; }
+    .indice-panel { display: none; border-top: 1px solid rgba(100,53,135,0.1); padding: 24px 24px 28px; background: rgba(255,255,255,0.99); max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .indice-panel.abierto { display: block; }
+    .indice-lista { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 2em; }
+    .indice-lista li { padding: 3px 0; break-inside: avoid; }
+    .indice-lista a { font-family: "Chopin", serif; font-size: 15px; font-weight: 300; color: var(--primary); text-decoration: none; opacity: 0.8; }
+    .indice-lista a:hover { opacity: 1; }
+    .lector-contenido { max-width: 680px; margin: 0 auto; padding: 56px 24px 120px; }
+    .obra-titulo-h { font-family: "Chopin", serif; font-size: clamp(34px, 5vw, 64px); font-weight: 300; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--primary); line-height: 1.1; }
+    .obra-subtitulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--secondary); margin: 0 0 60px; opacity: 0.75; }
+    .cap-bloque { margin-bottom: 72px; }
+    .cap-h2 { font-family: "Chopin", serif; font-size: clamp(22px, 3vw, 32px); font-weight: 300; letter-spacing: 0.04em; margin: 64px 0 36px; color: var(--primary); text-align: center; padding-top: 48px; border-top: 1px solid rgba(100,53,135,0.12); line-height: 1.25; scroll-margin-top: var(--nav-h); }
+    .cap-num { display: block; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(10px, 1.1vw, 12px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--secondary); opacity: 0.75; margin-bottom: 16px; }
+    .lector-p { font-size: clamp(15px, 1.7vw, 17px); line-height: 1.95; margin: 0 0 0.9em; color: var(--primary); text-align: justify; hyphens: auto; }
+    .lector-p.dialogo { }
+    .sep-omega { text-align: center; color: var(--secondary); opacity: 0.3; font-size: 13px; margin: 36px 0; letter-spacing: 0.4em; }
+    .cta-final { text-align: center; margin-top: 64px; display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+    .cta-final a { display: inline-block; padding: 0.8em 1.5em; background: rgba(139,54,137,0.12); color: var(--primary); border-radius: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .cta-final a:hover { opacity: 0.7; }
+    .nota-final { font-size: 11px; color: var(--secondary); text-align: center; margin-top: 32px; opacity: 0.6; }
+    @media (max-width: 600px) { :root { --nav-h: 52px; } .lector-contenido { padding: 36px 16px 80px; } .nav-bar { padding: 0 16px; } .indice-lista { columns: 1; } }
+    @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; } }
+
+    .parte-h2 { font-family: "Chopin", serif; font-size: clamp(26px, 3.6vw, 42px); font-weight: 300; letter-spacing: 0.04em; margin: 120px 0 0; color: var(--primary); text-align: center; line-height: 1.2; scroll-margin-top: var(--nav-h); }
+    .parte-h2.primera { margin-top: 0; }
+    .parte-h2 + .cap-h2 { margin-top: 34px; padding-top: 34px; }
+    .indice-lista a[aria-current], .indice-sub a[aria-current], .indice-cap-nombre[aria-current] { opacity: 1; box-shadow: inset 3px 0 0 var(--primary); padding-left: 9px; }
+    .indice-sub li:has(a[aria-current]) { border-left-color: var(--primary); border-left-width: 3px; padding-left: 12px; }
+    .indice-parte { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--secondary); opacity: 0.7; margin: 16px 0 4px; break-inside: avoid; list-style: none; }
+    .indice-parte:first-child { margin-top: 0; }
+    .cap-paso { display: flex; justify-content: space-between; gap: 1.5em; margin-top: 72px; padding-top: 28px; border-top: 1px solid rgba(100,53,135,0.12); }
+    .cap-paso a { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary); text-decoration: none; max-width: 45%; line-height: 1.5; }
+    .cap-paso a:hover { color: var(--primary); }
+    .cap-paso .der { text-align: right; margin-left: auto; }
+  </style>
+</head>
+<body data-obra="7 máscaras" data-capitulo="La huída">
+<nav class="lector-nav" aria-label="Navegación">
+  <div class="nav-bar">
+    <a class="nav-volver" href="/">← Volver</a>
+    <span class="nav-titulo">7 máscaras</span>
+    <button class="nav-indice-btn" id="btnIndice" aria-expanded="false" aria-controls="indicePanel">Índice</button>
+  </div>
+  <div class="indice-panel" id="indicePanel" role="navigation" aria-label="Índice de capítulos">
+    <ul class="indice-lista">
+      <li class="indice-parte">La leyenda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/">1. El nacimiento de las estrellas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-partida/">2. La partida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-cima/">3. La cima</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-conjuncion/">4. La conjunción</a></li>
+      <li class="indice-parte">La búsqueda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-reencuentro-de-los-elegidos/">5. El reencuentro de los elegidos</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-abismo/">6. El abismo</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-tercer-elegido/">7. El tercer elegido</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-despertar/">8. El despertar</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-opera/">9. La Ópera</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-huida/" aria-current="true">10. La huída</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-eco/">11. El eco</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-silencio/">12. El silencio</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/las-atalayas/">13. Las atalayas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-ira/">14. La ira</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-impotencia/">15. La impotencia</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-bosque/">16. El bosque</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-despedida/">17. La despedida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-juicio-final-de-los-dioses/">18. El juicio final de los dioses</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-batalla/">19. La batalla</a></li>
+      <li class="indice-parte">La redención</li>
+      <li><a href="https://hunicornia.es/7-mascaras/un-nuevo-amanecer/">20. Un nuevo amanecer</a></li>
+    </ul>
+  </div>
+  <div class="progreso-barra"><div class="progreso-fill" id="progFill"></div></div>
+</nav>
+<main class="lector-contenido" data-lectura>
+  <h1 class="obra-titulo-h">7 máscaras</h1>
+  <p class="obra-subtitulo">La búsqueda · Capítulo 10 de 20 · Castellano</p>
+  <div class="cap-bloque">
+    <h2 class="cap-h2">La huída</h2>
+    <p class="lector-p">Los cuatro elegidos corrieron por el pasillo que llevaba hasta la salida trasera del edificio. Oren volvió a las afueras de la Ópera. En el exterior los esperaban dos enormes bestias que desolaban todo a su paso, Las gárgolas luchaban vanamente contra los dos gigantes, no eran rivales para los generales, una tras otra caían molidas en mil pedazos ante los ataques enemigos. Tan sólo Oren era capaz de mantener a las dos criaturas ocupadas sin perecer ante sus ataques. Uno de los generales era como una descomunal babosa pestilente de cientos de tentáculos, que pudría todo cuanto tocaba reduciéndolo a ceniza, incluso la roca. El otro lugarteniente, una gigantesca burla de los hombres, amasijos de carne y metal daban forma a su cuerpo. Los brazos y piernas crecían a su antojo, no quedaba nada fuera del alcance de sus golpes. Destruían todo a su paso, el dominio se estremecía, la ciudad en ruinas quedaba reducida a polvo, la Ópera se estaba derrumbando. Oren intentaba atacar, pero a pesar de su velocidad y fuerza, sus ataques eran nimios rasguños ante rivales tan desproporcionados. Los generales se abalanzaban sobre Oren, que una y otra vez caía al suelo desplomado. El grifo estaba herido, pero a cambio, ganaba el tiempo necesario para la huida. Por la parte trasera del edificio escapaban los cuatro elegidos, aterrorizados. La construcción se les venía encima. Estaban a punto de perecer sepultados bajo las grandes rocas.</p>
+    <p class="lector-p dialogo">— Vamos, debemos huir sin que nos vean –dijo una de las gárgolas.</p>
+    <p class="lector-p">Los cuatro elegidos colgaban de las patas de las porteadoras. Volaban raso, intentando que las criaturas de Moor no se percatasen de la escapada. Mientras huían, quiso la mala fortuna que la babosa golpease a Oren haciéndolo caer en la dirección en que volaban las gárgolas. Kuagssak levantó la vista, las gárgolas no estaban solas, llevaban cuatro humanos, el objetivo escapaba. El general se lanzó como un rayo tras los elegidos. Oren se abalanzó contra la bestia intentando cerrarle el paso. Titán abrazó al grifo antes de que pudiese hacer nada por evitar el ataque. El gusano se dirigía hacia los elegidos.</p>
+    <p class="lector-p dialogo">— ¡Nos siguen, nos han visto! –gritó Dimitri aterrorizado–. ¡Volad más rápido!</p>
+    <p class="lector-p">Las gárgolas levantaron el vuelo, y agitando las alas tan rápido como podían, intentaban ganar terreno. Oren conseguía zafarse del abrazo de Titán, pero el ataque del general era demasiado rápido, le resultaba imposible desprenderse de él. Debía socorrer a los elegidos. Kuagssak les daba alcance, lanzaba sus largos tentáculos intentando apresar a los elegidos, pero las gárgolas con gran esfuerzo esquivaban los golpes cada vez más intensos.</p>
+    <p class="lector-p dialogo">— ¡No aguantaremos mucho más, necesitamos ayuda o pronto nos destruirá! –dijo una de las porteadoras.</p>
+    <p class="lector-p dialogo">— ¡Levantad el vuelo, debéis volar más alto! –gritó Dimitri.</p>
+    <p class="lector-p dialogo">— Intentaremos ascender, pero no podremos subir mucho más con tanto peso.</p>
+    <p class="lector-p">Las gárgolas ascendieron tan alto como les permitían sus alas. El general se alzó sobre sus cientos de patas haciendo sus miembros infinitamente largos. Ahora corría a la misma altura que las gárgolas.</p>
+    <p class="lector-p dialogo">— ¡Esto es imposible! ¡Acabará con nosotros sin remedio! –exclamó una de las gárgolas.</p>
+    <p class="lector-p dialogo">— ¡No! –gritó Daikuku–. Todavía podemos hacer algo. ¡Seguid volando! –Daikuku sacó del zurrón su semilla de baobab–. ¡Ésta es una situación de vida o muerte! –gritó a sus compañeros.</p>
+    <p class="lector-p">Lanzó el grano que voló unos instantes hasta caer sobre el cuerpo del general. Durante un momento pareció no ocurrir nada, pero de repente, a una velocidad pasmosa, miles de raíces de baobab se aferraban estrujando su cuerpo, entorpeciendo sus movimientos, cada vez más lento y pesado.</p>
+    <p class="lector-p dialogo">— ¡Funciona! –exclamó Daikuku.</p>
+    <p class="lector-p">El árbol crecía convirtiéndose en un espeso bosque. Kuagssak había perdido terreno, pero sus ataques continuaban siendo demasiado peligrosos.</p>
+    <p class="lector-p dialogo">— Vamos, Geneviève, lanza tu semilla, puede que acabe con él –gritó el pequeño.</p>
+    <p class="lector-p dialogo">— ¿Y si fallo? Está muy lejos.</p>
+    <p class="lector-p dialogo">— ¡No fallarás, lánzala! –dijo Dimitri.</p>
+    <p class="lector-p">Geneviève lanzó la semilla. Un quiebro entorpecido del general. La simiente detonó en una portentosa explosión de vida, que nacía entre la viscosa piel de la criatura. La vegetación cubría casi todo su cuerpo e incluso así, continuaba arremetiendo sin tregua. Las gárgolas habían conseguido ganar distancia.</p>
+    <p class="lector-p dialogo">— ¡Lo hemos conseguido! –gritó Daikuku.</p>
+    <p class="lector-p">La bestia se retorcía aplastada por la fuerza de los árboles que crecían sobre su cuerpo, se movía cada vez más lentamente hasta caer de bruces al suelo. Atrapado. Se oían los terribles rugidos de la bestia. Titán escuchó el grito desesperado del otro general. La criatura dejó de lado al grifo aplastándolo contra el suelo, lanzándose a la carrera tras los elegidos. Oren volaba raudo intentando alcanzar a los cuatro antes de que lo hiciese la criatura. Por más que se esforzaba, apenas podía mantenerse a la estela del general, el ataque había diezmado sus fuerzas. Las gárgolas volaban sin aliento, luchando por llegar a las brumas que aparecían a lo lejos ante ellos, el siguiente dominio más cercano a la Gran Ópera.</p>
+    <p class="lector-p dialogo">— ¡Rayos! –gritó Dimitri–. El otro general de Moor nos sigue, va muy rápido, nos dará alcance antes de que podamos ocultarnos en la niebla.</p>
+    <p class="lector-p dialogo">— Cuando se acerque lánzale tu semilla, es la única oportunidad que nos queda –gritó Daikuku.</p>
+    <p class="lector-p dialogo">— ¡Mirad, por allí, tras la bestia, puedo ver al grifo! –dijo Charles Vincent sofocado–. ¡Viene a ayudarnos!</p>
+    <p class="lector-p dialogo">— Sólo espero que Oren llegue a tiempo. No creo que podamos aguantar este ritmo mucho más, y menos otro ataque –dijo la gárgola que llevaba al músico.</p>
+    <p class="lector-p">El general continuaba recortando la distancia, sus largos brazos cortaban el aire intentando destruir su objetivo.</p>
+    <p class="lector-p dialogo">— ¡Vamos! Ya queda poco para alcanzar las brumas. Volad sin miedo, todavía nos queda una última semilla –gritó Geneviève.</p>
+    <p class="lector-p dialogo">— Esa cosa no nos da miedo, querida niña. Pero no es esa la cuestión, es un problema de velocidad –agregó una gárgola.</p>
+    <p class="lector-p dialogo">— ¡Vamos! ¡Cada vez está más cerca! Dimitri prepárate para lanzar la semilla cuando esté a tiro –exclamó Daikuku.</p>
+    <p class="lector-p dialogo">— ¡Estoy preparado, créeme que lo estoy! –respondió nervioso.</p>
+    <p class="lector-p">El general corría desenfrenadamente con el único anhelo de capturar a los elegidos. Podía tocar la estela de las gárgolas con sus dedos. Oren volaba desalentado intentando sobrepasar al ser oscuro.</p>
+    <p class="lector-p dialogo">— ¡Ya está aquí! –gritó Daikuku–. ¡Vamos, Dimitri, lanza la semilla, lánzala!</p>
+    <p class="lector-p">Dimitri miró a su amigo falto de convicción. Lanzó el germen contra la bestia, volaba directa hacia la cabeza de Titán, que percatándose del ataque, sopló una intensa llamarada que calcinó la semilla frustrando el golpe de los elegidos.</p>
+    <p class="lector-p dialogo">— ¡Maldita sea! He fallado –exclamó Dimitri–. Era la única posibilidad que nos quedaba.</p>
+    <p class="lector-p dialogo">— No, Dimitri, no has fallado. Saldremos de ésta.</p>
+    <p class="lector-p">El ataque fallido solamente había conseguido darles un par de segundos más, tiempo justo para que Oren consiguiese rebasarlo. Se acercaba a los cuatro. El general corría aún más rápido ganando la carrera perdida.</p>
+    <p class="lector-p dialogo">— ¡Mirad, Oren está con nosotros! –exclamaron las gárgolas.</p>
+    <p class="lector-p dialogo">— ¡Pero ese monstruo continúa ganándonos terreno!, ¿qué podemos hacer? –preguntó Charles Vincent muy preocupado.</p>
+    <p class="lector-p dialogo">— Tranquilo, maestro, Oren sabrá sacarnos de ésta –dijo otra gárgola.</p>
+    <p class="lector-p">Las brumas ya estaban cerca. Si la fortuna corría de su lado, Oren caería sobre la criatura dejando tiempo para que los elegidos se perdiesen en la niebla. Titán agitaba con rabia los brazos, trataba de derribar a los elegidos sin prestar atención al grifo. Oren volaba entre sus brazos entorpeciendo su ataque, con tan mala suerte que uno de los golpes fue a dar sobre la gárgola que portaba a Dimitri, reduciéndola a pedazos. El mozo caía en picado. Sus compañeros gritaban aterrados.</p>
+    <p class="lector-p dialogo">— Lo siento, Dimitri, pero no puedo llevarte más lejos –dijo la gárgola en un último esfuerzo por mantener al muchacho antes de convertirse en polvo.</p>
+    <p class="lector-p dialogo">— ¡Seguid, yo lo atraparé! –gritó Oren.</p>
+    <p class="lector-p">Las otras gárgolas continuaban el vuelo hacia las brumas. Oren, veloz, apresaba a Dimitri sujetándolo por las ropas a milímetros del firme. El general antes de que el grifo pudiese levantar el vuelo, propinó una tremenda patada que lanzó al custodio por los aires. Dimitri caía impactando contra la tierra desde unos cuatro metros de altura. Estaba aturdido, no parecía grave. El lugarteniente se había detenido junto al chico, mientras uno de sus brazos continuaba la carrera contra las gárgolas. Se disponía a lanzar sus zarpas sobre el joven con intención de sesgarle la vida. Oren volaba a su alrededor quebrando cada uno de los ataques. El general sosteniéndose con una sola pierna atacaba a dos bandas. Oren atacando todos los flancos del monstruo. Enfurecido por la molesta presencia, logró golpear al guardián, que chocaba contra el suelo quedando inmóvil. Titán, desquiciado, dejó de lado al elegido acercándose a Oren. Dimitri recuperaba la consciencia, se incorporaba lentamente.</p>
+    <p class="lector-p dialogo">— ¡Oren! ¡No! –gritó Daikuku desde los cielos.</p>
+    <p class="lector-p">Los tres miraban con impotencia lo que sucedía en el suelo. Las gárgolas continuaban volando, el brazo atacaba sin darles tregua. Dimitri, se giró rápidamente en busca del grifo. Yacía en el suelo sin sentido, Titán caminaba hacia el guardián. Dimitri corrió tan rápido como le dejaban sus pies. El general se detenía ante su presa, abría las fauces en las alturas para abalanzarse sobre su víctima. Dimitri seguía corriendo, los sentimientos se colapsaban en su cabeza acelerando su corazón. Todos miraban absortos la dramática situación. Dimitri, fuera de sí, corría hacia Oren.</p>
+    <p class="lector-p dialogo">— ¡¡¡NOOOOOO!!! –los ojos se volvieron blancos, perdía el sentido.</p>
+    <p class="lector-p">La boca del elegido se abrió, de su interior surgía un halo de luz blanca tan luminoso como el sol, cegando la mirada. La luz emergió como un rayo hacia los cielos atravesando a la criatura de Moor. Titán caía fulminado sobre el suelo con el torso partido en dos, se estremecía con fuertes sacudidas, estaba fuera de combate. La luz desapareció, Dimitri caía inconsciente. Las gárgolas descendieron a tierra. Geneviève y Daikuku corrieron hacia Dimitri, Charles caminaba tras ellos. Las gárgolas volaban hacia Oren. El grifo se movía, estaba vivo, tan sólo había quedado abrumado tras el golpe. Lentamente levantó la cabeza, pudo ver a Dimitri en el suelo y a sus compañeros corriendo hacia él. El custodio aunó fuerzas, y levantándose sobre sus malheridas patas, caminaba hacia el joven.</p>
+    <p class="lector-p dialogo">— Dimitri, Dimitri –gritaba Geneviève descorazonada. Daikuku llegó junto a él y dándole la vuelta, boca arriba, lo colocó sobre sus rodillas.</p>
+    <p class="lector-p dialogo">— Amigo, ¡¿estás bien?! –preguntaba el pequeño colocando el oído sobre el pecho de su compañero–. ¡Está vivo, Dimitri está vivo!</p>
+    <p class="lector-p dialogo">— ¡Ahh! –suspiró Geneviève aliviada, las lágrimas recorrían sus mejillas. Se sentó junto al joven acariciándole el rostro.</p>
+    <p class="lector-p dialogo">— Menos mal que estás vivo, muchacho, y tú también Oren. Qué alegría, casi se me sale el corazón por la boca –dijo Charles Vincent recuperando el aliento.</p>
+    <p class="lector-p dialogo">— ¿Estás bien, Oren? –preguntó una de las gárgolas–. Pareces malherido, tienes el cuerpo cubierto de sangre, no deberías moverte.</p>
+    <p class="lector-p dialogo">— Estoy bien, gracias. No tiene importancia, son pequeñeces. Puedo caminar –contestó el grifo avanzando hacia los elegidos.</p>
+    <p class="lector-p dialogo">— Has sido muy valiente, amigo. Toda una hazaña. Has volado como nunca te habíamos visto hacerlo. Atacaste a esos demonios a pesar de saberte en desventaja, y aun al borde de la muerte, no has cesado en tu empeño. Esto debe saberse en toda la Gran Ópera –exclamó una de las gárgolas. Las tres caminaban junto al grifo.</p>
+    <p class="lector-p dialogo">— Eso será si es que queda algo de nuestra casa cuando volvamos. Dejadme ver –exclamó Oren acercando el hocico a Dimitri–. Sólo está inconsciente, pronto despertará.</p>
+    <p class="lector-p dialogo">— Pero, ¿qué es lo que ha ocurrido? ¿Cómo pudo pasar algo así? –preguntó Charles Vincent.</p>
+    <p class="lector-p dialogo">— Pasó lo que tenía que pasar. Esa luz no es más que una pequeña parte del poder que corre por sus venas, al igual que el que duerme en vosotros –contestó el grifo–. Subidlo a mi lomo, lo llevaré hasta que lleguemos a la linde de nuestro dominio, allí os esperan las Brumas de Enova –las tres gárgolas cogieron al muchacho dejándolo sobre la espalda del custodio–. Vamos, no tenemos tiempo, debemos desaparecer antes de que esos seres vuelvan a despertar.</p>
+    <p class="lector-p dialogo">— ¿Quieres decir entonces que no están muertos? –preguntó el músico.</p>
+    <p class="lector-p dialogo">— No, no están muertos, no son seres como nosotros, son esencias formadas a partir de la oscuridad. Hace falta mucho más que eso para darles muerte. Se alimentan de la ira y el miedo, Moor es su fuente de energía. Ahora yacen en el suelo, inmóviles, pero pronto volverán a caminar en busca de los elegidos. Pero antes de que eso ocurra, vosotros deberéis estar muy lejos ya –el grifo avanzaba cojeando, la sangre marcaba sus pasos.</p>
+    <p class="lector-p dialogo">— Estás herido, Oren, no dejas de sangrar –observó Daikuku.</p>
+    <p class="lector-p dialogo">— Lo sé, mi joven amigo, pero no hay nada que ahora podamos hacer para solucionar mi mal. Cuando lleguemos a las Brumas de Enova deberéis continuar vuestro viaje sin mí. Las gárgolas y yo volveremos a la Ópera. Tenemos que auxiliar a las que todavía sigan con vida y cuando acabe con mis amigas, será momento de recuperar estas heridas que me afligen. Debo sanar pronto, puede que nos volvamos a ver en muy poco tiempo.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir con eso? –preguntó Geneviève.</p>
+    <p class="lector-p dialogo">— Solamente pretendo decir lo que he dicho. Por cierto, todavía desconocéis cómo afrontar vuestro viaje. Debéis cruzar las Brumas de Enova –decía mientras caminaba–, y llegar al Estanque de los Nenúfares. Allí os espera Tanuk ik, no lo busquéis, pues no lo encontraréis, tan sólo caminad y él os hallará a vosotros.</p>
+    <p class="lector-p dialogo">— ¿Cómo sabes que Tanuk ik nos espera allí? –preguntó Daikuku.</p>
+    <p class="lector-p dialogo">— Hay cosas que se pueden saber y otras que no, mi joven amigo –respondió el custodio con semblante concluyente.</p>
+    <p class="lector-p dialogo">— Vale, comprendido.</p>
+    <p class="lector-p dialogo">— Permíteme que te diga algo, Oren.</p>
+    <p class="lector-p dialogo">— Dígame, maestro.</p>
+    <p class="lector-p dialogo">— Cada vez que miro tus ojos, veo algo que me resulta familiar.</p>
+    <p class="lector-p dialogo">— Es posible mi señor. Hace muchos años que cuidamos de usted en la Gran Ópera –la respuesta dejó de nuevo confuso a Charles, que indagaba en su memoria su posible relación con el grifo.</p>
+    <p class="lector-p dialogo">— ¿Cómo atravesaremos estas brumas? Parecen muy espesas, no creo que podamos ver el camino y mucho menos encontrarnos la nariz –preguntaba Daikuku.</p>
+    <p class="lector-p dialogo">— Bueno, ahora que ya hemos llegado, es momento de que sepáis adónde vais a entrar.</p>
+    <p class="lector-p dialogo">— Cooff, Cooff –Dimitri tosía, despertaba.</p>
+    <p class="lector-p dialogo">— Mirad, parece que vuelve en sí –apuntó Charles Vincent.</p>
+    <p class="lector-p dialogo">— Nuestro amigo despierta en el momento idóneo para conocer cómo cruzar el siguiente dominio –dijo Oren deteniéndose.</p>
+    <p class="lector-p">Dimitri se incorporaba lentamente, con gesto dolorido, mareado. Las gárgolas cogiéndolo con cuidado, lo dejaron sentado en el suelo. Se recuperaba.</p>
+    <p class="lector-p dialogo">— ¡Oren! –exclamó sobrecogido–. ¡Estás bien! –levantándose de un salto–. Te has salvado de esa criatura –dijo abrazándolo.</p>
+    <p class="lector-p dialogo">— No, Dimitri. Fuiste tú quien me salvó de una muerte segura. Tu valor evitó que cayese entre las fauces de Titán, nos salvaste a todos. Tu poder dejó al general tal y como lo puedes ver.</p>
+    <p class="lector-p dialogo">— Vaya, creo que no recuerdo haberte salvado y mucho menos haber fulminado al general –sus compañeros lo miraban alegres al verlo recuperado.</p>
+    <p class="lector-p dialogo">— Pues lo hiciste. Pero ahora no es momento para describir tus aventuras mientras dormías. Debéis conocer cómo cruzar el siguiente dominio. Podría llevaros volando hasta el lugar en que se encuentra Tanuk ik, pero sería demasiado peligroso. Las criaturas de Moor nos siguen muy de cerca, si nos viesen podría ser nuestro final, en mi estado ni siquiera podría entretener al más débil de los generales. Debéis cruzar este territorio, el camino es más largo, pero mucho más seguro. Ningún centinela os podrá encontrar, el tiempo que tardaréis ahí dentro será el suficiente para que os pierdan la pista. Cuando salgáis ya se encargará Tanuk ik de indicaros el camino a seguir. Este dominio es un lugar oscuro donde la luz no llega. Nadie que desee volver se aventura a adentrarse en ellas. Las brumas están habitadas por criaturas desconocidas capaces de apoderarse del alma de los incautos extraviados. Pero vosotros no debéis temer nada de lo que habita este límite. Hay una manera de avanzar sin ser atacado por las meigas. Os vendaréis los ojos y cruzaréis todo el dominio sin ver nada. La oscuridad será vuestra aliada. Las hijas de Enova sólo atacan a aquellos que se atreven a mirarlas a los ojos. Seguid hasta el final sin abrirlos, cerradlos aunque estén tapados, y sólo cuando la luz atraviese de nuevo vuestros párpados y caliente vuestra piel, sabréis que habéis atravesado las brumas.</p>
+    <p class="lector-p dialogo">— ¿Y cómo nos guiaremos dentro si no sabemos adónde vamos? –preguntó Geneviève.</p>
+    <p class="lector-p dialogo">— No es necesario conocer el sendero, sólo desear llegar a vuestro destino. Pensad en Tanuk ik, imaginad el Estanque de los Nenúfares, y posiblemente lleguéis muy pronto. Ciertos dominios tienen esta particularidad, son capaces de llevarte adonde se quiera. Mantened vuestro objetivo siempre en mente, no os despistéis con nada, seguid unidos los cuatro, como si fueseis uno. Si hacéis lo que os digo, todo saldrá bien y tardaréis menos de lo que creéis en llegar al otro lado. Caminad hacia delante, sin ver ni oír nada, no hagáis caso a los ruidos o a las palabras, ni siquiera atendáis al tacto, os rozarán y sentiréis frío, pero no importa. Sé que suena terrible, lo es, pero si os adentráis teniendo bien presente lo que os digo, no será más que un paseo. Esperad a la luz, insisto –una de las gárgolas se acercó al grifo y cuchicheó algo a su oído–. Amm, es cierto, se me olvidaba.</p>
+    <p class="lector-p dialogo">— ¿Acaso puede haber algo más? –preguntó Geneviève.</p>
+    <p class="lector-p dialogo">— Por supuesto que hay algo más. Está Enova, debéis tener mucho cuidado con ella. Es la soberana de este dominio. Es una mujer muy traicionera, si no sucumbís a sus hijas, será ella misma la que os intente confundir para que caigáis en sus redes. A menudo enciende luces lo suficientemente luminosas para hacer creer a los aventurados como vosotros, que han salido de su dominio tocados por la luz del sol.</p>
+    <p class="lector-p dialogo">— ¿Cómo sabremos que la luz es realmente natural? –preguntó Charles.</p>
+    <p class="lector-p dialogo">— Para los primerizos puede que funcione, pero su truco tiene un gran fallo, cuando la luz brilla, la temperatura desciende radicalmente en unos segundos. Pasaréis de tener frío a quedar helados. No hagáis caso de ello, seguid adelante, hasta que la luz sea cálida y no cese, entonces sabréis que estáis fuera. La luz de Enova cambia de tono, siempre colores fríos, en cambio, la luz natural es caliente y traspasa los párpados con tonos rojizos. Y una cosa más, no prestéis ninguna atención a cuanto oigáis de Enova, incluso puede que se acerque hasta el punto de tocaros durante largo rato. Ella es la más poderosa, tened mucho cuidado, si no atendéis a ninguna de esas criaturas, no pereceréis. Ahora que sabéis todo cuanto debéis, es momento de que partáis. Cerrad los ojos fuertemente, cogeos de la mano y entrad –Charles Vincent buscaba la mano de sus compañeros, cuando Daikuku dijo.</p>
+    <p class="lector-p dialogo">— No será necesario que vayamos cogidos de la mano, sería un riesgo, si nos soltásemos no nos encontraríamos de nuevo. Utilizaremos las cuerdas, nos ataremos unos a otros.</p>
+    <p class="lector-p dialogo">— Esa es muy buena idea, Daikuku –dijo el hombre–. Las cuerdas nos mantendrán unidos, y con mi chaqueta podremos hacer vendas para cubrirnos los ojos, evitando así cualquier impulso no deseado. Está rota, así que no la necesitaré más –Charles se quitó la prenda y se acercó a Oren–. Por favor, estira de ella y rásgala, así podré dividirla en cuatro. Muchas gracias.</p>
+    <p class="lector-p dialogo">— No hay de qué, mi señor.</p>
+    <p class="lector-p dialogo">— Por cierto, Oren, no has dicho nada sobre un posible tropiezo, piedras, árboles, desniveles del terreno. Que deseemos llegar y caminemos con mucho cuidado no significa que no podamos caer ante un imprevisto obstáculo. Despéjame la duda por favor –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— Como bien dices, desear es anteponerse a cualquier obstáculo por grande que éste sea. Pero no temáis ningún tropiezo. No hay nada, absolutamente nada que os pueda molestar en vuestro camino.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir?</p>
+    <p class="lector-p dialogo">— Ahí dentro tan sólo hay bruma, nada más. Caminaréis sobre ella y entre ella –mientras el grifo y Dimitri hablaban Daikuku ya había atado las cuerdas a Geneviève, Charles y a sí mismo.</p>
+    <p class="lector-p dialogo">— Vamos, Dimitri, déjame que te ate la cuerda a la cintura -los cuatro quedaban unidos por un nudo indivisible y fuerte. Cada uno tenía su venda a punto.</p>
+    <p class="lector-p dialogo">— Daos prisa, no hay tiempo que perder –insistió el custodio.</p>
+    <p class="lector-p">Los cuatro se acercaron hasta la linde de las brumas, estaban preparados para adentrarse en el dominio de Enova. Ataron los jirones ocultando los ojos tras la tela.</p>
+    <p class="lector-p dialogo">— Recordad lo que os he dicho, ante la duda contad hasta diez. Luego obrad en consecuencia. Sed valientes, os estaré esperando –el grifo dirigió una mirada a Charles–. Mi señor. Adiós, amigos.</p>
+    <p class="lector-p">Se despidieron. Con la tela tapando sus ojos y bien sujetos, se adelantaron penetrando en las brumas. Geneviève iba la primera, detrás Dimitri, después Daikuku y por último Charles Vincent. Una vez desaparecieron tras las espesas brumas, Oren alzó el vuelo junto a las gárgolas. Volvían a la Gran Ópera desapareciendo en el horizonte.</p>
+    <p class="lector-p">Entre las nieblas los cuatro elegidos avanzaban despacio, cogidos de la mano, se sentían más seguros así. A pesar de ir sujetos por la cuerda, el temor a perderse, a tropezar, a una trampa o a otra cosa más terrible todavía, les empujaba a caminar muy juntos y fuertemente asidos, calmando en cierta forma los nervios y el temor.</p>
+    <p class="lector-p">Caminaban silenciosos, ni siquiera se oían sus pasos, puesto que no había suelo. Tanto era el silencio, que podían escuchar el latido de sus corazones y el aire circulando por sus pulmones. Andar por ese lugar producía una sensación horripilante. No hacía un frío excesivo, sin embargo el aire se introducía hasta los huesos sacudiéndolos. Continuaban concentrados en su destino, en salir de las brumas sanos y salvos. Pensaban en el Estanque de los Nenúfares y en Tanuk ik. Nada ocurría en la niebla, sólo estaban ellos cuatro en medio del vacío. Habían pasado escasos minutos desde que se introdujeran en ellas y parecían llevar una eternidad, Oren y las gárgolas quedaban demasiado lejos para volver con ellos. Paso a paso, lentamente, sin pausa. Algo estaba sucediendo, podían sentirlo, la quietud se quebraba, el aire se movía a su alrededor, sutiles brisas acariciaban sus cuerpos. Los cuatro al percibir el cambio redujeron el ritmo.</p>
+    <p class="lector-p dialogo">— Algo se está moviendo entre nosotros –dijo en voz baja Daikuku.</p>
+    <p class="lector-p dialogo">— Tranquilo, recuerda lo que dijo Oren, sea lo que sea no puede hacernos nada si no lo miramos a los ojos –respondió con un susurro Charles Vincent.</p>
+    <p class="lector-p dialogo">— ¿Oís eso? Hay algo muy cerca –murmuró Daikuku aterrorizado.</p>
+    <p class="lector-p">Una lenta respiración, muy suave y tenue que aparecía y desaparecía rodeándolos. El aliento se repetía, podía escucharse claramente. Silencio. Tan sólo la respiración. Los cuatro tenían la sangre helada. “Aaaaahhhh…aaaaahhhh…aaaaaayuuudaaaa”, dijo una voz trémula. Daikuku se estremeció de arriba abajo al escuchar la voz susurrar cerca de él, en su oído. Se quedó inmóvil por un momento. “Aaaaahhhaaayuda”, repitió la voz. Charles al sentir el temblor de Daikuku, lo acarició paternalmente, acercándose más a él. Dejó la mano sobre su hombro, caminando con el vientre pegado a su cabeza. Seguían avanzando. “Aaaaaayuuudaaa”, la voz continuaba entre ellos, intentaban no prestar atención a pesar del miedo. Ahora no sólo se podía oír la respiración entre las brumas, se oían unos pasitos en la distancia que corrían apresurados hacia ellos.</p>
+    <p class="lector-p dialogo">— Esto es mucho para mí, permíteme lo que voy a hacer -masculló Dimitri abrazando por la cintura a Geneviève.</p>
+    <p class="lector-p">Concentrarse en su objetivo, el Estanque de los Nenúfares, Tanuk ik, se repetían una y otra vez. Los pasos cada vez se percibían con mayor claridad. Cada vez más cerca, hasta que llegó ante ellos y se detuvo. Inconscientemente los cuatro detuvieron el paso. “¡¡¡AAAAAHHH!!!”, un grito estridente y agudo rasgaba el silencio. El susto les hizo saltar hacia atrás a los cuatro a la vez. Temblaban aterrados. La voz desapareció, tampoco se oía ya la respiración, ni la voz pidiendo ayuda. De nuevo recuperaban el paso, la quietud volvía entre ellos. Silencio. El miedo recorría el cuerpo de los cuatro elegidos, a pesar de su esfuerzo y de las palabras de Oren.</p>
+    <p class="lector-p">Anduvieron durante unos minutos más en calma, hasta que las brumas comenzaron a moverse nuevamente. Predispuestos, redujeron el paso, esperaban que algo ocurriese como había acontecido momentos atrás. Caminaban muy despacio con las manos fuertemente apretadas, uno contra otro. Una ligera ráfaga de viento sopló y Geneviève paró en seco deteniendo a los demás tras ella.</p>
+    <p class="lector-p dialogo">— ¿Qué ocurre Geneviève, por qué tiemblas? –preguntó Dimitri asustado.</p>
+    <p class="lector-p dialogo">— … Algo… Algo me ha tocado la cara –dijo tartamudeando, nerviosa.</p>
+    <p class="lector-p dialogo">— Tranquila, debe haber sido un golpe de aire –susurró Dimitri tratando de calmarla.</p>
+    <p class="lector-p dialogo">— No, no ha sido el aire. Algo me ha rozado cruzando la cara desde arriba hasta el mentón.</p>
+    <p class="lector-p dialogo">— Ja, ja, ja –una risa se le escapó a Daikuku. Los otros se sobresaltaron. En seguida se tapó la boca.</p>
+    <p class="lector-p dialogo">— ¿Por qué te ríes? –preguntó Charles acercándolo más a él.</p>
+    <p class="lector-p dialogo">— Algo me ha hecho cosquillas en los pies, pero yo no quería reírme –contestó Daikuku.</p>
+    <p class="lector-p dialogo">— No dejemos de caminar, tenemos que continu… –el silencio interrumpió la frase del hombre. Soltó a Daikuku al instante llevándose las manos a la cabeza.</p>
+    <p class="lector-p dialogo">— ¿Qué ocurre Charles, estás bien? –preguntó Dimitri tartamudeando, muy nervioso.</p>
+    <p class="lector-p dialogo">— Sí, estoy bien, no ha pasado nada –dijo cogiendo entre sus manos a Daikuku.</p>
+    <p class="lector-p dialogo">— ¿Te ha tocado a ti también, Charles? –preguntó Geneviève.</p>
+    <p class="lector-p dialogo">— No, no ha sido nada, de verdad. Sólo me quedé sin saliva, los nervios. Debemos seguir.</p>
+    <p class="lector-p dialogo">— Sé que no dices la verdad –replicó Geneviève.</p>
+    <p class="lector-p dialogo">— Es cierto, pero sigamos caminando, os diré lo que me ha ocurrido –avanzaban despacio–. Algo ha intentado deshacerme el nudo del antifaz. Parece que pretenden quitarnos la tela de los ojos. Por favor, apretadla fuertemente. Si logran arrebatárnoslas no abráis los ojos. Conocemos sus intenciones.</p>
+    <p class="lector-p">Todos callaron de nuevo, las palabras de Charles Vincent habían sonado poco alentadoras. Unas voces distantes. Continuaban la marcha. Un susurro cada vez más cercano.</p>
+    <p class="lector-p dialogo">— Están cantando –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Sí, parece que cantan, pero es incomprensible –añadió Charles.</p>
+    <p class="lector-p">A medida que se acercaban las voces, la melodía era cada vez más clara, ahora se comprendía perfectamente lo que decían. Los cuatro se detuvieron.</p>
+    <p class="lector-p dialogo">— ¿En qué lugar? En Portugal. ¿En qué calleja? La Moraleja. Esconde la mano que viene la vieja –y las voces callaron de golpe. Todo quedaba en calma, ni siquiera la brisa.</p>
+    <p class="lector-p dialogo">— ¿Qué creéis que han querido decir con eso? –preguntó Daikuku angustiado.</p>
+    <p class="lector-p dialogo">— No lo sé –respondió Geneviève–. Pero tengo miedo, quiero salir de aquí, ya.</p>
+    <p class="lector-p dialogo">— Tranquilos, muchachos, pronto saldremos de este lugar, no dejéis de pensar en el Estanque de los Nenúfares –animó el músico–. Oren no nos habría hecho entrar aquí si hubiese peligro para nosotros. Sigamos caminando.</p>
+    <p class="lector-p">Los cuatro retomaron el paso, despacio, a ciegas. Únicamente podían oír un silencio que producía el mismo terror que las voces. Quietud, el latido del corazón. De repente una fuerte luz se hizo atravesando la tela, llegando a los ojos de los cuatro. Tanta era el ansia por salir del dominio, que Geneviève olvidando la advertencia que el grifo les hizo antes de entrar, soltó la mano de Dimitri y se la llevó a la cara para quitarse la venda. Dimitri inmediatamente apresó con sus brazos a la chica inmovilizándola.</p>
+    <p class="lector-p dialogo">— Espera, Geneviève –susurró el mozo–. Todavía no.</p>
+    <p class="lector-p">Geneviève bajó las manos poco a poco y se abrazó a Dimitri. La temperatura bajaba bruscamente. Los cuatro permanecían pegados. El frío se hacía insoportable, tiritaban. Nada se movía, nada se oía, la luz amarilla continuaba brillando, pero en poco tiempo pasó a un verde pálido. Quedaron inmóviles, esperando a que algo sucediera. Las palabras de Oren se repetían en sus mentes, había llegado el momento, Enova no debía de andar lejos.</p>
+    <p class="lector-p">Daikuku tenía cogido a Dimitri por la cintura y a Charles por el vientre, emparedado entre ambos. La luz seguía atravesando sus párpados, del verde pasaba al violeta, poco a poco se apagaba hasta desvanecerse. El engaño no había surtido efecto. Habían obrado tal y como les había dicho el grifo. Al desaparecer la luz volvió la calma. Silencio. Inmóviles, no se atrevían a caminar, ninguno decía nada, una presencia les rodeaba, esperaban nerviosos. El silencio se rompió, una respiración enfermiza, “aaaahrrrgg…aaaaahhrrgg”. El aire atravesaba los pulmones con pitos y ronquidos, semejaba una anciana malsana. El hálito se escuchaba claramente, estaba muy cerca, daba vueltas lentamente alrededor de los elegidos. El pulso se les había detenido. Los observaba, caminaba junto a ellos. Satisfecha por el miedo que sentía en los elegidos, ella sonreía. Los cuatro confiaban plenamente en las palabras de Oren. Aguardaban, si no la miraban a los ojos saldrían indemnes de las brumas. “Aaaaaaahhh…mmmmmhhh…aaaaaa aaaahhh…mmmmmmmhhhh”. Estaba demasiado cerca, podían sentir el aliento gélido sobre sus nucas, estremeciéndolos. La sensación de angustia llenaba hasta el último poro de cada uno de ellos. Su único deseo en ese momento era quitarse las vendas y huir de tan terrible lugar. Pero el terror los tenía paralizados.</p>
+    <p class="lector-p dialogo">— Vaya –dijo una voz rota y susurrante de mujer anciana, estirando las vocales–. ¿Qué tenemos aquí? Parece que habéis venido prevenidos a mi humilde morada –la voz se oía a menos de un dedo de distancia de la oreja–. No sabéis cuanto me entristece encontrarme ante una situación así, me apena muchísimo que haya visita y que ni mis hijas ni yo podamos divertirnos. Es más, me duele en el alma que suceda de este modo. Hace tiempo que nadie atraviesa mis brumas y ya empezamos a tener hambre –decía cada vez más tenue, irritada–. No sé quién os habrá advertido de cómo cruzar mi casa y salir intactos, debéis darle mi enhorabuena, conoce muy bien mis flaquezas. No obstante, no creáis que va a ser tan sencillo salir de aquí con vida –con esa última frase se les paró el corazón–. Sobre todo viajando entre vosotros un joven tan bello como éste. Sería un derroche dejarle marchar sin más, no podéis imaginar lo bien que lo pasaríamos mis hijas y yo devorando a un muchacho de tan singular belleza. ¿Cuál es tu nombre jovencito? –Dimitri muerto de miedo no contestó–. ¡Vamos! –gritó impaciente–. No debes temerme, soy tu amiga. Responde –Dimitri atemorizado pensando que sería un engaño, continuó sin contestar–. Parece que eres mudo, muchachito, es una verdadera lástima –dijo susurrando al oído de Dimitri–. Siendo así, no podrás gritar cuando veas como rebano el cuello a tus amigos.</p>
+    <p class="lector-p dialogo">— Mi nombre es Dimitri, señora –contestó de inmediato tragando saliva.</p>
+    <p class="lector-p dialogo">— Tienes una voz bonita, joven. Sería una verdadera pena que te fueses de mi casa así, ¿no te gustaría quedarte un tiempo conmigo y con mis hijas? Pareces bien educado, te trataríamos bien, aunque no te prometo que en una noche de lujuria no acabásemos comiéndote a trocitos –dijo Enova acariciando el mentón de Dimitri con sus arrugados dedos. Al sentir el contacto áspero y frío de la anciana, Dimitri se estremeció–. Vamos, jovencito, ¿qué contestas?</p>
+    <p class="lector-p dialogo">— …Aaahh… –un suspiro–. No, señora, no deseo quedarme a pesar de su amable y generosa invitación -respondió Dimitri balbuceando.</p>
+    <p class="lector-p dialogo">— ¡Oh, qué desagradable situación! No puedes imaginar cuanto me hubiese gustado que te quedases con nosotras –dijo subiendo los dedos por la cara del muchacho, deslizándolos furtivamente por la venda que cubría sus ojos–. Vamos, no seas cruel, quédate y disfruta de mi hospitalidad, no nos dejes con la miel en los labios. Además, seguro que tienes unos ojos preciosos, jovencito. ¿De qué color son?</p>
+    <p class="lector-p dialogo">— Verdes, señora.</p>
+    <p class="lector-p dialogo">— Mmmm… verdes, me encanta el verde, es el color de mi piel ¿sabes? –Enova deslizó los dedos sobre el nudo. Dimitri, sin pensarlo, lanzó su mano sobre la atadura sujetándolo, apartando con miedo los fríos y grandes dedos de la anciana. Al ver la reacción del chico, Enova levantó los dedos del lazo–. Parece que me tienes el miedo justo como para atreverte a tocarme. Lo que has hecho podría costarte la vida a ti y a tus amiguitos. Sin embargo, tu decisión y tu valentía me incitan a dejarte pasar, pero no es esto lo que te libra de la muerte, si no tu encantadora belleza. Sería una verdadera falta matarte por un gesto tan irrespetuoso, además de por negar mi invitación. Aun así, admito mi derrota, sabíais bien cómo cruzar mi morada, y desde luego lo habéis logrado.</p>
+    <p class="lector-p">Esa fue la última palabra de Enova. El silencio se hacía de nuevo, la quietud, sólo el latido del corazón tembloroso y la respiración agitada. Seguían inmóviles, la presencia de Enova había desaparecido, quedaban solos. Un momento para recuperar el aliento.</p>
+    <p class="lector-p dialogo">— Vamos… ya ha pasado lo peor. Sigamos caminando. Dimitri, ya se fue, tranquilízate, lo has hecho muy bien. Pensad en el Estanque de los Nenúfares, recordad a Tanuk ik. Quiero salir de aquí.</p>
+    <p class="lector-p">Geneviève comenzó a caminar despacio y tras ella todos los demás. Nada interrumpía su marcha, ni voces, ni pasos, ni presencias. Seguían temerosos, pero con la esperanza de encontrar pronto la salida. Tras un largo rato, las brumas comenzaron a disiparse.</p>
+    <p class="lector-p dialogo">—Veo la luz –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Yo también, pero espera un momento –apuntó Dimitri. De repente una respiración a su lado “aaahhh… aaahhh… aaaahhhdiós”, y la voz desapareció.</p>
+    <p class="lector-p dialogo">— Seguid –dijo Charles. Apuraron el paso, la claridad cada vez más intensa.</p>
+    <p class="lector-p dialogo">— Es luz y no hace frío, por fin hemos salido.</p>
+    <p class="lector-p dialogo">— Esperad, todavía puedo sentir las brumas alrededor –advirtió el hombre. Geneviève caminaba deprisa tirando de los otros tres.</p>
+    <p class="lector-p dialogo">— Vamos, no puedo más. Tenemos que salir de aquí –dijo la muchacha.</p>
+    <p class="lector-p">Ya no había brumas que les rodeasen, tan sólo luz y una agradable y cálida sensación. Una brisa rozaba su piel, se oía el agua a su alrededor, los insectos volar, las ranas croar, estaban fuera de las Brumas de Enova.</p>
+    <p class="lector-p dialogo">— Ufff… –suspiró Geneviève dejando escapar el miedo–. Ya está, ya no siento nada malo, estamos bien, hemos salido –se quitó la venda–. Podéis quitaros las telas, ya no estamos en ese lugar tan repugnante. Hemos conseguido cruzar.</p>
+    <p class="lector-p">Las brumas habían desaparecido, los dominios no eran compatibles, en su lugar una pared de frondosa madreselva. Los cuatro sonreían felices, lo habían logrado y estaban juntos.</p>
+    <p class="lector-p dialogo">— Creí que jamás conseguiríamos escapar, no hemos visto nada, pero creo que preferiría una manada de leones hambrientos a meterme de nuevo ahí –exclamó Daikuku riendo.</p>
+    <p class="lector-p dialogo">— Toma, Daikuku, mi cuerda, aquí creo que ya no la necesitamos –dijo Charles.</p>
+    <p class="lector-p dialogo">— ¡Oh sí, las cuerdas!, dádmelas, las guardaré en el zurrón. ¿Sabéis? Jamás pensé que unos simples lazos nos pudiesen ser de tanta ayuda en un lugar como este mundo –Daikuku se acercó a Geneviève y a Dimitri, tomó la cuerda y se desató la que rodeaba su cintura. Las guardaba con mucho celo.</p>
+    <p class="lector-p dialogo">— Que lugar tan bonito, parece sacado de un documental. Estamos tranquilos y se respira aire fresco. ¡Qué descanso! –suspiró la chica.</p>
+    <p class="lector-p dialogo">— Es bonito, sí, exceptuando, claro, esos nenúfares gigantes y esos bichos voladores del tamaño de mi perro –apuntó Charles.</p>
+    <p class="lector-p dialogo">— Si aquí arriba los insectos son tan grandes, no quiero pensar en el tamaño de las cosas que vivan bajo el agua –añadió Dimitri.</p>
+    <p class="lector-p dialogo">— Tranquilo, amigo –dijo una voz gangosa cerca de la orilla.</p>
+    <p class="lector-p">Los cuatro se giraron, a unos pasos había sentado un tritón albino del tamaño de un hombre, los miraba fijamente, los ojos enormes y amarillos, las agallas rojizas.</p>
+    <p class="lector-p dialogo">— ¡¡Aaaahh!! –un grito se le escapó a la chica al ver semejante anfibio.</p>
+    <p class="lector-p dialogo">— No debéis temer nada, aquí sólo vivo yo, y bajo el agua también vivo yo. En esta época del año es frecuente ver esos molestos insectos, pero no suelen hacer nada, se entretienen en chupar el néctar de los nenúfares. Son mi alimento diurno –hablaba a la vez que lanzaba su lengua para capturar uno de los que pasaba volando cerca. El tritón se irguió dirigiéndose a los elegidos–. Que aburrimiento, me gusta más la noche, los nenúfares se llenan de luciérnagas que vienen a aparearse, y entonces es cuando realmente me divierto, me encanta cazarlas y comerlas sin cesar hasta quedar ahíto. ¿Vosotros coméis luciérnagas?</p>
+    <p class="lector-p dialogo">— Ehh… No. Nosotros no comemos ninguna clase de insectos –respondió Geneviève ocultándose tras Dimitri–. Preferimos pan tostado.</p>
+    <p class="lector-p dialogo">— Ammm… ¿Pan? ¿Está bueno el pan? Aquí hace tiempo que no tenemos de eso, creo que se extinguieron los panes antes de que yo naciese y los tostados también, incluso antes que los panes, sí. Es una lástima, seguro que estaban deliciosos esos insectos. Siento no poder ofreceros nada que comer. Imagino que por vuestro aspecto y por vuestro número debéis ser vosotros –decía mientras caminaba alrededor de los cuatro observándolos con gesto divertido.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir? ¿Nos conoces, acaso nos esperabas? –preguntó Daikuku.</p>
+    <p class="lector-p dialogo">— No, no os conozco de nada y mucho menos esperaba que llegaseis en la hora de mi siesta. Habéis sido muy inoportunos, pero no importa, ya empezaba a quemarme tanto sol panza arriba. Debéis ser aquellos a los que Tanuk ik espera.</p>
+    <p class="lector-p dialogo">— ¿Qué sabes de Tanuk ik? ¿Dónde está? –preguntó Daikuku nervioso adelantándose al tritón.</p>
+    <p class="lector-p dialogo">— ¡Qué efusividad! –exclamó el anfibio–. Me recuerdas a mí cuando una luciérnaga se me pone difícil. Hasta que no es mía no la dejo. ¿Sabes, Renacuajo?, me encantaría que alguien preguntase también por mí, que viniesen a buscarme. Aquí me siento solo, no tengo amigos –decía poniendo cara triste y melancólica–. Aquí la vida es muy aburrida y desgraciada. ¡¿Pero a quién le importa eso teniendo luciérnagas para cenar y un estanque entero para nadar!? –el tritón sonreía de oreja a oreja–. Tanuk ik os espera oculto en algún rincón de este estanque. Imagino que en el interior de algún nenúfar. Encontrarlo es cuestión de azar, ni yo mismo sé dónde.</p>
+    <p class="lector-p dialogo">— ¿Y por qué no sabes dónde está? Podrías ayudarnos más –replicó Daikuku–. Es necesario dar con él cuanto antes.</p>
+    <p class="lector-p dialogo">— Aaaa… Que tengas prisa no es mi problema, amigo. Tanuk ik tan sólo me pidió asilo en mi casa y yo se lo di. Es un buen amigo mío ¿sabes? Yo no le pregunto en qué anda metido, no me incumbe en absoluto, no soy ningún entrometido. Él solamente me dijo que antes o después llegarían tres hombres y una mujer buscándole. Aunque no sabría diferenciar quién es la mujer con esas pintas que lleváis –Geneviève enarcó una ceja–. Eso fue lo único que dijo, así que no me eches a mí la culpa muchachito –exclamó sentándose sobre una roca con gesto enojado, devorando con saña un insecto mientras miraba a Daikuku con gesto receloso.</p>
+    <p class="lector-p dialogo">— Este tritón debe ser algo más que bipolar. Es increíble cómo le cambia el humor –dijo Dimitri al oído de Geneviève.</p>
+    <p class="lector-p dialogo">— Discúlpenos, estamos algo nerviosos, hemos sufrido mucha presión y nuestro viaje hasta aquí no ha sido nada fácil. Todavía estamos algo afectados, Daikuku no pretendía ser grosero. Tan sólo queremos saber dónde encontrar a Tanuk ik. Por favor, acepte nuestras disculpas –dijo Charles sujetando al niño por los hombros.</p>
+    <p class="lector-p dialogo">— Con que tu nombre es Daikuku, ¿eh, renacuajo? –dijo con gesto furioso, y de repente volvió a sonreír de par en par. Se levantó brincando y se acercó a los cuatro elegidos–. Mi nombre es Mífido, su nombre por favor –dijo frente a la muchacha.</p>
+    <p class="lector-p dialogo">— Mi nombre es Geneviève y soy la mujer de los cuatro.</p>
+    <p class="lector-p dialogo">— Encantado señorita. Su nombre señorito.</p>
+    <p class="lector-p dialogo">— Yo soy Dimitri.</p>
+    <p class="lector-p dialogo">— Mucho gusto. Y por último pero no menos importante, su nombre.</p>
+    <p class="lector-p dialogo">— Mi nombre es Charles.</p>
+    <p class="lector-p dialogo">— Todo un placer. Sepan ustedes que por mi parte no hay rencor alguno, y que quedan verazmente perdonados. Ja, ja, ja –el tritón rompió a reír sin parar–. Hacía mucho tiempo que no lo pasaba tan bien, bueno en realidad es que nunca lo pasé tan bien como ahora, ja, ja, ja. ¿Qué os parece si os propongo un juego? –preguntó impaciente botando de lado a lado. Los cuatro se miraron con resignación–. Como el día está algo aburrido y aún falta mucho para que llegue la noche, podríamos jugar al escondite, pero no es un escondite normal, es mucho mejor, tenemos que encontrar a Tanuk ik. Yo buscaré bajo el agua y vosotros saltaréis de nenúfar en nenúfar hasta dar con él. ¿Qué os parece?, ¿a qué suena divertido?</p>
+    <p class="lector-p dialogo">— Sí, claro, es una idea estupenda –respondió Geneviève irónica–. Todos queremos jugar, ¿verdad, chicos? -los tres asintieron enérgicamente. Geneviève resoplaba.</p>
+    <p class="lector-p dialogo">— No sé si lo sabéis, pero os lo advierto, Tanuk ik sabe esconderse muy bien, es el número uno en el camuflaje a pesar de su tamaño. Será una tarea dura dar con él. El premio por encontrarlo consistirá en el título de la criatura con más capacidad para encontrar a otras criaturas muy bien camufladas, y además, un banquete de luciérnagas. ¿Qué os parece el premio?</p>
+    <p class="lector-p dialogo">— Es un premio fantástico –respondió Charles Vincent–. Seguro que ninguno de nosotros quiere perder la oportunidad de participar.</p>
+    <p class="lector-p dialogo">— Bueno, ¿qué tal si empezamos? –animó Dimitri–. Algo tan divertido no se puede hacer esperar.</p>
+    <p class="lector-p dialogo">— Tres, dos, uno, ¡ya! –exclamó el tritón tirándose al agua en busca del Hombre Elefante.</p>
+    <p class="lector-p dialogo">— Bueno, chicos, ¿qué hacemos ahora? –preguntó la muchacha–. Este lugar es enorme, ¿Por dónde empezar?</p>
+    <p class="lector-p dialogo">— Si no recuerdo mal, Oren dijo que Tanuk ik nos encontraría a nosotros y no al revés –puntualizó Charles–. Lo cual me hace pensar, que por mucho que lo busquemos no lo encontraremos.</p>
+    <p class="lector-p dialogo">— Sí, es factible, Tanuk ik es bastante imprevisible para esas cosas, pero quedarse aquí parado tampoco es una gran idea –dijo Daikuku–. Con toda seguridad acabará por aparecer junto a nosotros si nos quedamos aquí, pero prefiero intentar dar con él, a lo mejor ganamos algo de tiempo. ¿Tú qué crees, Geneviève?</p>
+    <p class="lector-p dialogo">— Puede que tengas razón, quizá sea mejor buscarle. No perdemos nada. A fin de cuentas, solamente tenemos dos opciones, esperar aquí o buscarlo por allí. ¿Qué más da?</p>
+    <p class="lector-p dialogo">—Yo intentaré encontrarlo paseando por la orilla, estoy muy cansado y no tengo ganas de jugar al escondite. Además, vosotros lo conocéis mejor –añadió Dimitri.</p>
+    <p class="lector-p dialogo">— Como quieras. Daikuku y yo lo buscaremos entre los nenúfares. Tú te encargas de la orilla. Y tú Charles, ¿te quedarás aquí esperándolo?</p>
+    <p class="lector-p dialogo">— Sí, yo prefiero quedarme aquí, ni siquiera sé cuál es su aspecto, así que no creo que pueda encontrarlo por mucho que busque. Además, estoy muy cansado, tanto ajetreo en tan poco tiempo me ha dejado molido.</p>
+    <p class="lector-p dialogo">— Quedamos así –los tres asintieron. Daikuku estaba contento, parecía tener ganas de jugar con el tritón–. Hala, vamos allá, tú por la izquierda y yo por la derecha.</p>
+    <p class="lector-p">Los dos jovencitos se adentraron en el estanque saltando de flor en flor, metían la cabeza entre los enormes pétalos en busca del Hombre Elefante. Al cabo de un rato ya habían desaparecido entre la vegetación.</p>
+    <p class="lector-p dialogo">— No sé de dónde sacan tanta vitalidad. Espero que esta tranquilidad dure el tiempo suficiente para reponerme –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— Has pasado mucho hoy, lo raro es que aún te tengas en pie después de lo que te ha sucedido. Pero no te hagas ilusiones, jovencito –decía Charles sonriente–. Eso es cosa de la edad, a los veintitrés años ya empieza a notarse la diferencia, te lo creas o no. Ja, ja, ja. Yo que tú, me quedaría aquí sentado esperando a que Tanuk ik aparezca. Seguro que lo hace, ya lo dijo Oren.</p>
+    <p class="lector-p dialogo">— Pues sí, la verdad es que es buena idea. Pero antes iré a mirar por la orilla por si acaso estuviera, y después me sentaré a tu lado a descansar. Como bien dices, creo que me estoy haciendo viejo, ja, ja, ja –ambos rieron.</p>
+    <p class="lector-p">Daikuku y Geneviève todavía no habían vuelto. Charles seguía sentado, y Dimitri se había quedado traspuesto. La luz que iluminaba el dominio se desvanecía dando paso lentamente a la noche. El hombre se acercó a Dimitri, el muchacho entreabría los ojos sonriendo tenuemente.</p>
+    <p class="lector-p dialogo">— ¿Sabes, Charles Vincent? A pesar de llevar dos días aquí, se me sigue haciendo demasiado raro este mundo, y eso que aunque me cuesta creerlo, empiezo a acostumbrarme a esta doble vida.</p>
+    <p class="lector-p dialogo">— Pues imagina cómo estoy yo. De repente me veo enfrascado en una aventura increíble sin pies ni cabeza. Es más, empiezo a pensar que mi Alzheimer ha dado paso a un coma profundo y todo esto es fruto de mi perversa imaginación.</p>
+    <p class="lector-p dialogo">— Sí, es cierto. Al principio cuesta creer en algo como esto. Pero cuando te enteras de la magnitud de la empresa, olvidas todo lo que sabes para entregarte al máximo. Locos o no, es necesario llegar con éxito a nuestro destino. Y hablando de destino, creo que es momento de que conozcas la leyenda de las siete máscaras. Aprovechemos este momento de paz. Pero has de saber, que igual que tú, yo conocía muy poco de esta leyenda. Los que la saben bien andan cogiendo flores, pero bueno, mejor será mal contada que no saber nada. La historia de la creación del universo y de los hombres, historia de la que nosotros formamos parte importante. Escucha atento, no hay nada que desmerezca.</p>
+    <p class="lector-p">Y así, durante algo más de tres horas, mientras el sol iba cayendo con los rojos rayos del atardecer reflejados en el agua del estanque, Dimitri narró todo cuanto recordaba de la leyenda de las siete máscaras. La tarde daba paso a la noche, el cielo aparecía completamente estrellado.</p>
+    <p class="lector-p dialogo">— Y eso es todo cuanto sé, imagino que en algo me habré despistado, pero a grandes rasgos, así es.</p>
+    <p class="lector-p dialogo">— En verdad suena convincente, no hay nada discutible. Pero incluso así, sigue pareciéndome demasiado inverosímil todo cuanto ocurre en este mundo. Yo sufría Alzheimer, perdí todo, ni siquiera sabía quien era, y ahora mírame, aquí hablando contigo y viviendo cosas propias de una novela de ficción. No me digas que no cuesta de creer.</p>
+    <p class="lector-p dialogo">— Comprendo tus dudas. Sabiendo la historia al completo, tras conocer a Daikuku y a Geneviève, incluso después de vivir lo vivido, cuesta mucho de creer. Pero hay algo que te demostrará quien eres y que te convencerá de que todo esto es real –Dimitri se levantó la camiseta y le mostró la cicatriz que tenía en el omóplato derecho–. ¿Ves esa marca que tengo en la espalda? Es el símbolo de Alaris, lo tengo ahí desde que nací y no lo sabía. ¿Recuerdas la cicatriz que semeja un zarpazo en la mejilla de Daikuku? Es la marca del Señor de las Bestias, y Geneviève tiene la suya en el tobillo, es la de Crápatos. Al igual que nosotros, tú debes tener la marca del dios al que representas, la señal de Dhyavod debe ser esa cicatriz tan peculiar que tienes en la mano. Seguro que la tienes desde que naciste.</p>
+    <p class="lector-p dialogo">— Bueno… es cierto, pero siempre pensé que se debió a algún accidente de la infancia, nunca creí que pudiese significar algo tan importante. Había veces que podía sentir un calor extraño manar de ella, momentos en los que incluso sentía presencias en la distancia pero a la vez muy cerca. Las cicatrices suelen doler con los cambios del tiempo, le daba una explicación lógica. Nadie me dijo que podía ser el símbolo de los dioses. No puedo creer que sea el representante de Dhyavod, es algo… –en el mismo instante que pronunció su nombre, la cicatriz brilló cándida durante unos segundos–. Es algo verdaderamente increíble –dijo mirándose la mano–. ¿Cómo has sabido a qué dios representaba?</p>
+    <p class="lector-p dialogo">— Fácil, además de poder sentirlo en mi interior, no cabe ninguna duda siendo músico. Yo enciendo bombillas, Daikuku habla con los animales y Geneviève es mentalista. No está mal –dijo riendo.</p>
+    <p class="lector-p dialogo">— Está muy bien. Me pregunto qué es lo que podré hacer yo.</p>
+    <p class="lector-p dialogo">— Un talento… ¿Con cuántos años aprendiste a tocar el violín?</p>
+    <p class="lector-p dialogo">— Con cinco años ya lo tocaba.</p>
+    <p class="lector-p dialogo">— Ahí está, lo que tú sabes hacer, un prodigio. Ése es el don de Dhyavod.</p>
+    <p class="lector-p dialogo">— Pufff… Demasiada información para un sólo día, empiezo a creer, pero tardaré algo más en acostumbrarme a esta nueva identidad y a este rimbombante mundo. ¿Sabes? Hay algo más en todo esto. Al principio no sabía qué pensar, creía que estaba soñando, pero habiendo llegado a este punto no me cabe la menor duda, estoy convencido de que conozco a Oren. Cuando lo vi, pude apreciar en sus ojos algo familiar, el dijo que siempre había cuidado de mí, y a medida que lo hemos tratado en este pequeño espacio de tiempo, he llegado a conocer sus ojos. Me recuerda a alguien que siempre ha estado a mi lado, a mi perro Nero. El nombre de mi perro pronunciado al revés es Oren, lo cual me lleva a pensar que el grifo no es el recuerdo de mi perro en sueños, sino que es la ensoñación de mi perro en este mundo. Por eso me llama maestro, yo soy su amo, él siempre ha cuidado de mí.</p>
+    <p class="lector-p dialogo">— Es posible que tengas razón. Pero sea cierto o no, Oren no sabe quién es en el mundo real, no conoce su existencia terrenal. Aunque insistieses en recordárselo y le contaras todo cuanto sabes ahora, seguiría sin saber quién es en el otro mundo. Tan sólo los elegidos han despertado, exclusivamente nosotros somos dueños de nuestras acciones en ambos territorios –Charles Vincent quedó pensativo mirando fijamente a Dimitri. Quedaron en silencio durante un rato.</p>
+    <p class="lector-p dialogo">— Mira, Dimitri, por allí llega Daikuku, y no parece que venga nadie con él.</p>
+    <p class="lector-p dialogo">— Pues parece que Geneviève tampoco ha tenido mucho éxito, por ahí llega sin Tanuk ik.</p>
+    <p class="lector-p">De nuevo los cuatro estaban junto a la orilla del estanque, sobre las rocas, iluminados por la luz de las estrellas. Sobre el agua cientos de luciérnagas llenando de destellos la superficie.</p>
+    <p class="lector-p dialogo">— Es evidente que no ha sido fructuosa vuestra búsqueda, pero si os sirve de algo, nosotros aquí tampoco lo hemos encontrado. Ahora que se ha hecho de noche es mejor que esperemos –dijo Charles Vincent.</p>
+    <p class="lector-p dialogo">— Ha sido divertido, aunque lo habría sido más si hubiésemos encontrado a Tanuk ik. Además, he encontrado todo tipo de bichos fantásticos, es un lugar maravilloso. Ojalá existiese uno de estos cerca de la aldea. Me haría pastor de libélulas gigantes.</p>
+    <p class="lector-p dialogo">— Pues yo, como tú, por más que he buscado, ni rastro de Tanuk ik. Eso sí, los bichos los dejo para ti –dijo Geneviève. Mientras hablaban, de las aguas surgió el tritón con cara triste.</p>
+    <p class="lector-p dialogo">— Caramba, parece que vosotros tampoco lo habéis encontrado entre los nenúfares, yo anduve buscándolo bajo el agua, entre las raíces de la plantas y en el fondo, pero ni rastro. Es mucho mejor de lo que creí escondiéndose, y el caso es que está aquí, no sólo porque lo viese entrar, sino también porque puedo sentir su peculiar olor. Diantres, esto significa que nadie se alzará con el tan deseado premio –el tritón se sentó junto a ellos.</p>
+    <p class="lector-p dialogo">— Tranquilo, sabíamos que iba a ser difícil dar con él. Pero si quieres puedes quedarte tú con el premio –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— ¡Anda! Mirad allá arriba –exclamó cambiando de gesto nuevamente–. El estanque está lleno de luciérnagas, es mi comida favorita. Hay noches en las que he comido más de cien, son un manjar delicioso. Bueno, es mi hora de cenar. Si cuando acabe de comer todavía no ha aparecido, lo intentaremos buscar de nuevo, siempre y cuando mi barriga me permita moverme –con un gran salto capturó a la primera luciérnaga, para caer en el estanque desapareciendo bajo la superficie. A lo lejos podía verse su figura saliendo del agua una y otra vez capturando su comida.</p>
+    <p class="lector-p dialogo">— Desde luego, este tritón de personalidad múltiple no pierde el tiempo, sabe bien como estar entretenido –apuntó Charles.</p>
+    <p class="lector-p dialogo">— Sí, se lo monta bien, pero me preocupa Tanuk ik, el tiempo pasa en nuestra contra y sigue sin aparecer, espero por nuestro bien que no le haya pasado nada.</p>
+    <p class="lector-p dialogo">— Tranquila, seguro que está bien. Habrá esperado a que oscurezca para aparecer, es lo más seguro. No tardará, ya verás –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— Exacto, joven amigo –exclamó una voz tosca y profunda–. La noche es nuestra aliada, bajo su manto tenemos una pequeña ventaja sobre los muchos centinelas que nos buscan.</p>
+    <p class="lector-p dialogo">— ¡Tanuk ik, eres tú! Al fin has venido, hemos estado buscándote -exclamó Daikuku feliz. Tanuk ik aparecía tras las flores de un enorme nenúfar que había ante ellos.</p>
+    <p class="lector-p dialogo">— Espero que no nos digas que has estado ahí todo este tiempo.</p>
+    <p class="lector-p dialogo">— Siento contrariarte, querido Dimitri, pero llevo escondido en esa planta desde mucho antes que vosotros llegaseis –Daikuku corrió hacia él para abrazarlo–. Hola, jovencito, me alegro de verte otra vez.</p>
+    <p class="lector-p dialogo">— No me cambies de tema, yo mismo miré dentro de esa flor. Es imposible que hayas estado ahí todo este tiempo, eres demasiado grande como para no verte –Charles miraba asombrado la figura del Hombre Elefante.</p>
+    <p class="lector-p dialogo">— Te equivocas, mozuelo, recuerda que en este mundo nada es lo que parece, y mucho menos imposible.</p>
+    <p class="lector-p dialogo">— ¡Cómo no!, había olvidado ese pequeño detalle.</p>
+    <p class="lector-p dialogo">— Es más, me atrevería a corregir algún que otro error que has tenido mientras relatabas la leyenda a nuestro nuevo amigo Charles Vincent –Tanuk ik en unos pasos se había colocado frente al cuarteto. Geneviève se acercó abrazándolo fuertemente. Daikuku seguía enganchado a la otra pierna riendo divertido–. Hola, mi princesa –decía acariciando suavemente sus cabellos.</p>
+    <p class="lector-p dialogo">— Te he añorado mucho, Tanuk ik. El viaje ha sido horrible desde que te dejamos. Hemos visto dominios que entristecían el alma, nos han perseguido esbirros de Moor, casi nos destruyen dos monstruos gigantes y por poco me muero en las Brumas de Enova. Jamás lo había pasado tan mal en una sola noche –dijo la muchacha gimoteando. El Hombre Elefante la abrazó–. Lo sé, mi niña –decía mirándola fijamente–. A cada segundo que pasa el camino se vuelve más complejo. Muchas son las dificultades a las que os debéis enfrentar todavía para encontrar a los tres elegidos restantes -dijo mirando a los cuatro-. Esta parte del viaje es la más sencilla, las verdaderas penurias llegarán con la batalla contra Moor. Has de ser fuerte Geneviève, todos habéis de ser fuertes y sobreponeros a cuanto se os presente en el camino. No hay remedio para este terrible mal que os acecha, tampoco hay vuelta atrás para ninguno de nosotros, ya no, mi niña, sólo nos queda nuestro propio amparo -Geneviève levantó la cabeza mirando a su amigo, las lágrimas recorrían sus mejillas.</p>
+    <p class="lector-p dialogo">— Lo sé, sólo que a veces me siento sola y débil, incapaz de seguir adelante, nada más. Pero ahora estás aquí y me siento reconfortada –Tanuk ik la acariciaba con cariño, cada vez más calmada.</p>
+    <p class="lector-p dialogo">— Y tú, Daikuku, ¿cómo estás?</p>
+    <p class="lector-p dialogo">— Yo estoy bien, algo cansado por tanto andar y por tanto susto, pero creo que estoy bien –dijo el pequeño sonriente sin soltar la pierna del Hombre Elefante.</p>
+    <p class="lector-p dialogo">— Eres muy valiente, joven guerrero –dijo Tanuk ik con una sonrisa.</p>
+    <p class="lector-p dialogo">— ¿Y tú, Dimitri?, pareces cansado. ¿Cómo llevas esos ánimos?</p>
+    <p class="lector-p dialogo">— Regular, sobre todo en lo referente a la última parte del camino, ha sido algo dura. Desde que encontramos a Charles Vincent, ha sido una adversidad tras otra. Si bien es cierto que estamos aquí, aunque todo podría haber sido más fácil.</p>
+    <p class="lector-p dialogo">— Nadie dijo que este viaje fuese sencillo y benévolo mi joven amigo. El camino está y estará lleno de vicisitudes y obstáculos. Son las premisas de este desafortunado destino que nos ha tocado vivir. La única opción que nos queda es hacerle frente. Así que asumidlo con valentía y arrojo, con paciencia y sabiduría.</p>
+    <p class="lector-p dialogo">— Eso me temía –murmuró Dimitri consternado.</p>
+    <p class="lector-p dialogo">— Y tú, mi nuevo amigo –dijo Tanuk ik dirigiendo la mirada hacia Charles–. Te doy la bienvenida a este mundo. Me alegra que estés con nosotros. Espero que tengas los mismos deseos que estos jovencitos para llevar a cabo esta ardua empresa.</p>
+    <p class="lector-p dialogo">— Sí, creo que sí –respondió el hombre serenamente.</p>
+    <p class="lector-p dialogo">— Bien… –un profundo suspiro–. Debéis excusar el tiempo perdido, era necesario. Habría sido muy aventurado y peligroso mostrarme durante las horas de luz. Moor ha enviado cientos de espías y esbirros en mi busca, sabe que conozco el paradero de los otros tres elegidos y quiere evitar que vosotros los encontréis a toda costa. Como bien sabéis, Moor no se anda con pequeñeces, incluso ha mandado a dos de sus generales en vuestra búsqueda. Al menos todavía no os conoce por vuestro aspecto. Pudo sentir vuestras esencias en la Gran Ópera, por eso estaba allí Kuagssak, Señor de la Peste y Titán, Señor del Caos. Pero no creo que esos dos tontos sean capaces de recordar ni el color de vuestro pelo. Os atacaron porque os vieron huir, cuestión de mala suerte que os enfrentaseis a ellos. Fuisteis muy valientes al luchar y conseguisteis escapar, pero no fueron destruidos y volverán a por nosotros.</p>
+    <p class="lector-p">A cada hora que pasa es más peligroso caminar por este mundo, puesto que cada vez son más los que sucumben al poder del Señor del Odio convirtiéndose en parte de su ejército. Ya son muy pocos los que quedan en los cuales se pueda confiar. Debéis ser precavidos y actuar como hasta ahora, pues cualquier error puede resultar nefasto.</p>
+    <p class="lector-p">Vuestro siguiente paso consiste en encontrar al elegido de Gala Evora, Diosa de la Tierra y las Aguas, y al elegido de Shamkra Baem, Diosa del Metal y el Fuego. Hallaréis dos almas gemelas, una junto a la otra. Dos de vosotros en un sólo viaje. Pero la ventaja que supone tal hallazgo se ve contrarrestada por las muchas dificultades que hallaréis en el camino. Alcanzar la siguiente meta no será fácil esta vez, más de medio mundo anda buscándonos para destruirnos, así que no habrá muchas posibilidades. En los anteriores viajes os limitasteis a correr y a pensar muy poco. El camino que queda lo haréis devanándoos los sesos mientras escapáis por salvar la piel. Debéis llegar hasta el vasto dominio que protegen los Vigías de las Atalayas, allí os esperan los dos elegidos en su forma ensoñada. El espejo los traerá a este paralelo en su forma real. Pero esta vez no encontraréis a los elegidos tan fácilmente, para que aparezcan ante vosotros deberéis agudizar vuestro ingenio, y dar solución a un enrevesado rompecabezas. Será necesaria la participación de las habilidades de los cuatro.</p>
+    <p class="lector-p">Para llegar hasta los Vigías de las Atalayas tomaréis un atajo, es la única manera de ganar tiempo, pero la más compleja para vosotros. Seguid por la orilla del estanque hasta que la madreselva deje sin cubrir una parte de muro, está lo suficientemente deteriorado como para escalarlo sin dificultad. Cruzad al otro lado, entraréis en los Prados del Cuco Rojo, si lográis entablar amistad con el pájaro, os llevará hasta el Palacio de las mil Puertas. Es un dominio peligroso, tened mucho cuidado con lo que hacéis. Si tenéis suerte, encontraréis la puerta que lleva a los páramos. No habrá pérdida, los Vigías se ven a muchos kilómetros de distancia, dos titanes tallados en la piedra que indican el norte y el sur de este mundo. Si lo hacéis bien, ganaremos mucho tiempo y ahorraremos enfrentamientos, si falláis, no habrá remedio. Encontradlos y traedlos, cuando contéis seis, un enviado de mi confianza irá en vuestra búsqueda y os llevará hasta mí.</p>
+    <p class="lector-p">Tan pronto comience vuestro viaje, deberé buscar un nuevo lugar donde esconderme, demasiado tiempo aquí podría ponerme en peligro. Ahora es momento de que abráis los ojos, si no me equivoco hace ya mucho que vagáis por este mundo, y pronto alguno de vosotros despertará. Os induciré al sueño, no importa la hora que sea en vuestro mundo. Es necesario que caminéis todos juntos. Daikuku, saca las cuerdas y ataos todos con ellas, estas rocas serán suficientes para sujetaros. Mientras vosotros estéis despiertos yo cuidaré de que nadie se acerque aquí -concluyó Tanuk ik. Se ataron las cuerdas y seguidamente las anudaron a las rocas-. Muy bien, amigos, no hay tiempo que perder, es el único tesoro que no podemos malgastar, por eso no esperaremos. Recordad que en algo menos de doce horas os volveré a llamar, estad cerca de un lugar cómodo en ese momento, no quisiera que sufrieseis algún percance. Usaré un pequeño truco para haceros despertar a todos a la vez. No sé si será momento, pero espero sepáis perdonar tan nimio detalle. Ahora cerrad los ojos, pensad en el lugar en el que reposáis vuestro sueño, recordad el lecho para el descanso, sentid el calor de vuestro cuerpo, puesto que ya estáis en él. Ahora despertad.</p>
+    <p class="lector-p">La voz de Tanuk ik se perdía convertida en un eco, las cuerdas quedaban vacías, atadas a las rocas y sin nadie a quien sujetar. Los cuatro habían despertado, cada uno de ellos sobre su cama.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+  </div>
+  <div class="cap-paso">
+    <a href="https://hunicornia.es/7-mascaras/la-opera/">← 9. La Ópera</a>
+    <a class="der" href="https://hunicornia.es/7-mascaras/el-eco/">11. El eco →</a>
+  </div>
+</main>
+<script src="/lector-progreso.js" defer></script>
+<script>
+(function() {
+  var btn   = document.getElementById("btnIndice");
+  var panel = document.getElementById("indicePanel");
+  var fill  = document.getElementById("progFill");
+
+  if (btn && panel) {
+    // Enlaces internos: el capitulo activo se calcula por scroll.
+    // Enlaces a otra pagina (7 mascaras): ya viene marcado desde el archivo.
+    var anclas = Array.prototype.slice.call(panel.querySelectorAll("a[href^='#']"));
+
+    function marcar() {
+      var activo = null;
+      if (anclas.length) {
+        var limite = window.innerHeight * 0.4;
+        anclas.forEach(function(a) {
+          var destino = document.getElementById(a.getAttribute("href").slice(1));
+          if (destino && destino.getBoundingClientRect().top <= limite) activo = a;
+        });
+        if (!activo) activo = anclas[0];
+        anclas.forEach(function(a) { a.removeAttribute("aria-current"); });
+        activo.setAttribute("aria-current", "true");
+      } else {
+        activo = panel.querySelector("[aria-current]");
+      }
+      // Si la lista no cabe, se acerca el capitulo activo a la vista.
+      if (activo && panel.scrollHeight > panel.clientHeight) {
+        activo.scrollIntoView({ block: "nearest" });
+      }
+    }
+
+    btn.addEventListener("click", function() {
+      var abierto = panel.classList.toggle("abierto");
+      btn.setAttribute("aria-expanded", abierto ? "true" : "false");
+      btn.textContent = abierto ? "Cerrar" : "Índice";
+      if (abierto) marcar();
+    });
+
+    panel.querySelectorAll("a").forEach(function(a) {
+      a.addEventListener("click", function() {
+        panel.classList.remove("abierto");
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Índice";
+      });
+    });
+  }
+
+  if (fill) {
+    window.addEventListener("scroll", function() {
+      var d = document.documentElement;
+      var pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+      fill.style.width = Math.min(pct || 0, 100) + "%";
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

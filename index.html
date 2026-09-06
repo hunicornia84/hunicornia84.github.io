@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Novelas y relatos de fantasía queer en español para leer gratis online, enteros, sin registro y sin dejar el correo. Personajes LGTBIQA+ y neurodivergentes. EPUB gratuito.">
+  <meta property="og:title" content="Hunicornia — novelas para leer gratis online, fantasía queer en español">
+  <meta property="og:description" content="Cinco obras completas para leer gratis online, capítulo a capítulo y sin registro. Ficción especulativa feminista y queer. EPUB gratuito.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hunicornia">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://hunicornia.es/">
+  <meta property="og:image" content="https://hunicornia.es/hero.jpg">
+  <meta property="og:image:alt" content="Hunicornia — fantasía indie y disidente">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hunicornia — novelas para leer gratis online">
+  <meta name="twitter:description" content="Cinco obras completas para leer gratis online, sin registro. Ficción especulativa feminista y queer. EPUB gratuito.">
+  <meta name="twitter:image" content="https://hunicornia.es/hero.jpg">
+  <meta name="author" content="Hunicornia">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://hunicornia.es/">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>Hunicornia — novelas para leer gratis online, fantasía queer en español</title>
+
+  <style>
+
+    @font-face{
+      font-family:'Chopin';
+      src:url('/ChopinLight.woff2') format('woff2'),url('/ChopinLight.woff') format('woff');
+      font-weight: 300;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: auto;
+      background: #ffffff;
+      color: #643587;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #643587;
+      --secondary: #8b3689;
+      --light-bg: #ffffff;
+      --nav-alto: 70px;
+    }
+
+    /* ══ SLIDE ══ */
+    .slide {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 76px 38px;
+      background: var(--light-bg);
+      scroll-margin-top: var(--nav-alto);
+    }
+
+    /* ══ INICIO ══ */
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3em;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .hero-title {
+      font-family: 'Chopin', serif;
+      font-size: clamp(32px, 5vw, 80px);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .hero-subtitle {
+      font-family: 'Chopin', serif;
+      font-size: clamp(12px, 2vw, 28px);
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary);
+      line-height: 1.2;
+    }
+
+    .hero-img {
+      width: 400px;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 400 / 389;
+      border-radius: 8px;
+      margin: 2em auto 0;
+      object-fit: cover;
+    }
+
+    /* ══ NOSOTRXS ══ */
+    .section-title {
+      font-family: 'Chopin', serif;
+      font-size: clamp(28px, 4vw, 70px);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-bottom: 0.8em;
+      text-align: center;
+      width: 100%;
+    }
+
+    .section-subtitle {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(10px, 1.5vw, 24px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary);
+      text-align: center;
+      width: 100%;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2em;
+    }
+
+    /* El subtítulo pertenece al título, no al texto: se pega arriba y se separa abajo. */
+    .section-title:has(+ .section-subtitle) {
+      margin-bottom: 14px;
+    }
+
+    .section-title + .section-subtitle {
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+
+    .prose {
+      max-width: 920px;
+      width: 100%;
+      font-size: clamp(13px, 1.5vw, 18px);
+      line-height: 1.7;
+      color: var(--primary);
+    }
+
+    .prose p {
+      margin-bottom: 0.8em;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .prose p:first-child {
+      margin-top: 0;
+    }
+
+    .prose h3 {
+      font-family: 'Chopin', serif;
+      font-size: 1.2em;
+      font-weight: 300;
+      color: var(--primary);
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .prose h3:first-child {
+      margin-top: 0;
+    }
+
+    /* ══ OBRAS ══ */
+    #nosotrxs, #obras, #galeria, #contacto {
+      justify-content: flex-start;
+      padding-top: 76px;
+    }
+
+    #obras, #galeria, #contacto {
+      padding-bottom: 113px;
+    }
+
+    .obras-container {
+      width: 100%;
+      max-width: 1400px;
+      margin-top: 19px;
+    }
+
+    /* Rejilla orgánica: 3 columnas en pantalla amplia, 2 en tablet, 1 en móvil */
+    .obras-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 38px;
+      align-items: stretch;
+    }
+
+    .obra-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1em;
+      padding: 2em 1.8em;
+      border: none;
+      border-radius: 8px;
+      background: rgba(139, 54, 137, 0.03);
+      transition: background 0.3s ease;
+    }
+
+    .obra-card:hover {
+      background: rgba(139, 54, 137, 0.06);
+    }
+
+    .obra-titulo {
+      font-family: 'Chopin', serif;
+      font-size: clamp(18px, 2.2vw, 32px);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .obra-genero {
+      font-family: Arial, sans-serif;
+      font-size: clamp(11px, 1.3vw, 16px);
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      line-height: 1.5;
+      margin-top: -0.6em;
+    }
+
+    .obra-gancho {
+      font-size: clamp(13px, 1.45vw, 17px);
+      line-height: 1.6;
+      color: var(--primary);
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .obra-extracto {
+      font-size: clamp(12px, 1.3vw, 16px);
+      line-height: 1.5;
+      color: var(--primary);
+      font-style: italic;
+      padding: 1em;
+      background: transparent;
+      border-radius: 4px;
+      flex-grow: 1;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .obra-botones {
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+
+    .obra-btn {
+      flex: 1;
+      min-width: 140px;
+      padding: 0.8em 1.4em;
+      border: none;
+      background: rgba(139, 54, 137, 0.15);
+      color: var(--primary);
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: clamp(11px, 1.2vw, 15px);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .obra-btn:hover {
+      opacity: 0.8;
+    }
+
+    .obra-btn.primario {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--primary);
+    }
+
+    .obra-btn.primario:hover {
+      opacity: 1;
+      background: white;
+    }
+
+    /* Obra reservada: no es una acción, es un estado. Sin caja, sin relleno,
+       sin cursor de enlace: nada que invite a un clic que no existe. */
+    .obra-estado {
+      margin-top: 0.4em;
+      padding-top: 1em;
+      border-top: 1px solid rgba(139, 54, 137, 0.2);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--secondary);
+      text-align: center;
+    }
+
+    .obra-estado b {
+      display: block;
+      font-weight: 400;
+      font-size: clamp(11px, 1.2vw, 15px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .obra-estado span {
+      display: block;
+      margin-top: 0.5em;
+      font-size: clamp(10px, 1.1vw, 13px);
+      letter-spacing: 0.03em;
+      opacity: 0.85;
+    }
+
+    /* ══ CÓMO FUNCIONA ══ */
+    .como-funciona {
+      max-width: 920px;
+      width: 100%;
+      margin: 0 auto 38px;
+      font-size: clamp(13px, 1.5vw, 18px);
+      line-height: 1.7;
+      color: var(--primary);
+    }
+
+    .como-funciona p {
+      margin-bottom: 0.8em;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    /* ══ SIGUES LEYENDO ══ */
+    #sigues-leyendo {
+      max-width: 920px;
+      width: 100%;
+      margin: 0 auto 38px;
+    }
+
+    #sigues-leyendo[hidden] {
+      display: none;
+    }
+
+    .bloque-label {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(10px, 1.2vw, 14px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary);
+      margin-bottom: 0.8em;
+      text-align: center;
+    }
+
+    .cosmos {
+      margin-top: -14px;
+    }
+
+    .sigues-label {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(10px, 1.2vw, 14px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary);
+      margin-bottom: 0.8em;
+      text-align: center;
+    }
+
+    .sigues-lista {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+      list-style: none;
+    }
+
+    .sigues-lista a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.7em 1.2em;
+      border-radius: 4px;
+      background: rgba(139, 54, 137, 0.08);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: clamp(11px, 1.2vw, 15px);
+      letter-spacing: 0.04em;
+      transition: opacity 0.3s;
+    }
+
+    .sigues-lista a:hover {
+      opacity: 0.7;
+    }
+
+    /* ══ GALERÍA: LIENZO + PARRILLA ══ */
+    .galeria-layout {
+      width: 100%;
+      max-width: 1400px;
+      margin-top: 19px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .galeria-lienzo {
+      position: sticky;
+      top: calc(var(--nav-alto) + 19px);
+      margin: 0;
+      background: rgba(139, 54, 137, 0.03);
+      border-radius: 8px;
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+    }
+
+    .galeria-lienzo img {
+      width: 100%;
+      height: min(74vh, 900px);
+      object-fit: contain;
+      border-radius: 4px;
+      transition: opacity 0.25s ease;
+    }
+
+    .galeria-pie {
+      max-width: 62ch;
+      text-align: center;
+      min-height: 1.2em;
+    }
+
+    .galeria-pie b {
+      display: block;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+      font-size: clamp(10px, 1.1vw, 14px);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--secondary);
+    }
+
+    .pie-desc {
+      display: block;
+      margin-top: 0.7em;
+      font-size: clamp(12px, 1.3vw, 16px);
+      line-height: 1.5;
+      color: var(--primary);
+    }
+
+    /* El pie de cada miniatura vive en el documento aunque no se vea: es el
+       nombre accesible del botón y es lo que se copia al lienzo al elegirla. */
+    .mini-pie {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .galeria-mini {
+      position: relative;
+      padding: 0;
+      border: none;
+      background: rgba(139, 54, 137, 0.03);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 3/4;
+      outline-offset: 2px;
+      transition: box-shadow 0.2s ease, opacity 0.2s ease;
+      opacity: 0.75;
+    }
+
+    .galeria-mini img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .galeria-mini:hover,
+    .galeria-mini:focus-visible {
+      opacity: 1;
+    }
+
+    .galeria-mini[aria-pressed="true"] {
+      opacity: 1;
+      box-shadow: inset 0 0 0 3px var(--primary);
+    }
+
+    /* Enlace al archivo completo. Va fuera de la parrilla y no se parece a
+       una miniatura: las miniaturas cambian el lienzo, esto cambia de página. */
+    .galeria-todas {
+      display: block;
+      width: 100%;
+      margin-top: 38px;
+      text-align: center;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(11px, 1.2vw, 15px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+      transition: opacity 0.3s;
+    }
+
+    .galeria-todas:hover { opacity: 0.65; }
+
+    /* ══ AUDIOLIBRO ══ */
+    #audio {
+      justify-content: center;
+      padding: 113px 57px;
+    }
+
+    .audio-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+      width: 100%;
+      max-width: 960px;
+    }
+
+    .audio-label {
+      font-family: 'Chopin', serif;
+      font-size: clamp(24px, 3.5vw, 60px);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .audio-iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 0;
+      box-shadow: none;
+      border: none;
+      filter: brightness(1);
+      display: block;
+    }
+
+    /* Portada del vídeo. Hasta que alguien pulsa, YouTube no existe en la
+       página: ni petición, ni cookies, ni el mega largo de su reproductor.
+       Si audiolibro-tinddaya.jpg no está, queda el fondo malva y el botón. */
+    .audio-video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      background-color: rgba(139, 54, 137, 0.08);
+      background-image: url('/audiolibro-tinddaya.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .audio-play {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7em;
+      padding: 0.9em 1.6em;
+      border: none;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--primary);
+      font-family: Arial, sans-serif;
+      font-size: clamp(11px, 1.2vw, 15px);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+
+    .audio-play:hover { opacity: 0.85; }
+
+    .audio-credito {
+      font-size: clamp(11px, 1.2vw, 16px);
+      color: var(--secondary);
+      text-align: justify;
+      letter-spacing: 0.02em;
+    }
+
+    /* ══ CONTACTO ══ */
+    .contacto-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 76px;
+      width: 100%;
+      max-width: 800px;
+      margin-top: 76px;
+      text-align: center;
+    }
+
+    .contacto-bloque {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      font-size: clamp(13px, 1.4vw, 18px);
+      line-height: 1.5;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .contacto-bloque p:not(.contacto-redes-label) {
+      line-height: 1.1;
+    }
+
+    .contacto-bloque a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity 0.3s;
+    }
+
+    .contacto-bloque a:hover {
+      opacity: 0.6;
+    }
+
+    .contacto-footer {
+      grid-column: 1 / -1;
+      text-align: center;
+      margin-top: 38px;
+      padding-top: 38px;
+      border-top: 2px solid var(--secondary);
+      font-size: clamp(13px, 1.4vw, 18px);
+      line-height: 1.5;
+    }
+
+    .contacto-footer p {
+      text-align: center;
+    }
+
+    .contacto-footer a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .contacto-thanks {
+      margin-top: 1em;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(12px, 1.3vw, 18px);
+      color: var(--secondary);
+    }
+
+    .contacto-redes-label {
+      font-size: clamp(16px, 1.8vw, 22px);
+      font-weight: bold;
+    }
+
+    /* ══ APOYAR ══ */
+    .apoyo-bloque {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+      align-items: center;
+    }
+
+    .apoyo-texto {
+      font-size: clamp(13px, 1.4vw, 17px);
+      line-height: 1.6;
+      color: var(--primary);
+      text-align: center;
+    }
+
+    .apoyo-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9em 1.8em;
+      border-radius: 4px;
+      background: rgba(139, 54, 137, 0.15);
+      color: var(--primary);
+      text-decoration: none !important;
+      font-size: clamp(11px, 1.2vw, 15px);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
+
+    .apoyo-cta:hover {
+      opacity: 0.8;
+    }
+
+    /* ══ NAV ══ */
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+      padding: 1.2em 2em;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid rgba(100, 53, 135, 0.15);
+      z-index: 200;
+      backdrop-filter: blur(8px);
+    }
+
+    .top-nav a {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(11px, 1vw, 16px);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s;
+      padding: 0.5em 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .top-nav a:hover,
+    .top-nav a.active {
+      color: var(--secondary);
+      border-bottom-color: var(--secondary);
+    }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 34px;
+      background: transparent;
+      border: 1px solid rgba(100, 53, 135, 0.3);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--primary);
+      font-size: 18px;
+      line-height: 1;
+      align-items: center;
+      justify-content: center;
+    }
+
+    body {
+      padding-top: var(--nav-alto);
+    }
+
+    /* ══ MOVIMIENTO REDUCIDO ══
+       Si el sistema pide menos animación, se desactivan el desplazamiento
+       suave y las transiciones: a mucha gente le provocan mareo. */
+    @media (prefers-reduced-motion: reduce) {
+      html, body { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 1100px) {
+      .galeria-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .galeria-lienzo {
+        position: static;
+      }
+
+      .galeria-lienzo img {
+        height: 52vh;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .slide {
+        padding: 57px 38px;
+      }
+
+      .obras-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 28px;
+      }
+
+      .contacto-container {
+        grid-template-columns: 1fr;
+        gap: 57px;
+        max-width: 600px;
+      }
+
+      .obra-botones {
+        flex-direction: column;
+      }
+
+      .obra-btn {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 600px) {
+      :root {
+        --nav-alto: 58px;
+      }
+
+      .slide {
+        padding: 38px 20px;
+        min-height: auto;
+      }
+
+      /* Nav desplegable */
+      .top-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        justify-content: flex-start;
+        min-height: var(--nav-alto);
+      }
+
+      .top-nav::before {
+        content: 'HUNICORNIA';
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        color: var(--primary);
+        padding: 1.35em 1em;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .top-nav a {
+        display: none;
+        padding: 0.9em 1.2em;
+        border-top: 1px solid rgba(100, 53, 135, 0.1);
+        border-bottom: none;
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .top-nav.abierto a {
+        display: block;
+      }
+
+      .top-nav a.active {
+        border-bottom: none;
+        background: rgba(139, 54, 137, 0.06);
+      }
+
+      .obras-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .obra-card {
+        padding: 1.5em;
+      }
+
+      .galeria-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+
+      .galeria-lienzo img {
+        height: 46vh;
+      }
+
+      .obra-botones {
+        flex-direction: column;
+        gap: 0.8em;
+      }
+
+      .obra-btn {
+        width: 100%;
+      }
+
+      #audio {
+        padding: 57px 20px;
+      }
+    }
+  </style>
+
+  <noscript>
+    <style>
+      /* Sin JavaScript el botón del menú no responde: se muestran los enlaces.
+         Y las miniaturas dejan de fingir que son pulsables. */
+      @media (max-width: 600px) {
+        .top-nav a { display: block; }
+        .nav-toggle { display: none; }
+      }
+      .galeria-mini { opacity: 1; cursor: default; }
+    </style>
+  </noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://hunicornia.es/#website",
+        "url": "https://hunicornia.es/",
+        "name": "Hunicornia",
+        "description": "Novelas y relatos de fantasía queer en español para leer gratis online, enteros y sin registro.",
+        "inLanguage": "es",
+        "publisher": { "@id": "https://hunicornia.es/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://hunicornia.es/#organization",
+        "name": "Hunicornia",
+        "alternateName": "Hunicornia — fantasía indie y disidente",
+        "url": "https://hunicornia.es/",
+        "logo": "https://hunicornia.es/hero.jpg",
+        "description": "Proyecto independiente de ficción especulativa feminista y queer. Se lee gratis y entero.",
+        "email": "hunicornia84@gmail.com",
+        "sameAs": [
+          "https://www.instagram.com/hunicornia84/",
+          "https://ko-fi.com/hunicornia"
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ══ NAV ══ -->
+  <nav class="top-nav" id="topNav">
+    <a href="#inicio">Inicio</a>
+    <a href="#nosotrxs">Nosotrxs</a>
+    <a href="#obras">Obras</a>
+    <a href="#galeria">Galería</a>
+    <a href="#audio">Audiolibro</a>
+    <a href="#contacto">Contacto</a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="topNav" aria-label="Abrir menú">☰</button>
+  </nav>
+
+  <!-- ══ INICIO ══ -->
+  <section class="slide" id="inicio">
+    <div class="hero-text">
+      <h1 class="hero-title">HUNICORNIA</h1>
+      <p class="hero-subtitle">Fantasía indie y disidente desde 1984</p>
+      <img class="hero-img" src="hero.jpg" width="400" height="389" alt="Hunicornia" fetchpriority="high">
+    </div>
+  </section>
+
+  <!-- ══ NOSOTRXS ══ -->
+  <section class="slide" id="nosotrxs">
+    <h2 class="section-title">NOSOTRXS</h2>
+    <p class="section-subtitle">Novelas de fantasía queer en español · Se leen enteras y gratis</p>
+
+    <article class="prose">
+      <h3>Qué hacemos?</h3>
+
+      <p>Ficción especulativa feminista, queer e independiente. Narrativa teatralizada. Tintes de ciencia ficción, fantasía y cosicas raras que rompen con el canon.</p>
+
+      <p>En la mitología griega hay centauros, minotauros, pegasos y cientomil criaturas topeguapas descendientes de dioses. Así que decidimos hacer lo opuesto: una hunicornia paticorta, con H irreverente al frente y que solo la pueden cabalgar quienes necesitan escapar de señoros con incontinencia.</p>
+
+      <h3>Qué es exactamente esto?</h3>
+
+      <p>No es una editorial tradicional ni autoedición al uso. Es un espacio para ofrecer cultura literaria libre y en abierto. Aquí escribimos quienes conocemos íntimamente lo que significa existir en los márgenes. Aquí el feminismo, la disidencia queer, la diversidad, la ecología y un mundo más justo no son el tema sino la estructura narrativa fundamental. Literatura donde la heroicidad no es el acto singular, sino la resistencia cotidiana.</p>
+
+      <p>Narrativa no binaria con personajes LGTBIQA+ y neurodivergentes con complejidad plena. Cada obra es ficción especulativa queer: la política feminista y la ciencia ficción respiran juntas, y la acción ecológica es pulso narrativo antes que mensaje. Narrativa antisistema que se niega a los finales previstos. Neurodiversidad como realidad, no como trauma a resolver.</p>
+
+      <p>No es fantasía de evasión: es ensayo corporalizado. Solarpunk como alternativa política. Ser diferente no es castigo sino riqueza, y las historias queer no piden permiso porque ya existen.</p>
+
+      <h3>Quiénes somos?</h3>
+
+      <p>Todo lo que hacemos es human-made, con muchas ganas y apostando por una cultura accesible, radical y honesta.</p>
+
+      <!-- El párrafo de credenciales (licenciatura, másteres, doctorado y el nombre jjsellës)
+           se retira del sitio por la decisión de §2 del briefing v2: es la única cadena de texto
+           que identifica a una persona concreta. Vive en el dossier de autora privado. -->
+    </article>
+  </section>
+
+  <!-- ══ OBRAS ══ -->
+  <section class="slide" id="obras">
+    <h2 class="section-title">NUESTRAS OBRAS</h2>
+
+    <!-- Se muestra solo si lector-progreso.js encuentra lecturas guardadas -->
+    <div id="sigues-leyendo" hidden>
+      <p class="sigues-label">Sigue leyendo</p>
+      <ul class="sigues-lista" id="siguesLista"></ul>
+    </div>
+
+    <div class="como-funciona">
+      <p>Obra completa y gratuita, sin rastreadores. La web recuerda por dónde ibas: al volver, sigues donde lo dejaste. Si prefieres leer offline, descarga el EPUB aquí mismo.</p>
+
+      <p>Y si te apetece apoyar Hunicornia, puedes invitarnos a un café, comprar tu ilustración exclusiva o compartirnos en tus redes, que también nos es valioso.</p>
+
+      <p>Cada obra es autoconclusiva: empieza por donde quieras. Dos de nuestras obras no tienen acceso libre puesto que andan buscando un no sé qué que qué sé yo que las necesita inéditas.</p>
+    </div>
+
+
+    <div class="como-funciona cosmos">
+      <p class="bloque-label">Un mismo lore</p>
+
+      <p>Cuando subas a los lomos de Hunicornia cabalgarás hasta lugares nunca antes vistos por otros ojos y, sin embargo, tarde o temprano reconocerás un rostro, un nombre, un olor. Tinddaya bebe de 7 máscaras y de los cuentos de <em>Parábolas taciturnas</em>. Un lore que se entrelaza de un texto a otro para crear un universo donde te sientas como en casa.</p>
+    </div>
+
+    <div class="obras-container">
+      <div class="obras-grid">
+
+        <!-- 1 · CHELO JOLMS -->
+        <article class="obra-card">
+          <h3 class="obra-titulo">Chelo Jolms: la terapia perversa de conversión</h3>
+          <p class="obra-genero">Novela · 27.000 palabras · Completa · Castellano</p>
+          <p class="obra-gancho">Chelo Jolms resuelve crímenes en Soria por epifanía, no por método, y no soporta que le pregunten cómo lo hace. Es asexual, no binarie, va de coca y toca el violín a las cuatro de la mañana. Alguien está matando a personas trans y vistiendo sus cadáveres de princesas de Nintendo. Y hay clínicas, en este país, que siguen anunciando que curan lo que somos.</p>
+          <p class="obra-extracto">Si no sé quién soy, ¿la investigación qué es? Es un reflejo de mí mismi, un ser vacío, es la expresión de lo poco que sé del mundo y que ni siquiera he pensado yo, es todo aprendido.</p>
+          <div class="obra-botones">
+            <a href="/chelo-jolms/" class="obra-btn">Leer</a>
+            <a href="/epub/chelo-jolms.epub" class="obra-btn primario" download>Descargar EPUB</a>
+          </div>
+        </article>
+
+        <!-- 2 · TINDDAYA -->
+        <article class="obra-card">
+          <h3 class="obra-titulo">Tinddaya</h3>
+          <p class="obra-genero">Novela · 80.785 palabras · Completa · Castellano/Valenciano</p>
+          <p class="obra-gancho">Un robo accidental en el Mercado Central de Valencia y dos ladronxs que pasaban por allí. A partir de ahí, un reloj que no debería existir, una emperatriz, nueve linajes con poderes heredados y una guerra que lleva siglos librándose por debajo de la ciudad. Se habla castellano, valenciano y lo que haga falta. Incluye <em>Los hijos del Alquimista</em>, el mito de origen del linaje sobre el que corre toda la trama.</p>
+          <p class="obra-extracto">La furgoneta se estampa contra la entrada del Palacio de Congresos generando una explosión y una nube de cristales.</p>
+          <div class="obra-botones">
+            <a href="/tinddaya/" class="obra-btn">Leer</a>
+            <a href="/epub/tinddaya.epub" class="obra-btn primario" download>Descargar EPUB</a>
+          </div>
+        </article>
+
+        <!-- 3 · LA TIARA DE LOS TREINTA HERMANOS -->
+        <article class="obra-card">
+          <h3 class="obra-titulo">La tiara de los treinta hermanos</h3>
+          <p class="obra-genero">Relato · 17.337 palabras · Completo · Castellano</p>
+          <p class="obra-gancho">Una mujer cuenta su vida en voz alta a un bibliotecario que ha ido a buscarla a un bar de pueblo. Nació en una casa de Colombia donde su madre criaba hijos propios, postizos y recogidos de la calle; aprendió a asistir partos antes que a maquillar uñas, tocó el clarinete para Pablo Escobar durante una semana sin dormir, llegó a árbitra de la FIFA, cruzó el Atlántico y le robaron todo en la aduana. Es lesbiana, es bruja y hoy regenta un bar en un pueblo de Alicante que hace de salvavidas para gente extraviada.</p>
+          <p class="obra-extracto">La dignidad no debería tener fronteras ni pasaporte.</p>
+          <div class="obra-botones">
+            <a href="/la-tiara-de-los-treinta-hermanos/" class="obra-btn">Leer</a>
+            <a href="/epub/la-tiara-de-los-treinta-hermanos.epub" class="obra-btn primario" download>Descargar EPUB</a>
+          </div>
+        </article>
+
+        <!-- 4 · 7 MÁSCARAS -->
+        <article class="obra-card">
+          <h3 class="obra-titulo">7 máscaras</h3>
+          <p class="obra-genero">Fantasía épica · Narrativa compasiva · 227.909 palabras · Castellano</p>
+          <p class="obra-gancho">Fantasía épica donde la monstruosidad nace del abandono. Moor, un dios olvidado en la soledad más profunda durante milenios, acumula ira y odio hasta convertirse en una sombra destructiva. Pero la compasión de su hermano lo rescata de la nada: una mano tendida a través de la oscuridad. Una fábula sobre cómo la soledad crea monstruos y el amor los redime. Reflexiva en preguntas fundamentales sobre la convivencia y el respeto.</p>
+          <p class="obra-extracto">Moor yacía en la oscuridad más profunda, en la soledad más terrible, abandonado y olvidado en lo más alejado del universo. Desconocía el calor de sus hermanos, jamás había mirado a los ojos a nadie.</p>
+          <div class="obra-botones">
+            <a href="/7-mascaras/" class="obra-btn">Leer</a>
+            <a href="/epub/7-mascaras.epub" class="obra-btn primario" download>Descargar EPUB</a>
+          </div>
+        </article>
+
+        <!-- 5 · CARTA A MAMÁ, CARTA A PAPÁ -->
+        <article class="obra-card">
+          <h3 class="obra-titulo">Carta a mamá, carta a papá</h3>
+          <p class="obra-genero">Relato · 13.130 palabras · Completo · Castellano</p>
+          <p class="obra-gancho">Cada miércoles, Eloise escribe una carta a sus padres muertos y la echa al buzón sin remite, o la deja sobre las olas. Lleva cuatro años haciéndolo. Su pareja lo ha intentado todo: psicólogos, tanatólogos, psicomagia, libros. Hasta que una mujer se le sienta al lado en el paseo marítimo y le dice que no la está ayudando, que la está arrastrando.</p>
+          <p class="obra-extracto">No es cuestión de tiempo. Recuerda algo que te doliese en la infancia, sigue doliendo como hace tantos años, el tiempo es para los relojes.</p>
+          <div class="obra-botones">
+            <a href="/carta-a-mama-carta-a-papa/" class="obra-btn">Leer</a>
+            <a href="/epub/carta-a-mama-carta-a-papa.epub" class="obra-btn primario" download>Descargar EPUB</a>
+          </div>
+        </article>
+
+        <!-- 6 · CONVERSACIONES SOCRÁTICAS CON MI GATA (reservada) -->
+        <article class="obra-card">
+          <h3 class="obra-titulo">Conversaciones socráticas con mi gata</h3>
+          <p class="obra-genero">Novela corta · Ficción especulativa queer · Castellano</p>
+          <p class="obra-gancho">Ro Rodríguez Roto es una persona sin etiquetas, o con todas. Viaja con Fufur, una gata con hipoplasia cerebelosa que sabe que va a morir antes que las gatas normativas y está hasta el papo de que la traten como a un mono de feria. Una noche, en una oscuridad sin paredes, Fufur habla. Es un viaje sin héroe y sin destino, y la única interlocutora honesta es la que está fuera del lenguaje que nos obliga.</p>
+          <p class="obra-extracto">Tu voz es tu voz, es triste cuando lloras, es alegre cuando ríes, es sexy cuando te sientes top. No sé decir si es de fontanera, panaero o de socorrista, solo sé que cuando la oigo me siento en casa.</p>
+          <p class="obra-estado"><b>Texto no disponible</b><span>Permanece inédita en busca de editorial</span></p>
+        </article>
+
+        <!-- 7 · PARÁBOLAS TACITURNAS (reservada) -->
+        <article class="obra-card">
+          <h3 class="obra-titulo">Parábolas taciturnas</h3>
+          <p class="obra-genero">Seis novelas cortas · Narrativa onírica · Castellano</p>
+          <p class="obra-gancho">Seis historias que no comparten mundo pero sí una ley: la magia siempre se paga con la propia vida de quien la ejerce. Un padre cambia el corazón de sus hijos por el de dos lobeznos y descubre lo que cuesta sobrevivir siendo otro. Una mujer camina hacia su muerte en un mar de cuarzo y encuentra un juego de mesa que la obliga a merecerla. Dos hombres se aman en una aldea que los casa a la fuerza con esclavas compradas.</p>
+          <p class="obra-extracto">Sin animales ni bosques, sin aguas ni cielos, la raza humana sentenciará su propio fin.</p>
+          <p class="obra-estado"><b>Texto no disponible</b><span>Permanece inédita en busca de editorial</span></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALERÍA: LIENZO + PARRILLA ══ -->
+  <section class="slide" id="galeria">
+    <h2 class="section-title">El universo visual de Hunicornia</h2>
+
+    <div class="galeria-layout">
+      <figure class="galeria-lienzo">
+        <img id="lienzoImg" src="portada-chelo-jolms.jpg" width="1200" height="1600" alt="Portada de Chelo Jolms. Terapia perversa de conversión">
+        <figcaption class="galeria-pie" id="lienzoPie"><b>Chelo Jolms. Terapia perversa de conversión · portada</b><span class="pie-desc">Un crimen que solo se resuelve dejando de pensar en línea recta.</span></figcaption>
+      </figure>
+
+      <div class="galeria-grid" id="galeriaGrid" role="group" aria-label="Ilustraciones de Hunicornia">
+        <button class="galeria-mini" type="button" aria-pressed="true" data-alt="Portada de Chelo Jolms. Terapia perversa de conversión">
+          <img src="portada-chelo-jolms.jpg" srcset="portada-chelo-jolms-mini.jpg 400w, portada-chelo-jolms.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Chelo Jolms. Terapia perversa de conversión · portada</b><span class="pie-desc">Un crimen que solo se resuelve dejando de pensar en línea recta.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Portada de Tinddaya">
+          <img src="portada-tinddaya.jpg" srcset="portada-tinddaya-mini.jpg 400w, portada-tinddaya.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Tinddaya · portada</b><span class="pie-desc">Las sombras proyectadas por el teatro que creíste real.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Portada de 7 máscaras">
+          <img src="portada-7-mascaras.jpg" srcset="portada-7-mascaras-mini.jpg 400w, portada-7-mascaras.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>7 máscaras · portada</b><span class="pie-desc">Un mundo que empieza donde se pierde el horizonte y nace la humanidad.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Portada de Conversaciones socráticas con mi gata">
+          <img src="portada-gata-socratica.jpg" srcset="portada-gata-socratica-mini.jpg 400w, portada-gata-socratica.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Conversaciones socráticas con mi gata · portada</b><span class="pie-desc">Una oscuridad sin paredes donde por fin alguien te dice la verdad.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Portada de Parábolas taciturnas">
+          <img src="portada-parabolas-taciturnas.jpg" srcset="portada-parabolas-taciturnas-mini.jpg 400w, portada-parabolas-taciturnas.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Parábolas taciturnas · portada</b><span class="pie-desc">Mundos que no se tocan entre sí y sienten lo que tú sientes.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Personajes de Carta a mamá, carta a papá">
+          <img src="carta-a-mama-personajes.jpg" srcset="carta-a-mama-personajes-mini.jpg 400w, carta-a-mama-personajes.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Carta a mamá, carta a papá</b><span class="pie-desc">Una joven, su pareja, una bruja, muchas cartas y unos progenitores que se añoran.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Namku, de 7 máscaras, en su forma de pantera">
+          <img src="namku-pantera-7-mascaras.jpg" srcset="namku-pantera-7-mascaras-mini.jpg 400w, namku-pantera-7-mascaras.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Namku · 7 máscaras</b><span class="pie-desc">En su forma más feroz: la pantera que se alberga en el interior de su espada de guerra.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Mérida, personaje de Tinddaya">
+          <img src="merida-tinddaya.jpg" srcset="merida-tinddaya-mini.jpg 400w, merida-tinddaya.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Mérida · Tinddaya</b><span class="pie-desc">La villana por derecho, aunque su mirada perdida oculta un misterio muy triste.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Valiora, el zorro renegado de El bosque de nogales">
+          <img src="valiora-bosque-de-nogales.jpg" srcset="valiora-bosque-de-nogales-mini.jpg 400w, valiora-bosque-de-nogales.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Valiora · El bosque de nogales</b><span class="pie-desc">Un zorro punki que, desesperado por la inacción de sus ancestros, se inmola por dignidad.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Los espantapájaros, de 7 máscaras">
+          <img src="espantapajaros-7-mascaras.jpg" srcset="espantapajaros-7-mascaras-mini.jpg 400w, espantapajaros-7-mascaras.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Los espantapájaros · 7 máscaras</b><span class="pie-desc">Criaturas ocultas, sensibles y rechazadas que solo desean amar.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Los cazadores ciegos, de Tinddaya">
+          <img src="cazadores-ciegos-tinddaya.jpg" srcset="cazadores-ciegos-tinddaya-mini.jpg 400w, cazadores-ciegos-tinddaya.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Los cazadores ciegos · Tinddaya</b><span class="pie-desc">Criaturas ensambladas de harapo, metal y madera con el único deseo de matar.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Personajes de El valle de las luciérnagas">
+          <img src="valle-de-las-luciernagas.jpg" srcset="valle-de-las-luciernagas-mini.jpg 400w, valle-de-las-luciernagas.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>El valle de las luciérnagas</b><span class="pie-desc">Un joven enamorado de un hada en un mundo meramente humano y una bruja sin corazón.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Diersej, esbirro de Moor, de 7 máscaras">
+          <img src="diersej-7-mascaras.jpg" srcset="diersej-7-mascaras-mini.jpg 400w, diersej-7-mascaras.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Diersej · 7 máscaras</b><span class="pie-desc">Uno de los esbirros de Moor, un ser nacido para empalar a quien se le anteponga.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Zéfiro, el hombre lobo de Tinddaya">
+          <img src="zefiro-tinddaya.jpg" srcset="zefiro-tinddaya-mini.jpg 400w, zefiro-tinddaya.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Zéfiro · Tinddaya</b><span class="pie-desc">El hombre lobo maldecido con la cordura y la sapiencia de lo irremediable.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Personajes de El pescador de las mareas">
+          <img src="pescador-de-las-mareas.jpg" srcset="pescador-de-las-mareas-mini.jpg 400w, pescador-de-las-mareas.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>El pescador de las mareas</b><span class="pie-desc">Dos hombres que se aman, dos mujeres compradas y obligadas a una boda indeseada.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="El cuento de los dos gatos, de 7 máscaras">
+          <img src="cuento-de-los-dos-gatos-7-mascaras.jpg" srcset="cuento-de-los-dos-gatos-7-mascaras-mini.jpg 400w, cuento-de-los-dos-gatos-7-mascaras.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>El cuento de los dos gatos · 7 máscaras</b><span class="pie-desc">Un gato blanco, un gato negro y un ratón, el placer de la música y los bajos instintos.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Nikoleta, personaje de Tinddaya">
+          <img src="nikoleta-tinddaya.jpg" srcset="nikoleta-tinddaya-mini.jpg 400w, nikoleta-tinddaya.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Nikoleta · Tinddaya</b><span class="pie-desc">Pura magia, la resiliencia de una viejoven que lucha por ser quien es.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Arguestes, licántropo de Los hijos del Alquimista">
+          <img src="arguestes-hijos-del-alquimista.jpg" srcset="arguestes-hijos-del-alquimista-mini.jpg 400w, arguestes-hijos-del-alquimista.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Arguestes · Los hijos del Alquimista</b><span class="pie-desc">El licántropo que perdió su humanidad y es consciente de su propio salvajismo. Su madre lo observa.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Moor, el último de los dioses, de 7 máscaras">
+          <img src="moor-7-mascaras.jpg" srcset="moor-7-mascaras-mini.jpg 400w, moor-7-mascaras.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Moor · 7 máscaras</b><span class="pie-desc">El último de los dioses, el dios de una guerra que no nace del odio, sino del anhelo, de la tristeza…</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-alt="Los antediluvianos, de Tinddaya">
+          <img src="antediluvianos-tinddaya.jpg" srcset="antediluvianos-tinddaya-mini.jpg 400w, antediluvianos-tinddaya.jpg 1200w" sizes="(max-width: 600px) 23vw, 130px" width="400" height="533" loading="lazy" alt="">
+          <span class="mini-pie"><b>Los antediluvianos · Tinddaya</b><span class="pie-desc">Criaturas bañadas en sangre, despojos de su propia juventud. Un solo deseo: gobernar toda vida.</span></span>
+        </button>
+      </div>
+    </div>
+
+    <a class="galeria-todas" href="https://www.instagram.com/hunicornia84/" target="_blank" rel="noopener">Galería completa en IG &rarr;</a>
+  </section>
+
+  <!-- ══ AUDIOLIBRO ══ -->
+  <section class="slide" id="audio">
+    <div class="audio-container">
+      <h2 class="audio-label">Audiolibro</h2>
+      <div class="audio-video" id="audioVideo">
+        <button class="audio-play" id="audioPlay" type="button">
+          <span aria-hidden="true">▶</span> Reproducir el audiolibro
+        </button>
+        <noscript>
+          <iframe class="audio-iframe"
+            src="https://www.youtube-nocookie.com/embed/uvwSGlGXtDk"
+            title="Audiolibro de Tinddaya"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </noscript>
+      </div>
+      <p class="audio-credito">Voces de M. Paz Valdés y Pablo Ibáñez Durán. Música de Antonio Pujol.</p>
+    </div>
+  </section>
+
+  <!-- ══ CONTACTO ══ -->
+  <section class="slide" id="contacto">
+    <h2 class="section-title">CONTACTO</h2>
+
+    <div class="contacto-container">
+
+      <div class="contacto-bloque">
+        <p class="contacto-redes-label">Síguenos en redes</p>
+        <p>Instagram: <a href="https://www.instagram.com/hunicornia84/" target="_blank" rel="noopener">@hunicornia84</a></p>
+        <p>Email: <a href="mailto:hunicornia84@gmail.com">hunicornia84@gmail.com</a></p>
+      </div>
+
+      <div class="apoyo-bloque">
+        <p class="apoyo-texto">Si te apetece apoyar nuestro trabajo, puedes aportar a partir de 3&nbsp;€, si nos das menos se va todo en comisiones. También puedes comprar ilustraciones limitadas y dedicadas, entra y descubre más.</p>
+        <a href="https://ko-fi.com/hunicornia" class="apoyo-cta" target="_blank" rel="noopener">Invítanos a un café</a>
+      </div>
+
+      <div class="contacto-footer">
+        <p><strong>Muchas gracias por estar aquí</strong> xxx</p>
+        <p class="contacto-thanks">Juntes hacemos magia.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Marcador de lectura -->
+  <script src="/lector-progreso.js" defer></script>
+
+  <!-- Script -->
+  <script>
+    // ══ NAV DESPLEGABLE (< 600px) ══
+    const topNav = document.getElementById('topNav');
+    const navToggle = document.getElementById('navToggle');
+
+    navToggle.addEventListener('click', () => {
+      const abierto = topNav.classList.toggle('abierto');
+      navToggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
+      navToggle.textContent = abierto ? '✕' : '☰';
+    });
+
+    // ══ AUDIOLIBRO: YouTube solo cuando se pide ══
+    var audioVideo = document.getElementById('audioVideo');
+    var audioPlay  = document.getElementById('audioPlay');
+
+    if (audioPlay) {
+      audioPlay.addEventListener('click', function () {
+        var marco = document.createElement('iframe');
+        marco.className = 'audio-iframe';
+        marco.src = 'https://www.youtube-nocookie.com/embed/uvwSGlGXtDk?autoplay=1';
+        marco.title = 'Audiolibro de Tinddaya';
+        marco.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        marco.allowFullscreen = true;
+        audioVideo.replaceWith(marco);
+      });
+    }
+
+    // ══ GALERÍA: LIENZO + PARRILLA ══
+    const galeriaGrid = document.getElementById('galeriaGrid');
+    const lienzoImg = document.getElementById('lienzoImg');
+    const lienzoPie = document.getElementById('lienzoPie');
+    const minis = Array.from(galeriaGrid.querySelectorAll('.galeria-mini'));
+
+    function mostrar(mini) {
+      if (!mini) return;
+      lienzoImg.src = mini.querySelector('img').src;
+      lienzoImg.alt = mini.dataset.alt;
+      lienzoPie.innerHTML = mini.querySelector('.mini-pie').innerHTML;
+      minis.forEach(m => m.setAttribute('aria-pressed', m === mini ? 'true' : 'false'));
+    }
+
+    minis.forEach((mini, i) => {
+      mini.addEventListener('click', () => mostrar(mini));
+      mini.addEventListener('focus', () => mostrar(mini));
+      mini.addEventListener('keydown', (e) => {
+        let destino = null;
+        if (e.key === 'ArrowRight') destino = minis[i + 1];
+        if (e.key === 'ArrowLeft') destino = minis[i - 1];
+        if (e.key === 'ArrowDown') destino = minis[i + 5];
+        if (e.key === 'ArrowUp') destino = minis[i - 5];
+        if (destino) { e.preventDefault(); destino.focus(); }
+      });
+    });
+
+    // El hover solo cambia el lienzo cuando hay ratón Y la parrilla está al
+    // lado del lienzo. En una columna el lienzo queda encima de la parrilla:
+    // para mirar la imagen grande hay que subir el puntero cruzando las
+    // miniaturas, y cada una que se cruza reemplazaría la imagen elegida.
+    // Ahí manda el clic y solo el clic.
+    const raton = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const alLado = window.matchMedia('(min-width: 1101px)');
+
+    minis.forEach(mini => {
+      mini.addEventListener('mouseenter', () => {
+        if (raton.matches && alLado.matches) mostrar(mini);
+      });
+    });
+
+    // ══ NAV ACTIVA ══
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.slide');
+      const navLinks = document.querySelectorAll('.top-nav a');
+
+      let current = '';
+      sections.forEach(section => {
+        if (window.pageYOffset >= section.offsetTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // ══ SCROLL SUAVE ══
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          var suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          target.scrollIntoView({ behavior: suave ? 'smooth' : 'auto', block: 'start' });
+          topNav.classList.remove('abierto');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.textContent = '☰';
+        }
+      });
+    });
+
+    // ══ SIGUES LEYENDO ══
+    // Lee lo que lector-progreso.js haya guardado. Si no hay nada, o si
+    // localStorage no está disponible, el bloque no se muestra.
+    (function () {
+      const contenedor = document.getElementById('sigues-leyendo');
+      const lista = document.getElementById('siguesLista');
+      if (!contenedor || !lista) return;
+
+      let datos = null;
+      try {
+        datos = JSON.parse(localStorage.getItem('hunicornia:progreso') || 'null');
+      } catch (e) {
+        return;
+      }
+      if (!datos || typeof datos !== 'object') return;
+
+      const entradas = Object.values(datos)
+        .filter(d => d && d.url && d.titulo)
+        .sort((a, b) => (b.ts || 0) - (a.ts || 0))
+        .slice(0, 4);
+
+      if (!entradas.length) return;
+
+      entradas.forEach(d => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = d.url;
+        const pct = Number.isFinite(d.pct) ? ' · ' + Math.round(d.pct) + ' %' : '';
+        a.textContent = d.titulo + pct;
+        li.appendChild(a);
+        lista.appendChild(li);
+      });
+
+      contenedor.hidden = false;
+    })();
+  </script>
+
+</body>
+</html>

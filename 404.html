@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>Esto todavía no está aquí — Hunicornia</title>
+
+  <style>
+
+    @font-face{
+      font-family:'Chopin';
+      src:url("/ChopinLight.woff2") format("woff2");
+      font-weight: 300;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #643587;
+      --secondary: #8b3689;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
+      background: #ffffff;
+      color: var(--primary);
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 76px 38px;
+      gap: 1.3em;
+    }
+
+    .codigo {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(10px, 1.2vw, 14px);
+      letter-spacing: 0.16em;
+      color: var(--secondary);
+    }
+
+    h1 {
+      font-family: 'Chopin', serif;
+      font-size: clamp(28px, 4.4vw, 62px);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+      max-width: 16ch;
+    }
+
+    p {
+      max-width: 48ch;
+      font-size: clamp(13px, 1.5vw, 18px);
+      line-height: 1.7;
+    }
+
+    .volver {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.5em;
+      padding: 0.9em 1.8em;
+      border-radius: 4px;
+      background: rgba(139, 54, 137, 0.15);
+      color: var(--primary);
+      text-decoration: none;
+      font-size: clamp(11px, 1.2vw, 15px);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      transition: opacity 0.3s;
+    }
+
+    .volver:hover { opacity: 0.8; }
+
+    .firma {
+      margin-top: 1.2em;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(11px, 1.2vw, 15px);
+      color: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+
+  <p class="codigo">404</p>
+
+  <h1>Esto todavía no está aquí</h1>
+
+  <p>Estamos en ello. Vamos subiendo la obra capítulo a capítulo, así que puede que esta página aún no exista, o puede que el enlace se haya equivocado de camino.</p>
+
+  <!-- TEMPORAL: quitar esta línea cuando esté toda la obra subida.
+       El resto de la página sigue teniendo sentido para siempre. -->
+  <p>Dale unos días y vuelve, que queda poco.</p>
+
+  <a class="volver" href="/">Volver a la portada</a>
+
+  <p class="firma">Juntes hacemos magia.</p>
+
+</body>
+</html>

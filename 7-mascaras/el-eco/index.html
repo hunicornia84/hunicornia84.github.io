@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El eco, capítulo 11 de 7 máscaras. Fantasía épica para leer gratis en Hunicornia.">
+  <meta name="author" content="Hunicornia">
+  <link rel="canonical" href="https://hunicornia.es/7-mascaras/el-eco/">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>11. El eco · 7 máscaras — Hunicornia</title>
+  <style>
+    @font-face { font-family: "Chopin"; src: url("/ChopinLight.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #643587; --secondary: #8b3689; --nav-h: 58px; }
+    html, body { width: 100%; background: #fff; color: var(--primary); font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { padding-top: var(--nav-h); }
+    .lector-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(100,53,135,0.15); z-index: 200; backdrop-filter: blur(8px); }
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: var(--nav-h); }
+    .nav-volver { font-family: system-ui, Arial, sans-serif; font-size: 12px; color: var(--secondary); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-volver:hover { opacity: 0.7; }
+    .nav-titulo { font-family: "Chopin", serif; font-size: 20px; font-weight: 300; letter-spacing: 0.05em; color: var(--primary); }
+    .nav-indice-btn { font-family: system-ui, Arial, sans-serif; font-size: 11px; color: var(--secondary); background: none; border: 1px solid rgba(100,53,135,0.3); border-radius: 4px; padding: 6px 14px; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; }
+    .nav-indice-btn:hover { background: rgba(100,53,135,0.06); }
+    .progreso-barra { height: 2px; background: rgba(100,53,135,0.1); }
+    .progreso-fill { height: 100%; width: 0%; background: var(--primary); transition: width 0.1s linear; }
+    .indice-panel { display: none; border-top: 1px solid rgba(100,53,135,0.1); padding: 24px 24px 28px; background: rgba(255,255,255,0.99); max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .indice-panel.abierto { display: block; }
+    .indice-lista { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 2em; }
+    .indice-lista li { padding: 3px 0; break-inside: avoid; }
+    .indice-lista a { font-family: "Chopin", serif; font-size: 15px; font-weight: 300; color: var(--primary); text-decoration: none; opacity: 0.8; }
+    .indice-lista a:hover { opacity: 1; }
+    .lector-contenido { max-width: 680px; margin: 0 auto; padding: 56px 24px 120px; }
+    .obra-titulo-h { font-family: "Chopin", serif; font-size: clamp(34px, 5vw, 64px); font-weight: 300; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--primary); line-height: 1.1; }
+    .obra-subtitulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--secondary); margin: 0 0 60px; opacity: 0.75; }
+    .cap-bloque { margin-bottom: 72px; }
+    .cap-h2 { font-family: "Chopin", serif; font-size: clamp(22px, 3vw, 32px); font-weight: 300; letter-spacing: 0.04em; margin: 64px 0 36px; color: var(--primary); text-align: center; padding-top: 48px; border-top: 1px solid rgba(100,53,135,0.12); line-height: 1.25; scroll-margin-top: var(--nav-h); }
+    .cap-num { display: block; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(10px, 1.1vw, 12px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--secondary); opacity: 0.75; margin-bottom: 16px; }
+    .lector-p { font-size: clamp(15px, 1.7vw, 17px); line-height: 1.95; margin: 0 0 0.9em; color: var(--primary); text-align: justify; hyphens: auto; }
+    .lector-p.dialogo { }
+    .sep-omega { text-align: center; color: var(--secondary); opacity: 0.3; font-size: 13px; margin: 36px 0; letter-spacing: 0.4em; }
+    .cta-final { text-align: center; margin-top: 64px; display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+    .cta-final a { display: inline-block; padding: 0.8em 1.5em; background: rgba(139,54,137,0.12); color: var(--primary); border-radius: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .cta-final a:hover { opacity: 0.7; }
+    .nota-final { font-size: 11px; color: var(--secondary); text-align: center; margin-top: 32px; opacity: 0.6; }
+    @media (max-width: 600px) { :root { --nav-h: 52px; } .lector-contenido { padding: 36px 16px 80px; } .nav-bar { padding: 0 16px; } .indice-lista { columns: 1; } }
+    @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; } }
+    .cap-paso { display: flex; justify-content: space-between; gap: 1.5em; margin-top: 72px; padding-top: 28px; border-top: 1px solid rgba(100,53,135,0.12); }
+    .cap-paso a { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary); text-decoration: none; max-width: 45%; line-height: 1.5; }
+    .cap-paso a:hover { color: var(--primary); }
+    .cap-paso .der { text-align: right; margin-left: auto; }
+    .indice-obra { list-style: none; padding: 0; margin: 0 0 56px; }
+    .indice-obra li { border-top: 1px solid rgba(100,53,135,0.12); }
+    .indice-obra a { display: block; padding: 18px 4px; text-decoration: none; color: var(--primary); font-family: "Chopin", serif; font-size: clamp(17px, 2.2vw, 22px); font-weight: 300; letter-spacing: 0.02em; transition: background 0.2s; }
+    .indice-obra a:hover { background: rgba(100,53,135,0.04); }
+    .indice-obra .orden { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--secondary); opacity: 0.75; display: block; margin-bottom: 6px; }
+    .parte-h { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--secondary); margin: 48px 0 8px; }
+    .parte-h:first-of-type { margin-top: 0; }
+  </style>
+</head>
+<body data-obra="7 máscaras" data-capitulo="El eco">
+<nav class="lector-nav" aria-label="Navegación">
+  <div class="nav-bar">
+    <a class="nav-volver" href="/7-mascaras/">← 7 máscaras</a>
+    <span class="nav-titulo">7 máscaras</span>
+    <button class="nav-indice-btn" id="btnIndice" aria-expanded="false" aria-controls="indicePanel">Índice</button>
+  </div>
+  <div class="indice-panel" id="indicePanel" role="navigation">
+    <ul class="indice-lista">
+      <li><a href="https://hunicornia.es/7-mascaras/el-nacimiento-de-las-estrellas/">1. El nacimiento de las estrellas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-partida/">2. La partida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-cima/">3. La cima</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-conjuncion/">4. La conjunción</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-reencuentro-de-los-elegidos/">5. El reencuentro de los elegidos</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-abismo/">6. El abismo</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-tercer-elegido/">7. El tercer elegido</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-despertar/">8. El despertar</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-opera/">9. La Ópera</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-huida/">10. La huída</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-eco/" aria-current="page">11. El eco</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-silencio/">12. El silencio</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/las-atalayas/">13. Las atalayas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-ira/">14. La ira</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-impotencia/">15. La impotencia</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-bosque/">16. El bosque</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-despedida/">17. La despedida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-juicio-final-de-los-dioses/">18. El juicio final de los dioses</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-batalla/">19. La batalla</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/un-nuevo-amanecer/">20. Un nuevo amanecer</a></li>
+    </ul>
+  </div>
+  <div class="progreso-barra"><div class="progreso-fill" id="progFill"></div></div>
+</nav>
+<main class="lector-contenido" data-lectura>
+  <h1 class="obra-titulo-h">7 máscaras</h1>
+  <p class="obra-subtitulo">La búsqueda · Capítulo 11 de 20 · Castellano</p>
+  <div class="cap-bloque">
+    <h2 class="cap-h2"><span class="cap-num">La búsqueda</span>El eco</h2>
+    <p class="lector-p dialogo">— Mmm… –un profundo suspiro–. Ya estoy en casa –dijo con los ojos entreabiertos y una voz susurrante–. No sabía que Tanuk ik podía hacer una cosa así, nunca me lo había dicho, aunque tampoco se lo he preguntado. Bueno… –Geneviève se giró sobre la cama, tomó el reloj que había sobre la mesita–. Son las cinco y media, que horror, aún falta una hora y cuarenta y cinco minutos para que suene el despertador. Aprovecharé este rato para descansar, antes de que entre papá a despertarme para ir a clase. Geneviève cerró los ojos y quedó traspuesta hasta que llegó el momento de continuar su rutina.</p>
+    <p class="lector-p dialogo">— Aayyy… Ayy… que dolor. Jamás me había caído de la cama. Realmente me estoy volviendo viejo. Uff… tanto ajetreo nocturno me está dejando destrozado –dijo levantándose del suelo–. Todavía es de noche. Estoy algo mareado, despertarse a deshora no es muy práctico tomando pastillas para dormir –Dimitri se acercó a la puerta, la abrió asomándose al pasillo. Todo estaba en silencio, sólo se oía el reloj de pared marcar el paso de cada segundo, eran las siete de la mañana–. Aún queda una hora para despertar y marchar al trabajo. Intentaré descansar, esta noche ha sido demasiado dura –el muchacho se acostó en la cama, no podía conciliar el sueño, cerró los ojos y se quedó inmóvil, con la mente en blanco, dejándose llevar por el silencio. Tranquilo.</p>
+    <p class="lector-p">Mucho más lejos, al otro lado del atlántico, Charles Vincent abría los ojos. No recordaba nada de lo que había sucedido en sus sueños, ni tampoco de lo que sucedía en su vida real. La luz apenas entraba por la ventana de la habitación. Sobre la manta, a la altura de sus pies, un perro pequeño dormía. Una mujer desconocida barría la habitación, sonreía. En el lado derecho de la cama una bandeja con comida. Un cuarto muy austero, nada más que mencionar. La mujer se marchó para volver poco rato después, dio de comer y aseó a Charles Vincent. Nero despertó, también quería comer, bajó al suelo y comió el pienso de su comedero, un par de vueltas por la habitación y subió de nuevo junto a su dueño. La señora se marchó, los dos quedaban solos, era de noche y Charles estaba despierto, el perro velaba junto a él. Esa era la rutina de todos los días.</p>
+    <p class="lector-p">Daikuku despertó en su cama. Era de día, la luz pálida del amanecer se adivinaba tras la cortina. Yoyimba estaba dormida, recostada sobre el sillón desde el cual velaban el sueño del pequeño. Daikuku levantó ligeramente la cabeza. Namku todavía estaba en casa, se oían sus pasos. El pequeño giró su cuerpo hacia la puerta, estaba demasiado cansado para salir de la cama. Se quedó así, acostado, mirando hacia el pasillo, esperando a que su padre pasara. Namku aparecía asomándose lentamente tras la puerta sin hacer ruido. Miró a Daikuku, al verlo despierto se sorprendió gratamente, se acercó a él con sigilo, sentándose sobre la cama.</p>
+    <p class="lector-p dialogo">— Estás despierto, hijo mío –susurró al oído–. Mamá se acaba de dormir, ha estado toda la noche velando por ti, me tocaba a mí estar contigo, pero dejó que yo durmiese para poder salir hoy con los rebaños, no puedo faltar tantos días a los pastos. Estará muy cansada, así que dejémosla dormir. ¿Cómo ha ido todo?</p>
+    <p class="lector-p dialogo">— Bien, papá –musitó Daikuku–. Todo va bien, ya somos cuatro, pero todavía queda por encontrar a los tres restantes. Estamos en camino, hay muchos peligros y dificultades, pero hasta ahora lo hemos superado todo. Sólo que estamos muy cansados, ser consciente en el mundo de los sueños es muy agotador, es como pasar el día entero sin dormir.</p>
+    <p class="lector-p dialogo">— Entiendo –asintió su padre–. Descansa entonces, no hagas nada, aprovecha y recupera las fuerzas, come lo que te prepare tu madre.</p>
+    <p class="lector-p dialogo">— Y tú, ¿qué tal estás, papá?</p>
+    <p class="lector-p dialogo">—Yo estoy bien, como todos los días, algo cansado quizás. Esta noche tuve un mal sueño, no lo recuerdo bien, pero sentí como si una criatura me sujetase el cuerpo sin dejarme mover. Estaba dormido, pero consciente de que estaba en la habitación, sobre la cama, inmovilizado por un gran peso y no podía despertar. Nada raro, a veces se sueñan cosas así. Bueno, mi pequeño, he de marcharme ya, volveré al caer el sol, espero encontrarte todavía despierto. Hasta la noche, hijo –Namku besó la frente del niño.</p>
+    <p class="lector-p dialogo">— Hasta luego, papá –su padre salía de la habitación, la puerta de la calle se cerraba tras él.</p>
+    <p class="lector-p">Daikuku quedaba sobre su lecho. Estaba pensativo, las palabras de su padre le habían causado cierta extrañeza, recordaba lo que había dicho Tanuk ik “a cada instante que pasa Moor se hace más poderoso, cada vez más son los que sucumben ante la tentación de su poder”. Daikuku intentaba encontrar el nexo a tan peregrino suceso, puede que la pesadilla no hubiese sido azarosa, ¿y si las criaturas estaban tratando de corromper la forma ensoñada de su padre?</p>
+    <p class="lector-p dialogo">— Es posible que papá piense que ha sido casualidad, pero no creo que Manamá opine lo mismo cuando se lo cuente.</p>
+    <p class="lector-p">Daikuku cerró los ojos, acurrucado en la cama, cómodo y calentito, esperaría acompañando a su madre hasta que despertase.</p>
+    <p class="lector-p">No hacía mucho que había amanecido, el reloj de pared daba las ocho, era el momento de despertar. Dimitri se levantó de la cama, estaba agotado a pesar del pequeño descanso. Sabía que debido a su enfermedad, sus padres no tenían en cuenta que se levantase tarde, incluso su jefe le consentía las faltas, no era algo que pudiese evitar. No tenía ganas de pasar el día tumbado, se vistió y se dirigió a la cocina. Su madre había preparado el desayuno y metía el almuerzo en dos pequeñas bolsas de tela. Su padre tomaba el café sentado a la mesa, Dimitri se sentó junto a él y desayunó. No era una familia asidua a la conversación, eran buenos padres, pero distaban mucho de las inquietudes del joven, ni siquiera entre ellos hablaban demasiado. Al terminar, ambos cogieron el almuerzo y se despidieron de su madre y esposa. Salieron de casa en dirección a la cantera. Dimitri trabajaba repasando piedras a mano durante las casi diez horas que duraba el día. No había luz artificial en la montaña, así que al caer la noche volvían a casa.</p>
+    <p class="lector-p dialogo">— Buenas noches, papá –dijo la señora antes de marcharse de la habitación. Todo había quedado recogido, llevaba la bandeja en las manos–. Cuida bien de papá, Nero, si ocurre algo ladra fuerte y vendré en seguida -la puerta se cerró tras la mujer.</p>
+    <p class="lector-p">Nero estaba sentado sobre el regazo de Charles Vincent. En la oscuridad tan sólo entraba la lejana luz de las farolas de la calle. Las estrellas brillaban junto a un estrecho hilo de luna creciente. La ciudad estaba en silencio. La hija de Charles dormía en la habitación contigua junto a su esposo, en las otras dos habitaciones descansaban sus dos nietos. Nero era lo suficientemente espabilado como para avisar a su hija en caso de que algo ocurriera, siempre que olfateaba algún problema en su amo, se acercaba a la habitación del matrimonio y ladraba para que comprobasen el estado de Charles. La noche era tranquila, nada fuera de lo común podría pasar. Bueno, en realidad aquélla fue algo dispar a las otras, el hombre solía dormir por la noche, exceptuando alguna rara vez en que despertaba en la madrugada. Eran las once, estaba despierto y con los ojos bien abiertos, pero no era nada preocupante ni para su hija ni para Nero, no importaba cuando dormir ni cuando velar. Para Charles Vincent ya no quedaba nada que hacer, únicamente dejaba pasar el tiempo.</p>
+    <p class="lector-p dialogo">— ¡Geneviève! Geneviève, es la hora.</p>
+    <p class="lector-p dialogo">— Ya estaba despierta, papá. Me visto y voy.</p>
+    <p class="lector-p">La moza se vistió, se sentó sobre su silla de ruedas y llegó a la cocina. Su madre y su padre la esperaban desayunando. Geneviève se acercó y comió con ellos.</p>
+    <p class="lector-p dialogo">— Para haber estado despierta, hoy has tardado algo más de lo habitual –dijo su padre irónico.</p>
+    <p class="lector-p dialogo">— Uff… Esta noche no he dormido nada bien, casi estoy peor que cuando me acosté.</p>
+    <p class="lector-p dialogo">— Tienes razón, mi princesa tiene cara de rana recién levantada. Deberías dormir más.</p>
+    <p class="lector-p dialogo">— Te he puesto doble ración de chocolate, tómatelo, te ayudará a recuperar la energía que te falta –dijo su madre–. Seguro que va muy bien para levantarte el ánimo.</p>
+    <p class="lector-p dialogo">— Bueno, ya dormirás esta noche, te acuestas antes y ya está solucionado. Ahora es momento de ir a la escuela, venga, Geneviève, ¿lo tienes todo?</p>
+    <p class="lector-p dialogo">— Sí.</p>
+    <p class="lector-p dialogo">— Pues vámonos, hoy te llevaré yo al instituto. Mamá tiene que hacer unos papeleos antes de ir al trabajo.</p>
+    <p class="lector-p">El padre de la jovencita cogió el almuerzo y lo guardó en la mochila, se lo cargó a las espaldas, y empujó a Geneviève hasta el coche. Los tres salían a la vez de casa, tomaron el ascensor que les llevaba hasta el garaje. Allí cada uno tomó un coche, se despidieron. Padre e hija marchaban hacia el instituto, algo más de veinte minutos de calles. Al llegar a la puerta del recinto descargó la silla y la ayudó a subir en ella.</p>
+    <p class="lector-p dialogo">— Un beso, cariño, vendré esta tarde a la hora de siempre. Pórtate bien y aprende mucho –decía apresurado dándole un beso en la frente.</p>
+    <p class="lector-p dialogo">— Sí, papá, pásalo bien en el trabajo.</p>
+    <p class="lector-p dialogo">— Divinamente –contestó alejándose.</p>
+    <p class="lector-p">Geneviève se dirigió hacia las clases, el reloj estaba a punto de anunciar las nueve de la mañana, ésa era la hora de comienzo de una jornada que duraba hasta las cuatro y media de la tarde. El tiempo de estudio había pasado. El padre de Geneviève esperaba en la puerta.</p>
+    <p class="lector-p dialogo">— ¿Qué tal, mi chica?</p>
+    <p class="lector-p dialogo">— Como siempre, una pérdida de tiempo. Un día más me doy cuenta de que malgasto mi vida con esta enseñanza estúpida. Aprendo mucho más leyendo libros encerrada en casa que viniendo a este antro de impresentables funcionarios y alumnos requetetontos –ambos subieron al coche, dirigiéndose a casa.</p>
+    <p class="lector-p dialogo">— Cuando acabes de estudiar podrás hacerte política y remodelar el sistema educativo.</p>
+    <p class="lector-p dialogo">— No sé si aguantaré esta insidia interminable.</p>
+    <p class="lector-p dialogo">— Tranquila, princesa, no seas así, de sabios es ser paciente. Algún día podrás recuperar el tiempo perdido, pero por ahora tendrás que aceptar lo que impone el sistema. Vivimos en un mundo de ignorantes donde un título vale más que mil saberes. Pronto acabarás el instituto y podrás hacer lo que quieras. Dedicar todo tu tiempo a aprender, a regocijarte en las culturas del hombre. Hoy harás los deberes de cada tarde, la cena y por último a dormir.</p>
+    <p class="lector-p dialogo">— Parecemos autómatas. Los días marcados por un horario estipulado, trabajo, casa, trabajo, casa. Esto no es vida. Me voy a hacer bohemia y que le den vientos a todo esto.</p>
+    <p class="lector-p dialogo">— Créeme, los años estudiantiles son mucho mejores que los laborales, ahora no tengo tiempo ni de respirar, y eso que tu madre y yo trabajamos en una oficina. Imagina que fuésemos albañiles o campesinos. Estaríamos de sol a sol trabajando muy duro por cuatro chavos. Quéjate ahora que puedes.</p>
+    <p class="lector-p dialogo">— Estudiaré cuatro carreras a distancia, sin verle la cara a ningún profesor sinvergüenza, y después me dedicaré a vivir del cuento. Lo tengo claro. Ministra me voy a hacer. Ja, ja, ja –reía divertida.</p>
+    <p class="lector-p">Al llegar a casa Geneviève hizo los deberes, cenó junto a sus padres mientras daban el noticiero en la televisión. Ellos seguían ante el aparato cuando ella se retiró a su habitación. Aquella noche dejó su diario de lado, tan sólo escribió una sola cosa en la página de ese día, “Dimitri”, pensaba escribir más tarde, antes de dormir.</p>
+    <p class="lector-p">Habían pasado varias horas desde las primeras luces de la mañana. El niño seguía en la cama. Yoyimba, acariciada por la suave luz del sol, comenzaba a despertar. Daikuku se reclinó sobre la almohada, miraba fijamente a su madre.</p>
+    <p class="lector-p dialogo">— Hola, mamá –susurró. Yoyimba entreabrió los ojos.</p>
+    <p class="lector-p dialogo">— Hola, hijo mío –balbuceó–. ¿Qué tal ha ido todo?</p>
+    <p class="lector-p dialogo">— Muy bien, mamá, todo va como debe. Pronto llegaremos al final –contestó Daikuku en voz baja. Yoyimba se levantó despacio del sillón y con caminar pausado se dirigió a la cama.</p>
+    <p class="lector-p dialogo">— Estoy muy orgullosa de ti –dijo acostándose junto al pequeño–. Soy feliz porque eres uno de los elegidos para salvar el mundo, y me alegra mucho que sigas aquí junto a tu padre y a mí. No sabes cuánto me hubiese apenado verte marchar. Debes prometerme que al igual que viajas cada noche al mundo de los sueños para enfrentarte a Moor, volverás cada mañana a casa para estar conmigo y con papá. ¿Te queda claro? –preguntó sonriendo. Daikuku la miraba fijamente.</p>
+    <p class="lector-p dialogo">— Te lo prometo -ambos se abrazaron estrechamente y quedaron un rato juntos echados sobre la cama.</p>
+    <p class="lector-p dialogo">— Debe de estar cerca la hora de comer ¿no crees?</p>
+    <p class="lector-p dialogo">— No sé si está cerca o lejos, pero yo tengo muchas ganas de comer sea la hora o no. Tengo el apetito de un león, me comería un cordero entero, “beeee” incluido –contestó pizpireto.</p>
+    <p class="lector-p dialogo">— ¿Tienes predilección por alguna comida en especial o prefieres que elija yo el manjar del gran guerrero?</p>
+    <p class="lector-p dialogo">— Mmm… Di lo que tienes pensado hacer y si me gusta lo preparas, si no, decido yo.</p>
+    <p class="lector-p dialogo">— Me parece un buen trato. ¿Qué te parece un puré de patatas, huevos duros y muslos de pollo?</p>
+    <p class="lector-p dialogo">— Es casi lo que estaba pensando, sólo que a ese gran manjar le falta un gran postre. Uvas y saltamontes fritos con miel. ¡Qué bueno! Y creo que ya está. Si me quedo con hambre pediré un cuarto plato todavía por decidir.</p>
+    <p class="lector-p dialogo">— Me parece una buena elección, es una portentosa comida para un hombre fuerte como tú. En seguida te lo preparo, cuando esté acabado comeremos los dos. Yo también tengo hambre, pero menos que tú, he de mantener esta estupenda figura para ser la envidia de las cotorras de las vecinas. Las tareas del hogar, cuidar el corral y tejer, no gastan tanta energía como salvar el mundo. ¿Te quedas en la cama mientras preparo la comida?</p>
+    <p class="lector-p dialogo">— Sí, mamá, estoy cansado. Me quedaré un rato más, llámame cuando esté listo y pongo la mesa.</p>
+    <p class="lector-p dialogo">— Muy bien. Descansa. Yo vendré a buscarte cuando tenga preparado tu manjar –y dándole un beso en la frente se marchó a la cocina.</p>
+    <p class="lector-p">Daikuku permanecía acostado. Permanecía pensativo, todo cuanto había vivido, vagaba por su mente dejando una incómoda sensación de vacío. Todo aquello había sucedido, Geneviève, Dimitri, Charles Vincent, y sin embargo, estaba tumbado sobre la cama, a mucha distancia de ellos. Parecían tan lejanos, como si nunca hubieran existido. Daikuku permaneció así durante largo rato, con la mirada perdida. Yoyimba había terminado de cocinar, la mesa estaba lista. La madre entró en la habitación.</p>
+    <p class="lector-p dialogo">— Ya está todo preparado, ¿te apuntas? –Daikuku, al oír las palabras de su madre, despertó sobresaltado de su alelamiento.</p>
+    <p class="lector-p dialogo">— ¿Qué has dicho, mamá?</p>
+    <p class="lector-p dialogo">— Digo que ya está la mesa, y que si tú no vienes me lo comeré yo todo.</p>
+    <p class="lector-p dialogo">— Ja, ja, ja, eso es imposible.</p>
+    <p class="lector-p dialogo">— ¿Apostamos una moneda de cobre a que no te lo zampas todo?</p>
+    <p class="lector-p dialogo">— Esa moneda está ganada, mamá –respondió alegremente–. Sabes que no sobrará nada, además, espero que hayas hecho más de lo que te pedí, estoy seguro de que no tendré suficiente para saciar mi apetito.</p>
+    <p class="lector-p dialogo">— Uuu… que fanfarrón, eso está por ver, jovencito. Seguro que yo acabo con toda la comida antes que tú –Yoyimba reía.</p>
+    <p class="lector-p dialogo">— Ya, ya, que te lo has creído.</p>
+    <p class="lector-p">Se sentaron a la mesa, madre e hijo comían. Yoyimba masticaba despacio mientras miraba fijamente a su niño. Pensaba en la excesiva envergadura de la empresa que le había sido encomendada, en como siendo así, podía tenerlo frente a ella, igual que siempre, como si nada estuviese sucediendo. Por su parte, Daikuku comía desaforadamente, apenas masticaba lo que se llevaba a la boca. Tan sólo tenía ojos para la comida, parecía como si hubiese estado una semana sin probar bocado. Ambos terminaron, quedaron en silencio.</p>
+    <p class="lector-p dialogo">— Te encuentro algo triste, lo veo en tus ojos –dijo tras largo rato observando a su hijo–. Debe ser muy difícil cargar con semejante responsabilidad para un niño de tu edad. ¿Es por eso?</p>
+    <p class="lector-p dialogo">— No… En realidad no, mamá. Es dificultoso y arduo, pero me gusta lo que hago, me honra y eso me hace sentir bien. Tengo un único pensamiento en la mente, y es encontrar al resto de elegidos para acabar con la amenaza de Moor.</p>
+    <p class="lector-p">Es que cuando despierto en mi habitación y os veo aquí de nuevo, los tres juntos, es como si nada sucediese, como si estas dos largas noches no hubiesen existido. Han sido solamente dos jornadas, y parece que llevamos semanas de camino. Es una sensación de extrañeza, estoy algo desubicado. ¿Es curioso, verdad? Sé que debo llevar a cabo y cumplir lo que se me ha encomendado, pero a veces me gustaría quedarme aquí y dejar que otro se encargue de salvar el mundo. Siento que podríamos morir en cualquier instante aplastados por Moor y sus criaturas, aunque se trate de un sueño. Es difícil de explicar –respondió alicaído.</p>
+    <p class="lector-p dialogo">— Comprendo, hijo mío. Cuánto me gustaría concederte lo que pides y que no tuvieses que sufrir ese suplicio. No sólo tú vives esa desventura de ser un elegido, en menor medida sufro mil penas cada noche cuando te vas, únicamente recupero el aliento cuando te veo despertar sano y salvo. Conozco muy bien la leyenda de las siete máscaras. Me llena como madre que tu misión sea defender el mundo junto a los otros de la terrible amenaza del Señor del Odio. Pero sé muy bien cómo acabaron cinco de los elegidos que lucharon en la primera guerra y los dos únicos supervivientes. Detesto con todo mi ser que tú formes parte de este nuevo lance –Yoyimba lloraba. Se levantó de la mesa y abrazó a Daikuku.</p>
+    <p class="lector-p dialogo">— No llores, mamá, nadie ha dicho que no vaya a volver. Todavía queda un largo camino, pueden suceder muchas cosas. Todavía nos resta encontrar a tres elegidos antes de luchar contra Moor, y además, ya no es tan fuerte como antes. Estoy seguro de que todos sobreviviremos a la batalla –dijo Daikuku sonriente, intentando despreocupar a su madre.</p>
+    <p class="lector-p dialogo">— Sí. Tienes razón, hijo mío. Cuando todo esto pase, seguro que reímos recordando tanta lágrima absurda. Anda, sal a la calle y toma algo el sol, seguro que te da fuerzas.</p>
+    <p class="lector-p">Daikuku no tenía ganas de salir, pero conocía los sentimientos de su madre, necesitaba estar sola. Así que salió y se sentó en un poyo de piedra junto a la ventana. Yoyimba recogía la mesa entre lágrimas, embotada por la preocupación que no podía evitar. El niño miraba de lado a lado la pequeña aldea, todo parecía tan normal, como si nada le ocurriese al mundo. Ante esa visión se cuestionaba la certeza de sus sueños, ¿y si nada estaba pasando? ¿Y si todo no era más que una ilusión? Un desvarío de una tribu perdida, la locura de un chamán o la mucha imaginación de un padre. Demasiadas cosas juntas para no ser real. Manamá podía estar tarado, pero Daikuku confiaba plenamente en su padre, Namku no estaba loco. ¿Y dónde quedaban Dimitri, Geneviève, Charles Vincent y los otros elegidos? No. Eso no podía ser un espejismo. No hay tanto loco en el mundo como para unir cuatro continentes en un mismo sueño. No había duda, lo que estaba pasando era la verdad del universo, la razón por la cual los hombres existen. Daikuku y sus amigos eran los nuevos encargados de salvar a la especie humana y al resto del cosmos de la furia de Moor. La búsqueda estaba en su ecuador y era bien cierta a pesar de la rutina que vivían los cuatro cada día. Una carga tan pesada puede hacer mella en el corazón del más valeroso guerrero. Estaba asustado, hasta ese momento no se había parado a pensar en las posibles consecuencias de ser un elegido, en el fin que podría esperarles. La batalla contra el señor oscuro llegaría pronto, en ella podía morir él y cualquiera de sus compañeros, o incluso todos. ¡Eso sería terrible! Exclamaba en sus adentros. No estaba preparado para eso. Tras largo rato de suspiros llegó a la conclusión de que sería mejor disipar los malos pensamientos, centrarse en un objetivo, vencer la batalla junto a sus amigos sin que ninguno pereciese en el combate. Estaba prohibido pensar en finales funestos.</p>
+    <p class="lector-p">El día pasaba en la aldea. El pequeño seguía enfrascado en sus cavilaciones. La vida seguía a su alrededor, la gente de aquí para allá realizando sus quehaceres, hablando, gritando, jugando, ignorando todo lo que a Daikuku le ocurría, todo cuanto ocurría más allá del poblado.</p>
+    <p class="lector-p dialogo">— ¡Daikuku!, ¡Daikuku! –exclamó una voz–. Jovencito, espabila y vuelve aquí –Daikuku, absorto, había perdido la noción del entorno. La voz lo despertó dirigiendo su mirada hacia aquel que llamaba su atención. Era Manamá.</p>
+    <p class="lector-p dialogo">— Vaya, papá me dijo que te acercarías al caer el sol.</p>
+    <p class="lector-p dialogo">— ¿Y en qué momento del día te crees que estamos? –preguntó punzante.</p>
+    <p class="lector-p dialogo">— No me di cuenta de que había pasado tanto tiempo, hace un momento que salí.</p>
+    <p class="lector-p dialogo">— Pues no, jovencito, la tarde ya ha pasado y es momento de que me cuentes todo lo que has vivido esta noche, debes contármelo todo sin pasar por alto detalle alguno. Además, yo también he de darte noticias muy interesantes. Mientras tú duermes, yo medito e intento descubrir todo aquello que nos puede ser de ayuda. He visto a Golonku en mis sueños, y me reveló secretos que te serán imprescindibles en tu aventura.</p>
+    <p class="lector-p">Manamá entró en la casa con él. Yoyimba estaba sentada sobre un taburete, pensativa. Al ver entrar al brujo sin llamar, no tuvo fuerzas para reñirle por sus muchas confianzas. Se levantó y le recibió con un vaso de agua.</p>
+    <p class="lector-p dialogo">— Vaya, Manamá, que rápido se pasa el tiempo, ya ha caído la tarde y estás aquí como dijiste. Y también sigues entrando sin llamar, pero te siento como uno más de la familia.</p>
+    <p class="lector-p dialogo">— Hola, Yoyimba, gracias por los honores. Imagino que este vaso de agua es para tragar mejor el aperitivo que supongo me estás preparando.</p>
+    <p class="lector-p dialogo">— Sí, claro que sí, te estoy cocinando caca de gallina. ¿Qué te parece?</p>
+    <p class="lector-p dialogo">— Deliciosa, no sabes lo que puede llegar a comer un chamán cuando tiene hambre y no tiene quien le cocine –Yoyimba torció el gesto asqueada. Sacó un par de tortas de patata, algo de miel y lo dejó en la mesa–. Debo hablar con tu hijo, no hay momento que perder, he tenido revelaciones de máxima trascendencia.</p>
+    <p class="lector-p">Manamá entró en el cuarto y tras él, Daikuku. Yoyimba quedó fuera, dejándolos a solas. Apoyada con el oído en la puerta, intentando oír algo. Manamá se sentó en el sillón y Daikuku sobre la cama.</p>
+    <p class="lector-p dialogo">— Bueno, pequeño Daikuku, es momento de que me cuentes lo ocurrido en el mundo de los sueños. No omitas nada, todo es importante. Vamos, el tiempo apremia, empieza –decía el viejo apresurado.</p>
+    <p class="lector-p dialogo">— Está bien, no vayas tan deprisa, por más que insistas no acabaré antes. Desperté encontrando a Geneviève y a Dimitri junto a mí, sentados sobre las piedras en las que había atado las cuerdas la noche anterior –Daikuku continuó su relato hasta llegar al mismo momento en que Tanuk ik los hizo despertar en el Estanque de los Nenúfares.</p>
+    <p class="lector-p dialogo">— Es algo increíble, Daikuku. Tu relato me fascina. Te envidio, no sabes cuánto desearía ser yo el que estuviese en tu lugar –dijo Manamá efusivo con la mirada ida. Daikuku al oír las palabras del brujo no pudo evitar recordar sus sentimientos y una lágrima recorrió su mejilla. Al verlo, Manamá cambió el gesto y se arrodilló frente a Daikuku–. Es cierto, joven elegido, no sé lo que digo, siento mucho haber dicho esas palabras. La carga que sobre ti recae es demasiado grande incluso para el más fuerte y valiente de los hombres. Ni siquiera yo podría con tal responsabilidad. Mi deber es ayudarte y hacer más liviano y llevadero el peso de tu destino. No te hundas, pues has de seguir con tesón tu camino. Bien es verdad que ni tus padres ni yo podemos acompañarte al otro paralelo, pero velamos y cuidamos de ti desde aquí. No debes sentirte solo, tu padre está mucho más cerca de ti de lo que puedas llegar a creer. Me gustaría luchar junto a ti. Puedo ayudarte desde este mundo con lo poco que descubro a cada día que pasa –dijo con profundo arrepentimiento. El chamán deslizó su arrugada mano sobre las mejillas del pequeño enjugando su llanto–. No es tiempo de tristezas, Daikuku, has de ser más fuerte. Tú y el resto de elegidos debéis daros prisa.</p>
+    <p class="lector-p">Mientras meditaba volví a ver en sueños a tu antepasado, Golonku. Me mostró como la luna se tornaba roja. El astro está en fase creciente y en tres días brillará completo en el cielo, inaudito pero cierto. Debes encontrar al resto de elegidos antes de la tercera noche. Os quedan dos jornadas para encontrarlos y una última para enfrentaros a Moor. Cuando la luna brille refulgente en la tercera noche, el Señor del Odio y sus ejércitos serán lo suficientemente numerosos y fuertes para atacar y destruir la humanidad. Cuando eso haya sucedido, Moor habrá absorbido toda la energía de los hombres, y tendrá el poder para escapar del foso del olvido y destruir la tierra. Sé que es poca ayuda la que te ofrezco, pero me siento útil al saber que mis obsequios os sirven de algo. Me alegra que las semillas de baobab os salvasen de uno de los generales de Moor. Ahora nuevamente volvéis a estar desprotegidos ante un ataque.</p>
+    <p class="lector-p">Toma este pequeño obsequio, en el interior de la bolsa hay cuatro espolones de gallo. Al igual que las tres semillas, poseen poderes que los hacen únicos. Utilízalos cuando vuestra vida esté en peligro y no haya más remedio.</p>
+    <p class="lector-p dialogo">— Gracias, Manamá, tus presentes siempre son de gran ayuda. Si no fuese por ti, aquel demonio habría acabado con nosotros. Seguro que estos espolones de gallo nos salvan en un futuro de la amenaza de Moor –Daikuku quedó un instante mirando el pequeño fardo que contenía las uñas–. ¿Sabes, hechicero? Hay algo que no te he dicho, es algo que no tiene que ver con la búsqueda ni con la batalla. Pero después de todo lo visto, podría ser algo malo.</p>
+    <p class="lector-p dialogo">— ¿De qué se trata?</p>
+    <p class="lector-p dialogo">— Cuando desperté tuve ocasión de hablar con mi padre antes de que fuese a pasear los rebaños. Me dijo que durante esta noche sintió la presencia de una criatura que le impedía moverse, que la notaba sobre él inmovilizándolo, que era consciente del sueño y quería abrir los ojos. Con la llegada de la mañana pudo despertar y la presencia se desvaneció liberándole. Él cree que sólo ha sido una pesadilla, dice que a veces ocurre –confesó preocupado.</p>
+    <p class="lector-p dialogo">— Vaya, es cierto, Daikuku, a veces mientras dormimos queremos despertar pero algo nos sujeta. Es una pesadilla, sí. Pero no creo que éste sea el caso, no ha sido un simple mal sueño. Estoy más que seguro de que una de las criaturas de Moor ha intentado retener su esencia en este mundo, incluso puede que haya intentado apoderarse de ella. Pero tu padre tiene el corazón de un valeroso guerrero, y apuesto a que el Señor del Odio no ha logrado corromper su espíritu y sumarlo a sus huestes.</p>
+    <p class="lector-p">Sospecho que ahora que han dado con él, las bestias lo retendrán cada noche para evitar cualquier mal mayor –Daikuku atendía extrañado–. Es una situación delicada, y creo que tenemos justo lo que necesitamos para que esa criatura no nos vuelva a visitar –Manamá sacó de su bolso de utensilios un rudo amuleto tallado en hueso de elefante. El objeto se asemejaba a un hombre sosteniendo un corazón entre sus manos.</p>
+    <p class="lector-p dialogo">— ¿Qué representa ese ídolo? –preguntó el pequeño intrigado.</p>
+    <p class="lector-p dialogo">— Este talismán protegerá a tu padre de las criaturas de Moor. Déjalo bajo su cama antes de que vuelva de la estepa y no le digas nada. Ahora es tiempo de que me vaya, ya he hecho todo cuanto podía hacer hoy por ti. Pronto volverás a dormir, y deberás continuar con tu destino –Manamá acarició la cabeza del niño. Abrió la puerta, de pie en el pasillo aguardaba Yoyimba con semblante preocupado–. Volveré mañana para ver a tu hijo. Buenas noches, mujer –dijo marchándose.</p>
+    <p class="lector-p dialogo">— Buenas noches, chamán.</p>
+    <p class="lector-p">La puerta de entrada se cerró tras el viejo. Yoyimba desde el pasillo miraba fijamente a su pequeño. Daikuku apretaba con fuerza el amuleto.</p>
+    <p class="lector-p dialogo">— Tranquila, mamá, todo irá bien. Manamá siempre me ayuda, nunca trae malas noticias. No debes estar preocupada.</p>
+    <p class="lector-p dialogo">— He oído que sólo quedan tres días. Puedo estar preocupada, es más, estoy muy preocupada.</p>
+    <p class="lector-p dialogo">— Esta noche encontraremos a dos elegidos, mañana al siguiente, y la tercera noche derrotaremos a Moor. Es mucho mejor así, menos tiempo, no se alarga la espera y el camino se hace menos angustioso. Yo lo prefiero. No es razón para estar más o menos preocupada, ¿no crees?</p>
+    <p class="lector-p dialogo">— Sí, creo. Si tú estás calmado no hay razón para que yo esté alterada. También pienso que es mejor así. Tres días más, y todo volverá a la normalidad. Sí, así será –Yoyimba suspiró y miró apenada a Daikuku–. Pronto vendrá tu padre, cenaremos los tres juntos antes de que te vuelvas a dormir.</p>
+    <p class="lector-p dialogo">— Claro, mamá. Será estupendo que estemos juntos.</p>
+    <p class="lector-p">Yoyimba se dirigió a la cocina y se dispuso a preparar la cena. Daikuku continuaba sentado en la cama. Con la mirada perdida, pensando en que pronto volvería al mundo de los sueños, recordaba las palabras de Manamá. Sólo quedaban dos días para encontrar a los elegidos, puesto que la tercera serían llamados a la guerra por la supervivencia.</p>
+    <p class="lector-p">Mientras cavilaba en todo lo que le sucedía, su mano se fue relajando poco a poco y el amuleto se deslizó hasta caer al suelo. Daikuku al ver el ídolo recordó que debía dejarlo bajo el lecho de su padre para que su magia tuviese efecto sobre las criaturas de Moor. Se asomó al pasillo con tiento, su madre estaba ocupada cocinando la cena. Se deslizó sin hacer ruido hasta el cuarto de sus padres, escondiendo el amuleto bajo el lado de la cama sobre el que dormía Namku. Sin levantar sospecha, apareció en la cocina.</p>
+    <p class="lector-p dialogo">— ¿Quieres que te ayude a preparar la cena, mamá?</p>
+    <p class="lector-p dialogo">— ¿Eh? –suspiró sorprendida–. No me había dado cuenta de que estabas ahí, Daikuku. Claro que me puedes ayudar.</p>
+    <p class="lector-p">Ambos prepararon la comida y pusieron la mesa, mientras, Yoyimba hablaba de los cotilleos y sucesos graciosos de la aldea intentando aliviar el cargado ambiente que colapsaba la casa. Todo estaba preparado, madre e hijo reían con los disparates de las gentes de la tribu.</p>
+    <p class="lector-p">La noche estaba cerca, los rebaños se oían llegar. Namku abrió la puerta de la casa, entró con una gran sonrisa, besó a su mujer y abrazó fuertemente a su retoño.</p>
+    <p class="lector-p dialogo">— ¡Vaya, qué gran recibimiento! Mi mujer favorita y mi hijo favorito –exclamó alegre.</p>
+    <p class="lector-p dialogo">— Papá, no tienes más mujeres ni tampoco más hijos. No tienes donde elegir a un favorito –dijo Daikuku sonriente. Namku soltó una carcajada.</p>
+    <p class="lector-p dialogo">— Tienes razón, hijo mío, pero incluso así, no dejáis de ser mis favoritos –dijo el padre levantando en brazos a su hijo y tomando por la cintura a Yoyimba–. Bueno… ¿y qué tal el día?</p>
+    <p class="lector-p">Los tres sentados a la mesa, comían, reían y charlaban de lo sucedido con los rebaños, con las mujeres de la aldea. Hablaban de todo menos de lo que realmente importaba para ellos. Aquella reunión familiar recordaba a una cena cualquiera en un día cualquiera, como solía suceder antes de la llegada de Moor. Pasó largo rato antes de que terminasen a la mesa. Nada quedaba ya sobre los platos, no había sobrado comida, los tres estaban bien cenados.</p>
+    <p class="lector-p dialogo">— Con el estómago lleno parece que todo se ve con otros ojos –exclamó Yoyimba sonriendo–. Sólo hace cuatro días que empezó todo, y ya echaba de menos estar así, los tres juntos.</p>
+    <p class="lector-p dialogo">— Yo también, mamá.</p>
+    <p class="lector-p dialogo">— Pues sí, tenéis razón los dos. Creo que a partir de hoy, hasta que todo esto pase, cenaremos juntos como ahora cada noche. Nos reservaremos la cena para estar unidos, y dejar durante un rato los problemas de lado. Votos a favor –los tres levantaron la mano–. Votos en contra –ninguno alzó el brazo–. Bueno, parece que ganamos nosotros, así que decidido, mañana repetiremos. Ahora es momento de recoger y de ir a dormir. Supongo que no aguantarás mucho tiempo despierto, me gustaría oír tu historia, pero será mejor que te acuestes ya. Además, yo estoy algo cansado y necesito dormir, ya sabes que esta noche no la he pasado tranquilo. Te espera un largo viaje, ten cuidado y sé tan valiente como lo has sido hasta ahora, tu madre y yo estamos a tu lado. Ahora dormiré mientras mamá permanece velándote. Cuando se encuentre cansada la relevaré, pero conociéndola, no creo que me haga despertar si tengo que pastorear mañana. Sea como sea, ambos cuidaremos de ti hasta que vuelvas –los tres en la habitación, Daikuku sobre la cama.</p>
+    <p class="lector-p dialogo">— Tú no sufras, Daikuku, yo me quedaré contigo, no me fio nada de tu padre, seguro que se mete en la cama contigo y se queda dormido. ¡Menudo gandul estás tú hecho! –exclamaba sonriente mientras le mordía en el cuello.</p>
+    <p class="lector-p dialogo">— ¡Auu! Haz caso a tu madre si no quieres que acabe castigándonos a sufrir sus temibles mordiscos –añadió riendo–. Bueno, Daikuku, llegó la hora de dormir al menos para mí –Namku se acercó y besó la frente del pequeño, besó a su esposa y salió de la habitación–. Buenas noches, hasta mañana.</p>
+    <p class="lector-p dialogo">— Buenas noches, papá –contestó Daikuku feliz, olvidando por un momento su destino.</p>
+    <p class="lector-p dialogo">— Buenas noches, esposo mío.</p>
+    <p class="lector-p">Namku se dirigió a su cuarto y se acostó sobre la cama en el lado en el que solía dormir, justo encima del talismán. Yoyimba se acercó a Daikuku, le dio un beso en la mejilla y le tapó con las sábanas.</p>
+    <p class="lector-p dialogo">— Buenas noches, hijo mío.</p>
+    <p class="lector-p dialogo">— Buenas noches, mamá.</p>
+    <p class="lector-p">Yoyimba se sentó en el sillón, cubriéndose con una manta. Daikuku apagó con un soplido la vela, quedando a oscuras. Sólo se veía el brillo de los ojos de su madre y su silueta dibujada por la tenue luz de luna que entraba por la ventana. Daikuku cerró los ojos, respiraba profundamente relajando su cuerpo, cansado. En apenas media hora el pequeño había quedado dormido, la voz de Tanuk ik resonaba en sus oídos. Yoyimba vigilaba atentamente.</p>
+    <p class="lector-p">Dimitri volvió del trabajo junto a su padre, la cena estaba preparada. Su madre como cada día había preparado la mesa. Trabajaba limpiando casas y llegaba algo antes que los hombres. Dimitri y su padre se asearon y una vez cambiados se sentaron a la mesa.</p>
+    <p class="lector-p dialogo">—Tienes mal aspecto, hijo mío, estás pálido. ¿Te encuentras bien? Ayer te quedaste dormido en la mañana, ¿sufres alguna recaída? Quédate en casa si lo necesitas –preguntó su madre.</p>
+    <p class="lector-p dialogo">— Es cierto, Dimitri. Hoy has trabajado duro, pero te observaba y parecías estar agotado, ¿acaso estás enfermo?</p>
+    <p class="lector-p dialogo">— No, no estoy enfermo, sólo algo cansado. Hace un par de noches que no duermo bien y tengo fuertes dolores de cabeza. Lo único que necesito es descansar. No creo que sea una recaída.</p>
+    <p class="lector-p dialogo">— No importa, será mejor que te quedes, así evitaremos males mayores. Sabes que tu salud es delicada –repuso la madre.</p>
+    <p class="lector-p dialogo">— Mañana veremos cómo amanece. Si estoy bien, iré a trabajar, en caso contrario me quedaré en la cama. No quiero preocuparos –padre, madre e hijo acabaron la cena–. Creo que me voy a acostar ya, disculpadme. Quitad la mesa por mí, por favor.</p>
+    <p class="lector-p dialogo">— Faltaría más, hijo. Acuéstate y duerme, debes recuperarte. Tu madre y yo nos encargaremos de la mesa.</p>
+    <p class="lector-p dialogo">— Gracias. Papá, mamá, buenas noches.</p>
+    <p class="lector-p dialogo">— Buenas noches, Dimitri –contestaron los dos al unísono.</p>
+    <p class="lector-p">El chico salió de la cocina, se dirigió a su cuarto y se sentó sobre la cama.</p>
+    <p class="lector-p dialogo">— Mañana no puedo ir a trabajar. Bien sé que hace falta el dinero, pero necesito descansar, estoy destrozado. No aguantaré picando piedra durante diez horas, y luego una noche de viaje por el otro mundo. No puedo seguir así –se decía a sí mismo, mirando su reflejo sobre un pequeño espejo que había sobre la mesita de noche–. Tengo sueño y en vez de dormir me dedico a salvar el mundo, y aquí todo parece seguir igual, nadie se entera de lo que está sucediendo. Charles tenía razón, me estoy haciendo mayor prematuramente, cansado y quejica. Debo de estar loco para seguir con esto –quedó un momento pensativo–. Ya no sé ni lo que me digo, jamás he sido normal, estoy más cerca del lado de los locos que del lado de los que se hacen llamar normales. Esto no tiene nada de raro, me gusta la idea de salvar el mundo, me atrevería a decir que es lo mejor que me ha pasado en la vida. La única pega es lo cansado que estoy. Los elegidos tendríamos que tener derecho a un día libre cada dos trabajados. Miento, deberían darme más vacaciones, toda la vida de vacaciones con todos los gastos pagados por salvar a la humanidad. Desde luego, qué gente tan desagradecida.</p>
+    <p class="lector-p">Se mordía los labios asombrado por semejante retahíla de sandeces. Suspiraba. Apagó la luz y se metió en la cama. Mareó durante un buen rato la almohada. Al fin la postura idónea, se quedaba dormido, oía la voz de Tanuk ik pronunciar su nombre.</p>
+    <p class="lector-p">Charles Vincent estuvo toda la noche en vela. Para él no había diferencia entre estar despierto y dormido, al menos hasta antes de saberse un elegido. Poco a poco se estaba haciendo de día, la persiana bajada proyectaba decenas de círculos de luz sobre la pared. Nero miraba atentamente a su dueño, esperaba a que éste se durmiese para cerrar los ojos también. La mujer se asomó a la habitación, entró, le dio un beso a su padre y volvió a salir. Los chavales entraron, “hasta luego, abuelo. Hasta luego, Nero”, se despidieron ambos. De nuevo la habitación quedó en silencio, se oía el ruido de la familia que marchaba al trabajo. Su hija se quedaba en casa para vigilar su salud. No había pasado mucho más de una hora desde que amaneció y Charles se quedaba dormido sin apenas darse cuenta. La voz del Hombre Elefante resonaba en la distancia. Nero continuó despierto, una vez asegurado del sueño de su amo, se acomodó entre sus piernas y haciendo buena cuna se quedó dormido.</p>
+    <p class="lector-p">Geneviève estaba acostada en la cama, llevaba algo más de hora y media leyendo “El fantasma de la Ópera”, poco antes había terminado “Frankenstein”. Era una enamorada de las novelas de fantasía y misterio. En la mesita ya aguardaba “El sabueso de los Baskerville”. Sin darse cuenta había pasado su tiempo de lectura. Estaba relajada, embelesada por la historia. Cerró el libro y se quedó tumbada boca arriba, el cansancio recorría todo su cuerpo. No le preocupaba faltar a clase, tenía la suficiente confianza para pedirles a sus padres un par de días libres de escuela en caso de necesidad, sólo había que fingir dolores muy fuertes en la columna y todo solucionado. Dejó el libro sobre la mesita, apagó la luz. La habitación quedaba tenuemente iluminada por unas estrellas fosforescentes pegadas en el techo. Al poco rato se durmió. La voz de su amigo llamaba desde el otro mundo.</p>
+    <p class="lector-p">Los cuatro elegidos quedaron dormidos a la vez, al igual que lo habían hecho al despertar, para ellos no había distancias largas ni husos horarios. Poco a poco perdían la consciencia llevados por la voz del Hombre Elefante, despertaban en el mundo de los sueños. Su cuerpo traslúcido tomaba forma en pocos segundos hasta hacerse completamente tangible.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+    <p class="lector-p dialogo">— Es tiempo de regresar y continuar con vuestro destino. Volved y despertad, amigos míos –con la última palabra del Hombre Elefante los cuatro abrieron los ojos. Estaban tumbados sobre el suelo, con las cuerdas atadas. Tanuk ik los miraba sentado frente a ellos–. Vamos, ya no es momento para descansar. Debéis apresuraros, levantad y continuad vuestro camino –despertaban con cierto remilgo, incorporándose despacio, únicamente Charles parecía fresco y descansado–. Por fin os veo en pie, sois más lentos que una tortuga. El tiempo apremia, vamos daos prisa, debéis encontrar a los siguientes elegidos. Llegad hasta los Vigías de las Atalayas, cruzad las Praderas del Cuco Rojo y el Palacio de las mil Puertas. Cuando los hayáis encontrado nos reuniremos de nuevo y os diré el paradero del último, tenemos mucha más prisa de la que pensáis. Moor se está haciendo demasiado poderoso, de seguir así en cuestión de tres días tendrá la fuerza suficiente para atacar el mundo de los sueños. Nos quedan tres noches hasta que la tercera luna brille sobre los dominios del Señor del Odio.</p>
+    <p class="lector-p dialogo">— También lo hará en el mundo real, la luna está creciendo –apuntó Daikuku.</p>
+    <p class="lector-p dialogo">— Pues no sé qué hacemos hablando todavía. Vamos, ¡corred!</p>
+    <p class="lector-p dialogo">— ¿Pero hacia dónde vamos? No sabemos el camino a seguir, Tanuk ik –dijo Geneviève nerviosa.</p>
+    <p class="lector-p dialogo">— Ya os lo dije, amiga mía, antes de despertar. Seguid por la orilla hasta el final, encontraréis el muro desnudo de vegetación, subid por allí y cruzad al otro lado, son dominios incompatibles. Encontrad al Cuco Rojo y seguidle, os llevará hasta el Palacio de las mil Puertas, cruzad la entrada correcta y llegaréis a vuestro destino, ya no puedo deciros nada más. No perdáis más tiempo. Desconfiad de todos, no estáis a salvo en este mundo, y mantened los ojos bien abiertos, el mal acecha en todas sus formas. Volveremos a vernos pronto. Venga, ¡fuera de aquí!</p>
+    <p class="lector-p dialogo">— ¡Nos veremos pronto, Tanuk ik! –dijo Daikuku mientras ya corría por la orilla.</p>
+    <p class="lector-p dialogo">— Eso espero, joven amigo.</p>
+    <p class="lector-p dialogo">— ¡Cuídate mucho, Tanuk ik! –exclamó Geneviève.</p>
+    <p class="lector-p dialogo">— Tú también, princesa. Tú también.</p>
+    <p class="lector-p dialogo">— Nos veremos pronto, adiós –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— Adiós, Tanuk ik –se despidió Charles.</p>
+    <p class="lector-p dialogo">— Hasta pronto, amigos.</p>
+    <p class="lector-p">Tanuk ik esperó a perderlos de vista. Sin hacer el más mínimo ruido, desapareció misteriosamente bajo las aguas del estanque.</p>
+    <p class="lector-p">Daikuku, Geneviève, Dimitri y Charles Vincent corrían bordeando las aguas. Habían llegado al límite, no quedaba más orilla por la que continuar. El claro de pared podía verse a unos metros de distancia y no había ningún nenúfar cerca para saltar sobre ellos. No muy lejos, botando sobre las aguas, el tritón blanco capturaba tantas luciérnagas como podía llenándose la boca.</p>
+    <p class="lector-p dialogo">— ¡Mífido! –gritó Daikuku–. Debemos llegar hasta ese tramo de pared. Ayúdanos, por favor.</p>
+    <p class="lector-p dialogo">— Eso está hecho, amigo Daikuku. Os ayudaré tan pronto como acabe de llenarme el estómago.</p>
+    <p class="lector-p dialogo">— ¡No tenemos tiempo que perder, Mífido! Debemos llegar allí cuanto antes. ¡Necesitamos tu ayuda ahora!</p>
+    <p class="lector-p dialogo">— Está bien –contestó el anfibio refunfuñando–. Os llevaré, pero sólo si me prometéis volver a jugar a encontrar a Tanuk ik cuando acabe de comerme todas estas luciérnagas.</p>
+    <p class="lector-p dialogo">— ¡Prometido! –exclamó Daikuku–. Tan pronto como acabes con tus bichos seguiremos buscando al Hombre Elefante. Ahora acerca esos nenúfares y colócalos en línea hasta llegar al muro.</p>
+    <p class="lector-p">El anfibio dejó de lado su manjar y nadó entre los nenúfares haciendo un camino flotante desde la orilla hasta la tapia.</p>
+    <p class="lector-p dialogo">— ¡Hala! Ya podéis seguir adelante, pero os advierto que no sé qué hay al otro lado.</p>
+    <p class="lector-p dialogo">— Gracias, Mífido, lo has hecho muy bien –agradeció Daikuku mientras los cuatro cruzaban hasta el muro–. Vamos a ver lo que hay al otro lado y luego volvemos. ¿De acuerdo?</p>
+    <p class="lector-p dialogo">— Sí. Pero no hace falta que volváis pronto, ya se me pasaron las ganas de jugar, volved mañana.</p>
+    <p class="lector-p dialogo">— Has sido muy amable, que te aproveche la comida –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Te guardaré unas pocas para cuando vuelvas –la joven sonrió.</p>
+    <p class="lector-p dialogo">— Adiós, amigos.</p>
+    <p class="lector-p dialogo">— Adiós, Mífido –contestaron todos al unísono.</p>
+    <p class="lector-p">La pared estaba algo derruida, lo suficiente como para hacer fácil su escalada. Daikuku subía el primero ayudando a ascender al resto. Dimitri y Geneviève subieron sin dificultad, Charles, algo menos ágil, fue ayudado por sus compañeros. Todos estaban arriba.</p>
+    <p class="lector-p dialogo">— Ese lagarto blanco está muy mal, debería acudir a un psicólogo –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Acaso has visto alguna vez algún psicólogo o psiquiatra más sensato que ese anfibio gigante? Yo creo que debería abrir una consulta bajo las aguas –añadió Charles irónico.</p>
+    <p class="lector-p dialogo">— ¡Anda! Ahora me doy cuenta de que has cambiado de ropa Charles, cuando despertamos llevabas smoking y ahora vas con vaqueros y camisa –observó Dimitri.</p>
+    <p class="lector-p dialogo">— Sí, es cierto, yo tampoco me había dado cuenta. ¿Y eso?</p>
+    <p class="lector-p dialogo">— Sencillo, el smoking pertenecía a tu ensoñación, pero al volver consciente de tu persona, has recuperado tu imagen vistiendo como solías hacerlo –respondió Geneviève.</p>
+    <p class="lector-p dialogo">— Contundente –contestó Charles.</p>
+    <p class="lector-p">Desde lo más alto del muro podía verse la magnitud del estanque. Delimitando el dominio la madre selva crecía a montones alcanzando el cielo. Caminaban siguiendo el sendero. No había nada al otro lado.</p>
+    <p class="lector-p dialogo">— Me siento feliz con vosotros, no nos conocemos mucho, pero me recordáis cada uno en sus diferentes edades a mi hija Carla.</p>
+    <p class="lector-p dialogo">— ¿Tú tienes una hija, Charles? –preguntó Daikuku.</p>
+    <p class="lector-p dialogo">— Sí, la tengo. Bueno… al menos la tuve. Ahora no sé ni cuál debe ser su aspecto. Yo contraje la enfermedad cuando ella tenía más o menos la edad de Dimitri.</p>
+    <p class="lector-p dialogo">— Debe ser muy triste no poder recordar a tus seres queridos –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— Lo es, pero con vosotros no estoy triste, me recordáis a ella, y eso me hace feliz.</p>
+    <p class="lector-p">La noche que habían dejado en el estanque, se convertía de repente en un día claro, soleado y despejado. Habían llegado a los dominios del Cuco Rojo. El suelo cubierto de paja seca. Avanzaban sin saber adónde, no había más que cielo en el horizonte.</p>
+    <p class="lector-p dialogo">— ¡Caramba, qué cambio tan brusco! –dijo Charles asombrado–. Sí, es extraño este mundo.</p>
+    <p class="lector-p dialogo">— Y lo que te queda por ver, aquí hablan hasta las piedras. Estos dominios son incompatibles. Es como pasar de una habitación a otra cruzando una puerta invisible –respondió Dimitri.</p>
+    <p class="lector-p dialogo">— Peculiar.</p>
+    <p class="lector-p dialogo">— Oye, Charles Vincent, ¿cuántos años debe tener Carla ahora? –preguntó Daikuku.</p>
+    <p class="lector-p dialogo">— Pues no lo sé, no recuerdo en qué año estamos –Geneviève se lo recordó–. Gracias. Siendo así, debe contar ya unos cuarenta y dos casi.</p>
+    <p class="lector-p dialogo">— No me gusta nada tu enfermedad, Charles, es muy injusto que no te puedas acordar de nada. Es mucho peor que no aprender el abecedario –exclamó Daikuku enfadado.</p>
+    <p class="lector-p dialogo">— No importa, Daikuku, aquí vuelvo a recordar y eso me hace sentir bien. Créeme.</p>
+    <p class="lector-p dialogo">— Escuchad –dijo Dimitri acallando a sus compañeros–. Parece que oigo algo. Es el canto de un pájaro, pero no lo veo.</p>
+    <p class="lector-p dialogo">— Sí, es el canto de un cuco –añadió el niño.</p>
+    <p class="lector-p dialogo">— ¡Cuidado, Daikuku! –exclamó Dimitri sujetando a su amigo–. Has estado a punto de darte un buen batacazo –los cuatro habían llegado al final del camino. Se encontraban sobre unos grandes fardos cuadrados de paja–. Al menos hay tres metros de aquí al suelo. Y no creo que esto aguante el descenso de los cuatro, será mejor saltar.</p>
+    <p class="lector-p dialogo">— Vaya, ahora sí se ven los dominios del Cuco Rojo, es realmente vasta esta extensión de pradería. Está todo cubierto por trigo rubio. Es una estampa bonita. Pero no sé si saldré indemne de un salto así –dijo Charles.</p>
+    <p class="lector-p dialogo">— Tenemos que bajar –dijo Geneviève dando un salto mortal y cayendo clavada en el suelo. Los chicos miraban sorprendidos–. Echaba de menos ir dando saltos por este mundo.</p>
+    <p class="lector-p">Daikuku se sentó al borde y de un salto llegó junto a su compañera. Dimitri se descolgó. Tan sólo quedaba Charles Vincent en lo alto de la montaña de paja. Sentándose cuidadosamente.</p>
+    <p class="lector-p dialogo">— No tengas miedo, déjate caer, nosotros te cogeremos para que no te hagas daño –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— Tranquilo, en este paralelo no te puedes hacer un esguince. Aquí no hay leyes naturales, si te haces daño es porque crees que te lo vas a hacer. Piensa en caer como una pluma y todo solucionado –apuntó Geneviève. Charles se descolgaba poco a poco, Dimitri lo cogía por los tobillos.</p>
+    <p class="lector-p dialogo">— Vamos, ya está, suéltate –un pequeño impulso y cayó en el suelo junto al mozo–. ¿Has visto como no era nada? Es más el miedo que otra cosa.</p>
+    <p class="lector-p dialogo">— Hacia mucho tiempo que no saltaba como las cabras. Creo que dejé estos juegos para tocar el violín. Ahora me arrepiento –dijo el músico–. Pero tenías razón, no me he hecho daño –Dimitri y Geneviève lo ayudaban a levantarse.</p>
+    <p class="lector-p dialogo">— Muchos niños han saltado tapias, pero muy pocos han volado colgados de una gárgola. Una cosa por otra –añadió Daikuku sonriente.</p>
+    <p class="lector-p dialogo">— Pues sí. Tienes razón, amigo mío. Después de lo que hemos vivido, no debería asustarme un montón de paja de apenas tres metros.</p>
+    <p class="lector-p">Se encontraban en medio de una vasta extensión de cultivo bañada por un cálido sol. A su alrededor, nada excepto trigo, que debía de medir más de ocho pies de altura. No podía verse más allá, el camino a la derecha y su continuación a la izquierda.</p>
+    <p class="lector-p dialogo">— ¿Vamos los cuatro por el mismo camino? ¿Nos separamos en parejas? ¿O nos metemos a la aventura en el trigal encomendándonos al azar? –preguntó Charles Vincent.</p>
+    <p class="lector-p dialogo">—Hacia donde sea, pero juntos. No podemos arriesgarnos a una separación imprevista, debemos evitar situaciones peligrosas –respondió Geneviève.</p>
+    <p class="lector-p dialogo">— Tenemos que encontrar al Cuco Rojo, pero no hay nada que nos dé pista alguna, ni siquiera sabemos cómo es ese supuesto pájaro. A lo mejor es gigante y sanguinario –dijo Dimitri intentando asustar a sus compañeros.</p>
+    <p class="lector-p dialogo">— Dudo mucho que podamos oír al cuco si no te callas, Dimitri el sanguinario. La pista es el canto del pájaro. Cuando veníamos hacia acá pudimos oírlo. Si aguardamos en silencio seguramente nos diga dónde está.</p>
+    <p class="lector-p dialogo">— Muy agudo. Ya se me había olvidado. No me gusta eso de que seas tan protagonista ¿sabes?</p>
+    <p class="lector-p dialogo">— Perdona, guapo, pero con una belleza como la mía a tu lado, no querrás ser ni la mitad de importante que yo. Y ahora cállate, pesado –contestó Daikuku. El pequeño permanecía atento, esperando escuchar el canto del pájaro–. Moveos hacia atrás sin hacer ruido, algo se está acercando por el trigal –dijo con un susurro.</p>
+    <p class="lector-p">Retrocedían lentamente. Las plantas se movían agitadas. Debía ser algo más grande que un cuco para mover el trigo así. Después de lo vivido poca cosa podía sorprender ya, pero eso no parecía ser nada bueno. Daikuku se echó la mano al zurrón donde guardaba los espolones de gallo. Las espigas se movían cada vez más cerca, no se oía nada, estaban alerta. Si aquello se trataba de una criatura de Moor, no sería fácil escapar en un lugar así. La tensión se respiraba, apenas un instante y aquello, fuera lo que fuera, daría con ellos. Un segundo más y la bestia que tanto temían, surgió del trigal. Un pequeño cuco metálico de color rojo granate avanzaba dando pequeños saltos hasta detenerse frente a Daikuku. Recordaba a los autómatas que habitan los relojes de pared.</p>
+    <p class="lector-p dialogo">— Cucu –dijo el pájaro.</p>
+    <p class="lector-p dialogo">— ¿Eres tú el Cuco Rojo? –preguntó Geneviève. El pájaro se acercó a ella, la observaba con la cabeza ladeada, analizándola con un sólo ojo.</p>
+    <p class="lector-p dialogo">— Cucu.</p>
+    <p class="lector-p dialogo">— ¿Sabes dónde está el Palacio de las mil Puertas? –preguntó efusivamente Geneviève.</p>
+    <p class="lector-p dialogo">— Cucu -el robot asintió inclinando la cabeza, dejando oír un divertido ruido mecánico con su gesto.</p>
+    <p class="lector-p dialogo">— ¡Eso es fantástico! –exclamó la joven.</p>
+    <p class="lector-p">Sus compañeros sonreían ante la respuesta del pájaro. No hablaba, pero parecía comprender las preguntas, su “cucu” era suficiente para ellos después de haber pensado que se trataba de una criatura de Moor.</p>
+    <p class="lector-p dialogo">— ¿Puedes llevarnos entonces hasta el Palacio? –preguntó Daikuku.</p>
+    <p class="lector-p">El pájaro se acercó al pequeño y lo escrutó de arriba abajo. Un par de saltos y estaba frente a Dimitri. Lo miraba igualmente. Sus ojos de color plata se movían agrandándose para enfocar la imagen. Por último analizó a Charles Vincent. El cuco se separó de ellos, y con unos saltos se plantó al otro lado del camino, junto a las espigas. Miró a Geneviève y asintió dos veces, acompañado del metálico ruido de engranajes. El pájaro giró la cabeza, con una pequeña batida de alas se elevó. Giraba su cuerpo hasta colocarlo en la misma dirección que la cocorota. “Cucu” dijo de nuevo y desapareció tras el cultivo.</p>
+    <p class="lector-p dialogo">— ¡Corred tras él! –exclamó Dimitri–. No podemos dejar que se nos pierda, esto es demasiado espeso para seguirle la pista a más de un paso –los cuatro se introdujeron en el trigal.</p>
+    <p class="lector-p dialogo">— ¿Lo veis? –preguntó Charles Vincent.</p>
+    <p class="lector-p dialogo">— ¡Por aquí oigo el sonido metálico de sus alas, pero no logro verlo! –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— ¡Yo tampoco veo nada, hay demasiadas espigas! Si al menos siguiese cantando podríamos seguirlo de oídas –dijo Charles Vincent.</p>
+    <p class="lector-p dialogo">— ¿Cómo se nos ha podido escapar? ¡Es imposible!, debería verse, es de color rojo rubí y todo este trigo es amarillo –dijo Geneviève sofocada.</p>
+    <p class="lector-p dialogo">— ¡Yo tampoco lo veo, caramba! –dijo enfadado Dimitri–. Se nos ha escapado el dichoso pájaro.</p>
+    <p class="lector-p dialogo">— Tranquilos. Si vino a buscarnos la primera vez, es posible que cuando se dé cuenta de que lo hemos perdido vuelva a por nosotros –apuntó Charles Vincent.</p>
+    <p class="lector-p dialogo">— ¿Acaso ha vuelto? ¡Maldita chatarra!, seguro que tiene las pilas oxidadas y no viene a por nosotros –espetó Dimitri–. ¡Qué rabia!</p>
+    <p class="lector-p dialogo">— No te sulfures amigo –dijo Daikuku–. Sigamos caminando, seguro que lo encontramos en seguida, no es posible que sea tan rápido. Estará parado esperando a que demos con él.</p>
+    <p class="lector-p dialogo">— ¡Mirad! –exclamó Geneviève apuntando con la mano hacia arriba. A unos pasos de distancia aparecía el Cuco Rojo dando saltos. “Boing”, un salto y se elevaba sobre las espigas agitando las alas alegremente, otro salto, “cucu” y desapareció de nuevo–. Hacia allá debemos ir, ¡Hacia allá! –los cuatro corrían en la dirección en la que habían visto aparecer al cuco–. Estoy segura de que apareció por aquí –dijo angustiada.</p>
+    <p class="lector-p dialogo">— Sí, más o menos debería estar por aquí –respondió Daikuku.</p>
+    <p class="lector-p dialogo">— ¡Diantres! Lo hemos vuelto a perder. ¿Y ahora, hacia dónde vamos?</p>
+    <p class="lector-p dialogo">— Esta parece su forma de guiarnos. No nos alteremos, chicos. Caminemos hacia delante, seguramente aparezca de un momento a otro. Buscad sobre las espigas, lo veremos de nuevo –dijo Charles Vincent más calmado que sus compañeros. Avanzaban sin rumbo, mirando hacia arriba.</p>
+    <p class="lector-p dialogo">— No pensé que sería tan complicado perseguir al cuco –dijo Geneviève–. Debería ser algo más considerado con nosotros.</p>
+    <p class="lector-p dialogo">— Sólo es un pollo de metal, no esperes tanto de él –añadió Dimitri molesto.</p>
+    <p class="lector-p dialogo">— ¡Mirad, allí está! –gritó Daikuku. El pájaro aparecía de nuevo a unos metros de ellos. Un salto, “boing”, otro salto y “cucu”. Desaparecía otra vez entre la mies. Los cuatro corrían hacia el pájaro–. ¡Otra vez se ha esfumado!... Mirad el lado bueno, si ésta es su manera de guiarnos, no debemos preocuparnos por perderlo.</p>
+    <p class="lector-p dialogo">— Es verdad, Daikuku. Si seguimos a este ritmo, aunque sea algo pesado, pronto encontraremos el Palacio de las mil Puertas, estoy seguro. Hacía mucho tiempo que no practicaba ejercicio, me vendrá bien para ponerme en forma –dijo Charles con una sonrisa algo forzada.</p>
+    <p class="lector-p dialogo">— Esto no es ejercicio, Charles, la actividad física libera, esto es muy estresante –puntualizó Dimitri irónicamente.</p>
+    <p class="lector-p dialogo">— Al menos ya conocemos el procedimiento –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— ¡Mirad, ahí está de nuevo! –exclamó Charles. El pájaro aparecía, “cucu”. Los cuatro corrían sin aliento.</p>
+    <p class="lector-p dialogo">— Bueno, Daikuku –dijo Dimitri consternado–. Quizás tengas razón y encontrarlo sea cuestión de paciencia.</p>
+    <p class="lector-p dialogo">— Mira, Dimitri, tras de ti –exclamó el pequeño.</p>
+    <p class="lector-p dialogo">— ¡Está ahí! –dijo al mismo tiempo Charles. Los cuatro observaban perplejos al Cuco Rojo, ahora había dos pájaros carmesí, uno a cada lado, un salto, dos saltos, “cucu”.</p>
+    <p class="lector-p dialogo">— ¡¡Maldito pájaro!! ¡Esa chatarra voladora acabará volviéndonos locos a los cuatro! –exclamó Dimitri.</p>
+    <p class="lector-p dialogo">— No seas tan quejica. Sigue tú a ése con Daikuku, y yo iré con Charles en la otra dirección. Posiblemente nos lleven los dos al mismo sitio –el grupo se separó en dos parejas.</p>
+    <p class="lector-p dialogo">— ¿Veis a vuestro cuco? –preguntó el músico.</p>
+    <p class="lector-p dialogo">— No, todavía no –contestó el niño.</p>
+    <p class="lector-p dialogo">— ¡Ya lo veo! Vamos, Daikuku –el mozo cogió del brazo a su compañero y se dirigió hacia el lugar donde aparecía el robot, “cucu”.</p>
+    <p class="lector-p dialogo">— Mira, Geneviève, allí –dijo Charles–. ¡Y allá otro! –ahora había dos cucos ante la pareja–. Separémonos, tú tras ése y yo tras el otro –un salto, dos saltos, “cucu”–. Nosotros ya hemos visto el nuestro, Dimitri. Salvo que ahora debe haber tres cucos. ¡Pronto encontraremos el Palacio de las mil Puertas, no desesperéis!</p>
+    <p class="lector-p dialogo">— No me queda otro remedio, corrijo, no nos queda otro remedio –dijo Dimitri–. ¡Mira, Daikuku, ahí aparece de nuevo! –señalaba el mozo.</p>
+    <p class="lector-p dialogo">— ¡Dimitri! –Daikuku señalaba en la otra dirección, su amigo giró la cabeza, había un segundo Cuco Rojo, “cucu”.</p>
+    <p class="lector-p dialogo">— ¡Maldito pajarraco! Ahora hay dos –gritó colérico el muchacho.</p>
+    <p class="lector-p dialogo">— No malgastes tus energías. Cálmate. Separaos y seguid cada uno a un cuco –gritó Charles en la distancia. Dimitri fue tras un pájaro y Daikuku tras otro. Los cuatro quedaban separados.</p>
+    <p class="lector-p dialogo">— ¿Y ahora qué hacemos, Geneviève? –preguntó el niño.</p>
+    <p class="lector-p dialogo">— Ahora esperamos a que no aparezcan más pollos metálicos.</p>
+    <p class="lector-p dialogo">— ¡Acaba de aparecer uno! –exclamó el músico–. ¡Y ahora otro! Son dos, no sé a cuál seguir –un salto, dos saltos, “cucu”.</p>
+    <p class="lector-p dialogo">— No importa, persigue al que sea –gritó Geneviève.</p>
+    <p class="lector-p dialogo">— Cucu, cucu.</p>
+    <p class="lector-p dialogo">— ¡Yo también tengo dos! –gritó desesperado Dimitri.</p>
+    <p class="lector-p dialogo">—Tranquilo, ya lo sé. Tan sólo sigue a uno de ellos.</p>
+    <p class="lector-p dialogo">— Esto no parece que vaya a salir bien, Geneviève. Yo tengo a tres cucos delante de mí –exclamó Daikuku. “Cucu”–. No sé por dónde ir.</p>
+    <p class="lector-p dialogo">— ¡Rayos! A mí también me han aparecido tres pájaros –dijo Charles.</p>
+    <p class="lector-p dialogo">— Yo también tengo a tres –dijo Geneviève derrotada.</p>
+    <p class="lector-p dialogo">— Cucu, cucu –el canto del pájaro se oía por todas partes.</p>
+    <p class="lector-p dialogo">— ¡Esto es absurdo! –gritó Dimitri mientras seguía a uno de los tres pájaros–. Jamás llegaremos a ningún lado así. Además, empiezo a pensar que pretende engañarnos, cada vez estamos más lejos los unos de los otros. ¿Y si se trata de un esbirro de Moor que ha tomado la forma de este pollo, qué haremos entonces?</p>
+    <p class="lector-p dialogo">— Tienes razón, Dimitri –contestó Charles–, ¿pero qué otra cosa podemos hacer? Sigámoslos, en algún sitio acabaremos.</p>
+    <p class="lector-p dialogo">— Cucu, cucu.</p>
+    <p class="lector-p dialogo">— ¡Ahora son cuatro! –gritó Daikuku.</p>
+    <p class="lector-p dialogo">— Cucu, cucu, cucu, cucu –aparecían por doquier.</p>
+    <p class="lector-p dialogo">— ¡Ahora cinco! –exclamó Geneviève.</p>
+    <p class="lector-p dialogo">— Cucu, cucu.</p>
+    <p class="lector-p dialogo">— ¡Yo ya veo siete! –dijo Charles Vincent.</p>
+    <p class="lector-p dialogo">— No os lo vais a creer, pero yo he contado más de siete –dijo Dimitri rendido.</p>
+    <p class="lector-p">“Cucu, cucu”, el canto del cuco no cesaba. Aquí y allá sus alas metálicas revoloteaban dejándose ver sobre las espigas. Cada vez más y más pájaros.</p>
+    <p class="lector-p dialogo">— ¡Hay demasiados, no sé a cuál seguir! ¡Están por todas partes! –dijo el pequeño.</p>
+    <p class="lector-p dialogo">— ¡Esto es una soberbia tontería! Deberíamos dejar de seguirlos, no es más que una tomadura de pelo. –gritó el mozo.</p>
+    <p class="lector-p dialogo">— No podemos detenernos, Dimitri, sigue a cualquiera de ellos, a cual sea, pero no te pares –exclamó la muchacha.</p>
+    <p class="lector-p dialogo">— Esto no puede ser tan grande, estoy seguro de que uno de todos ellos nos guiará correctamente –dijo el hombre.</p>
+    <p class="lector-p dialogo">— Sí. ¿Pero cuál de todos ellos? –preguntó Daikuku agotado.</p>
+    <p class="lector-p">Los cuatro seguían corriendo tras los pájaros. “Cucu, cucu”, cada vez más insoportable, aparecía a cada momento en un lugar diferente. Corrían atacados por los nervios, sin mirar por donde caminaban, con la vista sobre las espigas para seguir al cuco. De sopetón, chocando unos contra otros, dieron de bruces los cuatro contra el suelo.</p>
+    <p class="lector-p dialogo">— ¡Maldición! Mirad donde estamos. Otra vez juntos, justo como al principio. Ese pájaro bobo se ha estado riendo de nosotros –porfiaba Dimitri enfadado–. Cuando lo coja le quitaré las pilas una a una hasta dejarlo en off.</p>
+    <p class="lector-p dialogo">— Tranquilo, Dimitri, enfadarnos no ha de llevarnos a ningún sitio. Calmémonos y pensemos en alguna solución –dijo el músico. Mientras hablaban, cientos de cucos saltaban a su alrededor martirizando la reunión. “Cucu, cucu” una y otra vez.</p>
+    <p class="lector-p dialogo">— A lo mejor ha querido darnos una lección. Nos ha castigado por separarnos, si hubiese sido una criatura de Moor, habría acabado con nosotros, y en cambio, nos ha vuelto a reunir –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— Si sólo se trataba de ponernos a prueba, yo creo que ya hemos aprendido la lección. No nos volveremos a separar más. ¡Ahora llévanos al dichoso Palacio! –gritó el muchacho.</p>
+    <p class="lector-p dialogo">— ¿Y cómo lo encontramos, Charles? Son muchos y todos iguales, no veo ninguna diferencia entre ellos. Ese sonido me está volviendo loca “cucu, cucu”. No sé qué podemos hacer, esta situación es desquiciante –dijo la chica empezando a perder los nervios. “Cucu, cucu”.</p>
+    <p class="lector-p dialogo">— Son muchos, Charles, no dejan de aparecer, haz algo, piensa en algo –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— No se me ocurre nada, por más que los miro no encuentro diferencia, son todos iguales, y ese repetitivo sonido no me deja pensar.</p>
+    <p class="lector-p dialogo">— Ese sonido. ¡¡¡Ese sonido me está volviendo loca!!! –la joven se tapaba los oídos y agitaba la cabeza.</p>
+    <p class="lector-p dialogo">— Maldita sea. Cochinos pájaros, ¡callaos ya! Marchaos a otro lugar con ese canto inmundo –gritaba Dimitri. “Cucu, cucu”. El muchacho corría entre las espigas agitando los brazos, intentando acabar con los pájaros para hacerlos callar. Geneviève gritaba para tapar el sonido con su voz.</p>
+    <p class="lector-p dialogo">— ¡¡¡AAAhhhh!!! ¡No puedo más! –gritaba la chica golpeándose la cabeza.</p>
+    <p class="lector-p dialogo">— Charles, esto es terrible, estamos perdiendo el control, tenemos que hacer algo –dijo Daikuku observando a sus amigos con gran preocupación. El pequeño y el músico estaban algo más tranquilos que sus compañeros. La carga emocional que habían acumulado en todo este tiempo afloraba en un momento poco oportuno para perder los nervios–. ¡Vamos, Charles, piensa algo! –el niño sollozaba impotente.</p>
+    <p class="lector-p dialogo">— ¡Daikuku, no sé qué hacer! Yo nunca fui bueno resolviendo este tipo de problemas –contestó el hombre apretándose las sienes con las manos, con los ojos fuertemente cerrados. “Cucu, cucu”, el sonido era cada vez más perverso y estridente. Los cuatro estaban muy alterados. La situación se desbordaba–. ¡Ya lo tengo! –gritó–. ¡Ya lo he descubierto! –Dimitri continuaba porfiando un sinfín de improperios. Geneviève seguía gritando y Daikuku miraba a Charles entre lágrimas–. ¡Daikuku, cierra los ojos y escucha!</p>
+    <p class="lector-p">Ambos cerraban los ojos, ya no veían a ningún cuco, a oscuras. Se podían oír las groserías de Dimitri, los chirriantes gritos de Geneviève y de fondo a un único pájaro cantar. Tan sólo oían a un cuco, una pausa, otra vez el sonido. Entre aquellos cientos de pájaros de metal, exclusivamente se escuchaba el canto de uno de ellos.</p>
+    <p class="lector-p dialogo">— ¡¿Lo has escuchado, Daikuku?! –exclamó Charles.</p>
+    <p class="lector-p dialogo">— ¡Sí! –Daikuku se enjugaba las lágrimas sonriendo–. ¡Dimitri! ¡Dimitri! Deja de gritar, hemos encontrado la solución –exclamaba Daikuku zarandeando a su amigo. Charles Vincent sujetó con fuerza a la chica por los brazos.</p>
+    <p class="lector-p dialogo">— ¡Geneviève! Tranquilízate, deja de gritar. Hemos dado con la respuesta.</p>
+    <p class="lector-p dialogo">— ¡¡¡Callaos!!! –gritaron a la par el hombre y el niño. Geneviève y Dimitri se detuvieron perplejos.</p>
+  </div>
+  <div class="cap-paso">
+    <a href="https://hunicornia.es/7-mascaras/la-huida/">← 10. La huída</a>
+    <a class="der" href="https://hunicornia.es/7-mascaras/el-silencio/">12. El silencio →</a>
+  </div>
+</main>
+<script src="/lector-progreso.js" defer></script>
+<script>
+(function() {
+  var btn=document.getElementById("btnIndice"),panel=document.getElementById("indicePanel"),fill=document.getElementById("progFill");
+  btn.addEventListener("click",function(){var o=panel.classList.toggle("abierto");btn.setAttribute("aria-expanded",o?"true":"false");btn.textContent=o?"Cerrar":"Índice";});
+  panel.querySelectorAll("a[href^='#']").forEach(function(a){a.addEventListener("click",function(){panel.classList.remove("abierto");btn.setAttribute("aria-expanded","false");btn.textContent="Índice";});});
+  window.addEventListener("scroll",function(){var d=document.documentElement;fill.style.width=Math.min(d.scrollTop/(d.scrollHeight-d.clientHeight)*100||0,100)+"%";},{passive:true});
+})();
+</script>
+</body>
+</html>

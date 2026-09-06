@@ -1,0 +1,44 @@
+# hunicornia.es
+#
+# Nada que ocultar: todo el texto es público y gratuito.
+# Si algún día hay carpetas de trabajo, se listan aquí con Disallow.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://hunicornia.es/sitemap.xml
+
+# ─────────────────────────────────────────────────────────────────────
+# Rastreadores de entrenamiento de IA
+#
+# Estos no traen lectorxs: se llevan el texto para entrenar modelos.
+# Bloquearlos NO afecta a tu posición en Google: el buscador usa
+# Googlebot, que sigue permitido arriba. Google-Extended solo controla
+# el entrenamiento de Gemini, no la búsqueda.
+#
+# Es una decisión tuya. Para permitirlos, borra este bloque entero.
+# ─────────────────────────────────────────────────────────────────────
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /

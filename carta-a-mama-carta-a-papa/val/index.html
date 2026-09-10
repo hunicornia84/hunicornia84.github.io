@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ca-ES-valencia">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carta a mama, carta a papà — Hunicornia">
+  <meta name="author" content="Hunicornia">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <link rel="canonical" href="https://hunicornia.es/carta-a-mama-carta-a-papa/val/">
+  <link rel="alternate" hreflang="es-ES" href="https://hunicornia.es/carta-a-mama-carta-a-papa/">
+  <link rel="alternate" hreflang="ca-ES" href="https://hunicornia.es/carta-a-mama-carta-a-papa/val/">
+  <link rel="alternate" hreflang="x-default" href="https://hunicornia.es/carta-a-mama-carta-a-papa/">
+  <title>Carta a mama, carta a papà — Hunicornia</title>
+  <style>
+    @font-face { font-family: "Chopin"; src: url("/ChopinLight.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #643587; --secondary: #8b3689; --nav-h: 58px; }
+    html, body { width: 100%; background: #fff; color: var(--primary); font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { padding-top: var(--nav-h); }
+    .lector-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(100,53,135,0.15); z-index: 200; backdrop-filter: blur(8px); }
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: var(--nav-h); }
+    .nav-volver { font-family: system-ui, Arial, sans-serif; font-size: 12px; color: var(--secondary); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-volver:hover { opacity: 0.7; }
+    .nav-titulo { font-family: "Chopin", serif; font-size: 18px; font-weight: 300; letter-spacing: 0.05em; color: var(--primary); }
+    .progreso-barra { height: 2px; background: rgba(100,53,135,0.1); }
+    .progreso-fill { height: 100%; width: 0%; background: var(--primary); transition: width 0.1s linear; }
+    .lector-contenido { max-width: 680px; margin: 0 auto; padding: 56px 24px 120px; }
+    .obra-titulo-h { font-family: "Chopin", serif; font-size: clamp(30px, 5vw, 58px); font-weight: 300; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--primary); line-height: 1.15; }
+    .obra-subtitulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--secondary); margin: 0 0 60px; opacity: 0.75; }
+    .lector-p { font-size: clamp(15px, 1.7vw, 17px); line-height: 1.95; margin: 0 0 0.9em; color: var(--primary); text-align: justify; hyphens: auto; }
+    .lector-p.dialogo { }
+    .sep-omega { text-align: center; color: var(--secondary); opacity: 0.3; font-size: 13px; margin: 36px 0; letter-spacing: 0.4em; }
+    .cta-final { text-align: center; margin-top: 64px; display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+    .cta-final a { display: inline-block; padding: 0.8em 1.5em; background: rgba(139,54,137,0.12); color: var(--primary); border-radius: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .cta-final a:hover { opacity: 0.7; }
+    .nota-final { font-size: 11px; color: var(--secondary); text-align: center; margin-top: 32px; opacity: 0.6; }
+    @media (max-width: 600px) {
+      :root { --nav-h: 52px; }
+      .lector-contenido { padding: 36px 16px 80px; }
+      .nav-bar { padding: 0 16px; }
+      
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html, body { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body data-obra="Carta a mama, carta a papà">
+
+<nav class="lector-nav" aria-label="Navegació">
+  <div class="nav-bar">
+    <a class="nav-volver" href="/">← Tornar</a>
+    <span class="nav-titulo">Carta a mama, carta a papà</span>
+  </div>
+  <div class="progreso-barra"><div class="progreso-fill" id="progFill"></div></div>
+</nav>
+
+<main class="lector-contenido" data-lectura>
+  <h1 class="obra-titulo-h">Carta a mama, carta a papà</h1>
+  <p class="obra-subtitulo">Relat · 14.115 paraules · Valencià</p>
+
+    <p class="lector-p">No és que Eloise i jo fórem religiosos, aconfessionals més aïna, però per la nostra condició d’enamorats dels esdeveniments socials que transgredien el logos, sentíem eixa màgia que envolta la Setmana Santa.</p>
+    <p class="lector-p">Entre tots aquells passos, entre aquell redoblar de tambors, només una figura menuda d’aspecte rude, sòbria de detall, contrafeta, xicoteta, que representava el Crist en la creu, amb un cert aire melancòlic, ens cridava inevitablement l’atenció.</p>
+    <p class="lector-p">Per algun motiu desconegut, era capaç d’atraure una gran multitud independentment de la seua categoria social. Una gentada que, sense saber-ho, retrocedia en el temps en companyia de la talla fins a aquella Espanya negra d’antany que hui dona les últimes batzegades.</p>
+    <p class="lector-p">Silenci, caminars descalços, olor d’olíban i d’espígol amalgamada amb els exsudats, el toc de la campana. El murmuri del capatàs. Saetes de veu trencada nascudes del lament més profund.</p>
+    <p class="lector-p">Un respecte sentit i un exercici de fe desmesurat que corprenia el més laic, ateu o agnòstic. Inaudit que en un acte tan fúnebre com era la crucifixió d’un déu es senta tant de benestar. La veritat és que hi ha tanta positivitat en l’ambient i és tan aclaparadora la gentada que hi diposita les seues esperances, que venen ganes d’abraçar el cristianisme sense llegir la lletra menuda.</p>
+    <p class="lector-p">En aquells molts anys, seure al carrer a vore passar el Crist de Zalamea no suposava més que una anècdota en les nostres vides quotidianes. Però des del dia de l’accident, la fe va paréixer trencar-se i va deixar de banda aquella icona cristiana. Aquell era com qualsevol altre dimecres sant, però no tenia cap valor. Ara cada dimecres, dia en què tot va passar, s’escriuen tristeses damunt d’una carta.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+    <p class="lector-p">Malauradament, aquell dia no arribava, eixe dia en què jo, egoista, ansiava trobar-me. Possiblement, pel meu propi benestar, necessitava que allò canviara, però per a mi era necessari tornar a vore somriure la dona que tant estimava.</p>
+    <p class="lector-p">La meua vida necessitava calor, i la seua llum era tan gèlida com grisa. Jo no sé, ni crec que sàpia mai, la raó d’aquella fatídica desgràcia que se’n va endur la vida dels seus pares i, en part, la seua pròpia. Quant de mal es pot fer, ja siga en esta vida o en vides anteriors, perquè el destí fustigue d’una manera tan esgarradora. Què és allò que hem d’aprendre? Per què acordar morir per a elevar el nostre esperit? Tan difícil és concedir-nos el perdó i la virtut de l’aprenentatge sense haver de renunciar a alguna cosa en el canvi?</p>
+    <p class="lector-p">Jo vaig perdre mon pare quan ell tenia cinquanta-huit anys. Ja havia patit diversos infarts i, encara que la seua mort em va agarrar per sorpresa, crec que vaig acceptar la seua marxa a canvi que deixara de patir aquella terrible paràlisi. Em vaig sentir desarrelat, com si una part de mi desapareguera. De sobte ja no era el xiquet que sempre havia sigut; en aquell moment es va escriure un final de capítol en la meua memòria i, tot i això, encara em quedava ma mare. Però no crec que puga equiparar això a la mort sobtada dels dos progenitors, majors, però amb molta vida per davant. Identificar els cadàvers, destrossats per haver xocat de front contra un altre vehicle, el conductor del qual circulava ebri; el seu únic càstig va consistir a perdre el permís i passar dos anys a la presó.</p>
+    <p class="lector-p">Eloise no solament va perdre els seus pares; també sé que ells, onsevulla que estiguen, lamenten esta situació. No arribe a imaginar com és de difícil, però intuïsc que molt, massa dur, tant com per a no poder evitar plorar cada vegada que la veig asseguda a l’escriptori escrivint eixa carta que es repetix una vegada i una altra.</p>
+    <p class="lector-p">No he llegit eixes lletres que viatgen sense destinació, no sé si es repetixen les mateixes línies setmana rere setmana o si en cadascuna es relata alguna cosa diferent. Mai no ho he preguntat, encara que no crec que em deixara llegir-les. Desconec si li fa bé escriure-les, però tampoc crec que facen cap mal.</p>
+    <p class="lector-p">Cada dimecres tanca el sobre deixant els llavis marcats damunt del paper i, sense remitent ni adreça, el fica en una bústia. En el sobre col·loca el segell i s’hi pot llegir “carta a mama, carta a papà”.</p>
+    <p class="lector-p">Diguem que la resta de dies de la setmana transcorren amb una certa normalitat. Però el dia que hi ha carta, ja quasi per costum, estic pendent d’ella. Torna de la faena, mengem, s’asseu a escriure i ix al carrer, diposita el sobre i camina unes quantes hores, sense rumb. Torna a casa, se’n va al llit i acabem el dia.</p>
+    <p class="lector-p">Altres vegades espera la nit per a redactar la missiva; passades les dotze ix al carrer, ploga, faça vent o faça fred, camina pel passeig marítim, s’acosta a la vora i deixa damunt de les ones la carta, que a poc a poc es perd en la foscor de la mar. Quan ja no la veu, gira cua i deambula una bona estona sense importar-li que jo la seguisca a uns quants metres.</p>
+    <p class="lector-p">Pot ser que parega el contrari: simplement em preocupe per ella. Supose que, encara que no li agrade, comprén que camine al seu costat com ho fèiem antany. Durant els nostres passejos amb prou faenes parlem o, més aïna, parle jo tot sol. Ella es limita a assentir amb un posat afectuós, m’agafa la mà fins que queda tancada novament en els seus pensaments i, sense adonar-nos-en, caminem per separat.</p>
+    <p class="lector-p">Aquella nit de març vam caminar més del que era habitual. Pareixia que hi havia hagut una festa a la platja, i encara quedaven les restes del que havia sigut una multitud. Entre la gent pareixia una més, però la seua mirada perduda l’allunyava de la resta.</p>
+    <p class="lector-p">En l’arena quedava un grup de ressagats que, entre botelles, continuava la festa. Eloise es va detindre i va observar. Supose que vore aquells xicots beguts li va portar al cap el culpable de l’accident dels seus pares. No era la primera vegada que veia una cosa així, però una lluïssor estranya li va resplendir en els ulls. Va córrer entre els xicots, colèrica, espernegant i cridant, arrancant-los les botelles i llançant-les lluny. Vaig córrer darrere d’ella i la vaig abraçar immobilitzant-la. Els xicots la increpaven sorpresos.</p>
+    <p class="lector-p dialogo">― Per favor, disculpeu-la! És la meua dona, no sap el que fa –un parell d’ells s’alçaven buscant gresca-. No vos enfadeu, vos pagaré les begudes -els vaig donar tot el que portava en la cartera, prou per a allunyar-nos d’ells sense més problema.</p>
+    <p class="lector-p">Ella es va desfer de mi i es va asseure en l’arena.</p>
+    <p class="lector-p dialogo">― No pots fer això cada vegada que et creues amb un adolescent alcoholitzat. Els teus pares ja no hi són per molt que t’hi entestes; l’única cosa que aconseguiràs amb eixa actitud és que ens òbriguen el cap als dos –vaig respirar fondo-. Allibera el teu cor d’esta càrrega, tens tota la vida per davant, tenim una vida per a gaudir-la junts.</p>
+    <p class="lector-p">Es va alçar i va començar a caminar. El caminal s’acabava, així que només li quedava tornar. Jo em vaig asseure damunt del mur del passeig i l’observava, de vegades buit de pensaments, de sentiments; altres, convertit en un caos que desconeixia què hi feia. En moments com aquell, una sensació em recorria empenyent-me a abandonar, empenyent-me a viure la meua vida, a deixar de banda aquella amargor que ja s’allargava quatre anys.</p>
+    <p class="lector-p">Després de psicòlegs, psiquiatres, mèdiums, terapeutes, curanderos, a qui acudir? Després de tant de llibre, de tanta espiritualitat, holística, budisme, naturalisme, psicomàgia. Esgotat completament. Sense recursos. De què servia tot allò, si jo, per a viure la meua vida, per a ser feliç, només la necessitava a ella. Amb només un somriure seu a l’alba, era capaç d’afrontar el dia amb la força d’un atlant.</p>
+    <p class="lector-p">Em van vindre al cap un parell d’aquells tants intents de trobar una solució.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+    <p class="lector-p">Al principi vam provar amb la psicomàgia; jo havia llegit alguna cosa de Jodorowsky i el seu plantejament de recrear l’escena. Em pareixia una cosa assenyada després que psicòlegs, psiquiatres i fins i tot tanatòlegs especialitzats en TVP la tingueren asseguda al divan. Ella no estava boja. Així que, si bé acceptava, tant per acontentar-me a mi com per a resoldre el seu propi conflicte, li sobrava intel·ligència per a alçar-se educadament davant de la ineficàcia o la incompetència del professional.</p>
+    <p class="lector-p">Em sentia indignat per aquells babaus que, més que ajudar-la, la convidaven a rebutjar qualsevol via nova per a millorar. Cosa que em tancava portes malgrat tot el que indagava entre llibres i internet.</p>
+    <p class="lector-p">Com que era comercial i trepitjava el carrer cada dia, no em va costar trobar el lloc adequat. Una de les òptiques que visitava la regentava un matrimoni d’una edat semblant a la dels seus pares i, encara que no hi havia cap semblança en la cara, sí que n’hi havia en el conjunt. Em tenien molt d’afecte, i jo sempre els feia algun apanyo per a reduir els costos.</p>
+    <p class="lector-p">I allí estava jo, davant d’ells, explicant-los el que havia passat, fent-los entendre quina era la meua voluntat. Van acceptar de bon grat sempre que fora una conversa civilitzada. No és que confiara plenament en l’escenificació, però pitjor havien eixit els intents anteriors.</p>
+    <p class="lector-p">Aquella vesprada vaig parlar amb ella. La seua cara va ser tot un poema. Intuïsc que cada vegada que li proposava alguna solució nova, l’única cosa que aconseguia era allunyar-la més de mi. Però els dies passaven i el seu comportament era el mateix, així que em vaig atrevir a perdre-la a canvi de tornar-la a trobar. Eloise no va dir ni sí ni no: va agarrar el llibre i en va llegir un parell de pàgines.</p>
+    <p class="lector-p dialogo">― Em pareix bé –la seua resposta.</p>
+    <p class="lector-p">En dies com aquell, les distàncies es feien tangibles entre nosaltres dos. Em vaig limitar a esperar l’endemà. Després de dinar vam anar a l’òptica. La porta estava entreoberta. Ferrand, que així es deia ell, ens va rebre amb un somriure. Eloise es va mostrar amable amb ells, al contrari que amb mi. Dins hi havia Celia. Vam entrar a la rebotiga, un saló menut on ho havien disposat tot. Millor del que esperava. Ells es van asseure al sofà, amb la il·luminació tènue i a contrallum. Les seues cares es desdibuixaven. Ella, asseguda en una cadira davant de la parella. Jo, apartat vora la porta.</p>
+    <p class="lector-p">Un llarg instant de silenci.</p>
+    <p class="lector-p dialogo">― Què tal si li pregunta a Eloise com li ha anat el dia? Celia –vaig dir mirant d’iniciar el diàleg.</p>
+    <p class="lector-p dialogo">― … I com ha anat el dia, filla, molta faena?</p>
+    <p class="lector-p dialogo">― Com cada jornada, no hi ha temps per al descans… -silenci. Ferrand va parlar.</p>
+    <p class="lector-p dialogo">― I tu, com estàs? Com et sents?</p>
+    <p class="lector-p dialogo">― Crec que no em puc queixar, bé… malament… potser una mica desordenada.</p>
+    <p class="lector-p dialogo">― I què és el que sents quan pronuncies la paraula desordre? –va dir la dona.</p>
+    <p class="lector-p dialogo">― Res… -ells no van saber què preguntar.</p>
+    <p class="lector-p dialogo">― Potser si t’animes a escriure una carta i la lliges en veu alta… -vaig traure un paper i un bolígraf. Ella es va posar tensa. Celia, atenta, em va convidar a eixir de la sala.</p>
+    <p class="lector-p">No m’esperava la proposta, però vaig esperar fora. Es va prendre un temps fins que va començar a parlar. Només sentia la remor de les seues paraules. Acabava. La porta es va obrir i Eloise va eixir i em va esperar a l’entrada.</p>
+    <p class="lector-p dialogo">― Què ha passat?</p>
+    <p class="lector-p dialogo">― No ha escrit la carta. Ens ha contat el que va passar. Només escriu els dimecres, quan eixa pena l’embarga en gran manera. Diu que lamenta esta situació, que agraïx el teu esforç, però que no ha funcionat. Ens ha donat les gràcies i s’ha acomiadat.</p>
+    <p class="lector-p dialogo">― Vaja… lamente les molèsties. Ferrand, Celia, moltes gràcies per haver-me ajudat.</p>
+    <p class="lector-p dialogo">― Què va, xicot! Ha sigut tot un plaer. La llàstima és que no hem aconseguit fer un passet avant… Cuida-la, té maneres de gran dona –va dir ell.</p>
+    <p class="lector-p dialogo">― Ho és.</p>
+    <p class="lector-p dialogo">― Bé, Edgard, dona-li temps. No hi ha mal que cent anys dure.</p>
+    <p class="lector-p dialogo">― Espere que no.</p>
+    <p class="lector-p dialogo">― Ens veiem un altre dia, xicot.</p>
+    <p class="lector-p dialogo">― Gràcies una altra vegada. Ens veiem prompte.</p>
+    <p class="lector-p">Vam pujar al cotxe, no vam creuar ni una paraula. Em va acariciar la cama, la vaig mirar, i el seu somriure tort va ser prou. Vam tornar a casa.</p>
+    <p class="lector-p">Va passar molt de temps fins que se’m va ocórrer intentar alguna cosa novament. De fet, era ella mateixa la que de vegades indagava entre llibres buscant formes de meditació o d’oració a fi de trobar en el seu interior.</p>
+    <p class="lector-p">Alguns dies, en despertar-me, si no la trobava al llit i l’olor de mirra perfumava l’ambient, és que s’havia despertat a les sis del matí a la busca de respostes.</p>
+    <p class="lector-p">Va passar molt de temps, no sé quant. La situació s’havia normalitzat, però els seus canvis d’humor sobtats, així com els inevitables dimecres, conformaven el pilar de la nostra vida.</p>
+    <p class="lector-p">Per a evitar una situació tensa davant de la proposta, la nit anterior vaig deixar el meu llibre damunt de la taula del saló. Ella treballava de vesprada perquè havia canviat el torn per a fer un favor a un company, així que estaria a soles a casa durant el matí. Jo ja havia eixit quan ella es va despertar.</p>
+    <p class="lector-p">Esmorzava a la cuina quan va passar al saló per a posar música. Sonava Loreena McKennitt, la seua pista preferida, Alhambra. Es va asseure al sofà, café en mà, tancava els ulls deixant-se portar. “Yup, yup, yup…”: el CD pareixia haver-se quedat enganxat. Va deixar la tassa damunt del llibre, va netejar el compacte i la música va tornar a sonar. En adonar-se del descuit, va agarrar el llibre per a corroborar que no estava tacat. El títol, “El llibre dels esperits”, d’Allan Kardec; el va deixar damunt de la taula, no va voler mirar, sabia que no estava allí per casualitat. No volia ser partícip d’un dels meus nous invents, però la curiositat va poder més. L’obria per un dels tants fulls marcats amb notes. Dos cafés més van caure mentres ullava el text. El deixava damunt de la taula. Va desenganxar un dels “post-it” i el va guardar a la mà.</p>
+    <p class="lector-p">Va mirar l’hora, era tard, havia passat molt més temps del que pensava. Es va vestir i va eixir de casa. Quedaven tres parades d’autobús i set de metro fins a arribar a l’empresa. Viatjava absorta mirant per la finestra, jugant amb el paperet entre els dits, mirant-lo de tant en tant per a tornar-lo a arrugar entre les mans.</p>
+    <p class="lector-p">Passades les quatre vaig arribar a casa. Ella havia llegit el llibre; la tassa de café em va fer suposar que li havia dedicat més temps de l’esperat. Aquella era una vesprada de dimarts: si acceptava, només caldria esperar unes hores fins a l’endemà. Mai abans no havíem contemplat parlar amb ells directament, mirar d’establir una comunicació. De fet, sempre em va rondar pel cap practicar una ouija, però potser per la seua mala fama i a fi d’evitar una resolució negativa, vaig deixar de banda semblant joc.</p>
+    <p class="lector-p">Però El llibre dels esperits m’havia fet pensar d’una altra manera: si realment en morir només deixem la nostra forma corpòria i tornem a la pura essència, viatgem per l’espai aliens al temps i caminem mons que l’home ni tan sols imagina. Què m’impedia pensar que, si ella cridava els seus pares, ells vindrien a atendre la seua filla, i seria l’ocasió ideal per a parlar de tot el que quedava en el tinter.</p>
+    <p class="lector-p">La resta de la vesprada la vaig dedicar a les faenes de casa i a posar al dia els meus albarans de venda. Encara que no m’anava malament, cada dia era més complicat complir els objectius que marcava l’empresa. Vendre ulleres de certes marques deambulant de botiga en botiga et permet viure bé, però no és una cosa que enriquisca l’amor propi. Ben mirat, no m’estressava en excés: no tenia companys i la meua cap només la veia dos vegades al mes. Supose que tampoc eren moltes les meues inquietuds més enllà de la música, la lectura i el cine. Per a ser sincer, tret de llançar-me en paracaigudes, viatjar a l’Índia en tren o qualsevol altra bogeria d’eixes que només es fan una vegada en la vida, el que més em venia de gust era aprendre a ballar salsa, merengue, txa-txa-txa. M’encanta vore la gent moure’s d’una manera tan bella, converses sense paraules, on el cos ho diu tot, i de quina manera. Fins i tot vaig traure de la biblioteca en una ocasió un parell de tutorials en DVD, però no tenia amb qui ballar. Però tan prompte com tot això passara, els dos eixiríem un parell de vegades a la setmana a un d’eixos pubs amb pista, a fi de trobar un camí nou per a entendre’ns.</p>
+    <p class="lector-p">El sopar estava preparat quan ella va entrar. Jo estava al balcó. Es va acostar a mi i em va fer un bes.</p>
+    <p class="lector-p dialogo">― Fa bona olor, què has preparat?</p>
+    <p class="lector-p dialogo">― Risotto i pa amb tomaca.</p>
+    <p class="lector-p dialogo">― Mmm… Què tal la faena?</p>
+    <p class="lector-p dialogo">― Avorrida, com cada dia, però a punt de tancar el mes ho porte tot complit. Firmaria perquè la resta de l’any fora així. I tu, què tal a l’oficina?</p>
+    <p class="lector-p dialogo">― Fent números. Per cert, este matí m’he despistat i m’he oblidat de posar la llavadora.</p>
+    <p class="lector-p dialogo">― Tranquil·la, l’he posada i he estés la roba. Anem a sopar.</p>
+    <p class="lector-p">Ella estava una mica més absorta del que era normal. A la tele feien Futurama, que solia fer-nos riure, però la seua mirada estava perduda i, encara que n’intuïa el perquè, no vaig voler ser descarat i em vaig mantindre en silenci. Després vam estar una estona al sofà, un parell de tes, un documental sobre l’ukiyo-e, i va arribar l’hora de tornar al llit.</p>
+    <p class="lector-p">L’endemà al matí, dimecres. Vam esmorzar junts, vam anar a treballar, la vaig arreplegar, vam tornar a casa a dinar i, a mesura que queia la vesprada, la seua cara es tornava lúgubre. L’observava amb atenció. Cap a les huit de la nit es va asseure vora la taula del saló i va començar a escriure davant de mi. Mai abans no ho havia fet: es tancava a l’estudi i d’allí eixia, sense dir ni una paraula, al carrer.</p>
+    <p class="lector-p">Escrivia com si jo no hi fora, sense pausa, amb els ulls plens de llàgrimes. Deixant el bolígraf a un costat, va donar per acabada la carta, la va agarrar amb les mans i va dir així.</p>
+    <p class="lector-p dialogo">― Mama, papà. Soc jo, Eloise; vos cride, onsevulla que estigueu, perquè escolteu les meues paraules. Mama, papà, jo vos cride.</p>
+    <p class="lector-p">Tres vegades va repetir la convocatòria. Ipso facto va començar a llegir les seues lletres, a poc a poc, detallant cada paraula. Per primera vegada vaig saber què deia una de les tantes que escrivia als seus pares.</p>
+    <p class="lector-p">“Hola, mama; hola, papà.</p>
+    <p class="lector-p">Esta és la primera vegada que compartisc amb vosaltres els meus pensaments; fins ara només han sigut paraules escrites en un paper i supose que no heu tingut ocasió de llegir-les. En estes missives sol reflectir els meus sentiments cap a vosaltres, i ho faig arribat el dimecres, no només perquè és el dia de la setmana en què es va produir el fatídic accident, sinó perquè dies com hui una pena profunda em nega el cor.</p>
+    <p class="lector-p">Més enllà de la tristor que suposa la vostra absència i de la ràbia que sembra la mort inesperada. Sent una pesadesa en l’ànima que transgredix el meu propi jo. M’enfonsa cada dia que passa sense deixar que avance, sense deixar que aflore la que un dia vaig ser, vessant de felicitat. No crec que torne a ser la mateixa; un colp tan dur cuira. Però esta pena que tant s’allarga en el temps no és convencional, no li trobe explicació, ningú no li troba solució i soc la primera a voler tornar a brotar.</p>
+    <p class="lector-p">Al llarg d’estos anys, i per mitjà dels nous coneixements adquirits, he pogut acotar en quin punt comença i acaba el dol per la vostra absència. També he comprés quina part d’esta tristor ve donada per la frustració i el fracàs que sent com a filla. Sent que mai no vos vaig satisfer com a estudiant, com a treballadora, simplement com qui soc. Sempre vau esperar més de mi i em retrèieu que el vostre esforç havia sigut molt més gran que el meu. Sé que ser comptable no cobria les vostres expectatives, però a mi em fa feliç i em permet tindre la vida que desitge.</p>
+    <p class="lector-p">Em sent frustrada per haver sigut menyspreada, mal volguda, i sé que m’ho heu donat tot, que els vostres esforços han sigut incomptables i que, a la vostra manera, m’heu estimat molt. Però la vostra manera d’estimar no és la manera com jo necessitava ser estimada. Jo només vaig voler ser acceptada tal com soc, ser feliç i no ser jutjada. No ser el projecte del que vosaltres vau desitjar ser una vegada, els vostres anhels abocats en mi. Jo no soc com vosaltres, no soc el que heu volgut que siga.</p>
+    <p class="lector-p">Culpar-vos no crec que siga just del tot; supose que això transcendix molt més, però no vos exonera d’este sentiment hostil que patisc sense voler cap a vosaltres. Ara ja no hi sou i només desitge recordar bons moments, però vos en vau anar sense saber això, sense preguntar-me ni una sola vegada com em sentia, sense dir-me que m’estimàveu de cor, sense mirar-me ni una sola vegada d’igual a igual, i això em crema i m’enfonsa en este calvari.</p>
+    <p class="lector-p">No obstant això, havent arribat tan lluny en el meu autoconeixement, sabent molt més de mi del que necessitava per a trobar una resposta, he arribat a delimitar una cosa molt gran que m’és aliena; no sé d’on ve ni per què la sent. Però em ve enorme i m’amarga. Sent caos, ira, por, ràbia, una barreja de sentiments que romanen en mi des d’aquell dia, i eixa barreja no minva amb el temps. Continuen i continuen. No sé si estareu escoltant això, si és que de cas podeu fer-ho, però necessite que ho sapieu, funcione o no, perquè desitge canviar esta situació, desitge que el meu cor quede en pau amb vosaltres i saber que m’observeu des de l’altre costat orgullosos de mi, somrients”.</p>
+    <p class="lector-p">Això és el que vull que sapieu. Necessite que em digueu “t’estime”, necessite escoltar unes disculpes sentides, necessite sentir l’abraçada d’uns pares que es comporten com a tals.</p>
+    <p class="lector-p">M’heu escoltat…? Mama… papà… vull saber que hi sou, que ho heu escoltat, que enteneu la meua voluntat i que l’accepteu. Em sentiu? Mama… papà… -Eloise va esclatar a plorar; no vaig saber fer altra cosa que continuar observant-la-. Mama, papà, vos estime i vos enyore…</p>
+    <p class="lector-p">CLAC!!</p>
+    <p class="lector-p">Els dos vam girar el cap lentament, vam dirigir la mirada cap al prestatge on hi havia una foto dels seus pares: el vidre del portaretrats s’havia trencat. Ens vam mirar, no vam dir res. Va agarrar la carta, la va trencar i la va tirar a la paperera. Es va gitar al llit i es va disposar a dormir. Els dos pensàvem el mateix: casualitat o no, allò era poc oportú. Vam quedar meditabunds alhora que espantats.</p>
+    <p class="lector-p">Des d’aleshores he preferit deixar de banda tot allò que fa referència a la comunicació amb esperits. D’aquella nit no en va transcendir res; de fet, no en vam parlar. Però, per ser sincer, crec que no va ser casual: es tracta de la vegada que més a prop hem estat de trobar una solució. Només que cap dels dos va saber com continuar malgrat tant de llibre llegit.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+    <p class="lector-p">Una brisa freda em va despertar de l’embadaliment; ella tornava caminant quan algú es va interposar davant de mi. Vaig alçar la mirada: una dona menuda, amb mig somriure, de trets afilats. L’instant es va fer incòmode.</p>
+    <p class="lector-p dialogo">― …La puc ajudar…? –Ella va mantindre el somriure i es va asseure vora meu, pell amb pell. L’expressió de la meua cara ho va dir tot. Ella es va estrényer encara més i jo no vaig poder mantindre la compostura-. Prou!! –vaig xiuxiuejar apartant-me’n un cos. La dona va girar la cara i va mirar Eloise.</p>
+    <p class="lector-p dialogo">― És una llàstima que una xicona com ella, tan guapa i tan gran d’esperit, haja d’aguantar un maleducat com tu –va dir sense perdre el somriure. Jo em vaig alçar quan em va agarrar la mà amb una força tremenda.</p>
+    <p class="lector-p dialogo">― Seu!, encara hi ha una cosa que has de saber –em vaig asseure. Eloise caminava amb la mirada clavada a terra, lluny. Vaig escoltar-. M’atreviria a dir que és una persona molt especial.</p>
+    <p class="lector-p dialogo">― Ho és, o almenys ho va ser fins que…</p>
+    <p class="lector-p dialogo">― Ho continua sent –va interrompre-, només que tu has continuat caminant i ella continua estancada en aquell dia; eixa és l’única diferència –jo atenia atònit-. De vegades, encara que inconscientment, es generen lligams indestructibles davant de certes situacions.</p>
+    <p class="lector-p">No hauria de ser difícil desfer eixe jou que la turmenta –alçant-se, va deixar caure un paper damunt de la meua falda-. Si encara et queda una mica de credulitat, pots intentar-ho una vegada més –la vaig seguir amb la mirada fins que va desaparéixer entre els carrerons.</p>
+    <p class="lector-p">Eloise passava per davant de mi. Caminava darrere d’ella a un parell de passes de distància. Mirava el paper: només hi havia escrita una adreça, res més. Pensava en el que m’havia dit aquella dona a qui no havia vist mai abans. No calia ser cap llumenera per a vore que la nostra relació no passava pel seu millor moment. Potser perquè jo necessitava desesperadament que tot canviara, vaig optar per guardar aquella senya.</p>
+    <p class="lector-p">Vam tornar a casa, es va posar el pijama i es va ficar al llit. Jo em vaig quedar assegut al sofà del saló, des d’on podia vore-li els peus davall dels llençols. Qualsevol altre dia m’hauria gitat al seu costat, però estava massa inquiet. Pensava en eixes poques paraules que havien aconseguit descol·locar-me del tot. Si haguera pogut, en aquell mateix instant hauria corregut a esbrinar què sabia aquella senyora que es podria qualificar de misteriosa.</p>
+    <p class="lector-p">Encara que ja havia decidit que l’endemà, abans d’arreplegar Eloise de la faena, aniria a vore-la. La seua cara se m’apareixia cada dos línies malgrat l’esforç per concentrar-me en el llibre que tenia entre les mans.</p>
+    <p class="lector-p">No sé en quin moment va ser, però em vaig adormir al sofà. Ben entrada la matinada em vaig despertar amb ganes d’orinar; estava tapat amb una manta i el llibre estava damunt de la taula. Vaig tornar a l’habitació i em vaig gitar al seu costat, li vaig agarrar la mà i em vaig quedar adormit.</p>
+    <p class="lector-p">Silenciosament preparava l’esmorzar. Estava vestida, amb els cabells recollits i una difusa línia negra que li engalanava els ulls. Així, prenent el seu café, recolzada damunt de la taula, l’observava durant el breu instant en què un es desperta, obri els ulls però encara no pensa. Un somriure d’orella a orella em dibuixava la cara.</p>
+    <p class="lector-p">En acabar es va acostar. “Pren-t’ho abans que es refrede, et veig després, t’estime”, i em va besar la galta. I això era el més a prop que els seus llavis estaven dels meus des de feia molt de temps. Era dijous, el dia havia de transcórrer amb normalitat. Hi era present, parlàvem poc, però parlàvem. Anàvem a fer la compra, preparàvem el sopar, fèiem les faenes de casa i alguna que altra vegada ens assèiem a vore alguna pel·lícula. I potser vos preguntareu de què conversàvem. Doncs de la faena, del temps, i la resta ho deia la televisió o la ràdio. No és que estiguera tot el dia encesa, però de vegades salvava algun moment incòmode.</p>
+    <p class="lector-p">Estàvem junts, ens estimàvem i acceptàvem aquella amargor com una cosa transitòria, amb data de caducitat. Però quan no era ella la que clavava la mirada convidant-me a deixar-la, era jo el que l’observava absent, recordant altres temps. Tanmateix, continuàvem mantenint bons costums. Llegíem i comentàvem cada llibre acabat; tres vegades a la setmana eixíem a córrer. Contemplada amb distància, la nostra relació en matèria comunicativa no anava molt lluny de la de qualsevol altra parella convencional; fins i tot teníem moments d’entreteniment comú. Però a mi això em resultava insuficient quan em venia a la memòria aquell torrent de dona, criatura excepcional que va captivar el meu ser sense que jo volguera escapar.</p>
+    <p class="lector-p">Era bonica… i ho continua sent, de mirada jovial, espavilada, diligent, curiosa, facunda. El rellotge no tenia hores per a tot allò que podíem fer junts. No quedava ni un sol instant en què no hi haguera res a fer; fins i tot esgotats, asseguts a la gandula, sota les estreles, estar amb ella era vibrant. Ara supose que ho és menys o, senzillament, que encara que ja no ho siga, continue esperant que un dia torne a ser-ho. En una cosa s’equivocava la meua nova amiga: alguna cosa de mi també va quedar atrapada en el passat.</p>
+    <p class="lector-p">Després de la primera tempesta de pensaments que m’alegrava el dia, vaig eixir del llit i em vaig asseure a esmorzar. Planificava la jornada: complir unes quantes cites, buscar en el carrerer i escapar-me per a fer la visita; temps de sobra per a arreplegar Eloise a l’eixida de la faena amb una bona notícia acompanyant-me.</p>
+    <p class="lector-p">A estes altures ja anava una mica escèptic, però vaig sentir alguna cosa bona vora aquella senyora, i això m’empenyia a intentar-ho una vegada més.</p>
+    <p class="lector-p">La meua xica és comptable en una empresa de subministraments elèctrics, i jo treballe com a comercial per a una multinacional d’ulleres. Vaig carregar les maletes al cotxe i vaig recórrer les botigues venent noves tendències, una cosa bastant avorrida quan has repetit la mateixa cantarella per tretzena vegada.</p>
+    <p class="lector-p">Ja eren les dotze del migdia passades i, amb les vendes mínimes acabades, no vaig poder esperar més i, adreça en mà, vaig conduir fins allà. Un barri on no havia estat abans, als afores de la ciutat. Es tractava d’una zona residencial d’ordre antic que s’havia respectat, cases de dos plantes, ben conservades. Vestigis d’antany que ens recorden que bé que s’hi devia viure lluny del brogit, sense compartir pis en un rusc.</p>
+    <p class="lector-p">Vaig recórrer tot el carrer fins al final. Curiosament, la més descurada, damunt de la qual creixien les plantes salvatges i la porta de la qual estava oberta, era la casa indicada en la senya. En el portal hi havia dos inscripcions en llatí: “sapere aude” i “alea iacta est”. Vaig picar a la porta diverses vegades.</p>
+    <p class="lector-p dialogo">― Hola…? Hola…?</p>
+    <p class="lector-p">Em vaig endinsar una mica en el corredor, que donava a un pati interior ple de flors, un bassot amb carpes, una taula i tamborets de fusta. Un vell transistor mono damunt de la barana de l’escala. Aquella melodia l’havia sentida abans: Una paloma blanca, cantada per Antonio Molina, cançó que tant vaig escoltar en els casets de ma iaia. Per un moment, aquell entorn envellit se’m va fer familiar. Soroll.</p>
+    <p class="lector-p dialogo">― Seu, per favor, ara mateix baixe –la seua veu va sonar des del pis de dalt. Jo vaig esperar assegut.</p>
+    <p class="lector-p">Damunt de la taula hi havia uns escacs amb la partida començada, una baralla de cartes desordenada i uns daus. Sense saber què fer amb les mans, vaig recol·locar els naips.</p>
+    <p class="lector-p dialogo">― Talla –va dir ella sorprenent-me. Vaig partir la baralla-. Gira-la –i així ho vaig fer-. Un as d’espases, interessant.</p>
+    <p class="lector-p dialogo">― Interessant…?</p>
+    <p class="lector-p dialogo">― Sí, o almenys ho seria si sabera llegir les cartes, ha, ha, ha –va respondre esclatant a riure-. Acompanya’m –va dir pujant les escales-. Finalment has vingut, encara que veig en els teus ulls que albergues algun dubte cap a mi. Si has arribat fins ací, és perquè vols creure. Necessite que confies plenament perquè el caminant faça camí.</p>
+    <p class="lector-p">Em va convidar a entrar en una habitació lúgubre, llum d’espelmes, mobles vells, una taula i cadires, un ambient pesat que només vaig saber trencar preguntant-li com es deia.</p>
+    <p class="lector-p dialogo">― Em dic Regina, encara que fa tant de temps que ningú no em crida, que podria respondre a Anna, Camilla, què sé jo. Seu, per favor.</p>
+    <p class="lector-p dialogo">― És clar… I viu a soles?</p>
+    <p class="lector-p dialogo">― Visc a soles, viuda tècnicament, encara que ell sempre ronda per ací. Els meus dos fills també paren lluny. Esta és la meua llar, casa dels meus pares i dels meus iaios, i possiblement la meua tomba. Però no has vingut a escoltar els laments d’una vella boja. Som ací per a parlar d’ella, la dona que estimes.</p>
+    <p class="lector-p dialogo">― Eloise és el seu nom.</p>
+    <p class="lector-p dialogo">― Eloise viu lligada al passat i observa en compte de caminar el seu present. No és una cosa que haja triat voluntàriament: és un llegat ancestral que tots patim en major o menor mesura. Els seus pares li van ser arrabassats d’una manera singular, i un lligam feble i eixut s’ha convertit en la seua corda. M’equivoque?</p>
+    <p class="lector-p dialogo">― No… és cert. No mantenia una relació estreta amb ells: una telefonada cada setmana, un parell de visites breus a l’any per a evitar discussions, ja que hi eren bastant propensos. No guarda grans records dels seus anys en família. Entenc que són els seus pares, que va ser un fet sobtat i terrible, que sense progenitors se sent el desarrelament. Però han passat quatre anys i no supera l’absència.</p>
+    <p class="lector-p dialogo">― No és qüestió de temps. Recorda alguna cosa que et fera mal en la infància: continua fent mal com fa tants anys; el temps és per als rellotges. L’absència… sí que està superada, ella sap que ja no hi són i ho ha assumit. Esta tristor no respon a un major o menor afecte paternofilial, el buit del qual enyora el seu cor. Ella necessita sincerar-se amb els seus pares, fer-se valdre i ser reconeguda, i ells necessiten escoltar la seua filla, abraçar-la i animar-la. No és l’amor el que els lliga, sinó la frustració i la culpa –un instant en silenci-. Entens tot el que et dic?</p>
+    <p class="lector-p dialogo">― …Entenc… Encara que el meu punt de vista ha virat, continue en la mateixa fita. No sé com ajudar-la.</p>
+    <p class="lector-p dialogo">― La teua tasca no és ajudar-la, i per això no saps com. I amb la teua voluntat heu convertit la vostra relació en un lligam incòmode. Tu només l’has d’estimar, caminar al seu costat i estendre-li la mà quan caiga. No l’arrossegues, o et convertiràs en el seu pitjor enemic. Allibera’t de les teues obligacions amb ella, sent-te lliure i la seua càrrega serà més lleugera. Pensa que a ella li fa més mal que a tu vore’t impotent i fracassat. Jo m’encarregaré de la resta. No és res nou; només que a la majoria se’ns oblida vore i escoltar més enllà del propi ego.</p>
+    <p class="lector-p dialogo">― I què pensa fer per a això?</p>
+    <p class="lector-p dialogo">― Donar-li l’ocasió de parlar amb els seus pares –la vaig mirar estupefacte.</p>
+    <p class="lector-p dialogo">― Soc xaman, no psicoanalista. No et vaig donar la meua adreça perquè veiera una falta de comunicació en la parella, sinó perquè els seus pares m’ho van demanar. Encara no se n’han anat, continuen ací, i ella suporta el pes de dos ànimes en pena –definitivament no vaig saber què dir-. Entenc que et sorprengues: no és el mateix llegir sobre la màgia que formar part del truc.</p>
+    <p class="lector-p dialogo">― Com ho sap…?</p>
+    <p class="lector-p dialogo">― Podria respondre que algú que arriba fins ací està tan desesperat com per a confiar en qualsevol, que algú que arriba fins ací viu la plena essència d’una manera o d’una altra, o simplement que ton pare es preocupa per tu. Hui t’acompanya i m’ho ha contat ell. Per cert, diu que t’estima molt.</p>
+    <p class="lector-p">Jo em vaig alçar sufocat, massa tens, hipersensible a aquella atmosfera. Ella no es va immutar. Vaig deixar l’habitació i em vaig abocar a la balconada: aire fresc, la claror del cel i la ràdio sonant em van relaxar el cos. Em vaig deixar caure damunt de la barana, vaig respirar profundament, assimilant les paraules de la senyora que acabava de conéixer i que tan profundament pareixia conéixer-nos.</p>
+    <p class="lector-p">Ella es va acostar un parell de minuts després. Em va acariciar l’esquena.</p>
+    <p class="lector-p dialogo">― No era la meua intenció espantar-te…</p>
+    <p class="lector-p dialogo">― No, en absolut; no és por, sinó revelació. Ni tan sols em sorprén: és com si la meua ment es revolucionara davant de semblant informació.</p>
+    <p class="lector-p dialogo">― És normal, hi ha certs fets que estremixen l’esperit. L’acceptació portarà pau.</p>
+    <p class="lector-p dialogo">― Tinc entés que es tarden anys a aconseguir-la.</p>
+    <p class="lector-p dialogo">― Cert: dies, anys, tota una vida, diverses… però per a caminar el més difícil dels camins, primer cal travessar la gran porta; no tots hi estan disposats, i una vegada es creua no hi ha marxa arrere.</p>
+    <p class="lector-p">Has arribat fins ací amb la intenció d’escoltar amb paraules la representació d’alguna cosa que intuïes, però que no sabies com aconseguir.</p>
+    <p class="lector-p dialogo">― Sí… però no esperava això.</p>
+    <p class="lector-p dialogo">― No em referisc al detall, sinó al gran esbós. És la raó la que encega l’esperit i minva els nostres sentits.</p>
+    <p class="lector-p dialogo">― La qüestió és si ella estarà preparada per al que ens depares.</p>
+    <p class="lector-p dialogo">― La veritat haurà d’alleujar la seua càrrega.</p>
+    <p class="lector-p dialogo">― Espere que vulga vindre a vore’t, encara que no imagine la manera d’enganyar-la.</p>
+    <p class="lector-p dialogo">― No cal l’engany, només has de convidar-la. Els fils que mouen el nostre món són subtils. A més, vos estalviaré el viatge: hi ha la possibilitat que avanceu els dos; jo em limitaré a xiuxiuejar-te a l’oïda certes indicacions. Quan escoltes dins de la teua ment, no preguntes: fes-ho.</p>
+    <p class="lector-p">Vols continuar, o per hui ja n’hi ha prou?</p>
+    <p class="lector-p dialogo">― …Crec que em prendré la resta del dia per a assimilar esta conversa.</p>
+    <p class="lector-p dialogo">― Bé –es va dirigir a la taula, va agarrar la tetera i va servir dos gots-. Té, no està tan saborós com calent, però et vindrà bé. Són herbes silvestres; la naturalesa sempre ens dona tot el que necessitem.</p>
+    <p class="lector-p dialogo">― Està molt bo: regalèssia, camamilla, menta…</p>
+    <p class="lector-p dialogo">― No preguntes si no vols eixir corrent –va dir amb mig somriure.</p>
+    <p class="lector-p dialogo">― Ha, ha, ha… -vaig riure assaborint sense més preguntes-. Bonic pati, geranis florits, la bassa i música bella.</p>
+    <p class="lector-p dialogo">― Cert.</p>
+    <p class="lector-p dialogo">― Em recorda els anys que vaig viure al poble amb ma iaia durant la infància. Molt diferent d’esta vida cosmopolita. Si tinguera diners, m’agenciaria un habitatge com este i abandonaria eixe pis diminut. Aquell temps va ser bonic: tenia conills, gallines, ànecs. Corria lliure pels carrers, passava hores assegut vora ma iaia, jugava amb els meus indis i vaquers mentres ella cosia alhora que cantava el cançoner espanyol. L’enyore…</p>
+    <p class="lector-p">Supose que és la culpable que m’aficionara al flamenc, a la copla. Quan escolte cançons com esta, tanque els ulls i torne als meus quatre anys.</p>
+    <p class="lector-p dialogo">― Saps qui és?</p>
+    <p class="lector-p dialogo">― Concha Piquer. …Ojos verdes, verdes como la albahaca. Verdes como el trigo verde y el verde, verde limón…</p>
+    <p class="lector-p dialogo">― …Ojos verdes, verdes, con brillo de faca, que están clavaítos´ en mi corazón. Pa´ mí ya no hay soles, luceros ni luna… Per les meues venes corre sang gitana, encara que no vaig heretar el talent musical de mon pare. Pel que es veu, vaig rellevar ma iaia amb les dots de bruixa –la ràdio donava l’hora en punt.</p>
+    <p class="lector-p dialogo">― Bé, Regina, ha sigut un plaer conéixer-la, m’alegre que hàgem tingut esta conversa. Si no em cobra molt, m’agradaria que n’hi haguera moltes més.</p>
+    <p class="lector-p dialogo">― No faig això per diners. El que jo t’oferisc no és material i, en conseqüència, la teua ofrena pel meu favor serà espiritual.</p>
+    <p class="lector-p dialogo">― Ara no se m’ocorre res que nasca de mi i que li puga oferir.</p>
+    <p class="lector-p dialogo">― Tot es veurà arribat el moment. No li mencions res a la teua xica, no cal.</p>
+    <p class="lector-p dialogo">― Descuide. Gràcies. Tornaré prompte.</p>
+    <p class="lector-p dialogo">― T’estaré esperant -jo baixava les escales seguit per la seua mirada-. Per cert, no m’has dit el teu nom…</p>
+    <p class="lector-p dialogo">― No l’he dit? Disculpe, no me n’he adonat. El meu nom és Edgard.</p>
+    <p class="lector-p dialogo">― Encantada.</p>
+    <p class="lector-p dialogo">― Igualment, ens veiem, bon dia.</p>
+    <p class="lector-p dialogo">― Bon dia… -va dir quedant-se abocada a la porta.</p>
+    <p class="lector-p">Jo vaig eixir i vaig pujar al cotxe, em vaig asseure i em vaig quedar pensatiu. Era com si no pensara res i alhora em bullira el cap. Estava molt nerviós. No podia arreplegar Eloise en aquell estat.</p>
+    <p class="lector-p">Vaig arrancar el cotxe; encara tenia quaranta-cinc minuts per davant. Vaig parar prop de casa; no molt lluny hi havia una boca de metro on solia haver-hi un músic xinés que tocava el “huqin”. Sempre que coincidíem solia quedar-me una estona escoltant-lo tocar. L’eco de les cordes queixoses. Em vaig asseure prop, a terra; no sé què tenia aquell instrument, ni què sentia ell quan el tocava, però em feia vibrar el cor i em serenava.</p>
+    <p class="lector-p">Vaig tardar a adonar-me que la música havia cessat; ell em va mirar amb un somriure. Li vaig donar el primer bitllet que vaig traure de la cartera.</p>
+    <p class="lector-p dialogo">― Gràcies –va dir inclinant el cap.</p>
+    <p class="lector-p dialogo">― A vosté.</p>
+    <p class="lector-p">Vaig desfer el corredor i vaig tornar al cotxe. La infusió i la música havien aconseguit temprar-me. Conduïa tranquil, arribava a temps. Em vaig dirigir cap als afores. Cinc minuts després apareixia Eloise. L’acostumat breu diàleg de sempre. Encara que intuïsc que, malgrat la parquedat d’aquelles paraules, va apreciar una certa estranyesa en el meu comportament.</p>
+    <p class="lector-p dialogo">― Passa alguna cosa?</p>
+    <p class="lector-p dialogo">― No… només estava pensant.</p>
+    <p class="lector-p dialogo">― Potser et ve de gust dinar fora de casa…</p>
+    <p class="lector-p dialogo">― Mexicà, coreà, no sé… variar… -vaig somriure forçadament.</p>
+    <p class="lector-p dialogo">― Mmm… si només és això, em pareix bé, però preferisc gallec –va dir sense ganes de saber-ne més.</p>
+    <p class="lector-p dialogo">― Genial, polp estarà bé.</p>
+    <p class="lector-p">Després de dinar vam fer una passejada abans de tornar a casa. Jo estava absort, sense deixar d’escoltar eixe soroll de fons dins del cap</p>
+    <p class="lector-p">Devia ser arribada la nit, mentres els dos dormíem, quan va passar l’inesperat. Jo adormit, somiant, una situació surrealista rere una altra, el de sempre: cares de la infància, de la faena, animals i plantes que parlen. I entre ells, una cara que, a força de repetir-se en diversos dels somnis, vaig acabar identificant.</p>
+    <p class="lector-p dialogo">― Tu! –ella em va mirar i va somriure.</p>
+    <p class="lector-p dialogo">― Per fi te n’adones –l’entorn es va esvair i els dos vam aparéixer enmig d’un prat d’herba fresca, sota un cel blau anyil estrelat, tan il·luminat que la nit pareixia dia. Una sensació plàcida-. T’has pres el teu temps, però per a ser la primera vegada no està gens malament.</p>
+    <p class="lector-p dialogo">― Què fas en el meu somni? -ella va alçar la mà i va assenyalar cap a l’horitzó; dos estreles es precipitaven cap a mi, enlluernant-me.</p>
+    <p class="lector-p">Vaig tancar els ulls i, quan els vaig tornar a obrir, vaig aparéixer assegut a la part de darrere d’un cotxe. Algú conduïa, acompanyat. Vaig reconéixer les veus: eren ells. Xarraven tranquil·lament de tornada a casa per la nacional, quan, en agafar la corba, un altre cotxe va col·lidir frontalment a gran velocitat.</p>
+    <p class="lector-p dialogo">― AAAAHHH!!! COMPTE! –vam cridar tots fora de si.</p>
+    <p class="lector-p">Tres bolcades de campana; anàvem d’un costat a l’altre colpejant-nos amb força. La paret del tossal ens va detindre, cap per avall, sagnant; ells estaven inconscients. Vaig eixir del cotxe i vaig intentar traure’ls, però no vaig poder: ell no respirava, ella sí. Amb dificultat va espentar la porta, va eixir incorporant-se, va fer quatre passes i es va desplomar xiuxiuejant “Eloise”.</p>
+    <p class="lector-p">L’altre cotxe s’havia detingut a uns cinquanta metres; el xicot caminava sense rumb, desorientat, tacat de sang.</p>
+    <p class="lector-p dialogo">― No volia… Jo no volia!!! Han sigut ells!!!</p>
+    <p class="lector-p">Va arribar un altre vehicle; el conductor va avisar la policia i, una estona després, el desplegament, l’ambulància. Son pare havia mort en l’acte, i sa mare havia patit un traumatisme cranial que li llevava la vida de camí a l’hospital. El xicot també era traslladat greument ferit. Donava positiu en el control de drogues.</p>
+    <p class="lector-p">Em vaig sentir molt malament, ansiós. Em vaig despertar de sobte, amb un sospir profund que va sonar a crit ofegat. Em vaig alçar d’un bot, mirant-me, plorant, amb els ulls molt oberts, molt nerviós. Vaig xocar contra la paret i la vaig despertar. Va encendre el llum, espantada en vore’m.</p>
+    <p class="lector-p dialogo">― Què passa, Edgard, estàs bé?! –jo negava amb el cap sense deixar de murmurar “Eloise… Eloise…”-. Què passa!? –es va incorporar, nerviosa, es va acostar, em va agarrar el cap amb les mans-. Digues-me què passa!! –jo no podia parar de tremolar. Va posar el seu front damunt del meu-. Edgard, només ha sigut un malson! –va dir en vore la por en els meus ulls.</p>
+    <p class="lector-p">Vaig arrugar les parpelles amb força i, tot seguit, la vaig vore davant de mi: no érem a l’habitació. La llum es va intensificar molt, es va sentir un fort esclat, els dos vam obrir els ulls; ella cridava tirada damunt del llit.</p>
+    <p class="lector-p dialogo">― OOOOHHH!!! –plorava desconsolada, cargolant-se entre els llençols-. Ho has vist!? Els he vist! AAAAHHH! EDGARD, ELS HE VIST!!</p>
+    <p class="lector-p dialogo">― Ho sé!...</p>
+    <p class="lector-p">Va passar una bona estona fins que ens vam calmar. Vaig preparar una til·la per als dos. Ella estava asseguda al sofà; amb una mà subjectava la tassa de la qual xarrupava nerviosament, i l’altra mà s’estrenyia amb la meua. El que havia passat havia sobrepassat qualsevol bruixeria o teràpia imaginada. Només havia sigut un somni, però ella continuava amb la mirada perduda.</p>
+    <p class="lector-p">Devien haver passat un parell d’hores quan em va dirigir un gest inquisidor. Els meus ulls entreoberts ho van sentir.</p>
+    <p class="lector-p dialogo">― Com ho has fet?</p>
+    <p class="lector-p dialogo">― Mmm…?</p>
+    <p class="lector-p dialogo">― Vull que m’expliques com ha pogut passar això.</p>
+    <p class="lector-p dialogo">― Ah… per ser sincer, no és que jo haja fet res; fa temps que no em cau a les mans cap novetat. Després de l’últim intent, vaig desistir.</p>
+    <p class="lector-p dialogo">― Edgard. Tu has vist el mateix que jo, tu has fet que jo veiera l’accident. Pot ser que res no haja funcionat, però tinc prou nocions. No cola.</p>
+    <p class="lector-p dialogo">― Bé… he conegut algú –vaig respondre nerviosament, alçant-me del sofà-. En realitat em va conéixer ella a mi. Es va acostar dimecres a la nit, quan passejàvem per la platja. Tu vas continuar caminant a soles i, mentrestant, ella va aparéixer sense més i va dir una cosa que em va descol·locar. Este matí he anat a vore-la; només hem parlat, però m’ha remogut per dins. No havia conegut mai ningú així. Sap què dir, quan actuar, com si s’anticipara al mateix temps. No és casual.</p>
+    <p class="lector-p dialogo">― I això que ha passat esta nit, ho havíeu preparat en la vostra trobada?</p>
+    <p class="lector-p dialogo">― No, de veres que no. De fet, me’n vaig anar: no estava preparat per a sentir-ne més. Li vaig dir que tornaria quan haguera païda la nova informació. Creu-me, jo també estic espantat.</p>
+    <p class="lector-p">Encara que el desig de trobar algú amb coneixements que ens poguera donar una solució és enorme, no esperava una cosa així en absolut. Supera de molt les meues expectatives.</p>
+    <p class="lector-p dialogo">― El que he vist ha sigut molt dur, Edgard.</p>
+    <p class="lector-p dialogo">― Ho sé… Què dic, ho he viscut! Sé que fa autèntic pavor, però els dos ens hem enfrontat al moment més cru d’estos quatre anys. Què ens queda ja? Si realment ha sigut ella, i no ho dubte després de vore-la en els meus somnis, el pas següent, encara que difícil, serà positiu. N’estic segur. No sé quina sorpresa ens depara la nostra nova amiga, però desitge continuar –ella va quedar en silenci, va tancar els ulls, respirava amb lentitud.</p>
+    <p class="lector-p dialogo">― Torna a l’habitació, necessite estar a soles.</p>
+    <p class="lector-p dialogo">― No gaudisc veient-te patir. Si tu creus que…</p>
+    <p class="lector-p dialogo">― Em queda clar. Bona nit.</p>
+    <p class="lector-p dialogo">― Bona nit…</p>
+    <p class="lector-p">Em vaig tancar a l’habitació. Gitat damunt del llit, recordant el que havia passat. Van passar llargues hores fins que, quasi arribada l’alba, vaig caure adormit pel cansament.</p>
+    <p class="lector-p">La seua cara estava davant de la meua quan vaig obrir els ulls; jeia vora meu.</p>
+    <p class="lector-p dialogo">― He telefonat a la faena, he dit que em trobe indisposta. Vull anar a vore eixa senyora.</p>
+    <p class="lector-p dialogo">― Supose que sobra que et pregunte si n’estàs segura.</p>
+    <p class="lector-p dialogo">― Sí.</p>
+    <p class="lector-p dialogo">― Aham…</p>
+    <p class="lector-p dialogo">― Tens l’esmorzar damunt de la taula. Ja estic vestida, t’espere al saló.</p>
+    <p class="lector-p">Va eixir del dormitori. Feia olor de gessamí: per primera vegada en aquells quatre anys havia tornat a usar eixe perfum. Vaig esmorzar i em vaig vestir. Ella somreia; encara no m’havia parat a pensar-ho, però una estranya sensació de bonança em recorria el ser. Vam pujar al cotxe i vam arribar al barri. Vam parar un parell de cases abans i la resta la vam fer caminant. La porta estava oberta.</p>
+    <p class="lector-p dialogo">― Vaja, que prompte que heu vingut! –va dir una veu sobresaltant-nos. Ajupida entre les bardisses, Regina collia flors al jardí-. Intuïsc que vos he espantat, però rebutgeu tota por: ací no veniu a passar-ne. A vore… -buscava entre les flors-. Una rosa blanca per a tu –va dir col·locant la flor als cabells d’Eloise-. I un crisantem per a tu –deixant-lo a la butxaca de la meua camisa.</p>
+    <p class="lector-p dialogo">― Esta és Regina. Ella és Eloise.</p>
+    <p class="lector-p dialogo">― Molt de gust a conéixer-te; per favor, passeu i seieu a la taula. Heu arribat abans del que esperava. Soc vident, però no òbric fins a les deu –va dir rient-. Podeu servir-vos tisana, ahí teniu gots; torne de seguida.</p>
+    <p class="lector-p">Va pujar les escales i els dos vam esperar asseguts. Uns minuts després va baixar amb una llibreta menuda.</p>
+    <p class="lector-p dialogo">― He estat pensant com fer això. Crec que serà millor si deixem que la trobada siga només entre pares i filla.</p>
+    <p class="lector-p">Atés que esteu familiaritzats amb tot allò annex a l’altre costat de la vida. Supose que no vos serà molt difícil assumir este exercici. He apuntat en un full el que necessiteu per a dur a terme la trobada. No és complicat d’aconseguir. Seguiu les instruccions per a la disposició i utilitzeu estos textos per a la convocació.</p>
+    <p class="lector-p">L’única cosa que et demane és que faces això sense por, sense rancor. Digues-los tot el que hages de dir-los, però fes-ho amb el cor, amb amor. Si l’odi es fa present, l’hostilitat els rebutjarà i fins i tot pot ser que s’òbriguen portes a altres immanències fosques. Queda clar?</p>
+    <p class="lector-p dialogo">― Sí.</p>
+    <p class="lector-p dialogo">― Pren este ram de margarides i este amulet: també tindrà cura de tu en el que està per vindre. Una dona tan bella i tan profunda com tu deu patir molt de mal d’ull. Porta’l sempre amb tu.</p>
+    <p class="lector-p">Fes una ullada a les anotacions i digues-me si ho has entés tot –va llegir tot el que hi havia anotat i va assentir-. Sé que ho fareu bé. Aneu-vos-en i preneu-vos el dia de hui per a relaxar-vos, per a preparar l’esdeveniment. Sapieu que això vos canviarà la vida a millor –va dir amb un somriure.</p>
+    <p class="lector-p">Es va alçar i jo amb ella. Eloise em va mirar: esperava alguna cosa més que una simple llibreta amb instruccions.</p>
+    <p class="lector-p dialogo">― …i bé… què li devem per la visita? –va dir incorporant-se.</p>
+    <p class="lector-p dialogo">― Passat tot això rendiré comptes amb el teu xic… li he demanat que em busque un amic tan guapo com ell –Eloise la va mirar desencaixada.</p>
+    <p class="lector-p dialogo">― És broma, xicona. Com vols que jo vaja amb hòmens tenint el meu home rondant per ací –un moment de silenci; es va inclinar, com si escoltara alguna cosa-. Per cert, em diu que vages amb compte a la faena: algú que creus amic només busca el teu mal –Eloise es va quedar rígida, amb mig somriure tort.</p>
+    <p class="lector-p dialogo">― Gràcies.</p>
+    <p class="lector-p dialogo">― No es mereixen… ara aneu-vos-en. Tinc coses a fer.</p>
+    <p class="lector-p dialogo">― Gràcies, Regina. Vindrem a fer-l’hi saber –ella va assentir somrient, va encendre el transistor i va continuar arreglant el jardí.</p>
+    <p class="lector-p">Nosaltres vam eixir de la casa sense dir ni una paraula fins a arribar al cotxe. Els dos asseguts, amb la mirada al davant.</p>
+    <p class="lector-p dialogo">― El seu home estava allí?</p>
+    <p class="lector-p dialogo">― Sí.</p>
+    <p class="lector-p dialogo">― …Mort?</p>
+    <p class="lector-p dialogo">― Ajà.</p>
+    <p class="lector-p dialogo">― No sé per què tinc fe en esta bogeria. Qualsevol que la tractara diria que no és normal. Només li falten els gats. Si no fora pel que va passar anit, no cediria davant de semblant sense-sentit.</p>
+    <p class="lector-p dialogo">― Deixa de pensar amb el cap i sent amb el cor. No mires d’enganyar-te: has sentit una pau tremenda en la seua presència. Més connectada amb tu mateixa que mai.</p>
+    <p class="lector-p">Eixa casa té alguna cosa màgica: eixes pedres enormes de color taronja ficades en testos, els ninots de fusta, les inscripcions. No crec que siga aleatori; pareix que estiguen disposats perquè l’espai i el temps desapareguen.</p>
+    <p class="lector-p dialogo">― És veritat que ella emana alguna cosa especial, que dona tranquil·litat. Però crec que estàs divagant massa.</p>
+    <p class="lector-p dialogo">― No divague massa. Insistisc: has de trencar lligams amb la raó. Si no m’equivoque, en eixa llibreta portes anotat el procediment per a contactar amb els teus pares.</p>
+    <p class="lector-p dialogo">― SÍ!! –va exclamar crispada-. Ho entenc, ja m’ha quedat clar, però estic espantada. Pot ser que a tu et resulte fins i tot emocionant, però jo soc la que ho viurà en primera persona. No és fàcil. Fins i tot tenint un desig tan gran de posar fi a esta tristor.</p>
+    <p class="lector-p dialogo">― Ho lamente. No pretenia pressionar-te ni fer que et sentires malament. A mi també m’espanta; no es tracta d’un d’eixos llibres llegits fins ara. Però no estàs a soles: jo estic amb tu, ric quan tu rius, m’entristisc quan plores; els dos ens enfrontem a això i eixirà bé. Ho sé, confia en mi –ella em va mirar afectuosament i va recolzar el cap en el meu muscle.</p>
+    <p class="lector-p dialogo">― Gràcies.</p>
+    <p class="lector-p dialogo">― A tu, per haver tingut paciència fins al dia de hui.</p>
+    <p class="lector-p">Vaig arrancar el cotxe i vam tornar a casa. Ella em va demanar que la deixara fer els preparatius. Per la meua part, vaig fer la ruta diària, maleta a coll. El que no es fa al matí sempre es pot recuperar a la vesprada.</p>
+    <p class="lector-p">Estant a soles, preparant l’esdeveniment, es familiaritzava amb la situació. Fins i tot acabada la jornada, vaig pensar a deixar més temps abans de tornar. El buit sol permetre’ns escoltar els nostres propis pensaments, reconéixer-los, acceptar-los i organitzar-los. Abastar una circumstància tan nova requerix molt més temps del que se’ns havia concedit. Però reconeguem que els colps d’efecte, encara que sense permís, solen arribar més lluny.</p>
+    <p class="lector-p">Elucubrant estos pensaments, vaig deixar passar més temps del previst assegut al seient del cotxe. El telèfon sonava trencant el meu embadaliment. Ni tan sols vaig mirar el nom.</p>
+    <p class="lector-p dialogo">― Digueu?</p>
+    <p class="lector-p dialogo">― Són les deu i mitja; necessitava estar a soles, però no vull passar la nit sense tu. Per on vas?</p>
+    <p class="lector-p dialogo">― Fa un moment estava tancant una venda, m’he entretingut parlant. Ja saps, gatges de l’ofici. Estic al sector cinqué, arribe en vint minuts.</p>
+    <p class="lector-p dialogo">― Ves amb compte. T’espere per a sopar.</p>
+    <p class="lector-p">Ella estava asseguda a la taula de la cuina. Hi havia un parell de fruites i amanida.</p>
+    <p class="lector-p dialogo">― No sopes?</p>
+    <p class="lector-p dialogo">― No tinc fam.</p>
+    <p class="lector-p dialogo">― Has menjat alguna cosa o els nervis no et deixen?</p>
+    <p class="lector-p dialogo">― Ara estic molt serena, però esta vesprada m’he menjat una terrina de gelat. Ansietat, supose.</p>
+    <p class="lector-p">M’ha vingut bé estar a soles unes hores. He sentit de tot: des de la tristor més profunda fins a un pavor terrible, i fins i tot una eufòria desbocada que em feia córrer d’ací cap a allà, com si estiguera de rebaixes comprant.</p>
+    <p class="lector-p dialogo">― Jo, de moment, note que estàs més xarradora del que és habitual i em fa l’efecte que tens tantes ganes com jo que arribe demà.</p>
+    <p class="lector-p dialogo">― La veritat és que sí. La percepció que tinc d’això dista de terapeutes i teràpies. No sé com et va trobar eixa dona, però m’alegre que es creuara en el nostre camí.</p>
+    <p class="lector-p dialogo">― Supose que, arribats a este punt, has de saber que quan es va asseure vora meu al passeig no va arribar a mi per casualitat, sinó perquè els teus pares li havien demanat que els ajudara –bocabadada, em va mirar intensament.</p>
+    <p class="lector-p dialogo">― Per què no m’ho havies dit abans?</p>
+    <p class="lector-p dialogo">― Eixa informació no t’hauria fet cap bé.</p>
+    <p class="lector-p dialogo">― I quines altres coses hauria de saber?</p>
+    <p class="lector-p dialogo">― Res més. Respecte als teus pares és l’única referència que va fer. La resta ja la saps. Encara que és cert que també em va donar records de part de mon pare. Només això, de veres…</p>
+    <p class="lector-p">Eloise no va dir res més. Poca estona després se’n va anar al llit. Jo llegia al sofà.</p>
+    <p class="lector-p dialogo">― Edgard.</p>
+    <p class="lector-p dialogo">― Mmm? –no va contestar. Vaig apagar el llum i vaig entrar al dormitori.</p>
+    <p class="lector-p dialogo">― Què t’ha demanat a canvi de la seua ajuda?</p>
+    <p class="lector-p dialogo">― Encara no ho ha dit.</p>
+    <p class="lector-p dialogo">― Diners?</p>
+    <p class="lector-p dialogo">― No. Em va dir que això no es paga amb diners.</p>
+    <p class="lector-p dialogo">― Ha, ha, ha… -va riure artificial-. Què pretens dir?</p>
+    <p class="lector-p dialogo">― Només dic que no sé què li hauré de donar a canvi; m’ho dirà si tot ix bé –ella va mirar al sostre estranyada. La vaig besar i a l’oïda li vaig dir.</p>
+    <p class="lector-p dialogo">― Tranquil·la, si em demana en matrimoni, hi ha Edgard per a les dos –ella va esbossar un somriure.</p>
+    <p class="lector-p dialogo">― Ximple… -va dir donant-me un colp amb el colze.</p>
+    <p class="lector-p">Va ser la seua última paraula abans de tancar els ulls. Encara que estàvem inquiets, eixe aire de certesa ens va fer caure adormits ràpidament.</p>
+    <p class="lector-p">L’endemà al matí va transcórrer com qualsevol altre. La vaig portar a la faena i, hores després, la vaig arreplegar. No vam dir més del necessari. Vam tornar a casa i vam deixar que el moment arribara. Tot estava disposat.</p>
+    <p class="lector-p">Per primera vegada en quatre anys, arribat un dimecres, Eloise no sentia tristor, no escrivia aquella carta. Es va asseure al sofà i, damunt de la falda, ullava l’àlbum de fotos de la seua família.</p>
+    <p class="lector-p dialogo">― Saps? Amb tant d’enrenou m’havia oblidat de ma germana.</p>
+    <p class="lector-p dialogo">― No te n’has oblidat: simplement no vas a avançar la notícia. Tot al seu degut temps –just sonaven les campanes del rellotge de paret marcant les tres de la matinada-. És el moment. Vols que em quede amb tu?</p>
+    <p class="lector-p dialogo">― Sí, però seu al corredor. Tu em veuràs, però jo a tu no, en la foscor. D’acord?</p>
+    <p class="lector-p">Jo em vaig asseure al corredor i vaig deixar que ella començara el ritual. Hi havia cinc cadires, una situada al centre, on estava asseguda. Dos davant d’ella, damunt de les quals hi havia un parell d’espills que reflectien les altres dos cadires que hi havia a la seua esquena. Una a la seua esquerra i una altra a la seua dreta. Davall de les tres cadires, una espelma. Damunt de la cadira dreta, una foto d’ell; damunt de la cadira esquerra, una foto d’ella. Un bol d’aigua on flotaven les margarides; es va humitejar les mans i se les va passar per la cara, els cabells, el tors, els braços i les cames. L’aigua purificava per a donar començament al ritual. Les espelmes eren l’única llum que il·luminava el saló.</p>
+    <p class="lector-p">Tot estava a punt; va respirar profundament. Va buscar la meua mirada entre les ombres, vaig assentir. Va agarrar la llibreta amb les mans i es va disposar a llegir una sèrie de textos llargs.</p>
+    <p class="lector-p">“Tu, que eres estimat en este món, escolta la meua veu que et crida per a donar-te una prova del meu afecte. El Pare ha permés que fores el primer a vore’t lliure. No em podria queixar d’això sense egoisme, perquè seria desitjar per a tu les penes i els patiments d’esta vida. Espere, doncs, amb resignació, el moment de reunir-nos en un altre món més feliç.</p>
+    <p class="lector-p">Jo sé que la nostra separació és momentània i que, per llarga que em puga paréixer, la seua duració s’esborra davant de l’eterna felicitat que el Pare promet als seus elegits. Que la seua bondat em preserve de fer res que puga retardar este instant desitjat, i que m’estalvie d’esta manera el dolor de no tornar a trobar-te en eixir de la meua captivitat terrestre.</p>
+    <p class="lector-p">Oh! Que dolça i consoladora és la certesa que només hi ha entre nosaltres un vel material que t’oculta a la meua vista, que pots estar al meu costat, vore’m i sentir-me com tantes vegades. Que els sentits deixen de confondre’s i que el teu esperit em seguix i em sosté sempre.</p>
+    <p class="lector-p">Que la pau del Pare siga amb tu”.</p>
+    <p class="lector-p">L’oració acabava amb un poema breu.</p>
+    <p class="lector-p">“… Si jo amb la meua tosca falta</p>
+    <p class="lector-p">m’he gronxat entre les brumes</p>
+    <p class="lector-p">desafiant les escumes</p>
+    <p class="lector-p">que alça el temporal,</p>
+    <p class="lector-p">t’oferisc que d’ara avant</p>
+    <p class="lector-p">no tindré l’atreviment</p>
+    <p class="lector-p">d’ensordir el lament</p>
+    <p class="lector-p">d’aquell que patix en el mal.</p>
+    <p class="lector-p">I seguint la meua senda</p>
+    <p class="lector-p">he tingut el descarament</p>
+    <p class="lector-p">de burlar-me d’aquell far</p>
+    <p class="lector-p">que com a port em va assenyalar,</p>
+    <p class="lector-p">jo et promet, Pare meu,</p>
+    <p class="lector-p">no burlar-me de la llum</p>
+    <p class="lector-p">que brilla damunt de la creu</p>
+    <p class="lector-p">pel fill del teu amor…”</p>
+    <p class="lector-p">A mesura que llegia, les llàgrimes brollaven, les seues emocions s’encrespaven. Jo la contemplava absort. Després de llegir el vers, va deixar la llibreta a terra, va agarrar una campaneta i la va fer sonar set vegades, repetint a cada colp la frase següent.</p>
+    <p class="lector-p dialogo">― Mama, papà, jo, la vostra filla Eloise, vos faig cridar i vos convoque al meu costat. És el meu cor ple d’amor el que vos parla… Ding…</p>
+    <p class="lector-p">Mama, papà, jo, la vostra filla… Ding…</p>
+    <p class="lector-p">… ple d’amor el que vos parla… Ding.</p>
+    <p class="lector-p">Amb la seua última paraula la campana va caure a terra i ella es va quedar paralitzada. Tremolava i, encara que mirava d’articular paraula, n’era incapaç. Es va incorporar maldestrament. Jo vaig fer un parell de passes. Ella em va mirar descomposta.</p>
+    <p class="lector-p dialogo">― Avant –vaig dir fluixet, demanant-li amb les mans que s’assentara. A poc a poc va tornar a la cadira.</p>
+    <p class="lector-p">…</p>
+    <p class="lector-p dialogo">― Mama, papà.</p>
+    <p class="lector-p dialogo">― Hola, Eloise…</p>
+    <p class="lector-p dialogo">― Hola, filla meua –ella va esclatar a plorar. Del que passava, jo no escoltava ni veia res del que es reflectia en els espills, però pel que més tard sabria, va dir així-. No plores més, estàs molt lletja quan fas eixa cara. Agarra un mocador i eixuga’t –va dir ell.</p>
+    <p class="lector-p dialogo">― Quant de temps ha passat des d’aquell dia… Em fa molt de mal no estar al teu costat hui. No va ser una cosa que nosaltres triàrem. Ni tan sols sabríem de la nostra nova condició fins un temps després. T’hem de demanar disculpes per això. No vam saber on anar ni què fer. Només ens va quedar buscar-te. Ens vam aferrar a tu, et cridàvem però no ens senties… i eixes paraules que ens feien mal com punyals en un dimecres que pareixia no passar mai.</p>
+    <p class="lector-p">Sense saber-ho, vam ofegar en tu el desconsol del qui no sap marxar i, a poc a poc, et vam fer sentir la profunda frustració i tristor davant de la nostra absència. L’única cosa que volíem era demanar-te perdó. Dir-te quant t’estimem, deixant les coses resoltes ací per a emprendre la nostra marxa.</p>
+    <p class="lector-p dialogo">― No sabeu quant he patit, no només en estos quatre anys, sinó al llarg d’estos molts lustres. M’heu infravalorada. No em vau escoltar plorar quan l’ànsia em va sobrepassar tot eixe temps que vaig romandre amb vosaltres.</p>
+    <p class="lector-p">Necessite pegar-vos a cadascun i l’única cosa que puc fer és enyorar-vos. Ni imagineu quant ansie abraçar-vos, quant em fa mal dir-vos això ara que ja no importa.</p>
+    <p class="lector-p dialogo">― Clar que importa. A nosaltres ens importa. Tant ton pare com jo ara comprenem, sabem el que vam fer malament. I el que més mal ens fa és no estar al teu costat per a rescabalar-nos. Però això era necessari. Eloise, el teu nom va ser l’última cosa que vaig dir en vida. T’havíem de perdre per a saber quant et devíem, quant t’estimàvem i quant havíem fet malament.</p>
+    <p class="lector-p">Si ara no estiguérem ací, esta conversa no s’hauria produït. Ara la nostra mirada s’obri a l’aprenentatge, i tot el que hem aprés ens ajudarà a ser millors en la pròxima vida. A tu, sens dubte, t’ajudarà a sincerar-te amb tu mateixa: no cometràs els nostres errors i arribaràs a ser una gran dona.</p>
+    <p class="lector-p dialogo">― A més, no penses que esta serà l’última vegada que ens veges –va dir el pare-. Hui tornen a obrir-se les portes per a nosaltres, i esta vegada marxarem. Ens espera un llarg viatge, però el temps allí no és com ací, així que abans del que t’esperes trucarem a la teua porta.</p>
+    <p class="lector-p dialogo">― De veres?</p>
+    <p class="lector-p dialogo">― No… però segur que trobem la manera de fer-te saber que ja ens hem elevat i que podem viatjar al nostre gust. Llavors podrem vore’ns tantes vegades com vulgues. Ja veus que només fan falta un parell d’espills i espelmes per a muntar un locutori.</p>
+    <p class="lector-p dialogo">― Ha, ha, ha –Eloise reia-. I com sé que estareu bé? Com sabré que tornareu?</p>
+    <p class="lector-p dialogo">― Estem bé, no et preocupes, quasi millor que abans; només que després del colp patisc migranyes sovint… ha, ha, ha, és broma: me les produïx ton pare de tant parlar. Ací no hi ha televisió ni premsa. Vint-i-quatre hores junts és el pitjor que em podia passar.</p>
+    <p class="lector-p">T’assegure que ací tot és diferent, només hi ha amor. Algun dia ho comprovaràs i estarem junts per a acompanyar-te, però això serà quan et tornes xaruca. Ho veus?… M’he tornat més divertida.</p>
+    <p class="lector-p dialogo">― Ja ho veig. No pareix que s’hi estiga tan malament, després de tot.</p>
+    <p class="lector-p dialogo">― Filla meua, viu, sigues feliç, gaudix de cada segon, no faces res que no t’agrade. Antepon la teua voluntat malgrat les conseqüències, perquè així fins i tot les males experiències seran satisfactòries. Gaudix del teu xic, esprem-lo al màxim… fins que en isca suc. Resumint: no deixes mai de somriure. La llosa que pesava damunt de tu ja no hi és. No patisques. Ens tornarem a vore i, encara que els teus sentits t’ho impedisquen, estarem al teu costat per a vetlar per tu en la mesura de les nostres possibilitats. Pel que es veu, cal entrenar molt per a moure monedes.</p>
+    <p class="lector-p dialogo">― Sé que ara vos n’aneu, però què hi ha de Juliette? Ella hauria de saber això.</p>
+    <p class="lector-p dialogo">― No, Eloise, no està preparada per a vore els seus pares difunts reflectits en un espill. Després de la nostra marxa ella també se sentirà alleujada. A més, va saber suportar millor la nostra absència. No debades li vam potenciar l’ego.</p>
+    <p class="lector-p">Recorda ta mare diligent, temprada, sàvia i molt jocosa. No et quedes amb el lleig, és l’única cosa que et demane. De ton pare, queda’t amb… amb… era un home bo…</p>
+    <p class="lector-p dialogo">― Escolta!, no sé per què dius això de mi. Tinc qualitats, soc bo… mmm… ehm… i també…</p>
+    <p class="lector-p dialogo">― Ho veus?... Bo, seré, afectuós…</p>
+    <p class="lector-p dialogo">― Això és… només que no em deixes parlar.</p>
+    <p class="lector-p dialogo">― Fa quatre anys que no tanca la boca…</p>
+    <p class="lector-p dialogo">― No li faces cas a ta mare, filla; ací hi ha més silenci del que es pot imaginar. Però és l’única manera de descobrir-se un mateix: el buit acaba despullant el propi ser. El meu desig, com el de ta mare, és que ens recordes bonic. De la resta ja ens encarreguem nosaltres d’esmenar-la.</p>
+    <p class="lector-p dialogo">― Mama, papà, vos estime, gràcies per això. De veres que ho necessitava.</p>
+    <p class="lector-p dialogo">― Gràcies, filla, per estimar-nos. Encara que no t’ho mostràrem, encara que no t’ho repetírem fins a la sacietat cada dia, t’estimem i ens enorgullix enormement qui eres. Ho lamentem molt, perdona’ns.</p>
+    <p class="lector-p dialogo">― Perdonats…</p>
+    <p class="lector-p dialogo">― Ara ens n’anem, ens criden, ens tornarem a vore… cuida’t molt. Fes-li un bes a ta germana de part nostra, i un altre al lleig del teu marit.</p>
+    <p class="lector-p dialogo">― Jo els els donaré –va respondre somrient entre llàgrimes.</p>
+    <p class="lector-p dialogo">― Agraïx-li també a Regina el seu esforç; sense ella això no hauria sigut possible.</p>
+    <p class="lector-p dialogo">― Així ho faré, papà. Vos estime… fins prompte.</p>
+    <p class="lector-p dialogo">― Nosaltres també t’estimem, fins a la vista, menuda.</p>
+    <p class="lector-p">Les espelmes s’havien apagat, tot quedava a fosques. Eloise no va dir res més. Només el seu plor. Jo vaig esperar al corredor no sé quant de temps.</p>
+    <p class="lector-p dialogo">― Edgard. Encén el llum, per favor. Ajuda’m a desmuntar això.</p>
+    <p class="lector-p">Vam llevar els espills, vam col·locar les cadires, vam arreplegar l’aigua, les espelmes. I ens en vam anar al llit. Jo em vaig quedar adormit, però ella continuava desperta amb les mans damunt del pit, amb els ulls aigualits i mig somriure als llavis.</p>
+    <p class="lector-p">Quan em vaig despertar ja no hi era; havia deixat una nota a la tauleta: “Vaig a fer una cosa que abans no m’havia atrevit a fer”. En aquell moment no vaig imaginar de què es tractava, no em vaig preocupar.</p>
+    <p class="lector-p">Vaig afrontar el dia amb la seua rutina i, arribada l’hora, vaig anar a arreplegar Eloise a la faena. Vaig esperar vint minuts més del que era habitual. Vaig entrar al vestíbul i vaig preguntar a la recepció. La meua sorpresa va ser màxima quan em van dir que eixe mateix matí havia entrat al despatx del director i, després de tindre un acalorat debat, havia formalitzat la dimissió. I que fins i tot s’havia atrevit a posar els punts sobre les is a certs companys.</p>
+    <p class="lector-p dialogo">― Ha tingut la gosadia de fer el que molts hauríem de fer. M’alegre que ja no siga ací; segur que li anirà millor en qualsevol altre lloc –em va dir en confiança la recepcionista.</p>
+    <p class="lector-p">Esbalaït vaig tornar al cotxe. Vaig agarrar el telèfon i la vaig telefonar.</p>
+    <p class="lector-p dialogo">― Eloise.</p>
+    <p class="lector-p dialogo">― Edgard!!</p>
+    <p class="lector-p dialogo">― Sí…?</p>
+    <p class="lector-p dialogo">― He deixat la faena!</p>
+    <p class="lector-p dialogo">― …Ho sé. T’estava esperant a la porta.</p>
+    <p class="lector-p dialogo">― Doncs vine a arreplegar-me a l’altre costat del polígon. M’han contractada a Indústries Pierrot com a administrativa en cap. Comence la setmana que ve!</p>
+    <p class="lector-p dialogo">― Me n’alegre una barbaritat! –vaig respondre emocionat-. Vaig a per tu de seguida.</p>
+    <p class="lector-p">Cinc minuts més tard estava muntada al cotxe amb un somriure d’orella a orella, rememorant la dimissió. Estava contenta, alliberada, però m’equivocaria si diguera que aquella Eloise era la mateixa d’abans. Estava molt canviada, en els seus ulls brillava una gran felicitat. Les seues paraules eren diligents, segures.</p>
+    <p class="lector-p">Encara que m’ho imagine, no sé què li van dir els seus pares, però van ser paraules encertades que no solament l’exoneraven d’un pes insuportable, sinó que a més li havien donat ales per a volar.</p>
+    <p class="lector-p">Parlava del que havia passat amb tanta efusivitat que va acabar contagiant-me. Vaig sentir eixa jovialitat esclatant-me al cor i no se’m va ocórrer altra cosa que fer-la callar amb un bes. Ella va prendre aire i em va respondre amb un bes desmesurat.</p>
+    <p class="lector-p dialogo">― Va!, arranca. Vull anar a vore Regina, vull agrair-li tot el que ha fet per nosaltres, pels meus pares, per tu i, sobretot, per mi.</p>
+    <p class="lector-p">Vaig acatar la seua voluntat i vaig conduir. Ella parlava de la seua nova faena, del nou futur que l’esperava i dels nous canvis que deparaven a les nostres vides. Decidida a recuperar aquells quatre anys, pensava a viatjar, a conéixer tots els racons, a conéixer gent nova, a gaudir de cada segon. Disposada a dirigir el seu camí i a no permetre que la infravaloraren. Estava resolta a fer de la seua vida allò que tant desitjava i que ella mateixa s’havia vetat.</p>
+    <p class="lector-p">Em vaig permetre el luxe de fer una llarga volta per a continuar escoltant-la. Tan encisada anava que ni tan sols se’n va adonar. Pareixia no perdre l’alé d’aquella infinita llista de nous propòsits. Vaig frenar en sec i ella va callar.</p>
+    <p class="lector-p dialogo">― Ja hem arribat.</p>
+    <p class="lector-p dialogo">― Vaja… no me n’havia adonat, se m’ha fet més curt que la vegada anterior.</p>
+    <p class="lector-p">Els dos vam arribar davant de la casa. La porta del jardí estava tancada, les persianes abaixades i un cartell que deia “en venda” acompanyat d’un número de telèfon. Ens vam mirar confusos, vaig traure el mòbil i vaig telefonar; un contestador: “hola, si vosté està interessat en l’habitatge deixe el seu número i el seu nom, el telefonaré en breu”; vaig penjar. Els dos ens vam quedar parats, sense saber què fer, davant de la casa.</p>
+    <p class="lector-p dialogo">― De vegades em pregunte qui deu viure ahí –va dir una veu darrere de nosaltres. Els dos ens vam girar.</p>
+    <p class="lector-p dialogo">― REGINA!! –allí estava ella. Eloise la va abraçar emocionada.</p>
+    <p class="lector-p dialogo">― Gràcies, gràcies!! No t’imagines quant t’ho agraïsc, no tinc paraules. No crec que hi haja res al món que puga fer per a pagar tot el que has fet per mi.</p>
+    <p class="lector-p dialogo">― Res, dona. No es mereixen. Amb un creuer pel Bàltic en tinc prou.</p>
+    <p class="lector-p dialogo">― Ehm… bé, tenim alguna cosa estalviada. El podem pagar –vaig dir atordit.</p>
+    <p class="lector-p dialogo">― Estupend!! Ja sabeu on vos n’aneu en les pròximes vacances; jo em conforme amb unes fotos –vam riure: ens prenia el pèl tant com volia-. Vinga, passeu dins. Intuïsc pel vostre gest que tot ha eixit millor del que esperàveu –vam assentir-. Espereu asseguts a la taula, vaig a preparar un te; ahir vaig comprar uns pastissos moruns per a celebrar l’ocasió.</p>
+    <p class="lector-p">Va pujar les escales. Encenia el transistor: sonava “Campanera”, del Pequeño Ruiseñor. A dalt, soroll de cassoles i el traqueteig de la tetera bullint. Poc després va baixar, es va asseure amb nosaltres i, tastant les postres, vam atendre cada detall de les paraules d’Eloise.</p>
+    <p class="lector-p">Durant aquella trobada vaig comprendre què havia fet canviar tant la meua xica. Per primera vegada em vaig sentir afalagat en escoltar aquelles paraules sinceres dels seus pares. De vegades, encara que alienes, unes disculpes i el reconeixement saben tan personals que emocionen.</p>
+    <p class="lector-p">Regina l’observava amb un gest maternal, alegre, però habituada. Intuïsc que havia viscut esta situació en moltes ocasions. Divagava sobre la grandiosa tasca que aquella senyora d’aspecte caricaturesc devia haver dut a terme amb tanta altra gent com nosaltres. Quantes n’hi devia haver com Regina? Moltes… poques…? Supose que menys de les necessàries per a sanar l’esperit de la nostra societat. Pensava en com publicitar-la: l’essència del comercial eixia a relluir. Vaig recordar els minuts màgics plens de farsants que tantes nits inundaven la televisió.</p>
+    <p class="lector-p">“- Hola…?</p>
+    <p class="lector-p dialogo">― Sí… Bona nit… Vols saber si li donaran faena al teu marit… Veritat?</p>
+    <p class="lector-p dialogo">― Jo telefonava perque´ tinc mal de cames i volia sabé´ si em van a operà´ pronte… però vaja, que el meu home es va morí´ l’any passat…”</p>
+    <p class="lector-p">Em vaig perdre en els meus pensaments quan ella em va agarrar la mà.</p>
+    <p class="lector-p dialogo">― M’agrada la meua vida tal com està. No vull fama, ni diners, ni cues a les portes de ma casa; només ajude aquells que em necessiten. El destí confabula perquè ens trobem, tal com va passar amb vosaltres. Em prendrien per boja. Eixos en què estàs pensant ens donen mala fama. Em fa feliç fer bé la meua faena i vore-vos feliços a vosaltres.</p>
+    <p class="lector-p">Ara, el que heu de fer és viure i gaudir de cada segon, creuar l’espill i trobar el vostre veritable jo. Llavors la vostra vida tindrà sentit de veres.</p>
+    <p class="lector-p">Jo continuaré ací, em podreu visitar quan vulgueu. Vos guiaré si vos atreviu a emprendre el viatge, donant-vos xicotetes pistes que vos facen trobar la solució. Cal sentir i comprendre per a créixer.</p>
+    <p class="lector-p">De sobte es va detindre, es va reclinar en la cadira, sobre dos potes, i va tancar els ulls. Devia haver contactat amb algú: arrugava el front i torçava el gest. Observàvem intrigats. Movia els llavis i feia petar els dits. Vam esperar confusos quan, sense més, es va arrancar a cantar la música que sonava.</p>
+    <p class="lector-p dialogo">― Samara reina de la morería. ¡Ay! To´ el pueblo l´adoraba, l´adoraba noche y día… -Camarón esgarrava la veu i ella el va acompanyar fins a l’últim acord-. …Disculpeu-me –va dir amb posat flamenc-. M’emocione molt amb algunes cançons, no ho puc evitar. És una cosa que em ix de dins. La gitana que vaig ser en una altra vida fa palmes quan sent això… -un instant de silenci-. No sé de què vos estranyeu tant, a estes altures. Si realment és la vostra voluntat caminar este sender, el vostre pas següent serà conéixer qui vau ser en altres vides per a viure així l’autèntic “jo” que correspon al present.</p>
+    <p class="lector-p">Havien passat més de dos hores en aquella conversa distesa. Vora ella el temps no passava, es respirava tranquil·litat i un somriure se’t dibuixava a la cara. Ens vam acomiadar amb una forta abraçada. Ens va convidar a tornar quan ens haguérem reposat de la trobada.</p>
+    <p class="lector-p">Ella ho sabia, i nosaltres començàvem a ser conscients que, una vegada creuada la primera porta, totes les altres volen ser obertes.</p>
+    <p class="lector-p">Aquell instant en què vam pujar al cotxe i vam tornar a casa va suposar un punt i a part en l’inici de la nostra nova vida.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+    <p class="lector-p">La primera setmana va transcórrer alegre, feliç, sense mal rotllo, molt millor encara que abans que faltaren els seus pares. La meua Eloise era una dona que irradiava pau i jovialitat. Amb cada minut que passava amb ella, la meua por creixia: m’estava enamorant molt més. Si ja m’havia robat el cor, què seria el següent.</p>
+    <p class="lector-p">El cas és que jo vivia encantat. Aquella setmana en què esperàvem que s’incorporara a la nova faena, vam optar per prendre-la els dos de vacances, fent totes les bogeries imaginades. A les nits: sopars, copes amb billar, spa, piscina… Al matí: paracaigudisme, bolera, ping-pong, escalada… els dies passaven volant, faltats d’hores. En set dies vam fer més del que havíem fet en quatre anys. Fins i tot vam redissenyar la casa desfent-nos d’aquell ambient que ens recordava tant el passat.</p>
+    <p class="lector-p">Sense adonar-nos-en, es van fer les tantes d’aquella nit de dimecres. Estava aparcant el cotxe quan ella em va demanar que l’esperara. Va pujar a casa i va tornar passats uns vint minuts. “Anem a la platja”, va dir. Jo vaig conduir sense dir res: imaginava quina era la seua voluntat portant un sobre entre les mans.</p>
+    <p class="lector-p">Caminàvem pel passeig. “Espera’m ací”, va xiuxiuejar acostant-se a la vora. Jo vaig esperar assegut, l’observava en la distància. Es va endinsar en l’aigua fins als genolls i va llançar a l’aire la seua missiva encesa en flames, desfent-se en cendres disperses en la foscor. De la bossa va traure un parell de roses i les va deixar gronxant-se damunt de les ones.</p>
+    <p class="lector-p">Va tornar i es va asseure vora meu.</p>
+    <p class="lector-p dialogo">― Esta és l’última carta a mama i a papà.</p>
+    <p class="lector-p dialogo">― Me n’alegre.</p>
+    <p class="lector-p dialogo">― A partir d’ara recorreré a les telefonades internacionals cada vegada que vulga parlar amb ells.</p>
+    <p class="lector-p dialogo">― Je, je… Sempre vaig pensar que tot això acabaria amb un punt final. No amb un fins després; malgrat tanta lectura, ignorava que hi haguera una cosa tan complexa darrere de la nostra realitat. Em fa feliç que hages resolt les diferències amb els teus pares.</p>
+    <p class="lector-p dialogo">― Això m’alleuja i m’anima a tornar a tindre uns pares que m’estimen i que m’ho saben mostrar… -vam quedar pensatius, en silenci.</p>
+    <p class="lector-p dialogo">― Ja sé què és el que vull com a pagament! –va exclamar una veu apareixent entre nosaltres dos. Ens va sorprendre i ens va fer botar cap a un costat-. Vaja! Lamente haver-vos espantat, no ho pretenia, ha, ha, ha…</p>
+    <p class="lector-p dialogo">― Disculpa, Regina, però és la tercera vegada que apareixes així des que ens coneixem. Sospite que t’agraden les entrades cridaneres.</p>
+    <p class="lector-p dialogo">― Oh…! Pot ser que tingues raó. Li estic agarrant el gust: és bastant més divertit espantar que ser espantat. Però no vos queixeu massa: això no és res comparat amb un mort fosc apareixent-se de nit.</p>
+    <p class="lector-p dialogo">― Ehm… –la cara angoixada d’Eloise ho va dir tot.</p>
+    <p class="lector-p dialogo">― I què dius que vols com a pagament per l’ajuda oferida? I per la que segur que ens has d’oferir d’ara en avant com a guia.</p>
+    <p class="lector-p dialogo">― De moment centrem-nos en el present; ja vos demanaré més arribat eixe futur. Crec que, si el pardalet no s’equivoca, teniu accés a algú que a mi m’agradaria molt escoltar –es va acostar a mi i em va xiuxiuejar el seu nom.</p>
+    <p class="lector-p dialogo">― Per què no ho dius en veu alta perquè jo també ho sàpia?</p>
+    <p class="lector-p dialogo">― Serà una sorpresa per a tu i per a mi.</p>
+    <p class="lector-p dialogo">― No sé si els nostres gustos són semblants, Regina.</p>
+    <p class="lector-p dialogo">― No et queda altra que confiar en mi.</p>
+    <p class="lector-p dialogo">― Això que em demanes pot ser que sobrepasse el difícil –deia ella amb sorna.</p>
+    <p class="lector-p dialogo">― No la conec personalment, tenim amics comuns, i és veritat que solc accedir a la seua faena amb una mica més de facilitat, però…</p>
+    <p class="lector-p dialogo">― Ni peròs ni peres… Aquell que desitja el que es proposa, sens dubte aconseguix l’èxit complint-ho. Confie plenament que aconseguiràs fer-me feliç unes hores. No té comparació amb la felicitat que vosaltres heu de viure d’ara en avant.</p>
+    <p class="lector-p dialogo">― Cert. Faré tant com puga. Tan prompte com ho aconseguisca t’ho faré saber.</p>
+    <p class="lector-p dialogo">― Eixa és l’actitud. Bé, xicots, vos deixe. M’alegre que eixa carta siga l’última. Ara este passeig a la vora de la mar adquirix un nou significat. Bona nit.</p>
+    <p class="lector-p dialogo">― Bona nit, Regina, gràcies per tot.</p>
+    <p class="lector-p dialogo">― Bona nit, ja parlarem –va desaparéixer entre els carrerons com ho va fer la primera vegada.</p>
+    <p class="lector-p">Una senyora peculiar, que té més de normal que d’estrany quan el comú dels mortals s’atrevix a observar amb el cor i no amb la raó.</p>
+    <p class="lector-p">Eloise va mirar de traure’m què era allò que Regina desitjava com a pagament, però em vaig negar a desvelar la sorpresa.</p>
+    <p class="lector-p">Ja havíem gaudit d’ella abans, els dos admiràvem el seu talent, encara que ella evitava el cante que li evocava llàgrimes. Però després de l’última missiva, Eloise entendria eixa veu d’una manera diferent, la gaudiria en plenitud. Em va costar cel i terra aconseguir tres invitacions de primera fila per al seu acústic.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+    <p class="lector-p">Primer vam anar a sopar els tres, ben guapos i ben vestits. Després vam arribar a la sala, on ens vam trobar amb uns quants amics. No hi devia haver més de huitanta persones. Eloise estava encantada: era la primera vegada que assistíem a un concert privat i estàvem alborotats. Regina, per la seua banda, estava realment excitada, no parava de moure’s, de fer petar els dits i de fer palmes, per a detindre’s en el mateix instant en què va irrompre el primer acord de guitarra.</p>
+    <p class="lector-p">La veu va sonar emocionant, omplint la sala, sense micròfon, acompanyada d’una guitarra, un caixó i un piano, timbrant cada nota, esgarrant des del més profund, arrancant les llàgrimes de l’auditori. “El amor tiene una barca que me lleva hasta el dolor… Sola… triste y sola…”, deia la lletra.</p>
+    <p class="lector-p">Després de dos hores de concert, la música va arribar a la fi. Però enmig de la multitud, Regina es va alçar entre els aplaudiments i es va fer sentir.</p>
+    <p class="lector-p dialogo">― Un moment, senyors! Això no pot acabar així. M’ompli de goig haver escoltat la veu d’esta dona a dos passes d’ella, però jo no me’n vaig d’ací sense cantar al seu costat -Diana va tornar a la seua cadira i va fer pujar Regina.</p>
+    <p class="lector-p dialogo">― Accepte la proposta, però sense instruments. Comença amb la cançó que vulgues i jo et seguisc.</p>
+    <p class="lector-p dialogo">― La loba… la loba… para el que hace alarde de jugar con un querer… y para llamarte ¡cobarde!, al que engaña a una mujer….</p>
+    <p class="lector-p dialogo">― ¡Ay!, paredes de mi alcoba, cárcel de condenación… que aunque quiero ser la loba, no me deja el corazón…</p>
+    <p class="lector-p">I les dos dones ens van delectar amb l’última cançó. No ho pareixia amb aquella veu estrident, però cantava prou bé com perquè ningú no se n’anara i per a mantindre el tipus davant de la Navarro.</p>
+    <p class="lector-p">Quan tot va acabar, la vam deixar a sa casa. Durant el viatge no va dir res: un somriure de bat a bat i uns llavis trémols que recordaven les lletres que havia escoltat. Continuava emocionada.</p>
+    <p class="lector-p dialogo">― No sé com agrair-vos això. Se m’ha estremit l’ànima.</p>
+    <p class="lector-p dialogo">― Ha, ha, ha… me n’alegre. Però no és per a tant, he fet el que devia. Gràcies a tu.</p>
+    <p class="lector-p dialogo">― Sí. Moltes gràcies, Regina. És bonic conéixer-te i tindre’t al nostre costat.</p>
+    <p class="lector-p dialogo">― Gràcies a vosaltres, xicots; ha sigut una nit encantadora i he fet una cosa que desitjava molt des de feia molt de temps. Ens tornarem a vore prompte, bona nit.</p>
+    <p class="lector-p dialogo">― Bona nit…</p>
+    <p class="lector-p">Allò quedaria guardat en la memòria, com hi va quedar la trobada amb els seus pares, així com tants altres per vindre al costat de la nova amiga amb qui havíem creuat camins.</p>
+    <div class="sep-omega">∗ ∗ ∗</div>
+    <p class="lector-p">“Els dos t’agraïm que estigues al nostre costat.</p>
+    <p class="lector-p">Un bes i una abraçada molt forta.</p>
+    <p class="lector-p">Eloise i Edgard.</p>
+    <p class="lector-p">Postdata: El dia que ja no estigues amb nosaltres, i espere que arribe tard, per favor, no t’aparegues de nit enmig del corredor, gràcies :D ”</p>
+
+  <div class="cta-final">
+    <a href="/epub/carta-a-mama-carta-a-papa-val.epub" download>Descarregar EPUB</a>
+    <a href="/chelo-jolms/">Llegir + Hunicornia →</a>
+    <a href="https://ko-fi.com/hunicornia" target="_blank" rel="noopener">Ko-fi · ajuda Hunicornia</a>
+  </div>
+  <p class="nota-final">Obra completa i gratuïta — Hunicornia</p>
+</main>
+
+<script src="/lector-progreso.js" defer></script>
+<script>
+(function() {
+  var fill = document.getElementById("progFill");
+  window.addEventListener("scroll", function() {
+    var d = document.documentElement;
+    var pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+    fill.style.width = Math.min(pct || 0, 100) + "%";
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

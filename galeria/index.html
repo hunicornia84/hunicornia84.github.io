@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Las 94 ilustraciones de Hunicornia: Tinddaya, 7 máscaras, Parábolas taciturnas. Fantasía queer ilustrada, obra completa y gratuita.">
+  <meta property="og:title" content="Galería — el universo visual de Hunicornia">
+  <meta property="og:description" content="Las 94 ilustraciones de Hunicornia: Tinddaya, 7 máscaras, Parábolas taciturnas. Fantasía queer ilustrada, obra completa y gratuita.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hunicornia">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="ca_ES">
+  <meta property="og:locale:alternate" content="en_GB">
+  <meta property="og:url" content="https://hunicornia.es/galeria/">
+  <meta property="og:image" content="https://hunicornia.es/galeria/tinddaya-nikoleta.jpg">
+  <meta property="og:image:alt" content="Ilustraciones de Hunicornia">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Galería — el universo visual de Hunicornia">
+  <meta name="twitter:description" content="Las 94 ilustraciones de Hunicornia: Tinddaya, 7 máscaras, Parábolas taciturnas. Fantasía queer ilustrada, obra completa y gratuita.">
+  <meta name="twitter:image" content="https://hunicornia.es/galeria/tinddaya-nikoleta.jpg">
+  <meta name="author" content="Hunicornia">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://hunicornia.es/galeria/">
+
+  <link rel="alternate" hreflang="es" href="https://hunicornia.es/galeria/">
+  <link rel="alternate" hreflang="ca-ES-valencia" href="https://hunicornia.es/galeria/?lang=va">
+  <link rel="alternate" hreflang="en" href="https://hunicornia.es/galeria/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://hunicornia.es/galeria/">
+
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>Galería — el universo visual de Hunicornia</title>
+
+  <style>
+    @font-face{
+      font-family:'Chopin';
+      src:url('/ChopinLight.woff2') format('woff2');
+      font-weight: 300;
+      font-display: swap;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      height: auto;
+      background: #ffffff;
+      color: #643587;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #643587;
+      --secondary: #8b3689;
+      --light-bg: #ffffff;
+      --nav-alto: 70px;
+    }
+
+    body { padding-top: var(--nav-alto); }
+
+    .slide {
+      position: relative;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 76px 38px 113px;
+      background: var(--light-bg);
+      scroll-margin-top: var(--nav-alto);
+    }
+
+    .section-title {
+      font-family: 'Chopin', serif;
+      font-size: clamp(28px, 4vw, 70px);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+      margin-bottom: 0.8em;
+      text-align: center;
+      width: 100%;
+    }
+
+    .section-subtitle {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(10px, 1.5vw, 24px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary);
+      text-align: center;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto 40px;
+    }
+
+    /* ══ GALERÍA: LIENZO + PARRILLA ══ */
+    .galeria-layout {
+      width: 100%;
+      max-width: 1400px;
+      margin-top: 19px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .galeria-lienzo {
+      min-width: 0;
+      position: sticky;
+      top: calc(var(--nav-alto) + 19px);
+      margin: 0;
+      background: rgba(139, 54, 137, 0.03);
+      border-radius: 8px;
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+    }
+
+    /* El marco es el que manda: la imagen vive dentro y, cuando es
+       panorámica, se desplaza horizontalmente en lugar de encogerse. */
+    .lienzo-marco {
+      position: relative;
+      width: 100%;
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .lienzo-scroll {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+
+    .galeria-lienzo img {
+      width: 100%;
+      height: min(74vh, 900px);
+      object-fit: contain;
+      border-radius: 4px;
+      transition: opacity 0.25s ease;
+      display: block;
+    }
+
+    /* ══ PANORÁMICA ══
+       Dos ilustraciones son cuatro y cinco veces más anchas que altas. Metidas
+       en el lienzo con object-fit quedan en una franja de nada rodeada de
+       blanco. Aquí ocupan todo el ancho a su altura natural y se recorren
+       arrastrando, con el dedo, la rueda o las flechas. */
+    .galeria-lienzo.panoramica .lienzo-scroll {
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(139, 54, 137, 0.35) transparent;
+      cursor: grab;
+    }
+
+    .galeria-lienzo.panoramica .lienzo-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .galeria-lienzo.panoramica .lienzo-scroll::-webkit-scrollbar-thumb {
+      background: rgba(139, 54, 137, 0.35);
+      border-radius: 3px;
+    }
+
+    .galeria-lienzo.panoramica img {
+      width: auto;
+      max-width: none;
+      height: min(56vh, 620px);
+      object-fit: contain;
+    }
+
+    /* Las flechas no son parte del lenguaje de la web: aparecen solo cuando
+       hay algo que recorrer y se apagan al llegar al borde. */
+    .lienzo-flecha {
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 1px 6px rgba(100, 53, 135, 0.18);
+      color: var(--primary);
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      transition: opacity 0.25s ease, background 0.25s ease;
+      z-index: 2;
+      padding: 0;
+    }
+
+    .galeria-lienzo.panoramica .lienzo-flecha { display: flex; }
+
+    .lienzo-flecha.izq { left: 8px; }
+    .lienzo-flecha.der { right: 8px; }
+
+    .lienzo-flecha:hover { background: #fff; }
+
+    .lienzo-flecha[disabled] {
+      opacity: 0.25;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .galeria-pie {
+      max-width: 62ch;
+      text-align: center;
+      min-height: 1.2em;
+    }
+
+    .galeria-pie b {
+      display: block;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 400;
+      font-size: clamp(10px, 1.1vw, 14px);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--secondary);
+    }
+
+    .pie-desc {
+      display: block;
+      margin-top: 0.7em;
+      font-size: clamp(12px, 1.3vw, 16px);
+      line-height: 1.5;
+      color: var(--primary);
+    }
+
+    .mini-pie {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .galeria-grid {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    /* Encabezado de bloque. Ocupa la fila entera y separa una obra de otra
+       sin añadir ningún elemento nuevo al lenguaje de la web: es el mismo
+       rótulo en versalitas que la portada usa en "Un mismo lore". */
+    .galeria-bloque {
+      grid-column: 1 / -1;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(10px, 1.2vw, 14px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--secondary);
+      margin: 28px 0 4px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(139, 54, 137, 0.2);
+    }
+
+    .galeria-bloque:first-child { margin-top: 0; }
+
+    .galeria-mini {
+      position: relative;
+      padding: 0;
+      border: none;
+      background: rgba(139, 54, 137, 0.03);
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 3/4;
+      outline-offset: 2px;
+      transition: box-shadow 0.2s ease, opacity 0.2s ease;
+      opacity: 0.75;
+    }
+
+    /* Las dos panorámicas no caben en un 3/4: se les da el ancho de dos
+       columnas y su propia proporción, para que no queden como una rendija. */
+    .galeria-mini.ancho {
+      grid-column: span 2;
+      aspect-ratio: 16/7;
+    }
+
+    .galeria-mini img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .galeria-mini:hover,
+    .galeria-mini:focus-visible { opacity: 1; }
+
+    .galeria-mini[aria-pressed="true"] {
+      opacity: 1;
+      box-shadow: inset 0 0 0 3px var(--primary);
+    }
+
+    .galeria-volver {
+      display: block;
+      width: 100%;
+      margin-top: 57px;
+      text-align: center;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(11px, 1.2vw, 15px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 6px;
+      text-decoration-thickness: 1px;
+      transition: opacity 0.3s;
+    }
+
+    .galeria-volver:hover { opacity: 0.65; }
+
+    /* ══ NAV ══ */
+    .top-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2em;
+      padding: 1.2em 2em;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid rgba(100, 53, 135, 0.15);
+      z-index: 200;
+      backdrop-filter: blur(8px);
+    }
+
+    .top-nav a {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(11px, 1vw, 16px);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s;
+      padding: 0.5em 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .top-nav a:hover,
+    .top-nav a.active {
+      color: var(--secondary);
+      border-bottom-color: var(--secondary);
+    }
+
+    .nav-idiomas { display: flex; gap: 0.35em; margin-left: 0.5em; }
+
+    .lang-btn {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-size: clamp(10px, 0.9vw, 13px);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: transparent;
+      border: 1px solid rgba(100, 53, 135, 0.25);
+      border-radius: 3px;
+      padding: 0.4em 0.65em;
+      cursor: pointer;
+      transition: all 0.3s;
+      line-height: 1;
+    }
+
+    .lang-btn:hover { border-color: var(--secondary); color: var(--secondary); }
+
+    .lang-btn[aria-pressed="true"] {
+      background: rgba(139, 54, 137, 0.15);
+      border-color: transparent;
+      font-weight: 700;
+    }
+
+    .nav-toggle {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 34px;
+      background: transparent;
+      border: 1px solid rgba(100, 53, 135, 0.3);
+      border-radius: 4px;
+      cursor: pointer;
+      color: var(--primary);
+      font-size: 18px;
+      line-height: 1;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html, body { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .galeria-layout { grid-template-columns: 1fr; }
+      .galeria-lienzo { position: static; }
+      .galeria-lienzo img { height: 52vh; }
+      .galeria-lienzo.panoramica img { height: 38vh; }
+    }
+
+    @media (max-width: 900px) {
+      .slide { padding: 57px 38px 76px; }
+    }
+
+    @media (max-width: 600px) {
+      :root { --nav-alto: 58px; }
+      .slide { padding: 38px 20px 57px; }
+
+      .top-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        justify-content: flex-start;
+        min-height: var(--nav-alto);
+      }
+
+      .top-nav::before {
+        content: 'HUNICORNIA';
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-size: 13px;
+        letter-spacing: 0.12em;
+        color: var(--primary);
+        padding: 1.35em 1em;
+        text-align: center;
+      }
+
+      .nav-idiomas {
+        position: absolute;
+        left: 10px;
+        top: calc(var(--nav-alto) / 2);
+        transform: translateY(-50%);
+        margin-left: 0;
+        gap: 0.25em;
+      }
+
+      .lang-btn { font-size: 10px; padding: 0.35em 0.45em; }
+      .nav-toggle { display: flex; }
+
+      .top-nav a {
+        display: none;
+        padding: 0.9em 1.2em;
+        border-top: 1px solid rgba(100, 53, 135, 0.1);
+        border-bottom: none;
+        text-align: left;
+        font-size: 12px;
+      }
+
+      .top-nav.abierto a { display: block; }
+
+      .top-nav a.active {
+        border-bottom: none;
+        background: rgba(139, 54, 137, 0.06);
+      }
+
+      .galeria-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+      .galeria-lienzo img { height: 46vh; }
+      .galeria-lienzo.panoramica img { height: 32vh; }
+      .lienzo-flecha { width: 36px; height: 36px; font-size: 19px; }
+    }
+  </style>
+
+  <noscript>
+    <style>
+      @media (max-width: 600px) {
+        .top-nav a { display: block; }
+        .nav-toggle { display: none; }
+      }
+      .galeria-mini { opacity: 1; cursor: default; }
+      .nav-idiomas { display: none; }
+    </style>
+  </noscript>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    "@id": "https://hunicornia.es/galeria/#gallery",
+    "name": "El universo visual de Hunicornia",
+    "description": "Las 94 ilustraciones de Hunicornia: Tinddaya, 7 máscaras, Parábolas taciturnas. Fantasía queer ilustrada, obra completa y gratuita.",
+    "url": "https://hunicornia.es/galeria/",
+    "inLanguage": ["es", "ca-ES-valencia", "en"],
+    "isPartOf": { "@id": "https://hunicornia.es/#website" },
+    "publisher": { "@id": "https://hunicornia.es/#organization" }
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="top-nav" id="topNav">
+    <a href="/#inicio" data-i18n="nav.inicio">Inicio</a>
+    <a href="/#nosotrxs" data-i18n="nav.nosotrxs">Nosotrxs</a>
+    <a href="/#obras" data-i18n="nav.obras">Obras</a>
+    <a href="/galeria/" class="active" data-i18n="nav.galeria">Galería</a>
+    <a href="/#audio" data-i18n="nav.audio">Audiolibro</a>
+    <a href="/#contacto" data-i18n="nav.contacto">Contacto</a>
+
+    <div class="nav-idiomas" id="navIdiomas" role="group" data-i18n-aria="nav.idioma" aria-label="Idioma">
+      <button class="lang-btn" type="button" data-lang="es" aria-pressed="true" lang="es">CAS</button>
+      <button class="lang-btn" type="button" data-lang="va" aria-pressed="false" lang="ca-ES-valencia">VAL</button>
+      <button class="lang-btn" type="button" data-lang="en" aria-pressed="false" lang="en">ENG</button>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="topNav" aria-label="Abrir menú">☰</button>
+  </nav>
+
+  <section class="slide" id="galeria">
+    <h1 class="section-title" data-i18n="gal.titulo">El universo visual de Hunicornia</h1>
+
+    <div class="galeria-layout">
+      <figure class="galeria-lienzo" id="lienzo">
+        <div class="lienzo-marco">
+          <div class="lienzo-scroll" id="lienzoScroll">
+            <img id="lienzoImg" src="tinddaya-nikoleta.jpg" width="1061" height="1500" alt="Nikoleta · Tinddaya" fetchpriority="high">
+          </div>
+          <button class="lienzo-flecha izq" id="lienzoIzq" type="button" data-i18n-aria="gal.izq" aria-label="Ver la parte izquierda de la ilustración"><span aria-hidden="true">&lsaquo;</span></button>
+          <button class="lienzo-flecha der" id="lienzoDer" type="button" data-i18n-aria="gal.der" aria-label="Ver la parte derecha de la ilustración"><span aria-hidden="true">&rsaquo;</span></button>
+        </div>
+        <figcaption class="galeria-pie" id="lienzoPie"><b>Nikoleta · Tinddaya</b></figcaption>
+      </figure>
+
+      <div class="galeria-grid" id="galeriaGrid" role="group" data-i18n-aria="gal.aria" aria-label="Ilustraciones de Hunicornia">
+        <p class="galeria-bloque" data-i18n="bloque.tinddaya">Tinddaya</p>
+        <button class="galeria-mini" type="button" aria-pressed="true" data-img="tinddaya-nikoleta">
+          <img src="tinddaya-nikoleta-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-nikoleta.t">Nikoleta · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-nikoleta.d">Lázaro se deja caer al suelo frunciendo el gesto con fuerza, Nikoleta se sujeta el pecho, no puede respirar.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-lazaro">
+          <img src="tinddaya-lazaro-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-lazaro.t">Lázaro · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-lazaro.d">Lázaro se ha doblado la mano, gime por el dolor, pero se abalanza a abrazar a su amiga.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-lux">
+          <img src="tinddaya-lux-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-lux.t">Lux · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-lux.d">―No lo sé, pero sentí el miedo en vosotros.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-alejo">
+          <img src="tinddaya-alejo-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-alejo.t">Alejo · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-alejo.d">Alejo llega sudando a su casa, pasa al baño a ducharse, cierra los ojos bajo el chorro de agua hirviendo que le enrojece la piel, respira profundamente.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-jimena">
+          <img src="tinddaya-jimena-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-jimena.t">Jimena · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-jimena.d">Los ojos azules de Jimena hacen temblar la mirada ensombrecida de su captora.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-salma">
+          <img src="tinddaya-salma-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-salma.t">Salma · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-salma.d">Salma conduce por la vereda hasta dar esquinazo a sus perseguidores por el Puente del Regne, bajo la mirada de las gárgolas de bronce.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-nelidarolan">
+          <img src="tinddaya-nelidarolan-mini.jpg" width="400" height="563" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-nelidarolan.t">Nélida y Roland · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-nelidarolan.d">Roland es Tortuga de piedra, Nélida es Cierva de tormenta.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-cornelia">
+          <img src="tinddaya-cornelia-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-cornelia.t">Cornelia · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-cornelia.d">Cornelia enciende las velas nuevamente, observa a sus perros que yerguen la cabeza y atienden con atención, se asoma y mira a cada rincón del pueblo.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-deerspark">
+          <img src="tinddaya-deerspark-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-deerspark.t">Deer y Spark · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-deerspark.d">Deer mira a su amigo, con una mirada solemne, como quien sabe que puede ser la última vez que se vean; Spark le guiña un ojo y sopla aún más fuerte.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-tremelos">
+          <img src="tinddaya-tremelos-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-tremelos.t">Los tremelos · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-tremelos.d">La voz de los tremelos suena al unísono en la cabeza de algunos de los Tinddaya.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-alejandra">
+          <img src="tinddaya-alejandra-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-alejandra.t">Alejandra · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-alejandra.d">Alejandra abre la caja que lleva entre las manos, hay un colgante con un cráneo de gato tallado en cuarzo, se lo coloca al cuello.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-koiki">
+          <img src="tinddaya-koiki-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-koiki.t">Koiki · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-koiki.d">Koiki está sentado frente a una hoguera con los ojos cerrados, parece no sorprenderse, ha preparado el fuego esperando antes o después este momento.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-negras">
+          <img src="tinddaya-negras-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-negras.t">Joanna y Nakano · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-negras.d">Aquellos combatientes que estén dispuestos, estarán a las órdenes de Joanna y Nakano.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-zefiro">
+          <img src="tinddaya-zefiro-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-zefiro.t">Zéfiro · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-zefiro.d">Zéfiro subió al tejado y observó en la oscuridad; todos dormían, pero sus oídos escuchaban en la distancia aunque no podía verlo.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-arguestes">
+          <img src="tinddaya-arguestes-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-arguestes.t">Arguestes · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-arguestes.d">Sobre todo en las noches de luna llena en las que Arguestes pasaba largos ratos aullando, reclamando el amor huido.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-nereoviveka">
+          <img src="tinddaya-nereoviveka-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-nereoviveka.t">Viveka y Nereo · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-nereoviveka.d">Su esposa era una mujer muy bella, de ojos verde oliva, con la tez pecosa y el pelo rojo como el atardecer, de nombre, Viveka.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-hajnalka">
+          <img src="tinddaya-hajnalka-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-hajnalka.t">Hajnalka · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-hajnalka.d">Hajnalka cierra los ojos, las llamas bajo sus pies se avivan, las letras que rodean su cuerpo se estremecen como humo exaltado.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-dragon">
+          <img src="tinddaya-dragon-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-dragon.t">Kennin ji · Tinddaya · Caos</b><span class="pie-desc" data-i18n="tinddaya-dragon.d">Sus ojos envilecidos arden en llamas, de sus dedos surgen las garras rasgando la carne, la figura del dragón surge desollando la piel.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-arsenico">
+          <img src="tinddaya-arsenico-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-arsenico.t">Arsénico · Tinddaya · Cuervos</b><span class="pie-desc" data-i18n="tinddaya-arsenico.d">Arsénico mira a su hermano, es una mirada de inquietud ante el miedo de Radón.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-radon">
+          <img src="tinddaya-radon-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-radon.t">Radôn · Tinddaya · Cuervos</b><span class="pie-desc" data-i18n="tinddaya-radon.d">Radôn coloca un par de ramas sobre el fuego, una llamarada se levanta dibujando el rostro malforme de lo que parece un elefante.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-mercurio">
+          <img src="tinddaya-mercurio-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-mercurio.t">Mercurio · Tinddaya · Cuervos</b><span class="pie-desc" data-i18n="tinddaya-mercurio.d">Mercurio abre un portal de oscuridad, camina cruzándolo, los otros dos cuervos hacen igual.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-merida">
+          <img src="tinddaya-merida-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-merida.t">Mérida, la Emperatriz · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-merida.d">Mérida es nigromante y sensitiva: debe ser un drama tener deseos de muerte y, sin embargo, sentir la misericordia y el dolor a un nivel que raya la locura.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-titeres">
+          <img src="tinddaya-titeres-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-titeres.t">Los cazadores ciegos · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-titeres.d">―Dadles vida con la sangre de los reyes, de los diez.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="tinddaya-antediluvianos">
+          <img src="tinddaya-antediluvianos-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="tinddaya-antediluvianos.t">Los antediluvianos · Tinddaya</b><span class="pie-desc" data-i18n="tinddaya-antediluvianos.d">Los ancianos son capaces de cualquier tropelía antinatural con tal de ganar poder, ya dominan las sombras entre épocas.</span></span>
+        </button>
+        <p class="galeria-bloque" data-i18n="bloque.7-mascaras">7 máscaras</p>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-alaris-evol-color">
+          <img src="7-mascaras-alaris-evol-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-alaris-evol-color.t">Alaris, evolución · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-alaris-evol-color.d">En una mano albergaba la luz y en la otra la oscuridad, las estrellas nacían bajo su voluntad.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-alaris">
+          <img src="7-mascaras-alaris-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-alaris.t">Alaris · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-alaris.d">El cuerpo de Alaris brillaba cegador, la luz manaba de sus puños más poderosa que nunca.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-baem">
+          <img src="7-mascaras-baem-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-baem.t">Shamkra Baem · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-baem.d">Con sus afilados dedos Shamkra Baem removía la tierra modelando valles y montañas, abismos y acantilados que Gala Evora inundaba de mares y océanos.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-bosque">
+          <img src="7-mascaras-bosque-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-bosque.t">El bosque · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-bosque.d">Sus temores desaparecían rodeado por aquella obra maestra de la creación; parecía que nada pudiese perturbar la mansa tranquilidad del bosque.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-buri-color">
+          <img src="7-mascaras-buri-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-buri-color.t">Buri Buri · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-buri-color.d">Los mordiscos despedazaban el cuerpo de Buri Buri, que entre gritos reconstruía sus miembros destrozados.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-circo">
+          <img src="7-mascaras-circo-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-circo.t">El Circo Nebular · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-circo.d">Una vez el espectáculo haya terminado, todos podremos volver a jugar y a divertirnos como hacemos siempre en el Circo Nebular.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-crapatos-evol-color">
+          <img src="7-mascaras-crapatos-evol-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-crapatos-evol-color.t">Cràpatos, evolución · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-crapatos-evol-color.d">Dios de loadas virtudes, cuyo soplo es capaz de poblar la tierra con la raza humana.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-crapatos">
+          <img src="7-mascaras-crapatos-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-crapatos.t">Cràpatos, evolución · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-crapatos.d">Crápatos miraba hacia la nada, impotente, dolido, más en el alma que en su cuerpo rasgado por las manos de Moor.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-cuco">
+          <img src="7-mascaras-cuco-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-cuco.t">El Cuco Rojo · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-cuco.d">―Cuco Rojo, muéstranos el camino con la luz de tus ojos.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-cuervos">
+          <img src="7-mascaras-cuervos-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-cuervos.t">Los cuervos · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-cuervos.d">Unos ocho cuervos negros como el tizón y de un tamaño mayor de lo normal.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-dhyavod">
+          <img src="7-mascaras-dhyavod-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-dhyavod.t">Dhyavod, evolución · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-dhyavod.d">Señor de las Artes y las Ciencias. Con el solo movimiento de sus dedos, la humanidad cambia el rumbo de su historia.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-diersej">
+          <img src="7-mascaras-diersej-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-diersej.t">Diersej · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-diersej.d">Diersej se acercaba muy rápido, con el rostro henchido por la furia, cargando todo el poder sobre su arma.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-enova">
+          <img src="7-mascaras-enova-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-enova.t">Enova · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-enova.d">Las hijas de Enova sólo atacan a aquellos que se atreven a mirarlas a los ojos.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-espantapajaros">
+          <img src="7-mascaras-espantapajaros-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-espantapajaros.t">Los espantapájaros · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-espantapajaros.d">Era un espantapájaros desaliñado, con un sombrero de paja, vestido con ropa vieja y con la mirada triste.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-fausto">
+          <img src="7-mascaras-fausto-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-fausto.t">Fausto, Señor de la Tristeza · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-fausto.d">Frente a él se posaba su enemigo, observándolo detenidamente: Fausto esperaba.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-fruta">
+          <img src="7-mascaras-fruta-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-fruta.t">Las frutas del bosque · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-fruta.d">Las frutas, hortalizas y flores que adornaban sus cabezas se agitaban fervorosas.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-gala-e">
+          <img src="7-mascaras-gala-e-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-gala-e.t">Gala Evora · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-gala-e.d">Gala Evora posaba las manos sobre el suelo, controlando la tierra a su antojo.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-gala-evora-color">
+          <img src="7-mascaras-gala-evora-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-gala-evora-color.t">Gala Evora, evolución · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-gala-evora-color.d">Algo sucedía en el interior de Gala Evora: su corazón brillaba incandescente conteniendo una aterradora tormenta.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-gargolas">
+          <img src="7-mascaras-gargolas-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-gargolas.t">Las gärgolas · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-gargolas.d">Incluso las gárgolas parecían atemorizadas ante lo que estaba por venir.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-garuda-titan">
+          <img src="7-mascaras-garuda-titan-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-garuda-titan.t">La Garuda y el Titán · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-garuda-titan.d">El suelo se estremecía a cada paso del gigantesco Titán, su cuerpo articulado se retorcía apresando a Garuda, que explotaba en una avalancha de magma.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-garzas">
+          <img src="7-mascaras-garzas-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-garzas.t">Las garzas y la tortuga · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-garzas.d">Partir significaría una muerte segura, pero quedarme aquí es una muerte anunciada.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-gran-buri">
+          <img src="7-mascaras-gran-buri-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-gran-buri.t">Buri Buri · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-gran-buri.d">Buri Buri observaba divertido la reacción de la joven, que lloraba impotente.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-gran">
+          <img src="7-mascaras-gran-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-gran.t">Mífido · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-gran.d">No muy lejos, botando sobre las aguas, el tritón blanco capturaba tantas luciérnagas como podía llenándose la boca.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-gran-poster2">
+          <img src="7-mascaras-gran-poster2-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-gran-poster2.t">Shamkra Baem, evolución · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-gran-poster2.d">Su corazón latía ante ella fuera del pecho, sostenido por la mano del señor de las tinieblas.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-guardian">
+          <img src="7-mascaras-guardian-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-guardian.t">El guardiän · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-guardian.d">El guardián no sufría los golpes, pero era incapaz de infligir daño sobre la inexpugnable coraza.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-gatos">
+          <img src="7-mascaras-gatos-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-gatos.t">El cuento de los dos gatos · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-gatos.d">El gato blanco, antes de comerlas, disfrutaba jugando con su víctima un buen rato, dándole la opción a escapar si así lo merecía.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-ion">
+          <img src="7-mascaras-ion-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-ion.t">Ion · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-ion.d">Por eso ordenó que Ion se detuviese: quiere saber hasta dónde podéis llegar, medir su fuerza con la vuestra.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-kennin-color">
+          <img src="7-mascaras-kennin-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-kennin-color.t">Kennin ji · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-kennin-color.d">―Parece que no te hice arder lo suficiente.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-kennin">
+          <img src="7-mascaras-kennin-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-kennin.t">Kennin ji · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-kennin.d">Tras Kennin ji se transfiguraba una sombra tomando cuerpo: el Hombre Elefante aparecía bajo la sorprendida mirada del lugarteniente.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-kuag-saeton">
+          <img src="7-mascaras-kuag-saeton-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-kuag-saeton.t">Kuagssak · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-kuag-saeton.d">Kuagssak redobló el tamaño de su cuerpo, sus mandíbulas se abrían monstruosamente.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-lobo">
+          <img src="7-mascaras-lobo-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-lobo.t">El Lobo Ciego · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-lobo.d">El Lobo Ciego permanecía inmóvil, su cuerpo se oscurecía, como si un fuego le quemase desde el interior, calcinando su ser.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-monos">
+          <img src="7-mascaras-monos-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-monos.t">Los cuatro monos · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-monos.d">¿Veis ese árbol?, subiremos, caminaremos por sus ramas, y desde la más larga nos descolgaremos uno tras otro hasta coger la luna que brilla sobre el río.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-moor-color-evol">
+          <img src="7-mascaras-moor-color-evol-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-moor-color-evol.t">Moor, evolución · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-moor-color-evol.d">Moor sentía miedo, desaliento, pero en su corazón algo le decía que no debía temer a aquella figura.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-namku">
+          <img src="7-mascaras-namku-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-namku.t">Namku · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-namku.d">Namku siempre llegaba con el último sol; cenaban mientras hablaban del día, después el cuento y luego a dormir.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-niorai-clasic">
+          <img src="7-mascaras-niorai-clasic-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-niorai-clasic.t">Niorái, la de la leyenda antigua · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-niorai-clasic.d">Con su cálido manto hacía florecer la vida sobre las yermas y desoladas tierras.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-niorai-color">
+          <img src="7-mascaras-niorai-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-niorai-color.t">Niorái, evolución · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-niorai-color.d">Niorái se sentó a su lado, abrazándolo; su cuerpo comenzó a echar raíces, apresando a las dos figuras.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-niorai">
+          <img src="7-mascaras-niorai-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-niorai.t">Niorái, evolución · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-niorai.d">Niorái soportaba el más inhumano dolor, calcinada, abrazando con toda su esencia al enemigo.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-oren-color">
+          <img src="7-mascaras-oren-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-oren-color.t">Oren · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-oren-color.d">Recuerda lo que dijo Oren: sea lo que sea, no puede hacernos nada si no lo miramos a los ojos.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-pantano">
+          <img src="7-mascaras-pantano-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-pantano.t">El pantano · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-pantano.d">Si conseguís escapar a los monstruos del pantano, sabed que la inhalación de estos vapores pestilentes también puede daros muerte.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-pantera">
+          <img src="7-mascaras-pantera-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-pantera.t">La pantera de Namku · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-pantera.d">La figura se dibuja a contraluz: una imponente pantera negra clavaba su mirada sobre el Dios del Odio.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-radamus-classic">
+          <img src="7-mascaras-radamus-classic-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-radamus-classic.t">Rädamus · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-radamus-classic.d">Señor de las Bestias: de cada uno de los poros de su piel nacen cientos de criaturas, horrendos y bellos, afables y hostiles.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-radamus-evol-color">
+          <img src="7-mascaras-radamus-evol-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-radamus-evol-color.t">Rädamus, evolución · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-radamus-evol-color.d">Rádamus apareció de la nada, su cuerpo podía confundirse con el entorno haciéndose invisible.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-radamus">
+          <img src="7-mascaras-radamus-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-radamus.t">Rädamus, evolución · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-radamus.d">Rádamus liberaba bajo su piel pequeñas sombras semejantes a insectos, que devoraban famélicos la masa negra.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-serpiente">
+          <img src="7-mascaras-serpiente-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-serpiente.t">El Saetón · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-serpiente.d">Jamás había visto uno con esa forma, pero estoy seguro de que se trata de un saetón: una serpiente con plumas capaz de volar sin alas.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-sombras">
+          <img src="7-mascaras-sombras-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-sombras.t">Las sombras · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-sombras.d">La tiniebla había sido creada por el odio que albergaba el corazón del octavo dios, y a su muerte se desvaneció con él.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-tanuk-ik-color">
+          <img src="7-mascaras-tanuk-ik-color-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-tanuk-ik-color.t">Tanuk ik · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-tanuk-ik-color.d">Tanuk ik parecía muy feliz, su rostro esbozaba una sonrisa que lo deformaba hasta parecer grotesco.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-tanuk-ik">
+          <img src="7-mascaras-tanuk-ik-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-tanuk-ik.t">Tanuk ik · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-tanuk-ik.d">Tanuk ik tenía más de la mitad del cuerpo calcinado, completamente negro, con trozos arrancados por fuertes zarpazos.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-titan">
+          <img src="7-mascaras-titan-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-titan.t">El Titán · 7 máscaras</b><span class="pie-desc" data-i18n="7-mascaras-titan.d">La bestia surgía de la tierra: un titán de ojos ámbar y cuerpo armado, corría sobre sus cuatro extremidades como una araña.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="7-mascaras-moor-retocado">
+          <img src="7-mascaras-moor-retocado-mini.jpg" width="400" height="660" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="7-mascaras-moor-retocado.t">Moor · 7 máscaras · color</b><span class="pie-desc" data-i18n="7-mascaras-moor-retocado.d">Moor estaba siendo arrastrado de nuevo hacia la oscuridad, una enorme sombra negra se acrecía envolviéndolo.</span></span>
+        </button>
+        <p class="galeria-bloque" data-i18n="bloque.parabolas">Parábolas taciturnas</p>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-alquimistas-1">
+          <img src="parabolas-taciturnas-alquimistas-1-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-alquimistas-1.t">Los hijos del Alquimista · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-alquimistas-1.d">Todavía recuerdo con bastante claridad aquellos años de infancia.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-alquimistas-2">
+          <img src="parabolas-taciturnas-alquimistas-2-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-alquimistas-2.t">Los hijos del Alquimista · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-alquimistas-2.d">Cada noche, desde el profundo bosque, el aullido de Arguestes rompía el silencio lamentando la muerte de su madre.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-bosque-1">
+          <img src="parabolas-taciturnas-bosque-1-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-bosque-1.t">El bosque de los nogales · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-bosque-1.d">Mi abuela decía que algún día ya no estaría entre nosotras, y que el árbol que creciera de aquella simiente habría de recordarnos su persona.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-bosque-2">
+          <img src="parabolas-taciturnas-bosque-2-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-bosque-2.t">El bosque de los nogales · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-bosque-2.d">Miraba algo que no llegué a discernir, la sombra de algo muy grande; sonó la campanilla, encendí la luz de la calle, no vi nada.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-bosque-3">
+          <img src="parabolas-taciturnas-bosque-3-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-bosque-3.t">El bosque de los nogales · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-bosque-3.d">Escudriñando intranquila, quietud; apagó la luz y continuó observando, un último vistazo por si el animal aparecía nuevamente. Nada.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-bosque-4">
+          <img src="parabolas-taciturnas-bosque-4-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-bosque-4.t">El bosque de los nogales · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-bosque-4.d">En esta casa no ha estado nunca nadie cuerdo, pero no creo que alucinemos en dual.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-carta">
+          <img src="parabolas-taciturnas-carta-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-carta.t">Carta a mamá, carta a papá</b><span class="pie-desc" data-i18n="parabolas-taciturnas-carta.d">Esta pena que tanto se prolonga en el tiempo no es convencional, no encuentro explicación, nadie encuentra solución y soy la primera en querer volver a brotar.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-cronos-1">
+          <img src="parabolas-taciturnas-cronos-1-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-cronos-1.t">Los versos de Cronos · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-cronos-1.d">Entre brumas grises Londres amanecía para todos sus habitantes sin importar edad o clase social.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-cronos-2">
+          <img src="parabolas-taciturnas-cronos-2-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-cronos-2.t">Los versos de Cronos · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-cronos-2.d">No temáis al Dios de los ingleses: sabed que el universo está dentro de vosotros y que jamás os deja solos.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-cronos-3">
+          <img src="parabolas-taciturnas-cronos-3-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-cronos-3.t">Los versos de Cronos · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-cronos-3.d">Los tres vivimos apartados, y siempre que salimos a la calle lo hacemos con uno de los trajes de Scarlett, para que nadie preste atención.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-luciernagas-1">
+          <img src="parabolas-taciturnas-luciernagas-1-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-luciernagas-1.t">El valle de las luciérnagas · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-luciernagas-1.d">Justo al caer la noche, las luciérnagas alzaban el vuelo revoloteando por doquier.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-luciernagas-2">
+          <img src="parabolas-taciturnas-luciernagas-2-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-luciernagas-2.t">El valle de las luciérnagas · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-luciernagas-2.d">Nunca había estado con mujer alguna y nadie despertaba la chispa en su corazón.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-luciernagas-3">
+          <img src="parabolas-taciturnas-luciernagas-3-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-luciernagas-3.t">El valle de las luciérnagas · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-luciernagas-3.d">Una vez allí habrás de prometerme que nunca cruzarás los límites mientras los nigromantes continúen en el bosque.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-pescador-1">
+          <img src="parabolas-taciturnas-pescador-1-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-pescador-1.t">El pescador de las mareas · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-pescador-1.d">Noche cerrada bajo nubes de tormenta; los hombres de la aldea esperaban portando farolillos, indicando la costa a los pescadores.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-pescador-2">
+          <img src="parabolas-taciturnas-pescador-2-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-pescador-2.t">El pescador de las mareas · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-pescador-2.d">Soy un marino, no tengo miedo al mar ni a sus criaturas, no puede haber nada peor aquí. El grito sonó de nuevo.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-pescador-4">
+          <img src="parabolas-taciturnas-pescador-4-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-pescador-4.t">El pescador de las mareas · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-pescador-4.d">Y en esa noche de luna llena abandonaréis el pueblo sin que nadie advierta vuestra marcha.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-tiara-1">
+          <img src="parabolas-taciturnas-tiara-1-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-tiara-1.t">La tiara de los treinta hermanos</b><span class="pie-desc" data-i18n="parabolas-taciturnas-tiara-1.d">Si alguna vez oyes un «clac» de madera al caminar, estés donde estés, a la hora que sea, sola o acompañada, jamás abras ni dejes que nadie abra la puerta.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-viajante-1">
+          <img src="parabolas-taciturnas-viajante-1-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-viajante-1.t">El viajante de las estrellas · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-viajante-1.d">El tiempo no pasa para mí.</span></span>
+        </button>
+        <button class="galeria-mini" type="button" aria-pressed="false" data-img="parabolas-taciturnas-viajante-2">
+          <img src="parabolas-taciturnas-viajante-2-mini.jpg" width="400" height="566" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="parabolas-taciturnas-viajante-2.t">El viajante de las estrellas · Parábolas taciturnas</b><span class="pie-desc" data-i18n="parabolas-taciturnas-viajante-2.d">Estoy sola, más sola que nunca, pero feliz, todo lo feliz que se puede estar en una situación como la presente.</span></span>
+        </button>
+        <p class="galeria-bloque" data-i18n="bloque.ilustraciones">Ilustraciones</p>
+        <button class="galeria-mini ancho" type="button" aria-pressed="false" data-img="ilustracion-alquimista">
+          <img src="ilustracion-alquimista-mini.jpg" width="800" height="188" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="ilustracion-alquimista.t">Los hijos del Alquimista</b><span class="pie-desc" data-i18n="ilustracion-alquimista.d">Nos quedamos quietos; sabía que estábamos ahí, jugaba, sus pasos lentos recorriendo el pasillo, oliendo el miedo, su sombra proyectada sobre la pared.</span></span>
+        </button>
+        <button class="galeria-mini ancho" type="button" aria-pressed="false" data-img="ilustracion-luciernagas">
+          <img src="ilustracion-luciernagas-mini.jpg" width="800" height="155" loading="lazy" decoding="async" alt="">
+          <span class="mini-pie"><b data-i18n="ilustracion-luciernagas.t">El valle de las luciérnagas</b><span class="pie-desc" data-i18n="ilustracion-luciernagas.d">El bosque está siendo arrasado y cuando no quede nada, venza quien venza, nuestra ciudad no tendrá sentido.</span></span>
+        </button>
+      </div>
+    </div>
+
+    <a class="galeria-volver" href="/" data-i18n="gal.volver">← Volver a la portada</a>
+  </section>
+
+  <script>
+    const IDIOMAS = {
+      es: { htmlLang: "es" },
+      va: { htmlLang: "ca-ES-valencia" },
+      en: { htmlLang: "en" }
+    };
+
+    const T = {
+      es: {
+              "nav.inicio": "Inicio",
+              "nav.nosotrxs": "Nosotrxs",
+              "nav.obras": "Obras",
+              "nav.galeria": "Galería",
+              "nav.audio": "Audiolibro",
+              "nav.contacto": "Contacto",
+              "nav.idioma": "Idioma",
+              "nav.abrir": "Abrir menú",
+              "nav.cerrar": "Cerrar menú",
+              "meta.title": "Galería — el universo visual de Hunicornia",
+              "meta.desc": "Las 94 ilustraciones de Hunicornia: Tinddaya, 7 máscaras, Parábolas taciturnas. Fantasía queer ilustrada, obra completa y gratuita.",
+              "gal.titulo": "El universo visual de Hunicornia",
+              "gal.aria": "Ilustraciones de Hunicornia",
+              "gal.sub": "Noventa y seis ilustraciones · Toda la obra",
+              "gal.volver": "← Volver a la portada",
+              "gal.izq": "Ver la parte izquierda de la ilustración",
+              "gal.der": "Ver la parte derecha de la ilustración",
+              "bloque.tinddaya": "Tinddaya",
+              "bloque.7-mascaras": "7 máscaras",
+              "bloque.parabolas": "Parábolas taciturnas",
+              "bloque.ilustraciones": "Ilustraciones",
+              "tinddaya-nikoleta.t": "Nikoleta · Tinddaya",
+              "tinddaya-nikoleta.d": "Lázaro se deja caer al suelo frunciendo el gesto con fuerza, Nikoleta se sujeta el pecho, no puede respirar.",
+              "tinddaya-lazaro.t": "Lázaro · Tinddaya",
+              "tinddaya-lazaro.d": "Lázaro se ha doblado la mano, gime por el dolor, pero se abalanza a abrazar a su amiga.",
+              "tinddaya-lux.t": "Lux · Tinddaya",
+              "tinddaya-lux.d": "―No lo sé, pero sentí el miedo en vosotros.",
+              "tinddaya-alejo.t": "Alejo · Tinddaya",
+              "tinddaya-alejo.d": "Alejo llega sudando a su casa, pasa al baño a ducharse, cierra los ojos bajo el chorro de agua hirviendo que le enrojece la piel, respira profundamente.",
+              "tinddaya-jimena.t": "Jimena · Tinddaya",
+              "tinddaya-jimena.d": "Los ojos azules de Jimena hacen temblar la mirada ensombrecida de su captora.",
+              "tinddaya-salma.t": "Salma · Tinddaya",
+              "tinddaya-salma.d": "Salma conduce por la vereda hasta dar esquinazo a sus perseguidores por el Puente del Regne, bajo la mirada de las gárgolas de bronce.",
+              "tinddaya-nelidarolan.t": "Nélida y Roland · Tinddaya",
+              "tinddaya-nelidarolan.d": "Roland es Tortuga de piedra, Nélida es Cierva de tormenta.",
+              "tinddaya-cornelia.t": "Cornelia · Tinddaya",
+              "tinddaya-cornelia.d": "Cornelia enciende las velas nuevamente, observa a sus perros que yerguen la cabeza y atienden con atención, se asoma y mira a cada rincón del pueblo.",
+              "tinddaya-deerspark.t": "Deer y Spark · Tinddaya",
+              "tinddaya-deerspark.d": "Deer mira a su amigo, con una mirada solemne, como quien sabe que puede ser la última vez que se vean; Spark le guiña un ojo y sopla aún más fuerte.",
+              "tinddaya-tremelos.t": "Los tremelos · Tinddaya",
+              "tinddaya-tremelos.d": "La voz de los tremelos suena al unísono en la cabeza de algunos de los Tinddaya.",
+              "tinddaya-alejandra.t": "Alejandra · Tinddaya",
+              "tinddaya-alejandra.d": "Alejandra abre la caja que lleva entre las manos, hay un colgante con un cráneo de gato tallado en cuarzo, se lo coloca al cuello.",
+              "tinddaya-koiki.t": "Koiki · Tinddaya",
+              "tinddaya-koiki.d": "Koiki está sentado frente a una hoguera con los ojos cerrados, parece no sorprenderse, ha preparado el fuego esperando antes o después este momento.",
+              "tinddaya-negras.t": "Joanna y Nakano · Tinddaya",
+              "tinddaya-negras.d": "Aquellos combatientes que estén dispuestos, estarán a las órdenes de Joanna y Nakano.",
+              "tinddaya-zefiro.t": "Zéfiro · Tinddaya",
+              "tinddaya-zefiro.d": "Zéfiro subió al tejado y observó en la oscuridad; todos dormían, pero sus oídos escuchaban en la distancia aunque no podía verlo.",
+              "tinddaya-arguestes.t": "Arguestes · Tinddaya",
+              "tinddaya-arguestes.d": "Sobre todo en las noches de luna llena en las que Arguestes pasaba largos ratos aullando, reclamando el amor huido.",
+              "tinddaya-nereoviveka.t": "Viveka y Nereo · Tinddaya",
+              "tinddaya-nereoviveka.d": "Su esposa era una mujer muy bella, de ojos verde oliva, con la tez pecosa y el pelo rojo como el atardecer, de nombre, Viveka.",
+              "tinddaya-hajnalka.t": "Hajnalka · Tinddaya",
+              "tinddaya-hajnalka.d": "Hajnalka cierra los ojos, las llamas bajo sus pies se avivan, las letras que rodean su cuerpo se estremecen como humo exaltado.",
+              "tinddaya-dragon.t": "Kennin ji · Tinddaya · Caos",
+              "tinddaya-dragon.d": "Sus ojos envilecidos arden en llamas, de sus dedos surgen las garras rasgando la carne, la figura del dragón surge desollando la piel.",
+              "tinddaya-arsenico.t": "Arsénico · Tinddaya · Cuervos",
+              "tinddaya-arsenico.d": "Arsénico mira a su hermano, es una mirada de inquietud ante el miedo de Radón.",
+              "tinddaya-radon.t": "Radôn · Tinddaya · Cuervos",
+              "tinddaya-radon.d": "Radôn coloca un par de ramas sobre el fuego, una llamarada se levanta dibujando el rostro malforme de lo que parece un elefante.",
+              "tinddaya-mercurio.t": "Mercurio · Tinddaya · Cuervos",
+              "tinddaya-mercurio.d": "Mercurio abre un portal de oscuridad, camina cruzándolo, los otros dos cuervos hacen igual.",
+              "tinddaya-merida.t": "Mérida, la Emperatriz · Tinddaya",
+              "tinddaya-merida.d": "Mérida es nigromante y sensitiva: debe ser un drama tener deseos de muerte y, sin embargo, sentir la misericordia y el dolor a un nivel que raya la locura.",
+              "tinddaya-titeres.t": "Los cazadores ciegos · Tinddaya",
+              "tinddaya-titeres.d": "―Dadles vida con la sangre de los reyes, de los diez.",
+              "tinddaya-antediluvianos.t": "Los antediluvianos · Tinddaya",
+              "tinddaya-antediluvianos.d": "Los ancianos son capaces de cualquier tropelía antinatural con tal de ganar poder, ya dominan las sombras entre épocas.",
+              "7-mascaras-alaris-evol-color.t": "Alaris, evolución · 7 máscaras · color",
+              "7-mascaras-alaris-evol-color.d": "En una mano albergaba la luz y en la otra la oscuridad, las estrellas nacían bajo su voluntad.",
+              "7-mascaras-alaris.t": "Alaris · 7 máscaras",
+              "7-mascaras-alaris.d": "El cuerpo de Alaris brillaba cegador, la luz manaba de sus puños más poderosa que nunca.",
+              "7-mascaras-baem.t": "Shamkra Baem · 7 máscaras",
+              "7-mascaras-baem.d": "Con sus afilados dedos Shamkra Baem removía la tierra modelando valles y montañas, abismos y acantilados que Gala Evora inundaba de mares y océanos.",
+              "7-mascaras-bosque.t": "El bosque · 7 máscaras",
+              "7-mascaras-bosque.d": "Sus temores desaparecían rodeado por aquella obra maestra de la creación; parecía que nada pudiese perturbar la mansa tranquilidad del bosque.",
+              "7-mascaras-buri-color.t": "Buri Buri · 7 máscaras · color",
+              "7-mascaras-buri-color.d": "Los mordiscos despedazaban el cuerpo de Buri Buri, que entre gritos reconstruía sus miembros destrozados.",
+              "7-mascaras-circo.t": "El Circo Nebular · 7 máscaras",
+              "7-mascaras-circo.d": "Una vez el espectáculo haya terminado, todos podremos volver a jugar y a divertirnos como hacemos siempre en el Circo Nebular.",
+              "7-mascaras-crapatos-evol-color.t": "Cràpatos, evolución · 7 máscaras · color",
+              "7-mascaras-crapatos-evol-color.d": "Dios de loadas virtudes, cuyo soplo es capaz de poblar la tierra con la raza humana.",
+              "7-mascaras-crapatos.t": "Cràpatos, evolución · 7 máscaras",
+              "7-mascaras-crapatos.d": "Crápatos miraba hacia la nada, impotente, dolido, más en el alma que en su cuerpo rasgado por las manos de Moor.",
+              "7-mascaras-cuco.t": "El Cuco Rojo · 7 máscaras",
+              "7-mascaras-cuco.d": "―Cuco Rojo, muéstranos el camino con la luz de tus ojos.",
+              "7-mascaras-cuervos.t": "Los cuervos · 7 máscaras",
+              "7-mascaras-cuervos.d": "Unos ocho cuervos negros como el tizón y de un tamaño mayor de lo normal.",
+              "7-mascaras-dhyavod.t": "Dhyavod, evolución · 7 máscaras · color",
+              "7-mascaras-dhyavod.d": "Señor de las Artes y las Ciencias. Con el solo movimiento de sus dedos, la humanidad cambia el rumbo de su historia.",
+              "7-mascaras-diersej.t": "Diersej · 7 máscaras",
+              "7-mascaras-diersej.d": "Diersej se acercaba muy rápido, con el rostro henchido por la furia, cargando todo el poder sobre su arma.",
+              "7-mascaras-enova.t": "Enova · 7 máscaras",
+              "7-mascaras-enova.d": "Las hijas de Enova sólo atacan a aquellos que se atreven a mirarlas a los ojos.",
+              "7-mascaras-espantapajaros.t": "Los espantapájaros · 7 máscaras",
+              "7-mascaras-espantapajaros.d": "Era un espantapájaros desaliñado, con un sombrero de paja, vestido con ropa vieja y con la mirada triste.",
+              "7-mascaras-fausto.t": "Fausto, Señor de la Tristeza · 7 máscaras",
+              "7-mascaras-fausto.d": "Frente a él se posaba su enemigo, observándolo detenidamente: Fausto esperaba.",
+              "7-mascaras-fruta.t": "Las frutas del bosque · 7 máscaras",
+              "7-mascaras-fruta.d": "Las frutas, hortalizas y flores que adornaban sus cabezas se agitaban fervorosas.",
+              "7-mascaras-gala-e.t": "Gala Evora · 7 máscaras",
+              "7-mascaras-gala-e.d": "Gala Evora posaba las manos sobre el suelo, controlando la tierra a su antojo.",
+              "7-mascaras-gala-evora-color.t": "Gala Evora, evolución · 7 máscaras · color",
+              "7-mascaras-gala-evora-color.d": "Algo sucedía en el interior de Gala Evora: su corazón brillaba incandescente conteniendo una aterradora tormenta.",
+              "7-mascaras-gargolas.t": "Las gärgolas · 7 máscaras",
+              "7-mascaras-gargolas.d": "Incluso las gárgolas parecían atemorizadas ante lo que estaba por venir.",
+              "7-mascaras-garuda-titan.t": "La Garuda y el Titán · 7 máscaras",
+              "7-mascaras-garuda-titan.d": "El suelo se estremecía a cada paso del gigantesco Titán, su cuerpo articulado se retorcía apresando a Garuda, que explotaba en una avalancha de magma.",
+              "7-mascaras-garzas.t": "Las garzas y la tortuga · 7 máscaras",
+              "7-mascaras-garzas.d": "Partir significaría una muerte segura, pero quedarme aquí es una muerte anunciada.",
+              "7-mascaras-gran-buri.t": "Buri Buri · 7 máscaras",
+              "7-mascaras-gran-buri.d": "Buri Buri observaba divertido la reacción de la joven, que lloraba impotente.",
+              "7-mascaras-gran.t": "Mífido · 7 máscaras",
+              "7-mascaras-gran.d": "No muy lejos, botando sobre las aguas, el tritón blanco capturaba tantas luciérnagas como podía llenándose la boca.",
+              "7-mascaras-gran-poster2.t": "Shamkra Baem, evolución · 7 máscaras · color",
+              "7-mascaras-gran-poster2.d": "Su corazón latía ante ella fuera del pecho, sostenido por la mano del señor de las tinieblas.",
+              "7-mascaras-guardian.t": "El guardiän · 7 máscaras",
+              "7-mascaras-guardian.d": "El guardián no sufría los golpes, pero era incapaz de infligir daño sobre la inexpugnable coraza.",
+              "7-mascaras-gatos.t": "El cuento de los dos gatos · 7 máscaras",
+              "7-mascaras-gatos.d": "El gato blanco, antes de comerlas, disfrutaba jugando con su víctima un buen rato, dándole la opción a escapar si así lo merecía.",
+              "7-mascaras-ion.t": "Ion · 7 máscaras",
+              "7-mascaras-ion.d": "Por eso ordenó que Ion se detuviese: quiere saber hasta dónde podéis llegar, medir su fuerza con la vuestra.",
+              "7-mascaras-kennin-color.t": "Kennin ji · 7 máscaras · color",
+              "7-mascaras-kennin-color.d": "―Parece que no te hice arder lo suficiente.",
+              "7-mascaras-kennin.t": "Kennin ji · 7 máscaras",
+              "7-mascaras-kennin.d": "Tras Kennin ji se transfiguraba una sombra tomando cuerpo: el Hombre Elefante aparecía bajo la sorprendida mirada del lugarteniente.",
+              "7-mascaras-kuag-saeton.t": "Kuagssak · 7 máscaras",
+              "7-mascaras-kuag-saeton.d": "Kuagssak redobló el tamaño de su cuerpo, sus mandíbulas se abrían monstruosamente.",
+              "7-mascaras-lobo.t": "El Lobo Ciego · 7 máscaras",
+              "7-mascaras-lobo.d": "El Lobo Ciego permanecía inmóvil, su cuerpo se oscurecía, como si un fuego le quemase desde el interior, calcinando su ser.",
+              "7-mascaras-monos.t": "Los cuatro monos · 7 máscaras",
+              "7-mascaras-monos.d": "¿Veis ese árbol?, subiremos, caminaremos por sus ramas, y desde la más larga nos descolgaremos uno tras otro hasta coger la luna que brilla sobre el río.",
+              "7-mascaras-moor-color-evol.t": "Moor, evolución · 7 máscaras · color",
+              "7-mascaras-moor-color-evol.d": "Moor sentía miedo, desaliento, pero en su corazón algo le decía que no debía temer a aquella figura.",
+              "7-mascaras-namku.t": "Namku · 7 máscaras",
+              "7-mascaras-namku.d": "Namku siempre llegaba con el último sol; cenaban mientras hablaban del día, después el cuento y luego a dormir.",
+              "7-mascaras-niorai-clasic.t": "Niorái, la de la leyenda antigua · 7 máscaras",
+              "7-mascaras-niorai-clasic.d": "Con su cálido manto hacía florecer la vida sobre las yermas y desoladas tierras.",
+              "7-mascaras-niorai-color.t": "Niorái, evolución · 7 máscaras · color",
+              "7-mascaras-niorai-color.d": "Niorái se sentó a su lado, abrazándolo; su cuerpo comenzó a echar raíces, apresando a las dos figuras.",
+              "7-mascaras-niorai.t": "Niorái, evolución · 7 máscaras",
+              "7-mascaras-niorai.d": "Niorái soportaba el más inhumano dolor, calcinada, abrazando con toda su esencia al enemigo.",
+              "7-mascaras-oren-color.t": "Oren · 7 máscaras · color",
+              "7-mascaras-oren-color.d": "Recuerda lo que dijo Oren: sea lo que sea, no puede hacernos nada si no lo miramos a los ojos.",
+              "7-mascaras-pantano.t": "El pantano · 7 máscaras",
+              "7-mascaras-pantano.d": "Si conseguís escapar a los monstruos del pantano, sabed que la inhalación de estos vapores pestilentes también puede daros muerte.",
+              "7-mascaras-pantera.t": "La pantera de Namku · 7 máscaras · color",
+              "7-mascaras-pantera.d": "La figura se dibuja a contraluz: una imponente pantera negra clavaba su mirada sobre el Dios del Odio.",
+              "7-mascaras-radamus-classic.t": "Rädamus · 7 máscaras",
+              "7-mascaras-radamus-classic.d": "Señor de las Bestias: de cada uno de los poros de su piel nacen cientos de criaturas, horrendos y bellos, afables y hostiles.",
+              "7-mascaras-radamus-evol-color.t": "Rädamus, evolución · 7 máscaras · color",
+              "7-mascaras-radamus-evol-color.d": "Rádamus apareció de la nada, su cuerpo podía confundirse con el entorno haciéndose invisible.",
+              "7-mascaras-radamus.t": "Rädamus, evolución · 7 máscaras",
+              "7-mascaras-radamus.d": "Rádamus liberaba bajo su piel pequeñas sombras semejantes a insectos, que devoraban famélicos la masa negra.",
+              "7-mascaras-serpiente.t": "El Saetón · 7 máscaras",
+              "7-mascaras-serpiente.d": "Jamás había visto uno con esa forma, pero estoy seguro de que se trata de un saetón: una serpiente con plumas capaz de volar sin alas.",
+              "7-mascaras-sombras.t": "Las sombras · 7 máscaras",
+              "7-mascaras-sombras.d": "La tiniebla había sido creada por el odio que albergaba el corazón del octavo dios, y a su muerte se desvaneció con él.",
+              "7-mascaras-tanuk-ik-color.t": "Tanuk ik · 7 máscaras · color",
+              "7-mascaras-tanuk-ik-color.d": "Tanuk ik parecía muy feliz, su rostro esbozaba una sonrisa que lo deformaba hasta parecer grotesco.",
+              "7-mascaras-tanuk-ik.t": "Tanuk ik · 7 máscaras",
+              "7-mascaras-tanuk-ik.d": "Tanuk ik tenía más de la mitad del cuerpo calcinado, completamente negro, con trozos arrancados por fuertes zarpazos.",
+              "7-mascaras-titan.t": "El Titán · 7 máscaras",
+              "7-mascaras-titan.d": "La bestia surgía de la tierra: un titán de ojos ámbar y cuerpo armado, corría sobre sus cuatro extremidades como una araña.",
+              "7-mascaras-moor-retocado.t": "Moor · 7 máscaras · color",
+              "7-mascaras-moor-retocado.d": "Moor estaba siendo arrastrado de nuevo hacia la oscuridad, una enorme sombra negra se acrecía envolviéndolo.",
+              "parabolas-taciturnas-alquimistas-1.t": "Los hijos del Alquimista · Parábolas taciturnas",
+              "parabolas-taciturnas-alquimistas-1.d": "Todavía recuerdo con bastante claridad aquellos años de infancia.",
+              "parabolas-taciturnas-alquimistas-2.t": "Los hijos del Alquimista · Parábolas taciturnas",
+              "parabolas-taciturnas-alquimistas-2.d": "Cada noche, desde el profundo bosque, el aullido de Arguestes rompía el silencio lamentando la muerte de su madre.",
+              "parabolas-taciturnas-bosque-1.t": "El bosque de los nogales · Parábolas taciturnas",
+              "parabolas-taciturnas-bosque-1.d": "Mi abuela decía que algún día ya no estaría entre nosotras, y que el árbol que creciera de aquella simiente habría de recordarnos su persona.",
+              "parabolas-taciturnas-bosque-2.t": "El bosque de los nogales · Parábolas taciturnas",
+              "parabolas-taciturnas-bosque-2.d": "Miraba algo que no llegué a discernir, la sombra de algo muy grande; sonó la campanilla, encendí la luz de la calle, no vi nada.",
+              "parabolas-taciturnas-bosque-3.t": "El bosque de los nogales · Parábolas taciturnas",
+              "parabolas-taciturnas-bosque-3.d": "Escudriñando intranquila, quietud; apagó la luz y continuó observando, un último vistazo por si el animal aparecía nuevamente. Nada.",
+              "parabolas-taciturnas-bosque-4.t": "El bosque de los nogales · Parábolas taciturnas",
+              "parabolas-taciturnas-bosque-4.d": "En esta casa no ha estado nunca nadie cuerdo, pero no creo que alucinemos en dual.",
+              "parabolas-taciturnas-carta.t": "Carta a mamá, carta a papá",
+              "parabolas-taciturnas-carta.d": "Esta pena que tanto se prolonga en el tiempo no es convencional, no encuentro explicación, nadie encuentra solución y soy la primera en querer volver a brotar.",
+              "parabolas-taciturnas-cronos-1.t": "Los versos de Cronos · Parábolas taciturnas",
+              "parabolas-taciturnas-cronos-1.d": "Entre brumas grises Londres amanecía para todos sus habitantes sin importar edad o clase social.",
+              "parabolas-taciturnas-cronos-2.t": "Los versos de Cronos · Parábolas taciturnas",
+              "parabolas-taciturnas-cronos-2.d": "No temáis al Dios de los ingleses: sabed que el universo está dentro de vosotros y que jamás os deja solos.",
+              "parabolas-taciturnas-cronos-3.t": "Los versos de Cronos · Parábolas taciturnas",
+              "parabolas-taciturnas-cronos-3.d": "Los tres vivimos apartados, y siempre que salimos a la calle lo hacemos con uno de los trajes de Scarlett, para que nadie preste atención.",
+              "parabolas-taciturnas-luciernagas-1.t": "El valle de las luciérnagas · Parábolas taciturnas",
+              "parabolas-taciturnas-luciernagas-1.d": "Justo al caer la noche, las luciérnagas alzaban el vuelo revoloteando por doquier.",
+              "parabolas-taciturnas-luciernagas-2.t": "El valle de las luciérnagas · Parábolas taciturnas",
+              "parabolas-taciturnas-luciernagas-2.d": "Nunca había estado con mujer alguna y nadie despertaba la chispa en su corazón.",
+              "parabolas-taciturnas-luciernagas-3.t": "El valle de las luciérnagas · Parábolas taciturnas",
+              "parabolas-taciturnas-luciernagas-3.d": "Una vez allí habrás de prometerme que nunca cruzarás los límites mientras los nigromantes continúen en el bosque.",
+              "parabolas-taciturnas-pescador-1.t": "El pescador de las mareas · Parábolas taciturnas",
+              "parabolas-taciturnas-pescador-1.d": "Noche cerrada bajo nubes de tormenta; los hombres de la aldea esperaban portando farolillos, indicando la costa a los pescadores.",
+              "parabolas-taciturnas-pescador-2.t": "El pescador de las mareas · Parábolas taciturnas",
+              "parabolas-taciturnas-pescador-2.d": "Soy un marino, no tengo miedo al mar ni a sus criaturas, no puede haber nada peor aquí. El grito sonó de nuevo.",
+              "parabolas-taciturnas-pescador-4.t": "El pescador de las mareas · Parábolas taciturnas",
+              "parabolas-taciturnas-pescador-4.d": "Y en esa noche de luna llena abandonaréis el pueblo sin que nadie advierta vuestra marcha.",
+              "parabolas-taciturnas-tiara-1.t": "La tiara de los treinta hermanos",
+              "parabolas-taciturnas-tiara-1.d": "Si alguna vez oyes un «clac» de madera al caminar, estés donde estés, a la hora que sea, sola o acompañada, jamás abras ni dejes que nadie abra la puerta.",
+              "parabolas-taciturnas-viajante-1.t": "El viajante de las estrellas · Parábolas taciturnas",
+              "parabolas-taciturnas-viajante-1.d": "El tiempo no pasa para mí.",
+              "parabolas-taciturnas-viajante-2.t": "El viajante de las estrellas · Parábolas taciturnas",
+              "parabolas-taciturnas-viajante-2.d": "Estoy sola, más sola que nunca, pero feliz, todo lo feliz que se puede estar en una situación como la presente.",
+              "ilustracion-alquimista.t": "Los hijos del Alquimista",
+              "ilustracion-alquimista.d": "Nos quedamos quietos; sabía que estábamos ahí, jugaba, sus pasos lentos recorriendo el pasillo, oliendo el miedo, su sombra proyectada sobre la pared.",
+              "ilustracion-luciernagas.t": "El valle de las luciérnagas",
+              "ilustracion-luciernagas.d": "El bosque está siendo arrasado y cuando no quede nada, venza quien venza, nuestra ciudad no tendrá sentido."
+      },
+      va: {
+              "nav.inicio": "Inici",
+              "nav.nosotrxs": "Nosaltres",
+              "nav.obras": "Obres",
+              "nav.galeria": "Galeria",
+              "nav.audio": "Audiollibre",
+              "nav.contacto": "Contacte",
+              "nav.idioma": "Idioma",
+              "nav.abrir": "Obrir menú",
+              "nav.cerrar": "Tancar menú",
+              "meta.title": "Galeria — l'univers visual d'Hunicornia",
+              "meta.desc": "Les 94 il·lustracions d'Hunicornia: Tinddaya, 7 màscares, Paràboles taciturnes. Fantasia queer il·lustrada, obra completa i gratuïta.",
+              "gal.titulo": "L'univers visual d'Hunicornia",
+              "gal.aria": "Il·lustracions d'Hunicornia",
+              "gal.sub": "Noranta-sis il·lustracions · Tota l'obra",
+              "gal.volver": "← Tornar a la portada",
+              "gal.izq": "Veure la part esquerra de la il·lustració",
+              "gal.der": "Veure la part dreta de la il·lustració",
+              "bloque.tinddaya": "Tinddaya",
+              "bloque.7-mascaras": "7 màscares",
+              "bloque.parabolas": "Paràboles taciturnes",
+              "bloque.ilustraciones": "Il·lustracions",
+              "tinddaya-nikoleta.t": "Nikoleta · Tinddaya",
+              "tinddaya-nikoleta.d": "Lázaro es deixa caure a terra arrugant el gest amb força, Nikoleta s'agarra el pit, no pot respirar.",
+              "tinddaya-lazaro.t": "Lázaro · Tinddaya",
+              "tinddaya-lazaro.d": "Lázaro s'ha torçut la mà, gemega pel dolor, però es llança a abraçar la seua amiga.",
+              "tinddaya-lux.t": "Lux · Tinddaya",
+              "tinddaya-lux.d": "―No ho sé, però vaig sentir la por en vosaltres.",
+              "tinddaya-alejo.t": "Alejo · Tinddaya",
+              "tinddaya-alejo.d": "Alejo aplega suant a sa casa, passa al bany a dutxar-se, tanca els ulls davall del raig d'aigua bullent que li enrogix la pell, respira profundament.",
+              "tinddaya-jimena.t": "Jimena · Tinddaya",
+              "tinddaya-jimena.d": "Els ulls blaus de Jimena fan tremolar la mirada enfosquida de la seua captora.",
+              "tinddaya-salma.t": "Salma · Tinddaya",
+              "tinddaya-salma.d": "Salma conduïx per la vereda fins a esquivar els seus perseguidors pel Pont del Regne, davall la mirada de les gàrgoles de bronze.",
+              "tinddaya-nelidarolan.t": "Nélida i Roland · Tinddaya",
+              "tinddaya-nelidarolan.d": "Roland és Tortuga de pedra, Nélida és Cérvola de tempesta.",
+              "tinddaya-cornelia.t": "Cornelia · Tinddaya",
+              "tinddaya-cornelia.d": "Cornelia encén les veles novament, observa els seus gossos que redrecen el cap i atenen amb atenció, s'aboca i mira cada racó del poble.",
+              "tinddaya-deerspark.t": "Deer i Spark · Tinddaya",
+              "tinddaya-deerspark.d": "Deer mira el seu amic amb una mirada solemne, com qui sap que pot ser l'última vegada que es vegen; Spark li fa l'ullet i bufa encara més fort.",
+              "tinddaya-tremelos.t": "Els tremelos · Tinddaya",
+              "tinddaya-tremelos.d": "La veu dels tremelos sona a l'uníson dins del cap d'alguns dels Tinddaya.",
+              "tinddaya-alejandra.t": "Alejandra · Tinddaya",
+              "tinddaya-alejandra.d": "Alejandra obri la caixa que porta entre les mans: hi ha un penjoll amb un crani de gat tallat en quars, se'l posa al coll.",
+              "tinddaya-koiki.t": "Koiki · Tinddaya",
+              "tinddaya-koiki.d": "Koiki està assegut davant d'una foguera amb els ulls tancats, sembla no sorprendre's, ha preparat el foc esperant abans o després este moment.",
+              "tinddaya-negras.t": "Joanna i Nakano · Tinddaya",
+              "tinddaya-negras.d": "Aquells combatents que estiguen disposats estaran a les ordes de Joanna i Nakano.",
+              "tinddaya-zefiro.t": "Zéfiro · Tinddaya",
+              "tinddaya-zefiro.d": "Zéfiro va pujar a la teulada i va observar en la foscor; tots dormien, però les seues orelles escoltaven en la distància encara que no podia veure-ho.",
+              "tinddaya-arguestes.t": "Arguestes · Tinddaya",
+              "tinddaya-arguestes.d": "Sobretot en les nits de lluna plena en què Arguestes passava llargues estones udolant, reclamant l'amor fugit.",
+              "tinddaya-nereoviveka.t": "Viveka i Nereo · Tinddaya",
+              "tinddaya-nereoviveka.d": "La seua esposa era una dona molt bella, d'ulls verd oliva, amb la pell pigosa i el pèl roig com el capvespre, de nom, Viveka.",
+              "tinddaya-hajnalka.t": "Hajnalka · Tinddaya",
+              "tinddaya-hajnalka.d": "Hajnalka tanca els ulls, les flames davall dels seus peus s'aviven, les lletres que envolten el seu cos s'estremixen com fum exaltat.",
+              "tinddaya-dragon.t": "Kennin ji · Tinddaya · Caos",
+              "tinddaya-dragon.d": "Els seus ulls envilits cremen en flames, dels seus dits sorgixen les urpes esquinçant la carn, la figura del drac sorgix escorxant la pell.",
+              "tinddaya-arsenico.t": "Arsènic · Tinddaya · Corbs",
+              "tinddaya-arsenico.d": "Arsènic mira el seu germà: és una mirada d'inquietud davant la por de Radôn.",
+              "tinddaya-radon.t": "Radôn · Tinddaya · Corbs",
+              "tinddaya-radon.d": "Radôn posa un parell de branques damunt del foc, una flamarada s'alça dibuixant el rostre deforme del que sembla un elefant.",
+              "tinddaya-mercurio.t": "Mercuri · Tinddaya · Corbs",
+              "tinddaya-mercurio.d": "Mercuri obri un portal de foscor, camina travessant-lo, els altres dos corbs fan igual.",
+              "tinddaya-merida.t": "Mérida, l'Emperadriu · Tinddaya",
+              "tinddaya-merida.d": "Mérida és nigromant i sensitiva: deu ser un drama tindre desitjos de mort i, tanmateix, sentir la misericòrdia i el dolor a un nivell que ratlla la bogeria.",
+              "tinddaya-titeres.t": "Els caçadors cecs · Tinddaya",
+              "tinddaya-titeres.d": "―Doneu-los vida amb la sang dels reis, dels deu.",
+              "tinddaya-antediluvianos.t": "Els antediluvians · Tinddaya",
+              "tinddaya-antediluvianos.d": "Els ancians són capaços de qualsevol malifeta antinatural amb tal de guanyar poder: ja dominen les ombres entre èpoques.",
+              "7-mascaras-alaris-evol-color.t": "Alaris, evolució · 7 màscares · color",
+              "7-mascaras-alaris-evol-color.d": "En una mà albergava la llum i en l'altra la foscor, les estreles naixien davall la seua voluntat.",
+              "7-mascaras-alaris.t": "Alaris · 7 màscares",
+              "7-mascaras-alaris.d": "El cos d'Alaris brillava encegador, la llum manava dels seus punys més poderosa que mai.",
+              "7-mascaras-baem.t": "Shamkra Baem · 7 màscares",
+              "7-mascaras-baem.d": "Amb els seus afilats dits Shamkra Baem removia la terra modelant valls i muntanyes, abismes i penya-segats que Gala Evora inundava de mars i oceans.",
+              "7-mascaras-bosque.t": "El bosc · 7 màscares",
+              "7-mascaras-bosque.d": "Els seus temors desapareixien envoltat per aquella obra mestra de la creació; semblava que res no poguera pertorbar la mansa tranquil·litat del bosc.",
+              "7-mascaras-buri-color.t": "Buri Buri · 7 màscares · color",
+              "7-mascaras-buri-color.d": "Les mossegades esbocinaven el cos de Buri Buri, que entre crits reconstruïa els seus membres destrossats.",
+              "7-mascaras-circo.t": "El Circ Nebular · 7 màscares",
+              "7-mascaras-circo.d": "Una vegada l'espectacle haja acabat, tots podrem tornar a jugar i a divertir-nos com fem sempre al Circ Nebular.",
+              "7-mascaras-crapatos-evol-color.t": "Cràpatos, evolució · 7 màscares · color",
+              "7-mascaras-crapatos-evol-color.d": "Déu de lloades virtuts, el buf del qual és capaç de poblar la terra amb la raça humana.",
+              "7-mascaras-crapatos.t": "Cràpatos, evolució · 7 màscares",
+              "7-mascaras-crapatos.d": "Cràpatos mirava cap al no-res, impotent, dolgut, més en l'ànima que en el seu cos esquinçat per les mans de Moor.",
+              "7-mascaras-cuco.t": "El Cucut Roig · 7 màscares",
+              "7-mascaras-cuco.d": "―Cucut Roig, mostra'ns el camí amb la llum dels teus ulls.",
+              "7-mascaras-cuervos.t": "Els corbs · 7 màscares",
+              "7-mascaras-cuervos.d": "Uns huit corbs negres com el tió i d'una grandària major del que és normal.",
+              "7-mascaras-dhyavod.t": "Dhyavod, evolució · 7 màscares · color",
+              "7-mascaras-dhyavod.d": "Senyor de les Arts i les Ciències. Amb el sol moviment dels seus dits, la humanitat canvia el rumb de la seua història.",
+              "7-mascaras-diersej.t": "Diersej · 7 màscares",
+              "7-mascaras-diersej.d": "Diersej s'acostava molt ràpid, amb el rostre unflat per la fúria, carregant tot el poder sobre la seua arma.",
+              "7-mascaras-enova.t": "Enova · 7 màscares",
+              "7-mascaras-enova.d": "Les filles d'Enova només ataquen aquells que s'atrevixen a mirar-les als ulls.",
+              "7-mascaras-espantapajaros.t": "Els espantaocells · 7 màscares",
+              "7-mascaras-espantapajaros.d": "Era un espantaocells desendreçat, amb un barret de palla, vestit amb roba vella i amb la mirada trista.",
+              "7-mascaras-fausto.t": "Faust, Senyor de la Tristesa · 7 màscares",
+              "7-mascaras-fausto.d": "Davant d'ell es posava el seu enemic, observant-lo detingudament: Faust esperava.",
+              "7-mascaras-fruta.t": "Les fruites del bosc · 7 màscares",
+              "7-mascaras-fruta.d": "Les fruites, hortalisses i flors que adornaven els seus caps s'agitaven fervoroses.",
+              "7-mascaras-gala-e.t": "Gala Evora · 7 màscares",
+              "7-mascaras-gala-e.d": "Gala Evora posava les mans damunt del sòl, controlant la terra al seu antull.",
+              "7-mascaras-gala-evora-color.t": "Gala Evora, evolució · 7 màscares · color",
+              "7-mascaras-gala-evora-color.d": "Alguna cosa succeïa dins de Gala Evora: el seu cor brillava incandescent contenint una aterridora tempesta.",
+              "7-mascaras-gargolas.t": "Les gàrgoles · 7 màscares",
+              "7-mascaras-gargolas.d": "Fins i tot les gàrgoles semblaven atemorides davant del que estava per vindre.",
+              "7-mascaras-garuda-titan.t": "La Garuda i el Tità · 7 màscares",
+              "7-mascaras-garuda-titan.d": "El sòl s'estremia a cada pas del gegantí Tità, el seu cos articulat es retorcia capturant Garuda, que explotava en una allau de magma.",
+              "7-mascaras-garzas.t": "Els agrons i la tortuga · 7 màscares",
+              "7-mascaras-garzas.d": "Partir significaria una mort segura, però quedar-me ací és una mort anunciada.",
+              "7-mascaras-gran-buri.t": "Buri Buri · 7 màscares",
+              "7-mascaras-gran-buri.d": "Buri Buri observava divertit la reacció de la jove, que plorava impotent.",
+              "7-mascaras-gran.t": "Mífido · 7 màscares",
+              "7-mascaras-gran.d": "No molt lluny, botant damunt de les aigües, el tritó blanc capturava tantes cuques de llum com podia omplint-se la boca.",
+              "7-mascaras-gran-poster2.t": "Shamkra Baem, evolució · 7 màscares · color",
+              "7-mascaras-gran-poster2.d": "El seu cor batia davant d'ella fora del pit, sostingut per la mà del senyor de les tenebres.",
+              "7-mascaras-guardian.t": "El guardià · 7 màscares",
+              "7-mascaras-guardian.d": "El guardià no patia els colps, però era incapaç d'infligir dany sobre la inexpugnable cuirassa.",
+              "7-mascaras-gatos.t": "El conte dels dos gats · 7 màscares",
+              "7-mascaras-gatos.d": "El gat blanc, abans de menjar-se-les, gaudia jugant amb la seua víctima una bona estona, donant-li l'opció d'escapar si així ho mereixia.",
+              "7-mascaras-ion.t": "Ion · 7 màscares",
+              "7-mascaras-ion.d": "Per això va ordenar que Ion es detinguera: vol saber fins on podeu aplegar, mesurar la seua força amb la vostra.",
+              "7-mascaras-kennin-color.t": "Kennin ji · 7 màscares · color",
+              "7-mascaras-kennin-color.d": "―Pareix que no et vaig fer cremar prou.",
+              "7-mascaras-kennin.t": "Kennin ji · 7 màscares",
+              "7-mascaras-kennin.d": "Darrere de Kennin ji es transfigurava una ombra prenent cos: l'Home Elefant apareixia davall la sorpresa mirada del lloctinent.",
+              "7-mascaras-kuag-saeton.t": "Kuagssak · 7 màscares",
+              "7-mascaras-kuag-saeton.d": "Kuagssak va redoblar la grandària del seu cos, les seues mandíbules s'obrien monstruosament.",
+              "7-mascaras-lobo.t": "El Llop Cec · 7 màscares",
+              "7-mascaras-lobo.d": "El Llop Cec romania immòbil, el seu cos s'enfosquia, com si un foc el cremara des de dins, calcinant el seu ser.",
+              "7-mascaras-monos.t": "Els quatre micos · 7 màscares",
+              "7-mascaras-monos.d": "Veeu aquell arbre?, pujarem, caminarem per les seues branques, i des de la més llarga ens despenjarem un rere l'altre fins a agarrar la lluna que brilla damunt del riu.",
+              "7-mascaras-moor-color-evol.t": "Moor, evolució · 7 màscares · color",
+              "7-mascaras-moor-color-evol.d": "Moor sentia por, desànim, però en el seu cor alguna cosa li deia que no havia de témer aquella figura.",
+              "7-mascaras-namku.t": "Namku · 7 màscares",
+              "7-mascaras-namku.d": "Namku sempre aplegava amb l'últim sol; sopaven mentre parlaven del dia, després el conte i després a dormir.",
+              "7-mascaras-niorai-clasic.t": "Niorái, la de la llegenda antiga · 7 màscares",
+              "7-mascaras-niorai-clasic.d": "Amb el seu càlid mantell feia florir la vida sobre les ermes i desolades terres.",
+              "7-mascaras-niorai-color.t": "Niorái, evolució · 7 màscares · color",
+              "7-mascaras-niorai-color.d": "Niorái es va asseure al seu costat, abraçant-lo; el seu cos va començar a fer arrels, capturant les dues figures.",
+              "7-mascaras-niorai.t": "Niorái, evolució · 7 màscares",
+              "7-mascaras-niorai.d": "Niorái suportava el més inhumà dolor, calcinada, abraçant amb tota la seua essència l'enemic.",
+              "7-mascaras-oren-color.t": "Oren · 7 màscares · color",
+              "7-mascaras-oren-color.d": "Recorda el que va dir Oren: siga el que siga, no pot fer-nos res si no el mirem als ulls.",
+              "7-mascaras-pantano.t": "El pantà · 7 màscares",
+              "7-mascaras-pantano.d": "Si aconseguiu escapar dels monstres del pantà, sapieu que la inhalació d'estos vapors pestilents també pot donar-vos mort.",
+              "7-mascaras-pantera.t": "La pantera de Namku · 7 màscares · color",
+              "7-mascaras-pantera.d": "La figura es dibuixa a contrallum: una imponent pantera negra clavava la seua mirada sobre el Déu de l'Odi.",
+              "7-mascaras-radamus-classic.t": "Rädamus · 7 màscares",
+              "7-mascaras-radamus-classic.d": "Senyor de les Bèsties: de cada un dels porus de la seua pell naixen centenars de criatures, horribles i belles, afables i hostils.",
+              "7-mascaras-radamus-evol-color.t": "Rädamus, evolució · 7 màscares · color",
+              "7-mascaras-radamus-evol-color.d": "Rädamus va aparéixer del no-res, el seu cos podia confondre's amb l'entorn fent-se invisible.",
+              "7-mascaras-radamus.t": "Rädamus, evolució · 7 màscares",
+              "7-mascaras-radamus.d": "Rädamus alliberava davall la seua pell xicotetes ombres semblants a insectes, que devoraven famolenques la massa negra.",
+              "7-mascaras-serpiente.t": "El Saetón · 7 màscares",
+              "7-mascaras-serpiente.d": "Mai n'havia vist cap amb eixa forma, però estic segur que es tracta d'un saetón: una serp amb plomes capaç de volar sense ales.",
+              "7-mascaras-sombras.t": "Les ombres · 7 màscares",
+              "7-mascaras-sombras.d": "La tenebra havia sigut creada per l'odi que albergava el cor del huité déu, i a la seua mort es va esvair amb ell.",
+              "7-mascaras-tanuk-ik-color.t": "Tanuk ik · 7 màscares · color",
+              "7-mascaras-tanuk-ik-color.d": "Tanuk ik semblava molt feliç, el seu rostre esbossava un somriure que el deformava fins a paréixer grotesc.",
+              "7-mascaras-tanuk-ik.t": "Tanuk ik · 7 màscares",
+              "7-mascaras-tanuk-ik.d": "Tanuk ik tenia més de la mitat del cos calcinat, completament negre, amb trossos arrancats per forts esgarraps.",
+              "7-mascaras-titan.t": "El Tità · 7 màscares",
+              "7-mascaras-titan.d": "La bèstia sorgia de la terra: un tità d'ulls ambre i cos armat, corria sobre les seues quatre extremitats com una aranya.",
+              "7-mascaras-moor-retocado.t": "Moor · 7 màscares · color",
+              "7-mascaras-moor-retocado.d": "Moor estava sent arrossegat de nou cap a la foscor, una enorme ombra negra s'acreixia envoltant-lo.",
+              "parabolas-taciturnas-alquimistas-1.t": "Els fills de l'Alquimista · Paràboles taciturnes",
+              "parabolas-taciturnas-alquimistas-1.d": "Encara recorde amb bastant claredat aquells anys d'infantesa.",
+              "parabolas-taciturnas-alquimistas-2.t": "Els fills de l'Alquimista · Paràboles taciturnes",
+              "parabolas-taciturnas-alquimistas-2.d": "Cada nit, des del profund bosc, l'udol d'Arguestes trencava el silenci lamentant la mort de sa mare.",
+              "parabolas-taciturnas-bosque-1.t": "El bosc de noguers · Paràboles taciturnes",
+              "parabolas-taciturnas-bosque-1.d": "Ma àvia deia que algun dia ja no estaria entre nosaltres, i que l'arbre que cresquera d'aquella llavor hauria de recordar-nos la seua persona.",
+              "parabolas-taciturnas-bosque-2.t": "El bosc de noguers · Paràboles taciturnes",
+              "parabolas-taciturnas-bosque-2.d": "Mirava alguna cosa que no vaig arribar a discernir, l'ombra d'alguna cosa molt gran; va sonar la campaneta, vaig encendre el llum del carrer, no vaig veure res.",
+              "parabolas-taciturnas-bosque-3.t": "El bosc de noguers · Paràboles taciturnes",
+              "parabolas-taciturnas-bosque-3.d": "Escodrinyant intranquil·la, quietud; va apagar el llum i va continuar observant, una última ullada per si l'animal apareixia novament. Res.",
+              "parabolas-taciturnas-bosque-4.t": "El bosc de noguers · Paràboles taciturnes",
+              "parabolas-taciturnas-bosque-4.d": "En esta casa no ha estat mai ningú cabal, però no crec que al·lucinem en dual.",
+              "parabolas-taciturnas-carta.t": "Carta a mamà, carta a papà",
+              "parabolas-taciturnas-carta.d": "Esta pena que tant es prolonga en el temps no és convencional, no trobe explicació, ningú no troba solució i soc la primera a voler tornar a brostar.",
+              "parabolas-taciturnas-cronos-1.t": "Els versos de Cronos · Paràboles taciturnes",
+              "parabolas-taciturnas-cronos-1.d": "Entre boires grises Londres despuntava per a tots els seus habitants sense importar edat ni classe social.",
+              "parabolas-taciturnas-cronos-2.t": "Els versos de Cronos · Paràboles taciturnes",
+              "parabolas-taciturnas-cronos-2.d": "No temeu el Déu dels anglesos: sapieu que l'univers és dins de vosaltres i que mai no us deixa sols.",
+              "parabolas-taciturnas-cronos-3.t": "Els versos de Cronos · Paràboles taciturnes",
+              "parabolas-taciturnas-cronos-3.d": "Els tres vivim apartats, i sempre que eixim al carrer ho fem amb un dels vestits de Scarlett, perquè ningú no pare atenció.",
+              "parabolas-taciturnas-luciernagas-1.t": "La vall de les cuques de llum · Paràboles taciturnes",
+              "parabolas-taciturnas-luciernagas-1.d": "Just en caure la nit, les cuques de llum alçaven el vol voletejant pertot arreu.",
+              "parabolas-taciturnas-luciernagas-2.t": "La vall de les cuques de llum · Paràboles taciturnes",
+              "parabolas-taciturnas-luciernagas-2.d": "Mai no havia estat amb dona alguna i ningú no despertava l'espurna en el seu cor.",
+              "parabolas-taciturnas-luciernagas-3.t": "La vall de les cuques de llum · Paràboles taciturnes",
+              "parabolas-taciturnas-luciernagas-3.d": "Una vegada allí hauràs de prometre'm que mai no creuaràs els límits mentres els nigromants continuen al bosc.",
+              "parabolas-taciturnas-pescador-1.t": "El pescador de les marees · Paràboles taciturnes",
+              "parabolas-taciturnas-pescador-1.d": "Nit tancada davall núvols de tempesta; els hòmens de l'aldea esperaven portant fanalets, indicant la costa als pescadors.",
+              "parabolas-taciturnas-pescador-2.t": "El pescador de les marees · Paràboles taciturnes",
+              "parabolas-taciturnas-pescador-2.d": "Soc un mariner, no tinc por a la mar ni a les seues criatures, no pot haver-hi res pitjor ací. El crit va sonar de nou.",
+              "parabolas-taciturnas-pescador-4.t": "El pescador de les marees · Paràboles taciturnes",
+              "parabolas-taciturnas-pescador-4.d": "I en eixa nit de lluna plena abandonareu el poble sense que ningú advertisca la vostra marxa.",
+              "parabolas-taciturnas-tiara-1.t": "La tiara dels trenta germans",
+              "parabolas-taciturnas-tiara-1.d": "Si alguna vegada sents un «clac» de fusta al caminar, estigues on estigues, a l'hora que siga, sola o acompanyada, no òbrigues mai ni deixes que ningú òbriga la porta.",
+              "parabolas-taciturnas-viajante-1.t": "El viatjant de les estreles · Paràboles taciturnes",
+              "parabolas-taciturnas-viajante-1.d": "El temps no passa per a mi.",
+              "parabolas-taciturnas-viajante-2.t": "El viatjant de les estreles · Paràboles taciturnes",
+              "parabolas-taciturnas-viajante-2.d": "Estic sola, més sola que mai, però feliç, tot el feliç que es pot estar en una situació com la present.",
+              "ilustracion-alquimista.t": "Els fills de l'Alquimista",
+              "ilustracion-alquimista.d": "Ens vam quedar quiets; sabia que estàvem allí, jugava, els seus passos lents recorrent el corredor, olorant la por, la seua ombra projectada sobre la paret.",
+              "ilustracion-luciernagas.t": "La vall de les cuques de llum",
+              "ilustracion-luciernagas.d": "El bosc està sent arrasat i quan no quede res, guanye qui guanye, la nostra ciutat no tindrà sentit."
+      },
+      en: {
+              "nav.inicio": "Home",
+              "nav.nosotrxs": "About us",
+              "nav.obras": "Works",
+              "nav.galeria": "Gallery",
+              "nav.audio": "Audiobook",
+              "nav.contacto": "Contact",
+              "nav.idioma": "Language",
+              "nav.abrir": "Open menu",
+              "nav.cerrar": "Close menu",
+              "meta.title": "Gallery — the visual universe of Hunicornia",
+              "meta.desc": "The 94 illustrations of Hunicornia: Tinddaya, 7 masks, Tacit parables. Illustrated queer fantasy, free and complete.",
+              "gal.titulo": "The visual universe of Hunicornia",
+              "gal.aria": "Illustrations of Hunicornia",
+              "gal.sub": "Ninety-six illustrations · The complete work",
+              "gal.volver": "← Back to home",
+              "gal.izq": "See the left-hand side of the illustration",
+              "gal.der": "See the right-hand side of the illustration",
+              "bloque.tinddaya": "Tinddaya",
+              "bloque.7-mascaras": "7 masks",
+              "bloque.parabolas": "Tacit parables",
+              "bloque.ilustraciones": "Illustrations",
+              "tinddaya-nikoleta.t": "Nikoleta · Tinddaya",
+              "tinddaya-nikoleta.d": "Lázaro drops to the floor, his face clenched tight; Nikoleta clutches her chest, she cannot breathe.",
+              "tinddaya-lazaro.t": "Lázaro · Tinddaya",
+              "tinddaya-lazaro.d": "Lázaro has twisted his hand and groans with the pain, but he throws himself into his friend's arms.",
+              "tinddaya-lux.t": "Lux · Tinddaya",
+              "tinddaya-lux.d": "―I don't know, but I felt the fear in you.",
+              "tinddaya-alejo.t": "Alejo · Tinddaya",
+              "tinddaya-alejo.d": "Alejo arrives home sweating, goes into the bathroom to shower, closes his eyes under the scalding water that reddens his skin, and breathes deeply.",
+              "tinddaya-jimena.t": "Jimena · Tinddaya",
+              "tinddaya-jimena.d": "Jimena's blue eyes make her captor's shadowed gaze falter.",
+              "tinddaya-salma.t": "Salma · Tinddaya",
+              "tinddaya-salma.d": "Salma drives along the path until she shakes off her pursuers at the Pont del Regne, under the gaze of the bronze gargoyles.",
+              "tinddaya-nelidarolan.t": "Nélida and Roland · Tinddaya",
+              "tinddaya-nelidarolan.d": "Roland is Tortoise of stone, Nélida is Hind of storm.",
+              "tinddaya-cornelia.t": "Cornelia · Tinddaya",
+              "tinddaya-cornelia.d": "Cornelia lights the candles again, watches her dogs raise their heads and listen closely, leans out and looks into every corner of the village.",
+              "tinddaya-deerspark.t": "Deer and Spark · Tinddaya",
+              "tinddaya-deerspark.d": "Deer looks at his friend, solemn, like someone who knows it may be the last time they meet; Spark winks at him and blows harder still.",
+              "tinddaya-tremelos.t": "The tremelos · Tinddaya",
+              "tinddaya-tremelos.d": "The voice of the tremelos sounds in unison inside the heads of some of the Tinddaya.",
+              "tinddaya-alejandra.t": "Alejandra · Tinddaya",
+              "tinddaya-alejandra.d": "Alejandra opens the box in her hands: inside is a pendant with a cat's skull carved in quartz, and she fastens it round her neck.",
+              "tinddaya-koiki.t": "Koiki · Tinddaya",
+              "tinddaya-koiki.d": "Koiki sits before a bonfire with his eyes closed. He seems unsurprised: he laid the fire knowing this moment would come sooner or later.",
+              "tinddaya-negras.t": "Joanna and Nakano · Tinddaya",
+              "tinddaya-negras.d": "Those fighters who are willing will be under the command of Joanna and Nakano.",
+              "tinddaya-zefiro.t": "Zéfiro · Tinddaya",
+              "tinddaya-zefiro.d": "Zéfiro climbed onto the roof and looked out into the darkness; everyone slept, but his ears heard into the distance what his eyes could not see.",
+              "tinddaya-arguestes.t": "Arguestes · Tinddaya",
+              "tinddaya-arguestes.d": "Above all on the full-moon nights when Arguestes spent long hours howling, calling back the love that had fled.",
+              "tinddaya-nereoviveka.t": "Viveka and Nereo · Tinddaya",
+              "tinddaya-nereoviveka.d": "His wife was a very beautiful woman, olive-green eyes, freckled skin and hair as red as the evening. Her name was Viveka.",
+              "tinddaya-hajnalka.t": "Hajnalka · Tinddaya",
+              "tinddaya-hajnalka.d": "Hajnalka closes her eyes, the flames beneath her feet flare, and the letters around her body shudder like roused smoke.",
+              "tinddaya-dragon.t": "Kennin ji · Tinddaya · Chaos",
+              "tinddaya-dragon.d": "His debased eyes burn with flame, claws break from his fingers tearing the flesh, and the dragon rises, flaying off its own skin.",
+              "tinddaya-arsenico.t": "Arsénico · Tinddaya · Ravens",
+              "tinddaya-arsenico.d": "Arsénico looks at his brother: it is a look of unease at Radôn's fear.",
+              "tinddaya-radon.t": "Radôn · Tinddaya · Ravens",
+              "tinddaya-radon.d": "Radôn lays a couple of branches on the fire; a flare rises, drawing the misshapen face of what looks like an elephant.",
+              "tinddaya-mercurio.t": "Mercurio · Tinddaya · Ravens",
+              "tinddaya-mercurio.d": "Mercurio opens a portal of darkness and walks through it; the other two ravens do the same.",
+              "tinddaya-merida.t": "Mérida, the Empress · Tinddaya",
+              "tinddaya-merida.d": "Mérida is a necromancer and a sensitive: it must be a torment to long for death and yet feel mercy and pain at a pitch that borders on madness.",
+              "tinddaya-titeres.t": "The blind hunters · Tinddaya",
+              "tinddaya-titeres.d": "―Give them life with the blood of the kings, of the ten.",
+              "tinddaya-antediluvianos.t": "The antediluvians · Tinddaya",
+              "tinddaya-antediluvianos.d": "The elders are capable of any unnatural outrage in order to gain power: they already command the shadows between ages.",
+              "7-mascaras-alaris-evol-color.t": "Alaris, evolved · 7 masks · colour",
+              "7-mascaras-alaris-evol-color.d": "In one hand he held the light and in the other the darkness; the stars were born of his will.",
+              "7-mascaras-alaris.t": "Alaris · 7 masks",
+              "7-mascaras-alaris.d": "Alaris' body shone blinding, the light pouring from his fists more powerful than ever.",
+              "7-mascaras-baem.t": "Shamkra Baem · 7 masks",
+              "7-mascaras-baem.d": "With her sharp fingers Shamkra Baem turned the earth, shaping valleys and mountains, chasms and cliffs that Gala Evora flooded with seas and oceans.",
+              "7-mascaras-bosque.t": "The forest · 7 masks",
+              "7-mascaras-bosque.d": "His fears vanished, surrounded by that masterwork of creation; it seemed nothing could disturb the gentle quiet of the forest.",
+              "7-mascaras-buri-color.t": "Buri Buri · 7 masks · colour",
+              "7-mascaras-buri-color.d": "The bites tore Buri Buri's body apart, and between screams he rebuilt his shattered limbs.",
+              "7-mascaras-circo.t": "The Nebular Circus · 7 masks",
+              "7-mascaras-circo.d": "Once the show is over we can all go back to playing and having fun, as we always do at the Nebular Circus.",
+              "7-mascaras-crapatos-evol-color.t": "Cràpatos, evolved · 7 masks · colour",
+              "7-mascaras-crapatos-evol-color.d": "A god of praised virtues, whose breath can people the earth with the human race.",
+              "7-mascaras-crapatos.t": "Cràpatos, evolved · 7 masks",
+              "7-mascaras-crapatos.d": "Cràpatos stared into nothing, helpless, wounded more in the soul than in the body Moor's hands had torn.",
+              "7-mascaras-cuco.t": "The Red Cuckoo · 7 masks",
+              "7-mascaras-cuco.d": "―Red Cuckoo, show us the way with the light of your eyes.",
+              "7-mascaras-cuervos.t": "The ravens · 7 masks",
+              "7-mascaras-cuervos.d": "Some eight ravens, black as charred wood and larger than they had any right to be.",
+              "7-mascaras-dhyavod.t": "Dhyavod, evolved · 7 masks · colour",
+              "7-mascaras-dhyavod.d": "Lord of the Arts and Sciences. With a single movement of his fingers, humanity changes the course of its history.",
+              "7-mascaras-diersej.t": "Diersej · 7 masks",
+              "7-mascaras-diersej.d": "Diersej came on very fast, his face swollen with fury, pouring all his power into his weapon.",
+              "7-mascaras-enova.t": "Enova · 7 masks",
+              "7-mascaras-enova.d": "Enova's daughters attack only those who dare look them in the eye.",
+              "7-mascaras-espantapajaros.t": "The scarecrows · 7 masks",
+              "7-mascaras-espantapajaros.d": "It was a shabby scarecrow in a straw hat, dressed in old clothes, with a sorrowful look.",
+              "7-mascaras-fausto.t": "Fausto, Lord of Sorrow · 7 masks",
+              "7-mascaras-fausto.d": "His enemy settled before him, watching him closely: Fausto was waiting.",
+              "7-mascaras-fruta.t": "The forest fruits · 7 masks",
+              "7-mascaras-fruta.d": "The fruits, vegetables and flowers crowning their heads shook fervently.",
+              "7-mascaras-gala-e.t": "Gala Evora · 7 masks",
+              "7-mascaras-gala-e.d": "Gala Evora laid her hands on the ground, commanding the earth as she pleased.",
+              "7-mascaras-gala-evora-color.t": "Gala Evora, evolved · 7 masks · colour",
+              "7-mascaras-gala-evora-color.d": "Something was happening inside Gala Evora: her heart burned incandescent, holding back a terrifying storm.",
+              "7-mascaras-gargolas.t": "The gargoyles · 7 masks",
+              "7-mascaras-gargolas.d": "Even the gargoyles seemed frightened of what was coming.",
+              "7-mascaras-garuda-titan.t": "The Garuda and the Titan · 7 masks",
+              "7-mascaras-garuda-titan.d": "The ground shuddered with every step of the giant Titan, his jointed body twisting as it seized the Garuda, who burst into an avalanche of magma.",
+              "7-mascaras-garzas.t": "The herons and the tortoise · 7 masks",
+              "7-mascaras-garzas.d": "To leave would mean certain death, but to stay here is a death already announced.",
+              "7-mascaras-gran-buri.t": "Buri Buri · 7 masks",
+              "7-mascaras-gran-buri.d": "Buri Buri watched, amused, the reaction of the young woman weeping in her helplessness.",
+              "7-mascaras-gran.t": "Mífido · 7 masks",
+              "7-mascaras-gran.d": "Not far off, bounding over the water, the white triton was catching as many fireflies as he could and filling his mouth with them.",
+              "7-mascaras-gran-poster2.t": "Shamkra Baem, evolved · 7 masks · colour",
+              "7-mascaras-gran-poster2.d": "Her heart beat in front of her, outside her chest, held in the hand of the lord of darkness.",
+              "7-mascaras-guardian.t": "The guardian · 7 masks",
+              "7-mascaras-guardian.d": "The guardian did not suffer the blows, but he was unable to do any harm to that impregnable shell.",
+              "7-mascaras-gatos.t": "The tale of the two cats · 7 masks",
+              "7-mascaras-gatos.d": "The white cat, before eating them, enjoyed playing with his prey a good while, giving it the chance to escape if it earned one.",
+              "7-mascaras-ion.t": "Ion · 7 masks",
+              "7-mascaras-ion.d": "That is why he ordered Ion to stop: he wants to know how far you can go, to measure his strength against yours.",
+              "7-mascaras-kennin-color.t": "Kennin ji · 7 masks · colour",
+              "7-mascaras-kennin-color.d": "―It seems I didn't burn you enough.",
+              "7-mascaras-kennin.t": "Kennin ji · 7 masks",
+              "7-mascaras-kennin.d": "Behind Kennin ji a shadow took shape: the Elephant Man appeared under the startled gaze of the lieutenant.",
+              "7-mascaras-kuag-saeton.t": "Kuagssak · 7 masks",
+              "7-mascaras-kuag-saeton.d": "Kuagssak doubled the size of his body, his jaws opening monstrously wide.",
+              "7-mascaras-lobo.t": "The Blind Wolf · 7 masks",
+              "7-mascaras-lobo.d": "The Blind Wolf stood motionless, his body darkening as if a fire were burning him from the inside, turning his being to ash.",
+              "7-mascaras-monos.t": "The four monkeys · 7 masks",
+              "7-mascaras-monos.d": "Do you see that tree? We will climb it, walk along its branches, and from the longest one we will hang down one after another until we can take hold of the moon shining on the river.",
+              "7-mascaras-moor-color-evol.t": "Moor, evolved · 7 masks · colour",
+              "7-mascaras-moor-color-evol.d": "Moor felt fear and despair, yet something in his heart told him he need not be afraid of that figure.",
+              "7-mascaras-namku.t": "Namku · 7 masks",
+              "7-mascaras-namku.d": "Namku always arrived with the last of the sun; they ate while they talked about the day, then the story, then bed.",
+              "7-mascaras-niorai-clasic.t": "Niorái, of the ancient legend · 7 masks",
+              "7-mascaras-niorai-clasic.d": "With her warm mantle she made life flower over the barren and desolate lands.",
+              "7-mascaras-niorai-color.t": "Niorái, evolved · 7 masks · colour",
+              "7-mascaras-niorai-color.d": "Niorái sat down beside him and held him; her body began to put out roots, imprisoning them both.",
+              "7-mascaras-niorai.t": "Niorái, evolved · 7 masks",
+              "7-mascaras-niorai.d": "Niorái bore the most inhuman pain, burning, holding the enemy with all of her essence.",
+              "7-mascaras-oren-color.t": "Oren · 7 masks · colour",
+              "7-mascaras-oren-color.d": "Remember what Oren said: whatever it is, it can do nothing to us if we don't look it in the eye.",
+              "7-mascaras-pantano.t": "The swamp · 7 masks",
+              "7-mascaras-pantano.d": "If you manage to escape the monsters of the swamp, know that breathing these foul vapours can kill you just as surely.",
+              "7-mascaras-pantera.t": "Namku's panther · 7 masks · colour",
+              "7-mascaras-pantera.d": "The figure is drawn against the light: a commanding black panther fixing her gaze on the God of Hatred.",
+              "7-mascaras-radamus-classic.t": "Rädamus · 7 masks",
+              "7-mascaras-radamus-classic.d": "Lord of Beasts: from every pore of his skin hundreds of creatures are born, hideous and beautiful, gentle and hostile.",
+              "7-mascaras-radamus-evol-color.t": "Rädamus, evolved · 7 masks · colour",
+              "7-mascaras-radamus-evol-color.d": "Rädamus appeared out of nowhere, his body able to blend into its surroundings and turn invisible.",
+              "7-mascaras-radamus.t": "Rädamus, evolved · 7 masks",
+              "7-mascaras-radamus.d": "Beneath his skin Rädamus released small shadows like insects, which devoured the black mass ravenously.",
+              "7-mascaras-serpiente.t": "The Saetón · 7 masks",
+              "7-mascaras-serpiente.d": "I had never seen one shaped like that, but I am certain it is a saetón: a feathered serpent that can fly without wings.",
+              "7-mascaras-sombras.t": "The shadows · 7 masks",
+              "7-mascaras-sombras.d": "The darkness had been made by the hatred in the heart of the eighth god, and at his death it vanished with him.",
+              "7-mascaras-tanuk-ik-color.t": "Tanuk ik · 7 masks · colour",
+              "7-mascaras-tanuk-ik-color.d": "Tanuk ik seemed very happy; his face wore a smile that deformed it until it looked grotesque.",
+              "7-mascaras-tanuk-ik.t": "Tanuk ik · 7 masks",
+              "7-mascaras-tanuk-ik.d": "More than half of Tanuk ik's body was burnt black, with pieces torn away by heavy claw marks.",
+              "7-mascaras-titan.t": "The Titan · 7 masks",
+              "7-mascaras-titan.d": "The beast rose out of the earth: a titan with amber eyes and an armoured body, running on all four limbs like a spider.",
+              "7-mascaras-moor-retocado.t": "Moor · 7 masks · colour",
+              "7-mascaras-moor-retocado.d": "Moor was being dragged back into the darkness, a vast black shadow swelling around him.",
+              "parabolas-taciturnas-alquimistas-1.t": "The Alchemist's Children · Tacit parables",
+              "parabolas-taciturnas-alquimistas-1.d": "I still remember those childhood years quite clearly.",
+              "parabolas-taciturnas-alquimistas-2.t": "The Alchemist's Children · Tacit parables",
+              "parabolas-taciturnas-alquimistas-2.d": "Every night, from deep in the wood, the howl of Arguestes broke the silence, mourning his mother's death.",
+              "parabolas-taciturnas-bosque-1.t": "The walnut wood · Tacit parables",
+              "parabolas-taciturnas-bosque-1.d": "My grandmother used to say that one day she would no longer be with us, and that the tree grown from that seed would keep her memory for us.",
+              "parabolas-taciturnas-bosque-2.t": "The walnut wood · Tacit parables",
+              "parabolas-taciturnas-bosque-2.d": "She was watching something I never made out, the shadow of something very large; the bell rang, I turned on the street light, I saw nothing.",
+              "parabolas-taciturnas-bosque-3.t": "The walnut wood · Tacit parables",
+              "parabolas-taciturnas-bosque-3.d": "Peering out uneasily, stillness; she turned off the light and kept watching, one last look in case the animal came back. Nothing.",
+              "parabolas-taciturnas-bosque-4.t": "The walnut wood · Tacit parables",
+              "parabolas-taciturnas-bosque-4.d": "Nobody sane has ever lived in this house, but I don't think the two of us are hallucinating the same thing.",
+              "parabolas-taciturnas-carta.t": "Letter to mum, letter to dad",
+              "parabolas-taciturnas-carta.d": "This grief that drags on so long is not the ordinary kind. I can find no explanation, nobody can find a cure, and I am the first who wants to put out leaves again.",
+              "parabolas-taciturnas-cronos-1.t": "The verses of Cronos · Tacit parables",
+              "parabolas-taciturnas-cronos-1.d": "Through grey mists London was breaking into morning for every one of its inhabitants, whatever their age or class.",
+              "parabolas-taciturnas-cronos-2.t": "The verses of Cronos · Tacit parables",
+              "parabolas-taciturnas-cronos-2.d": "Do not fear the God of the English: know that the universe is inside you and never leaves you alone.",
+              "parabolas-taciturnas-cronos-3.t": "The verses of Cronos · Tacit parables",
+              "parabolas-taciturnas-cronos-3.d": "The three of us live apart, and whenever we go out we wear one of Scarlett's costumes, so that nobody pays us any attention.",
+              "parabolas-taciturnas-luciernagas-1.t": "The valley of the fireflies · Tacit parables",
+              "parabolas-taciturnas-luciernagas-1.d": "Just as night fell, the fireflies rose into the air and flickered everywhere.",
+              "parabolas-taciturnas-luciernagas-2.t": "The valley of the fireflies · Tacit parables",
+              "parabolas-taciturnas-luciernagas-2.d": "He had never been with any woman, and nobody lit the spark in his heart.",
+              "parabolas-taciturnas-luciernagas-3.t": "The valley of the fireflies · Tacit parables",
+              "parabolas-taciturnas-luciernagas-3.d": "Once you are there you must promise me you will never cross the boundary while the necromancers remain in the wood.",
+              "parabolas-taciturnas-pescador-1.t": "The fisherman of the tides · Tacit parables",
+              "parabolas-taciturnas-pescador-1.d": "Deep night under storm clouds; the men of the village waited with lanterns, marking the shore for the fishermen.",
+              "parabolas-taciturnas-pescador-2.t": "The fisherman of the tides · Tacit parables",
+              "parabolas-taciturnas-pescador-2.d": "I am a seaman, I fear neither the sea nor its creatures, there can be nothing worse here. The cry came again.",
+              "parabolas-taciturnas-pescador-4.t": "The fisherman of the tides · Tacit parables",
+              "parabolas-taciturnas-pescador-4.d": "And on that full-moon night you will leave the village without a soul noticing you go.",
+              "parabolas-taciturnas-tiara-1.t": "The tiara of the thirty brothers",
+              "parabolas-taciturnas-tiara-1.d": "If you ever hear a wooden \"clack\" walking, wherever you are, whatever the hour, alone or in company, never open the door, and never let anyone else open it.",
+              "parabolas-taciturnas-viajante-1.t": "The traveller of the stars · Tacit parables",
+              "parabolas-taciturnas-viajante-1.d": "Time does not pass for me.",
+              "parabolas-taciturnas-viajante-2.t": "The traveller of the stars · Tacit parables",
+              "parabolas-taciturnas-viajante-2.d": "I am alone, more alone than ever, but happy — as happy as anyone can be in a situation like this one.",
+              "ilustracion-alquimista.t": "The Alchemist's Children",
+              "ilustracion-alquimista.d": "We kept still; he knew we were there, he was playing, his slow steps along the corridor, smelling the fear, his shadow thrown across the wall.",
+              "ilustracion-luciernagas.t": "The valley of the fireflies",
+              "ilustracion-luciernagas.d": "The wood is being laid waste, and when nothing is left, whoever wins, our city will have no meaning."
+      }
+    };
+
+    const topNav      = document.getElementById('topNav');
+    const navToggle   = document.getElementById('navToggle');
+    const galeriaGrid = document.getElementById('galeriaGrid');
+    const lienzoImg   = document.getElementById('lienzoImg');
+    const lienzoPie   = document.getElementById('lienzoPie');
+    const lienzo      = document.getElementById('lienzo');
+    const lienzoScroll= document.getElementById('lienzoScroll');
+    const lienzoIzq   = document.getElementById('lienzoIzq');
+    const lienzoDer   = document.getElementById('lienzoDer');
+    const minis       = Array.from(galeriaGrid.querySelectorAll('.galeria-mini'));
+
+    let idioma = 'es';
+
+    function t(clave) {
+      return (T[idioma] && T[idioma][clave]) || (T.es[clave] || '');
+    }
+
+    function idiomaInicial() {
+      try {
+        const enUrl = new URLSearchParams(window.location.search).get('lang');
+        if (enUrl && T[enUrl]) return enUrl;
+      } catch (e) {}
+      try {
+        const guardado = localStorage.getItem('hunicornia:idioma');
+        if (guardado && T[guardado]) return guardado;
+      } catch (e) {}
+      return 'es';
+    }
+
+    // La miniatura carga la versión de 400 px; el lienzo necesita la grande.
+    // El nombre es el mismo sin el sufijo -mini, así que no hace falta una
+    // segunda lista de rutas que mantener sincronizada.
+    // Las dos panorámicas llevan la clase .ancho en su miniatura: es la misma
+    // marca que les da doble columna en la parrilla, así que no hace falta una
+    // segunda lista que mantener sincronizada.
+    function actualizarFlechas() {
+      const hay = lienzo.classList.contains('panoramica');
+      if (!hay) return;
+      const margen = 2;
+      const max = lienzoScroll.scrollWidth - lienzoScroll.clientWidth;
+      lienzoIzq.disabled = lienzoScroll.scrollLeft <= margen;
+      lienzoDer.disabled = lienzoScroll.scrollLeft >= max - margen;
+    }
+
+    function desplazar(signo) {
+      const paso = Math.round(lienzoScroll.clientWidth * 0.7);
+      var suave = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      lienzoScroll.scrollBy({ left: signo * paso, behavior: suave ? 'smooth' : 'auto' });
+    }
+
+    function mostrar(mini) {
+      if (!mini) return;
+      const pie = mini.querySelector('.mini-pie');
+      const ancha = mini.classList.contains('ancho');
+      lienzo.classList.toggle('panoramica', ancha);
+      lienzoImg.src = mini.dataset.img + '.jpg';
+      lienzoImg.alt = pie.querySelector('b').textContent;
+      lienzoPie.innerHTML = pie.innerHTML;
+      lienzoScroll.scrollLeft = 0;
+      actualizarFlechas();
+      minis.forEach(m => m.setAttribute('aria-pressed', m === mini ? 'true' : 'false'));
+    }
+
+    lienzoIzq.addEventListener('click', () => desplazar(-1));
+    lienzoDer.addEventListener('click', () => desplazar(1));
+    lienzoScroll.addEventListener('scroll', actualizarFlechas, { passive: true });
+    window.addEventListener('resize', actualizarFlechas);
+    // El ancho real no se conoce hasta que la imagen está descargada.
+    lienzoImg.addEventListener('load', actualizarFlechas);
+
+    // Arrastrar con el ratón, como en un mapa. El táctil ya lo hace solo.
+    (function () {
+      let arrastra = false, x0 = 0, s0 = 0;
+      lienzoScroll.addEventListener('mousedown', e => {
+        if (!lienzo.classList.contains('panoramica')) return;
+        arrastra = true; x0 = e.pageX; s0 = lienzoScroll.scrollLeft;
+        lienzoScroll.style.cursor = 'grabbing';
+      });
+      window.addEventListener('mouseup', () => {
+        arrastra = false; lienzoScroll.style.cursor = '';
+      });
+      window.addEventListener('mousemove', e => {
+        if (!arrastra) return;
+        e.preventDefault();
+        lienzoScroll.scrollLeft = s0 - (e.pageX - x0);
+      });
+    })();
+
+    function aplicarIdioma(nuevo, guardar) {
+      if (!T[nuevo]) nuevo = 'es';
+      idioma = nuevo;
+
+      document.documentElement.lang = IDIOMAS[idioma].htmlLang;
+      document.title = t('meta.title');
+      const desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute('content', t('meta.desc'));
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const v = T[idioma][el.dataset.i18n];
+        if (v !== undefined) el.textContent = v;
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        const v = T[idioma][el.dataset.i18nAria];
+        if (v !== undefined) el.setAttribute('aria-label', v);
+      });
+
+      const abierto = topNav.classList.contains('abierto');
+      navToggle.setAttribute('aria-label', abierto ? t('nav.cerrar') : t('nav.abrir'));
+
+      mostrar(galeriaGrid.querySelector('.galeria-mini[aria-pressed="true"]') || minis[0]);
+
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.setAttribute('aria-pressed', b.dataset.lang === idioma ? 'true' : 'false');
+      });
+
+      if (guardar) {
+        try { localStorage.setItem('hunicornia:idioma', idioma); } catch (e) {}
+        try {
+          const url = new URL(window.location.href);
+          if (idioma === 'es') url.searchParams.delete('lang');
+          else url.searchParams.set('lang', idioma);
+          history.replaceState(null, '', url);
+        } catch (e) {}
+      }
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(boton => {
+      boton.addEventListener('click', () => aplicarIdioma(boton.dataset.lang, true));
+    });
+
+    navToggle.addEventListener('click', () => {
+      const abierto = topNav.classList.toggle('abierto');
+      navToggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', abierto ? t('nav.cerrar') : t('nav.abrir'));
+      navToggle.textContent = abierto ? '✕' : '☰';
+    });
+
+    // Las flechas saltan de columna en columna. El número de columnas cambia
+    // con el ancho, así que se pregunta al CSS en vez de darlo por hecho.
+    function columnas() {
+      return getComputedStyle(galeriaGrid).gridTemplateColumns.split(' ').length;
+    }
+
+    minis.forEach((mini, i) => {
+      mini.addEventListener('click', () => mostrar(mini));
+      mini.addEventListener('focus', () => mostrar(mini));
+      mini.addEventListener('keydown', (e) => {
+        const c = columnas();
+        let destino = null;
+        if (e.key === 'ArrowRight') destino = minis[i + 1];
+        if (e.key === 'ArrowLeft')  destino = minis[i - 1];
+        if (e.key === 'ArrowDown')  destino = minis[i + c];
+        if (e.key === 'ArrowUp')    destino = minis[i - c];
+        if (destino) { e.preventDefault(); destino.focus(); }
+      });
+    });
+
+    const raton  = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const alLado = window.matchMedia('(min-width: 1101px)');
+
+    minis.forEach(mini => {
+      mini.addEventListener('mouseenter', () => {
+        if (raton.matches && alLado.matches) mostrar(mini);
+      });
+    });
+
+    aplicarIdioma(idiomaInicial(), false);
+  </script>
+
+</body>
+</html>

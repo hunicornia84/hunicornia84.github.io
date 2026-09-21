@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La impotencia, capítulo 15 de 7 máscaras. Fantasía épica para leer gratis en Hunicornia.">
+  <meta name="author" content="Hunicornia">
+  <link rel="canonical" href="https://hunicornia.es/7-mascaras/la-impotencia/">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>15. La impotencia · 7 máscaras — Hunicornia</title>
+  <style>
+    @font-face { font-family: "Chopin"; src: url("/ChopinLight.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #643587; --secondary: #8b3689; --nav-h: 58px; }
+    html, body { width: 100%; background: #fff; color: var(--primary); font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { padding-top: var(--nav-h); }
+    .lector-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(100,53,135,0.15); z-index: 200; backdrop-filter: blur(8px); }
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: var(--nav-h); }
+    .nav-volver { font-family: system-ui, Arial, sans-serif; font-size: 12px; color: var(--secondary); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-volver:hover { opacity: 0.7; }
+    .nav-titulo { font-family: "Chopin", serif; font-size: 20px; font-weight: 300; letter-spacing: 0.05em; color: var(--primary); }
+    .nav-indice-btn { font-family: system-ui, Arial, sans-serif; font-size: 11px; color: var(--secondary); background: none; border: 1px solid rgba(100,53,135,0.3); border-radius: 4px; padding: 6px 14px; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; }
+    .nav-indice-btn:hover { background: rgba(100,53,135,0.06); }
+    .progreso-barra { height: 2px; background: rgba(100,53,135,0.1); }
+    .progreso-fill { height: 100%; width: 0%; background: var(--primary); transition: width 0.1s linear; }
+    .indice-panel { display: none; border-top: 1px solid rgba(100,53,135,0.1); padding: 24px 24px 28px; background: rgba(255,255,255,0.99); max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .indice-panel.abierto { display: block; }
+    .indice-lista { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 2em; }
+    .indice-lista li { padding: 3px 0; break-inside: avoid; }
+    .indice-lista a { font-family: "Chopin", serif; font-size: 15px; font-weight: 300; color: var(--primary); text-decoration: none; opacity: 0.8; }
+    .indice-lista a:hover { opacity: 1; }
+    .lector-contenido { max-width: 680px; margin: 0 auto; padding: 56px 24px 120px; }
+    .obra-titulo-h { font-family: "Chopin", serif; font-size: clamp(34px, 5vw, 64px); font-weight: 300; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--primary); line-height: 1.1; }
+    .obra-subtitulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--secondary); margin: 0 0 60px; opacity: 0.75; }
+    .cap-bloque { margin-bottom: 72px; }
+    .cap-h2 { font-family: "Chopin", serif; font-size: clamp(22px, 3vw, 32px); font-weight: 300; letter-spacing: 0.04em; margin: 64px 0 36px; color: var(--primary); text-align: center; padding-top: 48px; border-top: 1px solid rgba(100,53,135,0.12); line-height: 1.25; scroll-margin-top: var(--nav-h); }
+    .cap-num { display: block; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(10px, 1.1vw, 12px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--secondary); opacity: 0.75; margin-bottom: 16px; }
+    .lector-p { font-size: clamp(15px, 1.7vw, 17px); line-height: 1.95; margin: 0 0 0.9em; color: var(--primary); text-align: justify; hyphens: auto; }
+    .lector-p.dialogo { }
+    .sep-omega { text-align: center; color: var(--secondary); opacity: 0.3; font-size: 13px; margin: 36px 0; letter-spacing: 0.4em; }
+    .cta-final { text-align: center; margin-top: 64px; display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+    .cta-final a { display: inline-block; padding: 0.8em 1.5em; background: rgba(139,54,137,0.12); color: var(--primary); border-radius: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .cta-final a:hover { opacity: 0.7; }
+    .nota-final { font-size: 11px; color: var(--secondary); text-align: center; margin-top: 32px; opacity: 0.6; }
+    @media (max-width: 600px) { :root { --nav-h: 52px; } .lector-contenido { padding: 36px 16px 80px; } .nav-bar { padding: 0 16px; } .indice-lista { columns: 1; } }
+    @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; } }
+
+    .parte-h2 { font-family: "Chopin", serif; font-size: clamp(26px, 3.6vw, 42px); font-weight: 300; letter-spacing: 0.04em; margin: 120px 0 0; color: var(--primary); text-align: center; line-height: 1.2; scroll-margin-top: var(--nav-h); }
+    .parte-h2.primera { margin-top: 0; }
+    .parte-h2 + .cap-h2 { margin-top: 34px; padding-top: 34px; }
+    .indice-lista a[aria-current], .indice-sub a[aria-current], .indice-cap-nombre[aria-current] { opacity: 1; box-shadow: inset 3px 0 0 var(--primary); padding-left: 9px; }
+    .indice-sub li:has(a[aria-current]) { border-left-color: var(--primary); border-left-width: 3px; padding-left: 12px; }
+    .indice-parte { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--secondary); opacity: 0.7; margin: 16px 0 4px; break-inside: avoid; list-style: none; }
+    .indice-parte:first-child { margin-top: 0; }
+    .cap-paso { display: flex; justify-content: space-between; gap: 1.5em; margin-top: 72px; padding-top: 28px; border-top: 1px solid rgba(100,53,135,0.12); }
+    .cap-paso a { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary); text-decoration: none; max-width: 45%; line-height: 1.5; }
+    .cap-paso a:hover { color: var(--primary); }
+    .cap-paso .der { text-align: right; margin-left: auto; }
+  </style>
+</head>
+<body data-obra="7 máscaras" data-capitulo="La impotencia">
+<nav class="lector-nav" aria-label="Navegación">
+  <div class="nav-bar">
+    <a class="nav-volver" href="/">← Volver</a>
+    <span class="nav-titulo">7 máscaras</span>
+    <button class="nav-indice-btn" id="btnIndice" aria-expanded="false" aria-controls="indicePanel">Índice</button>
+  </div>
+  <div class="indice-panel" id="indicePanel" role="navigation" aria-label="Índice de capítulos">
+    <ul class="indice-lista">
+      <li class="indice-parte">La leyenda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/">1. El nacimiento de las estrellas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-partida/">2. La partida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-cima/">3. La cima</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-conjuncion/">4. La conjunción</a></li>
+      <li class="indice-parte">La búsqueda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-reencuentro-de-los-elegidos/">5. El reencuentro de los elegidos</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-abismo/">6. El abismo</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-tercer-elegido/">7. El tercer elegido</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-despertar/">8. El despertar</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-opera/">9. La Ópera</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-huida/">10. La huída</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-eco/">11. El eco</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-silencio/">12. El silencio</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/las-atalayas/">13. Las atalayas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-ira/">14. La ira</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-impotencia/" aria-current="true">15. La impotencia</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-bosque/">16. El bosque</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-despedida/">17. La despedida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-juicio-final-de-los-dioses/">18. El juicio final de los dioses</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-batalla/">19. La batalla</a></li>
+      <li class="indice-parte">La redención</li>
+      <li><a href="https://hunicornia.es/7-mascaras/un-nuevo-amanecer/">20. Un nuevo amanecer</a></li>
+    </ul>
+  </div>
+  <div class="progreso-barra"><div class="progreso-fill" id="progFill"></div></div>
+</nav>
+<main class="lector-contenido" data-lectura>
+  <h1 class="obra-titulo-h">7 máscaras</h1>
+  <p class="obra-subtitulo">La búsqueda · Capítulo 15 de 20 · Castellano</p>
+  <div class="cap-bloque">
+    <h2 class="cap-h2">La impotencia</h2>
+    <p class="lector-p dialogo">— Es momento de despertar, la búsqueda ha de ser continuada. Abrid los ojos, elegidos -decía Tanuk ik.</p>
+    <p class="lector-p">Los seis aparecían de la nada, ocupando el espacio entre las hojas. El Hombre Elefante estaba ante ellos.</p>
+    <p class="lector-p dialogo">— ¡Mira, Lucero! -exclamó Aurora-. Hemos regresado, el sueño era verdad, realmente somos elegidas.</p>
+    <p class="lector-p dialogo">— ¡Tanuk ik! -gritó Dimitri dirigiéndose al Hombre Elefante lleno de furia, mientras los otros atendían sorprendidos-. ¡Devuélveme a mi mundo! Déjame despertar, no quiero seguir con esto, hazme volver, ya no quiero ser un elegido. Detesto estar aquí, quiero estar junto a mi madre, ¿comprendes?... ¡Basta!, hazme volver -dijo en voz baja.</p>
+    <p class="lector-p dialogo">— ¡Dimitri! Por favor -exclamó Geneviève.</p>
+    <p class="lector-p dialogo">— ¡Cállate, Geneviève! Esto no es asunto tuyo. Mi madre se muere y quiero estar con ella, no quiero continuar aquí -gritaba con el rostro lleno de lágrimas-. Detesto este mundo, no quiero salvar a nadie. Tan sólo quiero estar junto a mi madre. ¡Joder! Mi madre está en coma, no sabemos cuándo despertará, y si despierta habrá que operarla del corazón. Mis padres se endeudaron para pagar mi tratamiento. Mi madre se muere porque somos pobres, por mi culpa. Porque en mi pueblo miserable no hay medicina para la gente sin dinero, porque la tecnología necesaria sólo está en las ciudades. ¡¿Pero de qué me vale el progreso si no lo podemos pagar?! Sólo los ricos viven felices en este mundo. Sólo los ricos tienen todo lo que imaginan mientras el resto de la humanidad se pudre. Odio a la raza humana, merece todo cuanto le ocurre. ¡Olvidaos todos de mí, y devuélveme de una vez a la realidad para que pueda estar con mi familia!</p>
+    <p class="lector-p">Tanuk ik alzó toda su figura convirtiéndose en un gigante. Levantó su trompa agitándose y barritó haciendo temblar todo el edificio. Los seis quedaron acongojados ante la cólera del Hombre Elefante. Charles, Geneviève, Daikuku, Lucero y Aurora retrocedían asustados. Únicamente Dimitri continuaba inmóvil, manteniendo la mirada fija en el Hombre Elefante. Bajó la cabeza a la altura del muchacho, su cara quedaba a unos dedos de Dimitri. Le clavaba los ojos mirándolo fijamente.</p>
+    <p class="lector-p dialogo">— Escucha bien lo que te digo, insensato. Eres el elegido de un dios, tú no decides tu destino. El destino elige por ti. No importa quién muera o quién viva, has de llevar a cabo tu cometido sobreponiéndote a toda pena y dolor –exclamaba Tanuk ik lanzando su aliento sobre el mozo, que mantenía la mirada plena de ira–. Tu madre está viva, ignorante, duerme en un sueño eterno. Tú quieres que esté a tu lado y lo está. Si muere más adelante, eso no nos atiene ahora. Hablas de muerte, de odio y de riqueza, ¿acaso estás hambriento, pasas hambre cada vez que necesitas alimentarte? ¿Te falta el agua cuando tienes sed? ¿Careces de abrigo? ¿Duermes a la intemperie sometido a la crueldad de la naturaleza? ¿Acaso has vivido la guerra? ¡¡¡Noo!!! –gritó Tanuk ik henchido–. ¡¡Claro que no!! Niño ingrato e insolente. Millones de personas mueren de hambre sin nada que llevarse a la boca, agonizando hasta su último suspiro. Gente enferma que perece ante el más nimio catarro. Hombres y niños que mueren de sed sin nada que beber. Personas que duermen sin hogar, bajo el sol, la lluvia y el viento sin quejarse. Gentes que luchan día a día por seguir vivos. Millones de personas mueren debido a la infamia del hombre, Dimitri. ¿Ellos no te preocupan? El elegido de un dios, hundido por el coma de una madre. ¿Pretendes dejar que la humanidad y el universo entero mueran a causa del egoísmo? Tu misión no sólo consiste en salvar a una raza despreciable como la vuestra, también debéis salvar al planeta, al cosmos. Moor es una amenaza para la creación de los dioses. A mí no me importa que los humanos mueran o vivan, me trae sin cuidado, no sois más que basura. Pero el resto no merece morir, vuestro deber es defender el infinito de la ira del señor oscuro. Encauza de nuevo tu camino, Dimitri, salva la vida en este mundo, si tenéis éxito, habrá un mañana, todos seguiremos con vida, tu madre seguirá viva, puede que ese día despierte y halléis remedio a su mal. Abandona tu empresa y no quedará nada de nosotros, ni siquiera tú quedarás para cuidar de tu madre –Tanuk ik calló.</p>
+    <p class="lector-p">Ambos mantenían la mirada. Dimitri cerró los ojos y toda su ira se transformó en llanto. Cayó de rodillas al suelo. La sala se llenaba con el eco de sus lágrimas. Sus compañeros lo miraban sobrecogidos, conmiserados ante la triste situación de Dimitri. El Hombre Elefante permanecía impasible, esperando a que el muchacho dejase de llorar. Largo rato pasó entre lágrimas, hasta que cesaron, enmudeciendo. Tanuk ik adelantó la mano, levantando a su amigo del suelo. Dimitri miraba a los ojos del Hombre Elefante, esperando su reacción.</p>
+    <p class="lector-p dialogo">— Desconozco el dolor de los hombres, amigo mío, desconozco el sufrimiento. Jamás he sentido pena o alegría. Pero créeme cuando te digo, que lamento mucho que el destino acontezca de esta manera tan ingrata. Desde lo más profundo de mi ser, desearía que la vida fuese diferente, que todo cuanto hay de malo en este mundo y en el vuestro desapareciese. Que nadie jamás nunca tuviese que volver a sufrir. No me tengas rencor, pues no pretendo ser el fuego que queme tus heridas. Piensa en mí como en un amigo obligado por el mismo destino a guiaros por este mundo para alcanzar con fortuna vuestro cometido. Acabar con la amenaza de Moor –concluyó Tanuk ik.</p>
+    <p class="lector-p dialogo">— Lo siento –dijo Dimitri sollozando–. Lo siento mucho.</p>
+    <p class="lector-p">Geneviève apareció por detrás abrazando a Dimitri. Daikuku se acercó a la pareja y se abrazó a los dos. Las gemelas miraban sorprendidas. Charles se acercaba a los pequeños emocionado. Los acariciaba, después de todo lo vivido los sentía como a su propia familia.</p>
+    <p class="lector-p dialogo">— ¡Elegidos! Ahora es tiempo de continuar. Debéis encontrar al séptimo de vosotros, aquel que se encuentra en el Bosque de los Susurros, custodiado por el Caminante Nocturno. Únicamente os queda una noche para llegar a él y despertarlo. Las huestes de las tinieblas están revolviendo este mundo en vuestra búsqueda. Sois la única amenaza que puede acabar con sus ansias de destrucción. Moor desea mataros antes de que seáis siete. Debéis partir hacia vuestro último compañero y tener más cuidado que nunca, el camino estará lleno de peligros. Pocos lugares ya sirven de exilio, no queda casi nadie en quien confiar. Salid fuera y seguid al Cuco Rojo. Él os llevará por el camino correcto, no dudéis nunca de sus decisiones, conoce de antemano la trayectoria que tomarán los esbirros de Moor, puede cambiar el rumbo para evitar tropezar con ellos. Cuando seáis siete, él os llevará de nuevo hasta mí donde quiera que yo esté. Seguid el camino que os dicte, yo estaré junto a vosotros tan pronto como me sea posible. Espero que no tengáis que enfrentaros de nuevo a los generales de Moor, pero sin duda me enorgullece el valor con que los batalláis. Daikuku, fuiste muy valiente y atrevido al derrotar a Fausto, Señor de la Tristeza. Ahora marchad, amigos míos, pronto volveremos a vernos –concluyó el Hombre Elefante.</p>
+    <p class="lector-p">Charles y las gemelas se adelantaron dirigiéndose a la calle. El peligro había pasado, el Cuco Rojo y Caruba esperaban posados sobre el semáforo. Daikuku y Geneviève iban tras ellos. Dimitri quedaba solo en la sala. El mozo miraba a los ojos de Tanuk ik. El Hombre Elefante adelantó una mano hacia el joven y con el puño cerrado levantó el pulgar con una sonrisa. Dimitri sonreía. Se despidió y salió corriendo tras sus compañeros. Giró la cabeza buscando por última vez, antes de marchar, la sonrisa del Hombre Elefante, pero ya había desaparecido entre la floresta. Dimitri salió a la calle donde esperaban sus amigos. El pájaro metálico estaba posado sobre el hombro de Daikuku. Todos lo miraban sonriendo.</p>
+    <p class="lector-p dialogo">— Yo no te conozco mucho, jovencito –dijo Aurora dirigiéndose a Dimitri–. Pero algo me dice que tú quieres seguir con nosotros –el muchacho la miró a los ojos y asintió con una sonrisa tímida.</p>
+    <p class="lector-p dialogo">— Bueno, ¿a qué esperamos? –exclamó Lucero–. Vayamos en la búsqueda del séptimo de nosotros.</p>
+    <p class="lector-p dialogo">— ¡Vamos, Cuco Rojo!, guíanos hasta el último elegido, llévanos al Bosque de los Susurros –dijo Daikuku. El autómata asintió levantando el vuelo.</p>
+    <p class="lector-p">Charles Vincent caminaba delante, seguido de las dos gemelas. Daikuku iba cogido de la mano de Dimitri y Geneviève caminaba a su lado.</p>
+    <p class="lector-p dialogo">— Siento mucho lo que te ha sucedido –decía la muchacha–. Me encantaría que todo fuese distinto para los seis. Que no fuese todo tan difícil. Pero nos tienes a nosotros, somos tus amigos y te apoyamos en todo, excepto en que abandones el grupo.</p>
+    <p class="lector-p dialogo">— Gracias, pero el único que debe sentirlo soy yo. Perdóname por haber sido tan grosero contigo ahí dentro –dijo arrepentido pero animado por las palabras de su compañera.</p>
+    <p class="lector-p dialogo">— No debes preocuparte, yo sé que tu mamá se pondrá bien –añadió Daikuku–. Seguro que cuando regresemos a casa, después de que todo esto haya pasado, todo volverá a ser como antes, seremos felices, y tú volverás a estar con tu mamá.</p>
+    <p class="lector-p dialogo">— Eso espero, Daikuku –contestó acariciando la cabeza del niño–, estar a su lado cuando despierte.</p>
+    <p class="lector-p">Los seis caminaban tras el robot escarlata, que los guiaba a través de las calles solitarias. Nada se oía ni se veía, todo vacío, tan sólo el grupo caminando en silencio. Las viviendas poco a poco iban siendo cada vez menos, y por fin salieron de la ciudad. Avanzaban hasta que el asfalto terminó dando paso a un camino de piedras, con matorrales a los lados, y con árboles en rededor. El sendero ascendía por una amplia colina que ocultaba todo cuanto había tras ella.</p>
+    <p class="lector-p dialogo">— Escuchad –dijo Charles Vincent–. Se oye música al otro lado.</p>
+    <p class="lector-p dialogo">— ¡Sí! Es como la música que usan para los espectáculos –apuntó la joven.</p>
+    <p class="lector-p dialogo">— ¿Y qué es un espectáculo, Geneviève? –preguntó Daikuku.</p>
+    <p class="lector-p dialogo">— Pues un espectáculo es un lugar donde personas de habilidades especiales muestran lo que saben hacer, para que la gente que los va a ver se divierta y se sorprenda con ellos.</p>
+    <p class="lector-p dialogo">— ¿Qué tipos de habilidades son esas? ¿Dónde hay gente así?</p>
+    <p class="lector-p dialogo">— Pues en lugares como éste, amigo mío –exclamó el hombre llegando al final de la elevación, viendo qué había al otro lado. Daikuku aceleró el paso y se colocó junto a Charles.</p>
+    <p class="lector-p dialogo">— ¿Qué lugar es éste? Jamás había visto algo igual –dijo el pequeño sorprendido.</p>
+    <p class="lector-p dialogo">— Esto es un circo, Daikuku, el circo más grande que haya podido ver nunca.</p>
+    <p class="lector-p">Los seis seguían el sendero tras el cuco, que se dirigía hacia la gran carpa. La música sonaba en aquel dominio llenando de alegría el lugar. Cientos de globos surcaban el aire, pelotas gigantes, y fuegos artificiales. Arlequines y payasos saltando de un lado a otro. Trenes de juguete viajando de aquí para allá, osos de peluche gigantes, muñecas danzarinas. Juguetes de hojalata moviéndose ortopédicamente con cuerda interminable. Muñecas de trapo peinándose unas a otras. Todos divertidos y alegres al son de la música.</p>
+    <p class="lector-p dialogo">— Yo nunca estuve en un sitio así –dijo Lucero–. Pero lo que más me extraña es que tampoco haya persona alguna.</p>
+    <p class="lector-p dialogo">— Es cierto –observó el hombre–. Cuanto hay aquí son juguetes, cientos de ellos y todos diferentes –el cuco seguía volando cada vez más cerca del circo.</p>
+    <p class="lector-p dialogo">— ¡Mirad, amigos! –exclamó un caballo balancín con alas, que volaba en torno a ellos–. ¡Han llegado nuevos juguetes, son nuevos juguetes!</p>
+    <p class="lector-p dialogo">— ¡Qué bien! ¡Qué bien! –gritaba un grupo de peluches que se había acercado hasta los elegidos–. Tenemos nuevos amigos con quienes jugar.</p>
+    <p class="lector-p">Una banda de muñecos de hojalata les hizo de comitiva. Un mono que tocaba los platillos, un elefante que tocaba la trompeta y una jirafa que tocaba el tambor. Los seis miraban sorprendidos el gran revuelo que se había levantado con su visita.</p>
+    <p class="lector-p">Todos los muñecos y juguetes del lugar se agruparon en torno a ellos. Curiosos y alegres los miraban fijamente tratando de averiguar qué tipo de juguete eran. El Cuco Rojo se dirigía hacia la entrada de la carpa, todos los muñecos estaban expectantes, dejaban un pasillo para que los visitantes pasasen al interior. La fiesta no cesaba, todo lleno de colores, de luces, de música, de alegría en la antesala del espectáculo. Justo cuando el pájaro metálico llegó a la taquilla, un arlequín con la cabeza plana le cortó el paso, el cuco se detuvo y los seis elegidos con él.</p>
+    <p class="lector-p dialogo">— ¡Silencio! –exclamó el títere haciendo callar al resto de juguetes que cantaban entusiasmados–. Bienvenidos a nuestra casa, juguetes forasteros. Es para nosotros un honor que hayáis venido para quedaros en esta gran fiesta, y con motivo de esta gran alegría, celebraremos un sensacional espectáculo, donde cada uno de nosotros os demostraremos lo que podemos hacer. Y como colofón, cuando todos y cada uno de nosotros haya concluido su función, seréis vosotros los que hagan gala de habilidades para nuestro deleite y júbilo. Una vez el espectáculo haya terminado, todos podremos volver a jugar y a divertirnos como hacemos siempre en el Circo Nebular. ¿Estáis todos de acuerdo?</p>
+    <p class="lector-p dialogo">— ¡¡¡Síii!!! –gritaban todos los muñecos.</p>
+    <p class="lector-p dialogo">— ¿Y vosotros, nuevos amigos, estáis de acuerdo? –los elegidos quedaron un instante en silencio. No parecía buena idea, pero el Cuco Rojo los había llevado hasta allá. El semblante del arlequín se tornaba tétrico.</p>
+    <p class="lector-p dialogo">— Nos parece muy bien –contestó Aurora rápidamente–. Estamos de acuerdo con ustedes.</p>
+    <p class="lector-p dialogo">— ¡Muy bien! –exclamó el títere volviendo a sonreír–. ¡Qué comience el espectáculo! –las puertas se abrieron y el arlequín dejó pasar al grupo y al tropel de juguetes que caminaba tras ellos. Avanzaron por el pasillo hasta llegar a sus butacas–. Siéntense aquí, por favor –dijo el títere que los esperaba junto a unos asientos frente a la pista–. Estos seis asientos tienen las mejores vistas del circo, sean tan amables y disfruten –Daikuku se adelantó y cogió al Cuco Rojo que seguía volando.</p>
+    <p class="lector-p dialogo">— Espera un momento. No podemos irnos todavía –susurró el niño posando al autómata sobre sus hombros. El pájaro contestó con un “cucu”.</p>
+    <p class="lector-p">El circo era gigantesco y estaba lleno hasta los topes. En cada butaca había sentado un juguete, todos aplaudían y gritaban esperando que la fiesta comenzase.</p>
+    <p class="lector-p dialogo">— ¿Qué hacemos ahora? –murmuró Geneviève.</p>
+    <p class="lector-p dialogo">— No lo sé –respondió Charles–. Esperemos un poco a ver qué ocurre, pero no podemos quedarnos aquí.</p>
+    <p class="lector-p dialogo">— No nos dejarán marchar así como así –añadió Dimitri–. Nos han invitado a quedarnos para siempre.</p>
+    <p class="lector-p dialogo">— Cierto. Será mejor que aprovechemos el menor despiste de estos cachivaches para salir de aquí cuanto antes –propuso Lucero.</p>
+    <p class="lector-p dialogo">— Ahora esperaremos, pero a mi señal guíanos de nuevo para salir de aquí lo antes posible, ¿vale, Cuco Rojo? –dijo Daikuku. El pájaro asintió.</p>
+    <p class="lector-p dialogo">— ¡¡Juguetes del Circo Nebular!! ¡¡Qué comience el espectáculo!! –exclamó el arlequín desde el centro de la pista.</p>
+    <p class="lector-p">Tras las cortinas aparecieron una decena de peluches de diferentes formas y colores. Avanzaron hasta el centro de la pista, donde se colocaron en formación. La música sonó y las cabriolas tomaron forma. De aquí para allá saltaban cada vez más alto, cada vez más difícil, uno sobre otro. Nada parecía imposible para ellos. El público los ovacionaba, gritos y aplausos al compás de la música. El número de los peluches terminó, mientras por el otro lado de la pista aparecía un grupo de bailarinas. Bailaban de un modo peculiar debido a su escasez de articulaciones. Era un vals marcado por la deliciosa música que encandilaba a los asistentes.</p>
+    <p class="lector-p dialogo">— Estamos perdiendo el tiempo –masculló Dimitri–, antes o después tendremos que salir de aquí.</p>
+    <p class="lector-p dialogo">— Tranquilo, muchacho –respondió Charles–. Debemos esperar un poco más, dejaremos que realicen un número más e intentaremos marcharnos.</p>
+    <p class="lector-p dialogo">— Ya sé que tenemos que irnos, pero a mí me está gustando mucho, es muy divertido –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— Sí, es muy bonito y alegre –añadió Aurora.</p>
+    <p class="lector-p dialogo">— En verdad que es bello, y nunca antes habíamos visto algo así, pero no podemos seguir aquí, ya es hora de que salgamos –agregó Lucero.</p>
+    <p class="lector-p dialogo">— Aunque esperemos, no cambiará la situación. Deberíamos irnos ya, pase lo que pase, el tiempo corre en nuestra contra –avisó Geneviève.</p>
+    <p class="lector-p dialogo">— Esperad un momento –dijo tajante el músico–. Tras la actuación de las muñecas intentaremos salir, justo cuando se apaguen las luces.</p>
+    <p class="lector-p">Las bailarinas continuaban su representación, la música sonaba llenando el recinto, cientos de juguetes saltaban jubilosos en sus asientos. Las danzantes acabaron la función. Las luces menguaron mientras por el otro lado entraban un centenar de pelotas de tamaños y colores diversos, se colocaron en su sitio y todo quedó a oscuras. El público clamaba, luces eléctricas dibujaban el centro de la pista, las pelotas fosforescentes y brillantes botaban en una increíble coreografía.</p>
+    <p class="lector-p dialogo">— Ahora es el momento, muchachos –dijo el hombre.</p>
+    <p class="lector-p dialogo">— Cuco Rojo, no enciendas tus ojos, te cogeré de la cola y nos guiarás hasta la salida –dijo Daikuku.</p>
+    <p class="lector-p">Los seis avanzaban agachados y cogidos de la mano. La música seguía sonando, los juguetes alborozados animaban en la oscuridad, la función de las pelotas saltarinas continuaba en la pista. Apenas se podía ver nada, sólo las esferas brillantes y las psicodélicas luces que iluminaban la pista. El pájaro metálico bordeaba el escenario, evitando cruzarse con ninguno de los muñecos que se agitaban en las butacas. Avanzaban hacia la parte trasera de la carpa, desde donde estaban, podía verse una cortina en cuya parte superior había un pequeño rótulo luminoso en el que decía “salida”. La fiesta que se vivía en el gran circo había llegado a desquiciar al Cuco Rojo. Los muñecos y peluches, andaban de aquí para allá, tantos y tan rápido, que incluso anticipándose al futuro, le resultaba dificultoso avanzar sin ser descubierto. El pájaro se movía tan rápido y cauto como podía, con los seis elegidos asidos a su cola, no podían topar con ninguno de aquellos juguetes si querían salir de allí. Caminaban a ciegas, confiando plenamente en el sendero marcado por el guía. Seguían paso a paso, dirigiéndose hacia la puerta de salida.</p>
+    <p class="lector-p dialogo">— ¡¡Ay, mi brazo!! –gritó una voz de niña–. ¡¡Mi brazo!! ¡¡Se me ha roto un brazo!!</p>
+    <p class="lector-p">Las luces se encendieron iluminando todo el recinto, el silencio se hizo, la función de las pelotas se detuvo. Todas las miradas se dirigían a los elegidos que estaban de pie junto a la pista, inmóviles, sorprendidos en su huida. El arlequín se levantó de su asiento, sus facciones se volvieron siniestras.</p>
+    <p class="lector-p dialogo">— Todavía no es vuestro turno, juguetes forasteros. Debéis aguardar a ver la función que cada uno de nosotros os tiene preparada –Lucero que iba la última, había pisado el brazo de una muñeca arrancánd–lo del cuerpo. Nadie dijo nada durante un instante.</p>
+    <p class="lector-p dialogo">— Discúlpenos, pero nuestra función necesita de un tiempo de preparación –dijo Aurora colocándose junto a su hermana–. Por eso precisábamos salir a calentar.</p>
+    <p class="lector-p dialogo">— ¡No, no, no! –contestó el títere–. No importa si necesitáis preparación. Aquí cada juguete espera su turno para actuar. Debéis volver a vuestros asientos y aguardar vuestro momento. Después tendremos todo el tiempo del mundo para jugar –el silencio se hacía cada vez más tenso, los seis seguían inmóviles, ya no quedaba treta posible para engañar a los juguetes–. ¡Vaya! Parece que no respetáis nuestras normas de juego –repuso el arlequín–. Os hemos dado la oportunidad de volver a vuestros asientos y esperar vuestro turno, pero parece que no queréis obedecer. Además habéis roto el brazo de uno de nosotros, y eso se paga con el mismo castigo. Os arrancaremos el brazo a cada uno de vosotros, después os desmontaremos por completo y os guardaremos en el cajón de los juguetes olvidados.</p>
+    <p class="lector-p dialogo">— ¿Qué tal si dialogamos? –dijo Aurora intentando disuadirlos.</p>
+    <p class="lector-p dialogo">— ¡¡¡A por ellos!!! –gritó el títere con semblante diabólico. Todos cuantos había en el circo se abalanzaron sobre los elegidos–. ¡¡¡No dejéis ni una sola de sus articulaciones sin romper!!!</p>
+    <p class="lector-p">Los juguetes mantenían su sonrisa, pero sus ojos adoptaban un semblante sombrío, clamando venganza. La música sonaba de nuevo alegre y estruendosa.</p>
+    <p class="lector-p dialogo">— ¡¡Qué no escapen!! ¡¡Qué no quede ni uno de ellos entero!! –gritaban al unísono.</p>
+    <p class="lector-p dialogo">— Vamos, Cuco Rojo. ¡Date prisa!</p>
+    <p class="lector-p">El pájaro volaba como una saeta. Los seis corrían tras el robot con el gesto desorbitado ante la cantidad de juguetes que se les venía encima. Cientos de pelotas caían sobre ellos golpeándolos. El cuco volaba hacia la salida. Animales de peluche se agarraban a sus piernas intentando tirarlos al suelo para detener su huída. Infinidad de cochecitos se movían entre sus pies tratando de hacerlos resbalar. Cada uno de los elegidos se zafaba como podía del asedio. No quedaban más de quince metros para alcanzar la salida, si conseguían mantener la carrera estarían a salvo.</p>
+    <p class="lector-p dialogo">— ¡¡Aurora!! –gritó Lucero con todo su aliento. Iba la última y los juguetes le habían dado caza rodeándola por completo.</p>
+    <p class="lector-p dialogo">— ¡Ya voy, hermana! –girando sobre sí y corriendo a por ella.</p>
+    <p class="lector-p dialogo">— ¡Seguid! Salid de aquí –exclamó Dimitri.</p>
+    <p class="lector-p">Daikuku, Charles y Geneviève continuaban hacia la salida, mientras él corría hacia las hermanas. Tal era la cantidad de muñecos que se abalanzaban sobre ellos, que los tres habían sido cubiertos y derribados por la horda.</p>
+    <p class="lector-p dialogo">— ¡Debemos volver a ayudarlos! –exclamó la joven.</p>
+    <p class="lector-p dialogo">— ¡Callad! –susurró el músico.</p>
+    <p class="lector-p">Los tres estaban tras las cortinas, los juguetes los buscaban. El cuco temblaba entre las manos de Daikuku, no quería ser desmontado. Los juguetes pasaban muy cerca de ellos. Parecían desconocer la salida, ninguno miraba tras las cortinas.</p>
+    <p class="lector-p dialogo">— ¡Mecachis! Esos juguetes han debido escapar –porfiaba un oso de peluche.</p>
+    <p class="lector-p dialogo">— Han huido sin recibir su castigo, habría sido un placer arrancar cada una de sus patas y relegarlos al cajón del olvido, por ser tan poco educados –añadió una foca de hojalata.</p>
+    <p class="lector-p dialogo">— Parece que aquí estamos a salvo –murmuró Charles.</p>
+    <p class="lector-p dialogo">— Pero no podemos quedarnos aquí sin hacer nada, debemos ir a ayudarlos –respondió Daikuku lanzándose hacia delante para socorrer a sus compañeros.</p>
+    <p class="lector-p dialogo">— Espera, Daikuku –exclamó el músico cortándole el paso–. No podemos arriesgarnos, no tenemos nada para luchar.</p>
+    <p class="lector-p dialogo">— Sí, sí que lo tenemos.</p>
+    <p class="lector-p dialogo">— ¡Mirad allá! –exclamó la chica–. Algo está pasando.</p>
+    <p class="lector-p">La multitud de juguetes que se había formado sobre Lucero, Aurora y Dimitri comenzó a temblar. La tierra se estremecía formándose grandes grietas sobre el escenario por donde caían sin remedio montones de juguetes. De golpe, una fuerte sacudida que desplomó el apilamiento de muñecos. La pista se hundía dejando un estrecho sendero que llegaba a la salida. El circo entero se venía abajo, los peleles se desparramaban cayendo al foso. Las butacas se derrumbaban, la carpa se desmoronaba.</p>
+    <p class="lector-p dialogo">— ¡Vamos, corred! Si la carpa se viene abajo por completo, desaparecerá la salida –exclamó Dimitri ayudando a levantar a las hermanas.</p>
+    <p class="lector-p">El suelo seguía estremeciéndose, apenas podían mantenerse los tres en pie. Los pocos muñecos que quedaban corrían tras ellos, agarrándose con fuerza para cerrarles el paso. “No los dejéis escapar”, gritaban.</p>
+    <p class="lector-p dialogo">— ¡Vamos, vamos! –exclamaba el muchacho tirando de ellas.</p>
+    <p class="lector-p">Corrían por la estrecha pasarela de suelo. Golpe tras golpe, soportando el dolor sin dejar de correr.</p>
+    <p class="lector-p dialogo">— ¡Para esto, Aurora!</p>
+    <p class="lector-p dialogo">— ¡No puedo, no sé cómo lo hice, Lucero!</p>
+    <p class="lector-p">Los tres llegaban a la puerta de salida, donde los esperaba el resto del grupo. Cruzaban al siguiente dominio. Los juguetes avanzaban hacia la mujer, pero antes de que ninguno pudiese alcanzarla, Aurora cruzaba cerrando la puerta tras de sí. Caminaban por el interior de un angosto pasillo iluminado tenuemente.</p>
+    <p class="lector-p dialogo">— Eso que hiciste fue fantástico. Ahora ya no cabe ninguna duda de que somos elegidas –dijo Lucero.</p>
+    <p class="lector-p dialogo">— Debiste hacer ese terremoto más grande aun. Ese circo debía haberse hundido por completo –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— No, no estamos aquí para destruir, nosotros nos metimos en su casa y no cumplimos sus normas -respondió Aurora.</p>
+    <p class="lector-p dialogo">— Mirémoslo como una experiencia más entre las muchas que hemos vivido, yo no esperaba ser atacado por juguetes. Y menos que me intentasen arrancar los miembros –añadió Charles divertido.</p>
+    <p class="lector-p dialogo">— No tiene tanta gracia, esos peleles han intentado descoyuntarnos. Hacían daño –replicó Dimitri.</p>
+    <p class="lector-p dialogo">— Lo sé, a nosotros también nos lastimaron, desde luego no tanto como a vosotros. Solamente trataba de restarle importancia –contestó el hombre.</p>
+    <p class="lector-p dialogo">— Bueno, dejad eso atrás, ya ha pasado. Ahora deberíamos preocuparnos por el lugar en el que estamos. Ahí al fondo hay algo de luz –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— Empezaba a serme incómodo, menos mal que pronto saldremos de este claustrofóbico pasillo –apuntó Geneviève.</p>
+    <p class="lector-p">Al final, una puerta de metal muy gruesa entornada dejaba pasar la luz. Un momento de quietud para escuchar al otro lado. No parecía haber nadie. Daikuku y Dimitri se asomaban con cautela al exterior. Los seis salieron. Una intensa luz iluminaba el lugar, grandes focos pendían del techo. Las paredes de roca estaban recubiertas de planchas de hierro. Estaban dentro de la tierra, en lo que parecía una industria minera. Se asomaron viendo un enorme vacío que alcanzaba cientos de metros de distancia. De lado a lado cruzaban centenares de pasarelas metálicas, escaleras aquí y allá uniendo todo el entramado de la factoría. Las máquinas funcionaban a pleno rendimiento. Los grandes engranajes que asomaban entre las paredes se movían sin descanso. El humo subía hasta el techo de la excavación haciendo muy pesado el aire que respiraban. Cientos de figuras demasiado pequeñas se movían recorriendo los pasillos en las zonas inferiores. Los seis elegidos se encontraban en la parte más alta de la fábrica.</p>
+    <p class="lector-p dialogo">— Puede que estén muy lejos, pero esos que andan por ahí parecen poco amigables –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— Y no te equivocas, con toda seguridad esas son criaturas de Moor. Lo que me produce curiosidad es saber qué pueden hacer en un lugar como éste. No creo que al Señor del Odio le interese la extracción mineral en el mundo de los sueños –agregó Geneviève.</p>
+    <p class="lector-p dialogo">— Sean quienes sean, tenemos al Cuco Rojo con nosotros, él sabrá guiarnos sin que tengamos que cruzarnos con esos bichos –dijo Dimitri. El pájaro asintió reconociendo las esforzadas palabras de su amigo.</p>
+    <p class="lector-p dialogo">— ¿Por dónde continuamos entonces, Cuco Rojo? –preguntó Charles. El pájaro que estaba posado sobre la barandilla echó a volar indicándoles el camino. El grupo avanzaba de nuevo.</p>
+    <p class="lector-p dialogo">— Para ser un sueño este aire es bastante insoportable, jamás había respirado algo tan asqueroso –se quejaba Lucero.</p>
+    <p class="lector-p dialogo">— Es cierto, este aire es horrible, ni siquiera lo llamaría aire –dijo Daikuku tapándose la nariz.</p>
+    <p class="lector-p dialogo">— ¿Cómo puede ser que siendo un sueño el aire nos cueste tanto de respirar? –preguntó Aurora.</p>
+    <p class="lector-p dialogo">— Esto no es aire, el aire lo respiramos en nuestro mundo. Aquí respiramos por inercia, pero en realidad nuestros pulmones no se llenan de nada –aclaró Geneviève.</p>
+    <p class="lector-p dialogo">— Aire o no, yo no le noto demasiada diferencia con el aire de la ciudad, acostumbrado a la polución de los coches y las fábricas –dijo Charles.</p>
+    <p class="lector-p dialogo">— ¿En las ciudades se respira este aire? –preguntó Daikuku.</p>
+    <p class="lector-p dialogo">— Por supuesto, es uno de los inconvenientes del desarrollo insostenible del primer mundo –repuso Geneviève–. Pero este aire esconde algo y no es polución. Ni siquiera parece el aire de un sueño. Presiento algo feo, algo que produce este humo negro.</p>
+    <p class="lector-p dialogo">— Te diría que este olor lo desprenden los esbirros de Moor, pero ninguno de los que hemos encontrado hasta ahora despedía este hedor tan corrupto –dijo el mozo.</p>
+    <p class="lector-p">Tras acabar su última palabra, una bocina ensordecedora sonó. Las máquinas trabajaban más rápido, más humo ascendía desde el fondo. Los soldados de Moor corrían cruzando de un lado a otro. El Cuco Rojo voló raudo a esconderse tras una pared, los seis corrieron tras él, ocultándose.</p>
+    <p class="lector-p">Quedaron boquiabiertos al ver a los soldados de Moor encabezando un tropel de personas que caminaba sin oponer resistencia. Hombres, mujeres, niños y ancianos. Debía tratarse de los muchos soñadores que se habían dejado engañar por las mentiras de Moor. Sus ojos parecían idos, avanzaban ausentes. El Cuco Rojo esperó a que los grupos descendiesen unos cuantos niveles para continuar la marcha. Cruzaba las pasarelas rápidamente, escondiéndose tras una puerta.</p>
+    <p class="lector-p dialogo">— ¿Adónde creéis que llevan a esa gente? –preguntó Daikuku.</p>
+    <p class="lector-p dialogo">— No lo sé. Pero no me preocupa adónde los llevan, sino aquello que les van a hacer –contestó Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Qué podrían hacer esos monstruos con tantas personas? –preguntó Aurora preocupada. Dimitri se giró con gesto serio.</p>
+    <p class="lector-p dialogo">— Eso ya no son personas.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir? –añadió Lucero.</p>
+    <p class="lector-p dialogo">— Esos rostros han perdido la esperanza, se han vendido a Moor. No pueden llamarse personas.</p>
+    <p class="lector-p dialogo">— Pero había niños, los niños no son como los adultos –replicó Aurora.</p>
+    <p class="lector-p dialogo">— Eso no importa. Les hagan lo que les hagan, no es nuestro asunto –concluyó Dimitri–. Sigamos, Cuco Rojo.</p>
+    <p class="lector-p">El pájaro esperó a que un esbirro que caminaba en el nivel inferior desapareciese tras la puerta. Habían logrado descender cuatro niveles sin detenerse. El cuco paraba de nuevo.</p>
+    <p class="lector-p dialogo">— Pero no podemos dejar a toda esta gente así, sin hacer nada. Deberíamos ayudarlos -insistió Lucero.</p>
+    <p class="lector-p dialogo">— Esas personas han decidido su futuro, no podemos hacer nada por ellas –sentenció Geneviève.</p>
+    <p class="lector-p dialogo">— No podemos arriesgarnos ahora, tenemos que llegar al final para salvar a los que todavía resisten a Moor –añadió Charles. Las gemelas aceptaron resignadas.</p>
+    <p class="lector-p">El autómata volaba con los seis elegidos tras él. Descendían ya más de quince niveles. Corrían hacia los pisos inferiores hasta llegar al penúltimo nivel. Los ruidos de las máquinas eran ensordecedores. El cuco se introducía por un amplio pasillo que llevaba directamente a un balcón acristalado desde el cual se veía una sala de montaje a pleno rendimiento.</p>
+    <p class="lector-p dialogo">— ¿Qué estarán fabricando ahí? –preguntó Charles.</p>
+    <p class="lector-p dialogo">— Si no quieres saberlo, será mejor que no mires –dijo Dimitri que se mantenía alejado de los cristales, siguiendo al cuco–. Si os acercáis nos arriesgamos a ser descubiertos.</p>
+    <p class="lector-p">Desoyendo las palabras del muchacho Charles y las gemelas se asomaron al balcón. Las criaturas de Moor hacían funcionar grandes y extrañas máquinas de las que manaban las columnas de humo. Vigilaban que nada perturbase el orden de la industria. Los grupos de personas eran llevados hasta ese lugar, en donde se los introducía en cabinas para ser convertidos, tras un largo proceso de elaboración, en criaturas de odio.</p>
+    <p class="lector-p dialogo">— Eso es horrible –exclamó Aurora–. Este lugar es una fábrica de monstruos. Tendría que ser destruido de inmediato.</p>
+    <p class="lector-p dialogo">— No deberías continuar ahí. Os verán y darán al traste con nuestro viaje –decía Dimitri impaciente–. No creo que sea necesario repetir que nuestra misión es otra bien distinta –Lucero se giró devolviéndole una mirada enojada.</p>
+    <p class="lector-p dialogo">— Tienes razón, debemos continuar –añadió Geneviève alejándose de los cristales.</p>
+    <p class="lector-p dialogo">— ¿Dónde tienes el espejo que nos despertó, Daikuku? –preguntó Lucero.</p>
+    <p class="lector-p dialogo">— Aquí, en el zurrón.</p>
+    <p class="lector-p dialogo">— ¡Trae acá! –exclamó Lucero arrancándole la bolsa y sacando el espejo.</p>
+    <p class="lector-p dialogo">— ¿¡Qué piensas hacer!? –exclamó Daikuku sorprendido.</p>
+    <p class="lector-p dialogo">— No hagas ninguna locura, devuelve el espejo, y sigamos nuestro camino –dijo Charles acercándose a ella.</p>
+    <p class="lector-p dialogo">— Devuelve el espejo ahora mismo, no podemos hacer nada aunque queramos –dijo Aurora sujetándola del brazo.</p>
+    <p class="lector-p dialogo">— Yo sé que tú también quieres salvar a esa gente.</p>
+    <p class="lector-p dialogo">— Sí, pero ellos tienen razón. Tenemos que seguir adelante para salvar a los que todavía resisten.</p>
+    <p class="lector-p dialogo">— Voy a salvar a aquellas personas de allá bajo, les agrade o no –contestó Lucero forcejeando con su hermana. Geneviève se abalanzó sobre ella para recuperar el cristal. Lucero levantó el espejo en alto y reflejó durante un instante al grupo que había bajo ellos–. Déjame, niña. Quítate, hermana –continuaba el forcejeo. Dimitri se acercó furioso y con un fuerte puñetazo en el vientre derribó a la mujer recuperando el espejo.</p>
+    <p class="lector-p dialogo">— Estás loca, Lucero. No podemos intervenir de este modo. Nos has puesto a todos en peligro, has puesto la misión en riesgo –dijo el muchacho. La gemela dejaba de luchar dolida por el golpe. Aurora la ayudaba a levantar.</p>
+    <p class="lector-p dialogo">— Aquí los únicos locos son ustedes, que viendo esto no quieren hacer nada para salvar a esas pobres personas.</p>
+    <p class="lector-p dialogo">— Sí, queremos, todos queremos ayudar –respondió Charles–. Pero mal que nos pese, no podemos hacer nada. Debemos llegar a tiempo para despertar al último elegido y acabar con Moor. Cuando todo haya terminado estas personas volverán a ser quienes eran. Estoy seguro.</p>
+    <p class="lector-p dialogo">— Compréndelo, hermana, entra en razón. No seas cruel con ellos, debemos seguir.</p>
+    <p class="lector-p dialogo">— ¡Mirad allá abajo! –exclamó Daikuku–. Parece que varias personas se han visto reflejadas en el espejo y han despertado, están intentando huir –en la sala de conversión, un grupo había recuperado la mirada, despertados de repente, asustados, gritaban y se abrían camino corriendo, intentando salir de aquel horrible lugar–. La hemos hecho buena.</p>
+    <p class="lector-p dialogo">— Ya lo has reventado todo. Ahora nos buscarán hasta darnos caza –dijo Dimitri retirando al grupo de las cristaleras.</p>
+    <p class="lector-p">Los despertados corrían en todas direcciones, muchos de ellos eran apresados de nuevo, las criaturas de Moor les arrancaban el alma inhalando su esencia. Algunos habían conseguido adentrarse en los pasillos.</p>
+    <p class="lector-p dialogo">— Eso que has hecho, ha sido una estupidez –dijo Geneviève–. Si comienzan a buscar a los fugitivos corremos el riesgo de que nos encuentren a nosotros.</p>
+    <p class="lector-p dialogo">— Puede que así lo creas, pero si al menos un par de ellos escapa, me sentiré mejor.</p>
+    <p class="lector-p dialogo">— No seas idiota, no llegarán muy lejos en este lugar –repuso Dimitri iracundo–. Tus sentimientos no importan si nos ponen en peligro a todos. Ni siquiera yo soy tan tonto.</p>
+    <p class="lector-p dialogo">— Eres un insensible sin corazón. Ojalá vayas al infierno –dijo Lucero irritada.</p>
+    <p class="lector-p dialogo">— Cálmate, Lucero, esta disputa no nos lleva a ningún sitio. Relájate y sigamos nuestro camino. No lo estropees más –agregó Charles mediando entre ambos.</p>
+    <p class="lector-p dialogo">— Eso que has hecho no estuvo bien, hermana. Vamos, déjate de tonterías. No importa lo que pienses, ¡camina y vámonos de aquí!</p>
+    <p class="lector-p dialogo">— Hay revuelo en los pasillos, parece que los que han conseguido escapar no andan muy lejos –apuntó Daikuku.</p>
+    <p class="lector-p dialogo">— Lo único que podemos hacer es ocultarnos hasta que pase el peligro –gritos de socorro se oían al otro lado del pasillo–. Vamos, deprisa, escondámonos –dijo la joven. Dimitri abrió una puerta cercana, un habitáculo sin luz en el que cabían los seis.</p>
+    <p class="lector-p dialogo">— Este sitio parece seguro. Si llegan hasta aquí, con suerte no nos descubrirán.</p>
+    <p class="lector-p">Los seis entraban en la habitación guardando silencio, inmóviles. Los gritos del joven se oían cada vez más cerca. Dimitri cerraba la puerta girando el pomo lentamente, cuando una desmedida fuerza estiró de la puerta abriéndola. El muchacho creía haber encontrado una salida, y a punto de entrar en el habitáculo donde se escondían los elegidos, aparecían las sombras de Moor dándole caza. La puerta estaba abierta de par en par, pero en la oscuridad de la habitación no los habían descubierto. El joven seguía gritando, forcejeaba para liberarse de las criaturas. Una de ellas se acercó a su rostro y con un beso le robó el alma, el muchacho callaba, su mirada volvía a quedar perdida. Lo llevaban de nuevo hacia la sala de conversión de la cual esta vez no escaparía. Uno de los esbirros se acercó a la puerta, sin apreciar nada, la cerró dejándolos dentro. Respiraban salvados. Durante largo rato se mantuvieron quietos, a la espera.</p>
+    <p class="lector-p dialogo">— ¿Creéis que todavía están por aquí? –preguntó Aurora.</p>
+    <p class="lector-p dialogo">— No lo sé, pero para evitar males mayores, deberías llevar atada a tu hermana –contestó Dimitri. Lucero se mordió los labios y relinchó.</p>
+    <p class="lector-p dialogo">— Lo siento –dijo consternada–. He puesto en peligro nuestras vidas, por salvar las de esas gentes, no debí hacerlo.</p>
+    <p class="lector-p dialogo">— Lo sabemos, Lucero –dijo Charles Vincent–. Pero quédate tranquila, hiciste lo que ninguno de nosotros se atrevió a hacer.</p>
+    <p class="lector-p dialogo">— Sí. No te preocupes, a fin de cuentas no nos han descubierto –añadió Daikuku.</p>
+    <p class="lector-p dialogo">— Bueno, no pensemos más en lo ocurrido, esto nos ha servido de lección a cada uno de nosotros. Ahora debemos continuar –dijo Geneviève–. Vamos, Cuco Rojo, llévanos hasta el final de este lugar sin que nadie nos descubra –la chica giró lentamente el pomo, empujando la puerta con cautela, dejando una pequeña apertura por la que podía ver el pasillo. Miró a un lado y a otro.</p>
+    <p class="lector-p dialogo">— No se oye nada –susurró–, pero tampoco veo nada, está todo blanco, el pasillo ha desaparecido.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir? –preguntó Dimitri empujando un poco más la puerta para ver a qué se refería su amiga. Abrieron completamente, todo cuanto se podía ver era luz blanca, un espacio vacío sin paredes–. ¿Qué es este lugar? –dijo extrañado volviendo a cerrar–. Ésta no puede ser la puerta por la que entramos –los seis comenzaron a palpar las paredes del habitáculo en busca de más pomos que abriesen la puerta extraviada.</p>
+    <p class="lector-p dialogo">— Yo estoy tocando un pomo –dijo Aurora.</p>
+    <p class="lector-p dialogo">— Yo otro –agregó Daikuku.</p>
+    <p class="lector-p dialogo">— No, Daikuku. Ésta es mi mano, hemos encontrado la misma puerta –agregó la gemela.</p>
+    <p class="lector-p dialogo">— No es posible que sólo haya una puerta –insistió Dimitri.</p>
+    <p class="lector-p dialogo">— Nada de nada, parece que ésa es la única salida –observó Charles.</p>
+    <p class="lector-p dialogo">— ¡Tengo una idea! Puede que no hayamos encontrado nada con las manos, pero el Cuco Rojo puede iluminarnos con sus ojos –exclamó Lucero.</p>
+    <p class="lector-p dialogo">— ¿Puedes ayudarnos a encontrar la puerta, Cuco Rojo? –preguntó Daikuku.</p>
+    <p class="lector-p">El robot encendió sus ojos e iluminó la habitación. Los seis estaban encerrados entre las cuatro paredes, en las cuales únicamente había una puerta.</p>
+    <p class="lector-p dialogo">— ¡Maldición! –exclamó el mozo enfadado–. Nosotros no entramos por ahí. Algo debe haber sucedido, estamos pasando algún detalle por alto.</p>
+    <p class="lector-p dialogo">— Escucha, Dimitri, es cierto que no entramos por esa puerta, pero ahora es la única que hay –dijo Aurora–. Y si algo me has enseñado es que no tenemos tiempo que perder. Así que salgamos y enfrentémonos a lo que quiera que aparezca.</p>
+    <p class="lector-p dialogo">— Tienes razón, Aurora –dijo Charles–, será mejor que sigamos pase lo que pase.</p>
+    <p class="lector-p">Daikuku abrió la puerta. Ante ellos un espacio completamente blanco, sin paredes, sin suelo, sin techo. Todo de color blanco, como si estuviesen en la nada. Se adelantaron cuidadosamente en la sala. La puerta se cerró desapareciendo tras ellos.</p>
+    <p class="lector-p dialogo">— La puerta se ha desvanecido. ¿Eso es malo o muy malo? –preguntó Lucero.</p>
+    <p class="lector-p dialogo">— Eso es que no podremos salir de aquí por donde entramos, tendremos que encontrar otra salida –dijo el hombre–. Estamos en otro dominio, veamos qué sucede.</p>
+    <p class="lector-p dialogo">— Parece infinito, pero tarde o temprano llegaremos a su fin –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— Cuco Rojo ¿hacia dónde debemos ir? –preguntó la joven. El pájaro miró detenidamente.</p>
+    <p class="lector-p dialogo">— Cucu –fue su única respuesta.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir con eso? ¿Es que acaso no sabes hacia dónde debemos ir? –preguntó Daikuku.</p>
+    <p class="lector-p">El cuco miró en rededor girando su cabeza trescientos sesenta grados sobre su cuerpo, despacio, buscando algún camino que no encontraba, de nuevo mirando hacia el pequeño negó con la cabeza.</p>
+    <p class="lector-p dialogo">— ¡Pero eso es terrible!, si tú no sabes hacia dónde debemos ir, ¿cómo saldremos de aquí?, es más, ¿cómo encontraremos al último elegido? –dijo Charles Vincent preocupado.</p>
+    <p class="lector-p dialogo">— Tranquilos, no pasa nada, antes de que el cuco estuviese con nosotros, supimos apañárnoslas solos. Podemos continuar sin nada que temer. Él nos ha ayudado todo cuanto ha podido –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Jar, jar, jar –se oyó una risa desgarrada y crepitante–. Jar, jar, jar.</p>
+    <p class="lector-p">Los seis se giraron buscando aquella macabra carcajada. A unos metros de ellos había aparecido un voluminoso sillón tribal de alto respaldo y de tosco detalle. El asiento les daba la espalda y alguien parecía estar sentado en él. ¿Cómo habían podido pasar por alto tan grande objeto en aquella nada blanca?</p>
+    <p class="lector-p dialogo">— ¿De dónde ha salido eso? –preguntó Lucero sorprendida.</p>
+    <p class="lector-p dialogo">— Presiento que no es nadie amable el que está sentado ahí –añadió Geneviève.</p>
+    <p class="lector-p">Expectantes. La risa no cesaba “jar, jar, jar”. Con tanta gana reía aquel que fuere, que hizo tumbar el sillón cayendo de espaldas. Una figura parda, enmascarada en forzada sonrisa, envuelta en un halo negro, aparecía tirada en el suelo sin poder parar de reír, retorciéndose. “Jar, jar, jar”, continuaba ante la mirada atónita de los elegidos.</p>
+    <p class="lector-p dialogo">— ¡Basta ya! –gritó Dimitri desquiciado. Poco a poco dio fin a su carcajada.</p>
+    <p class="lector-p">La figura que todavía yacía tumbada. Se deshizo en espeso humo y se deslizó serpenteante hasta detenerse ante el muchacho, para conformar de nuevo su aspecto humanoide. El monstruo levantaba más de cuatro cabezas a Dimitri. Su cuerpo encorvado, delgado y fibroso, una máscara inexpresiva y largos dedos afilados. Miraba fijamente al mozo con gesto sarcástico. Su presencia imponía temor.</p>
+    <p class="lector-p dialogo">— Casa mía, joven, yo decidir si dejar de reír. Jar, jar, jar –rió de nuevo–. ¡Basta! –dijo él mismo y dejó de reír–. Como tú comprender, en lugar este, yo decir cómo, cuándo, dónde, quién. Dominio, mi hogar, bienvenir sala ausencias, evidente porqué –caminaba rodeando al grupo, observándolos con detenimiento, estudiando el mínimo detalle–. Difícil estafar pollo hierro vosotros acompaña, conocer bien caminos. Habilidad ver futuro, motivo vosotros escapar criaturas Moor. Pollo no tener culpa vosotros aquí, culpa uno vosotros, despertar mortal utensilio mágico. Mucho solidario vosotros, pero no resultado. Si humano despertar, elegidos cerca. Yo rápido pensar, vosotros estar en fábrica. La puerta cerrar casualidad, descubrir presencia yo, sólo tener juntar dominio mío habitación. Sin mover dedo, vosotros aquí mi lado.</p>
+    <p class="lector-p">Yo llamar Buri Buri, Señor Locura. Yo siete general, Moor crear para matar vosotros. Generales ser tontos, ellos casi muertos por vosotros. Jar, jar, jar. Vosotros escapar, cosa rara. Vosotros estar tranquilos, de aquí no salir, jamás vosotros llegar siete. Mi casa tumba vosotros. Último elegido no despertar. Jar, jar, jar. Yo muy listo, gran cabeza, nadie cazar vosotros, sólo yo capaz.</p>
+    <p class="lector-p dialogo">— ¡Eres un fantoche! –gritó Daikuku–. Jamás nos hubieses encontrado de no haber despertado a esos humanos, el Cuco Rojo nos habría sacado de aquí, no vales…</p>
+    <p class="lector-p dialogo">— ¡¡Niño, callar!! –gritó Buri Buri fuera de sus cabales–. No tener permiso hablar. Yo encontrar vosotros, no otro yo. Yo matar vosotros, nadie saber cómo atrapar. Yo tener gloria mucho. Yo mentir y ser grande para amo mío. Jar, jar, jar. Tú ser primero morir, honor para tú. Vosotros también tener. Elegido fuerte, señor luz, derrotar general, otro general derrotado utensilio mágico no este mundo. Yo no equivocar, algo tener mágico para acabar mí. Uno vosotros brujo, uno vosotros vivir mundo magia. Yo creer único elegido mágico ser niño, demás no tener apariencia mundo antiguo. Tú mostrar mí zurrón, yo saber qué haber dentro. Tú conjuro matar mí –Daikuku miraba furioso al lugarteniente sin obedecer a su demanda–. Tú rebelde, tú no hacer, yo hacer –dijo Buri Buri arrancándole la bolsa.</p>
+    <p class="lector-p dialogo">— ¡¡Devuélvemelo!! –gritó Daikuku lanzándose sobre la criatura para recuperar el zurrón. El general se lo apartó de encima con un fuerte golpe que lo hizo caer al suelo de bruces.</p>
+    <p class="lector-p dialogo">— Mmm… Ver. Cuerdas atar este mundo, buen chico. Espejo despertar a vosotros. Cristal líquido dentro –dijo la criatura escrutando y enumerando el interior de la bolsa–. Yo creer cristal magia matar mí. Vosotros no suerte, no dejar usar. Yo mucho listo. Decir qué contener cristal, tú decir si no querer yo matar amigo, uno detrás otro, tú último. ¿Qué pensar?</p>
+    <p class="lector-p dialogo">— Ese frasco contiene lágrimas de león dorado –dijo el pequeño mirando al suelo–. Las lágrimas son un poderoso veneno, tienen la facultad de podrir el espíritu de aquellos que poseen el corazón corrupto, lleno de odio. Seres como tú y los de tu especie –concluyó Daikuku despectivo.</p>
+    <p class="lector-p dialogo">— ¡Bravo! ¡Muy bien! Jar, jar, jar. Yo tener corazón mucho odio. Yo matar elegidos. Yo maravilloso –decía deleitándose–. Niño beber cristal, ser primero morir.</p>
+    <p class="lector-p">El general ofreció el frasco al pequeño. Daikuku lo tomó en sus manos. Los otros elegidos miraban aterrorizados la situación, no tenían nada con que defenderse, ¿dónde estaban sus poderes ahora que los necesitaban? Sabían que la criatura era demasiado poderosa para intentar algo contra ella encomendándose a la suerte. Pero era necesario actuar. Charles Vincent se adelantó intentando apartar el frasco de la boca del niño.</p>
+    <p class="lector-p dialogo">— No lo tomes, no puedes morir, debemos luchar –exclamó el hombre.</p>
+    <p class="lector-p dialogo">— Tranquilizar, anciano, turno llegar pronto, no tener prisa morir. Paciencia tener, ahora morir niño.</p>
+    <p class="lector-p dialogo">— No importa, Charles –dijo Daikuku guiñándole un ojo, gesto que la criatura no alcanzó a ver–. Moriré con orgullo.</p>
+    <p class="lector-p dialogo">— ¡Ya! ¿A qué esperar? Tomar ahora, no hacer perder paciencia –Daikuku alzó el frasco bebiendo cuanto contenía. Ni una sola gota quedó. Mientras sus compañeros observaban impotentes la escena–. No prisa, vosotros morir igual niño. Yo querer saber si tú morir, niño. Jar, jar, jar.</p>
+    <p class="lector-p">Preguntaba riendo el lugarteniente, tocando con sus dedos el pecho del pequeño que comenzaba a sudar y a palidecer. Daikuku perdía la mirada, las lágrimas de león estaban teniendo un efecto dañino sobre él.</p>
+    <p class="lector-p dialogo">— ¡¡Eres una criatura inmunda!! ¿Cómo puedes hacer esto? –gritó Geneviève encogida.</p>
+    <p class="lector-p dialogo">— Yo mucho malo, yo contento ser malo, tú alagar mí. Jar, jar, jar.</p>
+    <p class="lector-p">Daikuku estaba cada vez peor, se balanceaba de un lado a otro hasta caer redondo al suelo. Dimitri se arrodilló junto a su amigo tomándolo en brazos.</p>
+    <p class="lector-p dialogo">— ¡Vamos, amigo, aguanta! –exclamó el muchacho–. Te prometo que saldremos de ésta.</p>
+    <p class="lector-p dialogo">— ¡Noo! ¡No salir aquí jamás, vosotros morir! Jar, jar, jar –exclamó Buri Buri risueño, propinando sendos golpes, una patada al niño que lo lanzó rodando a unos veinte metros de distancia y un mandoble a Dimitri, que caía golpeándose la cabeza contra el suelo. Lucero corrió para socorrer a Daikuku–. Mujer no mover o matar chico –dijo la criatura amenazante con la zarpa sobre el cuello de Dimitri. Geneviève intentaba levantar el pie del general inútilmente. Buri Buri observaba divertido la reacción de la joven, que lloraba impotente. Lucero volvía a su lugar–. No ser juego, elegidos. No estar tristes, alegría vosotros con yo, ser final vosotros. Alegría chico morir. Jar, jar, jar.</p>
+    <p class="lector-p dialogo">— ¡¡No lo hagas, por favor!! –suplicó Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Hacer? ¡Claro, yo hacer! –contestó divertido. La zarpa afilada acariciaba el cuello del joven. Los cuatro miraban aterrorizados. Al fondo Daikuku comenzaba a moverse–. ¡¡¿Cómo poder ser?!! Tú seguir vivo. Yo prometer tu primero morir. Tú, chico esperar, no mover, yo venir ahora –dijo aplastando la cara de Dimitri hiriéndole los carrillos. Daikuku se levantaba poco a poco recuperando el color y la mirada. Buri Buri se acercaba lentamente, atento al pequeño–. Veneno no calidad, no matar tú. Si tú no morir, veneno cosquillas mí. Jar, jar, jar –gritaba el lugarteniente. Daikuku se incorporó completamente, su cuerpo desprendía un fulgor dorado, sus ojos se habían vuelto de color ámbar. El pequeño miraba fijamente a la criatura, agitó los brazos y lanzó un grito de furia que sonó como el rugido de un león–. Imitación gato buena, no salvar muerte tú –dijo acercándose a Daikuku hasta pegar su rostro al del pequeño–. ¡Ahora morir! –dijo entre dientes, alzando el brazo y descargando sobre el pequeño a una velocidad endiablada.</p>
+    <p class="lector-p">Los otros elegidos atendían atónitos a la sentencia del general. Daikuku moviéndose como un rayo esquivó el azote de su rival, abalanzándose sobre la criatura, golpeaba a diestro y siniestro con la fuerza de mil hombres. Cada choque sobre el cuerpo de la bestia sonaba como un trueno, el pequeño rugía enfurecido. Sus compañeros observaban sorprendidos. Daikuku golpeaba sin cesar hasta levantar en el aire a su oponente, incapaz de contrarrestar al elegido. Buri Buri gritaba dolorido, intentando zafarse de la furia del niño, pero su rival era demasiado fuerte y rápido para él.</p>
+    <p class="lector-p dialogo">— ¡¡Paraarrr!! ¡Tú matar mí! –gritaba vomitando líquido negro por la boca–. ¡¡Yo decir pararrr, maldito!!</p>
+    <p class="lector-p">Los golpes aumentaban en potencia, el cuerpo de la criatura se deformaba. Quedaba desfigurado. Un poderoso mandoble en el torso que lo lanzaba por los aires para caer a muchos pies de distancia, impactando con tal fiereza que su cuerpo al detenerse había quedado reducido a un amasijo de sombras. Daikuku se mantenía a la espera. El lugarteniente levantándose como pudo sobre sus brazos, maldecía al pequeño con tantas injurias como sabía. Daikuku desapareció un instante para personarse de nuevo ante la criatura. Buri Buri estiró la mano para estrangular al pequeño, pero sin tiempo para más, Daikuku levantó el puño y descargó sobre la cabeza del general reduciéndola a añicos. Tan fuerte fue el golpe, que el dominio entero se estremeció. El puño de Daikuku había abierto una grieta en el suelo, la fisura crecía propagándose sobre toda la sala. Buri Buri se agitaba deshaciéndose en humo. El dominio se estaba desmoronando, cayendo en cientos de pedazos que desaparecían junto al general.</p>
+    <p class="lector-p dialogo">— ¡Esto no acabar, niño! ¡Nosotros ver, yo matar tú! –dijo balbuceando Buri Buri antes de desvanecerse.</p>
+    <p class="lector-p">La sala de las ausencias desapareció por completo dejando a los seis sobre el suelo de un amplio prado rodeado de montañas en lontananza, con algunas villas alrededor. Daikuku caminaba de vuelta hacia el grupo. Dimitri se incorporaba con la ayuda de Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Cómo has hecho eso? –preguntó Charles boquiabierto–. Dijiste que ese brebaje acabaría con esa criatura si lo tomaba.</p>
+    <p class="lector-p dialogo">— Dije que las lágrimas acabarían con aquel de corazón corrupto que las tomase –explicaba mientras el fulgor desaparecía de su piel–, pero no dije cuales serían los efectos que produciría sobre un guerrero de corazón puro. Durante unos instantes mi cuerpo ha albergado el ímpetu del último de los leones dorados. Usé esa artimaña para conseguir tomar el brebaje, no lo habría podido hacer de otro modo. Supe que al decirle que moriría si lo tomaba, me haría beberla. No sabía cuánto tiempo ni cuánto poder era el que concedían, pero fue la única solución, y afortunadamente ha salido bien. Ahora estamos a salvo –concluyó el pequeño volviendo a la normalidad.</p>
+    <p class="lector-p dialogo">— ¿Sabes una cosa, Daikuku? Cuando vuelvas a ver a ese chamán de tu tribu, tienes que decirle que te de algo para nosotros. Te estás llevando tú toda la gloria –dijo Charles contento. Dimitri miró fijamente al pequeño.</p>
+    <p class="lector-p dialogo">— ¡¡Lo que tienes que hacer es no volver a…!! –Geneviève con gesto rápido tapó la boca del muchacho mirándolo represivamente.</p>
+    <p class="lector-p dialogo">— Ya lo sabe, ya lo sabemos todos, pero nos ha salvado –dijo la chica.</p>
+    <p class="lector-p">Dimitri, agitado, intentando continuar la reprimenda, quitó la mano de su amiga, pero antes de que pudiese abrir la boca, la joven se acercó y besó sus labios. Dimitri calló, perplejo, con los ojos abiertos de par en par, miraba a su compañera, no esperaba aquella reacción. Geneviève sonriendo volvió junto a los otros.</p>
+    <p class="lector-p dialogo">— Yo también quiero uno de esos –dijo Daikuku enfurruñado.</p>
+    <p class="lector-p dialogo">— Ya lo tendrás cuando seas mayor, ahora confórmate con uno de estos –dijo dándole un beso en la mejilla.</p>
+    <p class="lector-p dialogo">— ¡Mira qué bien!, ya hemos descubierto la forma de que no te quejes tanto, un beso y todo solucionado. Te advierto que soy muy bueno dándolos –añadió Charles Vincent acercándose cariñoso al muchacho.</p>
+    <p class="lector-p dialogo">— Quita, aléjate de mí. No más besos. Fuera, fuera –decía Dimitri huyendo del hombre.</p>
+    <p class="lector-p dialogo">— Yo habría hecho lo mismo, jovencita, un beso caya a cualquier hombre, sólo que si hubiese sido yo, creo que le habría gustado mucho menos –dijo Aurora. Geneviève se acercó a las hermanas, mientras los chicos corrían divertidos ante Charles, que intentaba besarlos.</p>
+    <p class="lector-p dialogo">— ¿Creéis que le gustó? –preguntó la joven.</p>
+    <p class="lector-p dialogo">— Yo creo que mucho. Seguro que si repites no se queja lo más mínimo –respondió Lucero a la par que su gemela asentía con la cabeza. Charles se detuvo agotado, los chicos reían. El grupo estaba unido.</p>
+    <p class="lector-p dialogo">— Bueno, ahora que todo el peligro ha pasado y estamos todos bien, debemos continuar sin perder ni un sólo instante –dijo el músico–. Este lugar no parece peligroso. Vamos, Cuco Rojo, ¿conoces el camino hacia el séptimo elegido?</p>
+    <p class="lector-p dialogo">— Cucu –respondió asintiendo con sus ruidos. El pájaro, posado sobre el hombro de Aurora echó a volar guiando a los elegidos.</p>
+    <p class="lector-p dialogo">— Bueno… Bien está lo que bien acaba, ¿no? –dijo Aurora–. Pero esto parece haber acabado mejor de lo que esperábamos, ¿no crees, Dimitri?</p>
+    <p class="lector-p dialogo">— Ha acabado bien, sí, pero mejor será que ninguno de nosotros vuelva a hacer ninguna locura que nos ponga en peligro, y no quiero mirar a nadie –respondió con sequedad. Al verlo así, los cinco rieron.</p>
+    <p class="lector-p">El grupo caminaba por un prado de verde fresco, florecido de amapolas rojas. Los árboles se erguían por doquier, dejando entrever la silueta de las montañas. Todo estaba en silencio, solamente se oía la suave brisa que mecía los pastos y el pulular de los insectos. Varias villas se alzaban por todo el valle, la más grande, muy lejos, con una iglesia medieval y un arco a la entrada, las casas todas de piedra. Otra más menuda, hacia el frente, con casas de madera y algo más moderna en el tiempo, se ocultaba entre los grandes árboles que daban paso al bosque. El cuco volaba en dirección a la aldea de madera, hacia el que sin duda era el lugar donde encontrarían al último elegido. Avanzaban sobre un ancho sendero de tierra, llegando a un cruce de caminos, todas las casas y villas del lugar se unían en aquel punto.</p>
+    <p class="lector-p dialogo">— Me pregunto qué camino seguiremos. Parece que hay muchos lugares donde ir –dijo Aurora.</p>
+    <p class="lector-p dialogo">— Yo diría que nosotros nos dirigimos hacia ese bosque –respondió Geneviève–. Con fortuna, no tardaremos mucho en encontrar al siguiente de nosotros.</p>
+    <p class="lector-p dialogo">— ¿Es aquél el Bosque de los Susurros, Cuco Rojo? –preguntó Daikuku señalando hacia la espesura. El pájaro metálico asintió–. ¡Habéis visto, estamos a punto de encontrar al último elegido! –exclamó el pequeño lleno de alegría.</p>
+    <p class="lector-p dialogo">— Yo también me alegro mucho, Daikuku, pensé que tendríamos que andar mucho más antes de dar con él –dijo Charles.</p>
+    <p class="lector-p dialogo">— Debemos ser cautos y estar muy atentos –dijo Dimitri–, pueden atacarnos en cualquier momento. Ahora no tenemos nada con que defendernos. Ya hemos empleado el último obsequio del brujo. Un ataque acabaría con nosotros.</p>
+    <p class="lector-p dialogo">— ¿Ya no te queda nada para acabar con esos monstruos si nos volviesen a atacar? –preguntó Lucero. Daikuku negó con la cabeza.</p>
+    <p class="lector-p dialogo">— ¡Vaya! ¿Y qué podremos hacer si aparece una bestia de ésas, de aquí a que encontremos al último elegido? –preguntó Aurora.</p>
+    <p class="lector-p dialogo">— Pues lo mejor que podemos hacer, es rezar a quien se quiera para no encontrarnos con ningún esbirro de Moor en adelante. El Cuco Rojo sabrá guiarnos en nuestro camino –respondió Charles Vincent.</p>
+    <p class="lector-p dialogo">— Entonces no debemos preocuparnos de nada, Dimitri –dijo el pequeño cogiendo la mano de su amigo–. Nadie nos atacará si el Cuco Rojo está con nosotros, no te preocupes, él se anticipa al futuro.</p>
+    <p class="lector-p">Los seis caminaban tranquilos, confiando en la habilidad de su guía, avanzando por el camino que se dirigía hacia la aldea. A lo lejos podía verse a gente haciendo sus tareas. Las casas eran cuadradas, con un pequeño porche a la entrada, recordaban a las casetas de Norteamérica, habituales en las zonas frías. En cambio, la agradable temperatura y los pastos amarillos entre los grandes olmos, eran propios del verano.</p>
+    <p class="lector-p dialogo">— ¡Mirad, hay gente! Seguro que hasta este lugar no ha llegado Moor, estando tan cerca el Bosque de los Susurros no habrá tenido valor de acercarse –observó Geneviève.</p>
+    <p class="lector-p dialogo">— ¿Y por qué no se habrá acercado? Si supiese que ahí dentro está el último elegido no habría dudado en darle caza –dijo Lucero.</p>
+    <p class="lector-p dialogo">— Imagino que si lo supiese ya habría hecho algo, estoy segura. Pero es más que posible que no lo sepa. Además, todos estamos custodiados por criaturas muy poderosas, el Lobo Ciego guardaba de Dimitri, Oren de Charles, el Saetón y la Garuda de vosotras, y el Caminante Nocturno vigila al último elegido. Moor mantiene las distancias con las criaturas que manejan grandes fuerzas en este mundo. Por eso no se habrá acercado hasta estos dominios. Aunque no deberíamos ser tan confiados, uno de sus generales se atrevió a entrar en las tierras de Tanuk ik –concluyó Geneviève.</p>
+    <p class="lector-p dialogo">— Moor debe estar desesperado por evitar que despertemos al último de nosotros. Insisto en que estemos alerta aunque el cuco nos indique el camino –advirtió Dimitri.</p>
+    <p class="lector-p dialogo">— Puede que tengas razón. Será mejor que andemos con ojo, podrían engañarnos e incluso podrían engañar al Cuco Rojo –dijo Lucero.</p>
+    <p class="lector-p dialogo">— Eso no es posible, el cuco nunca se equivoca. Recuerda lo que dijo Buri Buri, no lo engañó, sólo nos descubrió por el espejo y la casualidad quiso que apareciéramos ante él. El Cuco Rojo sabía bien el camino –dijo Daikuku defendiendo al pájaro. El autómata asentía.</p>
+    <p class="lector-p dialogo">— Tienes razón, amigo, pero debemos estar prevenidos y andar con cautela. No me gustaría que apareciese alguien inesperado –dijo Charles.</p>
+    <p class="lector-p dialogo">— Digan lo que digan, he llegado a la conclusión de que lo mejor es seguir adelante, prevenidos o no. Esperemos a ver qué sucede, y recemos porque nuestros poderes nos ayuden si es necesario –sentenció Aurora.</p>
+    <p class="lector-p dialogo">— Es lo más sensato que ha dicho ninguno. Dejemos de lado ya esta conversación –agregó Geneviève.</p>
+    <p class="lector-p dialogo">— Por cierto, cuando enumeró a las criaturas que custodian a los elegidos, olvidó decir la que guarda de Daikuku y de usted –dijo Aurora.</p>
+    <p class="lector-p dialogo">— La verdad es que no lo sabemos. Ambos llegamos conscientes a este paralelo al utilizar las máscaras, así que desconocemos quiénes son los guardianes que debían velar nuestro sueño –respondió la joven.</p>
+    <p class="lector-p dialogo">— Ya estamos acercándonos al pueblo, espero que no intenten que nos quedemos para siempre –dijo Dimitri burlón.</p>
+    <p class="lector-p dialogo">— No creo que pase nada en este dominio –dijo Charles.</p>
+    <p class="lector-p dialogo">— ¿Qué te hace pensar eso, Charles? –preguntó el pequeño.</p>
+    <p class="lector-p dialogo">— No hay nada en su mismo lugar, el bosque era diferente, las casas son de diferente color, la forma, todo está cambiado, pero hay algo que me resulta extrañamente familiar.</p>
+    <p class="lector-p dialogo">— ¿Qué quieres decir con familiar? –preguntó Lucero–. Acabas de decir que esto no se parece nada a lo que quiera que deba parecerse.</p>
+    <p class="lector-p dialogo">— No me hagas mucho caso, mi memoria no es la que era, pero por un momento todo esto me ha recordado a mi juventud, cuando aún vivía mi mujer y mi hija era una niña.</p>
+    <p class="lector-p dialogo">— Pero tú dijiste que vivías en una ciudad –apuntó Daikuku.</p>
+    <p class="lector-p dialogo">— Es cierto, siempre he vivido en la ciudad, pero todos los veranos subíamos al norte, a un pequeño pueblo rodeado de árboles, en plena naturaleza, donde pasábamos las vacaciones con mi hija.</p>
+    <p class="lector-p dialogo">— Debieron ser años muy bonitos para ti, Charles –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Sí, así lo fueron –respondió el músico con aire melancólico–. Mirad, ya hemos llegado a la aldea.</p>
+    <p class="lector-p">Un grupo de niños que jugaba a la pelota se detuvo para inspeccionar a los extraños. “Hola”, saludaron los pequeños, y del mismo modo lo hicieron los elegidos. Varias personas se cruzaron en su camino, realizaban sus tareas diarias saludando al verlos pasar. “Buenos días”, dijo una mujer que pasaba junto a ellos, “buenos días” contestaron de nuevo.</p>
+    <p class="lector-p dialogo">— ¿Te sigue resultando familiar? –preguntó Aurora.</p>
+    <p class="lector-p dialogo">— Sí y no. A medida que avanzamos lo conozco menos, pero sigue recordándome muchísimo a ese lugar que os he dicho. Es una sensación… no sé, será cosa de la edad y del olvido.</p>
+    <p class="lector-p">El robot escarlata avanzaba por el camino principal que cruzaba la aldea hacia el bosque. Las casas seguían pasando y con ellas las gentes. “Buenos días, buenos días” “hola, hola”, todos muy cordiales.</p>
+    <p class="lector-p dialogo">— ¡Caramba! Qué alegría verte por aquí –dijo un hombre que acicalaba unas macetas sentado sobre los escalones del porche.</p>
+    <p class="lector-p">Los seis se giraron buscando a quién se dirigía aquel hombre. No había nadie, aquel señor le hablaba a uno de ellos.</p>
+    <p class="lector-p dialogo">— Creo que se ha referido a nosotros. No hay nadie más por aquí, y si lo hubiese ya habría contestado –dijo Daikuku.</p>
+    <p class="lector-p dialogo">— Pues yo creo que te ha saludado a ti, Charles. Si tan familiar te resulta este sitio, es posible que alguien te conozca –añadió Geneviève.</p>
+    <p class="lector-p dialogo">— Eso es imposible, esto es un sueño, nadie puede acordarse de mí en un sueño, además, yo no conozco a ese hombre.</p>
+    <p class="lector-p dialogo">— Claro que pueden acordarse de ti, ¿acaso no recuerdas a las muchas personas que has conocido mientras sueñas? Hablas y te relacionas con ellas como si fuesen reales –dijo Aurora.</p>
+    <p class="lector-p dialogo">— Tú lo has dicho, este sitio te resulta familiar. Es posible que alguien que te conoció antaño, esté soñando y dando forma a este lugar junto a otras personas, no es tan difícil –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— Bueno, sea como sea, sigamos caminando, será mejor que salgamos de aquí cuanto antes –repuso el músico algo confuso.</p>
+    <p class="lector-p">Caminaban siguiendo al Cuco Rojo. Ya habían atravesado más de la mitad de la pequeña aldea que formaban aquellas casas.</p>
+    <p class="lector-p dialogo">— Ya queda menos para llegar. Cuando hayamos cruzado la aldea al completo, sólo tendremos que andar un poco más para adentrarnos en el Bosque de los Susurros. Estoy muy emocionado –apuntó Daikuku.</p>
+    <p class="lector-p dialogo">— Yo también tengo ganas de conocer al último de nosotros –dijo Lucero–, ¿qué creéis que será, chico o chica?</p>
+    <p class="lector-p dialogo">— ¿Quién sabe? –respondió Geneviève.</p>
+    <p class="lector-p">Habían pasado casi todo el pueblo. Charles Vincent quedó rezagado, cerraba el grupo, a unos pasos de Daikuku. Caminaba pensativo, aquel lugar y aquellas gentes, tan desconocidas y tan familiares a la vez. Llegando al final de la aldea, a un par de casas para salir, Charles se acercó con curiosidad a un pequeño felpudo de color marrón, en él ponía, “Bienvenido a casa”. Lo miraba extrañado. El grupo seguía caminando sin percatarse, pero el hombre permanecía inmóvil, eclipsado por la curiosidad. Casi sin quererlo, entre el felpudo y el primer escalón de la casa, descubrió una llave de bronce oxidado de la que colgaba un corazón de cristal, la cogió entre sus manos y la observó detenidamente. Daikuku echando en falta a su amigo, se volvió, lo miraba en la distancia, observando lo que hacía.</p>
+    <p class="lector-p dialogo">— ¿Has encontrado algo, Charles? –los cinco se detuvieron. El pájaro se posaba sobre Dimitri.</p>
+    <p class="lector-p dialogo">— No, nada, tan sólo es una llave, no tiene ninguna importancia.</p>
+    <p class="lector-p dialogo">— ¿Entonces podemos seguir? Ya casi hemos salido.</p>
+    <p class="lector-p dialogo">— Sí, por supuesto. Continuemos –respondió con semblante turbado.</p>
+    <p class="lector-p dialogo">— ¡Vaya, Charles!, has encontrado la llave que perdió Carla esta mañana –dijo una voz femenina, impidiendo que el hombre continuase andando.</p>
+    <p class="lector-p">Al escuchar aquella voz, Charles Vincent palideció sorprendido. Los demás miraban intrigados quién podía ser aquella mujer. El músico se giró despacio, respirando profundamente.</p>
+    <p class="lector-p dialogo">— ¿Te encuentras bien, Charles? –preguntó preocupada la mujer.</p>
+    <p class="lector-p">Charles Vincent temblaba, estaba frente a aquella señora. Una dama de pelo negro y de belleza peculiar. Era la mujer que años atrás había sido su esposa y madre de su hija, antes de que el cáncer se la arrebatara.</p>
+    <p class="lector-p dialogo">— Mo, Mo… Moira –tartamudeó con los ojos repletos de lágrimas. La mujer sonrió extrañada. Charles cayó al suelo de rodillas, llevado por la emoción.</p>
+    <p class="lector-p dialogo">— Pero bueno, Charles. ¿Qué te ocurre?, ni que hayas visto un fantasma –preguntó Moira preocupada, arrodillándose y abrazando a su esposo.</p>
+    <p class="lector-p dialogo">— ¿Quién es esa mujer? –preguntó Lucero.</p>
+    <p class="lector-p dialogo">— Creo que es su esposa –respondió Geneviève atónita.</p>
+    <p class="lector-p dialogo">— Si es su esposa puede que Charles quiera quedarse con ella para siempre –dijo Daikuku–. ¿Y si decide abandonarnos?</p>
+    <p class="lector-p dialogo">— No, no lo hará, sólo es un recuerdo de alguien que la sueña. Ella no es real, es un sueño –sentenció Dimitri.</p>
+    <p class="lector-p dialogo">— Creo que será bueno para él estar junto a su esposa, aunque solamente se trate de un sueño. Dejémosles unos minutos antes de interrumpirlos –dijo Aurora.</p>
+    <p class="lector-p">Charles Vincent miraba embobado el rostro de su mujer. No podía dejar de llorar, incapaz de articular palabra entre sus labios. Únicamente balbuceaba el nombre de su esposa, con una media sonrisa titubeante.</p>
+    <p class="lector-p dialogo">— Charles, vamos, tranquilízate. No pasa nada, sólo ha sido un susto. No debí acercarme por detrás –decía la mujer intentando calmar a su esposo.</p>
+    <p class="lector-p">El hombre fue recuperando el color. Tomó el rostro de su mujer entre sus manos y la miró fijamente.</p>
+    <p class="lector-p dialogo">— No has envejecido nada, amor mío, sigues tal cual te recordaba –dijo el músico sonriendo de oreja a oreja.</p>
+    <p class="lector-p dialogo">— ¡¿Qué dices, tonto?! Pues claro que estoy igual, todavía no soy ninguna vieja, ni siquiera tengo arrugas –respondió Moira sonriente.</p>
+    <p class="lector-p dialogo">— ¿Es qué no me ves? Yo soy más viejo de lo que tú recuerdas, mírame.</p>
+    <p class="lector-p dialogo">— Desde luego, Charles, el susto te ha afectado. No estás más viejo, quizás tengas alguna cana más que ayer, pero nada más. ¡Anda!, levántate del suelo –dijo estirando de su marido para incorporarlo.</p>
+    <p class="lector-p dialogo">— Mamá, mamá, ¿dónde estás? –preguntó la voz de una muchacha desde el interior de la casa.</p>
+    <p class="lector-p dialogo">— Estoy fuera, Carla, con tu padre, que ha vuelto antes de tiempo –respondió la mujer.</p>
+    <p class="lector-p dialogo">— ¡Hola, papá! –dijo la joven asomándose–. ¿Qué haces aquí tan pronto? Dijiste que volverías a la hora de comer de tu paseo –Charles al ver a su hija tan joven, casi una niña, no pudo evitar romper a llorar–. ¡Eh! ¿Papá, por qué lloras? –preguntó la niña bajando los escalones–. ¿Qué ha pasado, mamá? –Carla se acercó y abrazó fuertemente a su padre, que se fundió con su hija en fuerte y sentido apretón.</p>
+    <p class="lector-p">Charles estiró el brazo y agarró a su mujer, quedando sujeto a las dos mujeres que más quería. Aquel momento se congeló en el tiempo, Charles volvió en aquel instante veinticinco años atrás, cuando su vida era diferente y feliz. Su rostro y cuerpo cambiaban, estaba rejuveneciendo, la imagen de viejo decrépito se desvanecía para dar forma a un hombre de apenas cuarenta años, joven y apuesto.</p>
+    <p class="lector-p dialogo">— Os he echado mucho de menos, no podéis imaginar cuánto, pensaba que jamás volvería a veros –dijo emocionado.</p>
+    <p class="lector-p dialogo">— Pero qué cosas dices, Charles, nos viste ayer, nos has visto esta mañana, nos verás esta tarde, nos verás mañana, pasado mañana y así será siempre. No podrás escapar de nosotras –dijo Moira sonriendo.</p>
+    <p class="lector-p dialogo">— Claro, así ha de ser –añadió el músico con una media sonrisa.</p>
+    <p class="lector-p dialogo">— ¡Qué bien, papá! Has encontrado mi llave –exclamó Carla tratando de desviar la conversación–. Ya creí que no la volvería a ver, ¿dónde estaba?</p>
+    <p class="lector-p dialogo">— Ahí, entre el felpudo y el primer escalón –respondió el padre.</p>
+    <p class="lector-p dialogo">— Lleva varios días buscando la dichosa llave, desde que se la regalaste al cumplir los seis años, no se ha separado de ella ni un sólo momento. Tiene la casa revuelta de tanto buscar, menos mal que la has encontrado, si no llega a ser por ti desmonta el pueblo entero –dijo Moira.</p>
+    <p class="lector-p dialogo">— Eres una exagerada, mamá –replicó Carla riendo–. He dejado la casa igual que estaba, no se nota en absoluto que lo he revolucionado todo buscando mi llave.</p>
+    <p class="lector-p dialogo">— ¿Y qué estabais haciendo ahora? –preguntó Charles Vincent.</p>
+    <p class="lector-p dialogo">— Tu hija andaba buscando la llave, mientras yo estaba preparando la comida. Pensé que te habías ido a pasear al lago, no te esperábamos hasta la hora de comer, y al mirar por la ventana te vi agachado en el escalón, salí a ver qué te sucedía.</p>
+    <p class="lector-p dialogo">— Mamá, creo que se está quemando el puchero –dijo Carla oliendo el aire mientras reía.</p>
+    <p class="lector-p dialogo">— Gracias, hija mía –respondió Moira irónicamente–, pero deberías ser tú la que vigilase la cocina en mi ausencia –contestó mientras subía los escalones y entraba en la casa.</p>
+    <p class="lector-p dialogo">— No sabes lo feliz que me haces, papá, gracias por encontrar mi llave, creí que la había perdido. ¿Y tú qué, sigues tu paseo o entras en casa?</p>
+    <p class="lector-p dialogo">— Entro en casa –Carla lo cogió de la mano y ambos subieron los escalones. Dimitri que estaba junto al grupo, corrió hasta la entrada de la casa.</p>
+    <p class="lector-p dialogo">— ¡Charles Vincent! –exclamó antes de que cruzasen la puerta. Charles se volvió–. Debemos continuar nuestro camino, Charles. Recuerda donde estamos.</p>
+    <p class="lector-p dialogo">— Lo sé, Dimitri, pero esto es demasiado bonito.</p>
+    <p class="lector-p dialogo">— Bueno, papá, te dejo que hables con tu amigo, te espero dentro ayudando a mamá –dijo su hija desapareciendo tras la puerta.</p>
+    <p class="lector-p dialogo">— Claro, entra –Charles seguía a su hija con la mirada.</p>
+    <p class="lector-p dialogo">— ¡¡Charles Vincent!! –exclamó de nuevo Dimitri al ver que el músico daba un paso para entrar a la casa–. Siento que todo sea así, pero esto no es real, es sólo un sueño, no te puedes quedar. Tu lugar está junto a nosotros.</p>
+    <p class="lector-p dialogo">— Gracias, Dimitri. Lo sé, pero no quería creerlo. Déjame que me despida al menos antes de continuar, tan sólo será un instante –concluyó el hombre entrando en la casa.</p>
+    <p class="lector-p dialogo">— Moira –dijo con gesto apenado.</p>
+    <p class="lector-p dialogo">— Dime, Charles.</p>
+    <p class="lector-p dialogo">— Me tengo que marchar, mis amigos me están esperando.</p>
+    <p class="lector-p dialogo">— Claro, Charles, sal y diviértete un rato. No hay nada que hacer en casa, y de la comida me ocupo yo. Eso sí, a la hora de comer te quiero aquí, ya sabes que no me gusta que tardes.</p>
+    <p class="lector-p dialogo">— Por supuesto, a la hora de comer –contestó con una sonrisa triste, abrazando a su esposa.</p>
+    <p class="lector-p dialogo">— Te quiero, Moira.</p>
+    <p class="lector-p dialogo">— Yo también te quiero, Charles.</p>
+    <p class="lector-p dialogo">— Carla, ven un momento.</p>
+    <p class="lector-p dialogo">— Sí, papá –contestó acercándose a su padre.</p>
+    <p class="lector-p dialogo">— Dame un abrazo –dijo abrazando fuertemente a la pequeña–. Te quiero –le dio un beso en la frente.</p>
+    <p class="lector-p dialogo">— Yo también –dijo abrazándolo con más fuerza.</p>
+    <p class="lector-p dialogo">— Bueno, es momento de que me vaya –decía Charles conteniendo las lágrimas–. Estaré de vuelta a la hora de la comida. Hasta pronto –dijo afligido, saliendo de la casa.</p>
+    <p class="lector-p dialogo">— Hasta luego, papá.</p>
+    <p class="lector-p dialogo">— Hasta luego, Charles.</p>
+    <p class="lector-p">El músico cerró la puerta tras de sí, respiró profundamente, el llanto recorría sus mejillas. Bajó las escaleras, Dimitri lo esperaba.</p>
+    <p class="lector-p dialogo">— Lo siento, Charles, siento que haya tenido que ser así, pero no tenemos tiempo para más.</p>
+    <p class="lector-p dialogo">— Tranquilo, amigo mío, no te preocupes. Sé que debemos continuar más allá de nuestra propia voluntad –contestó desconsoladamente.</p>
+    <p class="lector-p">Los dos caminaban hacia el grupo que los esperaba fuera de la aldea. A medida que la tristeza embargaba el corazón de Charles, su aspecto volvía a ser el de antes. Nadie dijo nada.</p>
+  </div>
+  <div class="cap-paso">
+    <a href="https://hunicornia.es/7-mascaras/la-ira/">← 14. La ira</a>
+    <a class="der" href="https://hunicornia.es/7-mascaras/el-bosque/">16. El bosque →</a>
+  </div>
+</main>
+<script src="/lector-progreso.js" defer></script>
+<script>
+(function() {
+  var btn   = document.getElementById("btnIndice");
+  var panel = document.getElementById("indicePanel");
+  var fill  = document.getElementById("progFill");
+
+  if (btn && panel) {
+    // Enlaces internos: el capitulo activo se calcula por scroll.
+    // Enlaces a otra pagina (7 mascaras): ya viene marcado desde el archivo.
+    var anclas = Array.prototype.slice.call(panel.querySelectorAll("a[href^='#']"));
+
+    function marcar() {
+      var activo = null;
+      if (anclas.length) {
+        var limite = window.innerHeight * 0.4;
+        anclas.forEach(function(a) {
+          var destino = document.getElementById(a.getAttribute("href").slice(1));
+          if (destino && destino.getBoundingClientRect().top <= limite) activo = a;
+        });
+        if (!activo) activo = anclas[0];
+        anclas.forEach(function(a) { a.removeAttribute("aria-current"); });
+        activo.setAttribute("aria-current", "true");
+      } else {
+        activo = panel.querySelector("[aria-current]");
+      }
+      // Si la lista no cabe, se acerca el capitulo activo a la vista.
+      if (activo && panel.scrollHeight > panel.clientHeight) {
+        activo.scrollIntoView({ block: "nearest" });
+      }
+    }
+
+    btn.addEventListener("click", function() {
+      var abierto = panel.classList.toggle("abierto");
+      btn.setAttribute("aria-expanded", abierto ? "true" : "false");
+      btn.textContent = abierto ? "Cerrar" : "Índice";
+      if (abierto) marcar();
+    });
+
+    panel.querySelectorAll("a").forEach(function(a) {
+      a.addEventListener("click", function() {
+        panel.classList.remove("abierto");
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Índice";
+      });
+    });
+  }
+
+  if (fill) {
+    window.addEventListener("scroll", function() {
+      var d = document.documentElement;
+      var pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+      fill.style.width = Math.min(pct || 0, 100) + "%";
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>

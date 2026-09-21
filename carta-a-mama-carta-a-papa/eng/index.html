@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Letter to Mum, a Letter to Dad — Hunicornia">
+  <meta name="author" content="Hunicornia">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <link rel="canonical" href="https://hunicornia.es/carta-a-mama-carta-a-papa/en/">
+  <link rel="alternate" hreflang="es-ES" href="https://hunicornia.es/carta-a-mama-carta-a-papa/">
+  <link rel="alternate" hreflang="ca-ES" href="https://hunicornia.es/carta-a-mama-carta-a-papa/val/">
+  <link rel="alternate" hreflang="en" href="https://hunicornia.es/carta-a-mama-carta-a-papa/en/">
+  <link rel="alternate" hreflang="x-default" href="https://hunicornia.es/carta-a-mama-carta-a-papa/">
+  <title>A Letter to Mum, a Letter to Dad — Hunicornia</title>
+  <style>
+    @font-face { font-family: "Chopin"; src: url("/ChopinLight.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #643587; --secondary: #8b3689; --nav-h: 58px; }
+    html, body { width: 100%; background: #fff; color: var(--primary); font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { padding-top: var(--nav-h); }
+    .lector-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(100,53,135,0.15); z-index: 200; backdrop-filter: blur(8px); }
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: var(--nav-h); }
+    .nav-volver { font-family: system-ui, Arial, sans-serif; font-size: 12px; color: var(--secondary); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-volver:hover { opacity: 0.7; }
+    .nav-titulo { font-family: "Chopin", serif; font-size: 18px; font-weight: 300; letter-spacing: 0.05em; color: var(--primary); }
+    .progreso-barra { height: 2px; background: rgba(100,53,135,0.1); }
+    .progreso-fill { height: 100%; width: 0%; background: var(--primary); transition: width 0.1s linear; }
+    .lector-contenido { max-width: 680px; margin: 0 auto; padding: 56px 24px 120px; }
+    .obra-titulo-h { font-family: "Chopin", serif; font-size: clamp(30px, 5vw, 58px); font-weight: 300; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--primary); line-height: 1.15; }
+    .obra-subtitulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--secondary); margin: 0 0 60px; opacity: 0.75; }
+    .lector-p { font-size: clamp(15px, 1.7vw, 17px); line-height: 1.95; margin: 0 0 0.9em; color: var(--primary); text-align: justify; hyphens: auto; }
+    .lector-p.dialogo { }
+    .sep-omega { text-align: center; color: var(--secondary); opacity: 0.3; font-size: 13px; margin: 36px 0; letter-spacing: 0.4em; }
+    .nota-traductor { font-size: 13px; line-height: 1.8; color: var(--secondary); border-left: 2px solid rgba(139,54,137,0.25); padding: 0 0 0 18px; margin: 0 0 56px; opacity: 0.92; }
+    .cta-final { text-align: center; margin-top: 64px; display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+    .cta-final a { display: inline-block; padding: 0.8em 1.5em; background: rgba(139,54,137,0.12); color: var(--primary); border-radius: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .cta-final a:hover { opacity: 0.7; }
+    .nota-final { font-size: 11px; color: var(--secondary); text-align: center; margin-top: 32px; opacity: 0.6; }
+    @media (max-width: 600px) {
+      :root { --nav-h: 52px; }
+      .lector-contenido { padding: 36px 16px 80px; }
+      .nav-bar { padding: 0 16px; }
+      
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html, body { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body data-obra="A Letter to Mum, a Letter to Dad">
+
+<nav class="lector-nav" aria-label="Navigation">
+  <div class="nav-bar">
+    <a class="nav-volver" href="/">← Back</a>
+    <span class="nav-titulo">A Letter to Mum, a Letter to Dad</span>
+  </div>
+  <div class="progreso-barra"><div class="progreso-fill" id="progFill"></div></div>
+</nav>
+
+<main class="lector-contenido" data-lectura>
+  <h1 class="obra-titulo-h">A Letter to Mum, a Letter to Dad</h1>
+  <p class="obra-subtitulo">A short story · 14,937 words · English</p>
+
+  <p class="nota-traductor">A note on this edition. This story was written in Spanish. The glosses in brackets are the translator’s, not the author’s: the original carries almost none, and a few words have been added only where an English reader would otherwise be left outside: a Holy Week term, a phrase in Valencian. The songs quoted in the text are left untranslated on purpose. They are coplas and flamenco, and in English they are meant to sound like what they are: someone else’s music, in someone else’s language.</p>
+
+    <p class="lector-p">It wasn’t that Éloïse and I were religious, non-denominational rather, but given our weakness for any social occasion that transgressed the logos, we felt that magic which envelops Holy Week.</p>
+    <p class="lector-p">Among all those pasos (the processional floats), among that rolling of drums, only one small figure, rough-looking, sober in its detail, misshapen, slight, representing Christ on the cross, with a certain melancholy air, inevitably caught our attention.</p>
+    <p class="lector-p">For some unknown reason it was able to draw a great crowd, whatever their social standing. A throng of people who, without knowing it, travelled back in time in the company of the carving, all the way to that black Spain of old which today is in its death throes.</p>
+    <p class="lector-p">Silence, barefoot treading, a smell of frankincense and lavender amalgamated with sweat, the tolling of the bell. The whisper of the capataz (the foreman calling the bearers). Saetas (the sung laments) in broken voices, born of the deepest grief.</p>
+    <p class="lector-p">A heartfelt respect and an immoderate exercise of faith that overwhelmed even the most secular, atheist or agnostic. Unheard of, that in so funereal an act as the crucifixion of a god one should feel so much wellbeing. The truth is that there is so much positivity in the air, and the crowd depositing its hopes is so overwhelming, that it makes you want to embrace Christianity without reading the small print.</p>
+    <p class="lector-p">In all those years, sitting out in the street to watch the Christ of Zalamea go by was nothing more than an anecdote in our everyday lives. But from the day of the accident, faith seemed to break, leaving that Christian icon aside. That one was like any other Holy Wednesday, only it had no value. Now every Wednesday, the day on which it all happened, sorrows are set down on a letter.</p>
+    <div class="sep-omega">Ω</div>
+    <p class="lector-p">Unfortunately that day would not come, the day in which I, selfish, longed to find myself. Possibly it was for my own wellbeing that I needed things to change, but what I needed was to see the woman I loved so much smile again.</p>
+    <p class="lector-p">My life needed warmth, and her light was as icy as it was grey. I don’t know, and I don’t think I ever will know, the reason for that fateful misfortune that took the lives of her parents and, in part, her own. How much wrong can a person do, whether in this life or in earlier ones, for destiny to harry them so harrowingly. What is it we are meant to learn? Why agree to die in order to raise up our spirit? Is it so hard to grant ourselves forgiveness and the virtue of learning without having to give something up in exchange?</p>
+    <p class="lector-p">I lost my father when he was fifty-eight. He had already had several heart attacks, and although his death caught me by surprise, I think I accepted his going in exchange for his no longer suffering that terrible paralysis. I felt uprooted, as if a part of me were disappearing. All at once I was no longer the boy I had always been; in that moment the end of a chapter was written into my memory, and even so, I still had my mother. But I don’t think I can set that alongside the sudden death of both parents, elderly, yes, but with a great deal of life ahead of them. Identifying the bodies, wrecked by a head-on collision with another vehicle whose driver was drunk; his only punishment was losing his licence and two years in prison.</p>
+    <p class="lector-p">Éloïse didn’t only lose her parents; I also know that they, wherever they are, are sorry for this situation. I can’t begin to imagine how hard it is, but I sense that it is very hard, too hard, hard enough that I can’t help crying every time I see her sitting at the desk writing that letter that repeats itself over and over.</p>
+    <p class="lector-p">I haven’t read those lines that travel with no destination; I don’t know whether the same ones repeat week after week or whether each one tells something different. I have never asked, though I don’t think she would let me read them. I don’t know whether writing them does her any good, but I don’t think they do any harm either.</p>
+    <p class="lector-p">Every Wednesday she seals the envelope, leaving the mark of her lips on the paper, and with no sender and no address she drops it into a postbox. She sets the stamp on the envelope, and on it you can read “a letter to mum, a letter to dad”.</p>
+    <p class="lector-p">Let’s say the rest of the days of the week pass with a certain normality. But on the day there’s a letter, almost out of habit now, I keep watch over her. She comes home from work, we eat, she sits down to write and goes out into the street, posts the envelope and walks for a few hours, with no direction. She comes home, goes to bed, and we call the day done.</p>
+    <p class="lector-p">Other times she waits until night to compose the missive; past twelve she goes out, whether it rains or blows or freezes, walks along the seafront, goes down to the water’s edge and lays on the waves the letter that little by little is lost in the darkness of the sea. When she can no longer see it she turns back and wanders for a long while, untroubled by my following her a few metres behind.</p>
+    <p class="lector-p">It may look like something else; I simply worry about her. I suppose that, even if she doesn’t like it, she understands that I walk at her side as we used to. On our walks we barely speak, or rather, I do the talking. She just nods with a fond expression, takes my hand until she is cloistered in her thoughts again, and without our noticing, we walk apart.</p>
+    <p class="lector-p">That March night we walked further than usual. There seemed to have been a party on the beach, and the dregs of what had been a crowd were still there. Among the people she looked like one more of them, but her lost gaze set her apart from the rest.</p>
+    <p class="lector-p">A group of stragglers was still on the sand, carrying on the party among the bottles. Éloïse stopped and watched. I suppose that seeing those drunken boys brought to her mind the man to blame for her parents’ accident. It wasn’t the first time she had seen something like that, but a strange brightness flared in her eyes. She ran in among the lads, furious, kicking and shouting, tearing the bottles out of their hands and hurling them away. I ran after her and wrapped my arms around her, holding her still. The lads were shouting back at her, taken aback.</p>
+    <p class="lector-p dialogo">― Please, forgive her! She’s my wife, she doesn’t know what she’s doing -a couple of them were getting up, after a scrap-. Don’t be angry, I’ll pay for your drinks -I gave them everything I had in my wallet, enough to get us away from them without any greater trouble.</p>
+    <p class="lector-p">She shook me off and sat down on the sand.</p>
+    <p class="lector-p dialogo">― You can’t do that every time you come across a drunk teenager. Your parents are gone, however much you insist otherwise; the only thing that attitude will get us is both our heads kicked in -I breathed deep-. Free your heart of this weight, you have your whole life ahead of you, we have a life to enjoy together.</p>
+    <p class="lector-p">She stood up and started to walk. The path ran out, so all she could do was come back. I sat on the wall of the promenade and watched her, sometimes empty of thoughts, of feelings, other times turned into a chaos that had no idea what it was doing there. At moments like that a feeling ran through me, pushing me to give up, pushing me to live my life, to set aside that bitterness that had been going on for four years now.</p>
+    <p class="lector-p">After psychologists, psychiatrists, mediums, therapists, faith healers, who was left to turn to? After so many books, so much spirituality, holistic this and that, Buddhism, naturalism, psychomagic. Completely spent. Out of resources. What was any of it for, when all I needed in order to live my life, to be happy, was her. With just one smile from her at dawn I could face the day with the strength of an Atlas.</p>
+    <p class="lector-p">A couple of those many attempts to find a solution came back to me.</p>
+    <div class="sep-omega">Ω</div>
+    <p class="lector-p">At first we tried psychomagic; I had read something of Jodorowsky’s and his notion of re-enacting the scene. It seemed sensible enough to me after psychologists, psychiatrists, even thanatologists specialising in past-life therapy, had had her sitting on the couch. She wasn’t mad. So although she went along with it, as much to keep me happy as to resolve her own conflict, she had more than enough intelligence to stand up politely in the face of the professional’s ineffectiveness or incompetence.</p>
+    <p class="lector-p">I felt outraged by those halfwits who, rather than help her, were an invitation to reject any new route to getting better. Which closed doors on me no matter how much I dug through books and the internet.</p>
+    <p class="lector-p">Being a sales rep and out on the street every day, it wasn’t hard to find the right place. One of the opticians’ I called on was run by a married couple of a similar age to her parents, and although there was no likeness in the face, taken as a whole there was a resemblance. They were very fond of me, and I always worked them some fiddle to bring their costs down.</p>
+    <p class="lector-p">And there I was, in front of them, explaining what had happened, making them understand what it was I wanted. They agreed willingly, so long as it was a civilised conversation. It wasn’t that I had complete faith in the staging, but the previous attempts had turned out worse.</p>
+    <p class="lector-p">That afternoon I talked to her. Her face was a picture. I sense that every time I put some new solution to her, all I managed to do was push her further away from me. But the days went by and her behaviour was the same, so I dared to lose her in exchange for finding her again. Éloïse said neither yes nor no; she picked up the book and read a couple of pages.</p>
+    <p class="lector-p dialogo">― Seems fine to me -her answer.</p>
+    <p class="lector-p">On days like that one, the distances between us turned tangible. I did nothing but wait for the next day. After lunch we went to the optician’s. The door was ajar. Ferrand, for that was his name, greeted us with a smile. Éloïse was warm with them, unlike with me. Celia was inside. We went through to the back room, a small sitting room where they had set everything out. Better than I had expected. They sat on the sofa, the light dim and behind them. Their faces blurred away. She sat on a chair facing the couple. I stood apart, by the door.</p>
+    <p class="lector-p">A long instant of silence.</p>
+    <p class="lector-p dialogo">― How about you ask Éloïse how her day has been? Celia -I said, trying to get the conversation going.</p>
+    <p class="lector-p dialogo">― … And how was your day, love, much work on?</p>
+    <p class="lector-p dialogo">― Like every other day, there’s no time to rest… -silence. Ferrand spoke.</p>
+    <p class="lector-p dialogo">― And how are you? How do you feel?</p>
+    <p class="lector-p dialogo">― I don’t think I can complain, all right… not all right… a bit out of order, maybe.</p>
+    <p class="lector-p dialogo">― And what do you feel when you say the word disorder? -said the woman.</p>
+    <p class="lector-p dialogo">― Nothing… -they didn’t know what to ask next.</p>
+    <p class="lector-p dialogo">― Perhaps if you felt like writing a letter and reading it out loud… -I took out paper and a pen. She went tense. Celia, watching, gestured for me to leave the room.</p>
+    <p class="lector-p">I wasn’t expecting the suggestion, but I waited outside. She took a while before she began to speak. I could only hear the murmur of her words. She was finishing. The door opened and Éloïse came out and waited for me in the hall.</p>
+    <p class="lector-p dialogo">― What happened?</p>
+    <p class="lector-p dialogo">― She didn’t write the letter. She told us what happened. She only writes on Wednesdays, when that grief gets the better of her. She says she’s sorry about all this, that she’s grateful for your effort, but that it hasn’t worked. She thanked them and said goodbye.</p>
+    <p class="lector-p dialogo">― Well… I’m sorry to have put you out. Ferrand, Celia, thank you so much for helping me.</p>
+    <p class="lector-p dialogo">― Not at all, lad! It’s been a pleasure. The shame is we haven’t managed to take one little step forward… Look after her, she has the makings of a great woman -he said.</p>
+    <p class="lector-p dialogo">― She is one.</p>
+    <p class="lector-p dialogo">― Well, Edgard, give her time. Nothing bad lasts a hundred years.</p>
+    <p class="lector-p dialogo">― I hope not.</p>
+    <p class="lector-p dialogo">― See you another day, lad.</p>
+    <p class="lector-p dialogo">― Thanks again. See you soon.</p>
+    <p class="lector-p">We got into the car, we didn’t exchange a word. She stroked my leg, I looked at her, and her crooked smile was enough. We went home.</p>
+    <p class="lector-p">A long time passed before it occurred to me to try something again. In fact it was she herself who sometimes dug through books looking for ways of meditating or praying, anything to find her way inside.</p>
+    <p class="lector-p">Some days, waking up, if she wasn’t in the bed and the smell of myrrh was perfuming the flat, it meant she had been up since six in the morning in search of answers.</p>
+    <p class="lector-p">A long time went by, I don’t know how long. The situation had settled into normality, but her sudden changes of mood, along with the unavoidable Wednesdays, were the pillar our life rested on.</p>
+    <p class="lector-p">To avoid a tense scene when I made the suggestion, the night before I left my book on the table in the living room. She was working afternoons, having swapped shifts to do a colleague a favour, so she would be alone in the flat all morning. I had gone out by the time she woke.</p>
+    <p class="lector-p">She was having breakfast in the kitchen when she went through to the living room to put some music on. Loreena McKennitt was playing, her favourite track, Santiago. She sat on the sofa, coffee in hand, closing her eyes and letting it carry her. “Tk, tk, tk…” the CD seemed to have got stuck. She set the cup down on the book, cleaned the disc and the music played on again. Noticing what she’d done, she picked the book up to check it wasn’t stained. The title, “The Spirits’ Book”, by Allan Kardec; she left it on the table, she didn’t want to look, she knew it wasn’t there by chance. She didn’t want any part of another of my new inventions, but curiosity won. She opened it at one of the many pages marked with notes. Two more coffees went down while she skimmed the text. She left it on the table. She peeled off one of the post-its and kept it in her hand.</p>
+    <p class="lector-p">She looked at the time, it was late, far more of it had gone by than she thought. She got dressed and left. There were three bus stops and seven metro stops between her and the office. She travelled lost in herself, looking out through the window, playing with the little slip of paper between her fingers, looking at it now and then only to crumple it in her hands again.</p>
+    <p class="lector-p">I got home at four. She had read the book; the coffee cup made me suppose she had given it more time than I expected. That was a Tuesday afternoon; if she agreed, there would only be a few hours to wait until the next day. We had never before considered talking to them directly, trying to establish some communication. In fact the idea of doing a Ouija board had always circled my mind, but perhaps because of its bad name, and to avoid a negative outcome, I had set that particular game aside.</p>
+    <p class="lector-p">But the book of the spirits had made me think differently: if on dying we really do leave behind only our bodily form and return to pure essence, if we travel space with no regard for time and walk worlds that man cannot even imagine, then what was to stop me thinking that if she called her parents, they would come to attend to their daughter, this being the ideal occasion to speak about everything that had been left unsaid.</p>
+    <p class="lector-p">I spent the rest of the afternoon on housework and on catching up with my delivery notes. Things weren’t going badly, but it was getting harder by the day to meet the targets the company set. Selling certain brands of glasses, drifting from shop to shop, lets you live well, but it isn’t something that enriches your self-regard. All things considered, it didn’t stress me unduly, I had no colleagues and I saw my boss twice a month. I suppose I didn’t have many restless ambitions either, beyond music, reading and films. To be honest, apart from throwing myself out of a plane, travelling across India by train or any other piece of madness of the kind one does once in a lifetime, what I most fancied was learning to dance salsa, merengue, cha-cha-cha. I love watching people move so beautifully, conversations without words, where the body says everything, and how. I even took a couple of DVD tutorials out of the library once, but I had nobody to dance with. As soon as all this was over, though, the two of us would go out twice a week to one of those pubs with a dance floor, just to find a new way of understanding each other.</p>
+    <p class="lector-p">Dinner was ready when she came in. I was out on the balcony. She came over to me and gave me a kiss.</p>
+    <p class="lector-p dialogo">― Smells good, what have you made?</p>
+    <p class="lector-p dialogo">― Risotto and pà amb tomaca (bread rubbed with tomato).</p>
+    <p class="lector-p dialogo">― Mmm… How was work?</p>
+    <p class="lector-p dialogo">― Dull, like every day, but with the month about to close I’ve got everything covered. I’d sign right now for the rest of the year to be like this. And you, how was the office?</p>
+    <p class="lector-p dialogo">― Doing numbers. Oh, I got distracted this morning and forgot to put the washing on.</p>
+    <p class="lector-p dialogo">― Don’t worry, I put it on and hung it out. Let’s go and eat.</p>
+    <p class="lector-p">She was a little more absent than usual. Futurama was on the television, which normally got us laughing, but her gaze was lost, and although I sensed why, I didn’t want to be blunt and kept quiet. Afterwards we sat on the sofa for a while, a couple of teas, a documentary about Ukiyo-e, and the hour came round for going back to bed.</p>
+    <p class="lector-p">Next morning, Wednesday. We had breakfast together, we went to work, I picked her up, we came home for lunch, and as the afternoon wore on her face turned bleak. I watched her closely. Around eight in the evening she sat down at the living room table and began to write in front of me. She had never done that before; she used to shut herself in the study and come out of it, without a word, into the street.</p>
+    <p class="lector-p">She wrote as if I weren’t there, without pausing, her eyes full of tears. Setting the pen aside, she declared the letter finished, took it in her hands and spoke as follows.</p>
+    <p class="lector-p dialogo">― Mum, Dad. It’s me, Éloïse, I’m calling you, wherever you are, so that you hear my words. Mum, Dad, I am calling you.</p>
+    <p class="lector-p">Three times she repeated the summons. Ipso facto she began to read her lines, slowly, giving weight to every word. For the first time I knew what one of the many letters she wrote to her parents said.</p>
+    <p class="lector-p">“Hello Mum, hello Dad.</p>
+    <p class="lector-p">This is the first time I have shared my thoughts with you; until now they have only been words written on paper and I suppose you have had no chance to read them. In these missives I tend to set down what I feel towards you, and I do it when Wednesday comes, not only because it is the day of the week on which the fateful accident happened, but because on days like today a deep grief floods my heart.</p>
+    <p class="lector-p">Beyond the sadness of your absence and the rage that a sudden death sows. I feel a heaviness in my soul that trespasses on my own self. It sinks me with every passing day without letting me move on, without letting the woman I once was, brimming with happiness, come up again. I don’t think I will ever be the same; a blow that hard tans you. But this grief that draws itself out so long in time is not the usual kind, I can find no explanation, nobody finds a solution, and I am the first who wants to put out new shoots.</p>
+    <p class="lector-p">Over these years, and through the new knowledge I have acquired, I have been able to mark out where the mourning for your absence begins and ends. I have also understood which part of this sadness comes from the frustration and the failure I feel as a daughter. I feel that I never satisfied you as a student, as a worker, simply as who I am. You always expected more of me and reproached me that your effort had been far greater than mine. I know that being an accountant did not meet your expectations, but it makes me happy and it lets me have the life I want.</p>
+    <p class="lector-p">I feel frustrated at having been belittled, badly loved, and I know that you gave me everything, that your efforts were beyond counting and that, in your own way, you loved me a great deal. But your way of loving is not the way I needed to be loved. I only wanted to be accepted as I am, to be happy and not to be judged. Not to be the project of what you once wished to be, your longings poured into me. I am not like you, I am not what you wanted me to be.</p>
+    <p class="lector-p">To blame you entirely would not be fair, I suppose it goes much further than that, but it does not free you from this hostile feeling I suffer towards you against my will. Now you are gone and all I want is to remember good times, but you left without knowing this, without asking me once how I felt, without telling me that you loved me with all your heart, without looking at me once as an equal, and that burns in me, plunging me into this calvary.</p>
+    <p class="lector-p">And yet, having come this far in knowing myself, knowing far more about me than I needed in order to find an answer, I have come to mark out something very large that is not mine, I don’t know where it comes from or why I feel it. But it is too big for me and it turns me bitter. I feel chaos, anger, fear, rage, a jumble of feelings that have stayed in me since that day, and it does not lessen with time. On and on they go. I don’t know whether you are listening to this, whether you are even able to, but I need you to know it whether or not it works, because I want to change this situation, I want my heart to be at peace with you, and to know that you are watching me from the other side, proud of me, smiling”.</p>
+    <p class="lector-p">This is what I want you to know. I need you to say “I love you”, I need to hear an apology that is felt, I need to feel the embrace of parents who behave like parents.</p>
+    <p class="lector-p">Have you heard me…? Mum… Dad… I want to know that you are there, that you have heard, that you understand what I want and that you accept it. Can you hear me? Mum… Dad… -Éloïse broke down crying, and I could do nothing but go on watching her-. Mum, Dad, I love you and I miss you…</p>
+    <p class="lector-p">CLACK!!</p>
+    <p class="lector-p">The two of us turned our heads slowly, we looked towards the shelf where there was a photograph of her parents; the glass in the frame had cracked. We looked at each other, we said nothing. She took the letter, tore it up and threw it in the bin. She lay down on the bed and settled herself to sleep. We were both thinking the same thing: coincidence or not, that was hardly opportune. We were left brooding and frightened in equal measure.</p>
+    <p class="lector-p">Since then I have preferred to leave aside anything to do with communicating with spirits. Nothing came of that night, in fact we never spoke about it. But to be honest, I don’t think it was chance; it is the closest we have come to finding a solution. Only that neither of us knew how to go on, for all the books we had read.</p>
+    <div class="sep-omega">Ω</div>
+    <p class="lector-p">A cold breeze woke me from my daze; she was walking back when someone stepped in front of me. I looked up: a small woman, half smiling, sharp-featured. The moment turned uncomfortable.</p>
+    <p class="lector-p dialogo">― …Can I help you…? -She kept the smile and sat down beside me, skin against skin. The expression on my face said everything. She pressed closer still and I couldn’t hold my composure-. Stop it! -I whispered, pulling a body’s width away from her. The woman turned her face and looked at Éloïse.</p>
+    <p class="lector-p dialogo">― It’s a shame that a girl like her, so beautiful and so great of spirit, should have to put up with a lout like you -she said, without losing the smile. I was getting up when she took my hand with a tremendous strength.</p>
+    <p class="lector-p dialogo">― Sit down! There’s still something you need to know -I sat. Éloïse was walking with her eyes fixed on the ground, far away. I listened-. I’d go so far as to say she’s a very special person.</p>
+    <p class="lector-p dialogo">― She is, or at least she was until…</p>
+    <p class="lector-p dialogo">― She still is -she interrupted-, it’s only that you’ve carried on walking and she’s still stuck on that day, that’s the only difference -I listened, dumbfounded-. Sometimes, unconsciously, unbreakable ties are formed in certain situations.</p>
+    <p class="lector-p">It shouldn’t be difficult to undo that yoke tormenting her -getting up, she dropped a slip of paper into my lap-. If you have any credulity left in you, you can try one more time -I followed her with my eyes until she disappeared among the narrow streets.</p>
+    <p class="lector-p">Éloïse passed in front of me. I walked behind her, a couple of steps back. I looked at the paper; an address was written on it, nothing else. I thought about what that woman I had never seen before had said to me. You didn’t need to be a genius to see that our relationship was not at its best. Perhaps because I so desperately needed everything to change, I chose to keep that address.</p>
+    <p class="lector-p">We went home, she put her pyjamas on and got into bed. I stayed sitting on the living room sofa, from where I could see her feet sticking out from under the sheets. Any other day I would have lain down beside her, but I was too restless. I was thinking about those few words that had managed to knock me completely off balance. Had it been possible, I would have run out that very instant to find out what that woman, whom one might well have called mysterious, knew.</p>
+    <p class="lector-p">Though I had already decided that the next day, before picking Éloïse up from work, I would go and see her. Her face appeared every two lines despite my efforts to concentrate on the book in my hands.</p>
+    <p class="lector-p">I don’t know at what point it happened, but I fell asleep on the sofa. Well into the small hours I woke up needing to urinate; I was covered with a blanket and the book was on the table. I went back to the bedroom and lay down beside her, took her hand and fell asleep.</p>
+    <p class="lector-p">She was making breakfast quietly. She was dressed, her hair up and a soft black line adorning her eyes. And so, drinking her coffee, leaning on the table, I watched her, through that brief instant in which one wakes, opens one’s eyes and has not yet begun to think. A smile from ear to ear was drawing itself across my face.</p>
+    <p class="lector-p">When she had finished she came over. “Have it before it goes cold, see you later, I love you”, and she kissed my cheek. And that was as close as her lips had come to mine for a long time. It was Thursday; the day was to pass in the normalised way. She was present, we talked little, but we talked. We would go and do the shopping, we would make dinner, we would do the housework and once in a while we would sit down and watch a film. And perhaps you are wondering what we talked about. Well: work, the weather, and the rest was said by the television or the radio. It wasn’t on all day, but now and then it rescued an awkward moment.</p>
+    <p class="lector-p">We were together, we loved each other and we accepted that bitterness as something passing, with an expiry date. But when it wasn’t her fixing her eyes on me, inviting me to leave her, it was me watching her, elsewhere, remembering other times. Even so, we kept up good habits. We read and discussed every book we finished; three times a week we went out running. Seen from a distance, our relationship, in communicative terms, was not far off any other conventional couple’s, and we even had our shared amusements. But all that felt insufficient to me when that torrent of a woman came back to my memory, that exceptional creature who captivated my being without my wanting to escape.</p>
+    <p class="lector-p">She was beautiful… and she still is, with that lively look, pert, diligent, curious, eloquent. The clock never had hours enough for everything we could do together. There was never an instant with nothing to do; even when we were exhausted, sitting out on the lounger under the stars, being beside her thrummed. Now I suppose it does so less, or simply that, although it no longer does, I go on waiting for the day when it will again. My new friend was wrong about one thing: something of me was caught in the past too.</p>
+    <p class="lector-p">After the first storm of thoughts, which brightened my day, I got out of bed and sat down to breakfast. I planned the day: keep a few appointments, look the street up in the A-Z and slip away to pay the visit, with time to spare to pick Éloïse up from work, good news at my side.</p>
+    <p class="lector-p">By then I was already somewhat sceptical, but I had felt something good beside that woman, and that pushed me to try one more time.</p>
+    <p class="lector-p">My girl is an accountant at an electrical supplies firm, and I work as a sales rep for a multinational eyewear company. I loaded my cases into the car and went round the shops selling the new trends, which is fairly dull once you’ve repeated the same patter for the thirteenth time.</p>
+    <p class="lector-p">It was already gone twelve noon; with the minimum sales done I couldn’t wait any longer and, address in hand, I drove over there. A neighbourhood I had never been to, on the edge of the city. It was an old-order residential area that had been left alone, two-storey houses, well kept. Vestiges of an earlier time that remind us how well people must have lived away from the din, without sharing a flat in a hive.</p>
+    <p class="lector-p">I walked the whole street to the end. Curiously, the most neglected one, with wild plants growing over it and its door standing open, was the house given in the address. On the gate there were two inscriptions in Latin, “sapere aude” (dare to know) and “alea iacta est” (the die is cast). I knocked several times.</p>
+    <p class="lector-p dialogo">― Hello…? Hello…?</p>
+    <p class="lector-p">I went a little way down the passage; it gave onto an inner courtyard full of flowers, a pool with carp, a table and wooden stools. An old mono transistor radio on the stair rail. I had heard that tune before, a white dove sung by Antonio Molina, a song I listened to so often on my grandmother’s cassettes. For a moment that aged place felt familiar to me. A noise.</p>
+    <p class="lector-p dialogo">― Sit down, please, I’ll be right there -her voice came from the floor above. I waited, sitting.</p>
+    <p class="lector-p">On the table there was a chess set with a game already under way, a pack of cards out of order and some dice. Not knowing what to do with my hands, I squared the cards up.</p>
+    <p class="lector-p dialogo">― Cut -she said, startling me. I split the deck-. Turn it over -and I did-. Ace of swords, interesting.</p>
+    <p class="lector-p dialogo">― Interesting…?</p>
+    <p class="lector-p dialogo">― Yes, or at least it would be if I knew how to read cards, ha, ha, ha -she answered, bursting out laughing-. Come with me -she said, going up the stairs-. So you came after all, though I see in your eyes that you’re harbouring some doubt about me. If you’ve got this far, it’s because you want to believe. I need you to trust completely, so that the walker can make the road.</p>
+    <p class="lector-p">She invited me into a gloomy room, candlelight, old furniture, a table and chairs, a heavy air that I only knew how to break by asking what her name was.</p>
+    <p class="lector-p dialogo">― My name is Regina, though it’s so long since anybody called me anything that I could answer to Anna, Camilla, who knows. Sit down, please.</p>
+    <p class="lector-p dialogo">― Of course… And do you live alone?</p>
+    <p class="lector-p dialogo">― I live alone, technically a widow, though he’s always about the place. My two sons live far off as well. This is my home, my parents’ house and my grandparents’, and most likely my grave. But you haven’t come to listen to the laments of a mad old woman. We’re here to talk about her, the woman you love.</p>
+    <p class="lector-p dialogo">― Éloïse is her name.</p>
+    <p class="lector-p dialogo">― Éloïse lives tied to the past, and watches instead of walking her present. It isn’t something she chose of her own free will, it’s an ancestral legacy we all suffer to a greater or lesser degree. Her parents were taken from her in a singular way, and a thin, wasted tie has turned into her noose. Am I wrong?</p>
+    <p class="lector-p dialogo">― No… it’s true. She wasn’t close to them, a phone call once a week, a couple of short visits a year to avoid arguments, since they were rather prone to them. She has no great memories of her years with the family. I understand that they’re her parents, that it was a sudden and terrible thing, that without parents you feel uprooted. But four years have passed and she isn’t getting over their absence.</p>
+    <p class="lector-p dialogo">― It isn’t a matter of time. Think of something that hurt you in childhood; it still hurts as it did all those years ago. Time is for clocks. The absence… that she has got over, she knows they’re gone and she has taken it in. This sadness has nothing to do with more or less affection between parent and child whose emptiness her heart is missing. She needs to speak openly to her parents, to assert herself and be acknowledged, and they need to hear their daughter, to hold her and encourage her. It isn’t love that binds them, but frustration and guilt -a moment of silence-. Do you understand what I’m telling you?</p>
+    <p class="lector-p dialogo">― …I understand… Although my point of view has shifted, I’m still at the same milestone. I don’t know how to help her.</p>
+    <p class="lector-p dialogo">― Your task isn’t to help her, and that’s why you don’t know how. And with your will you’ve turned your relationship into an uncomfortable tie. You only have to love her, walk beside her and hold out a hand when she falls. Don’t drag her, or you’ll become her worst enemy. Free yourself of your obligations to her, feel free, and her burden will be lighter. Think that it hurts her more than it hurts you to see you powerless and failing. I’ll take care of the rest. It’s nothing new, it’s only that most of us forget to see and hear beyond our own ego.</p>
+    <p class="lector-p dialogo">― And what do you intend to do about it?</p>
+    <p class="lector-p dialogo">― Give her the chance to speak to her parents -I looked at her, stupefied.</p>
+    <p class="lector-p dialogo">― I’m a shaman, not a psychoanalyst. I didn’t give you my address because I saw a lack of communication in the couple, but because her parents asked me to. They haven’t left yet, they’re still here, and she’s bearing the weight of two souls in torment -I truly did not know what to say-. I understand your surprise, it isn’t the same to read about magic as to be part of the trick.</p>
+    <p class="lector-p dialogo">― How do you know…?</p>
+    <p class="lector-p dialogo">― I could answer that anybody who gets this far is desperate enough to trust anybody at all; that anybody who gets this far is living the full essence one way or another; or simply that your father worries about you. He’s with you today and he told me. By the way, he says he loves you very much.</p>
+    <p class="lector-p">I got up, stifled, far too tense, hypersensitive to that atmosphere. She didn’t turn a hair. I left the room and stepped out onto the balcony: fresh air, the brightness of the sky and the radio playing relaxed my body. I let myself drop against the rail, breathed deeply, taking in the words of the woman I had just met and who seemed to know us so deeply.</p>
+    <p class="lector-p">She came over a couple of minutes later. She stroked my back.</p>
+    <p class="lector-p dialogo">― I didn’t mean to frighten you…</p>
+    <p class="lector-p dialogo">― No, not at all, it isn’t fear, it’s revelation; it doesn’t even surprise me, it’s as if my mind were revving up at information like that.</p>
+    <p class="lector-p dialogo">― That’s normal, there are certain facts that shake the spirit. Acceptance will bring peace.</p>
+    <p class="lector-p dialogo">― I gather it takes years to reach.</p>
+    <p class="lector-p dialogo">― True, days, years, a whole life, several… but to walk the hardest of roads you first have to go through the great door, and not everyone is willing, and once you cross it there’s no going back.</p>
+    <p class="lector-p">You’ve come this far meaning to hear put into words the shape of something you sensed but had no idea how to reach.</p>
+    <p class="lector-p dialogo">― Yes… but I wasn’t expecting this.</p>
+    <p class="lector-p dialogo">― I don’t mean the detail, I mean the broad outline. It’s reason that blinds the spirit and dulls our senses.</p>
+    <p class="lector-p dialogo">― The question is whether she’ll be ready for what you have in store for us.</p>
+    <p class="lector-p dialogo">― The truth will have to lighten her burden.</p>
+    <p class="lector-p dialogo">― I hope she’ll want to come and see you, though I can’t imagine how to fool her into it.</p>
+    <p class="lector-p dialogo">― There’s no need for fooling, just invite her. The threads that move our world are subtle. And I’ll spare you the journey; there’s a chance the two of you can go ahead on your own, and I’ll do no more than whisper certain instructions in your ear. When you hear them in your mind, don’t ask, just do it.</p>
+    <p class="lector-p">Do you want to carry on, or has that been enough for today?</p>
+    <p class="lector-p dialogo">― …I think I’ll take the rest of the day to take this conversation in.</p>
+    <p class="lector-p dialogo">― Good -she went over to the table, picked up the teapot and poured two glasses-. Here, it isn’t as tasty as it is hot, but it’ll do you good. They’re wild mountain herbs; nature always gives us what we need.</p>
+    <p class="lector-p dialogo">― It’s very good, liquorice, chamomile, mint…</p>
+    <p class="lector-p dialogo">― Don’t ask, unless you want to run out of here -she said, half smiling.</p>
+    <p class="lector-p dialogo">― Ha, ha, ha… -I laughed, savouring it and asking nothing more-. Lovely courtyard, geraniums in flower, the pond and beautiful music.</p>
+    <p class="lector-p dialogo">― True.</p>
+    <p class="lector-p dialogo">― It reminds me of the years I spent in the village with my grandmother when I was a child. Very different from this cosmopolitan life. If I had money, I’d get myself a house like this one and leave that tiny flat. Those days were lovely, I had rabbits, hens, ducks. I ran free through the streets, I spent hours sitting beside my grandmother, I played with my cowboys and Indians while she sewed and sang the Spanish songbook at the same time. I miss her…</p>
+    <p class="lector-p">I suppose she’s to blame for my taking to flamenco, to the copla. When I hear songs like this one I close my eyes and I’m four years old again.</p>
+    <p class="lector-p dialogo">― Do you know who that is?</p>
+    <p class="lector-p dialogo">― Concha Piquer. …Ojos verdes, verdes como la albahaca. Verdes como el trigo verde y el verde, verde limón…</p>
+    <p class="lector-p dialogo">― …Ojos verdes, verdes, con brillo de faca, que están clavaítos’ en mi corazón. Pa’ mí ya no hay soles, luceros ni luna… -she picks the song up where he left it-. There’s gypsy blood in my veins, though I didn’t inherit my father’s gift for music. It seems I took over from my grandmother with the witch’s share -the radio was giving the hour, on the hour.</p>
+    <p class="lector-p dialogo">― Well, Regina, it’s been a pleasure to meet you, I’m glad we’ve had this conversation. If you don’t charge me too much, I’d like there to be a great many more.</p>
+    <p class="lector-p dialogo">― I don’t do this for money. What I’m offering you isn’t material, and so your offering for my favour will be spiritual.</p>
+    <p class="lector-p dialogo">― I can’t think of anything right now, out of myself, that I could offer you.</p>
+    <p class="lector-p dialogo">― That will show itself when the moment comes. Don’t mention anything to your girl, there’s no need.</p>
+    <p class="lector-p dialogo">― Don’t worry. Thank you. I’ll come back soon.</p>
+    <p class="lector-p dialogo">― I’ll be waiting for you -I was going down the stairs with her eyes on me-. By the way, you haven’t told me your name…</p>
+    <p class="lector-p dialogo">― Haven’t I? Forgive me, I didn’t realise. My name is Edgard.</p>
+    <p class="lector-p dialogo">― Delighted.</p>
+    <p class="lector-p dialogo">― Likewise, see you, good morning.</p>
+    <p class="lector-p dialogo">― Good morning… -she said, still leaning out.</p>
+    <p class="lector-p">I left and got into the car, sat there and stayed thinking. It was as though I were thinking nothing at all and my head were boiling at the same time. I was very worked up. I couldn’t pick Éloïse up in that state.</p>
+    <p class="lector-p">I started the car, I still had forty-five minutes ahead of me. I stopped near home; not far off there was a metro entrance where there was usually a Chinese musician playing the “huqin”. Whenever our paths crossed I would stay a while, listening to him play. The echo of those plaintive strings. I sat down nearby, on the floor; I don’t know what that instrument had, nor what he felt when he played it, but it set my heart thrumming and calmed me.</p>
+    <p class="lector-p">It took me a while to notice that the music had stopped; he looked at me with a smile. I gave him the first note I pulled out of my wallet.</p>
+    <p class="lector-p dialogo">― Thank you -he said, bowing his head.</p>
+    <p class="lector-p dialogo">― Thank you.</p>
+    <p class="lector-p">I walked back up the passage and returned to the car. The infusion and the music had managed to steady me. I drove calmly, I was arriving on time. I headed out towards the edge of the city. Five minutes later Éloïse appeared. The usual brief exchange of always. Though I sense that, for all the sparseness of those words, she caught a certain strangeness in the way I was behaving.</p>
+    <p class="lector-p dialogo">― Is something the matter?</p>
+    <p class="lector-p dialogo">― No… I was just thinking.</p>
+    <p class="lector-p dialogo">― Maybe you’d fancy eating out…</p>
+    <p class="lector-p dialogo">― Mexican, Korean, I don’t know… something different… -I smiled, forcing it.</p>
+    <p class="lector-p dialogo">― Mmm… if that’s all it is, then fine, but I’d rather have Galician -she said, with no appetite for knowing more.</p>
+    <p class="lector-p dialogo">― Great, octopus will do nicely.</p>
+    <p class="lector-p">After lunch we took a walk before going home. I was absent, unable to stop hearing that background noise in my head</p>
+    <p class="lector-p">It must have been night, while we were both sleeping, when the unexpected happened. Me asleep, dreaming, one surreal situation after another, the usual: faces from childhood, from work, animals and plants that talk. And among them a face that, by dint of repeating itself across several of the dreams, I ended up identifying.</p>
+    <p class="lector-p dialogo">― You! -she looked at me and smiled.</p>
+    <p class="lector-p dialogo">― So you’ve finally noticed -the surroundings dissolved and we both appeared in the middle of a meadow of fresh grass, under an indigo sky full of stars, so bright that the night looked like day. A placid feeling-. You’ve taken your time, but for a first go it isn’t bad at all.</p>
+    <p class="lector-p dialogo">― What are you doing in my dream? -she raised her hand and pointed towards the horizon; two stars came hurtling towards me, dazzling me.</p>
+    <p class="lector-p">I closed my eyes and when I opened them again I was sitting in the back of a car. Someone was driving, with a passenger. I recognised the voices, it was them. They were chatting quietly on their way home along the main road when, as they took the bend, another car hit them head-on at speed.</p>
+    <p class="lector-p dialogo">― AAAAHHH!!! LOOK OUT! -we all screamed, out of our senses.</p>
+    <p class="lector-p">Three rolls; we were thrown from one side to the other, striking hard. The wall of the hillside stopped us, upside down, bleeding, and they were unconscious. I got out of the car and tried to pull them out, but I couldn’t; he wasn’t breathing, she was. With difficulty she pushed the door, got out, straightening up, took four steps and collapsed, whispering “Éloïse”.</p>
+    <p class="lector-p">The other car had stopped some fifty metres off; the boy was walking with no direction, disoriented, stained with blood.</p>
+    <p class="lector-p dialogo">― I didn’t mean to… I didn’t mean to! It was them!</p>
+    <p class="lector-p">Another vehicle arrived, its driver called the police, and a while later came the deployment, the ambulance. Her father had died instantly, and her mother had suffered a head trauma that ended her life on the way to hospital. The lad was taken in too, seriously injured. He tested positive for drugs.</p>
+    <p class="lector-p">I felt very bad, anxious. I woke suddenly, with a deep gasp that came out as a strangled shout. I leapt up, staring at myself, crying, my eyes wide open, in a terrible state. I banged into the wall, waking her. She turned the light on, frightened at the sight of me.</p>
+    <p class="lector-p dialogo">― What’s wrong, Edgard, are you all right?! -I was shaking my head and murmuring “Éloïse… Éloïse…” over and over-. What’s happening!? -she sat up, agitated, came over, took my head in her hands-. Tell me what’s wrong!! -I couldn’t stop trembling. She put her forehead against mine-. Edgard, it was only a nightmare! -she said, seeing the fear in my eyes.</p>
+    <p class="lector-p">I screwed my eyelids tight shut, and then I saw her in front of me; we were not in the bedroom. The light grew far more intense, a loud crack was heard, we both opened our eyes, and she was screaming, thrown across the bed.</p>
+    <p class="lector-p dialogo">― OOOOHHH!!! -she wept, inconsolable, twisting herself into the sheets-. Did you see it!? I saw them! AAAAHHH! EDGARD, I SAW THEM!!</p>
+    <p class="lector-p dialogo">― I know!…</p>
+    <p class="lector-p">A long while passed before we were calm. I made lime blossom tea for us both. She sat on the sofa, one hand holding the cup she sipped from nervously, the other clasped in mine. What had happened went beyond any witchcraft or therapy we had imagined. It had only been a dream, but her gaze was still lost.</p>
+    <p class="lector-p">A couple of hours must have gone by when she turned a questioning look on me. My half-open eyes felt it.</p>
+    <p class="lector-p dialogo">― How did you do it?</p>
+    <p class="lector-p dialogo">― Mmm…?</p>
+    <p class="lector-p dialogo">― I want you to explain to me how this could have happened.</p>
+    <p class="lector-p dialogo">― Ah… to be honest, it isn’t that I’ve done anything; it’s been a while since anything new fell into my hands. After the last attempt I gave up.</p>
+    <p class="lector-p dialogo">― Edgard. You saw the same thing I did, you made me see the accident. Maybe nothing has worked, but I know enough by now. It won’t wash.</p>
+    <p class="lector-p dialogo">― Well… I’ve met someone -I answered nervously, getting up from the sofa-. Actually she met me. She came over on Wednesday night, while we were walking on the beach. You carried on walking on your own, and meanwhile she just appeared and said something that knocked me sideways. This morning I went to see her, we only talked, but it has turned me over inside. I’ve never met anyone like her. She knows what to say, when to act, as though she were running ahead of time itself. It isn’t chance.</p>
+    <p class="lector-p dialogo">― And this that’s happened tonight, did the two of you set it up at your meeting?</p>
+    <p class="lector-p dialogo">― No, truly we didn’t. In fact I left, I wasn’t ready to hear any more. I told her I’d come back when I’d digested the new information. Believe me, I’m frightened too.</p>
+    <p class="lector-p">Much as I longed to find someone with knowledge who could give us a solution, I had not expected anything like this at all. It went far beyond my expectations.</p>
+    <p class="lector-p dialogo">― What I saw was very hard, Edgard.</p>
+    <p class="lector-p dialogo">― I know… what am I saying, I lived it! I know it’s truly terrifying, but we have both faced the rawest moment of these four years. What’s left for us now? If it really was her, and I don’t doubt it after seeing her in my dreams, the next step, difficult though it is, will be a good one. I’m sure of it. I don’t know what surprise our new friend has in store for us, but I want to go on -she sat in silence, closed her eyes, breathing slowly.</p>
+    <p class="lector-p dialogo">― Go back to the bedroom, I need to be alone.</p>
+    <p class="lector-p dialogo">― I don’t enjoy watching you suffer. If you think that…</p>
+    <p class="lector-p dialogo">― I’ve understood you perfectly. Good night.</p>
+    <p class="lector-p dialogo">― Good night…</p>
+    <p class="lector-p">I shut myself in the bedroom. Lying on the bed, going over what had happened. Long hours passed before, almost at dawn, I fell asleep out of sheer exhaustion.</p>
+    <p class="lector-p">Her face was in front of mine when I opened my eyes; she was lying beside me.</p>
+    <p class="lector-p dialogo">― I’ve phoned work, I’ve said I’m unwell. I want to go and see that woman.</p>
+    <p class="lector-p dialogo">― I suppose there’s no point asking whether you’re sure.</p>
+    <p class="lector-p dialogo">― Yes.</p>
+    <p class="lector-p dialogo">― Aha…</p>
+    <p class="lector-p dialogo">― Your breakfast’s on the table. I’m dressed already, I’ll wait for you in the living room.</p>
+    <p class="lector-p">She left the bedroom. It smelt of jasmine; for the first time in those four years she had gone back to that perfume. I had breakfast and got dressed. She was smiling; I hadn’t stopped to think about it yet, but a strange feeling of fair weather was running through me. We got into the car and arrived at the neighbourhood. We stopped a couple of houses short and did the rest on foot. The door was open.</p>
+    <p class="lector-p dialogo">― Well now, you’ve come early! -said a voice, startling us. Crouched among the hedges, Regina was gathering flowers in the garden-. I sense I’ve frightened you, but throw off all fear, you haven’t come here to be afraid. Let’s see… -she was searching among the flowers-. A white rose for you -she said, setting the flower in Éloïse’s hair-. And a chrysanthemum for you -leaving it in my shirt pocket.</p>
+    <p class="lector-p dialogo">― This is Regina. This is Éloïse.</p>
+    <p class="lector-p dialogo">― Very pleased to meet you; please, come in and sit at the table. You’ve arrived earlier than expected. I’m a seer, but I don’t open until ten -she said, laughing-. Help yourselves to the tisane, there are glasses over there, I’ll be right back.</p>
+    <p class="lector-p">She went up the stairs and we both waited, sitting. A few minutes later she came down with a small notebook.</p>
+    <p class="lector-p dialogo">― I’ve been thinking about how to do this. I think it will be better if we let the meeting be between parents and daughter alone.</p>
+    <p class="lector-p">Since you’re familiar with everything attached to the other side of life. I suppose it won’t be very hard for you to take this exercise on. I’ve written down on a sheet what you need in order to carry the meeting out. None of it is difficult to get hold of. Follow the instructions for setting it out and use these texts for the summoning.</p>
+    <p class="lector-p">The only thing I ask of you is that you do this without fear, without rancour. Tell them everything you have to tell them, but do it with the heart, with love. If hatred makes itself present, the hostility will drive them away and it may even open doors to other dark immanences. Is that clear?</p>
+    <p class="lector-p dialogo">― Yes.</p>
+    <p class="lector-p dialogo">― Take this bunch of daisies and this amulet, it will look after you in what’s to come as well. A woman as beautiful and as deep as you must suffer a great deal of evil eye. Carry it with you always.</p>
+    <p class="lector-p">Have a look at the notes and tell me whether it’s all understood -she read everything that had been written down and nodded-. I know you’re going to do it well. Off you go, and take today to relax, to prepare for the event. Know that this will change your lives for the better -she said with a smile.</p>
+    <p class="lector-p">She stood up and I stood with her. Éloïse looked at me; she had expected something more than a single notebook with instructions.</p>
+    <p class="lector-p dialogo">― …and, well… what do we owe you for the visit? -she said, getting up.</p>
+    <p class="lector-p dialogo">― Once all this is over I’ll settle up with your lad… I’ve asked him to find me a friend as handsome as he is -Éloïse looked at her, thrown.</p>
+    <p class="lector-p dialogo">― I’m joking, girl. How am I going to go with men when I’ve got my husband hanging about the place -a moment of silence; she leaned over, as though she were listening to something-. By the way, he says you should tread carefully at work, someone you think is a friend is only out to do you harm -Éloïse went rigid, with a crooked half-smile.</p>
+    <p class="lector-p dialogo">― Thank you.</p>
+    <p class="lector-p dialogo">― Not at all… now off you go. I’ve got things to do.</p>
+    <p class="lector-p dialogo">― Thank you, Regina. We’ll come and let you know -she nodded, smiling, turned the transistor on and went on seeing to the garden.</p>
+    <p class="lector-p">We left the house, not exchanging a word until we reached the car. The two of us sitting, looking straight ahead.</p>
+    <p class="lector-p dialogo">― Her husband was there?</p>
+    <p class="lector-p dialogo">― Yes.</p>
+    <p class="lector-p dialogo">― …Dead?</p>
+    <p class="lector-p dialogo">― Mm-hm.</p>
+    <p class="lector-p dialogo">― I don’t know why I have faith in this madness. Anybody who spent time with her would say she isn’t right. All she’s missing is the cats. If it weren’t for what happened last night, I wouldn’t give in to anything so senseless.</p>
+    <p class="lector-p dialogo">― Stop thinking with your head and feel with your heart. Don’t try to fool yourself, you felt a tremendous peace in her presence. More connected to yourself than ever.</p>
+    <p class="lector-p">That house has something magic about it, those enormous orange stones stuck in flowerpots, the wooden figures, the inscriptions. I don’t think it’s random, they seem to be laid out so that space and time disappear.</p>
+    <p class="lector-p dialogo">― It’s true that something special comes off her, that she brings calm. But I think you’re rambling too far.</p>
+    <p class="lector-p dialogo">― I’m not rambling too far. I insist, you have to break your ties with reason. If I’m not mistaken, in that notebook you’re carrying the procedure for contacting your parents.</p>
+    <p class="lector-p dialogo">― YES!! -she exclaimed, on edge-. I understand, I’ve got the message, but I’m frightened. You may even find it thrilling, but I’m the one who’s going to live through this first-hand. It isn’t easy. Even with such a great wish to put an end to this sadness.</p>
+    <p class="lector-p dialogo">― I’m sorry. I didn’t mean to push you or make you feel bad. It frightens me too, this isn’t one of those books we’ve read up to now. But you’re not alone, I’m with you, I laugh when you laugh, I grieve when you cry, we’re both facing this and it will turn out well. I know it, trust me -she looked at me fondly, rested her head on my shoulder.</p>
+    <p class="lector-p dialogo">― Thank you.</p>
+    <p class="lector-p dialogo">― Thank you, for having been patient until today.</p>
+    <p class="lector-p">I started the car and we went home. She asked me to let her make the preparations. For my part, I did my daily round, case in tow. What isn’t done in the morning can always be made up in the afternoon.</p>
+    <p class="lector-p">Being alone, preparing the event, she was growing used to the situation. Even with the working day over, I thought of leaving more time before going back. Emptiness tends to let us hear our own thoughts, recognise them, accept them and put them in order. To take in so new a circumstance requires far more time than we had been granted. But let us admit that dramatic strokes, though they ask no permission, tend to carry further.</p>
+    <p class="lector-p">Turning such thoughts over, I let more time pass than I had meant to, sitting in the car seat. The telephone rang, breaking my daze. I didn’t even look at the name.</p>
+    <p class="lector-p dialogo">― Hello?</p>
+    <p class="lector-p dialogo">― It’s half past ten, I needed to be alone, but I don’t want to spend the night without you. Whereabouts are you?</p>
+    <p class="lector-p dialogo">― I was closing a sale a moment ago, I got held up talking. You know how it is, occupational hazards. I’m in the fifth sector, I’ll be there in twenty minutes.</p>
+    <p class="lector-p dialogo">― Take care. I’ll wait and have dinner with you.</p>
+    <p class="lector-p">She was sitting at the kitchen table. There was some fruit and a salad.</p>
+    <p class="lector-p dialogo">― You’re not eating?</p>
+    <p class="lector-p dialogo">― I’m not hungry.</p>
+    <p class="lector-p dialogo">― Have you eaten something, or won’t your nerves let you?</p>
+    <p class="lector-p dialogo">― I’m very calm now, but this afternoon I ate a whole tub of ice cream. Anxiety, I suppose.</p>
+    <p class="lector-p">Being alone for a few hours has done me good. I’ve felt everything. From the deepest sadness to a terrible dread, and even a runaway euphoria that had me dashing here and there as though I were out shopping in the sales.</p>
+    <p class="lector-p dialogo">― For my part, all I notice is that you’re more talkative than usual, and something tells me you’re as keen as I am for tomorrow to come.</p>
+    <p class="lector-p dialogo">― The truth is I am. The way I feel about this is nothing like therapists and therapies. I don’t know how that woman found you, but I’m glad she crossed our path.</p>
+    <p class="lector-p dialogo">― I suppose at this point you ought to know that when she sat down beside me on the promenade, she didn’t come to me by chance. She came because your parents had asked her to help them -wide-eyed, she stared at me hard.</p>
+    <p class="lector-p dialogo">― Why hadn’t you told me that before?</p>
+    <p class="lector-p dialogo">― That information wouldn’t have gone down at all well with you.</p>
+    <p class="lector-p dialogo">― And what else should I know?</p>
+    <p class="lector-p dialogo">― Nothing more. As far as your parents go that’s the only reference she made. The rest you already know. Although it’s true she also passed on a message from my father. Only that, honestly…</p>
+    <p class="lector-p">Éloïse said nothing more. A little while later she went to bed. I was reading on the sofa.</p>
+    <p class="lector-p dialogo">― Edgard.</p>
+    <p class="lector-p dialogo">― Mmm? -she didn’t answer. I turned off the light and went into the bedroom.</p>
+    <p class="lector-p dialogo">― What has she asked you for in return for her help?</p>
+    <p class="lector-p dialogo">― She hasn’t said yet.</p>
+    <p class="lector-p dialogo">― Money?</p>
+    <p class="lector-p dialogo">― No. She told me this isn’t paid for with money.</p>
+    <p class="lector-p dialogo">― Ha, ha, ha… -she laughed, artificially-. What are you trying to say?</p>
+    <p class="lector-p dialogo">― I’m only saying I don’t know what I’ll have to give her in exchange, she’ll tell me if it all goes well -she looked at the ceiling, puzzled. I kissed her and said in her ear.</p>
+    <p class="lector-p dialogo">― Don’t worry, if she asks me to marry her, there’s enough Edgard for the two of you -she sketched a smile.</p>
+    <p class="lector-p dialogo">― Idiot… -she said, elbowing me.</p>
+    <p class="lector-p">It was her last word before closing her eyes. Restless as we were, that air of certainty had us falling asleep quickly.</p>
+    <p class="lector-p">The next morning went by like any other. I took her to work and, hours later, picked her up. We said no more than was necessary. We went home and let the moment come. Everything was ready.</p>
+    <p class="lector-p">For the first time in four years, with a Wednesday come round, Éloïse felt no sadness, she was not writing that letter. She sat on the sofa and, in her lap, leafed through her family photograph album.</p>
+    <p class="lector-p dialogo">― Do you know, with all this rushing about I’d forgotten my sister.</p>
+    <p class="lector-p dialogo">― You haven’t forgotten her, you’re simply not going to get ahead of the news. Everything in its own time -just then the chimes of the wall clock struck three in the morning-. It’s time. Do you want me to stay with you?</p>
+    <p class="lector-p dialogo">― Yes, but sit in the passage. You’ll see me, but I won’t see you in the dark. All right?</p>
+    <p class="lector-p">I sat in the passage and let her begin the ritual. There were five chairs, one set in the centre, where she was sitting. Two in front of her, and on them a pair of mirrors reflecting the other two chairs behind her. One to her left and one to her right. Under the three chairs, a candle. On the right-hand chair, a photograph of him; on the left-hand chair, a photograph of her. A bowl of water with the daisies floating in it; she wet her hands and passed them over her face, hair, torso, arms and legs. The water purified, so that the ritual could begin. The candles were the only light in the room.</p>
+    <p class="lector-p">Everything was ready; she breathed deeply. She sought my eyes among the shadows, I nodded. She took the notebook in her hands and set herself to read a series of long texts.</p>
+    <p class="lector-p">“You, who are beloved in this world, hear my voice, which calls you to give you a proof of my affection. The Father has allowed that you should be the first to find yourself free. I could not complain of it without selfishness, for it would be to wish upon you the sorrows and sufferings of this life. I await, then, with resignation, the moment of our meeting again in another, happier world.</p>
+    <p class="lector-p">I know that our separation is momentary, and that however long it may seem to me, its duration is erased before the eternal happiness the Father promises to His chosen. May His goodness preserve me from doing anything that might delay this longed-for instant, and spare me in this way the sorrow of not finding you again when I come out of my earthly captivity.</p>
+    <p class="lector-p">Oh! How sweet and how consoling is the certainty that there is between us only a material veil that hides you from my sight, that you may be at my side, seeing me and hearing me as so many times before. That the senses cease to confound themselves and that your spirit follows me and sustains me always.</p>
+    <p class="lector-p">May the peace of the Father be with you”.</p>
+    <p class="lector-p">The prayer ended with a short poem.</p>
+    <p class="lector-p">“… If I with my clumsy fault</p>
+    <p class="lector-p">have rocked myself among the mists</p>
+    <p class="lector-p">defying the foam</p>
+    <p class="lector-p">raised by the storm,</p>
+    <p class="lector-p">I offer you that from this day forward</p>
+    <p class="lector-p">I shall not have the boldness</p>
+    <p class="lector-p">to deafen the lament</p>
+    <p class="lector-p">of him who suffers in evil.</p>
+    <p class="lector-p">And following my course</p>
+    <p class="lector-p">I have had the impudence</p>
+    <p class="lector-p">to mock that lighthouse</p>
+    <p class="lector-p">which designated my harbour,</p>
+    <p class="lector-p">I promise you, my Father,</p>
+    <p class="lector-p">not to mock that light</p>
+    <p class="lector-p">which shines upon the cross</p>
+    <p class="lector-p">for the son of your love…”</p>
+    <p class="lector-p">As she read, the tears came, her feelings rose and broke. I watched her, absorbed. Having read the verse, she set the notebook on the floor, took up a small bell and rang it seven times, repeating with each stroke the following sentence.</p>
+    <p class="lector-p dialogo">― Mum, Dad, I, your daughter Éloïse, call for you and summon you to my side. It is my heart, brimming with love, that speaks to you… Ding…</p>
+    <p class="lector-p">Mum, Dad, I, your daughter… Ding…</p>
+    <p class="lector-p">… brimming with love, that speaks to you… Ding.</p>
+    <p class="lector-p">With her last word the bell fell to the floor; she was left paralysed. She was shaking, and although she tried to get a word out, she couldn’t. She rose awkwardly. I took a couple of steps. She looked at me, her face undone.</p>
+    <p class="lector-p dialogo">― Go on -I murmured, asking her with my hands to sit down. Slowly she went back to the chair.</p>
+    <p class="lector-p">…</p>
+    <p class="lector-p dialogo">― Mum, Dad.</p>
+    <p class="lector-p dialogo">― Hello, Éloïse…</p>
+    <p class="lector-p dialogo">― Hello, my girl -she broke down crying. Of what was happening I heard nothing and saw nothing of what the mirrors held, but from what I would learn later, he said this-. Stop crying now, you’re very ugly when you pull that face. Take a tissue and dry yourself -he said.</p>
+    <p class="lector-p dialogo">― How long it has been since that day… It hurts me so much not to be at your side today. It wasn’t something we chose. We didn’t even know about our new condition until some time afterwards. We must ask your forgiveness for that. We didn’t know where to go, or what to do. All that was left to us was to look for you. We clung to you, we called you but you couldn’t hear us… and those words that cut us like knives on a Wednesday that seemed never to pass.</p>
+    <p class="lector-p">Without knowing it, we drowned in you the desolation of those who don’t know how to leave, and little by little we made you feel that deep frustration and sadness at our absence. All we wanted was to ask your forgiveness. To tell you how much we love you, and leave things settled here so that we could set out.</p>
+    <p class="lector-p dialogo">― You have no idea how much I have suffered, not only in these four years but over all these many years. You underrated me. You didn’t hear me crying when the dread got the better of me in all that time I spent at your side.</p>
+    <p class="lector-p">I need to hit you both and all I can do is miss you. You can’t imagine how much I long to hold you, how much it hurts me to be telling you this now, when it no longer matters.</p>
+    <p class="lector-p dialogo">― Of course it matters. It matters to us. Both your father and I understand now, we know what we did wrong. And what hurts us most is not being at your side to make up for it. But this was necessary. Éloïse, your name was the last thing I said in life. We had to lose you to know how much we owed you, how much we loved you and how much we had done wrong.</p>
+    <p class="lector-p">If we weren’t here now, this conversation would never have happened. Now our seeing opens onto learning, and everything we have learned will help us be better in the next life. And you, without a doubt, it will help you be honest with yourself, you won’t make our mistakes and you will become a great woman.</p>
+    <p class="lector-p dialogo">― What’s more, don’t think this will be the last time you see us -said her father-. Today the doors open for us again, and this time we shall go. A long journey awaits us, but time there isn’t like time here, so sooner than you expect we’ll be knocking at your door.</p>
+    <p class="lector-p dialogo">― Really?</p>
+    <p class="lector-p dialogo">― No… but I’m sure we’ll find a way of letting you know that we’ve risen and that we can travel as we please. Then we’ll be able to see each other as often as you like. You see, all it takes is a couple of mirrors and some candles to set up a phone box.</p>
+    <p class="lector-p dialogo">― Ha, ha, ha -Éloïse was laughing-. And how do I know you’ll be all right? How will I know you’ll come back?</p>
+    <p class="lector-p dialogo">― We’re fine, don’t worry, almost better than before; it’s only that since the blow I get headaches often… ha, ha, ha, I’m joking, it’s your father who gives me them with all his talking. There’s no television here and no newspapers. Twenty-four hours together is the worst thing that could have happened to me.</p>
+    <p class="lector-p">I promise you everything here is different, there is only love. One day you’ll see for yourself and we’ll be together to keep you company, but that will be when you’re old and doddery. You see… I’ve become funnier.</p>
+    <p class="lector-p dialogo">― So I see. It doesn’t sound so bad after all.</p>
+    <p class="lector-p dialogo">― My girl, live, be happy, enjoy every second, don’t do anything you don’t like. Put what you want first, whatever the consequences, because that way even the bad experiences will be worth having. Enjoy your lad, squeeze him for all he’s worth… until the juice runs out. In short, never stop smiling. The slab that was weighing on you is gone. Don’t suffer. We shall see each other again and, though your senses won’t let you know it, we’ll be at your side watching over you as far as we’re able. Apparently you have to train a great deal to move coins.</p>
+    <p class="lector-p dialogo">― I know you’re going now, but what about Juliette? She ought to know about this.</p>
+    <p class="lector-p dialogo">― No, Éloïse, she isn’t ready to see her dead parents reflected in a mirror. After we go she’ll feel relieved too. Besides, she managed our absence better. Not for nothing did we feed her ego.</p>
+    <p class="lector-p">Remember your mother as diligent, even-tempered, wise and very funny. Don’t keep the ugly part, that’s the only thing I ask of you. Of your father, keep… keep… he was a good man…</p>
+    <p class="lector-p dialogo">― Oi! I don’t know why you say that about me. I have qualities, I’m good… mmm… ahm… and also…</p>
+    <p class="lector-p dialogo">― You see?… Well. Good, calm, affectionate…</p>
+    <p class="lector-p dialogo">― That’s it… only you won’t let me speak.</p>
+    <p class="lector-p dialogo">― He’s gone four years without shutting his mouth…</p>
+    <p class="lector-p dialogo">― Don’t listen to your mother, love, there’s more silence here than you can imagine. But it’s the only way to discover yourself; emptiness ends up stripping your own being bare. My wish, like your mother’s, is that you remember us well. The rest we’ll see to putting right ourselves.</p>
+    <p class="lector-p dialogo">― Mum, Dad, I love you, thank you for this. I really did need it.</p>
+    <p class="lector-p dialogo">― Thank you, my girl, for loving us. Even if we didn’t show it to you, even if we didn’t repeat it to you until you were sick of hearing it every day, we love you and we are greatly proud of who you are. We are so sorry, forgive us.</p>
+    <p class="lector-p dialogo">― Forgiven…</p>
+    <p class="lector-p dialogo">― We’re going now, they’re calling us, we’ll see each other again… take good care of yourself. Give your sister a kiss from us, and another to that ugly husband of yours.</p>
+    <p class="lector-p dialogo">― I’ll give them -she answered, smiling through the tears.</p>
+    <p class="lector-p dialogo">― Thank Regina for her effort too, without her none of this would have been possible.</p>
+    <p class="lector-p dialogo">― I’ll do that, Dad. I love you… see you soon.</p>
+    <p class="lector-p dialogo">― We love you too, until we meet again, little one.</p>
+    <p class="lector-p">The candles had gone out, everything was left in darkness. Éloïse said no more. Only her weeping. I waited in the passage, I don’t know how long.</p>
+    <p class="lector-p dialogo">― Edgard. Turn the light on, please. Help me take all this down.</p>
+    <p class="lector-p">We took the mirrors away, put the chairs back, cleared up the water, the candles. And we went to bed. I fell asleep, but she stayed awake with her hands on her chest, her eyes watery and a half-smile on her lips.</p>
+    <p class="lector-p">When I woke she was gone; she had left a note on the bedside table. “I’m going to do something I hadn’t dared do before”. At that moment I couldn’t imagine what it was, I wasn’t worried.</p>
+    <p class="lector-p">I faced the day with its routine, and when the time came I went to pick Éloïse up from work. I waited twenty minutes longer than usual. I went into the lobby and asked at reception. My astonishment was total when they told me that that very morning she had gone into the director’s office and, after a heated discussion, had formally handed in her resignation. And that she had even dared set certain colleagues straight.</p>
+    <p class="lector-p dialogo">― She’s had the nerve to do what a lot of us should. I’m glad she’s out of here, she’s bound to do better anywhere else -the receptionist told me in confidence.</p>
+    <p class="lector-p">Dumbfounded, I went back to the car. I picked up the phone and called her.</p>
+    <p class="lector-p dialogo">― Éloïse.</p>
+    <p class="lector-p dialogo">― Edgard!!</p>
+    <p class="lector-p dialogo">― Yes…?</p>
+    <p class="lector-p dialogo">― I’ve left my job!</p>
+    <p class="lector-p dialogo">― …I know. I was waiting for you at the door.</p>
+    <p class="lector-p dialogo">― Then come and pick me up on the other side of the industrial estate. Pierrot Industries have taken me on as head of administration. I start next week!</p>
+    <p class="lector-p dialogo">― I’m chuffed to bits! -I answered, moved-. I’ll come for you right away.</p>
+    <p class="lector-p">Five minutes later she was in the car with a smile from ear to ear, going back over her resignation. She was happy, set free, but I would be wrong to say that this was the same Éloïse as before. She was much changed, a great happiness shone in her eyes. Her words were purposeful, sure.</p>
+    <p class="lector-p">Although I can imagine it, I don’t know what her parents said to her, but they were the right words, and they not only cleared her of an unbearable weight, they had given her wings to fly with.</p>
+    <p class="lector-p">She talked about what had happened with such effusiveness that she ended up infecting me with it. I felt that liveliness bursting in my heart and nothing occurred to me but to hush it with a kiss. She caught her breath and answered me with an immoderate one.</p>
+    <p class="lector-p dialogo">― Come on! Start the car. I want to go and see Regina, I want to thank her for everything she has done for us, for my parents, for you, and above all for me.</p>
+    <p class="lector-p">I obeyed and drove. She talked about her new job, about the new future waiting for her and about the new changes in store for our lives. Determined to make up those four years, she was thinking of travelling, of seeing every corner, meeting new people, enjoying every second. Ready to steer her own road and not to allow herself to be underrated. She was resolved to make of her life the thing she had wanted so much and had forbidden herself.</p>
+    <p class="lector-p">I allowed myself the luxury of taking a long detour so as to go on listening to her. She was so enraptured that she didn’t even notice. She seemed never to run out of puff on that endless list of new intentions. I braked sharply, she fell quiet.</p>
+    <p class="lector-p dialogo">― We’re here.</p>
+    <p class="lector-p dialogo">― Well… I hadn’t noticed, it felt shorter than last time.</p>
+    <p class="lector-p">We both came up in front of the house. The garden gate was shut, the blinds were down and there was a sign reading “for sale” with a telephone number. We looked at each other, confused; I took out my mobile and rang, an answering machine, “hello, if you are interested in the property leave your number and your name and I’ll call you shortly”, I hung up. The two of us stood there, not knowing what to do, in front of the house.</p>
+    <p class="lector-p dialogo">― Sometimes I wonder who might be living there -said a voice behind us. We both turned round.</p>
+    <p class="lector-p dialogo">― REGINA!! -there she was. Éloïse embraced her, moved.</p>
+    <p class="lector-p dialogo">― Thank you, thank you!! You can’t imagine how grateful I am, I have no words. I don’t think there’s anything in the world I could do to pay for what you’ve done for me.</p>
+    <p class="lector-p dialogo">― Nonsense, woman. Not at all. A cruise round the Baltic will do me.</p>
+    <p class="lector-p dialogo">― Ahm… well, we have something saved. We can pay for it -I said, flustered.</p>
+    <p class="lector-p dialogo">― Splendid!! Now you know where you’re off to on your next holiday, I’ll settle for a few photographs -we laughed; she took the mickey out of us as much as she pleased-. Come on, come inside. I sense from your faces that it all went better than expected -we nodded-. Wait at the table, I’m going to make tea, I bought some Moorish pastries yesterday to mark the occasion.</p>
+    <p class="lector-p">She went up the stairs. She turned the transistor on; “Campanera”, by the Pequeño Ruiseñor (the Little Nightingale), was playing. Upstairs, the noise of pots and the rattle of the kettle coming to the boil. Shortly afterwards she came down, sat with us and, savouring the pastries, we attended to every detail of Éloïse’s words.</p>
+    <p class="lector-p">During that meeting I understood what had changed my girl so much. For the first time I felt flattered to hear those words, said straight out, from her parents. Sometimes, even when they aren’t yours, an apology and an acknowledgement taste so personal that they move you.</p>
+    <p class="lector-p">Regina watched her with a motherly look, glad, but used to it. I sense she had lived through this situation many times. I drifted off wondering at the immense task that woman of cartoonish appearance must have carried out with so many other people like us. How many were there like Regina? Many… few…? Fewer, I suppose, than are needed to heal the spirit of our society. I was thinking about how to publicise her; the sales rep in me was showing. I remembered those magical minutes packed with charlatans that flood the television so many nights.</p>
+    <p class="lector-p">“- Hello…?</p>
+    <p class="lector-p dialogo">― Yes… Good evening… You want to know whether they’ll give your husband a job… Am I right?</p>
+    <p class="lector-p dialogo">― I was ringin’ ’cos I get this pain in me legs an’ I wanted to know if they’re gonna operate soon… but there you go, me husband died last year…”</p>
+    <p class="lector-p">I was lost in my thoughts when she took my hand.</p>
+    <p class="lector-p dialogo">― I like my life as it is. I don’t want fame, or money, or queues at my door, I only help those who need me. Destiny conspires for us to meet, just as it did with you. They’d take me for mad. Those ones you’re thinking about are what give us a bad name. It makes me happy to do my work well and to see the two of you happy.</p>
+    <p class="lector-p">Now, what you have to do is live and enjoy every second, cross the mirror and find your true selves. Then your life will really have meaning.</p>
+    <p class="lector-p">I’ll still be here, you can visit me whenever you like. I’ll guide you if you dare to set out on the journey, giving you little clues to help you find the solution. You have to feel and understand in order to grow.</p>
+    <p class="lector-p">Suddenly she stopped, tipped her chair back on two legs and closed her eyes. She must have made contact with someone; her brow was furrowing and her expression twisting. We watched, intrigued. She was moving her lips and clicking her fingers. We waited, confused, when without warning she launched into singing along with the music that was playing.</p>
+    <p class="lector-p dialogo">― Samara reina de la morería. Ay! To’ el pueblo l’adoraba, l’adoraba noche y día… -Camarón was tearing his voice open and she followed him to the last chord-. …Forgive me -she said, with a flamenco flourish-. Some songs move me terribly, I can’t help it. It’s something that comes from inside. The gypsy woman I was in another life claps her hands when she hears this… -an instant of silence-. I don’t know what you’re still so surprised at, at this stage. If it truly is your will to walk this path, your next step will be to know who you were in other lives, so as to live the true “I” that belongs to the present.</p>
+    <p class="lector-p">More than two hours had gone by in that easy talk. Beside her time did not pass, calm was in the air and a smile drew itself on your face. We said goodbye with a strong embrace. She invited us to come back when we had recovered from the encounter.</p>
+    <p class="lector-p">She knew it, and we were beginning to realise that once the first door is crossed, all the others want to be opened.</p>
+    <p class="lector-p">That instant when we got into the car and went home marked a new paragraph at the start of our new life.</p>
+    <div class="sep-omega">Ω</div>
+    <p class="lector-p">The first week went by cheerfully, happily, with no bad feeling, far better even than before her parents died. My Éloïse was a woman who radiated peace and liveliness. With every minute that passed at her side my fear grew: I was falling much more in love. If she had already stolen my heart, what would come next.</p>
+    <p class="lector-p">The thing is that I was delighted with my life. That week while we waited for her to start her new job, we decided to take it as a holiday, both of us, doing every mad thing we had ever imagined. At night: dinners, drinks and billiards, spa, swimming pool… In the morning: skydiving, bowling, ping-pong, climbing… the days flew by short of hours. In seven days we did more than we had done in four years. We even redesigned the flat, getting rid of the atmosphere that reminded us so much of the past.</p>
+    <p class="lector-p">Before we knew it, it had got very late on that Wednesday night. I was parking the car when she asked me to wait for her. She went up to the flat and came back some twenty minutes later. “Let’s go to the beach”, she said. I drove without saying anything; seeing her carrying an envelope in her hands, I could imagine what she wanted.</p>
+    <p class="lector-p">We walked along the promenade. “Wait for me here”, she whispered, going down towards the water. I waited, sitting, watching her in the distance. She waded in up to her knees and threw her missive into the air in flames, breaking apart into ashes scattered in the darkness. From her bag she took a couple of roses and left them rocking on the waves.</p>
+    <p class="lector-p">She came back and sat down beside me.</p>
+    <p class="lector-p dialogo">― That’s the last letter to mum and dad.</p>
+    <p class="lector-p dialogo">― I’m glad.</p>
+    <p class="lector-p dialogo">― From now on I’ll be making international calls whenever I want to talk to them.</p>
+    <p class="lector-p dialogo">― Heh, heh… I always thought all this would end with a full stop. Not with a see-you-later; for all my reading, I had no idea anything so complex existed behind our reality. It makes me happy that you’ve settled your differences with your parents.</p>
+    <p class="lector-p dialogo">― This is a relief, and it encourages me to have parents again who love me and know how to show me… -we were left thoughtful, in silence.</p>
+    <p class="lector-p dialogo">― I know what I want as payment! -exclaimed a voice, appearing between the two of us. It startled us, throwing us both aside-. Well now! I’m sorry to have frightened you, I didn’t mean to, ha, ha, ha…</p>
+    <p class="lector-p dialogo">― Forgive me, Regina, but this is the third time you’ve turned up like that since we met. I suspect you like a showy entrance.</p>
+    <p class="lector-p dialogo">― Oh…! You may be right. I’m getting a taste for it, it’s a good deal more fun to frighten than to be frightened. But don’t complain too much, this is nothing compared to a dark dead man appearing to you at night.</p>
+    <p class="lector-p dialogo">― Ah… -Éloïse’s anguished face said everything.</p>
+    <p class="lector-p dialogo">― And what is it you say you want as payment for the help you’ve given? And for the help you’re bound to give us from here on as our guide.</p>
+    <p class="lector-p dialogo">― For now let’s concentrate on the present, I’ll ask for more when that future comes. I believe, if the little bird isn’t mistaken, that you have access to someone I would very much like to hear -she came over to me and whispered her name.</p>
+    <p class="lector-p dialogo">― Why don’t you say it out loud so that I know too?</p>
+    <p class="lector-p dialogo">― It will be a surprise for you and for me.</p>
+    <p class="lector-p dialogo">― I don’t know whether our tastes are similar, Regina.</p>
+    <p class="lector-p dialogo">― You’ve no choice but to trust me.</p>
+    <p class="lector-p dialogo">― What you’re asking me for may go beyond difficult -she was saying, teasing.</p>
+    <p class="lector-p dialogo">― I don’t know her personally, we have friends in common, and it’s true that I can usually get to her work with rather more ease, but…</p>
+    <p class="lector-p dialogo">― No buts about it… Whoever wants what they set out for will undoubtedly succeed in getting it. I have complete faith that you’ll manage to make me happy for a few hours. It’s nothing compared with the happiness the two of you are going to live from here on.</p>
+    <p class="lector-p dialogo">― True. I’ll do as much as I can. As soon as I manage it I’ll let you know.</p>
+    <p class="lector-p dialogo">― That’s the spirit. Well, my dears, I’ll leave you. I’m glad that letter is the last. Now this walk by the shore takes on a new meaning. Good night.</p>
+    <p class="lector-p dialogo">― Good night, Regina, thank you for everything.</p>
+    <p class="lector-p dialogo">― Good night, we’ll speak -she disappeared among the narrow streets as she had the first time.</p>
+    <p class="lector-p">A peculiar woman, who has more of the ordinary than of the strange about her once the common run of mortals dares to look with the heart and not with reason.</p>
+    <p class="lector-p">Éloïse tried to worm out of me what it was that Regina wanted as payment, but I refused to give the surprise away.</p>
+    <p class="lector-p">We had enjoyed her before, we both admired her talent, though she avoided the songs that brought her own tears on. But after that last missive, Éloïse would understand that voice in a different way, she would relish it fully. It cost me the earth to get three front-row invitations to her acoustic set.</p>
+    <div class="sep-omega">Ω</div>
+    <p class="lector-p">First the three of us went to dinner, done up and looking fine. Then we came to the hall, where we met a few friends. There can’t have been more than eighty people. Éloïse was delighted, it was the first time we had been to a private concert and we were elated. Regina, for her part, was truly excited, she couldn’t stop moving, clicking her fingers and clapping, only to stop at the very instant the first guitar chord broke in.</p>
+    <p class="lector-p">The voice came thrilling, filling the hall, no microphone, backed by a guitar, a cajón and a piano, ringing every note, tearing it open from the depths, drawing the tears out of the audience. “El amor tiene una barca que me lleva hasta el dolor… Sola… triste y sola…”, ran the words -a copla about a woman left alone.</p>
+    <p class="lector-p">After two hours of concert the music came to an end. But in the middle of the crowd, Regina stood up amid the applause and made herself heard.</p>
+    <p class="lector-p dialogo">― One moment, ladies and gentlemen! This can’t end like this. It fills me with joy to have heard this woman’s voice two steps away from her, but I’m not leaving here without singing at her side -Diana went back to her chair and had Regina brought up.</p>
+    <p class="lector-p dialogo">― I accept the offer, but with no instruments. Start with whatever song you like and I’ll follow you.</p>
+    <p class="lector-p dialogo">― La loba… la loba… para el que hace alarde de jugar con un querer… y para llamarte cobarde!, al que engaña a una mujer….</p>
+    <p class="lector-p dialogo">― Ay!, paredes de mi alcoba, cárcel de condenación… que aunque quiero ser la loba, no me deja el corazón…</p>
+    <p class="lector-p">And the two women treated us to the last song. You wouldn’t have thought it from that strident voice of hers, but she sang well enough for nobody to leave and to hold her own alongside Navarro.</p>
+    <p class="lector-p">When it was all over we dropped her at her house. During the journey she said nothing, a smile from ear to ear and trembling lips going back over the words she had heard. She was still moved.</p>
+    <p class="lector-p dialogo">― I don’t know how to thank you for this. It has shaken my soul.</p>
+    <p class="lector-p dialogo">― Ha, ha, ha… I’m glad. But it’s nothing, I did what I had to do. Thank you.</p>
+    <p class="lector-p dialogo">― Yes. Thank you very much, Regina. It’s lovely to know you and to have you at our side.</p>
+    <p class="lector-p dialogo">― Thank you, my dears, it has been a delightful night, and I’ve done something I had wanted to do for a long time. We’ll see each other again soon, good night.</p>
+    <p class="lector-p dialogo">― Good night…</p>
+    <p class="lector-p">That would be kept in memory, as the meeting with her parents was kept, and so many others to come alongside the new friend whose path we had crossed.</p>
+    <div class="sep-omega">Ω</div>
+    <p class="lector-p">“We both thank you for being at our side.</p>
+    <p class="lector-p">A kiss and a very big hug.</p>
+    <p class="lector-p">Éloïse and Edgard.</p>
+    <p class="lector-p">Postscript: On the day you’re no longer beside us, and I hope it comes late, please don’t appear at night in the middle of the passage, thank you :D”</p>
+
+  <div class="cta-final">
+    <a href="/epub/carta-a-mama-carta-a-papa-en.epub" download>Download EPUB</a>
+    <a href="/chelo-jolms/">More from Hunicornia →</a>
+    <a href="https://ko-fi.com/hunicornia" target="_blank" rel="noopener">Ko-fi · support Hunicornia</a>
+  </div>
+  <p class="nota-final">Complete work, free to read — Hunicornia</p>
+</main>
+
+<script src="/lector-progreso.js" defer></script>
+<script>
+(function() {
+  var fill = document.getElementById("progFill");
+  window.addEventListener("scroll", function() {
+    var d = document.documentElement;
+    var pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+    fill.style.width = Math.min(pct || 0, 100) + "%";
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

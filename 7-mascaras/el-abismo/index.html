@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="El abismo, capítulo 6 de 7 máscaras. Fantasía épica para leer gratis en Hunicornia.">
+  <meta name="author" content="Hunicornia">
+  <link rel="canonical" href="https://hunicornia.es/7-mascaras/el-abismo/">
+  <link rel="preload" href="/ChopinLight.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="/favicon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="/favicon-512.png">
+  <title>6. El abismo · 7 máscaras — Hunicornia</title>
+  <style>
+    @font-face { font-family: "Chopin"; src: url("/ChopinLight.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --primary: #643587; --secondary: #8b3689; --nav-h: 58px; }
+    html, body { width: 100%; background: #fff; color: var(--primary); font-family: Arial, sans-serif; scroll-behavior: smooth; }
+    body { padding-top: var(--nav-h); }
+    .lector-nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); border-bottom: 1px solid rgba(100,53,135,0.15); z-index: 200; backdrop-filter: blur(8px); }
+    .nav-bar { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: var(--nav-h); }
+    .nav-volver { font-family: system-ui, Arial, sans-serif; font-size: 12px; color: var(--secondary); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; }
+    .nav-volver:hover { opacity: 0.7; }
+    .nav-titulo { font-family: "Chopin", serif; font-size: 20px; font-weight: 300; letter-spacing: 0.05em; color: var(--primary); }
+    .nav-indice-btn { font-family: system-ui, Arial, sans-serif; font-size: 11px; color: var(--secondary); background: none; border: 1px solid rgba(100,53,135,0.3); border-radius: 4px; padding: 6px 14px; cursor: pointer; letter-spacing: 0.06em; text-transform: uppercase; transition: background 0.2s; }
+    .nav-indice-btn:hover { background: rgba(100,53,135,0.06); }
+    .progreso-barra { height: 2px; background: rgba(100,53,135,0.1); }
+    .progreso-fill { height: 100%; width: 0%; background: var(--primary); transition: width 0.1s linear; }
+    .indice-panel { display: none; border-top: 1px solid rgba(100,53,135,0.1); padding: 24px 24px 28px; background: rgba(255,255,255,0.99); max-height: calc(100vh - var(--nav-h)); overflow-y: auto; }
+    .indice-panel.abierto { display: block; }
+    .indice-lista { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 2em; }
+    .indice-lista li { padding: 3px 0; break-inside: avoid; }
+    .indice-lista a { font-family: "Chopin", serif; font-size: 15px; font-weight: 300; color: var(--primary); text-decoration: none; opacity: 0.8; }
+    .indice-lista a:hover { opacity: 1; }
+    .lector-contenido { max-width: 680px; margin: 0 auto; padding: 56px 24px 120px; }
+    .obra-titulo-h { font-family: "Chopin", serif; font-size: clamp(34px, 5vw, 64px); font-weight: 300; letter-spacing: 0.04em; margin: 0 0 10px; color: var(--primary); line-height: 1.1; }
+    .obra-subtitulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--secondary); margin: 0 0 60px; opacity: 0.75; }
+    .cap-bloque { margin-bottom: 72px; }
+    .cap-h2 { font-family: "Chopin", serif; font-size: clamp(22px, 3vw, 32px); font-weight: 300; letter-spacing: 0.04em; margin: 64px 0 36px; color: var(--primary); text-align: center; padding-top: 48px; border-top: 1px solid rgba(100,53,135,0.12); line-height: 1.25; scroll-margin-top: var(--nav-h); }
+    .cap-num { display: block; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: clamp(10px, 1.1vw, 12px); font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--secondary); opacity: 0.75; margin-bottom: 16px; }
+    .lector-p { font-size: clamp(15px, 1.7vw, 17px); line-height: 1.95; margin: 0 0 0.9em; color: var(--primary); text-align: justify; hyphens: auto; }
+    .lector-p.dialogo { }
+    .sep-omega { text-align: center; color: var(--secondary); opacity: 0.3; font-size: 13px; margin: 36px 0; letter-spacing: 0.4em; }
+    .cta-final { text-align: center; margin-top: 64px; display: flex; gap: 1em; justify-content: center; flex-wrap: wrap; }
+    .cta-final a { display: inline-block; padding: 0.8em 1.5em; background: rgba(139,54,137,0.12); color: var(--primary); border-radius: 4px; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+    .cta-final a:hover { opacity: 0.7; }
+    .nota-final { font-size: 11px; color: var(--secondary); text-align: center; margin-top: 32px; opacity: 0.6; }
+    @media (max-width: 600px) { :root { --nav-h: 52px; } .lector-contenido { padding: 36px 16px 80px; } .nav-bar { padding: 0 16px; } .indice-lista { columns: 1; } }
+    @media (prefers-reduced-motion: reduce) { html, body { scroll-behavior: auto; } *, *::before, *::after { transition-duration: 0.01ms !important; } }
+
+    .parte-h2 { font-family: "Chopin", serif; font-size: clamp(26px, 3.6vw, 42px); font-weight: 300; letter-spacing: 0.04em; margin: 120px 0 0; color: var(--primary); text-align: center; line-height: 1.2; scroll-margin-top: var(--nav-h); }
+    .parte-h2.primera { margin-top: 0; }
+    .parte-h2 + .cap-h2 { margin-top: 34px; padding-top: 34px; }
+    .indice-lista a[aria-current], .indice-sub a[aria-current], .indice-cap-nombre[aria-current] { opacity: 1; box-shadow: inset 3px 0 0 var(--primary); padding-left: 9px; }
+    .indice-sub li:has(a[aria-current]) { border-left-color: var(--primary); border-left-width: 3px; padding-left: 12px; }
+    .indice-parte { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em; color: var(--secondary); opacity: 0.7; margin: 16px 0 4px; break-inside: avoid; list-style: none; }
+    .indice-parte:first-child { margin-top: 0; }
+    .cap-paso { display: flex; justify-content: space-between; gap: 1.5em; margin-top: 72px; padding-top: 28px; border-top: 1px solid rgba(100,53,135,0.12); }
+    .cap-paso a { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--secondary); text-decoration: none; max-width: 45%; line-height: 1.5; }
+    .cap-paso a:hover { color: var(--primary); }
+    .cap-paso .der { text-align: right; margin-left: auto; }
+  </style>
+</head>
+<body data-obra="7 máscaras" data-capitulo="El abismo">
+<nav class="lector-nav" aria-label="Navegación">
+  <div class="nav-bar">
+    <a class="nav-volver" href="/">← Volver</a>
+    <span class="nav-titulo">7 máscaras</span>
+    <button class="nav-indice-btn" id="btnIndice" aria-expanded="false" aria-controls="indicePanel">Índice</button>
+  </div>
+  <div class="indice-panel" id="indicePanel" role="navigation" aria-label="Índice de capítulos">
+    <ul class="indice-lista">
+      <li class="indice-parte">La leyenda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/">1. El nacimiento de las estrellas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-partida/">2. La partida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-cima/">3. La cima</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-conjuncion/">4. La conjunción</a></li>
+      <li class="indice-parte">La búsqueda</li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-reencuentro-de-los-elegidos/">5. El reencuentro de los elegidos</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-abismo/" aria-current="true">6. El abismo</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-tercer-elegido/">7. El tercer elegido</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-despertar/">8. El despertar</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-opera/">9. La Ópera</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-huida/">10. La huída</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-eco/">11. El eco</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-silencio/">12. El silencio</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/las-atalayas/">13. Las atalayas</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-ira/">14. La ira</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-impotencia/">15. La impotencia</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-bosque/">16. El bosque</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-despedida/">17. La despedida</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/el-juicio-final-de-los-dioses/">18. El juicio final de los dioses</a></li>
+      <li><a href="https://hunicornia.es/7-mascaras/la-batalla/">19. La batalla</a></li>
+      <li class="indice-parte">La redención</li>
+      <li><a href="https://hunicornia.es/7-mascaras/un-nuevo-amanecer/">20. Un nuevo amanecer</a></li>
+    </ul>
+  </div>
+  <div class="progreso-barra"><div class="progreso-fill" id="progFill"></div></div>
+</nav>
+<main class="lector-contenido" data-lectura>
+  <h1 class="obra-titulo-h">7 máscaras</h1>
+  <p class="obra-subtitulo">La búsqueda · Capítulo 6 de 20 · Castellano</p>
+  <div class="cap-bloque">
+    <h2 class="cap-h2">El abismo</h2>
+    <p class="lector-p dialogo">— ¿Estás lista para cruzar al otro lado? Si quieres, voy yo delante.</p>
+    <p class="lector-p">Geneviève se acercó a la puerta quitando el candado y giró la manivela. La hoja de madera se abría ruidosamente y con dificultad. Al otro lado, las colinas rocosas se alzaban bajo un feo cielo verde.</p>
+    <p class="lector-p dialogo">— ¿Estás convencida de que es por aquí?</p>
+    <p class="lector-p dialogo">— Sí, mira la estrella, sigue brillando en este dominio. Debemos entrar en él.</p>
+    <p class="lector-p">Ambos muchachos pasaron cerrando la puerta tras de sí. El gozne encajó y la puerta desapareció tras ellos.</p>
+    <p class="lector-p dialogo">— ¡Caramba!, parece que se puede entrar pero no salir –apuntó Geneviève algo asustada–. Me da que este sitio tan poco agradable es el abismo del Lobo Ciego.</p>
+    <p class="lector-p">Los elegidos, haciendo acopio de valentía, continuaron el viaje. La luz tenue y gris hacía del dominio un lugar lúgubre y tenebroso. No parecía haber nada vivo en los dominios del Lobo. El aire levantaba grandes nubes de polvo. Caminaron durante largo rato sorteando las encrespadas rocas. Salvo el aullido del viento, todo estaba en silencio.</p>
+    <p class="lector-p dialogo">— Ahora entiendo que nadie se acerque a este lugar. Hay que estar realmente loco para meterse en la boca del lobo.</p>
+    <p class="lector-p dialogo">— Eres poco chistosa. Este sitio me da mala espina, ya sé que estábamos avisados, pero no es lo mismo que te lo cuenten a vivirlo.</p>
+    <p class="lector-p">El resto del trayecto lo continuaron en silencio, atentos a cualquier movimiento o sonido extraño. Las palabras de advertencia de Tanuk ik tomaban más cuerpo que nunca en sus cabezas. Los elegidos llegaban por fin al borde del abismo. Una franja de unos treinta pies separaba el islote del valle. Era imposible sortear el obstáculo saltando. Ambos se miraron impotentes, el despeñadero no tenía fondo y no existía ningún puente a la vista por el que cruzar. ¿Cómo alcanzar su destino pues? Cada uno por un lado bordearon la isla de roca en busca de una entrada o un puente, pero no había nada que pudiese ayudarles, no más que un gran árbol reseco al borde del abismo.</p>
+    <p class="lector-p dialogo">— Nada. Este árbol es lo único que hay.</p>
+    <p class="lector-p dialogo">— Te enseñaron en la selva a volar colgado de una liana.</p>
+    <p class="lector-p dialogo">— ¡Yo no vivo en la selva, cara de mona!</p>
+    <p class="lector-p dialogo">— Ja, ja, ja. Ya lo sé, pero por si acaso. ¿Qué hacemos ahora?</p>
+    <p class="lector-p dialogo">— ¿Qué tal si te cojo en brazos y te lanzo hacia la isla?, con un poco de suerte puede que llegues.</p>
+    <p class="lector-p dialogo">— Mira niño, no me hagas… –dijo Geneviève persiguiendo a Daikuku. El pequeño reía corriendo ante ella.</p>
+    <p class="lector-p dialogo">— ¿Qué vamos a hacer, Geneviève?</p>
+    <p class="lector-p dialogo">— Sin nada ni nadie que nos pueda ayudar se me ocurre poca cosa, puede que al otro lado haya alguien que nos socorra si lo llamamos.</p>
+    <p class="lector-p dialogo">— No parece que haya mucha gente al otro lado esperando a ayudarnos.</p>
+    <p class="lector-p dialogo">— ¡Hola! –gritó la chica colocando las manos a modo de bocina. La voz repetida por el eco–. Ola, la, a…</p>
+    <p class="lector-p">De nuevo el silencio, los dos muchachos se disponían a gritar de nuevo cuando un aullido aterrador ensordeció el valle. Los dos saltaron acongojados cogiéndose el uno al otro. El aullido desesperado y lastimero llegaba desde el centro de la isla, su dueño quedaba muy lejos. Daikuku y Geneviève estaban inmóviles, palidecidos, con la sangre helada. Aquello, sin duda, era la contestación al saludo de la muchacha. “¡¡RAahh, RAahh!!”, un estridente graznido que llegaba por sus espaldas los hizo botar horripilados. “AAAaaahh” gritaban los dos con los ojos cerrados. ¡RAahh, RAahh!, los graznidos se repitieron. El escandaloso aletear de una bandada. Daikuku entreabrió los ojos. Una bandada de cuervos volaba hasta posarse sobre el añejo árbol. Daikuku agitó a Geneviève. La muchacha miraba espantada. Unos ocho cuervos negros como el tizón y de un tamaño mayor de lo normal. Uno destacaba entre ellos por su inusual aspecto, era el más grande de todos. Su cara parecía una aberración entre hombre y pájaro, repleta de cicatrices. Los niños miraban sin saber qué hacer, asustados, sin nada con que defenderse. Geneviève empujaba a Daikuku para que utilizase su habilidad sobre las bestias y se comunicara con ellos. Únicamente podían esperar un ataque o una pista para entrar al abismo. Nadie se movía. Silencio. Mirándolos fijamente el gran cuervo se dispuso a hablar.</p>
+    <p class="lector-p dialogo">— Debéis saber, si no lo sabéis ya, que estáis en los dominios del Lobo Ciego. Aquí nadie es bien recibido, y quien osa adentrarse por estos lugares cae presa de las bestias que moran estas desoladas tierras. Y en el supuesto caso de llegar hasta el laberinto, poco tiempo es el que se permanece con vida antes de ser devorado por las terribles fauces de nuestro amo. Bien haríais siendo precavidos, pues mi función es advertir a los incautos.</p>
+    <p class="lector-p">Puede que haga bien, o que por el contrario, haga mal, pues sería oportuno que perecieseis dentro del abismo, hace mucho tiempo que no viene nadie a visitarnos y todas las criaturas que habitan estas tierras llevan días sin comer, incluidos los aquí presentes. Puede que al veros tan jóvenes e ignorantes se me esté ablandando el corazón y por eso pretenda que recapacitéis y os marchéis. Pero estad tranquilos, de vosotros únicamente depende la decisión.</p>
+    <p class="lector-p">Puesto que nuestro amo ya sabe que estáis aquí, puede que nos convenga más no dejaros marchar. El Lobo Ciego está hambriento y no sabría yo cómo justificar la partida de un menú tan apetitoso como vosotros. Seríais un plato variopinto, uno tan oscuro y la otra tan pálida. Sea como fuere, me da la sensación de que si mientras hablo, no habéis huido ya corriendo despavoridos, se debe a una ilógica y suicida necesidad de cruzar al otro lado del abismo y penetrar en la isla del Lobo Ciego, ¿o acaso me equivoco?</p>
+    <p class="lector-p dialogo">— No te equivocas –contestó Geneviève entre dientes–, hemos llegado hasta aquí para encontrarnos con el Lobo Ciego, debemos llegar hasta el final y no nos asustan cuantas bestias habiten en el gran atolón. Tan sólo necesitamos saber cómo podemos cruzar al otro lado del foso.</p>
+    <p class="lector-p dialogo">— Vaya, vaya, eres mucho más insensata de lo que hubiese llegado a imaginar. Lo que habita ahí dentro es algo muy peligroso, casi preferiría morir cayendo por el abismo a morir devorado por las criaturas del atolón. Jamás he visto a nadie con tantas ganas de perecer, incluso después de haber sido advertido. Pero mi instinto me dice que guardáis un gran secreto, pues de lo contrario, no osaríais entrar ahí sin armas y con tanta vehemencia.</p>
+    <p class="lector-p">He de ser sincero y deciros que es admirable vuestra voluntad, pero como sé que acabaréis siendo devorados y posiblemente mis hijos y yo podamos degustar algo de vuestra suculenta carne, os daré a cambio una pista para llegar a la ínsula. Desconozco qué buscáis y queréis de nuestro amo si no es otra cosa que la muerte. Como veis, no hay puente ni manera alguna de cruzar el foso a no ser que voléis como nosotros y eso creo que no lo podéis hacer. Me encantaría ayudaros, entre mis hijos y yo podríamos llevaros, pero prefiero, ya que parecéis tan astutos, ver cómo os las ingeniáis para cruzar al otro lado –concluyó el cuervo divertido.</p>
+    <p class="lector-p dialogo">— ¿Pero cómo pretendes que lleguemos sin ayuda? No hay lugar alguno por el que cruzar, tú mismo lo has dicho, no tenemos alas –exclamó Daikuku molesto.</p>
+    <p class="lector-p dialogo">— ¡Cáspita!, que desilusión. Tenía esperanzas en vosotros.</p>
+    <p class="lector-p">Después de resolver este enigma, se os harán menos arduos los siguientes. Os diré que es posible llegar a pie al otro lado del abismo. Ahora es necesario que vosotros seáis suficientemente listos para descubrir cómo. Estad atentos, puede que os ayude –el pájaro hizo un pequeño paréntesis–. En estos parajes de roca fría y triste, habita un ser singular. Cuidado debéis tener si en sus fauces no queréis acabar. El terrible Lobo Ciego es, y su vista no le impide matar. Para encontrar la entrada y la salida no es necesario volar –el cuervo terminó su acertijo–. Buena suerte, camaradas, os esperaré en el interior deseoso de probar vuestras carnes, no os hagáis rogar demasiado. Si todavía tenéis alguna duda preguntad al árbol, puede que os eche una mano.</p>
+    <p class="lector-p">El enorme cuervo levantó el vuelo y tras él sus hijos. Graznaban estruendosos desapareciendo en el interior de la ínsula.</p>
+    <p class="lector-p dialogo">— ¿Qué habrá querido decir con eso? Estoy harto de tanto acertijo, primero Tanuk ik y ahora este maldito pajarraco. ¿Acaso pretende que cerremos los ojos y busquemos al lobo a ciegas?</p>
+    <p class="lector-p dialogo">— Mira, Daikuku, ven. En el árbol hay algo escrito, pero no logro entender qué pone, parecen jeroglíficos o ideogramas –el niño se acercó.</p>
+    <p class="lector-p dialogo">— ¡Vaya!, ahora sí entiendo el dichoso enigma del cuervo. Ahí indica cómo se accede a la fortaleza del Lobo Ciego sin caer en el abismo.</p>
+    <p class="lector-p dialogo">— Hey, ¿desde cuándo sabes leer esto? Vamos, dime qué es lo que dice.</p>
+    <p class="lector-p dialogo">— No sé desde cuando puedo leer esas cosas, pero comprendo lo que dice, o al menos eso creo –el niño se colocó a unos pasos del árbol, al filo del abismo.</p>
+    <p class="lector-p dialogo">— ¿Qué estás tramando, Daikuku? –preguntó Geneviève preocupada.</p>
+    <p class="lector-p">El pequeño cerró los ojos y adelantó un pie, un instante y se dejó caer hacia el vacío.</p>
+    <p class="lector-p dialogo">— ¡¡¡NOOOO!!! ¡¡¡Daaiikuuukuuu!!! –Geneviève corría con el gesto desfigurado para intentar atraparlo. La joven se detuvo en seco, miraba asombrada, el niño flotaba en el aire–. ¿Cómo has hecho eso?</p>
+    <p class="lector-p dialogo">— Muy fácil, en la selva nos enseñan a levitar.</p>
+    <p class="lector-p dialogo">— ¡No me fastidies, me has dado un susto de muerte! ¿Cómo has sabido que no te caerías?</p>
+    <p class="lector-p dialogo">— En el árbol pone que hay un puente invisible justo a su lado, por eso el acertijo dice que sólo los ciegos pasarán.</p>
+    <p class="lector-p dialogo">— ¡¿Y cómo estabas tan seguro de que este sería el lado correcto?, ¿y si hubiese sido a unos pasos de aquí?!</p>
+    <p class="lector-p">Daikuku se quedó blanco, no había caído en ello. Si la suerte no hubiera estado de su lado, seguramente estaría ya a unos metros bajo tierra.</p>
+    <p class="lector-p dialogo">— ¡Eres un insensato, no puedes arriesgarte así por nada! –Geneviève cogió un puñado de piedras y las lanzó sobre el puente invisible. Las piedras quedaban suspendidas en el aire dibujando el camino hacia la ínsula–. No vuelvas a hacer una cosa así. ¡Vamos!</p>
+    <p class="lector-p">Geneviève cogía desconfiada a Daikuku de la mano estirando de él. Cruzaron el puente hasta llegar a la muralla de la fortaleza. No había entrada posible. La roca se alzaba a unos cuantos pies de altura, suficiente para no poder escalarla.</p>
+    <p class="lector-p dialogo">— Y ahora ¿qué?, ¿no ponía nada en el árbol para hacer que este infranqueable muro de roca desaparezca?</p>
+    <p class="lector-p dialogo">— No, en el árbol no ponía nada de esto, sólo indicaba el lugar del puente. Pero puede que el acertijo también tenga que ver con la entrada al lugar.</p>
+    <p class="lector-p dialogo">— ¿Qué locura pretendes hacer ahora?</p>
+    <p class="lector-p dialogo">— Ninguna, tú solamente observa.</p>
+    <p class="lector-p">Daikuku cerró los ojos y dio unos pasos hacia el muro. Caminaba despacio, manteniendo el equilibrio. Geneviève soltaba su mano siguiéndolo de cerca. Daikuku se acercaba a la pared, un paso más, chocaría contra la roca. Otro paso, el camino continuaba, la pared no existía. Geneviève miraba asombrada, con un toque avisaba a Daikuku. No era más que un efecto óptico. La entrada estaba ante ellos.</p>
+    <p class="lector-p dialogo">— ¡Mira, es increíble! ¡No hay nada! Es un agujero enorme y no lo habíamos visto. Ahora ya conocemos para qué te sirve saber leer en este mundo.</p>
+    <p class="lector-p dialogo">— Espera a ver de lo que soy capaz, muñeca. Seguro que este sitio está lleno de escrituras que sólo yo sé descifrar –alardeaba divertido–. A partir de ahora no podrás vivir sin mí.</p>
+    <p class="lector-p dialogo">— Eres tonto de capirote, ¿crees que me asombras? Hace falta mucho más que eso para sorprender a una dama como yo –contestó Geneviève riendo.</p>
+    <p class="lector-p">De nuevo un aullido rasgaba el silencio. El Lobo Ciego sabía que habían entrado, les daba la bienvenida. Una irregular escalera daba acceso al interior del atolón de roca. En su interior muros de piedra cercaban el pantano convirtiéndolo en pequeñas ciénagas sucias y mal olientes, infectadas de insectos y de bichejos repugnantes. La vegetación cubría todo, el agua y las paredes. Grandes telarañas colgando de los árboles, babas en las piedras, mugre y moho en rededor. Al contrario que en el exterior, la vida se promulgaba inundándolo todo.</p>
+    <p class="lector-p dialogo">— Es un bonito lugar para pasar unas vacaciones.</p>
+    <p class="lector-p dialogo">— Será mejor que vayas tú y yo te espero aquí, Daikuku.</p>
+    <p class="lector-p dialogo">— Muy bien, mis queridos amigos, habéis logrado cruzar el abismo. No esperaba menos de vosotros. Mi amo quedará muy satisfecho con la cena de hoy –exclamó el cuervo posado sobre el muro–. A este lugar se le conoce como el pantano del hedor. Es vuestro primer desafio en la isla. Está habitado por criaturas terribles y sanguinarias que no comen nada como vosotros desde hace mucho. ¿Veis aquellas calaveras?, son de los últimos que anduvieron por aquí, pero de eso hace años. Si conseguís escapar a los monstruos del pantano, sabed que la inhalación de estos vapores pestilentes también puede daros muerte. Sed rápidos en cruzar las ciénagas. Al otro lado estaréis a salvo de la asfixia, pero no de nosotros. Suerte, mis jóvenes camaradas –el cuervo desaparecía.</p>
+    <p class="lector-p">Geneviève y Daikuku dieron unos pasos. Las rocas asomaban sobre el agua, marcando varios caminos posibles.</p>
+    <p class="lector-p dialogo">— ¿Por dónde prefieres ir?</p>
+    <p class="lector-p dialogo">— Me da igual, me conformo con llegar a la otra orilla toda de una pieza.</p>
+    <p class="lector-p dialogo">— No parece que haya mucho revuelo, si no hacemos mucho movimiento podríamos llegar al otro lado.</p>
+    <p class="lector-p dialogo">— Por nuestro bien, espero que así sea. Pero mentiría si no te dijese que tanta calma me da muy mala espina.</p>
+    <p class="lector-p dialogo">— Tranquila, usaré mis poderes para hablar con las bestias y así ninguna nos atacará.</p>
+    <p class="lector-p dialogo">— Me da que por mucho que hables no atenderán a razones.</p>
+    <p class="lector-p dialogo">— Mujer de poca fe. ¡Vamos! –exclamó Daikuku tomando impulso para saltar.</p>
+    <p class="lector-p dialogo">— ¡Espera! –Geneviève estiraba del muchacho–. ¿Por qué no preguntas a algún animal cuál es el camino correcto? ¿Y si alguna de esas rocas no soporta nuestro peso?, o peor aún, ¿y si es un monstruo camuflado?</p>
+    <p class="lector-p dialogo">— Aquí no hay ningún animal al que pueda preguntar. Y seguro que si lo hubiese ya estaríamos corriendo.</p>
+    <p class="lector-p dialogo">— Te equivocas, que yo sepa esta plaga de asquerosos y molestos bichos pertenecen al reino animal.</p>
+    <p class="lector-p dialogo">— Cierto. Déjame que intente hablar con ellos. “Estamos perdidos, por favor, ¿sabríais decirnos qué camino es el correcto para llegar a la otra orilla?”</p>
+    <p class="lector-p dialogo">— “Ya estáis en el abismo del Lobo Ciego, todos los caminos llevan a él. No sabemos más, puesto que nadie ha vuelto jamás para indicarnos cuál es el correcto” –miles de voces agudas que solamente Daikuku podía entender, contestaron al unísono. Los insectos continuaron zumbando.</p>
+    <p class="lector-p dialogo">— ¿Y bien? ¿Qué te han dicho? No pareces muy alentado.</p>
+    <p class="lector-p dialogo">— Poca cosa. Que nadie ha vuelto para confirmar el camino.</p>
+    <p class="lector-p dialogo">— Ammm –Geneviève tragó saliva.</p>
+    <p class="lector-p dialogo">— De todos modos han sido muy amables, han dicho que todos los caminos llevan al Lobo Ciego, así que no debemos temer perdernos.</p>
+    <p class="lector-p dialogo">— ¡Jo!, que amables, dales un beso de mi parte.</p>
+    <p class="lector-p dialogo">— A mí me gusta más por la derecha. No estoy seguro, pero qué más da. ¡Vamos, amiga mía!</p>
+    <p class="lector-p dialogo">— Nada que objetar. ¡Alé!</p>
+    <p class="lector-p">Daikuku saltó sobre una roca, parecía segura. Geneviève hizo igual. Todo seguía en calma. Otro salto. Ningún monstruo a la vista, tan sólo sapos, arañas, gusanos y poca cosa más. Cinco rocas salvaron las aguas, desafortunadamente la siguiente estaba mucho más lejos de lo que parecía desde la orilla.</p>
+    <p class="lector-p dialogo">— ¿Ahora qué hacemos?</p>
+    <p class="lector-p dialogo">— Volver atrás y buscar otro camino.</p>
+    <p class="lector-p dialogo">— Eso no puede ser, mira, todo está muy lejos a partir de aquí. Estaríamos en la misma situación.</p>
+    <p class="lector-p dialogo">— Yo ahí dentro no pongo un pelo.</p>
+    <p class="lector-p dialogo">— ¿Y qué quieres que hagamos?</p>
+    <p class="lector-p dialogo">— Tú saltas al agua, te pones en la mitad, piso sobre ti y cruzo hasta la siguiente roca. ¿Te parece bien, Daikuku?</p>
+    <p class="lector-p dialogo">— Está bien, espera que mida la profundidad del agua –Daikuku arrancó una larga raíz y la hundió en el agua. Un pie y medio más o menos–. Espero no caer en la boca de ningún bicho –Daikuku se tiró al agua, le cubría hasta las rodillas. Geneviève miraba asqueada lo que su compañero sufría.</p>
+    <p class="lector-p dialogo">— Vamos, apoya tus pies sobre mí –Geneviève cruzó torpemente hasta otra roca, hundiendo al muchacho en el lodo.</p>
+    <p class="lector-p dialogo">— Daikuku</p>
+    <p class="lector-p dialogo">— ¿Qué?</p>
+    <p class="lector-p dialogo">— La siguiente roca está aún más lejos. Queda más de la mitad para llegar a la orilla.</p>
+    <p class="lector-p dialogo">— ¿No pretenderás que te lleve todo el camino subida sobre mis hombros?</p>
+    <p class="lector-p dialogo">— … eee, sí… –contestó Geneviève con voz lastimera.</p>
+    <p class="lector-p dialogo">— Venga, no seas cría. Baja aquí y camina a mi lado, no ocurrirá nada.</p>
+    <p class="lector-p dialogo">— ¿Seguro?</p>
+    <p class="lector-p dialogo">— Síii.</p>
+    <p class="lector-p dialogo">— ¿Me lo prometes?</p>
+    <p class="lector-p dialogo">— No.</p>
+    <p class="lector-p dialogo">— Vale.</p>
+    <p class="lector-p">Geneviève saltó al agua con todo su cuerpo erizado. El lodazal le llegaba hasta las rodillas. Sentía el espeso líquido entre los dedos de los pies. Su cara era toda una égloga. Se pegó a él, casi sin dejarlo andar. Caminaban junto a las rocas, por si fuese necesario subir a ellas. Bajo el agua podían verse algunas sombras agitadas.</p>
+    <p class="lector-p dialogo">— Daikuku, ¿eso qué es?</p>
+    <p class="lector-p dialogo">— Peces</p>
+    <p class="lector-p dialogo">— ¿Sí?</p>
+    <p class="lector-p dialogo">— Sí, mira –Daikuku metió la mano en el agua y sacó algo poco deseado.</p>
+    <p class="lector-p dialogo">— ¡¡¡Aaaaaaahhh!!! –gritaba Geneviève subiéndose a la espalda de su compañero–. Una serpiente, ¡déjala, déjala!</p>
+    <p class="lector-p">Daikuku, sofocado, dejó continuar al reptil. Geneviève empujaba para que caminase más rápido. La luz mortecina se filtraba entre las ramas de los árboles. Todo seguía en silencio. Las aguas cubrían el pecho de Daikuku y la cintura de la chica.</p>
+    <p class="lector-p dialogo">— Mira, las rocas vuelven a estar lo suficientemente cerca como para continuar sobre ellas. El terreno se vuelve más profundo, será mejor que salgamos del agua.</p>
+    <p class="lector-p dialogo">— Sí –respondió Geneviève sin sangre en las venas.</p>
+    <p class="lector-p">Los dos subieron sobre la roca, empapados. Tenían la piel cubierta de lodo y algas. Saltaban de piedra en piedra. Sólo quedaban tres para llegar a la orilla.</p>
+    <p class="lector-p dialogo">— ¡¡Cuidado!! –gritó Daikuku agarrando fuertemente a Geneviève por el brazo justo cuando se disponía a saltar a la siguiente roca.</p>
+    <p class="lector-p">Geneviève se quedó clavada, inmóvil, asustada y dolorida por el fuerte apretón de su compañero.</p>
+    <p class="lector-p dialogo">— ¿Qué ocurre? –preguntó sin inmutarse.</p>
+    <p class="lector-p dialogo">— Mira detenidamente la roca que ibas a pisar.</p>
+    <p class="lector-p dialogo">— ¿Qué le pasa?, es como todas las demás –contestó molesta.</p>
+    <p class="lector-p dialogo">— Te equivocas, mira bien –un parpadeo–. ¿Has visto sus ojos?, nos mira, no es una piedra. Debe ser algo parecido a un cocodrilo. Esperaba que lo pisásemos para dejarnos caer al agua y devorarnos. Mira hacia delante, aquellas rocas también podrían ser una trampa. Esto es muy peligroso, a partir de ahora debemos andar con más cautela.</p>
+    <p class="lector-p">Geneviève no se había desmayado ante la visión por temor a caer al agua.</p>
+    <p class="lector-p dialogo">— Con eso ahí delante no pienso seguir, no pienso volver hacia atrás y tampoco me quiero quedar aquí -sollozaba la muchacha nerviosa sin levantar los ojos del reptil.</p>
+    <p class="lector-p dialogo">— Tranquila. Intentaré hablar con él. Ahí delante junto a la orilla hay una grieta lo suficientemente grande para nosotros. Con suerte, este bicho será demasiado grande para pasar por ella. Si nos da vía libre correremos lo más rápido hasta cruzar la apertura, ¿de acuerdo?</p>
+    <p class="lector-p dialogo">— Está bien, habla con él y dile que se vaya –añadió sofocada Geneviève.</p>
+    <p class="lector-p">Daikuku se agachó y acercó su rostro al agua. Con unas palabras incomprensibles para su compañera, se refirió al reptil. Terminó y se irguió de nuevo. El cocodrilo desaparecía ante ellos, a unos pasos desaparecía otra roca.</p>
+    <p class="lector-p dialogo">— Creo que hay más de los que pensábamos. No podemos llegar hasta la otra roca, tendremos que saltar al agua y avanzar tan rápido como podamos.</p>
+    <p class="lector-p dialogo">— ¿Por?</p>
+    <p class="lector-p dialogo">— Únicamente he conseguido que se aparten de nuestro camino, pero no que no nos coman. ¡Salta!</p>
+    <p class="lector-p">Los dos elegidos saltaron al agua, corrían tanto como les dejaban las espesas aguas. Apenas unos metros de distancia, los reptiles, escapando del embrujo, nadaban hacia ellos.</p>
+    <p class="lector-p dialogo">— ¡¡Corre, corre!!</p>
+    <p class="lector-p dialogo">— Voy, voy –murmuraba Geneviève sin aliento.</p>
+    <p class="lector-p">Faltaba muy poco para tocar el suelo. Las aguas se agitaban a muy poca distancia.</p>
+    <p class="lector-p dialogo">— ¡¡¡Vamos, Geneviève!!! –gritaba Daikuku tirando de ella.</p>
+    <p class="lector-p">Un paso más y pisaban el firme. En el agua, cuatro lomos cubiertos de escamas volaban tras ellos.</p>
+    <p class="lector-p dialogo">— ¡¡¡Vamos, métete en la grieta!!! –sin aliento, dio un fuerte empujón a su amiga.</p>
+    <p class="lector-p">La chica corría mirando hacia atrás, cuatro descomunales lagartos daban mordiscos al aire. Daikuku corría azorado. Geneviève lograba entrar en la grieta. Sacaba los brazos para coger a su amigo.</p>
+    <p class="lector-p dialogo">— ¡¡¡Daikuku cuidado!!! ¡¡¡Aaayyy!!! –gritó la muchacha dejando escapar el alma.</p>
+    <p class="lector-p">Justo en el momento en que Daikuku entraba en la grieta cogiendo la mano de Geneviève que estiraba con todas sus fuerzas, uno de los reptiles cerraba las fauces sobre vacío. Los dos caían de bruces contra el suelo a unos pasos de la entrada. Un instante de más y el elegido sería pasto de las alimañas. Los reptiles se abalanzaban sobre la roca, introduciendo sus mandíbulas para atrapar a los muchachos. La grieta era lo suficientemente pequeña como para que ninguno de ellos pudiese pasar. Daikuku y Geneviève seguían turbados, sin respiración. Habían escapado a una muerte segura. Los saurios seguían empecinados en alcanzar inútilmente su presa. No había nada que temer, por ahora.</p>
+    <p class="lector-p">Ambos seguían sentados recuperando la calma. Al otro lado los reptiles se retiraban tumbándose a unos pasos. Los elegidos escrutaron con la mirada el interior de la grieta. Una luz tenue entraba por los agujeros que había en el techo. Las paredes estaban húmedas y mohosas. Había telarañas por doquier. Daikuku y Geneviève se levantaron para continuar su camino.</p>
+    <p class="lector-p dialogo">— Gracias.</p>
+    <p class="lector-p dialogo">— No las merece. Gracias a ti, Daikuku.</p>
+    <p class="lector-p dialogo">— Para eso estamos.</p>
+    <p class="lector-p dialogo">— ¿Hacia dónde ahora? Los dos caminos me parecen igual y no tengo ninguna predilección.</p>
+    <p class="lector-p dialogo">— No importa, los dos llevarán al Lobo Ciego –silencio. Un grito–. ¿Has oído eso?</p>
+    <p class="lector-p dialogo">— ¿El qué?</p>
+    <p class="lector-p dialogo">— Alguien gritaba socorro, ¿no lo has oído?</p>
+    <p class="lector-p dialogo">— No, no he oído nada.</p>
+    <p class="lector-p dialogo">— ¿Cómo qué no?, si han vuelto a gritar y esta vez más cerca.</p>
+    <p class="lector-p">En ese mismo instante cruzó ante ellos una rata muy grande gritando “¡¡Socorro, socorro!! ¡Las arañas, las arañas!”</p>
+    <p class="lector-p dialogo">— ¡¡AAAhh!! –gritó Geneviève al ver a semejante roedor ocultándose tras Daikuku.</p>
+    <p class="lector-p dialogo">— Era ella quien pedía auxilio. Dice que vienen las arañas. A ti no te gustan las arañas, ¿verdad, Geneviève?</p>
+    <p class="lector-p dialogo">— No.</p>
+    <p class="lector-p dialogo">— Entonces ¡¡CORREEE!!</p>
+    <p class="lector-p">El eco de cientos de patas llegaba por el otro lado de la galería, debían de ser muchas y muy grandes para levantar semejante alboroto. El rostro de Geneviève se desfiguró por completo. Tirando con todas sus fuerzas de Daikuku comenzó a correr tras la rata.</p>
+    <p class="lector-p dialogo">— Daikuku, mira hacia atrás.</p>
+    <p class="lector-p dialogo">— ¡Ooohh!</p>
+    <p class="lector-p dialogo">— No me lo digas, son gordas y son muchas, y además tienen hambre de rata –decía entrecortada y sin aliento.</p>
+    <p class="lector-p dialogo">— Mmm… No. Son más o menos una docena, pocas, pero son más grandes que nosotros. Y por lo que me consta, las arañas no se alimentan exclusivamente de ratas.</p>
+    <p class="lector-p dialogo">— Como te iba diciendo… ¡¡Correee!!</p>
+    <p class="lector-p">Geneviève espantada corría tan rápido como le dejaban sus pies.</p>
+    <p class="lector-p dialogo">— ¡¿Hay posibilidades de escapar de ellas?!</p>
+    <p class="lector-p dialogo">— ¡Seguid corriendo, pronto llegaremos al final de la gruta! ¡Aquella luz es la salida! –dijo el roedor aumentando la velocidad.</p>
+    <p class="lector-p dialogo">— Dime de qué hablas con esa rata.</p>
+    <p class="lector-p dialogo">— Sigue corriendo, esa luz es la salida.</p>
+    <p class="lector-p">La rata agotada, no podía continuar la carrera. Un traspiés y cayó al suelo. Sin detenerse Daikuku la cogió al vuelo y continuó la marcha con el animal en brazos. Geneviève volvió la cabeza, los ojos de las arañas brillaban hambrientos. La muchacha apretó la marcha, corría como jamás habría imaginado que pudiese hacerlo. Eran negras y peludas, del tamaño de un jabalí. El túnel llegaba a su fin, la luz se hacía más intensa. Un instante para salir del agujero. Un gran salto, al menos quince pies hasta tocar suelo. Los tres caían rodando, miraban hacia la gruta, expectantes. Las patas de las arañas se agitaban furiosas en el exterior del túnel, sin salir del agujero.</p>
+    <p class="lector-p dialogo">— ¿Estáis bien?</p>
+    <p class="lector-p dialogo">— Podría estar mejor –respondió la rata.</p>
+    <p class="lector-p dialogo">— Yo no, quiero irme a casa o que me traigan un insecticida. ¿Qué les impide salir de ahí? –dijo Geneviève destrozada.</p>
+    <p class="lector-p dialogo">— Estamos en territorio de murciélagos, los murciélagos comen arañas, por eso no salen. Pero también comen otras cosas, será mejor que nos vayamos a un lugar más seguro.</p>
+    <p class="lector-p">Daikuku miraba hacia el cielo boquiabierto, gigantescos vampiros oteaban desde el firmamento en búsqueda de comida.</p>
+    <p class="lector-p dialogo">— ¡Hey! Yo no entiendo a la rata, deberías decirme de qué habláis.</p>
+    <p class="lector-p dialogo">— Mira allá arriba.</p>
+    <p class="lector-p">Ambos bajaron la mirada al unísono, disgustados. En aquel valle de roca no parecía haber muchos lugares donde esconderse.</p>
+    <p class="lector-p dialogo">— ¡Pregúntale a la rata cómo podemos salir de aquí!</p>
+    <p class="lector-p dialogo">— Llévanos a un sitio seguro por favor.</p>
+    <p class="lector-p dialogo">— Tranquilo, son un poco tontos, no creo que nos hayan visto todavía. Además, oléis muy mal, así que no nos atacarán por ahora. ¿Ves aquel agujero entre las rocas?, es una de mis madrigueras. Ahí no hay ningún peligro, seguidme sin hacer ruido.</p>
+    <p class="lector-p">La rata caminaba despacio, tras ella los elegidos, algo más que nerviosos, avanzaban sin dejar de mirar hacia arriba. A unos pasos se abría la grieta sobre el suelo. Llegados a la entrada, primero la rata, después Daikuku, y justo antes de entrar, un fuerte estornudo aturdía a Geneviève. Los murciélagos caían sobre ella. Presto, el pequeño volvió hacia su compañera arrastrándola hacia adentro. Las uñas de los vampiros arañaban la roca. La muchacha tenía el cuerpo destemplado tras tanto susto. Los tres se detuvieron para descansar y recuperar el aliento. La gruta estaba seca y era bastante cálida.</p>
+    <p class="lector-p dialogo">— Eso ha estado cerca –resopló el pequeño.</p>
+    <p class="lector-p dialogo">— Gracias, Daikuku.</p>
+    <p class="lector-p dialogo">— Estamos en paz.</p>
+    <p class="lector-p dialogo">— Aquí estamos seguros. No debéis temer nada –dijo la rata. Daikuku le traducía a su compañera todo lo que el animal decía–. Gracias por ayudarme ahí detrás, si no llegas a cogerme en brazos estoy seguro de que ya me habrían devorado esas malas bestias. Es increíble cómo se ponen esos arácnidos tan sólo por intentar tomar prestados algunos huevos. Algo tendré que comer. Supongo que a vosotros también os gustan los huevos y por eso andabais por allí. Por cierto mi nombre es Eoro.</p>
+    <p class="lector-p dialogo">— Mi nombre es Daikuku y ella es mi amiga Geneviève. No, no nos gustas los huevos de araña, ni gigante ni enana. Llegamos a esa gruta por casualidad, huyendo de los reptiles de la ciénaga. Vamos en busca del Lobo Ciego, no sabemos cuál es el camino a seguir, andamos algo perdidos y no nos queda mucho tiempo. Tantos peligros nos entretienen de manera innecesaria. ¿No sabrás tú cómo llegar hasta el laberinto?</p>
+    <p class="lector-p dialogo">— Caramba, eso sí es arriesgado, amigo mío. Estar en el abismo del lobo es una cosa, pero querer verlo en persona es una muerte segura. No te lo recomiendo en absoluto, los que llegan a él, lo último que ven son sus ojos. ¿Me comprendes? Pero yo no juzgo lo que los demás hacen o dejan de hacer, si queréis llegar al laberinto os llevaré encantado. Además, os puedo prometer tranquilidad y seguridad absoluta hasta la misma puerta de su morada. Eso sí, una vez allí no contéis conmigo. Por nada del mundo me arriesgaría de tal manera. Cuando lleguéis no os preocupéis por perderos, es más que probable que os encuentre él antes de que desesperéis en la búsqueda. Así que si no tenéis ningún inconveniente podemos empezar la marcha.</p>
+    <p class="lector-p">Aunque he de pedirte algo Daikuku antes de partir, ya sé que es poco propio por mi parte, pero no he comido nada en tres días, hoy he corrido mucho y mi olfato me dice que llevas algo de comer en ese zurrón, y no me importaría comer algo en este momento. Además, con el estómago lleno es menos probable que me equivoque de camino y acabéis en la boca de alguna mala bestia. ¿Me explico?</p>
+    <p class="lector-p dialogo">— Por supuesto que te explicas, pero no hacía falta tanto. Toma, no sé si te gustará, pero es lo único que hay.</p>
+    <p class="lector-p dialogo">— Tranquilo, hoy no le hago ascos a nada.</p>
+    <p class="lector-p">Daikuku abrió la bolsa y dejó el pastel en el suelo. La rata lo olisqueó extrañada, nunca antes había comido dulce. Sin pensárselo engulló hasta la última miga del pastel en un periquete.</p>
+    <p class="lector-p dialogo">— Raro, muy raro, pero bueno. Suficiente para llenarme el estómago. Si sales con vida de ésta y alguna vez vuelves por aquí, no estaría nada mal que me trajeses unos cuantos más. Lo prometido es deuda, ahora ya puedo llevaros de camino al laberinto.</p>
+    <p class="lector-p">La rata echó a caminar, tras ella los elegidos. Geneviève temblaba aún conmocionada. En silencio recorrían las galerías, avanzando a cuatro patas. Eoro olfateaba el aire en busca del camino correcto y de algún posible enemigo. Apenas penetraba la luz en las estrechas grutas. Más de un tropiezo en la oscuridad.</p>
+    <p class="lector-p dialogo">— ¡Quietos! -susurró la rata quedando completamente inmóvil.</p>
+    <p class="lector-p">Daikuku sujetó con fuerza a Geneviève. Por uno de los cruces de la gruta aparecía la desmesurada cabeza viscosa de una escolopendra, sus antenas buscaban vibrantes la presa. Buscaba atentamente, parecía haber algo para comer. Sin apreciar su presencia, su cabeza se acercó al rostro de Daikuku, los dos largos colmillos venenosos quedaban a un dedo de su nariz. Geneviève aguantaba la respiración a un palmo del insecto. A pesar del terror, los tres consiguieron pasar desapercibidos. El mil pies retrocedió e introdujo la cabeza por otra entrada, su largo cuerpo cruzaba ante los elegidos moviendo sus infinitas patas al unísono, sin hacer apenas ruido hasta desaparecer en la oscuridad.</p>
+    <p class="lector-p dialogo">— ¡Oye, Eoro!, dijiste que siguiendo este camino no habría ningún peligro, que estaríamos seguros.</p>
+    <p class="lector-p dialogo">— ¡Eh amigo! No te enfades conmigo, tampoco ha sido tan terrible, sólo hemos tenido que quedarnos quietos un rato. Además estamos en su casa, es normal que nos lo hayamos cruzado. Te lo creas o no, es el lugar más seguro para una rata que existe en esta isla. Pero tranquilo, pasará mucho tiempo antes de que lo volvamos a ver, son muchos los túneles que ha de recorrer en busca de comida. Para entonces ya estaremos fuera.</p>
+    <p class="lector-p">Retomaron la marcha sin nada más que objetar. Daikuku cogió la mano de Geneviève y marchó junto a ella. Estaba aterrorizada ante tanto bicho. Pasillo tras pasillo, recorrieron largas distancias bajo tierra, hasta que al fin la luz se vislumbró al término de la galería.</p>
+    <p class="lector-p dialogo">— ¿Esa es la salida, Eoro?</p>
+    <p class="lector-p dialogo">— Sí, esa es vuestra entrada al laberinto, la guarida del Lobo Ciego. Todavía estáis a tiempo de volver. Como ya os he dicho, no es muy recomendable hacerle visitas.</p>
+    <p class="lector-p">Los tres salieron de la gruta, sobre un risco iluminado por la luna. Un pequeño valle custodiado por muros de piedra. Los árboles dejaban caer las hojas secas cubriendo todo el suelo. Gigantescas rocas dispuestas anárquicamente sobre el valle conformaban un laberinto natural. La estampa era impresionante.</p>
+    <p class="lector-p dialogo">— ¿Es la morada del Lobo Ciego?</p>
+    <p class="lector-p dialogo">— Exacto, ahora vosotros dos bajáis por este senderito de aquí, os introducís en el laberinto y hacéis como que buscáis al lobo. No tardará mucho en dar con vosotros. Le gusta jugar. Por cierto, que sea ciego no significa que no huela. Nadie ha vuelto, lo cual significa que le funciona muy bien el olfato. Tened cuidado, aunque si vais a morir no sé de qué os advierto. Bueno amigos, nuestros caminos se separan aquí, yo volveré a mi cueva y vosotros no sé dónde acabaréis, pero aun así, os deseo suerte. ¡Adiós, amigos!</p>
+    <p class="lector-p">Eoro desapareció penetrando de nuevo en las galerías. Los dos elegidos quedaban solos de nuevo.</p>
+    <p class="lector-p dialogo">— ¿Y bien?, ¿qué te ha dicho la rata? Dime que te ha desvelado secretos que nos van a ayudar en esta tierra de bichos gigantes que tanto asco me dan y me angustian infinitamente. Dime que te ha mostrado la forma de convertir al dichoso lobo en un elegido como nosotros.</p>
+    <p class="lector-p">En ese mismo instante un ensordecedor aullido triste y furioso. La sed de sangre de la bestia encrespó los nervios de ambos muchachos.</p>
+    <p class="lector-p dialogo">— Parece que no le ha gustado que le llames bestia dichosa. Si te sirve de algo, Eoro dijo que nadie que le haya hecho una visita ha salido con vida, a estas alturas supongo que ya lo darás por sabido. Y contestando a tu pregunta, no me dijo cómo transformarlo en elegido. Así que lo único que podemos hacer, es descender ahí abajo, esperar a que nos encuentre e intentar convencerle de quién es verdaderamente. A falta de una idea mejor. ¿No crees?</p>
+    <p class="lector-p dialogo">— Pues lo cierto es que no me parece buena idea, pero tampoco tengo ningún plan mejor con el que rebatir el tuyo. Lo único que puedo decir es que en caso de duda lo mejor será huir como hemos hecho hasta ahora. Empecemos a bajar, no quisiera perder más tiempo –concluyó Geneviève impotente.</p>
+    <p class="lector-p">Daikuku bajaba por el sendero y tras él Geneviève. El silencio reinaba en el lugar, un silencio que helaba la sangre. Las hojas secas caían de los árboles, siendo las únicas que osaban moverse en tan peligroso lugar. Los elegidos bajaban despacio por la empinada y pedregosa cuesta, en seguida llegaron al final del sendero, donde el suelo estaba tupido por la hojarasca. Cada paso resonaba en el laberinto como un trueno, las hojas secas crujían inevitablemente. Geneviève y Daikuku avanzaban vigilantes, alerta, cruzando dos megalitos que hacían las veces de entrada. No podían ocultar sus pasos, así que su presencia era evidente. La joven cogía fuertemente a Daikuku, tenía miedo del animal que allí pudiese esconderse.</p>
+    <p class="lector-p dialogo">— ¿Qué haremos si nos encuentra?</p>
+    <p class="lector-p dialogo">— No lo sé Geneviève, puede que correr.</p>
+    <p class="lector-p">Aquel lugar no tenía caminos posibles. Las grandes rocas dibujan calles caprichosas y sin salida, algunas se podían escalar, otras no más que bordear. La pareja no sabía por dónde empezar, así que como hicieran anteriormente, caminaron sin rumbo, siguiendo el sendero que las piedras decidían. Únicamente se oía el crujido de las hojas secas bajo sus pies, si el lobo se acercaba, las hojas también delatarían su posición. O al menos, eso esperaban.</p>
+    <p class="lector-p">Avanzaban prestando atención a cualquier sonido, cualquier movimiento. El laberinto parecía muerto, sin nadie que lo habitase. Pero más allá de toda esperanza, ahí se encontraba la criatura que lanzaba los temibles aullidos. El miedo a encontrarse con el aterrador animal sin saber cómo enfrentarse a él marcaba un acelerado pulso. Había pasado un largo rato desde que entraran al laberinto y nada sucedía. De pronto, un revoloteo quebraba la quietud. Saltando asustados se volvieron buscando el ruido. A unos pies de altura, sobre una roca, el cuervo.</p>
+    <p class="lector-p dialogo">— ¡Por todos los demonios! No esperaba encontraros aquí, debo felicitaros por ello, habéis alcanzado la guarida de mi amo. Sois mucho más valientes y avispados de lo que había alcanzado a imaginar. No sabéis lo mal que me sabe que no estéis muertos ya, mi estómago no deja de rugir hambriento. Pero lo cierto es que no tengo mucha prisa, podré esperar un poco más para probar vuestra deliciosa carne, pues debéis saber que mi señor ya anda tras vosotros. Os agradezco que me hayáis ahorrado el transporte de vuestros cuerpos sin vida hasta aquí. Buena suerte, muchachos.</p>
+    <p class="lector-p">El cuervo movió bruscamente la cabeza, mirando tras los elegidos. Ambos percatados del gesto, volvieron sus cabezas hacia atrás. El pájaro levantó el vuelo desapareciendo. Al final del pasillo de roca asomaba una criatura como jamás habían visto antes.</p>
+    <p class="lector-p">El sobrenombre de Lobo Ciego no le hacía mucho honor, aquel ser era una aberración, entre lupino y roedor. Una espesa cabellera gris oscuro, sucia y enmarañada, que tan sólo dejaba ver los ojos blancos llenos de legañas y parte del hocico. Caminaba erguido con las manos recogidas en el pecho, de las que nacían afiladas uñas. Un enorme rabo arrastraba por el suelo. Una joroba quebraba la espalda del monstruo. El bicho medía poco más de once pies. Sus mandíbulas colmadas de colmillos chorreantes de babas verdes. Se movía despacio, olfateando el aire en busca del aroma que le había instado a salir de caza. Todavía parecía no haber advertido la presencia de los jóvenes. Geneviève y Daikuku estaban petrificados. A pesar de la distancia podían escuchar la dificultosa y enfermiza respiración de la bestia.</p>
+    <p class="lector-p">Ambos abrazados fuertemente esperaban sin saber cómo reaccionar, a que el lobo descubriese su presencia. Una bocanada de aire, otra más, la bestia había descubierto a sus víctimas. Su cabeza se giró lentamente mientras cerraba la boca, miraba hacia los elegidos con gesto triste y melancólico. Su cuerpo adoptaba una posición sumisa, parecía indefenso. Los muchachos por un momento pensaron que una criatura así no podía hacerles nada, pero aquella idea duró lo que tardó el lobo en erguirse de nuevo toda su altura y lanzar un rugido abriendo las fauces de par en par. Miraba a sus presas con ojos desbocados. El lobo arrancó torpemente a correr tras sus víctimas. Geneviève y Daikuku corrían como liebres empujados por la congoja y el miedo a que la criatura los devorase en un instante. Huían en ninguna dirección, sólo pensaban en escapar de la bestia que les perseguía. Sus pisadas sacudían el suelo. Daikuku se giró para comprobar la distancia que les separaba del engendro, era espacio suficiente para seguir corriendo. El lobo avanzaba lento, pero sin pausa. Parecía seguro de que sus víctimas caerían tarde o temprano. Daikuku cogió la mano de su amiga. Geneviève corría desalentada, ambos dominados por el miedo.</p>
+    <p class="lector-p dialogo">— Mira, Geneviève, ahí delante hay unos cuantos arbustos. Nos meteremos entre ellos, parecen bastante espesos, con un poco de suerte puede que le corten el paso y nos dé algo de tiempo.</p>
+    <p class="lector-p dialogo">— ¡¿Tiempo para qué?!</p>
+    <p class="lector-p">Los elegidos saltaron sobre la vegetación desapareciendo tras ella, avanzaban con dificultad. Apenas unos pasos entre las ramas y el lobo introducía sus fauces aplastando el ramaje entre sus colmillos. La bestia, tras sus tentativas frustradas, tomando fuerte impulso, saltó cayendo entre los arbustos justo ante la muchacha. Geneviève asustada cayó al suelo, se arrastraba intentando alejarse del lobo. Daikuku quedaba al otro lado de la criatura. Geneviève consiguió levantarse y correr entre la vegetación, se alejaba del lobo y de Daikuku. El pequeño al ver que su compañera huía, corrió en la dirección contraria para escapar. El lobo quedó quieto, atrapado entre los arbustos, rugía enfurecido por el engaño. Un instante le sirvió para decidir su primera captura. Daikuku observaba al lobo desde una distancia prudencial, esperaba que fuese tras él, pero el miedo de Geneviève olía jugosamente en el aire. La criatura corría entre los arbustos destrozándolos a su paso, las ramas se clavaban en su piel rasgándola, no sentía dolor. Aullaba enloquecido con una sonrisa en sus labios. Los chasquidos de sus fauces se escuchaban en todo el laberinto. La joven corría torpemente sin saber hacia dónde huir, el lobo asomaba a sus espaldas. Un pasillo sin salida. Una sala irregular, algunos troncos caídos sobre el suelo, despojos de animales, excrementos del lobo, un fuerte olor acre. El cielo como único techo. Geneviève se dirigió hasta el final, intentaba ascender la encrespada y resbaladiza pared. Incapaz de escalar la roca. Rebusca en la piedra una salida, una grieta por la que colarse. Nada. No podía escabullirse de su perseguidor.</p>
+    <p class="lector-p">El lobo surgió tras las rocas, caminaba lentamente, recuperando el aliento. Su víctima no tenía escapatoria posible. Se acercaba muy despacio, dejando que el horror destruyese los nervios de la chica. El momento del banquete estaba cerca y nada detenía a la aberración cuando estaba hambrienta. La elegida saltaba una y otra vez, intentando alcanzar los riscos, demasiado resbaladizos. Sus manos sangraban por los cortes. Aferrándose a la piedra más pequeña, ansiaba escapar. Las lágrimas recorrían sus ojos cayendo a borbotones, gritaba sin aliento. Sentía al lobo acercándose a sus espaldas aumentando su desesperación. Daikuku recorría el laberinto en busca de su amiga, estaba perdido. Las fauces abiertas, chorreantes, los ojos desorbitados, avanzando despacio, hipnotizado por la suculencia de su presa. Geneviève comenzó a gritar, lloraba desesperada. Todo su cuerpo pegado contra la roca, los ojos cerrados. La bestia se detuvo, su respiración enfermiza inundaba la sala. Las uñas tintineaban chocando unas contra otras. Olía a su presa. Silencio.</p>
+    <p class="lector-p">La joven levantaba la vista, los ojos enrojecidos llenos de lágrimas, la boca entreabierta babeando, no podía respirar, le faltaba el aliento. El lobo estaba delante de ella, a unos pasos, observándola, abría repetidamente las aletas de su nariz, oliendo el perfume que emanaba de la muchacha, se relamía. Geneviève incapaz de sostenerse en pie, se dejó caer al suelo, arrastrándose por la pared. Sentada, cogiéndose las rodillas, inmóvil, mirando fijamente a los ojos del lobo. Se acercaba, su hocico rozaba los cabellos de la chica, gemía excitado, incapaz de contener su apetito. El caliente y pérfido aliento se filtraba en los pulmones de la elegida. El lobo abrió la boca, sus ojos inyectados en sangre. Geneviève cerró los ojos y gritó con todas sus fuerzas ante la desesperada situación.</p>
+    <p class="lector-p">Las fauces se cerraban aullando de dolor un instante antes de la decapitación. La bestia se giraba gruñendo en busca del agresor. Junto al lobo estaba Daikuku, justo antes de que acabase con su compañera, clavaba una estaca sobre la espalda. La sangre corría hasta el suelo. La bestia gimiendo dolorida, buscaba sin tiento el arma, lograba sacarla. Rugía enfurecido, miraba a Daikuku lleno de odio, como si lo pudiera ver con sus ojos invidentes. El elegido retrocedía, no tenía nada con que atacar, no sabía cómo defenderse. Daba pequeños pasos hacia atrás, si huía, su amiga estaba perdida, tenía que conseguir sacar al lobo de allí. Geneviève lo miraba aterrorizada, sin saber qué hacer, inmovilizada por el miedo. Gimoteaba impotente, perdida. El lomo sangraba, podía oler su propia sangre. Aún más excitado. Sus venas latían con fuerza enervadas bajo su piel. Ambos muchachos esperaban el ataque. Un instante eterno. La bestia caía en la cuenta, su oponente no atacaba, sencillamente porque no tenía con que herirlo. Crecido por su ventaja, lanzó un rugido que resonó en todo el laberinto como una cruel carcajada. El eco cesó. Corría tras Daikuku. El pequeño paralizado. El lobo avanzaba a gran velocidad. El niño giró rápidamente sobre sí mismo, corría con todas sus fuerzas. Geneviève gritaba enloquecida “¡¡¡COORREEE DAIKUKU!!!”. El monstruo le ganaba la carrera al muchacho. Una piedra no vista. Un tropiezo. Daikuku daba de bruces contra el suelo. El lobo se abalanzaba sobre su presa. Geneviève rasgaba el aire con sus gritos. Daikuku miraba sobrecogido a su verdugo. El lobo caía sobre él. Las fauces abiertas. Con la mano tentaba el suelo, buscaba algo con que defenderse. No había tiempo. Una fracción de segundo. Su mano sobre el zurrón, acto reflejo, cualquier cosa servía. Sacó el espejo, colocándolo entre él y la bestia. El lobo despedazaría al pequeño sin remedio. Un segundo para morir. Cierra los ojos. Silencio. El lobo caía sobre Daikuku, Geneviève enmudecida. Quietud. ¿Qué estaba sucediendo? Justo un instante antes de caer, la horrible criatura veía reflejado su rostro en el espejo. Sin sentido, desplomándose sobre el niño. El lobo es ciego, no podía haberse visto. Daikuku, azorado, intentaba salir de debajo del monstruo. Tenía el cuerpo destrozado por el pesado golpe. Se dirigió hacia Geneviève abrazándola fuertemente, miraban a la bestia esperando el siguiente movimiento, no les quedaba recurso alguno, morirían. El señor del abismo yacía sobre la roca, inerte, sin respiración, parecía estar muerto. ¿Quizás una treta? Daikuku dejaba a su compañera, se acercaba despacio para comprobar el estado del lobo. Sin más, la criatura comenzó a retorcerse con fuertes contracciones. El pequeño corrió de nuevo junto a Geneviève cogiéndola asustado. El lobo se contorsionaba violentado por fuertes sacudidas que lo doblaban en posiciones inverosímiles. Berreaba furioso, destrozado por el dolor, los ojos desorbitados, las fauces dislocadas, la boca sangraba. El suelo repleto de babas, la orina caía entre sus piernas. Se laceraba la piel tiñéndose de sangre, clavaba las garras hasta el fondo intentando arrancarse el mal que lo poseía. Las incesantes acometidas habían acabado levantándolo del suelo. Se golpeaba el vientre. Los muchachos observaban horrorizados. La curiosidad les incitaba a esperar para ver qué ocurría con el lobo. Un bulto nauseabundo crecía en el abdomen. Las arcadas encogieron su cuerpo. Vomitaba un espeso líquido amarillo. El tumor aumentaba su tamaño, se deslizaba por su interior hasta detenerse en el pecho, creció hasta alcanzar el tamaño de un hombre. La bestia intentaba deshacerse del forúnculo arrancándose la piel a tiras. Sus ojos estaban a punto de estallar. El dolor insoportable, los gritos sobrecogedores. El absceso se movía estrangulador. Fuese lo que fuese, estaba intentando salir a toda costa. Había llegado al cuello, la fisonomía del lobo se desfiguraba por completo. Extremadamente grotesco. Las dimensiones del bulto eran imposibles para escapar por la boca. Las fauces se abrieron de par en par, el tumor empujaba. Grandes cantidades de espuma salían por la boca, la nariz y los ojos sangraban. La mandíbula se desencajó, el cráneo parecía a punto de estallar. El tumor ya asomaba por la boca, el dolor era tan intenso que dobló al animal haciéndolo caer de bruces, incapaz de moverse, se ahogaba, no podía respirar. Los dientes se desprendían, poco a poco emergía algo parecido a un feto humano de grandes dimensiones. Los brazos y las piernas entumecidos, de un feo color morado, una arcada más y el cuerpo cayó al suelo, inerte, envuelto en babas. El lobo respiró profundamente, caía rendido, inconsciente, respiraba con dificultad, muy despacio. Daikuku y Geneviève corrieron hacia la figura que yacía en el suelo, asfixiada y desnuda. Al llegar a su lado apreciaron que se trataba de un muchacho algo mayor que Geneviève. Tenía todo el cuerpo amoratado, parecía no respirar.</p>
+    <p class="lector-p dialogo">— ¡Tenemos que reanimarlo, Daikuku! ¡Date prisa!</p>
+    <p class="lector-p dialogo">— ¿Eh?... Yo no sé reanimar a nadie, qué quieres que haga. Además, este muchacho ha salido de ahí dentro, no puede ser nada bueno.</p>
+    <p class="lector-p dialogo">— ¡Calla y ayúdame! –gritó enfurecida la elegida–. Yo le haré el boca a boca, tú limítate a empujar su pecho cuando yo te lo mande.</p>
+    <p class="lector-p dialogo">— ¡Está bien!, pero si luego nos ataca, no digas que no te lo advertí.</p>
+    <p class="lector-p">Daikuku colocaba las manos sobre el pecho del muchacho. “Uno”, soplaba. “Dos”, soplaba. “Tres”, soplaba.</p>
+    <p class="lector-p dialogo">— ¡Ahora, Daikuku, aprieta fuerte! ¡Vamos!, ¡otra vez! Éste es el tercer elegido, ¡no podemos consentir que muera!</p>
+    <p class="lector-p">Daikuku cambió por completo la expresión. Todo su esfuerzo se centraba en devolver el aliento al muchacho. Geneviève continuaba soplando boca con boca.</p>
+    <p class="lector-p dialogo">— ¡Otra vez!</p>
+    <p class="lector-p">Geneviève sopló de nuevo y un espasmo agitó al chico. Con un fuerte suspiro ahogado se incorporaba de sopetón, caía de espaldas. Geneviève lo sujetó evitando el golpe. Respiraba despacio pero rítmicamente. Poco a poco recobraba el aliento, el color de su piel recuperaba la normalidad. Geneviève lo sujetaba gentilmente, acariciándole la cabeza. Daikuku lo observaba atento. El tercer elegido entreabrió los ojos. Sentía mucho frío. La visión difusa redefinía los objetos lentamente.</p>
+    <p class="lector-p dialogo">— Tengo frío –dijo el mozo tartamudeando.</p>
+    <p class="lector-p dialogo">— Aquí no hay nada con que taparlo, no tenemos ropas, no hay nada que nos pueda servir, ¿qué hacemos, Geneviève?</p>
+    <p class="lector-p dialogo">— No importa, no hay tiempo para mantas. Dame el espejo.</p>
+    <p class="lector-p dialogo">— ¿Para qué quieres el espejo?</p>
+    <p class="lector-p dialogo">— Tú sólo dame el espejo.</p>
+    <p class="lector-p">Daikuku le pasó el cristal a su compañera. Geneviève lo colocaba ante el rostro del muchacho. Mira tu reflejo, concéntrate en lo que ves. Recuerda quién eres, cómo vistes, cómo hablas, cómo oyes, cómo ves. La voz de la elegida sonaba hipnotizadora. El tercer elegido cerraba los ojos lentamente, llevado por el cansancio.</p>
+    <p class="lector-p dialogo">— ¡Hey! ¿Cómo has hecho eso? ¿Cómo has logrado que aparezca vestido con esas ropas tan raras, tan bien peinado y sin rastro de las babas del lobo?</p>
+    <p class="lector-p dialogo">— Sencillo. Ahora sabemos para qué sirve el espejo. Despierta a los elegidos en este mundo, y de igual modo puede traer su recuerdo, tal y como lo traemos nosotros. Así, como está ahora, es tal y como él se ve en realidad.</p>
+    <p class="lector-p">Geneviève sacudía con mimo al elegido para que despertase. Daikuku guardó el cristal en su zurrón. Sus mejillas estaban sonrojadas, tan lozano que parecía una persona diferente. Se incorporó quedando sentado, miraba a los otros dos con gesto confuso.</p>
+    <p class="lector-p dialogo">— ¿Qué estoy haciendo aquí? ¿Quiénes sois vosotros?</p>
+    <p class="lector-p">El joven se interrumpió guardando silencio, miraba de una manera muy extraña al lobo. Se incorporó titubeante y se acercó a la bestia. Con expresión interrogante miraba a los otros elegidos.</p>
+    <p class="lector-p dialogo">— No puede ser, esto no puede estar sucediendo –murmuró el mozo–. Yo me acosté esta noche en mi cama, me quedé dormido, tomo pastillas para dormir, no puedo despertar hasta pasadas unas horas. Esto tiene que ser un sueño.</p>
+    <p class="lector-p dialogo">— Más o menos –Geneviève asentía contestando al muchacho.</p>
+    <p class="lector-p dialogo">— Estoy convencido de que lo que voy a decir es un disparate, yo mismo lo tacharía de locura. No comprendo por qué sé esto, pero me atrevería a afirmar que estamos en el mundo de los sueños, que vosotros me habéis traído hasta aquí, ya que yo no sabía cómo encontraros en el mundo real. ¿Cierto? Pero…</p>
+    <p class="lector-p">Daikuku asentía sorprendido. El elegido, asustado, se entrecortaba con largas pausas. Rodeaba a la criatura escudriñándola con la mirada. Muy despacio. Se colocó ante el rostro del lobo. Respiraba con dificultad, los ojos entreabiertos. Se arrodilló junto a él, acercando su cara a un par de dedos de distancia. Lo observaba detenidamente.</p>
+    <p class="lector-p dialogo">— És… éste… éste soy yo –dijo tartamudeando–. Puedo verme en sus ojos –Geneviève y Daikuku atendían perplejos–. Esta criatura… soy yo. Soy yo –decía mirando a los otros dos muchachos–. Es la otra parte de mí, éste es el ser que habita en mí cuando no puedo recordar –una pausa, la mirada perdida–. Soy esquizofrénico desde los ocho años, cada vez que me daba un ataque perdía el conocimiento. No era dueño de mis actos, me autolesionaba, gruñía, no dejaba que nadie se acercase. Recuperaba el sentido durante unos minutos, pero no era yo, desdoblamiento de personalidad. Un comportamiento parecido al de un animal rabioso. Un par de minutos, un nuevo ataque, y caía desmayado. Despertaba volviendo a ser yo, y lo único que recordaba era una palabra, “Ashram”. Mis padres aprovechaban los primeros instantes para atarme a una silla y amordazarme la boca, así contenían mi furia hasta que volvía a mis cabales. Durante muchos años sufrí los ataques. Siempre en la misma medida. Hasta que consiguieron que me operasen, fue algo muy costoso, de hecho, trabajamos los tres para pagar el préstamo, tuvimos que mudarnos un mes a la ciudad. Menguaron mi enfermedad, pero no consiguieron aplacarla. Al principio tomaba más de diez pastillas diarias, ahora sólo tomo tres, una en la mañana, otra al mediodía y otra por la noche. A las cuales sumo un somnífero. Ya no volví a sufrir ataques esquizofrénicos con tanta fuerza, ni comportamientos extraños tras la operación. Pero mientras dormía sufría fuertes pesadillas y alucinaciones que trastocaban mi persona. El sedante me sume en un sueño muy profundo, mientras duermo no recuerdo nada. La segunda personalidad que alberga mi ser, quedaba relegada así, al mundo de los sueños. Esta criatura que aquí yace, forma parte de mí –concluyó arrastrando las últimas palabras.</p>
+    <p class="lector-p dialogo">— Pues que sepas, que tu segunda personalidad ha estado a punto de acabar con nosotros. No puedes imaginar cómo lo hemos pasado para traerte hasta aquí. Podías haber tenido la forma de una gallina o un cordero, habría sido mucho más fácil, créeme –reprochaba Daikuku–. Hace un instante me daba por muerto.</p>
+    <p class="lector-p dialogo">— ¡Qué poco tacto, Daikuku! –espetó Geneviève.</p>
+    <p class="lector-p dialogo">— ¡Ehh! ¿Acaso he dicho alguna mentira? –replicó molesto el niño.</p>
+    <p class="lector-p dialogo">— No podéis imaginar cuánto lo siento, amigos míos. Yo no era consciente del mal que os hacía. Me encantaría purgar tan terrible suceso. Espero de corazón que sepáis excusarme. Estos últimos días, cada mañana al despertar, una inusual sensación me fatigaba, no le encontraba significado ni razón, un sueño que soy incapaz de recordar. Pero ahora que estoy aquí junto a vosotros, toma forma –pausa–. Sentía desasosiego, como si algo malo fuese a suceder, algo que todavía desconozco. Además notaba ciertas presencias… ¿cómo decirlo?, como si recordase gente sin rostro ni nombre, personas a las que necesitaba encontrar. Supongo que esos sois vosotros –pausa–. Debéis perdonarme, estoy muy confundido, lo que estoy diciendo me llega de sopetón, antes de marcharme a dormir desconocía muchas cosas, y de repente, sin más, les doy explicación sin saber cómo.</p>
+    <p class="lector-p dialogo">— ¿Te encuentras bien ahora?</p>
+    <p class="lector-p dialogo">— Sí, gracias. Al despertar estaba asustado y algo aturdido, te vi a ti, a él. Pero ahora estoy bien, estoy tranquilo. Ya he sosegado mis dudas. Por cierto, no me habéis dicho vuestros nombres.</p>
+    <p class="lector-p dialogo">— Ni tú tampoco el tuyo.</p>
+    <p class="lector-p dialogo">— Tiene usted razón, señorita. Mi nombre es Dimitri.</p>
+    <p class="lector-p dialogo">— Yo me llamo Geneviève.</p>
+    <p class="lector-p dialogo">— Yo, Daikuku. ¿Sabes una cosa, Dimitri? Eres realmente complicado.</p>
+    <p class="lector-p dialogo">— Emmm, bueno… ¿Qué puedo decir?</p>
+    <p class="lector-p dialogo">— Ahora que ya nos conocemos, debes saber que tenemos muy poco tiempo. Los otros cuatro elegidos nos esperan, hay que despertarlos al igual que hemos hecho contigo. Tanuk ik nos aguarda, él conoce el paradero del siguiente de nosotros. A cada segundo que perdemos Moor se hace más poderoso –dijo Geneviève.</p>
+    <p class="lector-p dialogo">— Siento decirte, que no sé de qué me hablas. Pero si tenemos prisa, marchémonos cuanto antes. Ya habrá tiempo para que me relatéis todo lo que necesito saber –una pausa–. Pero un momento. No podemos dejar a este animal así, está herido, necesita cuidados.</p>
+    <p class="lector-p dialogo">— No podemos llevarlo con nosotros, deberá quedarse aquí. Nos competen otros menesteres. Siento que sea así.</p>
+    <p class="lector-p dialogo">— Pero forma parte de mí, ¡no puedo dejarlo!</p>
+    <p class="lector-p">En medio de la discusión apareció el viejo cuervo posándose sobre una roca seguido de sus hijos. Los muchachos observaban expectantes.</p>
+    <p class="lector-p dialogo">— Tranquilo, señor mío, he visto y oído todo cuanto ha sucedido. Vuestro deber es marchar junto a esos dos valientes jóvenes. Gracias a ellos ahora estáis aquí. No sufráis por el gran Lobo Ciego, dejadnos vuestra preocupación a nosotros, sabremos cómo cuidar de él hasta que se recupere de las heridas. Pronto pacerá sano de nuevo. Ahora marchad, vuestro destino os espera.</p>
+    <p class="lector-p">El enorme cuervo hizo una señal a sus hijos. Los vástagos volaron hasta los elegidos. Posándose sobre sus hombros.</p>
+    <p class="lector-p dialogo">— No temáis nada de mis hijos, os llevarán hasta el otro lado del abismo, allí deberéis continuar solos vuestro camino. Ahora marchad, mis pequeños, no hay tiempo que perder.</p>
+    <p class="lector-p">Tres cuervos levantaban a Dimitri en el aire, dos y dos se encargaban de Daikuku y Geneviève. Volaban por encima del gran atolón, observando los caminos que habían seguido hasta llegar al centro del laberinto. En un instante salían de la isla, mucho menos tiempo de lo que habían tardado en cruzarla a pie. Los cuervos los dejaban junto al árbol.</p>
+    <p class="lector-p dialogo">— Ha sido muy divertido, jamás había volado, y mucho menos en cuervo –dijo Dimitri.</p>
+    <p class="lector-p dialogo">— ¿A que sí? Me ha gustado mucho, repetiré si volvemos por aquí –añadió Daikuku.</p>
+    <p class="lector-p dialogo">— Yo preferiría no volver, sinceramente. Vamos, tenemos mucho camino por delante.</p>
+    <p class="lector-p dialogo">— Gracias por traernos.</p>
+    <p class="lector-p dialogo">— Sí, muchas gracias –dijeron los chicos. Los cuervos asintieron con una reverencia y volvieron junto a su padre.</p>
+    <p class="lector-p dialogo">— No sé por qué les das las gracias, si hubiesen hecho eso desde el principio nos habríamos ahorrado muchos sustos.</p>
+    <p class="lector-p dialogo">— Ahora estamos a salvo. Olvídalo.</p>
+    <p class="lector-p dialogo">— Sí, será mejor que lo olvide.</p>
+    <p class="lector-p dialogo">— No parecen malos chicos –osó decir Dimitri.</p>
+    <p class="lector-p dialogo">— ¿Cómo te atreves, bribón? Tú no sabes lo mal que lo hemos pasado ahí dentro. No sólo nos enfrentamos al lobo, hasta llegar a ti sufrimos muchas desdichas. Casi me muero. Espero que jamás, en lo que queda de búsqueda, tenga que enfrentarme a un lugar como éste.</p>
+    <p class="lector-p dialogo">— Comprendido. No volveré a decir nada más sobre esto –replicó Dimitri sofocado.</p>
+    <p class="lector-p dialogo">— Así, mejor. Gracias.</p>
+    <p class="lector-p dialogo">— Ahora que ya habéis dejado de discutir, ¿qué tal si seguimos con nuestro viaje?</p>
+    <p class="lector-p">Geneviève y Dimitri asintieron. Daikuku se colocaba entre ambos y cogiéndolos de la mano, tiró de ellos desandando el camino. La estrella había desaparecido del cielo. La primera misión había sido cumplida con éxito. El viaje, largo y temido a la ida, se hacía corto y liviano a la vuelta. En poco tiempo cruzaban las tierras del Lobo Ciego.</p>
+  </div>
+  <div class="cap-paso">
+    <a href="https://hunicornia.es/7-mascaras/el-reencuentro-de-los-elegidos/">← 5. El reencuentro de los elegidos</a>
+    <a class="der" href="https://hunicornia.es/7-mascaras/el-tercer-elegido/">7. El tercer elegido →</a>
+  </div>
+</main>
+<script src="/lector-progreso.js" defer></script>
+<script>
+(function() {
+  var btn   = document.getElementById("btnIndice");
+  var panel = document.getElementById("indicePanel");
+  var fill  = document.getElementById("progFill");
+
+  if (btn && panel) {
+    // Enlaces internos: el capitulo activo se calcula por scroll.
+    // Enlaces a otra pagina (7 mascaras): ya viene marcado desde el archivo.
+    var anclas = Array.prototype.slice.call(panel.querySelectorAll("a[href^='#']"));
+
+    function marcar() {
+      var activo = null;
+      if (anclas.length) {
+        var limite = window.innerHeight * 0.4;
+        anclas.forEach(function(a) {
+          var destino = document.getElementById(a.getAttribute("href").slice(1));
+          if (destino && destino.getBoundingClientRect().top <= limite) activo = a;
+        });
+        if (!activo) activo = anclas[0];
+        anclas.forEach(function(a) { a.removeAttribute("aria-current"); });
+        activo.setAttribute("aria-current", "true");
+      } else {
+        activo = panel.querySelector("[aria-current]");
+      }
+      // Si la lista no cabe, se acerca el capitulo activo a la vista.
+      if (activo && panel.scrollHeight > panel.clientHeight) {
+        activo.scrollIntoView({ block: "nearest" });
+      }
+    }
+
+    btn.addEventListener("click", function() {
+      var abierto = panel.classList.toggle("abierto");
+      btn.setAttribute("aria-expanded", abierto ? "true" : "false");
+      btn.textContent = abierto ? "Cerrar" : "Índice";
+      if (abierto) marcar();
+    });
+
+    panel.querySelectorAll("a").forEach(function(a) {
+      a.addEventListener("click", function() {
+        panel.classList.remove("abierto");
+        btn.setAttribute("aria-expanded", "false");
+        btn.textContent = "Índice";
+      });
+    });
+  }
+
+  if (fill) {
+    window.addEventListener("scroll", function() {
+      var d = document.documentElement;
+      var pct = d.scrollTop / (d.scrollHeight - d.clientHeight) * 100;
+      fill.style.width = Math.min(pct || 0, 100) + "%";
+    }, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>
